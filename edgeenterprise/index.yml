@@ -1,0 +1,85 @@
+### YamlMime:Landing
+title: Microsoft Edge 企業文件
+summary: Microsoft Edge 增強和延伸瀏覽器體驗。 它在 Windows、macOS、iOS 和 Android 裝置上執行。
+metadata:
+  title: Microsoft Edge
+  description: Microsoft Edge 增強和延伸瀏覽器體驗。 它在 Windows、macOS、iOS 和 Android 裝置上執行。
+  services: service
+  ms.service: service
+  ms.subservice: subservice
+  ms.topic: landing-page
+  ms.collection: collection
+  author: dan-wesley
+  ms.author: kvice
+  ms.date: 08/21/2020
+  ms.openlocfilehash: 0a725b99799d7a2476994f1cbddf12fcd688f1e4
+  ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 08/31/2020
+  ms.locfileid: "10979589"
+landingContent:
+- title: 了解在企業中使用 Microsoft Edge
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Microsoft Edge 通道概觀
+      url: microsoft-edge-channels.md
+    - text: 下載 Microsoft Edge 通道
+      url: https://aka.ms/EdgeEnterprise
+    - text: 使用企業功能
+      url: edge-ie-mode.md
+    - text: 影片 - Microsoft Edge 和 Microsoft 搜尋
+      url: microsoft-edge-video-search.md
+- title: 部署和更新 Microsoft Edge
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: 規劃 Microsoft Edge 部署
+      url: deploy-edge-plan-deployment.md
+    - text: 影片 - 部署 Microsoft Edge
+      url: microsoft-edge-video-deploy.md
+    - text: 部署到 Windows
+      url: https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json
+    - text: 部署到 macOS
+      url: https://docs.microsoft.com/intune/apps/apps-edge-macos/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json
+- title: 設定 Microsoft Edge
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 在 Windows 上設定 Microsoft Edge
+      url: configure-microsoft-edge.md
+    - text: 在 macOS 上設定 Microsoft Edge
+      url: configure-microsoft-edge-on-mac.md
+    - text: 將 Microsoft Edge 設定為預設瀏覽器
+      url: edge-default-browser.md
+- title: 管理安全性和隱私權
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 影片 - 安全性、相容性及管理性
+      url: microsoft-edge-video-security-compatibility-manageability.md
+    - text: 安全性
+      url: security-overview.md
+    - text: 隱私權
+      url: microsoft-edge-enterprise-privacy-settings.md
+- title: 原則參考
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 瀏覽器原則參考
+      url: microsoft-edge-policies.md
+    - text: 更新原則參考
+      url: microsoft-edge-update-policies.md
+    - text: 原則對應概觀
+      url: microsoft-edge-policy-map-overview.md
+    - text: Microsoft 安全性基準部落格
+      url: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
+- title: 與企業社群互動或取得協助
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 企業技術社群
+      url: https://techcommunity.microsoft.com/t5/Enterprise/bd-p/EdgeInsiderEnterprise
+    - text: 連絡 Microsoft Edge 支援
+      url: https://microsoftedgesupport.microsoft.com/hc/

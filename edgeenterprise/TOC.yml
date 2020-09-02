@@ -1,0 +1,165 @@
+# last revised 08/21/2020
+- name: Microsoft Edge 企業文件
+  href: index.yml
+- name: Microsoft Edge 文件
+  href: 'https://docs.microsoft.com/microsoft-edge/'
+- name: Microsoft Edge 內容更新
+  href: microsoft-edge-content-updates.md
+- name: 開始使用 Microsoft Edge
+  items:
+    - name: 了解 Microsoft Edge 通道
+      href: microsoft-edge-channels.md
+    - name: 查看新增功能
+      href: 'https://www.microsoftedgeinsider.com/whats-new'
+    - name: 客戶採用資料
+      href: microsoft-edge-customer-adoption-kit.md
+    - name: 探索文件資源
+      href: 'https://docs.microsoft.com/microsoft-edge/'
+    - name: Microsoft Edge 實作部署實驗室
+      href: deploy-edge-hands-on-lab.md
+    - name: Windows 部落格 - Microsoft Edge 開發人員
+      href: 'https://blogs.windows.com/msedgedev/'
+- name: 規劃 Microsoft Edge
+  items:
+    - name: Microsoft Edge 企業藍圖
+      href: microsoft-edge-roadmap.md
+    - name: 規劃 Microsoft Edge 部署
+      href: deploy-edge-plan-deployment.md
+    - name: 版本資訊
+      items:
+        - name: 發行排程
+          href: microsoft-edge-release-schedule.md
+        - name: Beta 通道版本資訊
+          href: microsoft-edge-relnote-beta-channel.md
+        - name: 穩定通道版本資訊
+          href: microsoft-edge-relnote-stable-channel.md
+        - name: 安全性更新
+          href: microsoft-edge-relnotes-security.md
+    - name: Microsoft Edge 原則對應
+      items:
+        - name: 原則對應概觀
+          href: microsoft-edge-policy-map-overview.md
+        - name: 舊版 Microsoft Edge 與 Microsoft Edge 的原則對應
+          href: microsoft-edge-policy-map-legacy-to-newedge.md
+        - name: Google Chrome 與 Microsoft Edge 的原則對應
+          href: microsoft-edge-policy-map-chrome-to-newedge.md
+    - name: 支援的作業系統
+      href: microsoft-edge-supported-operating-systems.md
+    - name: 生命週期原則
+      href: microsoft-edge-support-lifecycle.md
+    - name: 支援的語言
+      href: microsoft-edge-supported-languages.md
+    - name: Microsoft Edge 系統更新
+      items:
+        - name: 用於 Microsoft Edge Update 的封鎖程式工具組
+          href: microsoft-edge-blocker-toolkit.md
+        - name: 如何存取舊版 Microsoft Edge
+          href: microsoft-edge-sysupdate-access-old-edge.md
+        - name: 支援 Microsoft Edge 的 Windows 更新
+          href: microsoft-edge-sysupdate-windows-updates.md
+- name: 部署 Microsoft Edge
+  items:
+    - name: 影片 - 部署 Microsoft Edge
+      href: microsoft-edge-video-deploy.md
+    - name: 使用 Configuration Manager 部署到 Windows
+      href: 'https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+    - name: 使用 Intune 部署到 Windows
+      href: 'https://docs.microsoft.com/intune/apps/apps-windows-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+    - name: 使用 Jamf 部署到 macOS
+      href: deploy-edge-mac-jamf.md
+    - name: 使用 Intune 部署到 macOS
+      href: 'https://docs.microsoft.com/intune/apps/apps-edge-macos/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
+- name: 設定 Microsoft Edge
+  items:
+    - name: 進行 Windows 的設定
+      href: configure-microsoft-edge.md
+    - name: 使用 Intune 進行 Windows 的設定
+      href: configure-edge-with-intune.md
+    - name: 使用行動裝置管理，進行 Windows 的設定
+      href: configure-edge-with-mdm.md
+    - name: 使用 .plist 設定 macOS
+      href: configure-microsoft-edge-on-mac.md
+    - name: 使用 Jamf 設定 macOS
+      href: configure-microsoft-edge-on-mac-jamf.md
+- name: 使用 Microsoft Edge 企業功能
+  items:
+    - name: 影片 - Microsoft Edge 和 Microsoft 搜尋
+      href: microsoft-edge-video-search.md
+    - name: 設定和實驗
+      href: edge-configuration-and-experiments.md
+    - name: 身分識別支援和設定
+      href: microsoft-edge-security-identity.md
+    - name: Microsoft Edge 和企業狀態漫遊
+      href: microsoft-edge-enterprise-state-roaming.md
+    - name: Microsoft Edge kiosk 模式
+      href: microsoft-edge-kiosk-mode.md
+    - name: Microsoft Edge 同步
+      href: microsoft-edge-enterprise-sync.md
+    - name: Active Directory 使用者的內部部署同步
+      href: microsoft-edge-on-premises-sync.md
+    - name: Microsoft Edge 的 PDF 閱讀程式
+      href: microsoft-edge-pdf.md
+    - name: 將 Microsoft Edge 設定為預設瀏覽器
+      href: edge-default-browser.md
+    - name: 在 IE 模式下使用 Microsoft Edge
+      items:
+        - name: 關於 IE 模式
+          href: edge-ie-mode.md
+        - name: 在企業模式網站清單中設定網站
+          href: edge-ie-mode-sitelist.md
+        - name: 設定 IE 模式原則
+          href: edge-ie-mode-policies.md
+        - name: Enterprise Site Discovery 逐步指南
+          href: edge-ie-mode-site-discovery.md
+        - name: IE 模式常見問題集
+          href: edge-ie-mode-faq.md
+- name: Microsoft Edge 安全性
+  items:
+    - name: 影片 - 安全性、相容性及管理性
+      href: microsoft-edge-video-security-compatibility-manageability.md
+    - name: 安全性概觀
+      href: security-overview.md
+    - name: Microsoft Edge 端點的允許清單
+      href: microsoft-edge-security-endpoints.md
+    - name: 防護抵禦可能不需要的應用程式
+      href: microsoft-edge-potentially-unwanted-apps.md
+    - name: 應用程式防護的支援
+      href: microsoft-edge-security-windows-defender-application-guard.md
+    - name: Microsoft Defender SmartScreen 的支援
+      href: microsoft-edge-security-smartscreen.md
+    - name: Windows 資訊保護的支援
+      href: microsoft-edge-security-windows-information-protection.md
+- name: Microsoft Edge 隱私權
+  items:
+    - name: 設定隱私權設定
+      href: microsoft-edge-enterprise-privacy-settings.md
+    - name: Microsoft Edge 隱私權白皮書
+      href: 'https://docs.microsoft.com/microsoft-edge/privacy-whitepaper'
+- name: Microsoft Edge 參考
+  items:
+    - name: 瀏覽器原則參考
+      href: microsoft-edge-policies.md
+    - name: 更新原則參考
+      href: microsoft-edge-update-policies.md
+    - name: 深入了解參考
+      items:
+        - name: ClickOnce 和 DirectInvoke
+          href: edge-learn-more-co-di.md
+        - name: 可設定 Proxy 設定的命令列選項
+          href: edge-learnmore-cmdline-options-proxy-settings.md
+        - name: IE 模式中可設定的網站
+          href: edge-learnmore-configurable-sites-ie-mode.md
+        - name: URL 清單型原則的篩選格式
+          href: edge-learnmmore-url-list-filter format.md
+        - name: 在 IE 模式中保持頁面內瀏覽
+          href: edge-learnmore-inpage-nav.md
+        - name: 混合式內容下載項目
+          href: edge-learnmore-mixed-content-downloads.md
+        - name: 適用於穩定通道更新的漸進式套件推出
+          href: microsoft-edge-update-progressive-rollout.md
+        - name: 規則運算式 2 (re2.h) 語法
+          href: edge-learnmore-regex.md
+        - name: 使用者資料目錄變數
+          href: edge-learnmore-create-user-directory-vars.md
+- name: 常見問題集
+  href: faqs-edge-in-the-enterprise.md
