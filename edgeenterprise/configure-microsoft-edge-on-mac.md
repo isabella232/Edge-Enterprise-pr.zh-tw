@@ -1,0 +1,89 @@
+---
+title: 使用 .plist 設定適用於 macOS 的 Microsoft Edge
+ms.author: brianalt
+author: kelleyvice-msft
+manager: laurawi
+ms.date: 02/14/2020
+audience: ITPro
+ms.topic: conceptual
+ms.prod: microsoft-edge
+ms.localizationpriority: high
+ms.collection: M365-modern-desktop
+description: 使用 .plist 在 macOS 上設定 Microsoft Edge 原則設定
+ms.openlocfilehash: 84469a4f84deeee0e47b6d8899426fa36cf345aa
+ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "10979432"
+---
+# 使用 .plist 針對 macOS 設定 Microsoft Edge 原則設定
+
+本文介紹如何使用屬性清單 (.plist) 檔案，在 macOS 上設定 Microsoft Edge。 您將了解如何建立此檔案，然後將它部署到 Microsoft Intune。
+
+如需詳細資訊，請參閱[關於資訊屬性清單檔案](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html) (Apple 網站) 和[自訂承載資料設定](https://support.apple.com/guide/mdm/custom-mdm9abbdbe7/1/web/1)。
+
+> [!NOTE]
+> 本文適用於 Microsoft Edge 版本 77 或更新版本。
+
+## 在 macOS 上設定 Microsoft Edge 原則
+
+第一個步驟是建立 plist。 您可以使用任何文字編輯器來建立 plist 檔，也可以使用[終端機建立組態設定檔](#create-a-configuration-profile-using-terminal)。 不過，使用可為您設定 XML 程式碼格式的工具建立和編輯 plist 檔案會更輕鬆。 *Xcode* 是一套免費的整合式開發環境，您可以從以下位置之一取得：
+
+- [Apple 開發人員網站](https://developer.apple.com/xcode/)
+- [Mac App Store](https://apps.apple.com/app/xcode/id497799835?mt=12)
+
+如需支援的原則及其喜好設定金鑰名稱的清單，請參閱 [Microsoft Edge 瀏覽器原則參考](microsoft-edge-policies.md)。 在原則範本檔案 (可從 [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)下載) 中，**範例**資料夾中有一個範例 plist (*itadminexample.plist*)。 範例檔案包含所有支援的資料類型，您可以自訂這些資料類型以定義原則設定。 
+
+建立 plist 內容後的下一步，是使用 Microsoft Edge 喜好設定網域 *com.microsoft.Edge* 來命名它。 此名稱區分大小寫，不應包括您設為目標的通道，因為它適用於所有 Microsoft Edge 通道。 Plist 檔案名必須為 **_com.microsoft.Edge.plist_**。 
+
+> [!IMPORTANT]
+> 從組建 78.0.249.2 開始，macOS 上的所有 Microsoft Edge 通道都從 **com.microsoft.Edge** 喜好設定網域讀取。 所有舊版都從通道專屬網域讀取，例如 **com.microsoft.Edge.Dev** 適用於 Dev 通道。
+
+最後一步是使用您偏好的 MDM 提供者 (如 Microsoft Intune) 將 plist 部署到使用者的 Mac 裝置。 如需相關指示，請參閱[部署 plist](#deploy-your-plist)。
+
+### 使用終端機建立組態設定檔
+
+1. 在終端機中，使用以下命令，以您的偏好設定在桌面建立一個適用於 Microsoft Edge 的 plist：
+
+   ```cmd
+   /usr/bin/defaults write ~/Desktop/com.microsoft.Edge.plist RestoreOnStartup -int 1
+   ```
+
+2. 將 plist 從二進位格式轉換為純文字格式：
+
+   ```cmd
+   /usr/bin/plutil -convert xml1 ~/Desktop/com.microsoft.Edge.plist
+   ```
+轉換檔案後，請驗證原則資料是否正確，並包含組態設定檔所需的設定。
+
+> [!NOTE]
+> 只有鍵值對應位於 plist 或 xml 檔的內容中。 在將檔案上傳到 Intune 之前，請從檔案中移除所有 \<plist> 和 \<dict> 值以及 xml 標頭。 檔案應僅包含鍵值對。
+
+## 部署 plist
+
+對於 Microsoft Intune，建立以 macOS 平台為目標的新裝置組態設定檔，然後選取*喜好設定檔案*設定檔案類型。 將 **com.microsoft.Edge** 設為目標以做為喜好設定網域名稱，並上傳您的 plist。 如需詳細資訊，請參閱[使用 Microsoft Intune 將屬性清單檔案新增至 macOS 裝置](https://docs.microsoft.com/intune/configuration/preference-file-settings-macos)。
+
+對於 Jamf，將 .plist 檔案上載為*自訂設定*承載。
+
+## 常見問題集
+
+### 是否可以將 Microsoft Edge 設定為使用主喜好設定？
+
+是，您可以將 Microsoft Edge 設定為使用主喜好設定檔案。
+
+主喜好設定檔案可讓您在部署 Microsoft Edge 時設定瀏覽器使用者設定檔的預設設定。 您還可以使用主喜好設定檔案在未受裝置管理系統管理的電腦上套用設定。 這些設定會在使用者首次執行瀏覽器時，套用至使用者的設定檔。 使用者執行瀏覽器後，不會套用對主喜好設定檔案所做的變更。 使用者可以從瀏覽器中的主喜好設定變更設定。 如果要在瀏覽器首次執行後強制設定或變更設定，則必須使用原則。
+
+主喜好設定檔案允許您自訂瀏覽器的許多不同設定和喜好設定，包括與其他以 Chromium 為基礎之瀏覽器共用且特定於 Microsoft Edge 的項目。  可以使用主喜好設定檔案來設定與原則相關的喜好設定。 如果設定了原則，並且存在對應的主喜好設定集，優先採用原則設定。
+
+> [!IMPORTANT]
+> 所有可用的喜好設定可能與 Microsoft Edge 術語和命名慣例不一致。  無法保證這些喜好設定在未來版本中可繼續如預期運作。 更新版本中可能會變更或忽略喜好設定。
+
+主喜好設定檔案是使用 JSON 標記格式化的文字檔案。 此檔案需要新增到與 msedge.exe 可執行檔相同的目錄中。 對於 macOS 上的系統範圍企業部署，這通常是：「*~/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*」或「*/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*」。
+
+## 也請參閱
+
+- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
+- [使用 Jamf 針對 macOS 設定](configure-microsoft-edge-on-mac-jamf.md)
+- [進行 Windows 的設定](configure-microsoft-edge.md)
+- [使用 Intune 進行 Windows 的設定](configure-edge-with-intune.md)
