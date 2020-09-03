@@ -3,19 +3,19 @@ title: 適用於企業的 Microsoft Edge 復原
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 07/21/2020
+ms.date: 09/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何將 Microsoft Edge 復原到舊版
-ms.openlocfilehash: 9af0881a079dd3059e567eaadb912b3d929924c4
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9f659b0bcdd82f54a814c8ad4157521061cdfa7c
+ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979517"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "10993703"
 ---
 # 如何將 Microsoft Edge 復原到舊版
 
@@ -79,12 +79,11 @@ ms.locfileid: "10979517"
 
    - 永遠允許更新
    - 僅限自動無訊息更新
-   - 僅限手動更新  
 
-5. 下次 Microsoft Edge Update 檢查更新時，將會發生復原。
+     > [!NOTE]
+     > 若要強制執行群組原則更新，請在 Windows 系統管理員 [命令提示] 處輸入 `dsregcmd /status` (以系統管理員身分執行)。
 
-   > [!NOTE]
-   > 如果要立即復原，您必須變更 Microsoft Edge Update 的輪詢間隔，或使用 MSI 啟用復原。
+5. 按一下**確定**以儲存原則設定。 下次 Microsoft Edge Update 檢查更新時，將會發生復原。 如果要盡快更新，您可以變更 Microsoft Edge Update 的輪詢間隔，或使用 MSI 啟用復原。
 
 ### 常見復原錯誤
 
@@ -109,6 +108,12 @@ ms.locfileid: "10979517"
 
 - 啟用 *[通知使用者]，建議或需要重新啟動瀏覽器，以套用擱置中的更新*。 在 [選項] 底下，選取 **[必要]**。
 - 啟用 *[設定更新通知的時段]*，然後以毫秒設定所需的時間。
+
+## 快照
+
+快照是 [使用者資料] 資料夾的版本戳複本。 在版本升級期間，會建立舊版本的快照，並儲存在 [快照] 資料夾中。 復原之後，會將與版本相符的快照複製到新的 [使用者資料] 資料夾，並從 [快照] 資料夾中刪除。 如果降級時，沒有與版本相符的快照，復原將會依靠 [同步處理] 以將使用者資料填入新的 Microsoft Edge 版本中。
+
+[UserDataSnapshotRetentionLimit] 群組原則可讓您設定在特定時間內可保留的快照數目限制。 根據預設，會保留三個快照。 您可以將此原則設定為保留 0-5 個快照。
 
 ## 常見問題集
 
@@ -145,27 +150,15 @@ ms.locfileid: "10979517"
   - [目標版本覆寫] 設定為不存在的目標版本。
   - [目標版本覆寫] 輸入格式不正確。
 
-- 如果 [更新原則覆寫] 設定為 [更新已停用]，Microsoft Edge Update 將不接受任何更新。 這會導致無法執行復原。
+- 如果 [更新原則覆寫] 設定為 [更新已停用]，Microsoft Edge Update 將不接受任何更新，且不會執行復原。
 
 ### 我將所有群組原則設定正確，但是復原並未執行。 發生了什麼事？
 
-Microsoft Edge Update 尚未執行更新檢查。 預設情況下，自動更新每 10 小時會檢查一次是否有更新。 若要修正此問題，您可以變更 Microsoft Edge Update 的輪詢間隔，並使用自動更新檢查週期來覆寫群組原則。 如需詳細資訊，請參閱 [AutoUpdateCheckPeriodMinutes](https://docs.microsoft.com/deployedge/microsoft-edge-update-policies#autoupdatecheckperiodminutes) 原則。
+Microsoft Edge Update 尚未執行更新檢查。 預設情況下，自動更新每 10 小時會檢查一次是否有更新。 若要修正此問題，您可以使用 [自動更新檢查期間覆寫] 群組原則，以變更 Microsoft Edge Update 的輪詢間隔。 如需詳細資訊，請參閱 [AutoUpdateCheckPeriodMinutes](https://docs.microsoft.com/deployedge/microsoft-edge-update-policies#autoupdatecheckperiodminutes) 原則。
 
 ### 如果您是 IT 系統管理員，請遵循正確復原的所有步驟。 僅自己使用者群組的一部分會復原。 為什麼其他使用者尚未復原？
 
-群組原則設定尚未同步處理到所有用戶端。 當系統管理員設定群組原則時，用戶端不會立即收到這些設定。
-
-<!--
-You can update all users' group policy with the  
-
-When admins set all users don't get this setting instantaneously 
-
-GP Update force group policy – link to this 
-
--->
-
-
-
+群組原則設定尚未同步處理到所有用戶端。 當系統管理員設定群組原則時，用戶端不會立即收到這些設定。 您可以 [[強制遠端群組原則更新]](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134201(v=ws.11))。
 
 
 ## 請參閱
