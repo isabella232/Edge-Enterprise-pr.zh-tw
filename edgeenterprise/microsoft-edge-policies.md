@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/01/2020
+ms.date: 09/10/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 9320d7e7b161e6d92421b05262391642b0fe1c2d
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: d19d12dbda0e4b40b4b91b94ca92c58f2a469105
+ms.sourcegitcommit: 1f9149bf2e7c751520b68ef96e18e1f959975fb9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993723"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "11005816"
 ---
 # Microsoft Edge - 原則
 最新版本的 Microsoft Edge 包含下列原則。 您可以使用這些原則來設定 Microsoft Edge 在組織中的執行方式。
@@ -58,6 +58,8 @@ ms.locfileid: "10993723"
 |[CookiesBlockedForUrls](#cookiesblockedforurls)|封鎖特定網站上的 Cookie|
 |[CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)|限制來自特定網站的 Cookie 匯入目前的工作階段|
 |[DefaultCookiesSetting](#defaultcookiessetting)|設定 Cookie|
+|[DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting)|控制檔案系统 API 的讀取使用|
+|[DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting)|控制檔案系統 API 的寫入使用|
 |[DefaultGeolocationSetting](#defaultgeolocationsetting)|預設地理位置設定值|
 |[DefaultImagesSetting](#defaultimagessetting)|預設影像設定|
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|控制不安全內容例外狀況的使用|
@@ -67,6 +69,10 @@ ms.locfileid: "10993723"
 |[DefaultPopupsSetting](#defaultpopupssetting)|預設快顯視窗設定|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|控制 Web 藍牙 API 的使用|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|控制 WebUSB API 的使用|
+|[FileSystemReadAskForUrls](#filesystemreadaskforurls)|允許透過這些網站上的檔案系統 API 讀取存取權|
+|[FileSystemReadBlockedForUrls](#filesystemreadblockedforurls)|封鎖透過這些網站上的檔案系統 API 讀取存取權|
+|[FileSystemWriteAskForUrls](#filesystemwriteaskforurls)|允許這些網站上的檔案和目錄的寫入存取權|
+|[FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls)|封鎖這些網站上的檔案和目錄的寫入存取權|
 |[ImagesAllowedForUrls](#imagesallowedforurls)|允許這些網站上的影像|
 |[ImagesBlockedForUrls](#imagesblockedforurls)|封鎖特定網站上的影像|
 |[InsecureContentAllowedForUrls](#insecurecontentallowedforurls)|允許指定網站上的不安全內容|
@@ -139,6 +145,7 @@ ms.locfileid: "10993723"
 |[PrintHeaderFooter](#printheaderfooter)|列印頁首與頁尾|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|將系統預設的印表機設定為預設印表機|
 |[PrintingEnabled](#printingenabled)|啟用列印|
+|[PrintingPaperSizeDefault](#printingpapersizedefault)|預設列印頁面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系統列印對話方塊列印|
 ### [*Proxy 伺服器*](#proxy-server-policies)
 |原則名稱|標題|
@@ -852,6 +859,118 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### DefaultFileSystemReadGuardSetting
+  #### 控制檔案系统 API 的讀取使用
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  如果將此原則設定為 3，則網站可以使用檔案系統 API 請求對主機作業系統檔案系統的讀取存取權。 如果將此原則設為2，存取權會遭到拒絕。
+
+如果未設定此原則，網站可以要求存取權。 使用者可以變更這個設定。
+
+原則選項對應：
+
+* BlockFileSystemRead (2) = 不允許任何網站透過檔案系統 API 要求對檔案和目錄的讀取存取權
+
+* BlockFileSystemRead (3) = 允許網站要求使用者透過檔案系統 API 授予對檔案和目錄的讀存取權
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 整數
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：DefaultFileSystemReadGuardSetting
+  - GP 名稱：控制檔案系统 API 的讀取使用
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：DefaultFileSystemReadGuardSetting
+  - 值類型：REG_DWORD
+  ##### 範例值：
+```
+0x00000002
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：DefaultFileSystemReadGuardSetting
+  - 範例值：
+``` xml
+<integer>2</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### DefaultFileSystemWriteGuardSetting
+  #### 控制檔案系統 API 的寫入使用
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  如果將此原則設定為 3，則網站可以使用檔案系統 API 請求對主機作業系統檔案系統的寫入存取權。 如果將此原則設為2，存取權會遭到拒絕。
+
+如果未設定此原則，網站可以要求存取權。 使用者可以變更這個設定。
+
+原則選項對應：
+
+* BlockFileSystemWrite (2) = 不允許任何網站要求對檔案和目錄的寫入存取權
+
+* AskFileSystemWrite (3) = 允許網站要求使用者授予對檔案和目錄的寫入存取權
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 整數
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：DefaultFileSystemWriteGuardSetting
+  - GP 名稱：控制檔案系统 API 的寫入使用
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：DefaultFileSystemWriteGuardSetting
+  - 值類型：REG_DWORD
+  ##### 範例值：
+```
+0x00000002
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：DefaultFileSystmWriteGuardSetting
+  - 範例值：
+``` xml
+<integer>2</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### DefaultGeolocationSetting
   #### 預設地理位置設定值
   
@@ -1148,7 +1267,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   #### 說明
   首先檢查的是 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然後才是此項原則。 選項為 'ClickToPlay' 和 'BlockPlugins'。 如果您將此原則設為 'BlockPlugins'，則所有網站皆會拒絕這個外掛程式。 'ClickToPlay' 可讓 Flash 外掛程式開始執行，但使用者可以按一下預留位置以啟動。
 
-                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                    
 
 如果您未設定此原則，則會使用 BlockPlugins，而且使用者可以變更此設定。
 
@@ -1363,6 +1482,234 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 範例值：
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### FileSystemReadAskForUrls
+  #### 允許透過這些網站上的檔案系統 API 讀取存取權
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  透過設定原則，您可以列出URL模式，這些模式指定哪些網站可以要求使用者透過檔案系統 API 授予他們對主機作業系統檔案系統中的檔案或目錄的讀取存取權。
+
+未設定原則意味著 [DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting) 將套用於所有網站（如果已設定）。 否則將套用使用者的個人設定。
+
+URL 模式無法與 [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls) 相衝突。 如果URL與兩者都相符，則兩個原則都不優先。
+
+如需有效 url 模式的詳細資訊，請參照 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 字串清單
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：FileSystemReadAskForUrls
+  - GP 名稱：允許透過這些網站上的檔案系統 API 讀取存取權
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+  ##### 範例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：FileSystemReadAskForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### FileSystemReadBlockedForUrls
+  #### 封鎖透過這些網站上的檔案系統 API 讀取存取權
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  如果設定此原則，您可以列出URL模式，這些模式指定哪些網站可以要求使用者透過檔案系統 API 授予他們對主機作業系統檔案系統中的檔案或目錄的讀存取權。
+
+如果您不設定此原則，[DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting) 將套用於所有網站（如果已設定）。 否則將套用使用者的個人設定。
+
+URL 模式無法與 [FileSystemReadAskForUrls](#filesystemreadaskforurls) 相衝突。 如果URL與兩者都相符，則兩個原則都不優先。
+
+如需有效 url 模式的詳細資訊，請參照 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 字串清單
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：FileSystemReadBlockedForUrls
+  - GP 名稱：封鎖透過這些網站上的檔案系統 API 讀取存取權
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+  ##### 範例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：FileSystemReadBlockedForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### FileSystemWriteAskForUrls
+  #### 允許這些網站上的檔案和目錄的寫入存取權
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  如果設定此原則，您可以列出URL模式，這些模式指定哪些網站可以要求使用者授予他們對主機作業系統檔案系統中的檔案或目錄的寫入取權。
+
+如果您不設定此原則，[DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting) 將套用於所有網站（如果已設定）。 否則將套用使用者的個人設定。
+
+URL 模式無法與 [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls) 相衝突。 如果URL與兩者都相符，則兩個原則都不優先。
+
+如需有效 url 模式的詳細資訊，請參照 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 字串清單
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：FileSystemWriteAskForUrls
+  - GP 名稱：允許這些網站上的檔案和目錄的寫入存取權
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+  ##### 範例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：FileSystemWriteAskForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### FileSystemWriteBlockedForUrls
+  #### 封鎖這些網站上的檔案和目錄的寫入存取權
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  如果設定此原則，您可以列出URL模式，這些模式指定哪些網站不可以要求使用者授予他們對主機作業系統檔案系統中的檔案或目錄的寫入取權。
+
+如果您不設定此原則，[DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting) 將套用於所有網站（如果已設定）。 否則將套用使用者的個人設定。
+
+URL 模式無法與 [FileSystemWriteAskForUrls](#filesystemwriteaskforurls) 相衝突。 如果URL與兩者都相符，則兩個原則都不優先。
+
+如需有效 url 模式的詳細資訊，請參照 https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 字串清單
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：FileSystemWriteBlockedForUrls
+  - GP 名稱：封鎖這些網站上的檔案和目錄的寫入存取權
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+  ##### 範例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：FileSystemWriteBlockedForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
 ```
   
 
@@ -4457,6 +4804,73 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### PrintingPaperSizeDefault
+  #### 預設列印頁面大小
+  
+  
+  #### 支援的版本：
+  - Windows 和 macOS 上，版本 86 或更新版本
+
+  #### 說明
+  覆寫預設列印頁面大小。
+
+如果所需紙張大小不在清單中，名稱應包含列出的其中一種格式或 [自訂]。 如果提供了 [自訂] 值則需指定 custom_size 屬性。 它以微米為單位描述所需的高度和寬度。 否則請不要指定 custom_size 屬性。 違反這些規則的原則會被忽略。
+
+如果使用者選擇的印表機無法列印此紙張尺寸，則忽略此原則。
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - Dictionary
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP 唯一名稱：PrintingPaperSizeDefault
+  - GP 名稱：預設列印頁面大小
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：PrintingPaperSizeDefault
+  - 值類型：REG_SZ
+  ##### 範例值：
+```
+SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
+  "custom_size": {
+    "height": 297000, 
+    "width": 210000
+  }, 
+  "name": "custom"
+}
+```
+
+
+  #### Mac 資訊和設定
+  - 喜好設定機碼名稱：PrintingPaperSizeDefault
+  - 範例值：
+``` xml
+<key>PrintingPaperSizeDefault</key>
+<dict>
+  <key>custom_size</key>
+  <dict>
+    <key>height</key>
+    <integer>297000</integer>
+    <key>width</key>
+    <integer>210000</integer>
+  </dict>
+  <key>name</key>
+  <string>custom</string>
+</dict>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### UseSystemPrintDialog
   #### 使用系統列印對話方塊列印
   
@@ -5286,11 +5700,11 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果您未設定此原則，則會啟用新索引標籤頁面上的所有背景影像類型。
 
-             
+    
 
-           
+     
 
-            
+   
 
 原則選項對應：
 
@@ -5340,13 +5754,14 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   ### NewTabPageCompanyLogo
   #### 設定新的索引標籤頁面公司標誌 (已過時)
-  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
+                                                                                                                 
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 85 及之後的版本中運作。
   #### 支援的版本：
-  - Windows 和 macOS 上，版本 79 或更新版本
+  - 在 Windows 和 macOS 上，版本 79 到 85
 
   #### 說明
-  此原則已遭取代，是因為它的運作效能不如預期，建議您不要使用此原則。 無法在 Microsoft Edge 版本 86 中使用。
+  由於操作要求的變更，此原則無法按預期運作。 囙此，它已過時，不應再使用。
 
 指定要在 Microsoft Edge 中新的索引標籤頁面上使用的公司標誌。
 
@@ -6805,17 +7220,17 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
  
 
-            
+   
 
-        
+  
 
-      
+   
 
-        
+  
 
-       
+    
 
-       
+    
 
 來自舊版 Microsoft Edge 的瀏覽器資料，一律會在初次執行時以無訊息方式移轉，而無論此原則的值為何。
 
@@ -7099,7 +7514,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
 若您未設定此原則，只有經使用者指定要自動開啟的檔案類型，才會在下載時持續自動開啟。
 
-                                                     
+              
 
 此原則僅可在已加入 Microsoft Active Directory 網域的 Windows 執行個體上、已註冊裝置管理的 Windows 10 專業版或企業版執行個體上或者透過 MDM 管理或透過 MCX 加入網域的 macOS 執行個體上取得。
 
@@ -8163,7 +8578,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 如果未設定此原則，則對強制執行的可接受服務和匯出目標沒有限制。
 
-              
+     
 
 原則選項對應：
 
@@ -9501,7 +9916,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 ```
 
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-                                              
+             
 ```
 
 
@@ -9750,7 +10165,7 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### 啟用從 Microsoft 進行網域動作下載 (已過時) 
-        
+  
   
   
   
@@ -10571,7 +10986,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 
   ### ForceNetworkInProcess
   #### 強制網路程式碼在瀏覽器處理程序中執行 (已過時) 
-        
+  
   
   
   
@@ -12642,7 +13057,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 在 Windows 7、Windows 8 和 macOS 上，此原則會控制使用方式和當機相關資料的傳送。 如果未設定此原則，則 Microsoft Edge 將預設為使用者的喜好設定。
 
 若要啟用此原則，[SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 必須設定為 [已啟用]。 如果 [MetricsReportingEnabled](#metricsreportingenabled) 或 [ SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 未設定或已停用，將不會將此資料傳送到 Microsoft。
-                                            
+           
 
 此原則僅可在已加入 Microsoft Active Directory 網域的 Windows 執行個體上、已註冊裝置管理的 Windows 10 專業版或企業版執行個體上或者透過 MDM 管理或透過 MCX 加入網域的 macOS 執行個體上取得。
 
@@ -13684,11 +14099,11 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 ```
 
 
-     
-     
+  
+  
    
  
-    
+ 
    
   
 
@@ -13736,8 +14151,8 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 ```
 
 
-     
-     
+  
+  
    
  
  
@@ -14278,7 +14693,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 在 Windows 7、Windows 8 和 macOS 上，此原則會控制所造訪網站相關資訊的傳送。 如果未設定此原則，則 Microsoft Edge 將預設為使用者的喜好設定。
 
 若要啟用此原則，[MetricsReportingEnabled](#metricsreportingenabled) 必須設定為 [已啟用]。 如果 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 或 [MetricsReportingEnabled](#metricsreportingenabled) 未設定或已停用，將不會將此資料傳送到 Microsoft。
-                                           
+             
 
   #### 支援的功能：
   - 可強制執行：是
@@ -15078,9 +15493,9 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 如果停用此原則，則 Microsoft Edge 將針對使用本機安裝的 CA 憑證進行驗證的連線，停用這些安全性保護。 針對使用公開信任的 CA 憑證進行驗證的連線，這些保護一律會啟用。
 
-                                                               
+                                                            
 
-                                                    
+             
 
 此原則可用來測試任何受影響的 Proxy，並進行升級。 受影響的 Proxy 預期會連線失敗，出現錯誤碼 ERR_TLS13_DOWNGRADE_DETECTED。
 
@@ -16025,7 +16440,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebComponentsV0Enabled
   #### 在 M84 前，重新啟用 Web 元件 v0 API。
-        
+  
   
   
   
@@ -16078,7 +16493,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebDriverOverridesIncompatiblePolicies
   #### 允許 WebDriver 覆寫不相容原則 (已過時) 
-        
+  
   
   
   
