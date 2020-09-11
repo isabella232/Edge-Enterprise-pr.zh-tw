@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 08/31/2020
+ms.date: 09/09/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: e778b3a0f578cb33c40e67f4e6573ef3caa13a51
-ms.sourcegitcommit: e03b67aa7819afd45b67177373baed8cfa01ca97
+ms.openlocfilehash: 01f42cee3ea32999119fbee9c850a518f3b5a796
+ms.sourcegitcommit: d1e7d83b2e4acaaf0cde995eb0f644036a1f976b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10985776"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "11005789"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "10985776"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 85.0.564.51：9 月 9 日
+
+安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-9-2020)
 
 ## 版本 85.0.564.44: 8月 31 日
 
