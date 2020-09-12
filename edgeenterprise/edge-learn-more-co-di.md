@@ -3,19 +3,19 @@ title: Microsoft Edge 中的 ClickOnce 和 DirectInvoke
 ms.author: kele
 author: dan-wesley
 manager: srugh
-ms.date: 04/30/2020
+ms.date: 09/10/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 深入了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke。
-ms.openlocfilehash: 8290c34bd29ca72678e3fa68f74b689d0cf797e3
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1d4e08c0ce3ee2afec7968cd892f77ef7bdc3fff
+ms.sourcegitcommit: 4c0b84b03e686a7a2989ce2187dbadf35418104a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979535"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "11012793"
 ---
 # 了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
@@ -55,13 +55,12 @@ DirectInvoke 使用案例取決於請求 DirectInvoke 之網站的用意。 例�
 
 對 ClickOnce 和 DirectInvoke 的支援：
 
-- 對所有 Windows 使用者都內建支援 DirectInvoke，但對所有 Windows 使用者停用 ClickOnce。
+- ClickOnce 和 DirectInvoke 全面支援所有 Windows 使用者。
 
   > [!NOTE]
-  > 需要 ClickOnce 支援的使用者可以移至 edge://flags/#edge-click-once 並從下拉式清單中選取 **啟用**。 您必須**重新啟動**瀏覽器。
+  > 想停用 ClickOnce 支援的使用者可以移至*edge://flags/#edge-click-once* 並從下拉式清單中選取 **[停用]**。 您必須**重新啟動**瀏覽器。
 
 - ClickOnce 和 DirectInvoke 不支援 Windows 以外的任何平台。
-- 由於 ClickOnce 是一個面向企業的功能，由特定 Power Users 群組使用，且不用於一般用途，因此預設情況下停用 ClickOnce。
 
 ## ClickOnce 和 DirectInvoke 檔案處理安全性
 
