@@ -3,19 +3,19 @@ title: Microsoft Edge 企業版同步處理
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 08/03/2020
+ms.date: 09/15/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 企業版同步處理
-ms.openlocfilehash: a6d01356db478871a7c6b386bbb731b32dc4739a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: d9cd643142d0f6744664a5071c5000b820583e41
+ms.sourcegitcommit: 06c365faeea6070f103fe867cc2da13539ae4680
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979587"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "11016342"
 ---
 # Microsoft Edge 企業版同步處理
 
@@ -33,6 +33,8 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 - 地址等 (表單填滿)
 - 集合
 - 設定
+- 瀏覽歷程記錄
+- 開啟索引標籤
 
 同步功能透過使用者同意啟用，使用者可以為上面列出的每種資料類型開啟或關閉同步。
 
@@ -41,38 +43,22 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 
 ## 必要條件
 
-目前 Azure Active Directory (Azure AD) 帳戶的 Microsoft Edge 同步適用於以下訂閱：
+Azure Active Directory (Azure AD) 帳戶的 Microsoft Edge 同步適用於以下任何訂閱：
 
 - Azure AD Premium (P1 和 P2)
 - M365 商務進階版
 - Office 365 E3 及以上
 - Azure 資訊保護 (AIP) (P1 和 P2)
-- 所有 EDU 訂閱 (O365 A1 或以上、M365 A1 或以上，或 Azure 資訊保護 P1 或 P2 (學生或教職員))
+- 所有 EDU 訂閱 (適用於學生或教職員的 Microsoft Apps、適用於學生或教職員的 Exchange Online、O365 A1 或以上、M365 A1 或以上或適用於學生或教職員的 Azure 資訊保護 P1 或 P2)
 
-> [!NOTE]
-> 同步相依於 Azure 資訊保護 (AIP) 提供的保護服務，以保護同步資料。 此服務目前可用於上述訂閱。 若要查看具有 AIP 的 SKU 的完整清單，請參閱[資訊保護定價](https://azure.microsoft.com/pricing/details/information-protection/)。
+## 設定 Microsoft Edge 同步處理
 
-## Microsoft Edge 同步的設定選項
+Microsoft Edge 同步處理的設定選項可透過 Azure 資訊保護 (AIP) 服務取得。 當為租用戶啟用 AIP，則無論使用何種授權，所有使用者都可以同步 Microsoft Edge 資料。 有關如何解啟用 AIP 的指示，可以在[此處](https://docs.microsoft.com/azure/information-protection/activate-office365)找到。
 
-以下設定選項可用於啟用 Microsoft Edge 同步：
-
-- Azure 資訊保護 (AIP)
-- Azure AD 企業狀態漫遊 (ESR)
-
-如果停用 AIP 和 ESR，使用者將看到一條錯誤訊息，指示其帳戶無法進行同步。
-
-### Azure 資訊保護 (AIP)
-
-如果為租用戶啟用了 Azure 資訊保護 (AIP) 服務，則無論使用何種授權，所有使用者都可以同步 Microsoft Edge 資料。 有關如何解啟用 AIP 的指示，可以在[此處](https://docs.microsoft.com/azure/information-protection/activate-office365)找到。
-
-若要限制同步到某組使用者，可以為這些使用者啟用 [AADRM 上線控制原則](https://docs.microsoft.com/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps)。 如果在確保所有必要的使用者都已上線後仍無法使用同步處理，請確定使用 [Get-AIPServiceIPCv3](https://docs.microsoft.com/powershell/module/aipservice/Get-AipServiceIPCv3?view=azureipps) PowerShell Cmdlet 來啟用 IPCv3Service。
+若要限制同步到某組使用者，可以為這些使用者啟用 [AIP 上線控制原則](https://docs.microsoft.com/powershell/module/aipservice/set-aipserviceonboardingcontrolpolicy?view=azureipps) 。 如果在確保所有必要的使用者都已上線後仍無法使用同步處理，請確定使用 [Get-AIPServiceIPCv3](https://docs.microsoft.com/powershell/module/aipservice/get-aipserviceipcv3?view=azureipps) PowerShell Cmdlet 來啟用 IPCv3Service。
 
 > [!CAUTION]
-> 啟用 Azure 資訊保護也會限制其他使用 AIP 應用程式的存取，例如 Microsoft Word 或 Microsoft Outlook。
-
-### Azure AD 企業狀態漫遊 (ESR)
-
-如果為任何使用者或租用戶啟用了 Azure Active Directory [企業狀態漫遊](https://docs.microsoft.com/azure/active-directory/devices/enterprise-state-roaming-overview) (ESR) 功能，則無論上線控制原則設定如何，他們都可以使用 Microsoft Edge 同步功能。
+> 啟用 Azure 資訊保護也會允許其他應用程式 (例如 Microsoft Word 或 Microsoft Outlook) 使用 AIP 來保護內容。 此外，任何用來限制 Edge 同步處理的上線控制原則，也會使用 AIP 限制其他應用程式來保護內容。
 
 ## Microsoft Edge 和企業狀態漫遊
 
@@ -85,6 +71,8 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 - [SyncDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#syncdisabled)：完全停用同步。
 - [SavingBrowserHistoryDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled)：停用儲存瀏覽歷程記錄和同步。此原則還會停用開啟索引標籤同步。
 - [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled)：設定要從同步中除的類型清單。
+- [RoamingProfileSupportEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilesupportenabled)：允許 Active Directory (AD) 設定檔使用內部部署儲存體。 如需詳細資訊，請參閱[ 適用於 Active Directory (AD) 使用者的內部部署同步](https://docs.microsoft.com/DeployEdge/microsoft-edge-on-premises-sync)。
+- [ForceSync]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#forcesync)：預設會開啟同步處理，且不需要使用者同意即可同步處理。  
 
 ## 常見問題集
 
@@ -92,7 +80,7 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 
 #### 已同步的資料是否已加密？ 
 
-資料在傳輸時會使用 TLS 1.2 或更高版本加密，此外，資料在 Microsoft 服務存放時則使用 AES256 加密。
+資料會在使用 TLS 1.2 或更高版本的傳輸中加密。 除了瀏覽器歷程記錄和開啟索引標籤資料類型之外，大部分的資料類型在 Microsoft 的服務中還會使用 AES256 進行加密。 若要防止這些資料類型同步處理，您可以套用 [SavingBrowserHistoryDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#savingbrowserhistorydisabled) 原則。
 
 #### Microsoft Edge 同步資料儲存在哪裡？
 
