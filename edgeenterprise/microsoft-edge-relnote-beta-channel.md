@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 2bcd18cd18c9b5be1f4b3b39137aea09889bbc2f
-ms.sourcegitcommit: db44b524973df8ac811b09e6b71c25be9ba92bbc
+ms.openlocfilehash: 75ae113b7e4b39a76b70d9c0f85bc484f63e3c1a
+ms.sourcegitcommit: 468b75d86803ad1531d7bed8e6c1a562a00ebe50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "11015359"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "11026893"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -35,7 +35,6 @@ ms.locfileid: "11015359"
 * **Internet Explorer 模式：**
 
    * 讓使用者使用 Microsoft Edge 使用者介面 (UI) 在 Internet Explorer 模式中測試網站。 從 Microsoft Edge 版本 86 開始，系統管理員可以啟用一個 UI 選項，讓其使用者可以在 Internet Explorer 模式中載入索引標籤，以用於測試目的或做為權宜之計，直到將網站新增至網站清單 XML 為止。
-   * 讓使用者在需要 IE 模式的網站上提供意見反應。 使用者可以使用 Microsoft Edge UI 選項來傳送意見反應給您。 您可以透過群組原則將此 UI 選項設定為顯示，並選擇您想要接收此資訊的方式 (透過電子郵件或使用自訂表單)。
 
 * **使用下載管理員來刪除磁碟上的下載項目。** 使用者現在可以在不離開瀏覽器的情況下，從磁碟中刪除其下載的檔案。 在下載架子或下載頁面的操作功能表中，有新的 [刪除下載] 功能。
 
@@ -313,7 +312,7 @@ ms.locfileid: "11015359"
 
 #### 新原則
 
-新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AppCacheForceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardcontainerproxy) - 應用程式防護容器 Proxy。
@@ -394,7 +393,7 @@ ms.locfileid: "11015359"
 
 #### 新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AllowSurfGame](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。
