@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 0561f403bb385792767c3666be18bb6cf680edaf
+ms.openlocfilehash: 146043b518f02b8581498c273db4327682993609
 ms.sourcegitcommit: d4f2b62b41f0e40ec6b22aeca436b2c261658bd8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078121"
+ms.locfileid: "11078185"
 ---
 # Microsoft Edge - 原則
 最新版本的 Microsoft Edge 包含下列原則。 您可以使用這些原則來設定 Microsoft Edge 在組織中的執行方式。
@@ -1268,8 +1268,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   首先檢查的是 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然後才是此項原則。 選項為 'ClickToPlay' 和 'BlockPlugins'。 如果您將此原則設為 'BlockPlugins'，則所有網站皆會拒絕這個外掛程式。 'ClickToPlay' 可讓 Flash 外掛程式開始執行，但使用者可以按一下預留位置以啟動。
 
 如果未設定此原則，則使用者可以手動變更此設定。
-
-                                                                                     
 
 注意：自動播放只適用於在 [PluginsAllowedForUrls](#pluginsallowedforurls) 原則中明確列出的網域。 若要開啟所有網站的自動播放功能，請將 http://* 及 https://* 新增至 URLs 的允許清單中。
 
@@ -3256,7 +3254,6 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 - 「位址列」 ([重新導向]) ，新增索引標籤的搜尋 方塊會在新的索引標籤上使用 [位址] 列進行搜尋。
 
 原則選項對應：
-  
 
 * bing (bing) = 搜尋方塊 (建議使用)
 
@@ -4409,12 +4406,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -5700,12 +5691,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果您未設定此原則，則會啟用新索引標籤頁面上的所有背景影像類型。
 
-    
-
-     
-
-   
-
 原則選項對應：
 
 * DisableImageOfTheDay (1) = 停用每日背景影像類型
@@ -5754,7 +5739,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   ### NewTabPageCompanyLogo
   #### 設定新的索引標籤頁面公司標誌 (已過時)
-                                                                                                                 
   
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 85 及之後的版本中運作。
   #### 支援的版本：
@@ -6639,8 +6623,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
 如果停用或未設定此原則，則不允許頁面在頁面關閉期間傳送同步 XHR 要求。
 
-  
-
   #### 支援的功能：
   - 可強制執行：是
   - 可以建議：否
@@ -7218,20 +7200,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   #### 說明
   如果啟用此原則，則來自指定瀏覽器的所有支援資料類型和設定都會在初次執行時以無訊息方式自動匯入。 在初次執行體驗期間，也會略過匯入區段。
 
- 
-
-   
-
-  
-
-   
-
-  
-
-    
-
-    
-
 來自舊版 Microsoft Edge 的瀏覽器資料，一律會在初次執行時以無訊息方式移轉，而無論此原則的值為何。
 
 如果將此原則設為 'FromDefaultBrowser'，則會匯入與受管理裝置上的預設瀏覽器對應的資料類型。
@@ -7262,7 +7230,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 如果將此原則設定為 'FromSafari'，使用者資料就不再匯入到 Microsoft Edge。 這是因為在 Mac 上使用完整的磁片存取方式所致。
 在 macOS Mojave 及更新版本中，Safari 資料不可能再自動匯入到 Microsoft Edge 中。
- 
 
 從 Microsoft Edge 版本 83 開始，如果此原則設定為 'FromMozillaFirefox'，則會從 Mozilla Firefox 匯入下列資料類型：
 1. 我的最愛或書籤
@@ -7513,8 +7480,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 使用者已指定要自動開啟的檔案類型，將會在下載時持續自動開啟。 使用者仍可繼續指定其他要自動開啟的檔案類型。
 
 若您未設定此原則，只有經使用者指定要自動開啟的檔案類型，才會在下載時持續自動開啟。
-
-              
 
 此原則僅可在已加入 Microsoft Active Directory 網域的 Windows 執行個體上、已註冊裝置管理的 Windows 10 專業版或企業版執行個體上或者透過 MDM 管理或透過 MCX 加入網域的 macOS 執行個體上取得。
 
@@ -8200,10 +8165,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   #### 說明
   此原則已過時，因為其目的只是為了提供做為短期的機制，給予企業更多時間來更新其環境，並在發現它們與內建的認證驗證程式不相容時報告問題。
- 
-  
-
-  
 
 當 Mac OS X 上的舊版憑證驗證程式支援已計畫移除時，此原則無法在 Microsoft Edge 版本 87 上運作。
 
@@ -8577,8 +8538,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 如果啟用此原則，系統會封鎖與指定清單相符的服務和匯出目標。
 
 如果未設定此原則，則對強制執行的可接受服務和匯出目標沒有限制。
-
-     
 
 原則選項對應：
 
@@ -9047,8 +9006,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
   - Windows 7 和 macOS 上，版本 77 或更新版本
 
   #### 說明
-   
-
   若您將此原則設為 True，Microsoft Edge 就會在啟動時永遠檢查是否為預設瀏覽器，如果可能，則會自動註冊。
 
 若您將此原則設為 False，Microsoft Edge 就會停止檢查是否為預設瀏覽器，並開啟此選項的使用者控制。
@@ -9914,9 +9871,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 值類型：REG_SZ
   ##### 範例值：
 ```
-
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-             
 ```
 
 
@@ -10165,9 +10120,6 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### 啟用從 Microsoft 進行網域動作下載 (已過時) 
-  
-  
-  
   
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 84 及之後的版本中運作。
   #### 支援的版本：
@@ -10987,10 +10939,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   ### ForceNetworkInProcess
   #### 強制網路程式碼在瀏覽器處理程序中執行 (已過時) 
   
-  
-  
-  
-  
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 83 及之後版本中運作。
   #### 支援的版本：
   - Windows 上，版本 78 至 83
@@ -11002,10 +10950,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 
 此原則預設為停用。 如果啟用，當網路處理程序在沙盒中執行時，使用者會面臨安全性問題。
 
-
- 
-
-  
   #### 支援的功能：
   - 可強制執行：是
   - 可以建議：否
@@ -12481,7 +12425,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 原則選項對應：
-  
 
 * 預設值 (0) = 預設值
 
@@ -12531,13 +12474,13 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   #### 說明
   此原則是用來取代 ie-mode-test 標誌原則。 可讓使用者從 UI 功能表選項開啟 IE 模式索引標籤。
 
-  此設定可與下列內容結合使用：將[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設為 'IEMode' 及 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 原則，其中的清單至少有一個項目。
+       此設定會與下列內容一併執行：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode'，並設定 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 原則，其中該清單至少擁有一個項目。
 
-  如果您啟用此項原則，使用者可以從 UI 選項開啟 IE 模式索引標籤，並將目前的網站導向至 IE 模式網站。
+       如果您啟用此項原則，使用者可以從 UI 選項開啟 IE 模式索引標籤，並將目前的網站導向至 IE 模式網站。
 
-  如果您停用此項原則，使用者就無法在功能表中直接看到 UI 選項。 
-  
-  如果您未設定此原則，您可以手動設定為 ie-mode-test 標誌。
+       如果您停用此項原則，使用者就無法在功能表中直接看到 UI 選項。
+
+       如果您未設定此原則，您可以手動設定為 ie-mode-test 標誌。
 
   #### 支援的功能：
   - 可強制執行：是
@@ -13039,8 +12982,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   ### MetricsReportingEnabled
   #### 啟用使用方式和當機相關的資料報告 (已過時)
   >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
-   
-  
   
   #### 支援的版本：
   - Windows 和 macOS 上，版本 77 或更新版本
@@ -13057,11 +12998,9 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 在 Windows 7、Windows 8 和 macOS 上，此原則會控制使用方式和當機相關資料的傳送。 如果未設定此原則，則 Microsoft Edge 將預設為使用者的喜好設定。
 
 若要啟用此原則，[SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 必須設定為 [已啟用]。 如果 [MetricsReportingEnabled](#metricsreportingenabled) 或 [ SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 未設定或已停用，將不會將此資料傳送到 Microsoft。
-           
 
 此原則僅可在已加入 Microsoft Active Directory 網域的 Windows 執行個體上、已註冊裝置管理的 Windows 10 專業版或企業版執行個體上或者透過 MDM 管理或透過 MCX 加入網域的 macOS 執行個體上取得。
 
-  
   #### 支援的功能：
   - 可強制執行：是
   - 可以建議：否
@@ -13298,53 +13237,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   
 
-
- 
-   
- 
-
-   
-  
-
-   
-
-   
-
-  
- 
-  
- 
-
-  
-   
-
-   
-  
-   
-   
-  
-   
- 
-   
-   
-   
-  
- 
- 
-   
- 
-   
-
-
-  
-  
-   
- 
- 
-   
-  
-
- 
   [回到頁首](#microsoft-edge---policies)
 
   ### OverrideSecurityRestrictionsOnInsecureOrigin
@@ -14100,12 +13992,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
 
   
-  
-   
- 
- 
-   
-  
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -14151,12 +14037,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -14674,8 +14554,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   ### SendSiteInfoToImproveServices
   #### 傳送網站資訊以改善 Microsoft 服務 (已過時)
   >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
-   
-  
   
   #### 支援的版本：
   - Windows 和 macOS 上，版本 77 或更新版本
@@ -14685,7 +14563,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 此原則允許傳送有關使用 Microsoft Edge 造訪網站的資訊給 Microsoft，以改善服務 (如搜尋)。
 
-   
 啟用此原則，以傳送有關使用 Microsoft Edge 造訪網站的資訊給 Microsoft。 停用此原則，以不要傳送有關使用 Microsoft Edge 造訪網站的資訊給 Microsoft。 在這兩種情況下，使用者都無法變更或覆寫設定。
 
 在 Windows 10 上，如果未設定此原則，則 Microsoft Edge 將預設為使用 Windows 診斷資料設定。 如果啟用此原則，而且 Windows 診斷資料設定設為「完整」時，Microsoft Edge 將僅傳送有關在 Microsoft Edge 中所造訪網站的資訊。 如果停用此原則，Microsoft Edge 將不會傳送有關造訪網站的資訊。 深入了解 Windows 診斷資料設定：[https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
@@ -14693,7 +14570,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 在 Windows 7、Windows 8 和 macOS 上，此原則會控制所造訪網站相關資訊的傳送。 如果未設定此原則，則 Microsoft Edge 將預設為使用者的喜好設定。
 
 若要啟用此原則，[MetricsReportingEnabled](#metricsreportingenabled) 必須設定為 [已啟用]。 如果 [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) 或 [MetricsReportingEnabled](#metricsreportingenabled) 未設定或已停用，將不會將此資料傳送到 Microsoft。
-             
 
   #### 支援的功能：
   - 可強制執行：是
@@ -14979,8 +14855,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 指定是否要在我的最愛列中加入 Office.com 的捷徑。 針對已登入 Microsoft Edge 的使用者，該捷徑可帶領使用者前往其 Microsoft Office 應用程式和文件中。如果您啟用或不設定此原則，則使用者可以透過變更 [我的最愛] 列內容功能表中的切換來選擇是否要看到該捷徑。
 如果您停用此原則，就不會顯示捷徑。
-
-                                                       
 
   #### 支援的功能：
   - 可強制執行：是
@@ -15288,8 +15162,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
 此原則不會影響音訊、視訊和影像以外的其他類型混合內容。
 
-
-  
   #### 支援的功能：
   - 可強制執行：是
   - 可以建議：否
@@ -15384,8 +15256,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   #### 說明
   停用 Microsoft Edge 中的資料同步。 此原則也會防止顯示同步同意提示。
 
-
- 
 如果未設定此原則或將它套用為建議，則使用者將可以開啟或關閉同步。 如果將此原則套用為強制，則使用者將無法開啟同步。
 
   #### 支援的功能：
@@ -15480,7 +15350,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
   ### TLS13HardeningForLocalAnchorsEnabled
   #### 啟用適於本機信賴起點的 TLS 1.3 安全性功能 (已過時)
   
-  
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 85 及之後的版本中運作。
   #### 支援的版本：
   - 在 Windows 和 macOS 上，版本 81 到 85
@@ -15493,10 +15362,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 如果啟用此原則或未設定，則 Microsoft Edge 將會針對所有連線啟用這些安全性保護。
 
 如果停用此原則，則 Microsoft Edge 將針對使用本機安裝的 CA 憑證進行驗證的連線，停用這些安全性保護。 針對使用公開信任的 CA 憑證進行驗證的連線，這些保護一律會啟用。
-
-                                                            
-
-             
 
 此原則可用來測試任何受影響的 Proxy，並進行升級。 受影響的 Proxy 預期會連線失敗，出現錯誤碼 ERR_TLS13_DOWNGRADE_DETECTED。
 
@@ -15760,8 +15625,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 如果停用此原則或未設定，則使用者可以設定自己的防止追蹤層級。
 
 原則選項對應：
-   
- 
 
 * TrackingPreventionOff (0) = 關閉 (無防止追蹤)
 
@@ -16442,9 +16305,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ### WebComponentsV0Enabled
   #### 在 M84 前，重新啟用 Web 元件 v0 API。
   
-  
-  
-  
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 84 及之後的版本中運作。
   #### 支援的版本：
   - 在 Windows 和 macOS 上，版本 80 至 84
@@ -16495,15 +16355,11 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ### WebDriverOverridesIncompatiblePolicies
   #### 允許 WebDriver 覆寫不相容原則 (已過時) 
   
-  
-  
-  
   >已過時：此原則已過時，且無法在 Microsoft Edge 版本 84 及之後的版本中運作。
   #### 支援的版本：
   - 在 Windows 和 macOS 上，版本 77 到 84
 
   #### 說明
-  
   
 此原則無法運作，因為 WebDriver 目前相容於所有現有原則。
 
