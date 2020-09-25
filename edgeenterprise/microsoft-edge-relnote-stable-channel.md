@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 09/09/2020
+ms.date: 09/23/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 01f42cee3ea32999119fbee9c850a518f3b5a796
-ms.sourcegitcommit: d1e7d83b2e4acaaf0cde995eb0f644036a1f976b
+ms.openlocfilehash: 91bb0ee198b22a25e61470962d4f192a5adf737d
+ms.sourcegitcommit: 4d250c0c48634ecb1ea7ca03307809c80bb21db8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "11005789"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "11077630"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "11005789"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 85.0.564.63：9 月 23 日
+
+安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-23-2020)
 
 ## 版本 85.0.564.51：9 月 9 日
 
@@ -163,7 +167,7 @@ ms.locfileid: "11005789"
 
 #### 新原則
 
-新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AppCacheForceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardcontainerproxy) - 設定應用程式防護容器 Proxy 的設定。
@@ -262,7 +266,7 @@ ms.locfileid: "11005789"
 
 #### 新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AllowSurfGame](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。

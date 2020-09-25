@@ -3,23 +3,27 @@ title: Microsoft Edge 安全性更新的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 09/09/2020
+ms.date: 09/23/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: dfa422a1a0a20271c99891590c16777f8f774b8b
-ms.sourcegitcommit: d1e7d83b2e4acaaf0cde995eb0f644036a1f976b
+ms.openlocfilehash: 944a57661a76815d2c90742070a3619a82e83be4
+ms.sourcegitcommit: 4d250c0c48634ecb1ea7ca03307809c80bb21db8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "11005779"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "11077620"
 ---
 # Microsoft Edge 安全性更新的版本資訊
 
 這些版本資訊提供有關 Microsoft Edge 穩定通道更新中所包含的安全性問題修正的資訊。
+
+## 2020 年 9 月 23 日
+
+Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 85.0.564.63)**，其中包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
 ## 2020 年 9 月 9 日
 
