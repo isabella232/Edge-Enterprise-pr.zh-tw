@@ -1,4 +1,4 @@
-# last revised 09/21/2020
+# last revised 09/29/2020
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -155,6 +155,8 @@
           href: edge-learnmore-mixed-content-downloads.md
         - name: 適用於穩定通道更新的漸進式套件推出
           href: microsoft-edge-update-progressive-rollout.md
+        - name: 為 Microsoft Edge 提供我的最愛
+          href: edge-learnmore-provision-favorites.md
         - name: 規則運算式 2 (re2.h) 語法
           href: edge-learnmore-regex.md
         - name: 使用者資料目錄變數
