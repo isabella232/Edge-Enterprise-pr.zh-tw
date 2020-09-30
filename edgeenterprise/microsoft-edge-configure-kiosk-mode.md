@@ -3,19 +3,19 @@ title: 設定 Microsoft Edge kiosk 模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 09/22/2020
+ms.date: 09/24/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 設定 Microsoft Edge kiosk 模式
-ms.openlocfilehash: d7c9df82079f8343d43ccfd312623e6e01358fa9
-ms.sourcegitcommit: 858227653fc89532d1d274735f53280e27b2a8c0
+ms.openlocfilehash: 17852cc7c7e4921a0fbef7d09a3f1c3d3cccf49f
+ms.sourcegitcommit: b1285b7745eb41b241d706b401f8ce78fa33b227
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "11072658"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "11078663"
 ---
 # 設定 Microsoft Edge kiosk 模式
 
@@ -77,7 +77,7 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 
 ## 設定有受指派存取權的 kiosk 模式
 
-您目前可使用最新的 [Windows 10 測試人員預覽版](https://insider.windows.com/) 20215 版或更新版本，以及 [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download) 87.0.644 版或更新版本，測試有受指派存取權的 kiosk 模式。
+您目前可使用最新的 [Windows 10 測試人員預覽版](https://insider.windows.com/) 20215 版或更新版本，以及 [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download) 87.0.644.4 版或更新版本，測試有受指派存取權的 Microsoft Edge kiosk 模式。
 
 **如何取得 Windows 測試人員預覽？**
 
@@ -88,7 +88,7 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的方法。 使用下列步驟設定單一應用程式 kiosk 電腦。
 
 1. 安裝最新的 Windows 10 測試人員預覽版，20215 版或更新版本。 請依照[開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
-2. 安裝最新版的 [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download)，87.0.644 版或更新版本。
+2. 安裝最新版的 [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download)，87.0.644.4 版或更新版本。
 
    > [!IMPORTANT]
    > 由於需要裝置層級安裝，因此僅支援一個非 Canary 通道。
@@ -99,39 +99,39 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 
 4. 在 ** ** [設定 kiosk] 頁面上，按一下 ** **[開始使用]。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-2-get-started.png" alt-text="Kiosk 頁面 -開始使用":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-2-get-started.png" alt-text="設定有受指派存取權的 kiosk":::
 
 5. 輸入名稱以建立新的 kiosk 帳戶，或從填入的下拉式清單選擇現有帳戶，然後按 ** **[下一步]。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="Kiosk 模式 - 建立帳戶":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="設定有受指派存取權的 kiosk":::
 
 6. 在** ** [選擇 kiosk 應用程式] 頁面上，選取** **[Microsoft Edge]，然後按 ** **[下一步]。
 
    > [!NOTE]
    > 這僅適用於 Microsoft Edge Dev、Beta 和 Stable 通道。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="Kiosk 模式 - 選擇應用程式":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="設定有受指派存取權的 kiosk":::
 
 7. 針對以 kiosk 模式執行時 Microsoft Edge 的顯示方式，選取下列其中一個選項：
 
    - 數位/互動式告示板 - 執行 Microsoft Edge，以全螢幕模式顯示特定網站。
    - 公用瀏覽器 - 執行受限制的 Microsoft Edge 多索引版本。
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Kiosk 模式顯示 - 全螢幕數位告示板":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="設定有受指派存取權的 kiosk":::
 
 8. 選取 ** **[下一步]。
 9. 輸入 kiosk 啟動時要載入的 URL。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-6-enter-url.png" alt-text="Kiosk 模式 - 輸入 URL":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-6-enter-url.png" alt-text="設定有受指派存取權的 kiosk":::
 
 10. 接受 5 分鐘的閒置時間預設值，或提供您自己的值。
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-7-enter-idle-time.png" alt-text="Kiosk 模式 - 輸入閒置時間":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-7-enter-idle-time.png" alt-text="設定有受指派存取權的 kiosk":::
 
 11. 按 ** **[下一步]。
 12. 關閉 ** ** [設定] 視窗，儲存並套用您的選擇。
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Kiosk 模式 - 完成設定":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="設定有受指派存取權的 kiosk":::
 
 13. 從 kiosk 裝置登出，然後使用本機 kiosk 帳戶登入，驗證設定。
 
@@ -176,6 +176,6 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 ## 請參閱
 
 - [設定 Windows 桌面版的 Kiosk 與數位招牌](https://docs.microsoft.com/windows/configuration/kiosk-methods)
-- [部署 Microsoft Edge 舊版 kiosk 模式](https://aka.ms/edgekioskmode) 
+- [部署 Microsoft Edge 舊版 kiosk 模式](https://aka.ms/edgekioskmode)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
