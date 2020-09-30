@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 09/22/2020
+ms.date: 09/29/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: eca1e0e3caf79bcd797497cd20786957cc09a20a
-ms.sourcegitcommit: bf217e285b5a5fd7da8ca3916e53c3a8b05f0a5a
+ms.openlocfilehash: 5fd28ccdb9c4df416f15ceac76d3a81dfc8d52f8
+ms.sourcegitcommit: 898894cf8febd5bdd7d12103b9496eace1415fb7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "11076341"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "11088587"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "11076341"
 
 > [!IMPORTANT]
 > 請參閱這個[有關 Microsoft Edge 發行通道的更新](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/)。
+
+## 版本 86.0.622.28：9 月 28 日
+
+已修正各種錯誤和效能問題。
 
 ## 版本 86.0.622.15：9 月 14 日
 
@@ -314,7 +318,7 @@ ms.locfileid: "11076341"
 
 #### 新原則
 
-新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
+新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
 
 - [AppCacheForceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardcontainerproxy) - 應用程式防護容器 Proxy。
@@ -395,7 +399,7 @@ ms.locfileid: "11076341"
 
 #### 新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
 
 - [AllowSurfGame](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。
