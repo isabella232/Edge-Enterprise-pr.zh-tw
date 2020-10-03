@@ -3,19 +3,19 @@ title: Microsoft Edge 企業版同步處理
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 09/15/2020
+ms.date: 09/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 企業版同步處理
-ms.openlocfilehash: d9cd643142d0f6744664a5071c5000b820583e41
-ms.sourcegitcommit: 06c365faeea6070f103fe867cc2da13539ae4680
+ms.openlocfilehash: d5868fb496c036d750925bb5ae6dfa3de0293fd2
+ms.sourcegitcommit: 8a4479a1b034c3c13ea03ee3a2374a1af332cb38
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "11016342"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "11091945"
 ---
 # Microsoft Edge 企業版同步處理
 
@@ -33,8 +33,6 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 - 地址等 (表單填滿)
 - 集合
 - 設定
-- 瀏覽歷程記錄
-- 開啟索引標籤
 
 同步功能透過使用者同意啟用，使用者可以為上面列出的每種資料類型開啟或關閉同步。
 
@@ -80,7 +78,7 @@ Microsoft Edge 同步處理的設定選項可透過 Azure 資訊保護 (AIP) 服
 
 #### 已同步的資料是否已加密？ 
 
-資料會在使用 TLS 1.2 或更高版本的傳輸中加密。 除了瀏覽器歷程記錄和開啟索引標籤資料類型之外，大部分的資料類型在 Microsoft 的服務中還會使用 AES256 進行加密。 若要防止這些資料類型同步處理，您可以套用 [SavingBrowserHistoryDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#savingbrowserhistorydisabled) 原則。
+資料會在使用 TLS 1.2 或更高版本的傳輸中加密。 大部分的資料類型會使用 AES256 在 Microsoft 服務中進一步靜態加密。 
 
 #### Microsoft Edge 同步資料儲存在哪裡？
 
