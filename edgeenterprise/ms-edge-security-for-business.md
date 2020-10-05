@@ -3,19 +3,19 @@ title: 企業的 Microsoft Edge 安全性
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 09/30/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 企業的 Microsoft Edge 安全性
-ms.openlocfilehash: 313d1837d85fe23ab910741e28f95b77ffd7029d
-ms.sourcegitcommit: fbfe796b2717573dc221b9d4509a1662d9bbb452
+ms.openlocfilehash: 018353c4f85bc380d85554d058d029dfde959257
+ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "11091682"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "11094737"
 ---
 # 企業的 Microsoft Edge 安全性
 
@@ -46,7 +46,7 @@ Microsoft Edge 是 Windows 10 上唯一原生支援硬體隔離功能的瀏覽�
 
 除了阻擋外部威脅，IT 系統管理員也必須防範內部風險。 IT 系統管理員的優先要務，是以強有力的方式大幅保護機密的公司資料，人力分散各地時，這點格外重要。 Microsoft Edge 是唯一原生支援 Azure AD 條件式存取、Windows 資訊保護和全新 Microsoft 端點資料外洩防護 (DLP) 的瀏覽器，而且不需要額外軟體。
 
-**Microsoft Edge 是唯一原生支援條件式存取的瀏覽器**。 [Microsoft Edge 的條件式存取支援](https://docs.microsoft.com/DeployEdge/security-overview#conditional-access)，讓組織的存取控制決策輕輕鬆鬆即可利用身分識別訊號。 [條件式存取](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) 是 Azure Active Directory 使用的工具，可匯集訊號，讓您做出決策及強制執行組織原則。 條件式存取是全新身分識別導向控制台的核心。 若要在 Chrome 取得條件式存取支援，需要有額外的外掛程式。
+**Microsoft Edge 是唯一原生支援條件式存取的瀏覽器**。 [Microsoft Edge 的條件式存取支援](ms-edge-security-conditional-access.md)，讓組織的存取控制決策輕輕鬆鬆即可利用身分識別訊號。 [條件式存取](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) 是 Azure Active Directory 使用的工具，可匯集訊號，讓您做出決策及強制執行組織原則。 條件式存取是全新身分識別導向控制台的核心。 若要在 Chrome 取得條件式存取支援，需要有額外的外掛程式。
 
 > [!NOTE]
 > Azure AD 條件式存取所需的 Microsoft 365 E3 或更新版本訂閱。
