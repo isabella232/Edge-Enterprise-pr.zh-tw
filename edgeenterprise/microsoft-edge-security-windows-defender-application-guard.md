@@ -3,19 +3,19 @@ title: '[Microsoft Edge] 和 [Windows Defender 應用程式防護]'
 ms.author: srugh
 author: dan-wesley
 manager: seanlyn
-ms.date: 06/19/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援。
-ms.openlocfilehash: 7bd2efd35e0cd65c524a17a88f659e9b3838233f
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 7052c8cee9282c0ca2f5cafaa608e7e4e71d111d
+ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979618"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "11094757"
 ---
 # Microsoft Edge 對 Microsoft Defender 應用程式防護的支援。
 
@@ -121,5 +121,4 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 ## 請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [安全性概觀](security-overview.md)
 - [Microsoft Defender 進階威脅防護](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)
