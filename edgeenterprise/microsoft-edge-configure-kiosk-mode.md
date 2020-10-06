@@ -3,19 +3,19 @@ title: 設定 Microsoft Edge kiosk 模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 09/24/2020
+ms.date: 10/05/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 設定 Microsoft Edge kiosk 模式
-ms.openlocfilehash: 17852cc7c7e4921a0fbef7d09a3f1c3d3cccf49f
-ms.sourcegitcommit: b1285b7745eb41b241d706b401f8ce78fa33b227
+ms.openlocfilehash: 799b3dd4b7fc96f0b8e5cb718bca98fd4f38ec15
+ms.sourcegitcommit: 78905f66f4a6590a57c8f2bf808af92106b62996
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078663"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "11094860"
 ---
 # 設定 Microsoft Edge kiosk 模式
 
@@ -23,8 +23,6 @@ ms.locfileid: "11078663"
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
-
-如需 Microsoft Edge 舊版 kiosk 模式 (版本 45 和較舊版本) 的相關資訊，請參閱[部署 Microsoft Edge kiosk 模式](https://aka.ms/edgekioskmode)。
 
 ## 概觀
 
@@ -35,7 +33,7 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 
 兩個體驗皆執行 Microsoft Edge InPrivate 工作階段，可保護使用者資料。
 
-## 設定 Microsoft Edge kiosk 模式  
+## 設定 Microsoft Edge kiosk 模式
 
 您現在可以使用 Microsoft Edge Canary 通道版本 87 測試最初的 kiosk 模式功能組。 您可以從[ ](https://www.microsoftedgeinsider.com/download)[Microsoft Edge Insider Channels] 頁面下載 Microsoft Edge Canary。
 
@@ -43,10 +41,10 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 
 下列功能可供使用：
 
-- InPrivate 瀏覽。 工作階段結束時會刪除瀏覽器資料和下載項目，保護使用者資料。
-- 設定退出時刪除下載項目的原則。
-- 閒置一段時間後，重設使用者工作階段。
-- 初始的鎖定功能組。 可用功能如下：
+- InPrivate 導覽在工作階段結束時會刪除瀏覽器資料和下載項目，保護使用者資料。
+- 設定結束時刪除下載項目的原則。
+- 重設使用者工作階段在閒置一段時間後的選項。
+- 一組初始的鎖定功能。 可用功能如下：
 
   - 滑鼠快顯功能表
   - F12 開發人員工具
@@ -56,14 +54,14 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 > [!NOTE]
 > Kiosk 模式會逐漸演變，提供的功能也會增加。
 
-### 使用 kiosk 模式功能
+## 使用 kiosk 模式功能
 
 使用下列 Windows 10 命令列選項，即可叫用 Microsoft Edge kiosk 模式功能：
 
 - Kiosk 模式數位/互動式告示板： `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen`
 - Kiosk 模式公用瀏覽： `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing`
 
-#### 額外命令列選項
+### 額外命令列選項
 
 - `--no-first-run` ：停用第一個 Microsoft Edge 執行體驗。
 - `--kiosk-idle-timeout-minutes` ：在 Microsoft Edge kiosk 模式重設使用者的工作階段之前，變更上次使用者活動的時間 (以分鐘為單位)。 支援的值如下：
@@ -75,13 +73,23 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
     - 0 - 關閉計時器
     - 在閒置計時器重設為 1-1440 分鐘
 
-## 設定有受指派存取權的 kiosk 模式
+## 具有受指派的存取權的 Microsoft Edge
 
-您目前可使用最新的 [Windows 10 測試人員預覽版](https://insider.windows.com/) 20215 版或更新版本，以及 [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download) 87.0.644.4 版或更新版本，測試有受指派存取權的 Microsoft Edge kiosk 模式。
+### 單一應用程式 Kiosk
+
+Microsoft Edge 目前針對單一應用程式受指派的存權支援一組相同的舊版 Microsoft Edge kiosk 模式類型，包含下列鎖定體驗、數位/互動式告示板和公用瀏覽。  
+
+您目前可使用最新的  [Windows 10 測試人員預覽版](https://insider.windows.com/) 20215 版或更新版本，以及  [Microsoft Edge Dev 通道](https://www.microsoftedgeinsider.com/download) 87.0.644.4 版或更新版本，測試有受指派存取權的 kiosk 模式。
 
 **如何取得 Windows 測試人員預覽？**
 
-若要在電腦上安裝 Windows 10 測試人員預覽版，請依照[開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
+若要在電腦上安裝 Windows 10 測試人員預覽版，請依照 [開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
+
+### 多個應用程式 Kiosk
+
+Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)中的指示進行。 (Microsoft Edge Stable 通道的 AUMID 是 **MSEdge**)。
+
+設定 Microsoft Edge kiosk 模式 使用具有受指派的存取權的 Microsoft Edge 時，您可以使用 [Microsoft Edge 瀏覽器原則](https://review.docs.microsoft.com/en-us/DeployEdge/microsoft-edge-policies)來設定瀏覽體驗，以滿足您的獨特要求。
 
 ### 使用 Windows 設定進行設定
 
@@ -153,9 +161,9 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 我們會增加下列功能：
 
 - 結束工作階段按鈕
-- 唯讀 URL 網址列  
+- 唯讀網址列  
   - 可使用群組原則設定
-  - 啟用時，使用者無法為了瀏覽其他頁面編輯網址列 URL。
+  - 啟用時，使用者無法編輯網址列和瀏覽其他頁面。
 
 - 更多鎖定功能：
 

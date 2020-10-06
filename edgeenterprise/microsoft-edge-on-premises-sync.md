@@ -3,19 +3,19 @@ title: Active Directory (AD) 使用者的內部部署同步
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 08/21/2020
+ms.date: 10/05/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Active Directory (AD) 使用者的內部部署同步
-ms.openlocfilehash: 89f061072fdaa748d317ca8dc0c290893cfdfd6c
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ce7fd912bc8cbd71e12444d58073e43df6b138db
+ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979602"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "11099742"
 ---
 # Active Directory (AD) 使用者的內部部署同步
 
@@ -30,7 +30,7 @@ ms.locfileid: "10979602"
 
 ## 運作方式
 
-Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用於雲端同步) 建立關聯。啟用內部部署同步時，會將來自 AD 設定檔的資料儲存到名為 profile.pb 的檔案。 依預設，此檔案會儲存在 *%APP_DATA%/Microsoft/Edge* 中。 此檔案寫入之後，可在不同的電腦之間移動該檔案，並且將在每一部電腦上讀取和寫入使用者資料。
+Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用於雲端同步) 建立關聯。啟用內部部署同步時，會將來自 AD 設定檔的資料儲存到名為 profile.pb 的檔案。 依預設，此檔案會儲存在 *%APPDATA%/Microsoft/Edge* 中。 此檔案寫入之後，可在不同的電腦之間移動該檔案，並且將在每一部電腦上讀取和寫入使用者資料。
 
 ## 使用內部部署同步
 
@@ -46,7 +46,7 @@ Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用�
 
 ### 變更使用者資料的位置 (選用)
 
-依預設，使用者資料會儲存在 *%APP_DATA%/Microsoft/Edge* 中名為 **profile.pb** 的檔案中。 若要變更此檔案的位置，請設定 [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) 原則。
+依預設，使用者資料會儲存在 *%APPDATA%/Microsoft/Edge* 中名為 **profile.pb** 的檔案中。 若要變更此檔案的位置，請設定 [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) 原則。
 
 ## 啟用內部部署同步時使用者體驗的變更
 
