@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 10/02/2020
+ms.date: 10/07/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: ddb41087b457d84677143b9889d5dcbab8b2d39c
-ms.sourcegitcommit: ba1e705f4456bc315ce75d84d4ea006913f3bd93
+ms.openlocfilehash: 3108af527697a15875bc615deb6c3efe19a120d3
+ms.sourcegitcommit: 5dceccd6f882ce46ed53b8aa9247e115ce5adc7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "11094001"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "11104578"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "11094001"
 
 > [!IMPORTANT]
 > 請參閱這個[有關 Microsoft Edge 發行通道的更新](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/)。
+
+## 版本86.0.622.36：10月7日
+
+已修正各種錯誤和效能問題。
 
 ## 版本 86.0.622.31：10月1日
 
@@ -322,7 +326,7 @@ ms.locfileid: "11094001"
 
 #### 新原則
 
-新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
+新增了 5 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
 
 - [AppCacheForceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardcontainerproxy) - 應用程式防護容器 Proxy。
@@ -403,7 +407,7 @@ ms.locfileid: "11094001"
 
 #### 新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
 
 - [AllowSurfGame](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。
