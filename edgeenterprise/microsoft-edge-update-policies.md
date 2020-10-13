@@ -3,7 +3,7 @@ title: Microsoft Edge Update 原則文件
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 06/10/2020
+ms.date: 10/07/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,39 +11,38 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge Updater 支援的所有原則的文件
-ms.openlocfilehash: d772d8dd6f60b89e9bd12a77b740e5fad699756a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979552"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105567"
 ---
 # Microsoft Edge - 更新原則
 最新版本的 Microsoft Edge 包括以下原則，可用於控制更新 Microsoft Edge 的方式和時間。
 
-           
 如需 Microsoft Edge 中提供的其他原則的相關資訊，請參閱 [Microsoft Edge 瀏覽器原則參考](microsoft-edge-policies.md)
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
-
 ## 可用原則
 下表列出此版本 Microsoft Edge 提供的所有更新相關群組原則。 使用下表中的連結，深入了解特定原則。
 
 |||
 |-|-|
 |[應用程式](#applications)|[喜好設定](#preferences)|
-|[Proxy 伺服器](#proxy-server)||
+|[Proxy 伺服器](#proxy-server)|[Microsoft Edge WebView](#microsoft-edge-webview)|
 
 ### [應用程式](#applications-policies)
 |原則名稱|標題|
 |-|-|
 |[InstallDefault](#installdefault)|允許安裝預設值|
 |[UpdateDefault](#updatedefault)|更新原則覆寫預設值|
-|[安裝](#install)|允許安裝 (經由通道)|
+|[Install](#install)|允許安裝 (經由通道)|
 |[Update](#update)|更新原則覆寫 (經由通道)|
 |[Allowsxs](#allowsxs)|允許 Microsoft Edge 並排瀏覽器體驗|
 |[CreateDesktopShortcutDefault](#createdesktopshortcutdefault)|防止在預設安裝時建立桌面捷徑|
 |[CreateDesktopShortcut](#createdesktopshortcut)|防止在安裝時建立桌面捷徑 (每個通道)|
+|[RollbackToTargetVersion](#rollbacktotargetversion)|復原至目標版本 (每個通道)|
 |[TargetVersionPrefix](#targetversionprefix)|目標版本覆寫 (經由通道)|
 
 ### [喜好設定](#preferences-policies)
@@ -59,12 +58,11 @@ ms.locfileid: "10979552"
 |[ProxyPacUrl](#proxypacurl)|Proxy .pac 檔案的 URL|
 |[ProxyServer](#proxyserver)|Proxy 伺服器的位址或 URL|
 
-                 
-      
-  
-             
-            
-                  
+### [Microsoft Edge WebView](#microsoft-edge-webview-policies)
+|原則名稱|標題|
+|-|-|
+|[安裝](#install-webview)|允許安裝|
+|[更新](#update-webview)|更新原則覆寫|
 
 ## 應用程式原則
 
@@ -73,20 +71,22 @@ ms.locfileid: "10979552"
 #### 允許安裝預設值
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### 說明
-您可以指定所有通道的預設行為，以便在使用 Microsoft Edge 更新時允許或封鎖 Microsoft Edge 更新。
+#### 描述
+您可以指定所有通道的預設行為，以便在加入網域的裝置上允許或封鎖 Microsoft Edge。
 
 您可以為特定通道啟用「[允許安裝](#install)」原則來覆寫各個通道的此原則。
 
-如果停用此原則，則封鎖透過 Microsoft Edge Update 安裝 Microsoft Edge。 只有在使用者執行 Microsoft Edge Update 時，而且在使用者尚未設定「[允許安裝](#install)」原則時，才會影響 Microsoft Edge 軟體的安裝。
+如果停用此原則，則會封鎖 Microsoft Edge 安裝。 當 '[允許安裝](#install)' 原則設定為 [尚未設定] 時，只會影響 Microsoft Edge 軟體的安裝，。
 
 此原則不會防止 Microsoft Edge Update 執行或防止使用者透過其他方法安裝 Microsoft Edge 軟體。
+
+這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
 #### Windows 資訊和設定
 ##### 群組原則 (ADMX) 資訊
 - GP 唯一名稱：InstallDefault
 - GP 名稱：允許安裝預設值
 - GP 路徑：系統管理範本/Microsoft Edge Update/應用程式
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱：InstallDefault
@@ -102,7 +102,7 @@ ms.locfileid: "10979552"
 #### 更新原則覆寫預設值
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### 描述
+#### 說明
 允許您指定所有通道的預設行為，這些通道涉及 Microsoft Edge Update 處理 Microsoft Edge 可用更新的方式。 可以透過為這些特定通道指定「[更新原則覆寫](#update)」原則來覆寫各個通道的設定。
 
   如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge 更新：
@@ -114,12 +114,14 @@ ms.locfileid: "10979552"
   如果選取手動更新，請確保使用應用程式的手動更新機制 (如果可用) 定期檢查更新。 如果停用更新，請定期檢查更新，並將它們散發給使用者。
 
   如果不啟用和設定此原則，Microsoft Edge Update 將依照[「更新原則覆寫」](#update)原則的指定方式處理可用更新。
+
+  這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
 #### Windows 資訊和設定
 ##### 群組原則 (ADMX) 資訊
 - GP 唯一名稱：UpdateDefault
 - GP 名稱：更新原則覆寫預設值
 - GP 路徑：系統管理範本/Microsoft Edge Update/應用程式
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱：UpdateDefault
@@ -136,13 +138,15 @@ ms.locfileid: "10979552"
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
 #### 描述
-指定是否可以使用 Microsoft Edge Update 安裝 Microsoft Edge 通道。
+指定是否可以在加入網域的裝置上安裝 Microsoft Edge 通道。
 
-  如果為通道啟用此原則，則使用者可以透過 Microsoft Edge Update 安裝該 Microsoft Edge 通道。
+  如果您為通道啟用此原則，將不會封鎖 Microsoft Edge 的安裝。
 
-  如果為通道停用此原則，則使用者無法透過 Microsoft Edge Update 安裝該 Microsoft Edge 通道。
+  如果您為通道停用此原則，將會封鎖 Microsoft Edge 的安裝。
 
-  如果不為通道設定此原則，則「[允許安裝預設值](#installdefault)」原則設定將決定使用者是否可以透過 Microsoft Edge Update 安裝該 Microsoft Edge 通道。
+  如果不為通道設定此原則，則 '[允許安裝預設值](#installdefault)' 原則設定將決定使用者是否可以安裝該 Microsoft Edge 通道。
+
+  這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
 #### Windows 資訊和設定
 ##### 群組原則 (ADMX) 資訊
 - GP 唯一名稱：Install
@@ -152,7 +156,7 @@ ms.locfileid: "10979552"
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Beta
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Canary
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Dev
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱： 
@@ -172,18 +176,22 @@ ms.locfileid: "10979552"
 #### 更新原則覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### 描述
+#### 說明
 指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新。
 
-  如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge 更新：
-   - 一律允許更新：透過定期更新檢查或手動更新檢查找到更新時，一律套用更新。
-   - 僅限自動無訊息更新：僅當定期更新檢查找到更新時才套用更新。
-   - 僅限手動更新：僅當使用者執行手動更新檢查時，才套用更新。 (並非所有應用程式都提供此選項的介面。)
-   - 停用更新：一律不套用更新。
+如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge 更新：
+  - 一律允許更新：透過定期更新檢查或手動更新檢查找到更新時，一律套用更新。
+  - 僅限自動無訊息更新：僅當定期更新檢查找到更新時才套用更新。
+  - 僅限手動更新：僅當使用者執行手動更新檢查時，才套用更新。 (並非所有應用程式都提供此選項的介面。)
+  - 停用更新：一律不套用更新。
 
-  如果選取手動更新，請確保使用應用程式的手動更新機制 (如果可用) 定期檢查更新。 如果停用更新，請定期檢查更新，並將它們散發給使用者。
+如果選取手動更新，請確保使用應用程式的手動更新機制 (如果可用) 定期檢查更新。 如果停用更新，請定期檢查更新，並將它們散發給使用者。
 
-  如果不啟用和設定此原則，Microsoft Edge Update 將依照「[更新原則覆寫預設值](#updatedefault)」原則的指定方式處理可用更新。
+如果不啟用和設定此原則，Microsoft Edge Update 將依照「[更新原則覆寫預設值](#updatedefault)」原則的指定方式處理可用更新。
+
+如需相關資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2136406](https://go.microsoft.com/fwlink/?linkid=2136406)。
+
+這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
 #### Windows 資訊和設定
 ##### 群組原則 (ADMX) 資訊
 - GP 唯一名稱：Update
@@ -193,7 +201,7 @@ ms.locfileid: "10979552"
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Beta
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Canary
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Dev
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱： 
@@ -228,7 +236,7 @@ ms.locfileid: "10979552"
 - GP 唯一名稱：Allowsxs
 - GP 名稱：允許 Microsoft Edge 並排瀏覽器體驗
 - GP 路徑：系統管理範本/Microsoft Edge Update/應用程式
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱：Allowsxs
@@ -256,7 +264,7 @@ ms.locfileid: "10979552"
 - GP 唯一名稱：CreateDesktopShortcutDefault
 - GP 名稱：防止在預設安裝時建立桌面捷徑
 - GP 路徑：系統管理範本/Microsoft Edge Update/應用程式
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱：CreateDesktopShortcutDefault
@@ -288,7 +296,7 @@ ms.locfileid: "10979552"
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Beta
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Canary
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Dev
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Value Name: 
@@ -296,6 +304,55 @@ ms.locfileid: "10979552"
   - (Beta): CreateDesktopShortcut{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary): CreateDesktopShortcut{65C35B14-6C1D-4122-AC46-7148CC9D6497}
   - (Dev): CreateDesktopShortcut{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
+- 值類型：REG_DWORD
+##### 範例值：
+```
+0x00000001
+```
+[回到頁首](#microsoft-edge---update-policies)
+
+
+### RollbackToTargetVersion
+#### 復原至目標版本
+>Microsoft Edge Update 1.3.133.3 和更新版本
+
+#### 描述
+指定 Microsoft Edge Update 應將 Microsoft Edge 的安裝復原為 '[目標版本覆寫](#targetversionprefix)' 中所示的版本。
+
+只有在設定 '[目標版本覆寫](#targetversionprefix)'，且將 '[更新原則覆寫](#update)' 設定為 [開啟] 狀態 (永遠允許更新、僅限自動無訊息更新、僅限手動更新) 時，此原則才會生效。
+
+如果您停用或未設定此原則，安裝的版本高於 '[目標版本覆寫](#targetversionprefix)' 所指定的版本將會保留原樣。
+
+如果您啟用這個原則，則目前版本高於 '[目標版本覆寫](#targetversionprefix)' 所指定的版本將會降級為目標版本。
+
+建議使用者安裝最新版本的 Microsoft Edge 瀏覽器，以確保最新安全性更新的保護。 復原到舊版可能會面臨已知的安全性問題。 這項原則可做為暫時修正，以解決 Microsoft Edge 瀏覽器更新中的問題。
+
+在暫時復原瀏覽器版本之前，建議為貴組織中的所有使用者啟用同步處理 ([https://go.microsoft.com/fwlink/?linkid=2133032](https://go.microsoft.com/fwlink/?linkid=2133032))。 如果未開啟同步，就會有瀏覽資料永久遺失的風險。 請自行承擔使用此原則的風險。
+
+注意：您可以在這裡檢視所有可供復原的版本[https://aka.ms/EdgeEnterprise](https://aka.ms/EdgeEnterprise)。
+
+本原則適用於 Microsoft Edge 版本 86 或更新版本。
+
+如需相關資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2133918](https://go.microsoft.com/fwlink/?linkid=2133918)。
+
+這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
+#### Windows 資訊和設定
+##### 群組原則 (ADMX) 資訊
+- GP 唯一名稱：RollbackToTargetVersion
+- GP 名稱：復原至目標版本
+- GP 路徑： 
+  - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge
+  - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Beta
+  - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Canary
+  - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Dev
+- GP ADMX 檔案名稱：msedgeupdate.admx
+##### Windows 登錄設定
+- 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Value Name: 
+  - (Stable): RollbackToTargetVersion{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+  - (Beta): RollbackToTargetVersion{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
+  - (Canary): RollbackToTargetVersion{65C35B14-6C1D-4122-AC46-7148CC9D6497}
+  - (Dev): RollbackToTargetVersion{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
 - 值類型：REG_DWORD
 ##### 範例值：
 ```
@@ -316,6 +373,10 @@ ms.locfileid: "10979552"
 如果裝置的 Microsoft Edge 版本比指定值較新，Microsoft Edge 將會維持較新的版本，而不會降級到指定的版本。
 
 如果指定的版本不存在，或格式不正確，Microsoft Edge 將會維持目前的版本，而不會自動更新至未來的版本。
+
+如需相關資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2136707](https://go.microsoft.com/fwlink/?linkid=2136707)。
+
+這個原則只適用於已加入 Microsoft® Active Directory® 網域的 Windows 實例。
 #### Windows 資訊和設定
 ##### 群組原則 (ADMX) 資訊
 - GP 唯一名稱：TargetVersionPrefix
@@ -325,7 +386,7 @@ ms.locfileid: "10979552"
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Beta
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Canary
   - 系統管理範本/Microsoft Edge Update/應用程式/Microsoft Edge Dev
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Value Name: 
@@ -348,7 +409,7 @@ ms.locfileid: "10979552"
 #### 自動更新檢查期間覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### 描述
+#### 說明
 如果啟用，此原則允許您設定自動更新檢查之間的最小分鐘數值。 否則，預設情況下，每 10 小時會自動檢查一次是否有更新。
 
   如果要停用所有自動更新檢查，請將值設定為 0 (不建議)。
@@ -357,7 +418,7 @@ ms.locfileid: "10979552"
 - GP 唯一名稱：AutoUpdateCheckPeriodMinutes
 - GP 名稱：自動更新檢查期間覆寫
 - GP 路徑：系統管理範本/Microsoft Edge Update/喜好設定
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱：AutoUpdateCheckPeriodMinutes
@@ -373,7 +434,7 @@ ms.locfileid: "10979552"
 #### 每天抑制自動更新檢查的期間
 >Microsoft Edge Update 1.3.33.5 和更新版本
 
-#### 描述
+#### 說明
 如果啟用此原則，則每天從 Hour:Minute 開始，持續 Duration (分鐘) 抑制檢查更新。 Duration 不受日光節約時間影響。 例如，如果開始時間為 22:00，Duration 為 480 分鐘，則無論日光節約時間在該期間是開始還是結束，都會抑制更新整整 8 小時。
 
   如果停用或不設定此原則，則在任何特定期間都不會抑制更新檢查。
@@ -383,7 +444,7 @@ ms.locfileid: "10979552"
 - GP 名稱：每天抑制自動更新檢查的期間
   - Options { Hour, Minute, Duration }
 - GP 路徑：系統管理範本/Microsoft Edge Update/喜好設定
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱： 
@@ -401,15 +462,13 @@ start min  : 0x00000002
 
 
 ## Proxy 伺服器原則
-  
-  
 
 [回到頁首](#microsoft-edge---update-policies)
 ### ProxyMode
 #### 選擇如何指定 Proxy 伺服器設定
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
-#### 描述
+#### 說明
 允許您指定 Microsoft Edge Update 使用的 Proxy 伺服器設定。
 
   如果啟用此原則，則可以在以下 Proxy 伺服器選項之間進行選擇：
@@ -426,7 +485,7 @@ start min  : 0x00000002
 - GP 唯一名稱：ProxyMode
 - GP 名稱：選擇如何指定 Proxy 伺服器設定
 - GP 路徑：系統管理範本/Microsoft Edge Update/Proxy 伺服器
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱︰ProxyMode
@@ -442,7 +501,7 @@ fixed_servers
 #### Proxy .pac 檔案的 URL
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
-#### 描述
+#### 說明
 允許您為 Proxy 自動設定 (PAC) 檔案指定 URL。
 
   如果啟用此原則，則可以為 PAC 檔案指定 URL，以自動化 Microsoft Edge Update 選取適當 Proxy 伺服器以擷取特定網站的方式。
@@ -455,7 +514,7 @@ fixed_servers
 - GP 唯一名稱：ProxyPacUrl
 - GP 名稱：Proxy .pac 檔案的 URL
 - GP 路徑：系統管理範本/Microsoft Edge Update/Proxy 伺服器
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱︰ProxyPacUrl
@@ -484,7 +543,7 @@ https://www.microsoft.com
 - GP 唯一名稱：ProxyServer
 - GP 名稱：Proxy 伺服器的位址或 URL
 - GP 路徑：系統管理範本/Microsoft Edge Update/Proxy 伺服器
-- GP ADMX 檔案名稱：edgeupdate.admx
+- GP ADMX 檔案名稱：msedgeupdate.admx
 ##### Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - 值名稱︰ProxyServer
@@ -492,6 +551,68 @@ https://www.microsoft.com
 ##### 範例值：
 ```
 https://www.microsoft.com
+```
+[回到頁首](#microsoft-edge---update-policies)
+
+
+## Microsoft Edge WebView 原則
+
+[回到頁首](#microsoft-edge---update-policies)
+### 安裝 (WebView)
+#### 允許安裝
+>Microsoft Edge Update 1.3.127.1 和更新版本
+
+#### 說明
+可讓您指定是否可以使用 Microsoft Edge Update 來安裝 Microsoft Edge WebView。
+
+  - 如果您啟用此原則，使用者可以透過 Microsoft Edge Update 安裝 Microsoft Edge WebView。
+  - 如果您停用此原則，使用者無法透過 Microsoft Edge Upadte 安裝 Microsoft Edge WebView。
+  - 如果不為設定此原則，則 '[允許安裝預設值](#installdefault)' 原則設定將決定使用者是否可以透過 Microsoft Edge Update 安裝 Microsoft Edge WebView。
+#### Windows 資訊和設定
+##### 群組原則 (ADMX) 資訊
+- GP 唯一名稱：Install
+- GP 名稱：允許安裝
+- GP 路徑：系統管理範本/Microsoft Edge Update/Microsoft Edge WebView
+- GP ADMX 檔案名稱：msedgeupdate.admx
+##### Windows 登錄設定
+- 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Value Name: 
+  - Install{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- 值類型：REG_DWORD
+##### 範例值：
+```
+0x00000001
+```
+[回到頁首](#microsoft-edge---update-policies)
+
+
+### 更新 (WebView)
+#### 更新原則覆寫
+>Microsoft Edge Update 1.3.127.1 和更新版本
+
+#### 說明
+可讓您指定是否為 Microsoft Edge WebView 啟用自動更新。 Microsoft Edge WebView 是應用程式用來顯示網路內容的元件。
+預設會啟用自動更新。 若要停用 Microsoft Edge WebView 的自動更新，可能會導致與此元件相關的應用程式發生相容性問題。
+
+  如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge WebView 更新：
+  - 永遠允許更新：會自動下載並套用更新
+  - 已停用更新：一律不下載或套用更新
+
+  如果您未啟用此原則，則會自動下載並套用更新。
+#### Windows 資訊和設定
+##### 群組原則 (ADMX) 資訊
+- GP 唯一名稱：Update
+- GP 名稱：更新原則覆寫
+- GP 路徑：系統管理範本/Microsoft Edge Update/Microsoft Edge WebView
+- GP ADMX 檔案名稱：msedgeupdate.admx
+##### Windows 登錄設定
+- 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Value Name: 
+  - Update{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- 值類型：REG_DWORD
+##### 範例值：
+```
+0x00000001
 ```
 [回到頁首](#microsoft-edge---update-policies)
 
