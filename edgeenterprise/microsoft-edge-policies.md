@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 906a8cdd73e07efc5662e9b3ea51d8b7a2f03079
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 9a0a9157f1176f935ba2462ee34abb3ebb708b66
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094747"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105727"
 ---
 # Microsoft Edge - 原則
 最新版本的 Microsoft Edge 包含下列原則。 您可以使用這些原則來設定 Microsoft Edge 在組織中的執行方式。
@@ -255,7 +255,7 @@ ms.locfileid: "11094747"
 |[DownloadRestrictions](#downloadrestrictions)|允許下載限制|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|啟用集錦功能|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允許使用者編輯我的最愛|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在限定時間內重新啟用已過時的網頁平台功能|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|啟用從 Microsoft 進行網域動作下載 (已過時) |
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|啟用線上 OCSP/CRL 檢查|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|允許由本機信賴起點頒發的 SHA-1 簽章憑證 (已過時)|
@@ -345,6 +345,7 @@ ms.locfileid: "11094747"
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|啟用 Signed HTTP Exchange (SXG) 支援|
 |[SitePerProcess](#siteperprocess)|為每個網站啟用網站隔離|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|啟用拼字檢查|
 |[SpellcheckLanguage](#spellchecklanguage)|啟用特定拼字檢查語言|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|強制停用拼字檢查語言|
@@ -10120,14 +10121,16 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   [回到頁首](#microsoft-edge---policies)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### 在限定時間內重新啟用已過時的網頁平台功能
+  #### Re-enable deprecated web platform features for a limited time (obsolete)
   
-  
+  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### 支援的版本：
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - On Windows and macOS since 77, until 86
 
-  #### 說明
-  指定要暫時重新啟用的已過時網頁平台功能清單。
+  #### 描述
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+
+指定要暫時重新啟用的已過時網頁平台功能清單。
 
 此原則可讓您在限定時間內重新啟用已過時的網頁平台功能。 功能會依字串標籤來識別。
 
@@ -10154,7 +10157,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   #### Windows 資訊和設定
   ##### 群組原則 (ADMX) 資訊
   - GP 唯一名稱：EnableDeprecatedWebPlatformFeatures
-  - GP 名稱：在限定時間內重新啟用已過時的網頁平台功能
+  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -15055,6 +15058,58 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### Mac 資訊和設定
   - 喜好設定機碼名稱：SitePerProcess
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### 支援的版本：
+  - On Windows and macOS since 87 or later
+
+  #### 描述
+  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+
+If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+
+If you disable this policy, Speech Recognition is not available through the Web Speech API.
+
+Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### 支援的功能：
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### Data Type:
+  - 布林值
+
+  #### Windows 資訊和設定
+  ##### 群組原則 (ADMX) 資訊
+  - GP unique name: SpeechRecognitionEnabled
+  - GP name: Configure Speech Recognition
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+  ##### Windows 登錄設定
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - Value Name: SpeechRecognitionEnabled
+  - 值類型：REG_DWORD
+  ##### 範例值：
+```
+0x00000001
+```
+
+
+  #### Mac 資訊和設定
+  - Preference Key Name: SpeechRecognitionEnabled
   - 範例值：
 ``` xml
 <true/>

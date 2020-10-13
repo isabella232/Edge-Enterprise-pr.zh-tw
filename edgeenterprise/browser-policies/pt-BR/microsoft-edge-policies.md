@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/28/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 08d410336d86620e0dbd400c1aad7b0a9409cac9
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 5d00695cfbf245f0b3e888f18be26463f51fce7b
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094587"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105657"
 ---
 # Microsoft Edge - Políticas
 A versão mais recente do Microsoft Edge inclui as seguintes políticas. Você pode usar essas políticas para configurar como o Microsoft Edge é executado em sua organização.
@@ -254,7 +254,7 @@ e dicas para serviços Microsoft|
 |[DownloadRestrictions](#downloadrestrictions)|Permitir restrições de download|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|Habilitar o recurso Coleções|
 |[EditFavoritesEnabled](#editfavoritesenabled)|Permite que os usuários editem os favoritos|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado (obsoleto)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|Habilitar o download de ações de domínio da Microsoft (obsoleto)|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|Habilitar verificações de OCSP/CRL online|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Permitir certificados assinados usando o SHA-1 quando emitidos por âncoras de confiança locais (preterida)|
@@ -344,6 +344,7 @@ e dicas para serviços Microsoft|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|Mostrar o atalho do Microsoft Office na barra Favoritos (preterida)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|Habilitar o suporte para o Signed HTTP Exchange (SXG)|
 |[SitePerProcess](#siteperprocess)|Habilitar isolamento de sites para todos os sites|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|Habilitar verificação ortográfica|
 |[SpellcheckLanguage](#spellchecklanguage)|Habilitar idiomas específicos da verificação ortográfica|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|Aplicar a desabilitação de verificação ortográfica dos idiomas|
@@ -830,21 +831,21 @@ Se você definir também a política [EnableMediaRouter](#enablemediarouter) com
   - Em Windows e macOS desde 77 ou posterior
 
   #### Descrição
-  Setting the policy lets you make a list of URL patterns that specify sites for which Microsoft Edge can automatically select a client certificate. The value is an array of stringified JSON dictionaries, each with the form { "pattern": "$URL_PATTERN", "filter" : $FILTER }, where $URL_PATTERN is a content setting pattern. $FILTER restricts the client certificates the browser automatically selects from. Independent of the filter, only certificates that match the server's certificate request are selected.
+  A definição da política permite que você faça uma lista de padrões de URL que especificam sites para os quais o Microsoft Edge pode selecionar automaticamente um certificado de cliente. O valor é uma matriz de dicionários de cadeias de caracteres JSON, cada uma com o formulário { "pattern": "$URL_PATTERN", "filter" : $FILTER }, onde $URL_PATTERN é o padrão de configuração do conteúdo. $FILTER restringe os certificados do cliente para os quais o navegador seleciona automaticamente. Independente do filtro, somente os certificados que correspondem à solicitação do servidor serão selecionados.
 
-Examples for the usage of the $FILTER section:
+Exemplos do uso da seção $FILTER:
 
-* When $FILTER is set to { "ISSUER": { "CN": "$ISSUER_CN" } }, only client certificates issued by a certificate with the CommonName $ISSUER_CN are selected.
+* Quando $FILTER estiver definida como { "ISSUER": { "CN": "$ISSUER_CN" } }, somente os certificados de cliente emitidos com um $ISSUER_CNCommonName serão selecionados.
 
-* When $FILTER contains both the "ISSUER" and the "SUBJECT" sections, only client certificates that satisfy both conditions are selected.
+* Quando $FILTER contiver tanto a seção "ISSUER" quanto a seção "SUBJECT", somente os certificados que atenderem a ambas as condições serão selecionados.
 
-* When $FILTER contains a "SUBJECT" section with the "O" value, a certificate needs at least one organization matching the specified value to be selected.
+* Quando $FILTER contiver a seção "SUBJECT" com o valor de"O", um certificado precisa ter pelo menos uma organização correspondente ao valor especificado para ser selecionado.
 
-* When $FILTER contains a "SUBJECT" section with a "OU" value, a certificate needs at least one organizational unit matching the specified value to be selected.
+* Quando $FILTER contiver uma seção "SUBJECT" com um valor "OU", um certificado precisar ter pelo menos uma unidade organizacional correspondente ao valor especificado para ser selecionado.
 
-* When $FILTER is set to {}, the selection of client certificates is not additionally restricted. Note that filters provided by the web server still apply.
+* Quando $FILTER estiver definida como {}, a seleção dos certificados de cliente não será adicionalmente restrita. Observe que os filtros fornecidos pelo servidor da web ainda se aplicam.
 
-If you leave the policy unset, there's no autoselection for any site.
+Se você não definir a política, não haverá seleção automática para nenhum site.
 
   #### Recursos com suporte:
   - Pode ser obrigatório: Sim
@@ -10116,22 +10117,24 @@ Desabilite essa política para impedir que os usuários adicionem, removam ou mo
   [Voltar ao início](#microsoft-edge---políticas)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado
+  #### Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado (obsoleto)
   
-  
+  >OBSOLETO: Essa política é obsoleta e não funciona após o Microsoft Edge 86.
   #### Versões com suporte:
-  - Em Windows e macOS desde 77 ou posterior
+  - No Windows e macOS desde 77, até 86
 
   #### Descrição
-  Especifica uma lista de recursos da plataforma da Web preteridos que serão temporariamente habilitados novamente.
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
 
-Essa política permite que você habilite novamente os recursos preteridos da plataforma da Web por tempo limitado. Os recursos são identificados por uma marca de cadeia de caracteres.
+指定要暫時重新啟用的已過時網頁平台功能清單。
 
-Se você não configurar essa política, se a lista estiver vazia ou se um recurso não corresponder a uma das marcas de cadeia de caracteres com suporte, todos os recursos da plataforma da Web preteridos permanecerão desabilitados.
+此原則可讓您在限定時間內重新啟用已過時的網頁平台功能。 功能會依字串標籤來識別。
 
-Embora a política propriamente dita tenha suporte nas plataformas acima, o recurso que ela estiver habilitando talvez não esteja disponível em todas as plataformas. Nem todos os recursos da plataforma da Web preteridos podem ser habilitados novamente. Somente os explicitamente listados abaixo podem ser habilitados novamente e apenas por um período de tempo limitado, que difere por recurso. Você pode examinar o intuito subjacente às alterações de recurso da plataforma da Web em https://bit.ly/blinkintents.
+如果未設定此原則，如果清單為空白，或如果功能不符合支援的其中一個字串標籤，則所有過時的網頁平台功能會保持停用。
 
-O formato geral da marca da cadeia de caracteres é [DeprecatedFeatureName]_EffectiveUntil[yyyymmdd].
+雖然上述平台上支援原則本身，它要啟用的功能可能無法在這所有平台上使用。 並非所有過時的網頁平台功能都可以重新啟用。 只有下列明確列出的項目才可以重新啟用，且僅限於有限的一段時間，這會因每個功能而不同。 您可以在 https://bit.ly/blinkintents 檢閱網頁平台功能變更的背後意圖。
+
+字串標籤的一般格式為 [DeprecatedFeatureName]_EffectiveUntil[yyyymmdd]。
 
 Mapeamento das opções da política:
 
@@ -10150,7 +10153,7 @@ Use as informações anteriores ao configurar essa política.
   #### Informações e configurações do Windows
   ##### Informações da Política de Grupo (ADMX)
   - Nome exclusivo da GP: EnableDeprecatedWebPlatformFeatures
-  - Nome da GP: Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado
+  - Nome da GP: Reabilitar os recursos preteridos da plataforma da Web por um tempo limitado (obsoleto)
   - Caminho da GP (Obrigatório): Modelos Administrativos/Microsoft Edge/
   - Caminho da GP (Recomendações): N/A
   - Nome do arquivo da GP ADMX: MSEdge.admx
@@ -15051,6 +15054,58 @@ Se você desabilitar ou não configurar esta política, um usuário poderá recu
 
   #### Informações e configurações do Mac
   - Nome da chave de preferência: SitePerProcess
+  - Exemplo de valor:
+``` xml
+<true/>
+```
+  
+
+  [Voltar ao início](#microsoft-edge---políticas)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### Versões com suporte:
+  - Em Windows e macOS desde 87 ou posterior
+
+  #### Descrição
+  Defina se os sites podem usar a API W3C Web Speech para reconhecer a fala do usuário. A implementação do Microsoft Edge da API Web Speech usa Serviços Cognitivos do Azure, portanto, os dados de voz sairão do computador.
+
+Se você habilitar ou não configurar essa política, os aplicativos baseados na Web que usam a API Web Speech poderão usar o reconhecimento de fala.
+
+Se você desabilitar essa política, o Reconhecimento de Fala não estará disponível por meio da API Web Speech API.
+
+Leia mais sobre este recurso aqui: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Serviços de Cognitivos: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### Recursos com suporte:
+  - Pode ser obrigatório: Sim
+  - Pode ser recomendado: Não
+  - Atualização de política dinâmica: Sim
+
+  #### Tipo de Dados:
+  - Booliano
+
+  #### Informações e configurações do Windows
+  ##### Informações da Política de Grupo (ADMX)
+  - Nome exclusivo da GP: SpeechRecognitionEnabled
+  - Nome da GP: Configure Speech Recognition
+  - Caminho da GP (Obrigatório): Modelos Administrativos/Microsoft Edge/
+  - Caminho da GP (Recomendações): N/A
+  - Nome do arquivo da GP ADMX: MSEdge.admx
+  ##### Configurações do Registro do Windows
+  - Caminho (Obrigatório): SOFTWARE\Policies\Microsoft\Edge
+  - Caminho (Recomendações): N/A
+  - Nome do Valor: SpeechRecognitionEnabled
+  - Tipo de Valor: REG_DWORD
+  ##### Exemplo de valor:
+```
+0x00000001
+```
+
+
+  #### Informações e configurações do Mac
+  - Nome da chave de preferência: SpeechRecognitionEnabled
   - Exemplo de valor:
 ``` xml
 <true/>

@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/28/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: b4488f2b63e17aa0ea4923e51ef15468abf043e7
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 3681a6d49cf5f5eccfc8484a3aeefbf845979c57
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094497"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105687"
 ---
 # Microsoft Edge - 策略
 最新版本的 Microsoft Edge 包括以下策略。你可以使用这些策略配置 Microsoft Edge 在组织中的运行方式。
@@ -254,7 +254,7 @@ ms.locfileid: "11094497"
 |[DownloadRestrictions](#downloadrestrictions)|允许使用下载限制|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|启用集锦功能|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允许用户编辑收藏夹|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在有限的时间内重新启用弃用的 Web 平台功能|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在有限的时间内重新启用弃用的 Web 平台功能 (过时)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|启用从 Microsoft 进行域操作下载 (过时)|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|启用联机 OCSP/CRL 检查|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|由本地信任锚颁发时，允许使用 SHA-1 签名的证书 (已弃用)|
@@ -344,6 +344,7 @@ ms.locfileid: "11094497"
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在收藏夹栏中显示 Microsoft Office 快捷方式 (已弃用)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|启用签名 HTTP Exchange (SXG) 支持|
 |[SitePerProcess](#siteperprocess)|为每个站点启用站点隔离|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|启用拼写检查|
 |[SpellcheckLanguage](#spellchecklanguage)|启用特定拼写检查语言|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|强制禁用拼写检查功能的语言|
@@ -1480,21 +1481,21 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   - 由于 Windows 或更高版本，macOS 和 77
 
   #### 描述
-  Setting the policy lets you make a list of URL patterns that specify sites for which Microsoft Edge can automatically select a client certificate. The value is an array of stringified JSON dictionaries, each with the form { "pattern": "$URL_PATTERN", "filter" : $FILTER }, where $URL_PATTERN is a content setting pattern. $FILTER restricts the client certificates the browser automatically selects from. Independent of the filter, only certificates that match the server's certificate request are selected.
+  通过设置策略，你可以创建一个 URL 模式列表，指定 Microsoft Edge 可以自动为其选择客户端证书的网站。该值是一个字符串化 JSON 字典数组，每个字典的形式为 { "pattern": "$URL_PATTERN", "filter" : $FILTER }，其中 $URL_PATTERN 是内容设置模式。$FILTER 限制浏览器自动选择的客户端证书。与筛选器无关，仅选择与服务器的证书请求匹配的证书。
 
-Examples for the usage of the $FILTER section:
+$FILTER部分的用法示例:
 
-* When $FILTER is set to { "ISSUER": { "CN": "$ISSUER_CN" } }, only client certificates issued by a certificate with the CommonName $ISSUER_CN are selected.
+* 当 $FILTER 设置为 { "ISSUER": { "CN": "$ISSUER_CN" } } 时，仅选择由 CommonName 为 $ISSUER_CN 的证书颁发的客户端证书。
 
-* When $FILTER contains both the "ISSUER" and the "SUBJECT" sections, only client certificates that satisfy both conditions are selected.
+* 当 $FILTER 同时包含 "ISSUER" 和 "SUBJECT" 部分时，仅选择满足两个条件的客户端证书。
 
-* When $FILTER contains a "SUBJECT" section with the "O" value, a certificate needs at least one organization matching the specified value to be selected.
+* 当 $FILTER 包含具有 "O" 值的 "SUBJECT" 部分时，证书需要至少一个与指定值匹配的组织才能被选中。
 
-* When $FILTER contains a "SUBJECT" section with a "OU" value, a certificate needs at least one organizational unit matching the specified value to be selected.
+* 当 $FILTER 包含具有 "OU" 值的 "SUBJECT" 部分时，证书需要至少一个与指定值匹配的组织单位才能被选中。
 
-* When $FILTER is set to {}, the selection of client certificates is not additionally restricted. Note that filters provided by the web server still apply.
+* 当 $FILTER 设置为 {} 时，客户端证书的选择没有其他限制。请注意，Web 服务器提供的筛选器仍然适用。
 
-If you leave the policy unset, there's no autoselection for any site.
+如果不设置该策略，则任何网站都不会自动选择。
 
   #### 支持的功能:
   - 可以为必填字段: 是
@@ -10104,22 +10105,24 @@ Windows 管理员注意事项: 此策略仅适用于运行 Windows 7 的电脑�
   [返回顶部](#microsoft-edge---策略)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### 在有限的时间内重新启用弃用的 Web 平台功能
+  #### 在有限的时间内重新启用弃用的 Web 平台功能 (过时)
   
-  
+  >过时: 此策略已过时，在 Microsoft Edge 86 之后无法使用。
   #### 支持的版本:
-  - 由于 Windows 或更高版本，macOS 和 77
+  - 在 Windows 后，在 macOS 和 77 上 86
 
   #### 描述
-  指定要暂时重新启用的弃用 Web 平台功能列表。
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
 
-此策略允许你在有限的时间内重新启用弃用的 Web 平台功能。这些功能由字符串标签标识。
+指定要暫時重新啟用的已過時網頁平台功能清單。
 
-如果不配置此策略，或者列表为空，或者某个功能不能与某一受支持的字符串标签匹配，则所有弃用的 Web 平台功能将仍是禁用的。
+此原則可讓您在限定時間內重新啟用已過時的網頁平台功能。 功能會依字串標籤來識別。
 
-虽然上述平台支持此策略，但它启用的功能可能并不在所有这些平台上都可用。并非所有弃用的 Web 平台功能都可以重新启用。只有下面明确列出的功能才能重新启用，并且只能在有限的时间内重新启用，具体取决于每项功能。你可以查看 https://bit.ly/blinkintents 了解网站平台功能变化背后的意图。
+如果未設定此原則，如果清單為空白，或如果功能不符合支援的其中一個字串標籤，則所有過時的網頁平台功能會保持停用。
 
-字符串标记的常规格式为 [DeprecatedFeatureName] _EffectiveUntil [yyyymmdd]。
+雖然上述平台上支援原則本身，它要啟用的功能可能無法在這所有平台上使用。 並非所有過時的網頁平台功能都可以重新啟用。 只有下列明確列出的項目才可以重新啟用，且僅限於有限的一段時間，這會因每個功能而不同。 您可以在 https://bit.ly/blinkintents 檢閱網頁平台功能變更的背後意圖。
+
+字串標籤的一般格式為 [DeprecatedFeatureName]_EffectiveUntil[yyyymmdd]。
 
 策略选项映射：
 
@@ -10138,7 +10141,7 @@ Windows 管理员注意事项: 此策略仅适用于运行 Windows 7 的电脑�
   #### Windows 信息和设置
   ##### 组策略(ADMX)信息
   - GP 唯一名称: EnableDeprecatedWebPlatformFeatures
-  - GP 名称: 在有限的时间内重新启用弃用的 Web 平台功能
+  - GP 名称: 在有限的时间内重新启用弃用的 Web 平台功能 (过时)
   - GP 路径 (强制): 管理模板/Microsoft Edge/
   - GP 路径 (推荐): 不适用
   - GP ADMX 文件名: MSEdge.admx
@@ -15027,6 +15030,58 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### Mac 信息和设置
   - 首选项密钥名称: SitePerProcess
+  - 示例值:
+``` xml
+<true/>
+```
+  
+
+  [返回顶部](#microsoft-edge---策略)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### 支持的版本:
+  - 由于 Windows 或更高版本，macOS 和 87
+
+  #### 描述
+  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+
+If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+
+If you disable this policy, Speech Recognition is not available through the Web Speech API.
+
+Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### 支持的功能:
+  - 可以为必填字段: 是
+  - 可以推荐: 否
+  - 动态策略刷新: 是
+
+  #### 数据类型:
+  - 布尔
+
+  #### Windows 信息和设置
+  ##### 组策略(ADMX)信息
+  - GP 唯一名称: SpeechRecognitionEnabled
+  - GP 名称: Configure Speech Recognition
+  - GP 路径 (强制): 管理模板/Microsoft Edge/
+  - GP 路径 (推荐): 不适用
+  - GP ADMX 文件名: MSEdge.admx
+  ##### Windows 注册表设置
+  - 路径 (强制): SOFTWARE\Policies\Microsoft\Edge
+  - 路径 (推荐): 不适用
+  - 值名称: SpeechRecognitionEnabled
+  - 值类型: REG_DWORD
+  ##### 示例值:
+```
+0x00000001
+```
+
+
+  #### Mac 信息和设置
+  - 首选项密钥名称: SpeechRecognitionEnabled
   - 示例值:
 ``` xml
 <true/>
