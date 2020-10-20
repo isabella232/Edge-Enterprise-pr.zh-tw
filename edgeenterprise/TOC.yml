@@ -1,4 +1,4 @@
-# last revised 10/08/2020
+# last revised 10/15/2020
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -159,6 +159,8 @@
           href: microsoft-edge-update-progressive-rollout.md
         - name: 佈建 Microsoft Edge 我的最愛
           href: edge-learnmore-provision-favorites.md
+        - name: 從 Internet Explorer 重新導向至 Microsoft Edge
+          href: edge-learnmore-neededge.md
         - name: 規則運算式 2 (re2.h) 語法
           href: edge-learnmore-regex.md
         - name: 使用者資料目錄變數
