@@ -3,19 +3,19 @@ title: Microsoft Edge 企業版同步處理
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 09/30/2020
+ms.date: 10/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 企業版同步處理
-ms.openlocfilehash: d5868fb496c036d750925bb5ae6dfa3de0293fd2
-ms.sourcegitcommit: 8a4479a1b034c3c13ea03ee3a2374a1af332cb38
+ms.openlocfilehash: e51346d9bab83228c42a84a7a14ee45dc9b463a7
+ms.sourcegitcommit: b32d8d64ae65dc5a46e47b7c34b0211097a0cc65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "11091945"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "11133128"
 ---
 # Microsoft Edge 企業版同步處理
 
@@ -45,7 +45,7 @@ Azure Active Directory (Azure AD) 帳戶的 Microsoft Edge 同步適用於以下
 
 - Azure AD Premium (P1 和 P2)
 - M365 商務進階版
-- Office 365 E3 及以上
+- Office 365 E1 及以上版本
 - Azure 資訊保護 (AIP) (P1 和 P2)
 - 所有 EDU 訂閱 (適用於學生或教職員的 Microsoft Apps、適用於學生或教職員的 Exchange Online、O365 A1 或以上、M365 A1 或以上或適用於學生或教職員的 Azure 資訊保護 P1 或 P2)
 
