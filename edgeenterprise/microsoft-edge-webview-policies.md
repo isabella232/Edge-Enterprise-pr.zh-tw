@@ -1,9 +1,9 @@
 ---
-title: Microsoft Edge 瀏覽器原則文件
+title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
-author: brianalt-msft
+author: dan-wesley
 manager: tahills
-ms.date: 10/08/2020
+ms.date: 10/16/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 56abadf907dfffec733af2456cc20db36510880b
-ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
+ms.openlocfilehash: 4298b25f7f158bc54f798442b4426494f046fa68
+ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "11105745"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "11134442"
 ---
 # Microsoft Edge WebView2 - 原則
 
@@ -24,10 +24,12 @@ ms.locfileid: "11105745"
 
 如需用於控制 Microsoft Edge WebView2 更新方式和更新時機的一組額外原則之詳細資訊，請參閱 [Microsoft Edge 更新原則參考](microsoft-edge-update-policies.md)。
 
+
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
 
 ## 可用原則
+
 下表列出此版本 Microsoft Edge WebView2 提供的所有群組原則。 使用下表中的連結，深入了解特定原則。
 
 |||
@@ -35,6 +37,7 @@ ms.locfileid: "11105745"
 |[載入程式重寫設定](#loader-override-settings)|
 
 ### [*載入程式重寫設定*](#loader-override-settings-policies)
+
 |原則名稱|標題|
 |-|-|
 |[browserExecutableFolder](#browserexecutablefolder)|設定 [瀏覽器可執行檔] 資料夾的位置|
@@ -48,56 +51,71 @@ ms.locfileid: "11105745"
   [回到頁首](#microsoft-edge-webview2---policies)
 
   ### browserExecutableFolder
+
   #### 設定 [瀏覽器可執行檔] 資料夾的位置
+
   
   
   #### 支援的版本：
+
   - Windows 上，版本 87 或更新版本
 
   #### 描述
+
   這項原則會在指定路徑中，將 WebView2 應用程式設定為使用 WebView2 Runtime。 該資料夾應包含下列檔案：msedgewebview2.exe、msedge.dll 等等。
 
 若要設定資料夾路徑的值，請提供值名稱和值配對。 將 [值名稱] 設定為 [應用程式使用者模型識別碼] 或 [可執行檔名]。 您可以使用萬用字元「*」作為值名稱來套用到所有應用程式。
 
   #### 支援的功能：
+
   - 可強制執行：是
   - 可以建議：否
   - 動態原則重新整理：是
 
   #### Data Type:
+
   - 字串清單
 
   #### Windows 資訊和設定
+
   ##### 群組原則 (ADMX) 資訊
+
   - GP 唯一名稱：browserExecutableFolder
   - GP 名稱：設定 [瀏覽器可執行檔] 資料夾的位置
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge WebView2/載入程式重寫設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdgeWebView2.admx
+
   ##### Windows 登錄設定
+
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder
   - 路徑 (建議)：不適用
   - 值名稱：REG_SZ 的清單
   - 數值類型：REG_SZ 的清單
+
   ##### 範例值：
+
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
 
 ```
-
 
   
 
   [回到頁首](#microsoft-edge-webview2---policies)
 
   ### releaseChannelPreference
+
   #### 設定發行通道的 [搜尋順序] 喜好設定
+
   
   
   #### 支援的版本：
+
   - Windows 上，版本 87 或更新版本
 
   #### 描述
+
   預設通道搜尋順序為 WebView2 Runtime、Beta、Dev 和 Canary。
 
 若要顛倒預設的搜尋順序，請將此原則設定為 1。
@@ -105,31 +123,38 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 若要設定發行通道喜好設定的值，請提供值名稱和值配對。 將 [值名稱] 設定為 [應用程式使用者模型識別碼] 或 [可執行檔名]。 您可以使用萬用字元「*」作為值名稱來套用到所有應用程式。
 
   #### 支援的功能：
+
   - 可強制執行：是
   - 可以建議：否
   - 動態原則重新整理：是
 
   #### Data Type:
+
   - 字串清單
 
   #### Windows 資訊和設定
+
   ##### 群組原則 (ADMX) 資訊
+
   - GP 唯一名稱：releaseChannelPreference
   - GP 名稱：設定發行通道的 [搜尋順序] 喜好設定
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge WebView2/載入程式重寫設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdgeWebView2.admx
+
   ##### Windows 登錄設定
+
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference
   - 路徑 (建議)：不適用
   - 值名稱：REG_SZ 的清單
   - 數值類型：REG_SZ 的清單
+
   ##### 範例值：
+
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference = "Name: *, Value: 1"
 
 ```
-
 
   
 
@@ -137,6 +162,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference = "Name: *, V
 
 
 ## 請參閱
+
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft 安全性基準部落格](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)

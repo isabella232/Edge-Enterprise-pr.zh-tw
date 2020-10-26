@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 57cd68d9366dd80812617f98934d44918b76926c
-ms.sourcegitcommit: a54037baf06d6f2e30b9485cfd397468b3174a86
+ms.openlocfilehash: 4269214a4c6a1c0d8fd62a8fd84cd9bf4f3e2b09
+ms.sourcegitcommit: d1f56745f91f36f8cfb437cfae3aaa7f816ff61a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "11133200"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "11133291"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -29,11 +29,7 @@ ms.locfileid: "11133200"
 
 ### 功能更新
 
-- **會自動將不相容網站從 Internet Explorer 重新導向至 Microsoft Edge**。 在 Microsoft Edge 87穩定版更新中，在Microsoft Internet Explorer上所顯示不相容訊息的公共網站，預設值會自動重新導向至 Microsoft Edge。 您可以透過設定, [將從 Internet Explorer 重新導向到 Microsoft Edge 中描述的功能,設為停用，以與現代的網站相容](https://docs.microsoft.com/deployedge/edge-learnmore-neededge)。
-- **在雲端**中手動重設 Microsoft Edge 同步處理資料。 我們正推出一種從產品內部重設 Microsoft Edge 同步處理資料的方法。 這可確保從 Microsoft 服務清除使用者資料，並解決先前需要回應顧客的特定產品問題。
 - **Kiosk 模式隱私權功能已**啟用。 從 Microsoft Edge 版本 87 kiosk 模式功能開始，將會對企業的使用者資料隱私權提供協助。 這些功能將啟用一些體驗, 例如在退出時清除使用者資料、刪除下載的檔案，以及在指定的閒置時間後, 重設已設定的啟動體驗。 深入瞭解如何 [設定 Microsoft Edge kiosk 模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
-- **單一登入（SSO）目前可在下層 Windows 上使用的 Azure Active Directory （Azure AD）帳戶。** 在較低級別的 Microsoft Windows （版本7及8.1）上，以 Microsoft Edge 登入的使用者將會自動登入那些設定為允許使用公司或學校帳戶單一登入的網站（例如，sharepoint.com、office.com 和 bing.com）。
-- **通過Web單一登錄（SSO）自動登錄Microsoft Corporation 帳戶**。 在較低級別Windows上登錄的 Microsoft Edge 使用者, 現在會自動登入至設為允許使用 Microsoft  帳戶 (例如 bing.com, office.com, msn.com 和 outlook.com)  所有的SSO的網站。
 - **預設啟用 ClickOnce的 部署**。 預設會在 Microsoft Edge 87 中啟用 ClickOnce，這樣可減少企業部署軟體的障礙，並更能與舊版Microsoft Edge Legacy 瀏覽器行為一致。 從 Microsoft Edge 87 開始，ClickOnceEnabled 原則的 “未設定”狀態將反映已啟用的新預設 ClickOnce 狀態（與之前停用的預設狀態相比）。
 - **企業版的新標籤頁（NTP）將生產力與且可自訂的工作相關的摘要內容整合在一起**。 企業版 NTP 加入Microsoft Office 365 生產力頁面, 我們提供在公司或學校帳戶登入的使用者, 有其個人化的個人化及與公司及產業相關的資料來源, 並能組織在同一個頁面中. 使用者將能夠識別熟悉的Microsoft Office 365 內容, 和由 Bing 所主導的Microsoft 搜尋 Microsoft Search for Business。。 此外，他們可以輕鬆地轉到自訂的＂我的摘要＂，其中包含與使用者、公司或行業相關的內容和模組，以及組織所提供的其他摘要。 [進一步瞭解](https://docs.microsoft.com/microsoft-365/admin/manage/manage-industry-news?view=o365-worldwide&preserve-view=true)。
 
@@ -52,7 +48,7 @@ ms.locfileid: "11133200"
 
 #### 新原則
 
-新增了10個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列原則。
+新增了10個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
 
 - [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) -設定從 Microsoft Edge 複製的預設貼上 Url 格式，並判斷使用者是否可以使用其他格式設定。
 - [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 啟用Microsoft Edge 中的 Shopping in Microsoft Edge Enabled 。
@@ -128,7 +124,7 @@ ms.locfileid: "11133200"
 * **安全性：**
 
   * 安全 DNS (DNS-over-HTTPS) 支援。  從 Microsoft Edge 版本 86 開始，用來控制未受管理裝置上安全 DNS 的設定可供使用。 這些設定無法供受管理裝置上的使用者存取，但是 IT 系統管理員可以使用 [dnsoverhttpsmode](https://docs.microsoft.com/deployedge/microsoft-edge-policies#dnsoverhttpsmode) 群組原則來啟用或停用安全 DNS。
-  * Microsoft Edge 會在線上洩漏中發現您的密碼時提醒您。 Microsoft Edge 會對照已知遭入侵認證的儲存庫檢查您的密碼，並在發現相符項目時提醒您。
+
 
 * **使用群組原則將自訂影像新增至新的索引標籤頁面 (NTP)。** 從 Microsoft Edge 版本 86 開始，NTP 提供一個選項，可將預設影像以自訂使用者提供的影像取代。 群組原則也支援管理此影像屬性的功能。
 
