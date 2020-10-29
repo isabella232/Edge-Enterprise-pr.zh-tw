@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/16/2020
+ms.date: 10/27/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 4298b25f7f158bc54f798442b4426494f046fa68
-ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
+ms.openlocfilehash: 3ca9adb18ef41581bb016451015cf0aca0aa63c9
+ms.sourcegitcommit: 91abbcdd4918065d4ec1151587fc1fa92486dbf3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "11134442"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "11136212"
 ---
 # Microsoft Edge WebView2 - 原則
 
@@ -40,8 +40,8 @@ ms.locfileid: "11134442"
 
 |原則名稱|標題|
 |-|-|
-|[browserExecutableFolder](#browserexecutablefolder)|設定 [瀏覽器可執行檔] 資料夾的位置|
-|[releaseChannelPreference](#releasechannelpreference)|設定發行通道的 [搜尋順序] 喜好設定|
+|[BrowserExecutableFolder](#browserexecutablefolder)|設定 [瀏覽器可執行檔] 資料夾的位置|
+|[ReleaseChannelPreference](#releasechannelpreference)|設定發行通道的 [搜尋順序] 喜好設定|
 
 
 
@@ -50,7 +50,7 @@ ms.locfileid: "11134442"
 
   [回到頁首](#microsoft-edge-webview2---policies)
 
-  ### browserExecutableFolder
+  ### BrowserExecutableFolder
 
   #### 設定 [瀏覽器可執行檔] 資料夾的位置
 
@@ -80,7 +80,7 @@ ms.locfileid: "11134442"
 
   ##### 群組原則 (ADMX) 資訊
 
-  - GP 唯一名稱：browserExecutableFolder
+  - GP 唯一名稱：BrowserExecutableFolder
   - GP 名稱：設定 [瀏覽器可執行檔] 資料夾的位置
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge WebView2/載入程式重寫設定
   - GP 路徑 (建議)：不適用
@@ -88,7 +88,7 @@ ms.locfileid: "11134442"
 
   ##### Windows 登錄設定
 
-  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder
   - 路徑 (建議)：不適用
   - 值名稱：REG_SZ 的清單
   - 數值類型：REG_SZ 的清單
@@ -96,7 +96,7 @@ ms.locfileid: "11134442"
   ##### 範例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
 
 ```
 
@@ -104,7 +104,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   [回到頁首](#microsoft-edge-webview2---policies)
 
-  ### releaseChannelPreference
+  ### ReleaseChannelPreference
 
   #### 設定發行通道的 [搜尋順序] 喜好設定
 
@@ -136,7 +136,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   ##### 群組原則 (ADMX) 資訊
 
-  - GP 唯一名稱：releaseChannelPreference
+  - GP 唯一名稱：ReleaseChannelPreference
   - GP 名稱：設定發行通道的 [搜尋順序] 喜好設定
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge WebView2/載入程式重寫設定
   - GP 路徑 (建議)：不適用
@@ -144,7 +144,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   ##### Windows 登錄設定
 
-  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference
   - 路徑 (建議)：不適用
   - 值名稱：REG_SZ 的清單
   - 數值類型：REG_SZ 的清單
@@ -152,7 +152,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
   ##### 範例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference = "Name: *, Value: 1"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, Value: 1"
 
 ```
 

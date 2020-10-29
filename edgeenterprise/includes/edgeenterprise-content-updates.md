@@ -1,12 +1,29 @@
 ---
-ms.openlocfilehash: ea9f55f0f098832457ebffcdd073ef02813de68d
-ms.sourcegitcommit: cf991cc4bd2e70169902cbda9ddc870d70e31ca2
+ms.openlocfilehash: 3b27e78814449c3760180cb0c3c21e00b85cf60a
+ms.sourcegitcommit: 652798a27751f5b77aab2bd73db1ce0d77d36fb0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "11123965"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "11136318"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
+
+
+## 2020 年 10 月 19 日當週
+
+
+| 發行日 |主題標題 | 變更 |
+|------|------------|--------|
+| 2020/10/20 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要版本 86.0.622.48 的錯誤修正。 | 修改日期 |
+| 2020/10/20 | [存取舊版 Microsoft Edge](/DeployEdge/microsoft-edge-sysupdate-access-old-edge)<br>修正登錄路徑設定。 | 修改日期 |
+| 2020/10/21 | [Microsoft Edge 端點的允許清單](/DeployEdge/microsoft-edge-security-endpoints)<br>修正設定和實驗的端點主機名稱。| 修改日期 |
+| 2020/10/21 | [Microsoft Edge 企業版同步處理](/DeployEdge/microsoft-edge-enterprise-sync)<br> 修正先決條件 (Office 365 E1)。 | 修改日期 |
+| 2020/10/21 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Beta 主要版本 87.0.664.12 與新功能和原則的版本資訊。 | 修改日期 |
+| 2020/10/21 | [Microsoft Edge 發行排程](/DeployEdge/microsoft-edge-release-schedule)<br>更新以反映 Beta 主要版本 87.0.664.12 的發行 | 修改日期 |
+| 2020/10/22 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>已更新以與適用於版本 86.0.622.51 的安全性更新進行同步。 | 修改日期 |
+| 2020/10/22 | [Microsoft Edge 安全性更新的版本資訊](/DeployEdge/microsoft-edge-relnotes-security)<br>Chromium 小組將穩定版本 86.0.622.51 安全性更新 (即 [CVE-2020-15999](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15999)) 舉報為作用中的惡意探索。 | 修改日期 |
+| 2020/10/22 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies)<br>已更新原則 (新的、已取代和已淘汰)。 | 修改日期 |
+| 2020/10/22 | [Microsoft Edge WebView2 原則文件](/DeployEdge/microsoft-edge-webview-policies)<br>已更新原則 (新的、已取代和已淘汰)。 | 修改日期 |
 
 
 ## 2020 年 10 月 12 日當週
@@ -14,13 +31,13 @@ ms.locfileid: "11123965"
 
 | 發行日 |主題標題 | 變更 |
 |------|------------|--------|
-| 2020/10/12 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要發行版本 86.0.622.36 中的錯誤和效能修正。 | 修改日期 |
-| 2020/10/12 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>從主要版本 86.0.622.38 版本資訊中移除 PW 監視器，目前在穩定通道中不支援。 | 修改日期 |
-| 2020/10/12 | [[Microsoft Edge] 和 [Windows Defender 應用程式防護]](/DeployEdge/microsoft-edge-security-windows-defender-application-guard)<br>新增 Ignite 影片的連結。 | 修改日期 |
-| 2020/10/13 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>次要發行版本 86.0.622.43 中的錯誤和效能修正。 | 修改日期 |
-| 2020/10/15 | [Microsoft Edge 企業文件](/DeployEdge/index)<br>將上週新增和更新的內容加上註釋。 | 修改日期 |
-| 2020/10/16 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 86.0.622.38 版本資訊中次要的用詞變更。 | 修改日期 |
-| 2020/10/16 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>次要發行版本 86.0.622.43 中的錯誤和效能修正。 | 修改日期 |
+| 2020/10/12 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改日期 |
+| 2020/10/12 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
+| 2020/10/12 | [[Microsoft Edge] 和 [Windows Defender 應用程式防護]](/DeployEdge/microsoft-edge-security-windows-defender-application-guard) | 修改日期 |
+| 2020/10/13 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
+| 2020/10/15 | [Microsoft Edge 企業文件](/DeployEdge/index) | 修改日期 |
+| 2020/10/16 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
+| 2020/10/16 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改日期 |
 
 
 ## 2020 年 10 月 5 日當週
@@ -32,7 +49,6 @@ ms.locfileid: "11123965"
 | 2020/10/5 | [Active Directory (AD) 使用者的內部部署同步](/DeployEdge/microsoft-edge-on-premises-sync) | 修改日期 |
 | 2020/10/6 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
 | 2020/10/7 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改日期 |
-| 2020/10/8 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/browser-policies/microsoft-edge-policies) | 修改日期 |
 | 2020/10/8 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
 | 2020/10/8 | [Microsoft Edge Update 原則文件](/DeployEdge/microsoft-edge-update-policies) | 修改日期 |
 | 2020/10/9 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
@@ -53,7 +69,6 @@ ms.locfileid: "11123965"
 | 2020/10/2 | [Microsoft Edge 企業文件](/DeployEdge/index) | 修改日期 |
 | 2020/10/2 | [[Microsoft Edge] 和 [Windows Defender 應用程式防護]](/DeployEdge/microsoft-edge-security-windows-defender-application-guard) | 修改日期 |
 | 2020/10/2 | [企業的 Microsoft Edge 安全性](/DeployEdge/ms-edge-security-for-business) | 修改日期 |
-| 2020/10/2 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/browser-policies/microsoft-edge-policies) | 修改日期 |
 | 2020/10/2 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
 
 
@@ -68,26 +83,3 @@ ms.locfileid: "11123965"
 | 9/23/2020 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
 | 9/24/2020 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
 | 9/25/2020 | [設定 Microsoft Edge kiosk 模式](/DeployEdge/microsoft-edge-configure-kiosk-mode) | 修改日期 |
-
-
-## 2020 年 9 月 7 日當週
-
-
-| 發行日 |主題標題 | 變更 |
-|------|------------|--------|
-| 2020/9/9 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 修改日期 |
-| 2020/9/9 | [Microsoft Edge 發行排程](/DeployEdge/microsoft-edge-release-schedule) | 修改日期 |
-| 2020/9/9 | [Microsoft Edge 企業隱私權設定](/DeployEdge/microsoft-edge-enterprise-privacy-settings) | 修改日期 |
-| 2020/9/9 | [Microsoft Edge 安全性更新的版本資訊](/DeployEdge/microsoft-edge-relnotes-security) | 修改日期 |
-| 2020/9/9 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
-| 2020/9/10 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
-| 2020/9/10 | [Microsoft Edge 中的 ClickOnce 和 DirectInvoke](/DeployEdge/edge-learn-more-co-di) | 修改日期 |
-
-
-## 2020 年 8 月 31 日當週
-
-
-| 發行日 |主題標題 | 變更 |
-|------|------------|--------|
-| 2020/9/2 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
-| 2020/9/2 | [適用於企業的 Microsoft Edge 復原](/DeployEdge/edge-learnmore-rollback) | 修改日期 |
