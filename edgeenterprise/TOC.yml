@@ -143,6 +143,8 @@
       href: microsoft-edge-webview-policies.md
     - name: 深入了解參考
       items:
+        - name: '企業的向後相容性 [新增] 索引標籤頁面'
+          href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
         - name: 可設定 Proxy 設定的命令列選項
