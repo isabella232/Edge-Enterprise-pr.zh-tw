@@ -3,19 +3,19 @@ title: 針對與新式網站的相容性，從 Internet Explorer 重新導向至
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 10/19/2020
+ms.date: 11/03/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
-ms.openlocfilehash: ce9e8dabdff25cc3ba375746ec82ddd78b6d7694
-ms.sourcegitcommit: cf991cc4bd2e70169902cbda9ddc870d70e31ca2
+ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
+ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "11120518"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "11151093"
 ---
 # 針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
 
@@ -74,14 +74,14 @@ ms.locfileid: "11120518"
 - 如果您啟用此原則，將不會安裝重新導向所需的 BHO，且您的使用者將繼續在 Internet Explorer 上看到特定網站的不相容訊息。 如果已安裝 BHO，則會在下一次更新 Microsoft Edge Stable 通道時將它解除安裝。
 - 如果您停用或未設定此原則，則會安裝 BHO。 這是預設行為。
 
-除了需要 BHO 之外，還有對 **RedirectSitesFromInternetExplorerRedirectMode** 的相依性，必須將其設定為 "Sitelist" 或「未設定」。
+除了需要 BHO 之外，還有對 **RedirectSitesFromInternetExplorerRedirectMode** 的相依性，必須將其設定為 [根據不相容的網站清單重新導向網站] 或 [未設定]。
 
 ### 原則：RedirectSitesFromInternetExplorerRedirectMode
 
  此原則對應於 Microsoft Edge 中的 [預設瀏覽器]**** 設定：[在 Microsoft Edge 中以 Internet Explorer 開啟網站]。 您可以移至 *edge://settings/defaultbrowser* URL 來存取此設定。  
 
 - 如果您未設定此原則或將它設定為 "Sitelist"，Internet Explorer 會將不相容的網站重新導向至 Microsoft Edge。 這是預設行為。
-- 如果您停用此原則，則不會將不相容的網站重新導向至 Microsoft Edge。
+- 若要停用這個原則，請選取 [啟用]****，然後在下拉式清單中的 [選項] 下，將 [將不相容的網站從 Internet Explorer 重新導向至 Microsoft Edge] 選取為 [停用]****。 在此狀態下，不會將不相容的網站重新導向至 Microsoft Edge。
 
 > [!NOTE]
 > 如果您所使用的個人裝置不是由組織管理，則會在 [Internet Explorer 相容性]**** 下看到另一個名為 [允許在 Internet Explorer 模式中載入網站] 的設定。
@@ -104,11 +104,11 @@ ms.locfileid: "11120518"
 
 如果您想要在更新至 Microsoft Edge Stable 版本 87「之前」停用重新導向，請使用下列步驟：
 
-1. 將 **RedirectSitesFromInternetExplorerRedirectMode** 原則設定為 [已啟用]****。 原則生效後，此設定就會停止重新導向。
+1. 將 **RedirectSitesFromInternetExplorerPreventBHOInstall** 原則設定為 [已啟用]****。
 
 如果您想要在更新至 Microsoft Edge Stable 版本 87「之後」停用重新導向，請使用下列步驟：
 
-1. 將 **RedirectSitesFromInternetExplorerRedirectMode** 原則設定為 [已停用]****。 原則生效後，此設定就會停止重新導向。
+1. 將 **RedirectSitesFromInternetExplorerRedirectMode** 原則設定為 [啟用]****，然後在下拉式清單中的 [選項] 下，將 [將不相容的網站從 Internet Explorer 重新導向至 Microsoft Edge] 選取為 [停用]****。 原則生效後，此設定就會停止重新導向。
 2. 將 **RedirectSitesFromInternetExplorerPreventBHOInstall** 原則設定為 [已啟用]****。 這會在下一次 Microsoft Edge 更新之後解除安裝 BHO。
 
 ## 請參閱
