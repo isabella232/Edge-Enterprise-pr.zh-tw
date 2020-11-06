@@ -3,19 +3,19 @@ title: 有關企業中的 Edge 的常見問題集
 ms.author: jwhit
 author: jwhit-MSFT
 manager: laurawi
-ms.date: 08/03/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 有關在企業中部署 Microsoft Edge 的常見問題集
-ms.openlocfilehash: 0f6891f4f7187b23f6e3d4e7880fdafa49def351
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: e689967cbad950e2969535bad0dd63d5d7081798
+ms.sourcegitcommit: 12827458f6217f443128e826c1d18d36d401d03b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979515"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "11154318"
 ---
 # 有關企業中的 Microsoft Edge 的常見問題集
 
@@ -56,7 +56,9 @@ Microsoft Edge 支援 [Microsoft Edge Insider Addons](https://go.microsoft.com/f
 
 ## WSUS 是否支援新 Microsoft Edge 的初始部署？
 
-不。 WSUS 支援更新 Microsoft Edge 的現有 MSI 安裝，但無法用於初始部署。 如果目的是最終要透過 WSUS 來管理更新，則可以透過管理工具 (例如 [ConfigMgr](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json)) 來完成初始部署。
+是。 [[Microsoft Update Catalog]](https://www.catalog.update.microsoft.com/Search.aspx?q=the%20new%20microsoft%20edge%20for%20windows) 中的套件可用於經 WSUS 進行的新版 Microsoft Edge 初始部署。 在初始部署之後，系統預設的設定為自動更新。 如需詳細資訊，請參閱 [WSUS 更新，適用於 Windows 10 版 (版本為 1809、1903、1909 和 2004：2020 年 10 月 29 日) 的新版 Microsoft Edge](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge)。
+
+手動更新可以透過設定管理工具完成，例如 [ConfigMgr](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json)。
 
 ## 請參閱
 
