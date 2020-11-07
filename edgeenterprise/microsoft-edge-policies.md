@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/22/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 982a171e1c4f55ab99db53a399c669fdf4798f53
-ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
+ms.openlocfilehash: 0e708707ae8465aa49ee49dcec542881a5080a57
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "11134462"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155310"
 ---
 # Microsoft Edge - 原則
 
@@ -29,6 +29,18 @@ ms.locfileid: "11134462"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
+## 新的和不建議使用的原則
+
+下表列出此新的和不建議使用的功能。
+
+| 名稱 | 狀態 |
+|-|-|
+| [WebWidgetAllowed](#webwidgetallowed) | 新增 |
+| [ProxyBypassList](#proxybypasslist) | 已過時 |
+| [ProxyMode](#proxymode) | 已過時 |
+| [ProxyPacUrl](#proxypacurl) | 已過時 |
+| [ProxyServer](#proxyserver) | 已過時 |
+
 ## 可用原則
 
 下表列出此版本 Microsoft Edge 提供的所有瀏覽器相關群組原則。 使用下表中的連結，深入了解特定原則。
@@ -39,10 +51,10 @@ ms.locfileid: "11134462"
 |[內容設定](#content-settings)|[預設搜尋提供者](#default-search-provider)|
 |[Extensions](#extensions)|[HTTP 驗證](#http-authentication)|
 |[kiosk 模式設定](#kiosk-mode-settings)|[原生訊息](#native-messaging)|
-|[密碼管理員和防護](#password-manager-and-protection)|[列印](#printing)|
-|[Proxy 伺服器](#proxy-server)|[SmartScreen 設定](#smartscreen-settings)|
-|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|[其他](#additional)|
-
+|[密碼管理員和防護](#password-manager-and-protection)|[效能](#performance)|
+|[列印](#printing)|[Proxy 伺服器](#proxy-server)|
+|[SmartScreen 設定](#smartscreen-settings)|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|
+|[其他](#additional)|
 
 ### [*應用程式防護設定*](#application-guard-settings-policies)
 
@@ -156,6 +168,11 @@ ms.locfileid: "11134462"
 |[PasswordProtectionLoginURLs](#passwordprotectionloginurls)|設定密碼保護服務應擷取密碼加料雜湊的企業登入 URL 清單|
 |[PasswordProtectionWarningTrigger](#passwordprotectionwarningtrigger)|設定密碼保護警告觸發程序|
 |[PasswordRevealEnabled](#passwordrevealenabled)|啟用顯示密碼按鈕|
+### [*效能*](#performance-policies)
+
+|原則名稱|標題|
+|-|-|
+|[StartupBoostEnabled](#startupboostenabled)|啟用啟動提升|
 ### [*列印*](#printing-policies)
 
 |原則名稱|標題|
@@ -170,10 +187,10 @@ ms.locfileid: "11134462"
 
 |原則名稱|標題|
 |-|-|
-|[ProxyBypassList](#proxybypasslist)|設定 Proxy 許可規則|
-|[ProxyMode](#proxymode)|設定 Proxy 伺服器設定|
-|[ProxyPacUrl](#proxypacurl)|設定 Proxy .pac 檔案 URL|
-|[ProxyServer](#proxyserver)|設定 Proxy 伺服器的位址或 URL|
+|[ProxyBypassList](#proxybypasslist)|設定Proxy略過原則（不建議使用）|
+|[ProxyMode](#proxymode)|設定Proxy 伺服器設定（不建議使用）|
+|[ProxyPacUrl](#proxypacurl)|設定 Proxy .pac 檔案 URL（不建議使用）|
+|[ProxyServer](#proxyserver)|設定 Proxy 伺服器的位址或 URL（不建議使用）|
 |[ProxySettings](#proxysettings)|Proxy 設定|
 ### [*SmartScreen 設定*](#smartscreen-settings-policies)
 
@@ -399,6 +416,8 @@ ms.locfileid: "11134462"
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 所使用的本機 UDP 連接埠範圍|
+|[WebWidgetAllowed](#webwidgetallowed)|啟用Web 小工具|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 啟動時允許Web小工具|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows proxy 解析程式 (已過時) |
 
 
@@ -546,7 +565,6 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：EnableMediaRouter
@@ -608,7 +626,6 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -687,7 +704,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AutoSelectCertificateForUrls
@@ -764,7 +780,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：CookiesAllowedForUrls
@@ -839,7 +854,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\1 = "https://www.contoso.
 SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -920,7 +934,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：CookiesSessionOnlyForUrls
@@ -996,7 +1009,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultCookiesSetting
@@ -1065,7 +1077,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultFileSystemReadGuardSetting
@@ -1133,7 +1144,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -1205,7 +1215,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultGeolocationSetting
@@ -1273,7 +1282,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -1345,7 +1353,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultInsecureContentSetting
@@ -1413,7 +1420,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -1485,7 +1491,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultNotificationsSetting
@@ -1556,7 +1561,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultPluginsSetting
@@ -1625,7 +1629,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultPopupsSetting
@@ -1693,7 +1696,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -1765,7 +1767,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultWebUsbGuardSetting
@@ -1831,7 +1832,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.examp
 SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -1902,7 +1902,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：FileSystemReadBlockedForUrls
@@ -1971,7 +1970,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.exam
 SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -2042,7 +2040,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：FileSystemWriteBlockedForUrls
@@ -2107,7 +2104,6 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -2174,7 +2170,6 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImagesBlockedForUrls
@@ -2239,7 +2234,6 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\1 = "https://www.
 SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -2306,7 +2300,6 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：InsecureContentBlockedForUrls
@@ -2372,7 +2365,6 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：JavaScriptAllowedForUrls
@@ -2437,7 +2429,6 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\1 = "https://www.conto
 SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -2510,7 +2501,6 @@ If you don't set this policy, the default SameSite behavior for cookies will dep
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：LegacySameSiteCookieBehaviorEnabled
@@ -2579,7 +2569,6 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：LegacySameSiteCookieBehaviorEnabledForDomainList
@@ -2645,7 +2634,6 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NotificationsAllowedForUrls
@@ -2710,7 +2698,6 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\1 = "https://www.co
 SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -2779,7 +2766,6 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PluginsAllowedForUrls
@@ -2847,7 +2833,6 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PluginsBlockedForUrls
@@ -2913,7 +2898,6 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PopupsAllowedForUrls
@@ -2978,7 +2962,6 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3133,7 +3116,6 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 ```
 0x00000001
 ```
-
 
   
 
@@ -3294,7 +3276,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：WebUsbAskForUrls
@@ -3361,7 +3342,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3442,7 +3422,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultSearchProviderEnabled
@@ -3510,7 +3489,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\3 = "GB2312"
 SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3587,7 +3565,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 "https://search.contoso.com/searchbyimage/upload"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultSearchProviderImageURL
@@ -3654,7 +3631,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultSearchProviderImageURLPostParams
@@ -3718,7 +3694,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 ```
 "mis"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3785,7 +3760,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 ```
 "My Intranet Search"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3854,7 +3828,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 ```
 "https://search.contoso.com/search?q={searchTerms}"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -3925,7 +3898,6 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 ```
 "https://search.contoso.com/suggest?q={searchTerms}"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4004,7 +3976,6 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 "bing"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NewTabPageSearchBox
@@ -4076,7 +4047,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ExtensionAllowedTypes
@@ -4138,7 +4108,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\1 = "extension_id1"
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4206,7 +4175,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\1 = "extension_id1"
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4291,7 +4259,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ExtensionInstallForcelist
@@ -4320,9 +4287,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
   定義可安裝擴充功能和主題的 URL。
 
-依預設，使用者必須針對要安裝的每個擴充功能或指令碼下載 *.crx 檔案，然後將它拖曳到 Microsoft Edge 設定頁面。 此原則可讓特定 URL 為使用者安裝擴充功能或指令碼。
+定義可直接安裝擴充和主題的 URL，而不需將套件拖放到 edge://extensions 頁面。
 
-此清單中的每個項目都是擴充功能式比對模式 (請參閱 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039))。 使用者可以從符合此清單中項目的任何 URL 輕鬆安裝項目。 這些模式必須同時允許 *.crx 檔案的位置，以及開始下載網頁的位置 (也就是查閱者)。
+此清單中的每個項目都是擴充功能式比對模式 (請參閱 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039))。 使用者可以從符合此清單中項目的任何 URL 輕鬆安裝項目。 這些模式必須同時允許 *.crx 檔案的位置，以及開始下載網頁的位置 (也就是查閱者)。 請勿將檔案存放在需要驗證的位置。
 
 [ExtensionInstallBlocklist](#extensioninstallblocklist) 原則優先於此原則。 不會安裝封鎖清單上的任何擴充功能，即使它來自此清單上的網站。
 
@@ -4359,7 +4326,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.contoso.com/*"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4652,7 +4618,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AllowCrossOriginAuthPrompt
@@ -4714,7 +4679,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 ```
 "contoso.com"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4778,7 +4742,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 "basic,digest,ntlm,negotiate"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AuthSchemes
@@ -4840,7 +4803,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 ```
 "*contoso.com,contoso.com"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -4904,7 +4866,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DisableAuthNegotiateCnameLookup
@@ -4966,7 +4927,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5099,7 +5059,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - Windows 上，版本 87 或更新版本
 
   #### 描述
-                                                                                              
 
   此原則僅適用 Microsoft Edge kiosk 模式。
 
@@ -5141,7 +5100,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 ```
 0x00000001
 ```
-
 
   
 
@@ -5201,7 +5159,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\1 = "com.native.messag
 SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messaging.host.name2"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5270,7 +5227,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NativeMessagingBlocklist
@@ -5335,7 +5291,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5404,7 +5359,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5484,7 +5438,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -5543,7 +5496,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 ```
 "https://contoso.com/change_password.html"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5610,7 +5562,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\1 = "https://contos
 SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.contoso.com"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5691,7 +5642,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PasswordProtectionWarningTrigger
@@ -5769,6 +5719,71 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ## 效能策略
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### StartupBoostEnabled
+
+  #### 啟用啟動提升
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  允許 Microsoft Edge 處理程序在 OS 登入時啟動，並在最後一個瀏覽器視窗關閉後重新開機。
+
+如果 Microsoft Edge 以背景模式執行，瀏覽器可能不會在最後一個視窗關閉時關閉，且在視窗關閉時，瀏覽器將無法在背景模式重新啟動。 如需設定 Microsoft Edge 背景模式行為之後所發生狀況的相關資訊，請參閱 [BackgroundModeEnabled](#backgroundmodeenabled) 原則。
+
+如果您啟用這項原則，啟動提升功能就會開啟。
+
+如果您啟用這項原則，啟動增強功能就會關閉。
+
+如果您未設定此原則，啟動提升功能可能會先關閉或開啟。 使用者可以在 edge://settings/system 中設定其行為。
+
+深入瞭解啟動提升功能： [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： StartupBoostEnabled
+  - GP 名稱：啟用啟動提升功能
+  - GP 路徑（強制）：系統管理範本/Microsoft Edge/效能
+  - GP 路徑（建議使用）：系統管理範本/Microsoft Edge-預設設定（使用者可以覆寫）/Performance
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 值名稱： StartupBoostEnabled
+  - 值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ## 列印原則
 
   [回到頁首](#microsoft-edge---policies)
@@ -5827,7 +5842,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 ```
 "{ \"idPattern\": \".*public\", \"namePattern\": \".*Color\" }"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -5893,7 +5907,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PrintHeaderFooter
@@ -5956,7 +5969,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PrintPreviewUseSystemDefaultPrinter
@@ -6018,7 +6030,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -6168,7 +6179,6 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：UseSystemPrintDialog
@@ -6186,19 +6196,21 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   ### ProxyBypassList
 
-  #### 設定 Proxy 許可規則
+  #### 設定Proxy略過原則（不建議使用）
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### 支援的版本：
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  定義 Microsoft Edge 略過任何 Proxy 的主機清單。
+  不建議使用此原則，請改用[ProxySettings](#proxysettings)。 無法在 Microsoft Edge 版本91中使用。
 
-只有當您在 [ProxyMode](#proxymode) 原則中選取 [使用固定的 Proxy 伺服器] 時，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
+定義 Microsoft Edge 略過任何 Proxy 的主機清單。
+
+只有在未指定 [ProxySettings](#proxysettings) 原則，且您已選取 [ProxyMode](#proxymode) 原則中的 fixed_servers，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
 
 如果啟用此原則，則可以建立 Microsoft Edge 不使用 Proxy 的主機清單。
 
@@ -6221,7 +6233,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProxyBypassList
-  - GP 名稱：設定 Proxy 許可規則
+  - GP 名稱：設定 proxy 略過規則（不建議使用）
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/Proxy 伺服器
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -6239,7 +6251,6 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 "https://www.contoso.com, https://www.fabrikam.com"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ProxyBypassList
@@ -6253,31 +6264,30 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   ### ProxyMode
 
-  #### 設定 Proxy 伺服器設定
+  #### 設定Proxy 伺服器設定（不建議使用）
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### 支援的版本：
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  指定 Microsoft Edge 所使用的 Proxy 伺服器設定。 如果啟用此原則，則使用者無法變更 Proxy 設定。
+  不建議使用此原則，請改用[ProxySettings](#proxysettings)。 無法在 Microsoft Edge 版本91中使用。
 
-如果選擇一律不使用 Proxy 伺服器且一律直接連線，則會忽略所有其他選項。
+如果您將此原則設定為啟用，您可以指定 Microsoft Edge 所使用的 Proxy 伺服器，並防止使用者變更 Proxy 設定。 Microsoft Edge 會忽略從命令列指定的所有 Proxy 相關選項。 只有在未指定 [ProxySettings](#proxysettings) 原則的情況下，才能套用原則。
 
-如果選擇使用系統 Proxy 設定，則會忽略所有其他選項。
+如果您選擇下列其中一個選項，系統就會忽略其他選項：
+  * direct = 永遠都不要使用 Proxy 伺服器，且永遠都能直接連線
+  * "system" = 使用系統 Proxy 設定
+  * "auto_detect" = 自動偵測 Proxy 設定
 
-如果選擇自動偵測 Proxy 伺服器，則會忽略所有其他選項。
-
-如果選擇固定伺服器 Proxy 模式，則可以在 [ProxyServer](#proxyserver) 和「逗點分隔的 Proxy 許可規則清單」中指定更多選項。
-
-如果選擇使用 .pac Proxy 指令碼，則必須在 [Proxy .pac 檔案的 URL] 中指定指令碼的 URL。
+如果您選擇使用：
+  * fixed_servers = 固定的 proxy 伺服器。 您可以使用 [ProxyServer](#proxyserver) 和 [ProxyBypassList](#proxybypasslist)指定更多選項。
+  * pac_script = A .pac proxy 腳本。 使用 [ProxyPacUrl](#proxypacurl) 將 URL 設定為 一個Proxy .pac 檔。
 
 如需詳細範例，請移至 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
-
-如果啟用此原則，則 Microsoft Edge 會忽略從命令列指定的所有 Proxy 相關選項。
 
 如果未設定此原則，則使用者可以選擇其自己的 Proxy 設定。
 
@@ -6310,7 +6320,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProxyMode
-  - GP 名稱：設定 Proxy 伺服器設定
+  - GP 名稱：設定 Proxy 伺服器設定（不建議使用）
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/Proxy 伺服器
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -6328,7 +6338,6 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 "direct"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ProxyMode
@@ -6342,19 +6351,21 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   ### ProxyPacUrl
 
-  #### 設定 Proxy .pac 檔案 URL
+  #### 設定 Proxy .pac 檔案 URL（不建議使用）
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### 支援的版本：
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  指定 Proxy auto-config (PAC) 檔案的 URL。
+  不建議使用此原則，請改用[ProxySettings](#proxysettings)。 無法在 Microsoft Edge 版本91中使用。
 
-只有當您在 [ProxyMode](#proxymode) 原則中選取 [使用 .pac Proxy 指令碼] 時，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
+指定 Proxy auto-config (PAC) 檔案的 URL。
+
+只有在未指定 [ProxySettings](#proxysettings) 原則，且您已選取 [ProxyMode](#proxymode) 原則中的 pac_script，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
 
 如果啟用此原則，則可以為 PAC 檔案指定 URL，其定義瀏覽器如何自動選擇用於擷取特定網站的適當 Proxy 伺服器。
 
@@ -6377,7 +6388,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProxyPacUrl
-  - GP 名稱：設定 Proxy .pac 檔案 URL
+  - GP 名稱：設定 Proxy .pac 檔案 URL(不建議使用)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/Proxy 伺服器
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -6395,7 +6406,6 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 "https://internal.contoso.com/example.pac"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ProxyPacUrl
@@ -6409,19 +6419,21 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   ### ProxyServer
 
-  #### 設定 Proxy 伺服器的位址或 URL
+  #### 設定 Proxy 伺服器的位址或 URL（不建議使用）
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### 支援的版本：
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  指定 Proxy 伺服器的 URL。
+  不建議使用此原則，請改用[ProxySettings](#proxysettings)。 無法在 Microsoft Edge 版本91中使用。
 
-只有當您在 [ProxyMode](#proxymode) 原則中選取 [使用固定的 Proxy 伺服器] 時，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
+指定 Proxy 伺服器的 URL。
+
+只有在未指定 [ProxySettings](#proxysettings) 原則，且您已選取 [ProxyMode](#proxymode) 原則中的 fixed_servers，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
 
 如果啟用此原則，則將對所有 URL 使用此原則設定的 Proxy 伺服器。
 
@@ -6444,7 +6456,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProxyServer
-  - GP 名稱：設定 Proxy 伺服器的位址或 URL
+  - GP 名稱：設定 Proxy 伺服器的位址或 URL(不建議使用)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/Proxy 伺服器
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -6461,7 +6473,6 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 ```
 "123.123.123.123:8080"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -6499,23 +6510,20 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 [ProxyServer](#proxyserver)
 [ProxyBypassList](#proxybypasslist)
 
-ProxyMode 欄位可讓您指定 Microsoft Edge 所使用的 Proxy 伺服器，並防止使用者變更 Proxy 設定。
+設定 [ProxySettings](#proxysettings) 原則接受下欄位:
+  * ProxyMode，可讓您指定 Microsoft Edge 所使用的 proxy 伺服器，並防止使用者變更 Proxy 設定
+  * ProxyPacUrl、Proxy 的 URL .pac 檔案
+  * ProxyServer、Proxy 伺服器的 URL
+  * ProxyBypassList，Microsoft Edge 略過的 proxy 主機清單
 
-ProxyPacUrl 欄位是 Proxy .pac 檔案的 URL。
+如果您是 ProxyMode，請選擇下列值：
+  * 直接使用，永遠不會使用proxy，而忽略其他所有欄位。
+  * 系統, 使用的Proxy並忽略所有其他欄位。
+  * auto_detect, 忽略其他所有欄位。
+  * fixed_server 中，會使用 ProxyServer 和 ProxyBypassList 欄位。
+  * pac_script 中，會使用 ProxyPacUrl 和 ProxyBypassList 欄位。
 
-ProxyServer 欄位是 Proxy 伺服器的 URL。
-
-ProxyBypassList 欄位是 Microsoft Edge 略過的 Proxy 主機清單。
-
-如果選擇 'direct' 值做為 'ProxyMode'，則永遠不會使用 Proxy，並忽略所有其他欄位。
-
-如果選擇 'system' 值做為 'ProxyMode'，則會使用系統的 Proxy，並忽略所有其他欄位。
-
-如果選擇 'auto_detect' 值做為 'ProxyMode'，則會忽略所有其他欄位。
-
-如果選擇 'fixed_server' 值做為 'ProxyMode'，則會使用 'ProxyServer' 和 'ProxyBypassList' 欄位。
-
-如果選擇 'pac_script' 值做為 'ProxyMode'，則會使用 'ProxyPacUrl' 和 'ProxyBypassList' 欄位。
+如需更詳細的範例，請移至 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
   #### 支援的功能：
 
@@ -6640,7 +6648,6 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PreventSmartScreenPromptOverride
@@ -6705,7 +6712,6 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -6773,7 +6779,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\1 = "mydomain.com"
 SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -6844,7 +6849,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SmartScreenEnabled
@@ -6909,7 +6913,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -6968,7 +6971,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -7040,7 +7042,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：HomepageIsNewTabPage
@@ -7108,7 +7109,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 ```
 "https://www.contoso.com"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -7179,7 +7179,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -7347,7 +7346,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NewTabPageHideDefaultTopSites
@@ -7417,7 +7415,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 ```
 "https://www.fabrikam.com"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -7578,7 +7575,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NewTabPagePrerenderEnabled
@@ -7661,7 +7657,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：NewTabPageSetFeedType
@@ -7740,7 +7735,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 0x00000004
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：RestoreOnStartup
@@ -7804,7 +7798,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\1 = "https://contoso.com"
 SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.com"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -7871,7 +7864,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ShowHomeButton
@@ -7935,7 +7927,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8003,7 +7994,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AdsSettingForIntrusiveAdsSites
@@ -8033,7 +8023,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
 如果啟用此原則或未設定，則使用者可以刪除瀏覽和下載歷程記錄。
 
-如果停用此原則，則使用者無法刪除瀏覽和下載歷程記錄。
+如果您停用這個原則，使用者將無法刪除流覽和下載歷史記錄，且歷史記錄同步處理將會停用。
 
 如果啟用此原則，則請勿啟用 [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) 原則，因為它們全都涉及刪除資料。 如果您同時啟用這兩項，則 [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) 原則優先，並且會在 Microsoft Edge 關閉時刪除所有資料，無論此原則的設定方式如何。
 
@@ -8069,7 +8059,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8132,7 +8121,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8198,7 +8186,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AllowPopupsDuringPageUnload
@@ -8258,7 +8245,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8323,7 +8309,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8394,7 +8379,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = "[*.].mydomain2.co
 
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -8451,7 +8435,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8521,7 +8504,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AlternateErrorPagesEnabled
@@ -8583,7 +8565,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8669,7 +8650,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AmbientAuthenticationInPrivateModesEnabled
@@ -8729,7 +8709,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8793,7 +8772,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 "en"
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -8850,7 +8828,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8911,7 +8888,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\1 = "https://www.contos
 SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -8982,7 +8958,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -9096,7 +9071,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -9295,7 +9269,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AutoOpenAllowedForURLs
@@ -9372,7 +9345,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AutoOpenFileTypes
@@ -9440,7 +9412,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AutofillAddressEnabled
@@ -9502,7 +9473,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -9571,7 +9541,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：AutoplayAllowed
@@ -9636,7 +9605,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -9691,7 +9659,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -9765,7 +9732,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：BingAdsSuppression
@@ -9830,7 +9796,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：BlockThirdPartyCookies
@@ -9891,7 +9856,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -9955,7 +9919,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：BrowserGuestModeEnabled
@@ -10017,7 +9980,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10095,7 +10057,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：BrowserSignin
@@ -10161,7 +10122,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10274,7 +10234,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：CertificateTransparencyEnforcementDisabledForCas
@@ -10346,7 +10305,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：CertificateTransparencyEnforcementDisabledForLegacyCas
@@ -10415,7 +10373,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\2 = ".contoso.com"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10486,7 +10443,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ClearBrowsingDataOnExit
@@ -10552,7 +10508,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10622,7 +10577,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -10648,6 +10602,8 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 原則選項對應：
 
 * pinterest_suggestions (pinterest_suggestions) = Pinterest 建議
+
+* collections_share （collections_share） = 共享集合
 
 設定此原則時，請使用上述資訊。
 
@@ -10682,9 +10638,9 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "collections_share"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10693,6 +10649,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ``` xml
 <array>
   <string>pinterest_suggestions</string>
+  <string>collections_share</string>
 </array>
 ```
   
@@ -10751,7 +10708,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10814,7 +10770,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -10880,7 +10835,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ConfigureDoNotTrack
@@ -10901,8 +10855,9 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
   #### 支援的版本：
 
   - Windows 上，版本 87 或更新版本
+  - macOS 上，版本 88 或更新版本
 
-  #### 描述
+  #### 說明
 
   如果已啟用 FriendlyURLs，Microsoft Edge 將會計算 URL 的其他標記法，並將它們放在剪貼簿中。
 
@@ -10963,6 +10918,13 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 0x00000003
 ```
 
+  #### Mac 資訊和設定
+  
+  - 優先順序鍵名稱： ConfigureFriendlyURLFormat
+  - 範例值：
+``` xml
+<integer>3</integer>
+```
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11028,7 +10990,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11085,7 +11046,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -11155,7 +11115,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11212,7 +11171,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ```
 "https://go.microsoft.com/fwlink/?linkid=2080734"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -11278,7 +11236,6 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DNSInterceptionChecksEnabled
@@ -11343,7 +11300,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultBrowserSettingEnabled
@@ -11407,7 +11363,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -11481,7 +11436,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DefaultSensorsSetting
@@ -11553,7 +11507,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -11629,7 +11582,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11684,7 +11636,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 ```
 0x00000000
 ```
-
 
   
 
@@ -11752,7 +11703,6 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -11840,7 +11790,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DiagnosticData
@@ -11907,7 +11856,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11962,7 +11910,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12028,7 +11975,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DisableScreenshots
@@ -12093,7 +12039,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 "${user_home}/Edge_cache"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DiskCacheDir
@@ -12157,7 +12102,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 ```
 0x06400000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12235,7 +12179,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 "off"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DnsOverHttpsMode
@@ -12302,7 +12245,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 "https://dns.example.net/dns-query{?dns}"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DnsOverHttpsTemplates
@@ -12368,7 +12310,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 ```
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12454,7 +12395,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：DownloadRestrictions
@@ -12516,7 +12456,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12640,7 +12579,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：EditFavoritesEnabled
@@ -12659,7 +12597,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   
   >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### 支援的版本：
-            
 
   - On Windows and macOS since 77, until 86
 
@@ -12716,7 +12653,6 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "ExampleDeprecatedFeature_EffectiveUntil20080902"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12790,7 +12726,6 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：EnableDomainActionsDownload
@@ -12852,7 +12787,6 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -12918,7 +12852,6 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：EnableSha1ForLocalAnchors
@@ -12978,7 +12911,6 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13041,7 +12973,6 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 ```
 0x00000000
 ```
-
 
   
 
@@ -13112,7 +13043,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"domains": ["*"], "file_extension": "swf"}
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13201,7 +13131,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ExperimentationAndConfigurationServiceControl
@@ -13270,7 +13199,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ExternalProtocolDialogShowAlwaysOpenCheckbox
@@ -13332,7 +13260,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13397,7 +13324,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13475,7 +13401,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ForceBingSafeSearch
@@ -13537,7 +13462,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13603,7 +13527,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ForceEphemeralProfiles
@@ -13665,7 +13588,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13731,7 +13653,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ForceLegacyDefaultReferrerPolicy
@@ -13794,7 +13715,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -13853,7 +13773,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -13929,7 +13848,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ForceYouTubeRestrict
@@ -13994,7 +13912,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -14053,7 +13970,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14123,7 +14039,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：GoToIntranetSiteForSingleWordEntryInAddressBar
@@ -14182,7 +14097,6 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
 SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14245,7 +14159,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14330,7 +14243,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14457,7 +14369,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportAutofillFormData
@@ -14526,7 +14437,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportBrowserSettings
@@ -14592,7 +14502,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14662,7 +14571,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportExtensions
@@ -14730,7 +14638,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14800,7 +14707,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportHistory
@@ -14868,7 +14774,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -14938,7 +14843,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportOpenTabs
@@ -15006,7 +14910,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -15076,7 +14979,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportSavedPasswords
@@ -15145,7 +15047,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ImportSearchEngine
@@ -15211,7 +15112,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -15287,7 +15187,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：InPrivateModeAvailability
@@ -15347,7 +15246,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -15415,7 +15313,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -15493,7 +15390,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -15555,7 +15451,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -15606,7 +15501,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 "https://internal.contoso.com/sitelist.xml"
 ```
-
 
   
 
@@ -15683,7 +15577,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -15698,17 +15591,19 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 86 或更新版本
 
-  #### 說明
+  #### 描述
 
-  此原則是用來取代 ie-mode-test 標誌原則。 可讓使用者從 UI 功能表選項開啟 IE 模式索引標籤。
+  這項原則可讓使用者透過在 Microsoft Edge 開啟 Internet Explorer 模式選項, 以 Internet Explorer 模式測試應用程式。
+
+使用者可在＂更多工具＂功能表中，選取＂在 Internet Explorer 模式中開啟網站＂來執行此動作。
+
+此外，使用者可以使用＂以邊緣模式開啟網站＂選項，在新式瀏覽器中測試應用程式，而不需要從網站列表中刪除應用程序 。
 
 此設定會與下列內容一併執行：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode'，並設定 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 原則，其中該清單至少擁有一個項目。
 
-如果您啟用此項原則，使用者可以從 UI 選項開啟 IE 模式索引標籤，並將目前的網站導向至 IE 模式網站。
+如果您啟用這個原則，則“更多工具”下將顯示“以Windows Internet Explorer模式打開網站”的選項。 使用者可以在這個索引標籤上，在 Internet Explorer 模式中查看他們的網站。＂其他工具＂下的＂ 以邊緣模式開啟網站＂ 以幫助在新式瀏覽器中測試網站，而不需將它們從網站清單中移除。
 
-如果您停用此項原則，使用者就無法在功能表中直接看到 UI 選項。
-
-如果您未設定此原則，您可以手動設定為 ie-mode-test 標誌。
+如果您停用或未設定此原則，使用者就不會看到＂更多工具＂主選單下的＂在 Internet Explorer 模式中開啟＂ 和＂以邊緣模式開啟＂選項。 不過，使用者可以用--ie-mode-test 標誌來設定這些選項。
 
   #### 支援的功能：
 
@@ -15742,7 +15637,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000000
 ```
-
 
   
 
@@ -15802,7 +15696,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 "https://contoso.com/,https://fabrikam.com/"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -15871,7 +15764,6 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -16232,7 +16124,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 0x00000020
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：MaxConnectionsPerProxy
@@ -16296,7 +16187,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -16368,7 +16258,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：MetricsReportingEnabled
@@ -16433,7 +16322,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -16492,7 +16380,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 ```
 0x0000000a
 ```
-
 
   
 
@@ -16558,7 +16445,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 ```
 0x00000002
 ```
-
 
   #### Mac 資訊和設定
   
@@ -16626,7 +16512,6 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -16685,7 +16570,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\1 
 SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 = "*.contoso.com"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -16752,7 +16636,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PaymentMethodQueryEnabled
@@ -16814,7 +16697,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -16880,7 +16762,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -16937,7 +16818,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17001,7 +16881,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：PromotionalTabsEnabled
@@ -17063,7 +16942,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17128,7 +17006,6 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17215,8 +17092,6 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   此設定可讓您指定 Internet Explorer 是否會將需要新式瀏覽器的網站瀏覽重新導向至 Microsoft Edge。
 
 如果您未設定此原則或將它設定為 'Sitelist' (從 M87 開始)，Internet Explorer 會將需要新式瀏覽器的網站重新導向至 Microsoft Edge。
-
-Microsoft 提供需要這類重新導向的公用網站清單，例如 https://mail.yahoo.com。
 
 將網站從 Internet Explorer 重新導向至 Microsoft Edge 時，開始載入網站的 Internet Explorer 索引標籤如果沒有之前的內容，就會關閉。 否則會瀏覽至 Microsoft 說明頁面，其中會說明網站為什麼重新導向至 Microsoft Edge。
 
@@ -17334,7 +17209,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：RelaunchNotification
@@ -17397,7 +17271,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 0x240c8400
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：RelaunchNotificationPeriod
@@ -17458,7 +17331,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 0x00000000
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -17513,7 +17385,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 ```
 0x00000000
 ```
-
 
   
 
@@ -17574,7 +17445,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17637,7 +17507,6 @@ Microsoft 提供需要這類重新導向的公用網站清單，例如 https://m
 ```
 ".*@contoso.com"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17703,7 +17572,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 "${roaming_app_data}\\edge-profile"
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -17761,7 +17629,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 0x00000001
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -17816,7 +17683,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -17880,7 +17746,6 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SSLErrorOverrideAllowed
@@ -17904,7 +17769,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
   #### 描述
 
-  Sets the minimum supported version of TLS. 如果未設定此原則，則 Microsoft Edge 會使用預設的最低版本，TLS 1.0。
+  Sets the minimum supported version of TLS. 如果您未設定此原則，Microsoft Edge 將顯示 TLS 1.0 和 TLS 1.1 的錯誤，但使用者將可以略過這個錯誤。
 
 If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower than the specified version. 任何無法辨識的值都會被忽略。
 
@@ -17950,7 +17815,6 @@ If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower
 ```
 "tls1"
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18023,7 +17887,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SaveCookiesOnExit
@@ -18089,7 +17952,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SavingBrowserHistoryDisabled
@@ -18148,7 +18010,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18211,7 +18072,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18277,7 +18137,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SearchSuggestEnabled
@@ -18339,7 +18198,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SecurityKeyPermitAttestation
@@ -18399,7 +18257,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 ```
 0x00000001
 ```
-
 
   
 
@@ -18461,7 +18318,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 ```
 0x00000000
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18530,7 +18386,6 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\1 = "https://www.contoso.
 SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18603,7 +18458,6 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SensorsBlockedForUrls
@@ -18674,7 +18528,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\1 = "https://www.contoso.com"
 SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18747,7 +18600,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SerialBlockedForUrls
@@ -18812,7 +18664,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：ShowOfficeShortcutInFavoritesBar
@@ -18874,7 +18725,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -18938,7 +18788,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19064,7 +18913,6 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SpellcheckEnabled
@@ -19135,7 +18983,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
 
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -19199,7 +19046,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -19258,7 +19104,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19320,7 +19165,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：SuppressUnsupportedOSWarning
@@ -19380,7 +19224,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19444,7 +19287,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19513,7 +19355,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19586,7 +19427,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：TLSCipherSuiteDenyList
@@ -19655,7 +19495,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：TabFreezingEnabled
@@ -19713,7 +19552,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19776,7 +19614,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 ```
 0x00000800
 ```
-
 
   #### Mac 資訊和設定
   
@@ -19850,7 +19687,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 0x00000002
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：TrackingPrevention
@@ -19915,7 +19751,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：TranslateEnabled
@@ -19938,7 +19773,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - Windows 和 macOS 上，版本 77 或更新版本
 
   #### 描述
-                    
 
   設定該原則可讓您存取所列的 URL，作為 [URLBlocklist](#urlblocklist) 的例外。
 
@@ -19991,7 +19825,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\4 = "https://server:8080/path"
 SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20075,7 +19908,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：URLBlocklist
@@ -20149,7 +19981,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：UserAgentClientHintsEnabled
@@ -20216,7 +20047,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 "${users}/${user_name}/Edge"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：UserDataDir
@@ -20279,7 +20109,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 0x00000003
 ```
 
-
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -20334,7 +20163,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20400,7 +20228,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 0x00000000
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：VideoCaptureAllowed
@@ -20460,7 +20287,6 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\1 = "https://www.contos
 SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20528,7 +20354,6 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20745,7 +20570,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 0x00000001
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：WebComponentsV0Enabled
@@ -20763,7 +20587,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
-                     
   #### 支援的版本：
 
   - 在 Windows 和 macOS 上，版本 77 到 84
@@ -20811,7 +20634,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 ```
 0x00000001
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20880,7 +20702,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\1 = "https://www.cont
 SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
 ```
-
 
   #### Mac 資訊和設定
   
@@ -20961,7 +20782,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 "default"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：WebRtcLocalhostIpHandling
@@ -21024,7 +20844,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 "10000-11999"
 ```
 
-
   #### Mac 資訊和設定
   
   - 喜好設定機碼名稱：WebRtcUdpPortRange
@@ -21032,6 +20851,130 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 ``` xml
 <string>10000-11999</string>
 ```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### WebWidgetAllowed
+
+  #### 啟用Web 小工具
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  啟用Web 小工具. 啟用後，使用者可以使用該小工具從桌面或從應用程式來搜尋網頁。 該小工具會提供搜尋方塊以顯示網頁建議，並開啟 Microsoft Edge 中的所有網頁搜尋。 搜尋方塊提供搜尋（依照 Bing 提供的支援）和 URL 建議。 該小工具也包含資訊摘要方塊，使用者可以在msn.com新的 Microsoft Edge 瀏覽器或視窗中點擊以看到更多資訊. 資訊摘要方塊可能包含廣告。 您可以從 Microsoft Edge 設定或 Microsoft Edge 中的＂其他工具＂功能表啟動小工具。
+
+如果您啟用或未設定此原則：系統會自動為所有設定檔啟用Web小工具。
+在 Microsoft Edge 設定中，使用者會看到啟用小工具的選項。
+在 Microsoft Edge 設定中，使用者會看到功能表選項，以在 Windows 啟動時執行小工具（自動啟動）。
+如果已啟用 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 原則，則在開機時啟用小工具的選項將被打開。
+如果 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 已停用或未設定，則在開機時啟用小工具的選項將被關閉。
+使用者將從 Microsoft Edge 的＂更多工具＂功能表中看到功能選項以啟動小工具。 使用者可以從＂更多工具＂啟動小工具。
+您可以從系統工作列的＂離開＂選項，或從工作列關閉小工具來關閉該小工具。 如果啟用自動啟動，小工具會在系統重新開機時重新啟用。
+
+如果您停用這個原則：所有設定檔都將停用Web小工具。
+啟動 Microsoft Edge 設定小工具的選項將會停用。
+在 Windows 啟動（自動啟動）時啟動小工具的啟用選項將會停用。
+從Microsoft Edge “更多工具”的功能選單啟動 Microsoft Edge 小工具的選項將會停用。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： WebWidgetAllowed
+  - GP 名稱：啟用Web小工具
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱： WebWidgetAllowed
+  - 值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### WebWidgetIsEnabledOnStartup
+
+  #### 在 Windows 啟動時允許Web小工具
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  允許網頁小工具在 Windows 啟動時開始執行。
+
+如果您啟用：Web小工具預設會在 Windows 啟動時開始執行。
+如果透過 [WebWidgetAllowed](#webwidgetallowed) 原則停用小工具，此原則就不會在 Windows 啟動時啟動小工具。
+
+如果您停用這個原則： Web網頁小工具將不會在Windows 啟動時啟動所有配置文件。
+在 Windows 啟動時啟動小工具的選項將會停用，並會在 Microsoft Edge 設定中關閉。
+
+如果您未設定這個原則： Web網頁小工具將不會在Windows 啟動時啟動所有配置文件。
+在 Windows 啟動時啟動小工具的選項將會在 Microsoft Edge 的設定中關閉。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： WebWidgetIsEnabledOnStartup
+  - GP 名稱：在 Windows 啟動時允許Web小工具
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱： WebWidgetIsEnabledOnStartup
+  - 值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -21090,7 +21033,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 ```
 0x00000001
 ```
-
 
   
 
