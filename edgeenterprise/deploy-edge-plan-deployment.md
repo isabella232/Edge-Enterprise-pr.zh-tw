@@ -3,19 +3,19 @@ title: 規劃 Microsoft Edge 部署
 ms.author: cjacks
 author: appcompatguy
 manager: saudm
-ms.date: 04/23/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 規劃 Microsoft Edge 部署
-ms.openlocfilehash: 3ac3d050578ca4f230ed7e775aefb73f11abb3c0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979502"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155250"
 ---
 # 規劃 Microsoft Edge 部署
 
@@ -23,6 +23,19 @@ ms.locfileid: "10979502"
 
 >[!NOTE]
 >本文適用於 Microsoft Edge 版本 77 或更新版本。
+
+下列各節提供規劃 Microsoft Edge 部署的特定指南。
+
+- [評估瀏覽器環境及需求](#evaluate-your-existing-browser-environment-and-browser-needs)
+- [確定 Windows 10 裝置已準備就緒](#make-sure-your-windows-10-devices-are-ready)
+- [選定部署方法](#determine-your-deployment-methodology)
+- [執行站台探索](#do-site-discovery)
+- [選定通道策略](#determine-your-channel-strategy)
+- [識別和設定原則](#define-and-configure-policies)
+- [測試應用程式相容性](#do-app-compatibility-testing)
+- [Microsoft Edge 試驗](#deploy-microsoft-edge-to-a-pilot-group)
+- [評估試驗](#validate-your-deployment)
+- [在企業中部署 Microsoft Edge](#broad-deployment-of-microsoft-edge)
 
 ## 評估您現有的瀏覽器環境和瀏覽器需求
 
@@ -58,7 +71,7 @@ ms.locfileid: "10979502"
 
 ## 確定您的 Windows 10 裝置已準備就緒
 
-Microsoft Edge 穩定通道需要自 2019 年 10 月 (或更新版本) 的最新累積更新 (LCU)。 如果您嘗試部署到具有舊版 LCU 的 Windows 10 裝置，安裝便會失敗。 如需部署 Microsoft Edge 前必須套用的最小 LCU 的詳細資料，請參閱[支援下一版 Microsoft Edge 的 Windows Update](https://docs.microsoft.com/DeployEdge/microsoft-edge-sysupdate-windows-updates)。
+Microsoft Edge 穩定通道需要自 2019 年 10 月 (或更新版本) 起的最新累積更新 (LCU)。 如果您嘗試部署到具有舊版 LCU 的 Windows 10 裝置，安裝便會失敗。 如需部署 Microsoft Edge 前必須套用的最小 LCU 的詳細資料，請參閱[支援下一版 Microsoft Edge 的 Windows 更新](https://docs.microsoft.com/DeployEdge/microsoft-edge-sysupdate-windows-updates)。
 
 ## 決定您的部署方法
 
@@ -157,9 +170,11 @@ Microsoft Edge 的應用程式相容性非常高 - 如此之高，Microsoft 提�
 2. 如果它適用於 Internet Explorer，也會適用於 Internet Explorer 模式的 Microsoft Edge。
 3. 如果它適用於 Google Chrome，也會適用於 Microsoft Edge。
 
-如果在您的應用程式中，不符合這個承諾，我們會信守承諾，透過 [Microsoft App 保證](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure)修復它。
+如果在您的應用程式中發現不符合我們的相容性承諾，我們會信守承諾，透過 [Microsoft App 保證](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure)修復它。
 
-儘管有此承諾，我們知道許多組織基於合規性或風險管理的原因，必須驗證某些應用程式。 儘管我們期望這非常簡單，但在應用程式測試中，有條理和嚴格是非常重要的。
+### 內部企業營運應用程式測試
+
+儘管我們提供相容性承諾，我們知道許多組織基於合規性或風險管理的原因，必須驗證某些應用程式。 儘管我們期望這非常簡單，但在應用程式測試中，有條理和嚴格是非常重要的。
 
 有兩種方法可以執行應用程式相容性測試：
 
@@ -167,6 +182,10 @@ Microsoft Edge 的應用程式相容性非常高 - 如此之高，Microsoft 提�
 2. 試驗測試。 應用程式由數量有限的使用者在其日常工作環境中使用自己的裝置進行驗證。
 
 選擇最適合每個應用程式的方法，以管理風險，而不會在相容性測試中過度投資。
+
+### 協力廠商應用程式支援
+
+除了各自的企業營運應用程式外，許多組織會使用外部來源所提供的應用程式。 [準備好用於 Microsoft Edge](deploy-edge-ready-for-edge.md)文章包含您組織中可能正在使用的 Web 應用程式清單。 此清單提供與 Microsoft Edge 搭配使用的產品供應商支援聲明連結。
 
 ## 將 Microsoft Edge 部署到試驗群組
 

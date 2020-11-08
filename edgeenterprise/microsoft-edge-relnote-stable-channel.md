@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/02/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 0315e0d99c2cd019550050b6040cdf5af7207541
-ms.sourcegitcommit: bc4d4b1fd80fc8bccbe3822d4c342cd7777bb7f1
+ms.openlocfilehash: 873f6aa652cb09810f620cfefbeb4a9670398d63
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "11150892"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155300"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "11150892"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 86.0.622.63：11 月 4 日
+
+安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-4-2020)。 此更新包含 Chromium 小組所報告為作用中入侵的 [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009) 問題。
 
 ## 版本 86.0.622.61：11 月 2 日
 
@@ -279,7 +283,7 @@ ms.locfileid: "11150892"
 
 #### 新原則
 
-新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AppCacheForceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardcontainerproxy) - 設定應用程式防護容器 Proxy 的設定。
@@ -378,7 +382,7 @@ ms.locfileid: "11150892"
 
 #### 新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AllowSurfGame](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。
