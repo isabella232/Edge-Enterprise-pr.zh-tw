@@ -3,19 +3,19 @@ title: 準備好用於 Microsoft Edge
 ms.author: bshiers
 author: dan-wesley
 manager: chstaab
-ms.date: 11/04/2020
+ms.date: 11/06/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 準備好用於 Microsoft Edge
-ms.openlocfilehash: 06fd37dfa910c05db091cf764552ec93471dcbef
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: eb4f03fd831eda4b4773b87469ceeb896e3fe08a
+ms.sourcegitcommit: 2e8906d1090263efe83d628be06dbe910cb82bf7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155358"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "11157686"
 ---
 # 準備好用於 Microsoft Edge
 
@@ -24,6 +24,17 @@ ms.locfileid: "11155358"
 ## Web 應用程式相容性與支援
 
 為了協助您規劃 Microsoft Edge 的部署，我們編譯了您組織中可能正在使用的 web 應用程式清單。 此清單可讓您判斷此web 應用程式是否已準備好可供 Microsoft Edge 使用，如由 web 應用程式供應商公開支持聲明的記錄。。
+
+### 新增至應用程式清單
+
+隨著從客戶參與意見反應中確認的支持聲明，此清單會定期進行更新。
+
+如果您是網路應用程式提供者，並希望您的支援聲明可包含在客戶參考資料中，請將下列資訊寄至　[isvoutreach@microsoft.com](mailto:isvoutreach@microsoft.com)。
+
+- 產品名稱
+- 支援的版本（如果適用）
+- 提供者名稱
+- 公開支持聲明 URL
 
 ### 應用程式清單
 
