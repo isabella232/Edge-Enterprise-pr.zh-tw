@@ -3,19 +3,19 @@ title: 企業的 Microsoft Edge 安全性
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/09/2020
+ms.date: 11/11/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 企業的 Microsoft Edge 安全性
-ms.openlocfilehash: 465dbc2a7e90d205630f559d8a7b7d582f0467ae
-ms.sourcegitcommit: 10e18ce8a9585bb54c2716939fce93e1c6e708fd
+ms.openlocfilehash: e2f45d49d8f4960f3f2263098ff2eb7d0103b6ea
+ms.sourcegitcommit: 5efa7f6196804da205c3deff4ba7917a94ffcf4f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "11160952"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "11165941"
 ---
 # 企業的 Microsoft Edge 安全性
 
@@ -27,7 +27,7 @@ Microsoft Edge 建置於 Chromium 開放原始碼專案，也就是與 Google Ch
 
 ### 針對網路釣魚和惡意程式碼的最高等級防護
 
-[NSS Labs 的獨立研究指出](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，Microsoft Edge 內建 SmartScreen，封鎖的網路釣魚和惡意程式碼嘗試比 Google Chrome 的安全瀏覽還多。 使用者在線上工作時，SmartScreen 提供網站和下載的信譽檢查，而且屬於 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一環，可獲得 Microsoft 龐大全球資產、研究人員和合作夥伴網路產生的跡象和深入解析。 Microsoft Edge 以危險網站與下載清單的動態雲端式清單為基準執行檢查，甚至可協助您偵測及封鎖稍縱即逝的威脅。  
+在 Microsoft Edge 內建時，SmartScreen 會根據 NSS 實驗的獨立研究來封鎖比 Google Chrome 安全流覽更多的 [網路釣魚](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf) 和 [惡意](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf) 代碼嘗試。 使用者在線上工作時，SmartScreen 提供網站和下載的信譽檢查，而且屬於 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一環，可獲得 Microsoft 龐大全球資產、研究人員和合作夥伴網路產生的跡象和深入解析。 Microsoft Edge 以危險網站與下載清單的動態雲端式清單為基準執行檢查，甚至可協助您偵測及封鎖稍縱即逝的威脅。  
 
 [在 NSS Labs 測試 中](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，[使用 SmartScreen 的 Microsoft Edge](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen) 封鎖了 95.5% 的網路釣魚嘗試和 98.5% 的惡意程式碼嘗試，相較之下，Chrome 安全瀏覽的比例各為 86.9% 和 86.0%。
 
@@ -56,7 +56,7 @@ Microsoft Edge 是 Windows 10 上唯一原生支援硬體隔離功能的瀏覽�
 > [!NOTE]
 > Windows 資訊保護 (WIP) 設定需要授權 Microsoft Intune 或 Microsoft Endpoint Configuration Manager，或是使用協力廠商行動裝置管理 (MDM) 解決方案，而且這類方案可能需要額外授權。
 
-**Microsoft Endpoint DLP 只會在 Microsoft Edge 中以原生方式支援 (Microsoft Endpoint DLP 目前處於公開預覽階段，預期會在 2020 年末正式提供。)**。 Microsoft 端點資料外洩防護 (DLP) 與 Microsoft Security Center 整合，為 Microsoft Edge 提供資訊保護擴充功能，可協助針對不符合規範的活動警示使用者，並在使用者在線上工作時防止資料遺失。 它可搜尋企業內符合系統管理員定義準則的機密資料，並標記這類資料，例如有信用卡號碼或政府 ID (例如社會保險號碼) 的檔案、財務資訊等。您可以將 Microsoft 資訊保護原則部署到 Microsoft Endpoint DLP，而不需要另外重新配置，包括 IT 系統管理員已自訂的機密內容識別碼和原則。 這可讓 IT 系統管理員順利部署資訊保護。
+**Microsoft ENDPOINT DLP 僅在 Microsoft Edge 中受到本機支援**。 Microsoft 端點資料外洩防護 (DLP) 與 Microsoft Security Center 整合，為 Microsoft Edge 提供資訊保護擴充功能，可協助針對不符合規範的活動警示使用者，並在使用者在線上工作時防止資料遺失。 它可搜尋企業內符合系統管理員定義準則的機密資料，並標記這類資料，例如有信用卡號碼或政府 ID (例如社會保險號碼) 的檔案、財務資訊等。您可以將 Microsoft 資訊保護原則部署到 Microsoft Endpoint DLP，而不需要另外重新配置，包括 IT 系統管理員已自訂的機密內容識別碼和原則。 這可讓 IT 系統管理員順利部署資訊保護。
 
 > [!NOTE]
 > Microsoft 端點資料外洩防護需要 Microsoft 365 E5 或 Microsoft 365 E5 合規性訂閱。
