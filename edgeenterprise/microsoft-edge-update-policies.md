@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge Update 原則文件
 ms.author: stmoody
-author: brianalt-msft
+author: dan-wesley
 manager: tahills
-ms.date: 10/07/2020
+ms.date: 11/12/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,14 +11,15 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge Updater 支援的所有原則的文件
-ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
-ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
+ms.openlocfilehash: 0cdcda984efff8d10a84431e44c49ffbf28ddf07
+ms.sourcegitcommit: c2ac4f889b625210b9365a60a447482fb5b4c9d4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "11105567"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "11167305"
 ---
 # Microsoft Edge - 更新原則
+
 最新版本的 Microsoft Edge 包括以下原則，可用於控制更新 Microsoft Edge 的方式和時間。
 
 如需 Microsoft Edge 中提供的其他原則的相關資訊，請參閱 [Microsoft Edge 瀏覽器原則參考](microsoft-edge-policies.md)
