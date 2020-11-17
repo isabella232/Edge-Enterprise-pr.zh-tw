@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/04/2020
+ms.date: 11/13/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 0e708707ae8465aa49ee49dcec542881a5080a57
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
+ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155310"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "11168798"
 ---
 # Microsoft Edge - 原則
 
@@ -28,18 +28,6 @@ ms.locfileid: "11155310"
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
-
-## 新的和不建議使用的原則
-
-下表列出此新的和不建議使用的功能。
-
-| 名稱 | 狀態 |
-|-|-|
-| [WebWidgetAllowed](#webwidgetallowed) | 新增 |
-| [ProxyBypassList](#proxybypasslist) | 已過時 |
-| [ProxyMode](#proxymode) | 已過時 |
-| [ProxyPacUrl](#proxypacurl) | 已過時 |
-| [ProxyServer](#proxyserver) | 已過時 |
 
 ## 可用原則
 
@@ -4001,17 +3989,25 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  控制可以安裝的擴充功能類型，並限制執行階段存取。
+  設定原則會控制哪些應用程式和擴充功能可能會安裝在 Microsoft Edge 中，這些應用程式與擴充功能可以與哪些主機進行互動，以及限制執行時間存取。
 
-此設定會定義允許的擴充功能類型，以及其可以與哪些主機進行互動。 該值是字串清單，其中的每個應該為下列其中一項："extension"、"theme"、"user_script" 和 "hosted_app"。 如需有關這些類型的詳細資訊，請參閱 Microsoft Edge 擴充功能文件。
+如果您沒有設定此原則，則對可接受的副檔名和應用程式類型沒有任何限制。
 
-請注意，此原則也會影響使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 原則強制安裝的擴充功能。
+類型不在清單中的擴充功能和應用程式將不會安裝。 每個值都應該是下列其中一個字串：
 
-如果啟用此原則，則只會安裝符合清單中類型的擴充功能。
+* 「擴充功能」
 
-如果未設定此原則，則對強制執行的可接受擴充功能類型沒有限制。
+* 「佈景主題」
+
+* 「user_script」
+
+* 「hosted_app」
+
+如需有關這些類型的詳細資訊，請參閱 Microsoft Edge 擴充功能文件。
+
+注意：此原則也會影響使用 [ExtensionInstallForcelist](#extensioninstallforcelist)強制安裝的擴充功能和應用程式。
 
   #### 支援的功能：
 
@@ -4200,29 +4196,23 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  指定以無訊息方式安裝、不需使用者互動且使用者無法解除安裝或停用 (「強制安裝」) 的擴充功能。 擴充功能所要求的權限都是隱含授與，無需使用者互動，包括未來版本的擴充功能所要求的任何額外權限。 此外，還會針對 enterprise.deviceAttributes 和 enterprise.platformKeys 擴充功能 API 授與權限。 (這兩個 API 僅適用強制安裝的擴充功能。)
+  設定此原則，以指定無需使用者互動即可自動安裝的應用程式和擴充功能清單。 使用者無法解除安裝或關閉此設定。 還會針對 enterprise.deviceAttributes 和 enterprise.platformKeys 擴充功能 API 隱含授與權限。 注意：這些兩個 API 不適用於未強制安裝的應用程式和擴充功能。
 
-此原則優先於可能會衝突的 [ExtensionInstallBlocklist](#extensioninstallblocklist) 原則。 將擴充功能從強制安裝清單中去除，Microsoft Edge 會自動將其解除安裝。
+如果您未設定此原則，就不會自動安裝任何應用程式或擴充功能，且使用者可以解除安裝 Microsoft Edge 中的任何應用程式。
 
-[強制安裝] 僅限於 Microsoft Edge 附加元件網站中所列的應用程式和擴充功能，且不屬於下列範例：已加入 Microsoft Active Directory 網域的 Windows 執行個體、或已註冊裝置管理的 [Windows 10 專業版] 或企業版執行個體，以及透過 MDM 管理或經由 MCX 加入網域的 macOS 執行個體。
+這個原則取代 [ExtensionInstallBlocklist](#extensioninstallblocklist) 原則。 如果先前的應用程式或擴充功能已從這個清單中移除，Microsoft Edge 會自動將其解除安裝。
 
-請注意，使用者可以使用開發人員工具來修改任何擴充功能的原始程式碼，而這可能會使得擴充功能的功能失常。 如果這是問題，請設定 [DeveloperToolsAvailability](#developertoolsavailability) 原則。
+在 Microsoft Windows 實例上，只有當實例加入至 Microsoft Active Directory 網域且執行 Windows 10 專業版時，才能強制安裝 Microsoft Edge 附加元件網站外部的應用程式和擴充功能。
 
-使用下列格式將擴充功能新增至清單：
+在 macOS 實例上，如果實例是透過 MDM 管理，或透過 MCX 加入至網域，才能強制安裝 Microsoft Edge 附加元件網站外部的應用程式和擴充功能。
 
-[extensionID];[updateURL]
+使用者可以使用開發人員工具變更任何擴充功能的原始程式碼，這可能導致擴充功能無法正常執行。 如果這是個重要問題，請設定 DeveloperToolsDisabled 原則。
 
-- extensionID - 在開發人員模式中，可於 edge://extensions 中找到的 32 個字母字串。
+原則的每個清單項目都是包含擴充功能 ID 的字串，也可以選擇使用分號 (; ) 分隔的「更新」URL。 擴充功能 ID 是在開發人員模式 (例如，在 edge://extensions 上) 中找到的 32 個字母字串。 如果已指定，則「更新」URL 應該指向更新資訊清單 XML 文件 ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) )。 根據預設，會使用 Microsoft Edge 附加元件網站的更新 URL。 此原則中設定的「更新」URL 只會用於初始安裝；此擴充功能的後續更新會在擴充功能的資訊清單中使用更新 URL。
 
-- updateURL (選用) 是應用程式或擴充功能的更新資訊清單 XML 文件位址，如 [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) 中所述。 如果您想要從 Chrome 線上應用程式 Microsoft Store 安裝擴充功能，請提供 Chrome 線上應用程式 Microsoft Store 的更新 URL https://clients2.google.com/service/update2/crx。 請注意，此原則中設定的更新 URL 只適用於初始安裝；擴充功能的後續更新會使用在擴充功能資訊清單中指出的更新 URL。 如果您沒有設定 updateURL，系統會假定此擴充功能是存放在 Microsoft Store，並使用下列的更新 URL (https://edge.microsoft.com/extensionwebstorebase/v1/crx)。
-
-例如，gggmmkjegpiggikcnhidnjjhmicpibll;https://edge.microsoft.com/extensionwebstorebase/v1/crx 會透過 Microsoft Store "update" URL 安裝 Microsoft Online 應用程式。 如需有關裝載擴充功能的詳細資訊，請參閱：[https://go.microsoft.com/fwlink/?linkid=2095044](https://go.microsoft.com/fwlink/?linkid=2095044)。
-
-如果未設定此原則，則不會自動安裝任何擴充功能，且使用者可以在 Microsoft Edge 中解除安裝任何擴充功能。
-
-請注意，此原則不適用 InPrivate 模式。
+注意：此原則不適用於 InPrivate 模式。 閱讀關於擴充功能 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的資訊。
 
   #### 支援的功能：
 
