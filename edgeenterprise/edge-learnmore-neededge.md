@@ -3,19 +3,19 @@ title: 針對與新式網站的相容性，從 Internet Explorer 重新導向至
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 11/03/2020
+ms.date: 11/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
-ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
-ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
+ms.openlocfilehash: c9c64a55df3aeecaebaab3675296c5594612b94f
+ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "11151093"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "11175196"
 ---
 # 針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
 
@@ -31,7 +31,7 @@ ms.locfileid: "11151093"
 當使用者前往與 Internet Explorer 不相容的網站時，系統會自動將使用者重新導向至 Microsoft Edge。 本文說明重新導向的使用者體驗，以及用來設定或停用自動重新導向的群組原則。
 
 > [!NOTE]
-> Microsoft 會維護已知與 Internet Explorer 不相容的所有網站清單。
+> Microsoft 會維護已知與 Internet Explorer 不相容的所有網站清單。 如需詳細資訊，請參閱[要求更新不相容的網站清單](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 
 ## 重新導向體驗
 
@@ -111,7 +111,8 @@ ms.locfileid: "11151093"
 1. 將 **RedirectSitesFromInternetExplorerRedirectMode** 原則設定為 [啟用]****，然後在下拉式清單中的 [選項] 下，將 [將不相容的網站從 Internet Explorer 重新導向至 Microsoft Edge] 選取為 [停用]****。 原則生效後，此設定就會停止重新導向。
 2. 將 **RedirectSitesFromInternetExplorerPreventBHOInstall** 原則設定為 [已啟用]****。 這會在下一次 Microsoft Edge 更新之後解除安裝 BHO。
 
-## 請參閱
+## 另請參閱
 
+- [要求更新不相容的網站清單](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 原則](https://docs.microsoft.com/deployedge/microsoft-edge-policies)
