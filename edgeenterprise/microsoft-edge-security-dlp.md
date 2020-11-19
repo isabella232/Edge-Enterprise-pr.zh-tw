@@ -3,19 +3,19 @@ title: Microsoft Edge 中的資料外洩防護
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 10/08/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的資料外洩防護 (DLP)
-ms.openlocfilehash: 59c1b68c0526a49a2ee30283893707852514828d
-ms.sourcegitcommit: 2af303fc97e8493024e2359fa2e8be162ab95a59
+ms.openlocfilehash: 72f670caf34a09cdfc7f47575f688c2a39d3c221
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "11104604"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176940"
 ---
 # Microsoft Edge 中的資料外洩防護 (DLP)
 
@@ -27,12 +27,17 @@ ms.locfileid: "11104604"
 
 Microsoft Edge 本身支援兩種不同的 DLP 解決方案： Microsoft Endpoint DLP 和 Windows 資訊保護 (WIP)。
 
-## Microsoft Endpoint DLP
+## Microsoft 端點資料遺失防護 (Endpoint DLP)
 
-Microsoft Endpoint DLP 是使用現代化概念 (例如以資料為中心的防護) 的新一代 DLP。 它內建於 Windows 10 和 Microsoft Edge，因此不需要在裝置上安裝其他代理程式或外掛程式。 若要深入瞭解 Endpoint DLP，請參閱 [瞭解 Microsoft 365 Endpoint 資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)。
+Microsoft Endpoint DLP 使用先進概念 (例如以資料為中心的保護) 的新一代資料外洩防護。 它內建於 Windows 10 和 Microsoft Edge，因此裝置上不需要其他的代理程式或外掛程式。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 85 或更新版本。
+
+若要深入瞭解 Endpoint DLP：
+
+- [瞭解 Microsoft 365 端點資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)
+- [開始使用端點資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)
 
 Microsoft Edge 強制執行系統管理員設定的敏感性檔案和記錄非合規活動的稽核事件之原則。
 

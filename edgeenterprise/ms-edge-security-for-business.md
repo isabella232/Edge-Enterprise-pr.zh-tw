@@ -3,19 +3,19 @@ title: 企業的 Microsoft Edge 安全性
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/11/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 企業的 Microsoft Edge 安全性
-ms.openlocfilehash: e2f45d49d8f4960f3f2263098ff2eb7d0103b6ea
-ms.sourcegitcommit: 5efa7f6196804da205c3deff4ba7917a94ffcf4f
+ms.openlocfilehash: 52e55c64aad193072c44f6bc76e5c66808a5439d
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "11165941"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176950"
 ---
 # 企業的 Microsoft Edge 安全性
 
@@ -56,11 +56,13 @@ Microsoft Edge 是 Windows 10 上唯一原生支援硬體隔離功能的瀏覽�
 > [!NOTE]
 > Windows 資訊保護 (WIP) 設定需要授權 Microsoft Intune 或 Microsoft Endpoint Configuration Manager，或是使用協力廠商行動裝置管理 (MDM) 解決方案，而且這類方案可能需要額外授權。
 
-**Microsoft ENDPOINT DLP 僅在 Microsoft Edge 中受到本機支援**。 Microsoft 端點資料外洩防護 (DLP) 與 Microsoft Security Center 整合，為 Microsoft Edge 提供資訊保護擴充功能，可協助針對不符合規範的活動警示使用者，並在使用者在線上工作時防止資料遺失。 它可搜尋企業內符合系統管理員定義準則的機密資料，並標記這類資料，例如有信用卡號碼或政府 ID (例如社會保險號碼) 的檔案、財務資訊等。您可以將 Microsoft 資訊保護原則部署到 Microsoft Endpoint DLP，而不需要另外重新配置，包括 IT 系統管理員已自訂的機密內容識別碼和原則。 這可讓 IT 系統管理員順利部署資訊保護。
+**只有 Microsoft Edge 原生支援 Microsoft 端點資料外洩防護 (Endpoint DLP)**。 Endpoint DLP 會與 Microsoft 安全中心整合，並將資訊保護延伸至 Microsoft Edge，以協助提醒使用者無法相容的活動，並防止使用者在線上工作時遺失資料。 它可搜尋企業內符合系統管理員定義準則的機密資料，並標記這類資料，例如有信用卡號碼或政府 ID (例如社會保險號碼) 的檔案、財務資訊等。您可以將 Microsoft 資訊保護原則部署到 Microsoft Endpoint DLP，而不需要另外重新配置，包括 IT 系統管理員已自訂的機密內容識別碼和原則。 這可讓 IT 系統管理員順利部署資訊保護。
+
+若要深入瞭解 Endpoint DLP 先決條件及如何進行設定，請移至 [開始使用端點資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)。
 
 > [!NOTE]
 > Microsoft 端點資料外洩防護需要 Microsoft 365 E5 或 Microsoft 365 E5 合規性訂閱。
 
-## 請參閱
+## 另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
