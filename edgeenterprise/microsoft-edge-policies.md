@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/13/2020
+ms.date: 11/19/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
-ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
+ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
+ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "11168798"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "11181984"
 ---
 # Microsoft Edge - 原則
 
@@ -28,6 +28,17 @@ ms.locfileid: "11168798"
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
+
+## 新的和已取代的原則
+
+下表針對此更新列出新的和已被取代的功能。
+
+| 名稱 | 狀態 |
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| 新增 |
+|[BlockExternalExtensions](#blockexternalextensions) | 新增 |
+|[ShowMicrosoftRewards](#showmicrosoftrewards) | 新增 |
+|[ProactiveAuthEnabled](#proactiveauthenabled) | 已取代 |
 
 ## 可用原則
 
@@ -41,8 +52,9 @@ ms.locfileid: "11168798"
 |[kiosk 模式設定](#kiosk-mode-settings)|[原生訊息](#native-messaging)|
 |[密碼管理員和防護](#password-manager-and-protection)|[效能](#performance)|
 |[列印](#printing)|[Proxy 伺服器](#proxy-server)|
-|[SmartScreen 設定](#smartscreen-settings)|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|
-|[其他](#additional)|
+|[睡眠索引標籤設定](#sleeping-tabs-settings)|[SmartScreen 設定](#smartscreen-settings)|
+|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|[其他](#additional)|
+
 
 ### [*應用程式防護設定*](#application-guard-settings-policies)
 
@@ -116,6 +128,7 @@ ms.locfileid: "11168798"
 
 |原則名稱|標題|
 |-|-|
+|[BlockExternalExtensions](#blockexternalextensions)|封鎖安裝外部擴充功能|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|設定允許的擴充功能類型|
 |[ExtensionInstallAllowlist](#extensioninstallallowlist)|允許安裝特定擴充功能|
 |[ExtensionInstallBlocklist](#extensioninstallblocklist)|控制不能安裝哪些擴充功能|
@@ -180,6 +193,13 @@ ms.locfileid: "11168798"
 |[ProxyPacUrl](#proxypacurl)|設定 Proxy .pac 檔案 URL（不建議使用）|
 |[ProxyServer](#proxyserver)|設定 Proxy 伺服器的位址或 URL（不建議使用）|
 |[ProxySettings](#proxysettings)|Proxy 設定|
+### [*睡眠索引標籤設定*](#sleeping-tabs-settings-policies)
+
+|原則名稱|標題|
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)|對特定網站封鎖睡眠索引標籤|
+|[SleepingTabsEnabled](#sleepingtabsenabled)|設定睡眠索引標籤|
+|[SleepingTabsTimeout](#sleepingtabstimeout)|設定睡眠索引標籤的背景索引標籤無活動逾時|
 ### [*SmartScreen 設定*](#smartscreen-settings-policies)
 
 |原則名稱|標題|
@@ -341,7 +361,7 @@ ms.locfileid: "11168798"
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|允許網站查詢可用的付款方式|
 |[PersonalizationReportingEnabled](#personalizationreportingenabled)|透過傳送瀏覽歷程記錄至 Microsoft，允許廣告、搜尋及新聞個人化|
 |[PinningWizardAllowed](#pinningwizardallowed)|允許 [釘選到工作列精靈]|
-|[ProactiveAuthEnabled](#proactiveauthenabled)|啟用主動式驗證|
+|[ProactiveAuthEnabled](#proactiveauthenabled)|啟用主動式驗證 (已取代)|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|啟用全分頁促銷內容|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|詢問下載檔案的儲存位置|
 |[QuicAllowed](#quicallowed)|允許 QUIC 通訊協定|
@@ -370,6 +390,7 @@ ms.locfileid: "11168798"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|封鎖存取特定網站上的感應器|
 |[SerialAskForUrls](#serialaskforurls)|允許特定網站的 Serial API|
 |[SerialBlockedForUrls](#serialblockedforurls)|封鎖特定網站的 Serial API|
+|[ShowMicrosoftRewards](#showmicrosoftrewards)|顯示 Microsoft Rewards 體驗|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|啟用 Signed HTTP Exchange (SXG) 支援|
 |[SitePerProcess](#siteperprocess)|為每個網站啟用網站隔離|
@@ -475,7 +496,7 @@ ProxyServer 欄位是 Proxy 伺服器的 URL。
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ApplicationGuardContainerProxy
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -545,7 +566,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EnableMediaRouter
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -607,7 +628,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ShowCastIconInToolbar
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -989,7 +1010,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultCookiesSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1057,7 +1078,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：DefaultFileSystemReadGuardSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1125,7 +1146,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：DefaultFileSystemWriteGuardSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1195,7 +1216,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultGeolocationSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1263,7 +1284,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultImagesSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1333,7 +1354,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultInsecureContentSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1401,7 +1422,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultJavaScriptSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1471,7 +1492,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultNotificationsSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1541,7 +1562,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultPluginsSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1609,7 +1630,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultPopupsSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1677,7 +1698,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultWebBluetoothGuardSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -1747,7 +1768,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultWebUsbGuardSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -2481,7 +2502,7 @@ If you don't set this policy, the default SameSite behavior for cookies will dep
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：LegacySameSiteCookieBehaviorEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -3011,7 +3032,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：不適用
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：RegisteredProtocolHandlers
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3097,7 +3118,7 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SpotlightExperiencesAndRecommendationsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -3154,7 +3175,7 @@ USB 權限模型會使用要求端網站的 URL (「要求端 URL」) 和最上�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebUsbAllowDevicesForUrls
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3402,7 +3423,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -3545,7 +3566,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderImageURL
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3611,7 +3632,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderImageURLPostParams
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3675,7 +3696,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderKeyword
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3741,7 +3762,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderName
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3809,7 +3830,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderSearchURL
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3879,7 +3900,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DefaultSearchProviderSuggestURL
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3956,7 +3977,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NewTabPageSearchBox
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -3976,6 +3997,71 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   [回到頁首](#microsoft-edge---policies)
 
   ## 擴充功能原則
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### BlockExternalExtensions
+
+  #### 封鎖安裝外部擴充功能
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  控制外部擴充功能的安裝。
+
+如果啟用此設定，則會封鎖安裝外部擴充功能。
+
+如果停用此原則或保留未設定，則會允許安裝外部擴充功能。
+
+外部擴充功能和其安裝會記錄在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options。
+
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：BlockExternalExtensions
+  - GP 名稱：封鎖安裝外部擴充功能
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/擴充功能
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：BlockExternalExtensions
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：BlockExternalExtensions
+  - 範例值：
+``` xml
+<true/>
+```
+  
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -4373,7 +4459,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ExtensionSettings
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -4600,7 +4686,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowCrossOriginAuthPrompt
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -4662,7 +4748,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AuthNegotiateDelegateAllowlist
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -4724,7 +4810,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AuthSchemes
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -4786,7 +4872,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AuthServerAllowlist
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -4848,7 +4934,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DisableAuthNegotiateCnameLookup
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -4910,7 +4996,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EnableAuthNegotiatePort
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5019,7 +5105,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：KioskAddressBarEditingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5083,7 +5169,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：KioskDeleteDownloadsOnExit
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5274,7 +5360,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NativeMessagingUserLevelHosts
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5342,7 +5428,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：PasswordManagerEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5420,7 +5506,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：PasswordMonitorAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5479,7 +5565,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PasswordProtectionChangePasswordURL
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -5624,7 +5710,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PasswordProtectionWarningTrigger
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5690,7 +5776,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：不適用
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：PasswordRevealEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5762,7 +5848,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 值名稱： StartupBoostEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5825,7 +5911,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultPrinterSelection
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -5889,7 +5975,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：PrintHeaderFooter
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -5951,7 +6037,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：PrintPreviewUseSystemDefaultPrinter
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6013,7 +6099,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PrintingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6075,7 +6161,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：PrintingPaperSizeDefault
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6161,7 +6247,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：UseSystemPrintDialog
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6233,7 +6319,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ProxyBypassList
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6320,7 +6406,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱︰ProxyMode
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6388,7 +6474,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱︰ProxyPacUrl
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6456,7 +6542,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱︰ProxyServer
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6540,7 +6626,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ProxySettings
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -6576,6 +6662,225 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   <key>ProxyServer</key>
   <string>123.123.123.123:8080</string>
 </dict>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ## 睡眠索引標籤設定原則
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### SleepingTabsBlockedForUrls
+
+  #### 對特定網站封鎖睡眠索引標籤
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  根據 URL 的模式定義不允許由睡眠索引標籤置於睡眠的網站清單。
+
+如果已停用 [SleepingTabsEnabled](#sleepingtabsenabled) 原則，則不會使用此清單，且不會自動將任何網站置於睡眠。
+
+如果未設定此原則，除非使用者的個人設定加以封鎖，否則可以將所有網站置於睡眠。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### Data Type:
+
+  - 字串清單
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：SleepingTabsBlockedForUrls
+  - GP 名稱：對特定網站封鎖睡眠索引標籤
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/睡眠索引標籤設定
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/睡眠索引標籤設定
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended\SleepingTabsBlockedForUrls
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### 範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：SleepingTabsBlockedForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### SleepingTabsEnabled
+
+  #### 設定睡眠索引標籤
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  此原則設定可讓您設定是否要開啟睡眠索引標籤。 睡眠索引標籤會將閒置的背景索引標籤置於睡眠，以降低 CPU、電池和記憶體使用量。 Microsoft Edge 使用啟發學習法來避免將在背景中執行實用工作 (例如：顯示通知、播放音效和串流視訊) 的索引標籤置於睡眠。 睡眠索引標籤預設會開啟。
+
+您可以設定原則 [SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)，以防止將個別網站置於睡眠。
+
+如果啟用此設定，就會開啟睡眠索引標籤。
+
+如果停用此設定，就會關閉睡眠索引標籤。
+
+如果未設定此設定，則使用者可以選擇是否要使用睡眠索引標籤。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：SleepingTabsEnabled
+  - GP 名稱：設定睡眠索引標籤
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/睡眠索引標籤設定
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/睡眠索引標籤設定
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：SleepingTabsEnabled
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：SleepingTabsEnabled
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### SleepingTabsTimeout
+
+  #### 設定睡眠索引標籤的背景索引標籤無活動逾時
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  如果已啟用睡眠索引標籤，此原則設定可讓您設定逾時 (以秒為單位)，在此時間後，系統會自動將閒置的背景索引標籤置於睡眠。 根據預設，此逾時為 7,200 秒 (2 小時)。
+
+只有在已啟用或未設定原則 [SleepingTabsEnabled](#sleepingtabsenabled)，且使用者已啟用睡眠索引標籤設定時，索引標籤才會自動置於睡眠。
+
+如果未設定此原則，則使用者可以選擇逾時值。
+
+原則選項對應：
+
+* 5Minutes (300) = 無活動 5 分鐘
+
+* 15Minutes (900) = 無活動 15 分鐘
+
+* 30Minutes (1800) = 無活動 30 分鐘
+
+* 1Hour (3600) = 無活動 1 小時
+
+* 2Hours (7200) = 無活動 2 小時
+
+* 3Hours (10800) = 無活動 3 小時
+
+* 6Hours (21600) = 無活動 6 小時
+
+* 12Hours (43200) = 無活動 12 小時
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### Data Type:
+
+  - 整數
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：SleepingTabsTimeout
+  - GP 名稱：設定睡眠索引標籤的背景索引標籤無活動逾時
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/睡眠索引標籤設定
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/睡眠索引標籤設定
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：SleepingTabsTimeout
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000384
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：SleepingTabsTimeout
+  - 範例值：
+``` xml
+<integer>900</integer>
 ```
   
 
@@ -6630,7 +6935,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PreventSmartScreenPromptOverride
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6695,7 +7000,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PreventSmartScreenPromptOverrideForFiles
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6831,7 +7136,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：SmartScreenEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6895,7 +7200,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：SmartScreenForTrustedDownloadsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -6954,7 +7259,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：SmartScreenPuaEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7024,7 +7329,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：HomepageIsNewTabPage
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7092,7 +7397,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：HomepageLocation
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -7162,7 +7467,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：NewTabPageAllowedBackgroundTypes
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7234,7 +7539,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NewTabPageCompanyLogo
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -7328,7 +7633,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NewTabPageHideDefaultTopSites
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7359,9 +7664,11 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 
   #### 說明
 
-  設定新的索引標籤頁面的預設 URL。
+  設定新索引標籤頁面的預設 URL。
 
-此原則會決定建立新的索引標籤時開啟的頁面 (包括開啟新視窗時)。 如果啟動頁面已設為開啟新的索引標籤頁面，則也會影響它。
+此原則建議使用的版本目前的執行和運作，未完全符合強制的版本。
+
+此原則會決定建立新的索引標籤時 (包括開啟新視窗時) 開啟的頁面。 如果啟動頁面已設為開啟新的索引標籤頁面，則也會影響它。
 
 此原則不會判定在啟動時要開啟的頁面；這是由 [RestoreOnStartup](#restoreonstartup) 原則控制。 如果啟動頁面已設為開啟至新的索引標籤，則不會對首頁造成任何影響。
 
@@ -7398,7 +7705,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NewTabPageLocation
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -7466,7 +7773,7 @@ Microsoft Edge 會以所列的順序呈現這些項目 (由左至右)，且所�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NewTabPageManagedQuickLinks
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -7557,7 +7864,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NewTabPagePrerenderEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7639,7 +7946,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NewTabPageSetFeedType
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7717,7 +8024,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：RestoreOnStartup
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7846,7 +8153,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ShowHomeButton
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7889,7 +8196,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   - 可強制執行：是
   - 可以建議：否
-  - 動態原則重新整理：是
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
   #### Data Type:
 
@@ -7910,7 +8217,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AddressBarMicrosoftSearchInBingProviderEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -7976,7 +8283,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AdsSettingForIntrusiveAdsSites
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8042,7 +8349,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowDeletingBrowserHistory
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8104,7 +8411,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowFileSelectionDialogs
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8168,7 +8475,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowPopupsDuringPageUnload
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8228,7 +8535,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowSurfGame
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8292,7 +8599,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AllowSyncXHRInPageDismissal
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8486,7 +8793,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：AlternateErrorPagesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8548,7 +8855,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AlwaysOpenPdfExternally
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8632,7 +8939,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AmbientAuthenticationInPrivateModesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8692,7 +8999,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AppCacheForceEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8754,7 +9061,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ApplicationLocaleValue
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -8811,7 +9118,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AudioCaptureAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -8941,7 +9248,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AudioSandboxEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9054,7 +9361,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AutoImportAtFirstRun
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9126,7 +9433,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AutoLaunchProtocolsFromOrigins
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -9394,7 +9701,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：AutofillAddressEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9456,7 +9763,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：AutofillCreditCardEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9523,7 +9830,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：AutoplayAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9587,7 +9894,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：BackgroundModeEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9642,7 +9949,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BackgroundTemplateListUpdatesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9714,7 +10021,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BingAdsSuppression
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9778,7 +10085,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：BlockThirdPartyCookies
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9839,7 +10146,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BrowserAddProfileEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9901,7 +10208,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BrowserGuestModeEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -9963,7 +10270,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BrowserNetworkTimeQueriesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10039,7 +10346,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BrowserSignin
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10105,7 +10412,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：BuiltInDnsClientEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10425,7 +10732,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ClearBrowsingDataOnExit
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10491,7 +10798,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ClearCachedImagesAndFilesOnExit
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10559,7 +10866,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ClickOnceEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10691,7 +10998,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：CommandLineFlagSecurityWarningsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10753,7 +11060,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ComponentUpdatesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10817,7 +11124,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ConfigureDoNotTrack
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10900,7 +11207,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ConfigureFriendlyURLFormat
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -10972,7 +11279,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ConfigureOnPremisesAccountAutoSignIn
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11029,7 +11336,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ConfigureOnlineTextToSpeech
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11097,7 +11404,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ConfigureShare
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11154,7 +11461,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：CustomHelpLink
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -11218,7 +11525,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DNSInterceptionChecksEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11282,7 +11589,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultBrowserSettingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11346,7 +11653,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：DefaultSearchProviderContextMenuAccessAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11418,7 +11725,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultSensorsSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11490,7 +11797,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DefaultSerialGuardSetting
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11564,7 +11871,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DelayNavigationsForInitialSiteListDownload
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11619,7 +11926,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DeleteDataOnMigration
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11686,7 +11993,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DeveloperToolsAvailability
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11772,7 +12079,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：DiagnosticData
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11838,7 +12145,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DirectInvokeEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11893,7 +12200,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：Disable3DAPIs
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -11957,7 +12264,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DisableScreenshots
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12021,7 +12328,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DiskCacheDir
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -12085,7 +12392,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DiskCacheSize
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12161,7 +12468,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DnsOverHttpsMode
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -12227,7 +12534,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：DnsOverHttpsTemplates
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -12293,7 +12600,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DownloadDirectory
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -12377,7 +12684,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：DownloadRestrictions
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12439,7 +12746,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EdgeCollectionsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12501,7 +12808,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：EdgeShoppingAssistantEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12561,7 +12868,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EditFavoritesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12708,7 +13015,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EnableDomainActionsDownload
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12770,7 +13077,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EnableOnlineRevocationChecks
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12834,7 +13141,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：EnableSha1ForLocalAnchors
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12894,7 +13201,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：EnterpriseHardwarePlatformAPIEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -12956,7 +13263,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：EnterpriseModeSiteListManagerAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13113,7 +13420,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ExperimentationAndConfigurationServiceControl
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13181,7 +13488,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ExternalProtocolDialogShowAlwaysOpenCheckbox
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13243,7 +13550,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：FamilySafetySettingsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13307,7 +13614,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：FavoritesBarEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13383,7 +13690,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceBingSafeSearch
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13445,7 +13752,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceCertificatePromptsOnMultipleMatches
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13509,7 +13816,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceEphemeralProfiles
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13571,7 +13878,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceGoogleSafeSearch
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13635,7 +13942,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceLegacyDefaultReferrerPolicy
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13697,7 +14004,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceNetworkInProcess
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13756,7 +14063,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceSync
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13830,7 +14137,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ForceYouTubeRestrict
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13894,7 +14201,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：FullscreenAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -13953,7 +14260,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：GloballyScopeHTTPAuthCacheEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14021,7 +14328,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：GoToIntranetSiteForSingleWordEntryInAddressBar
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14142,7 +14449,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：HardwareAccelerationModeEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14226,7 +14533,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：HideFirstRunExperience
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14290,7 +14597,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14351,7 +14658,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportAutofillFormData
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14419,7 +14726,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportBrowserSettings
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14485,7 +14792,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportCookies
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14553,7 +14860,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportExtensions
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14621,7 +14928,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportFavorites
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14689,7 +14996,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportHistory
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14757,7 +15064,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ImportHomepage
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14825,7 +15132,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportOpenTabs
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14893,7 +15200,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportPaymentInfo
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -14961,7 +15268,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportSavedPasswords
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15029,7 +15336,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportSearchEngine
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15095,7 +15402,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ImportShortcuts
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15169,7 +15476,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InPrivateModeAvailability
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15229,7 +15536,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InsecureFormsWarningsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15296,7 +15603,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：IntensiveWakeUpThrottlingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15372,7 +15679,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱： InternetExplorerIntegrationEnhancedHangDetection
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15433,7 +15740,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationLevel
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15484,7 +15791,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationSiteList
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -15559,7 +15866,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationSiteRedirect
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15620,7 +15927,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationTestingAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15679,7 +15986,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：IsolateOrigins
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -15747,7 +16054,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：LocalProvidersEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -15811,7 +16118,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ManagedFavorites
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -15947,7 +16254,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ManagedSearchEngines
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -16106,7 +16413,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：MaxConnectionsPerProxy
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16170,7 +16477,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：MediaRouterCastAllowAllIPs
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16240,7 +16547,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：MetricsReportingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16304,7 +16611,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NativeWindowOcclusionEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16363,7 +16670,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NavigationDelayForInitialSiteListDownloadTimeout
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16428,7 +16735,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：NetworkPredictionOptions
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16494,7 +16801,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：NonRemovableProfileEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16618,7 +16925,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PaymentMethodQueryEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16680,7 +16987,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PersonalizationReportingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16744,7 +17051,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PinningWizardAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16758,21 +17065,23 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   ### ProactiveAuthEnabled
 
-  #### 啟用主動式驗證
+  #### 啟用主動式驗證 (已取代)
 
-  
+  >已取代：此原則已被取代。 目前支援，但將在未來版本中過時。
   
   #### 支援的版本：
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
-  讓您設定是否要開啟主動式驗證。
+  此原則已取代，因為它無法獨立於瀏覽器登入而運作。 在 Microsoft Edge 版本 91 中無法使用。 如果想要設定瀏覽器登入，請使用 [BrowserSignin](#browsersignin) 原則。
 
-如果啟用此原則，則 Microsoft Edge 會嘗試使用 Microsoft 服務主動驗證登入使用者的身分。 Microsoft Edge 會定期檢查線上服務，以取得包含控管如何執行此動作之設定的更新資訊清單。
+讓您設定是否要在 Microsoft Edge 中開啟主動式驗證。
 
-如果停用此原則，則 Microsoft Edge 不會嘗試使用 Microsoft 服務主動驗證登入使用者的身分。 Microsoft Edge 不再會檢查線上服務是否有包含用於執行此動作之設定的更新資訊清單。
+如果啟用此原則，則 Microsoft Edge 會嘗試使用登入瀏覽器的帳戶，順暢地向網站和服務進行驗證。
+
+如果停用此原則，則 Microsoft Edge 不會嘗試使用單一登入 (SSO) 來向網站或服務進行驗證。 企業新索引標籤頁面之類已驗證的體驗將無法運作 (例如，最近和建議的 Office 文件將無法使用)。
 
 如果未設定此原則，則會開啟主動式驗證。
 
@@ -16791,7 +17100,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProactiveAuthEnabled
-  - GP 名稱：啟用主動式驗證
+  - GP 名稱：啟用主動式驗證 (已取代)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -16801,7 +17110,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ProactiveAuthEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16863,7 +17172,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PromotionalTabsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16925,7 +17234,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：PromptForDownloadLocation
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -16989,7 +17298,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：QuicAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17055,7 +17364,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RedirectSitesFromInternetExplorerPreventBHOInstall
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17124,7 +17433,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：RedirectSitesFromInternetExplorerRedirectMode
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17191,7 +17500,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RelaunchNotification
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17253,7 +17562,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RelaunchNotificationPeriod
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17313,7 +17622,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RendererCodeIntegrityEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17368,7 +17677,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RequireOnlineRevocationChecksForLocalAnchors
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17428,7 +17737,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：ResolveNavigationErrorsUseWebService
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17490,7 +17799,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RestrictSigninToPattern
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -17554,7 +17863,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RoamingProfileLocation
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -17611,7 +17920,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RoamingProfileSupportEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17666,7 +17975,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：RunAllFlashInAllowMode
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17728,7 +18037,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SSLErrorOverrideAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17798,7 +18107,7 @@ If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SSLVersionMin
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -17934,7 +18243,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SavingBrowserHistoryDisabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -17993,7 +18302,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ScreenCaptureAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18055,7 +18364,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ScrollToTextFragmentEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18119,7 +18428,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：SearchSuggestEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18240,7 +18549,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SendIntranetToInternetExplorer
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18301,7 +18610,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SendSiteInfoToImproveServices
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18604,6 +18913,77 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### ShowMicrosoftRewards
+
+  #### 顯示 Microsoft Rewards 體驗
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  顯示 Microsoft Rewards 體驗和通知。
+如果啟用此原則：
+   - 搜尋和贏得市場中的 Microsoft 帳戶使用者 (不包括 Azure AD 帳戶)，將在其 Microsoft Edge 使用者設定檔中看到 Microsoft Rewards 體驗。
+   - 用來在 Microsoft Edge 設定中啟用 Microsoft Rewards 的設定，將會啟用並切換為開啟。
+   - 用來啟用「提供」模式的設定將會啟用，並遵守使用者的設定。
+
+如果停用此原則：
+   - 搜尋和贏得市場中的 Microsoft 帳戶使用者 (不包括 Azure AD 帳戶)，將不會在其 Microsoft Edge 使用者設定檔中看到 Microsoft Rewards 體驗。
+   - 用來在 Microsoft Edge 設定中啟用 Microsoft Rewards 的設定，將會停用並切換為關閉。
+
+如果未設定此原則：
+   - 搜尋和贏得市場中的 Microsoft 帳戶使用者 (不包括 Azure AD 帳戶)，將在其 Microsoft Edge 使用者設定檔中看到 Microsoft Rewards 體驗。
+   - 用來在 Microsoft Edge 設定中啟用 Microsoft Rewards 的設定，將會啟用並切換為開啟。
+   - 用來啟用「提供」模式的設定將會啟用，並遵守使用者的設定。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### Data Type:
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：ShowMicrosoftRewards
+  - GP 名稱：顯示 Microsoft Rewards 體驗
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：ShowMicrosoftRewards
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000000
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：ShowMicrosoftRewards
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### ShowOfficeShortcutInFavoritesBar
 
   #### 在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)
@@ -18646,7 +19026,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：ShowOfficeShortcutInFavoritesBar
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18708,7 +19088,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SignedHTTPExchangeEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18771,7 +19151,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SitePerProcess
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18835,7 +19215,7 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - Value Name: SpeechRecognitionEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -18895,7 +19275,7 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SpellcheckEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19087,7 +19467,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：StricterMixedContentTreatmentEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19147,7 +19527,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：SuppressUnsupportedOSWarning
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19207,7 +19587,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：SyncDisabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19338,7 +19718,7 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：TLS13HardeningForLocalAnchorsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19477,7 +19857,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：TabFreezingEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19535,7 +19915,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：TaskManagerEndProcessEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19597,7 +19977,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：TotalMemoryLimitMb
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19669,7 +20049,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：TrackingPrevention
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19733,7 +20113,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
   - 數值名稱：TranslateEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -19963,7 +20343,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 值名稱：UserAgentClientHintsEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20029,7 +20409,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：UserDataDir
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -20091,7 +20471,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：UserDataSnapshotRetentionLimit
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20146,7 +20526,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：UserFeedbackAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20210,7 +20590,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：VideoCaptureAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20337,7 +20717,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WPADQuickCheckEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20397,7 +20777,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebAppInstallForceList
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -20490,7 +20870,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebCaptureEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20552,7 +20932,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebComponentsV0Enabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20617,7 +20997,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebDriverOverridesIncompatiblePolicies
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20764,7 +21144,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebRtcLocalhostIpHandling
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -20826,7 +21206,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WebRtcUdpPortRange
-  - 值類型：REG_SZ
+  - 數值類型：REG_SZ
 
   ##### 範例值：
 
@@ -20897,7 +21277,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱： WebWidgetAllowed
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -20957,7 +21337,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱： WebWidgetIsEnabledOnStartup
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
@@ -21016,7 +21396,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：WinHttpProxyResolverEnabled
-  - 值類型：REG_DWORD
+  - 數值類型：REG_DWORD
 
   ##### 範例值：
 
