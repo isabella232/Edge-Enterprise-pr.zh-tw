@@ -3,19 +3,19 @@ title: Microsoft Edge 發行排程
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/13/2020
+ms.date: 11/19/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 發行排程
-ms.openlocfilehash: 2890109b617ca7f61fee568440c6febf2c45cb70
-ms.sourcegitcommit: 9b03a7affdfe2746b3219b0785c66e68c2abda9e
+ms.openlocfilehash: 51305332253f9804ada857c2f91b00c7d4f88415
+ms.sourcegitcommit: c71f009b5dd8be71e65592b6c23a8511d5deeb75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "11168862"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "11182251"
 ---
 # Microsoft Edge 發行排程
 
@@ -36,11 +36,11 @@ Microsoft 提供四個選項，稱為通道，用來管理更新 Microsoft Edge 
 
 | 版本 | 發行狀態 | Beta 通道<br>發行週 | Stable 通道<br>發行週 |
 |---------|-----|------|--------|
-| 83 | 發行日期<br>版本 | 2020 年 4 月 22 日<br>[83.0.478.13](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-83047813-april-22) | 2020 年 5 月 21 日<br> [83.0.478.37](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-83047837-may-21) |
-| 84 | 發行日期<br>版本 | 2020 年 6 月 2 日<br>[84.0.522.11](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-84052211-june-2) | 2020 年 7 月 16 日<br> [84.0.522.40](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-84052240-july-16) |
-| 85 | 發行日期<br>版本 | 2020 年 7 月 28 日<br>[85.0.564.18](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-85056418-july-28)  | 2020 年 8 月 27 日<br>[85.0.564.41](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-85056441-august-27) |
-| **86** | 發行日期<br>版本 | 2020 年 9 月 9 日<br>[86.0.622.11](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-86062211-september-9) | **2020 年 9 月 10 日**<br>**[86.0.622.38](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-86062238-october-9)** |
-| **87** | 發行日期<br>版本 | **2020 年 10 月 20 日**<br>**[87.0.664.12](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-87066412--october-20)** | 2020 年 11 月 19 日當週 |
+| 83 | 發行日期<br>版本 | 2020/4/22<br>[83.0.478.13](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-83047813-april-22) | 2020/5/21<br> [83.0.478.37](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-83047837-may-21) |
+| 84 | 發行日期<br>版本 | 2020/6/2<br>[84.0.522.11](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-84052211-june-2) | 2020/7/16<br> [84.0.522.40](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-84052240-july-16) |
+| 85 | 發行日期<br>版本 | 2020/7/28<br>[85.0.564.18](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-85056418-july-28)  | 2020/8/27<br>[85.0.564.41](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-stable-channel#version-85056441-august-27) |
+| 86 | 發行日期<br>版本 | 2020/9/9<br>[86.0.622.11](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnote-beta-channel#version-86062211-september-9) | 2020/10/9<br>[86.0.622.38](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-86062238-october-9) |
+| **87** | 發行日期<br>版本 | **2020 年 10 月 20 日**<br>**[87.0.664.12](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-87066412--october-20)** | **2020/11/19**<br>**[87.0.664.41](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-87066441-november-19)** |
 | 88 | 目標版本 | 2020 年 12 月 8 日當週 | 2021 年 1 月 21 日當週 |
 | 89 | 目標版本 | 2021 年 2 月 2 日當週 | 2021 年 3 月 4 日當週 |
 | 90 | 目標版本 | 2021 年 3 月 16 日當週 | 2021 年 4 月 15 日當週 |
