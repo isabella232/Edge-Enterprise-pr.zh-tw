@@ -3,19 +3,19 @@ title: 適用於企業的 Microsoft Edge 復原
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 09/02/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何將 Microsoft Edge 復原到舊版
-ms.openlocfilehash: 9f659b0bcdd82f54a814c8ad4157521061cdfa7c
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
+ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993703"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "11192423"
 ---
 # 如何將 Microsoft Edge 復原到舊版
 
@@ -30,7 +30,7 @@ ms.locfileid: "10993703"
 
 ## 開始之前
 
-重要的是要瞭解如何在 Microsoft Edge 環境中安裝復原功能。 您可以使用兩種不同的方法來部署復原：手動使用 MSI，或使用 Microsoft Edge Update 和群組原則。 我們也鼓勵您選擇群組原則，以便更順利地部署。
+重要的是要瞭解如何在 Microsoft Edge 環境中安裝復原功能。 您可以使用兩種不同的方法來部署復原：手動使用 MSI，或使用 Microsoft Edge Update 和群組原則。 我們也鼓勵您使用精選的群組原則，以便更順利地部署。
 
 ### 建議
 
@@ -81,7 +81,7 @@ ms.locfileid: "10993703"
    - 僅限自動無訊息更新
 
      > [!NOTE]
-     > 若要強制執行群組原則更新，請在 Windows 系統管理員 [命令提示] 處輸入 `dsregcmd /status` (以系統管理員身分執行)。
+     > 若要強制執行群組原則更新，請在 Windows 系統管理員 [命令提示] 處輸入 `gpupdate /force` (以系統管理員身分執行)。
 
 5. 按一下**確定**以儲存原則設定。 下次 Microsoft Edge Update 檢查更新時，將會發生復原。 如果要盡快更新，您可以變更 Microsoft Edge Update 的輪詢間隔，或使用 MSI 啟用復原。
 
@@ -113,7 +113,7 @@ ms.locfileid: "10993703"
 
 快照是 [使用者資料] 資料夾的版本戳複本。 在版本升級期間，會建立舊版本的快照，並儲存在 [快照] 資料夾中。 復原之後，會將與版本相符的快照複製到新的 [使用者資料] 資料夾，並從 [快照] 資料夾中刪除。 如果降級時，沒有與版本相符的快照，復原將會依靠 [同步處理] 以將使用者資料填入新的 Microsoft Edge 版本中。
 
-[UserDataSnapshotRetentionLimit] 群組原則可讓您設定在特定時間內可保留的快照數目限制。 根據預設，會保留三個快照。 您可以將此原則設定為保留 0-5 個快照。
+[UserDataSnapshotRetentionLimit](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userdatasnapshotretentionlimit) 群組原則可讓您設定在特定時間內可保留的快照數目限制。 根據預設，會保留三個快照。 您可以將此原則設定為保留 0-5 個快照。
 
 ## 常見問題集
 
@@ -159,7 +159,6 @@ Microsoft Edge Update 尚未執行更新檢查。 預設情況下，自動更新
 ### 如果您是 IT 系統管理員，請遵循正確復原的所有步驟。 僅自己使用者群組的一部分會復原。 為什麼其他使用者尚未復原？
 
 群組原則設定尚未同步處理到所有用戶端。 當系統管理員設定群組原則時，用戶端不會立即收到這些設定。 您可以 [[強制遠端群組原則更新]](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134201(v=ws.11))。
-
 
 ## 請參閱
 
