@@ -3,19 +3,19 @@ title: 設定適用於 Windows 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 10/09/2019
+ms.date: 11/30/2019
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 在 Windows 裝置上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: 99aaf002f868ce29e81aa40024fa1de2e83d76e1
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 14ba2845e95394fe1f992c8b6446c975a8b4fb00
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979433"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194701"
 ---
 # 在 Windows 上設定 Microsoft Edge 原則設定
 
@@ -53,12 +53,12 @@ Microsoft Edge 有兩個系統管理範本，兩種範本都可以在電腦或 A
 #### 將系統管理範本新增到 Active Directory
 
 1. 在網域控制站或具有 RSAT 的工作站上，瀏覽到網域中任何網域控制站上的 **PolicyDefinition** 資料夾 (也稱為_集中存放區_)。 對於舊版 Windows 伺服器，您可能需要建立 PolicyDefinition 資料夾。 如需詳細資訊，請參閱[如何在 Windows 中建立及管理群組原則系統管理範本的集中存放區](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)。
-1. 開啟 *MicrosoftEdgePolicyTemplates* 並移至 **windows** > **admx**。
-1. 將 *msedge.admx* 檔案複製到 PolicyDefinition 資料夾。 (範例：%systemroot%\sysvol\domain\policies\PolicyDefinitions)
-1. 在 *admx* 資料夾中，開啟適當的語言資料夾。 例如，如果您在美國，則開啟 **en-US** 資料夾。
-1. 將 *msedge.adml* 檔案複製到 PolicyDefinition 資料夾中的相符語言資料夾。 如果資料夾不存在，請加以建立。 (範例：%systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
-1. 如果您的網域有多個網域控制站，則新的 ADMX 檔案將在下一個網域複寫間隔時複寫到它們上。
-1. 若要確認是否正確載入檔案，請從 Windows 系統管理工具開啟**群組原則管理編輯器**並展開**電腦設定** > **原則** > **系統管理範本** > **Microsoft Edge**。 您應該會看到一個或多個 Microsoft Edge 節點，如下所示。
+2. 開啟 *MicrosoftEdgePolicyTemplates* 並移至 **windows** > **admx**。
+3. 將 *msedge.admx* 檔案複製到 PolicyDefinition 資料夾。 (範例：%systemroot%\sysvol\domain\policies\PolicyDefinitions)
+4. 在 *admx* 資料夾中，開啟適當的語言資料夾。 例如，如果您在美國，則開啟 **en-US** 資料夾。
+5. 將 *msedge.adml* 檔案複製到 PolicyDefinition 資料夾中的相符語言資料夾。 如果資料夾不存在，請加以建立。 (範例：%systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US)
+6. 如果您的網域有多個網域控制站，則新的 ADMX 檔案將在下一個網域複寫間隔時複寫到它們上。
+7. 若要確認是否正確載入檔案，請從 Windows 系統管理工具開啟**群組原則管理編輯器**並展開**電腦設定** > **原則** > **系統管理範本** > **Microsoft Edge**。 您應該會看到一個或多個 Microsoft Edge 節點，如下所示。
 
     ![Microsoft Edge 原則](./media/configure-microsoft-edge/edge-gpo-policies.png)
 
@@ -69,19 +69,6 @@ Microsoft Edge 有兩個系統管理範本，兩種範本都可以在電腦或 A
 3. 在 *admx* 資料夾中，開啟適當的語言資料夾。 例如，如果您在美國，則開啟 **en-US** 資料夾。
 4. 將 *msedge.adml* 檔案複製到原則定義資料夾中的相符語言資料夾。 (範例：C:\Windows\PolicyDefinitions\en-US)
 5. 若要確認是否正確載入檔案，請直接開啟本機群組原則編輯器 (Windows 鍵 + R 並輸入 gpedit.msc) 或開啟 MMC 並載入 [本機群組原則編輯器] 嵌入式管理單元。 如果發生錯誤，通常是因為檔案位於錯誤的位置。
-
-<!--
-To add the administrative template to manage Microsoft Edge updates:
-
-1. Open the *MicrosoftEdgePolicyTemplates* file and go to **windows** > **admx**.
-2. Copy the *msedgeupdate.admx* file to your Policy Definition template folder. (Example: C:\Windows\PolicyDefinitions)
-3. In the *updatepolicies* folder, open the appropriate language folder. For example, if you’re in Germany, open the **de-DE** folder.
-4. Copy the *msedgeupdate.adml* file to the matching language folder in your Policy Definition folder. (Example: C:\Windows\PolicyDefinitions\de-DE)
-5. Open MMC and load the Local Group Policy Editor snap-in to confirm the files loaded correctly. If an error occurs, it’s usually because the files are in an incorrect location.
-
-> [!NOTE]
-> Currently the Microsoft Edge update policies are only localized in en-US. Additional language support will be added in a future release.
--->
 
 ### 2. 設定強制或建議原則
 
@@ -108,22 +95,7 @@ gpupdate /force
 
 您還可以在目標電腦上使用 REGEDIT.exe 來檢視儲存群組原則設定的登錄設定。 這些設定位於登錄路徑 **HKLM\SOFTWARE\Policies\Microsoft\Edge**。
 
-## 常見問答集
-
-### 是否可以將 Microsoft Edge 設定為使用主喜好設定？
-
-是，您可以將 Microsoft Edge 設定為使用主喜好設定檔案。
-
- 主喜好設定檔案可讓您在部署 Microsoft Edge 時設定預設設定。 您還可以使用主喜好設定檔案在未受裝置管理系統管理的電腦上套用設定。 這些設定會在使用者首次執行瀏覽器時，套用至使用者的設定檔。 使用者執行瀏覽器後，不會套用對主喜好設定檔案所做的變更。 使用者可以從瀏覽器中的主喜好設定變更設定。 如果要在瀏覽器首次執行後強制設定或變更設定，則必須使用原則。
-
-主喜好設定檔案允許您自訂瀏覽器的許多不同設定和喜好設定，包括與其他以 Chromium 為基礎之瀏覽器共用且特定於 Microsoft Edge 的項目。  可以使用主喜好設定檔案來設定與原則相關的喜好設定。 如果設定了原則，並且存在對應的主喜好設定集，優先採用原則設定。
-
-> [!IMPORTANT]
-> 所有可用的喜好設定可能與 Microsoft Edge 術語和命名慣例不一致。  無法保證這些喜好設定在未來版本中可繼續如預期運作。 更新版本中可能會變更或忽略喜好設定。
-
-主喜好設定檔案是使用 JSON 標記格式化的文字檔案。 此檔案需要新增到與 msedge.exe 可執行檔相同的目錄中。 對於 Windows 上的全系統企業部署，這通常是：*Windows: C:\Program Files\Microsoft\Edge\Application\master_preferences*。
-
-## 也請參閱
+## 請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [使用 Intune 進行 Windows 的設定](configure-edge-with-intune.md)

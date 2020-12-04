@@ -3,19 +3,19 @@ title: 使用 Jamf 在 macOS 上設定 Microsoft Edge
 ms.author: brianalt
 author: dan-wesley
 manager: laurawi
-ms.date: 02/20/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 Jamf 在 Mac 裝置上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: 336bdfed2c53811615b0183dc5ca7db916cd7428
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1859d9fb1fd3ea8ff6908c41f75df21a8b338769
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979438"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194711"
 ---
 # 使用 Jamf 在 macOS 上設定 Microsoft Edge 原則設定
 
@@ -45,8 +45,8 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 若要取得原則資訊清單：
 
 - 移至 [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)。
-- 在 [通道/版本] 下拉式清單中，選取 [**版本為 81 或更新版本的任何通道。***]。
-- 在 [建立] 下拉式清單中，選取任何 [**組建 81 或更新版本。***]。
+- 在 [通道/版本] 下拉式清單中，選取版本 81 或更新版本的任何通道****_。
+- 在 [建立] 下拉式清單中，選取任何 81 組建或更新版本_***_。
 - 按一下 [取得原則檔案] 來下載我們的原則範本組合。
 
   > [!NOTE]
@@ -61,7 +61,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 使用下列步驟將原則資訊清單上傳到 Jamf Pro，然後針對 macOS 建立原則設定檔。
 
 1. 登入 Jamf。
-2. 選取 [電腦]**** 索引標籤。
+2. 選取 [電腦]_*** 索引標籤。
 3. 在 [內容管理]**** 底下，選取 [組態設定檔]****。
 4. 在 [組態設定檔]**** 頁面上，按一下 [+ 新增]****。
 
@@ -115,22 +115,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 2. 針對 [限制]****，請保留預設設定：[無]。 按一下 [取消]****。
 3. 針對 [排除]****，請保留預設設定：[無]。 按一下 [取消]****。
 
-## 常見問題集
-
-### 是否可以將 Microsoft Edge 設定為使用主喜好設定？
-
-是，您可以將 Microsoft Edge 設定為使用主喜好設定檔案。
-
-主喜好設定檔案可讓您在部署 Microsoft Edge 時設定瀏覽器使用者設定檔的預設設定。 您還可以使用主喜好設定檔案在未受裝置管理系統管理的電腦上套用設定。 這些設定會在使用者首次執行瀏覽器時，套用至使用者的設定檔。 使用者執行瀏覽器後，不會套用對主喜好設定檔案所做的變更。 使用者可以從瀏覽器中的主喜好設定變更設定。 如果要在瀏覽器首次執行後強制設定或變更設定，則必須使用原則。
-
-主喜好設定檔案允許您自訂瀏覽器的許多不同設定和喜好設定，包括與其他以 Chromium 為基礎之瀏覽器共用且特定於 Microsoft Edge 的項目。  可以使用主喜好設定檔案來設定與原則相關的喜好設定。 如果設定了原則，並且存在對應的主喜好設定集，優先採用原則設定。
-
-> [!IMPORTANT]
-> 所有可用的喜好設定可能與 Microsoft Edge 術語和命名慣例不一致。  無法保證這些喜好設定在未來版本中可繼續如預期運作。 更新版本中可能會變更或忽略喜好設定。
-
-主喜好設定檔案是使用 JSON 標記格式化的文字檔案。 此檔案需要新增到與 msedge.exe 可執行檔相同的目錄中。 對於 macOS 上的系統範圍企業部署，這通常是：“*~/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*" 或 "*/Library/Microsoft/Microsoft Edge Master Preferences*”。
-
-## 也請參閱
+## 請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [使用 Intune 針對 macOS 設定](configure-microsoft-edge-on-mac.md)
