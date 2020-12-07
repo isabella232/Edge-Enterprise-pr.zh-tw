@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 12/03/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: f674c39506736dfc5b5706e902970e0e4ce84fd8
-ms.sourcegitcommit: 2a53bdd2510770c0b7580f912864337c6ef617fd
+ms.openlocfilehash: cb4a7de72582ff16a528cbaca04bb39364f6d93f
+ms.sourcegitcommit: 91821fa6a962ea9e88ffeff94dff94fcd1245df5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "11192533"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195259"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -23,6 +23,12 @@ ms.locfileid: "11192533"
 
 > [!IMPORTANT]
 > 請參閱這個[有關 Microsoft Edge 發行通道的更新](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/)。
+
+## 版本 87.0.664.55：12 月 3 日
+
+已修正各種錯誤和效能問題。 此版本支援下列新功能。
+
+- **如果線上洩漏中發現使用者的密碼，就會產生提醒**。 將對照已知遭入侵認證的儲存庫檢查使用者的密碼，並在發現相符項目時傳送警示給使用者。 (此功能將在 Microsoft Edge 穩定版本 88 中提供。)
 
 ## 版本 87.0.664.52：11 月 30 日
 
