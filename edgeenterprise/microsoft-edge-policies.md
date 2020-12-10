@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
-ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
+ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
+ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "11181984"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195134"
 ---
 # Microsoft Edge - 原則
 
@@ -33,12 +33,18 @@ ms.locfileid: "11181984"
 
 下表針對此更新列出新的和已被取代的功能。
 
-| 名稱 | 狀態 |
+| 名稱 | 標題 |
 |-|-|
-|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| 新增 |
-|[BlockExternalExtensions](#blockexternalextensions) | 新增 |
-|[ShowMicrosoftRewards](#showmicrosoftrewards) | 新增 |
-|[ProactiveAuthEnabled](#proactiveauthenabled) | 已取代 |
+|[PrinterTypeDenyList](#printertypedenylist)|停用拒絕清單上的印表機類型|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允許在 Internet Explorer 模式中啟動本機檔案|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|顯示操作功能表以在 Internet Explorer 模式中開啟連結|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|內部網路重新導向行為|
+|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新|
+|[VerticalTabsAllowed](#verticaltabsallowed)|設定瀏覽器側邊上索引標籤垂直版面配置的可用性|
+| 已取代 [WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允許舊版 TLS/DTLS 降級|
+
+
 
 ## 可用原則
 
@@ -83,7 +89,7 @@ ms.locfileid: "11181984"
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|控制不安全內容例外狀況的使用|
 |[DefaultJavaScriptSetting](#defaultjavascriptsetting)|預設 JavaScript 設定|
 |[DefaultNotificationsSetting](#defaultnotificationssetting)|預設通知設定|
-|[DefaultPluginsSetting](#defaultpluginssetting)|預設 Adobe Flash 設定|
+|[DefaultPluginsSetting](#defaultpluginssetting)|預設 Adobe Flash 設定 (過時)|
 |[DefaultPopupsSetting](#defaultpopupssetting)|預設快顯視窗設定|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|控制 Web 藍牙 API 的使用|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|控制 WebUSB API 的使用|
@@ -101,8 +107,8 @@ ms.locfileid: "11181984"
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|將指定網站上的 Cookie 還原至舊版 SameSite 行為|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|允許特定網站上的通知|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|封鎖特定網站上的通知|
-|[PluginsAllowedForUrls](#pluginsallowedforurls)|允許特定網站上的 Adobe Flash 外掛程式|
-|[PluginsBlockedForUrls](#pluginsblockedforurls)|封鎖特定網站上的 Adobe Flash 外掛程式|
+|[PluginsAllowedForUrls](#pluginsallowedforurls)|允許特定網站上的 Adobe Flash 外掛程式 (過時)|
+|[PluginsBlockedForUrls](#pluginsblockedforurls)|封鎖特定網站上的 Adobe Flash 外掛程式 (過時)|
 |[PopupsAllowedForUrls](#popupsallowedforurls)|允許特定網站上的快顯視窗|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|封鎖特定網站上的快顯視窗|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|登錄通訊協定處理常式|
@@ -139,7 +145,7 @@ ms.locfileid: "11181984"
 
 |原則名稱|標題|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Allow cross-origin HTTP Authentication prompts|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|允許跨來源 HTTP 驗證提示|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|指定 Microsoft Edge 可以委派使用者認證的伺服器清單|
 |[AuthSchemes](#authschemes)|支援的驗證配置|
 |[AuthServerAllowlist](#authserverallowlist)|設定允許驗證伺服器的清單|
@@ -181,6 +187,7 @@ ms.locfileid: "11181984"
 |[DefaultPrinterSelection](#defaultprinterselection)|預設印表機選擇規則|
 |[PrintHeaderFooter](#printheaderfooter)|列印頁首與頁尾|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|將系統預設的印表機設定為預設印表機|
+|[PrinterTypeDenyList](#printertypedenylist)|停用拒絕清單上的印表機類型|
 |[PrintingEnabled](#printingenabled)|啟用列印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|預設列印頁面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系統列印對話方塊列印|
@@ -300,7 +307,7 @@ ms.locfileid: "11181984"
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|啟用集錦功能|
 |[EdgeShoppingAssistantEnabled](#edgeshoppingassistantenabled)|已啟用在 Microsoft Edge 中購物|
 |[EditFavoritesEnabled](#editfavoritesenabled)|允許使用者編輯我的最愛|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|在限定時間內重新啟用已過時的網頁平台功能 (過時)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|啟用從 Microsoft 進行網域動作下載 (已過時) |
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|啟用線上 OCSP/CRL 檢查|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|允許由本機信賴起點頒發的 SHA-1 簽章憑證 (已過時)|
@@ -343,9 +350,13 @@ ms.locfileid: "11181984"
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|管理 IntensiveWakeUpThrottling 功能|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|針對 Internet Explorer 模式設定增強的當機偵測|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|設定 Internet Explorer 整合|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允許在 Internet Explorer 模式中啟動本機檔案|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|顯示操作功能表以在 Internet Explorer 模式中開啟連結|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|設定 Enterprise Mode Site List|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定從 Internet Explorer 模式頁面啟動時，「頁面內」導覽至未設定網站的方式|
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|內部網路重新導向行為|
 |[IsolateOrigins](#isolateorigins)|為特定來源啟用網站隔離|
 |[LocalProvidersEnabled](#localprovidersenabled)|允許來自本地提供者的建議|
 |[ManagedFavorites](#managedfavorites)|設定我的最愛|
@@ -375,7 +386,7 @@ ms.locfileid: "11181984"
 |[RestrictSigninToPattern](#restrictsignintopattern)|限制哪些帳戶可用為 Microsoft Edge 主要帳戶|
 |[RoamingProfileLocation](#roamingprofilelocation)|設定漫遊設定檔目錄|
 |[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)|啟用 Microsoft Edge 設定檔資料的快取副本|
-|[RunAllFlashInAllowMode](#runallflashinallowmode)|將 Adobe Flash 內容設定延伸至所有內容|
+|[RunAllFlashInAllowMode](#runallflashinallowmode)|將 Adobe Flash 內容設定延伸至所有內容 (過時)|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|允許使用者從 HTTPS 警告頁面繼續進行|
 |[SSLVersionMin](#sslversionmin)|已啟用最低 TLS 版本|
 |[SaveCookiesOnExit](#savecookiesonexit)|在 Microsoft Edge 關閉時儲存 Cookie|
@@ -411,17 +422,20 @@ ms.locfileid: "11181984"
 |[TranslateEnabled](#translateenabled)|啟用翻譯|
 |[URLAllowlist](#urlallowlist)|定義受允許的 URL 清單|
 |[URLBlocklist](#urlblocklist)|封鎖存取 URL 清單|
+|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新|
 |[UserAgentClientHintsEnabled](#useragentclienthintsenabled)|啟用使用者代理程式用戶端提示功能 (已過時)|
 |[UserDataDir](#userdatadir)|設定使用者資料目錄|
 |[UserDataSnapshotRetentionLimit](#userdatasnapshotretentionlimit)|限制保留的使用者資料快照數量，以便在緊急復原時使用|
 |[UserFeedbackAllowed](#userfeedbackallowed)|允許使用者意見反應|
+|[VerticalTabsAllowed](#verticaltabsallowed)|設定瀏覽器側邊上索引標籤垂直版面配置的可用性|
 |[VideoCaptureAllowed](#videocaptureallowed)|允許或封鎖視訊擷取|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|無需要求權限即可存取視訊擷取裝置的網站|
 |[WPADQuickCheckEnabled](#wpadquickcheckenabled)|設定 WPAD 最佳化|
 |[WebAppInstallForceList](#webappinstallforcelist)|設定強制安裝 Web 應用程式的清單|
 |[WebCaptureEnabled](#webcaptureenabled)|啟用 Microsoft Edge 中的 Web 擷取功能|
 |[WebComponentsV0Enabled](#webcomponentsv0enabled)|在 M84 前，重新啟用 Web 元件 v0 API。|
-|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允許 WebDriver 覆寫不相容原則 (已過時)|
+|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允許 WebDriver 覆寫不相容原則 (已取代)|
+|[WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允許舊版 TLS/DTLS 降級 (已取代)|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 所使用的本機 UDP 連接埠範圍|
@@ -477,7 +491,7 @@ ProxyServer 欄位是 Proxy 伺服器的 URL。
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -547,7 +561,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -609,7 +623,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -663,21 +677,21 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
 
   #### 描述
 
-  Setting the policy lets you make a list of URL patterns that specify sites for which Microsoft Edge can automatically select a client certificate. The value is an array of stringified JSON dictionaries, each with the form { "pattern": "$URL_PATTERN", "filter" : $FILTER }, where $URL_PATTERN is a content setting pattern. $FILTER restricts the client certificates the browser automatically selects from. Independent of the filter, only certificates that match the server's certificate request are selected.
+  設定原則可讓您建立 URL 模式清單，以指定 Microsoft Edge 可自動選取用戶端憑證的網站。 這個值是 stringified JSON 字典的陣列，其中每個詞典都有下列兩種形式： "pattern"： "$URL _PATTERN"，"filter"： $FILTER}，其中 $URL _PATTERN 是內容設定模式。 $FILTER 會限制瀏覽器自動選取的用戶端憑證。 與篩選器無關，則只會選取符合伺服器憑證要求的憑證。
 
-Examples for the usage of the $FILTER section:
+使用 $FILTER 區段的範例：
 
-* When $FILTER is set to { "ISSUER": { "CN": "$ISSUER_CN" } }, only client certificates issued by a certificate with the CommonName $ISSUER_CN are selected.
+* 當 $FILTER 設為 {「發行人」： {"CN"： "$ISSUER _CN"}}，則只會選取 CommonName $ISSUER _CN 的憑證所頒發的用戶端憑證。
 
-* When $FILTER contains both the "ISSUER" and the "SUBJECT" sections, only client certificates that satisfy both conditions are selected.
+* 當 $FILTER 同時包含「發行人」和「主旨」區段時，只會選取符合這兩個條件的用戶端憑證。
 
-* When $FILTER contains a "SUBJECT" section with the "O" value, a certificate needs at least one organization matching the specified value to be selected.
+* 當 $FILTER 中含有含有 "O" 值的「主旨」區段時，證書至少需要一個組織比指定的值相符。
 
-* When $FILTER contains a "SUBJECT" section with a "OU" value, a certificate needs at least one organizational unit matching the specified value to be selected.
+* 當 $FILTER 包含含有「OU」值的「主旨」區段時，證書至少需要一個與指定的值相符的組織單位。
 
-* When $FILTER is set to {}, the selection of client certificates is not additionally restricted. Note that filters provided by the web server still apply.
+* 當 $FILTER 設為 [ {}] 時，不會進一步限制用戶端憑證的選取範圍。 請注意，網頁伺服器提供的篩選器仍然適用。
 
-If you leave the policy unset, there's no autoselection for any site.
+如果您將策略保留為取消，則任何網站都不會 autoselection。
 
   #### 支援的功能：
 
@@ -685,7 +699,7 @@ If you leave the policy unset, there's no autoselection for any site.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -760,7 +774,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -835,7 +849,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -914,7 +928,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -991,7 +1005,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1059,7 +1073,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1127,7 +1141,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1197,7 +1211,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1265,7 +1279,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1335,7 +1349,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1403,7 +1417,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1473,7 +1487,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1513,17 +1527,19 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   ### DefaultPluginsSetting
 
-  #### 預設 Adobe Flash 設定
+  #### 預設 Adobe Flash 設定 (過時)
 
   
-  
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 87 及之後的版本中運作。
   #### 支援的版本：
 
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - Windows 和 macOS 上，版本 77 至 87
 
   #### 描述
 
-  首先檢查的是 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然後才是此項原則。 選項為 'ClickToPlay' 和 'BlockPlugins'。 如果您將此原則設為 'BlockPlugins'，則所有網站皆會拒絕這個外掛程式。 'ClickToPlay' 可讓 Flash 外掛程式開始執行，但使用者可以按一下預留位置以啟動。
+  由於 Microsoft Edge 不再支援 Flash，因此此原則不再有作用。
+
+將先檢查 [PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls)，然後才是此原則。 選項為 'ClickToPlay' 和 'BlockPlugins'。 如果您將此原則設為 'BlockPlugins'，則所有網站皆會拒絕這個外掛程式。 'ClickToPlay' 可讓 Flash 外掛程式開始執行，但使用者可以按一下預留位置以啟動。
 
 如果未設定此原則，則使用者可以手動變更此設定。
 
@@ -1543,7 +1559,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1552,7 +1568,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：DefaultPluginsSetting
-  - GP 名稱：預設 Adobe Flash 設定
+  - GP 名稱：預設 Adobe Flash 設定 (過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -1611,7 +1627,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1679,7 +1695,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1749,7 +1765,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -1813,7 +1829,7 @@ URL 模式無法與 [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -1882,7 +1898,7 @@ URL 模式無法與 [FileSystemReadAskForUrls](#filesystemreadaskforurls) 相衝
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -1951,7 +1967,7 @@ URL 模式無法與 [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforur
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2020,7 +2036,7 @@ URL 模式無法與 [FileSystemWriteAskForUrls](#filesystemwriteaskforurls) 相�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2085,7 +2101,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2150,7 +2166,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2215,7 +2231,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2280,7 +2296,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2345,7 +2361,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2410,7 +2426,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2465,9 +2481,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### 說明
 
-  讓您將所有 Cookie 還原為舊版 SameSite 行為。 Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were "SameSite=None", removes the requirement for "SameSite=None" cookies to carry the "Secure" attribute, and skips the scheme comparison when evaluating if two sites are same-site.
+  讓您將所有 Cookie 還原為舊版 SameSite 行為。 若要還原為舊版行為，會導致沒有指定 SameSite 屬性的 cookie 視為 "SameSite = 無"，並移除「SameSite = None」 cookie 的需求，以傳送 "Secure" 屬性，並在評估兩個網站是否相同的網站時跳過方案比較。
 
-If you don't set this policy, the default SameSite behavior for cookies will depend on other configuration sources for the SameSite-by-default feature, the Cookies-without-SameSite-must-be-secure feature, and the Schemeful Same-Site feature. These features can also be configured by a field trial or the same-site-by-default-cookies flag, the cookies-without-same-site-must-be-secure flag, or the schemeful-same-site flag in edge://flags.
+如果您未設定此原則，cookie 的預設 SameSite 行為將視預設功能（不含-SameSite-必須是-安全）功能的 [Cookie]、[Schemeful 相同的網站] 功能而定。 這些功能也可由欄位試驗或相同-預設的網站-cookie 標誌（不含相同網站的不相同的資料標記）設定，或 edge://flags 中的 [schemeful] 網站標誌。
 
 原則選項對應：
 
@@ -2483,7 +2499,7 @@ If you don't set this policy, the default SameSite behavior for cookies will dep
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -2535,7 +2551,7 @@ If you don't set this policy, the default SameSite behavior for cookies will dep
 
   針對符合指定模式網域設定的 Cookie 將還原為舊版 SameSite 行為。
 
-Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were "SameSite=None", removes the requirement for "SameSite=None" cookies to carry the "Secure" attribute, and skips the scheme comparison when evaluating if two sites are same-site.
+若要還原為舊版行為，會導致沒有指定 SameSite 屬性的 cookie 視為 "SameSite = 無"，並移除「SameSite = None」 cookie 的需求，以傳送 "Secure" 屬性，並在評估兩個網站是否相同的網站時跳過方案比較。
 
 如果未設定此原則，則會使用全域預設值。 全域預設值也將用於您指定的模式未涵蓋的網域上的 Cookie。
 
@@ -2549,7 +2565,7 @@ Reverting to legacy behavior causes cookies that don't specify a SameSite attrib
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2614,7 +2630,7 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2679,7 +2695,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2724,21 +2740,23 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
   ### PluginsAllowedForUrls
 
-  #### 允許特定網站上的 Adobe Flash 外掛程式
+  #### 允許特定網站上的 Adobe Flash 外掛程式 (過時)
 
   
-  
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 87 及之後的版本中運作。
   #### 支援的版本：
 
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - Windows 和 macOS 上，版本 77 至 87
 
-  #### 說明
+  #### 描述
 
-  根據 URL 的模式，定義可執行 Adobe Flash 外掛程式的網站清單。
+  由於 Microsoft Edge 不再支援 Flash，因此此原則不再有作用。
+
+根據 URL 的模式，定義可執行 Adobe Flash 外掛程式的網站清單。
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPluginsSetting](#defaultpluginssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
-如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 ‘*' 和 '[*.]’ 等的萬用字元。
+如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 '\*' 和 '[\*.]' 等的萬用字元。
 
   #### 支援的功能：
 
@@ -2746,7 +2764,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2755,7 +2773,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：PluginsAllowedForUrls
-  - GP 名稱：允許特定網站上的 Adobe Flash 外掛程式
+  - GP 名稱：允許特定網站上的 Adobe Flash 外掛程式 (過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -2791,21 +2809,23 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
   ### PluginsBlockedForUrls
 
-  #### 封鎖特定網站上的 Adobe Flash 外掛程式
+  #### 封鎖特定網站上的 Adobe Flash 外掛程式 (過時)
 
   
-  
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 87 及之後的版本中運作。
   #### 支援的版本：
 
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - Windows 和 macOS 上，版本 77 至 87
 
-  #### 說明
+  #### 描述
 
-  根據 URL 的模式，定義遭封鎖而無法執行 Adobe Flash 的網站清單。
+  由於 Microsoft Edge 不再支援 Flash，因此此原則不再有作用。
+
+根據 URL 的模式，定義遭封鎖而無法執行 Adobe Flash 的網站清單。
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPluginsSetting](#defaultpluginssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
-如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 ‘*' 和 '[*.]’ 等的萬用字元。
+如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 '\*' 和 '[\*.]' 等的萬用字元。
 
   #### 支援的功能：
 
@@ -2813,7 +2833,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2822,7 +2842,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：PluginsBlockedForUrls
-  - GP 名稱：封鎖特定網站上的 Adobe Flash 外掛程式
+  - GP 名稱：封鎖特定網站上的 Adobe Flash 外掛程式 (過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -2878,7 +2898,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -2943,7 +2963,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -3013,7 +3033,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -3099,7 +3119,7 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -3156,7 +3176,7 @@ USB 權限模型會使用要求端網站的 URL (「要求端 URL」) 和最上�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -3256,7 +3276,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -3323,7 +3343,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -3404,7 +3424,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -3468,7 +3488,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -3547,7 +3567,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3613,7 +3633,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3677,7 +3697,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3743,7 +3763,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3811,7 +3831,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3881,7 +3901,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -3958,7 +3978,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -4027,7 +4047,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -4101,7 +4121,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -4162,7 +4182,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -4229,7 +4249,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -4306,7 +4326,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -4375,7 +4395,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -4440,7 +4460,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -4647,7 +4667,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   ### AllowCrossOriginAuthPrompt
 
-  #### Allow cross-origin HTTP Authentication prompts
+  #### 允許跨來源 HTTP 驗證提示
 
   
   
@@ -4657,9 +4677,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   #### 描述
 
-  Controls whether third-party images on a page can show an authentication prompt.
+  控制頁面中的協力廠商影像是否可以顯示驗證提示。
 
-通常，這會因為網路釣魚防禦而將它停用。 If you don't configure this policy, it's disabled and third-party images can't show an authentication prompt.
+通常，這會因為網路釣魚防禦而將它停用。 如果您未設定此原則，系統會停用此原則，協力廠商影像無法顯示驗證提示。
 
   #### 支援的功能：
 
@@ -4667,7 +4687,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -4676,7 +4696,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：AllowCrossOriginAuthPrompt
-  - GP 名稱：Allow cross-origin HTTP Authentication prompts
+  - GP 名稱：允許跨來源 HTTP 驗證提示
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/HTTP 驗證
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -4729,7 +4749,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -4791,7 +4811,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -4853,7 +4873,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -4915,7 +4935,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -4977,7 +4997,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5039,7 +5059,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5068,7 +5088,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   
   #### 支援的版本：
 
-  - On Windows and macOS since 87 or later
+  - Windows 和 macOS 上，版本 87 或更新版本
 
   #### 描述
 
@@ -5086,7 +5106,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5150,7 +5170,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5207,7 +5227,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -5274,7 +5294,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -5341,7 +5361,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5409,7 +5429,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5487,7 +5507,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5546,7 +5566,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -5610,7 +5630,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -5691,7 +5711,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -5737,7 +5757,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   
   #### 支援的版本：
 
-  - On Windows and macOS since 87 or later
+  - Windows 和 macOS 上，版本 87 或更新版本
 
   #### 描述
 
@@ -5757,7 +5777,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5829,7 +5849,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -5892,7 +5912,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -5956,7 +5976,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6018,7 +6038,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6056,6 +6076,88 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### PrinterTypeDenyList
+
+  #### 停用拒絕清單上的印表機類型
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  拒絕清單上的印表機類型將無法被探索到，也無法取得其功能。
+
+將所有印表機類型放置在拒絕清單上，可有效地停用列印，因為沒有文件的列印目的地。
+
+如果您未設定此原則，或該印表機清單為空白，則所有印表機類型均可供探索。
+
+印表機目的地包括印表機延伸和本機印表機。 延伸印表機也稱為列印提供者目的地，並包含屬於 Microsoft Edge 延伸的任何目的地。
+本機印表機也稱為本機列印目的地，並包含可供本機電腦和共用網路印表機使用的目的地。
+
+原則選項對應：
+
+* privet (privet) = 以 Zeroconf 為基礎 (mDNS + DNS-SD) 的通訊協定目的地
+
+* extension (延伸) = 以延伸為基礎的目的地
+
+* pdf (pdf) =「另存為 PDF」目的地
+
+* local (本機) = 本機印表機目的地
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串清單
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：PrinterTypeDenyList
+  - GP 名稱：停用拒絕清單上的印表機類型
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### 範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\1 = "local"
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
+
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：PrinterTypeDenyList
+  - 範例值：
+``` xml
+<array>
+  <string>local</string>
+  <string>privet</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### PrintingEnabled
 
   #### 啟用列印
@@ -6080,7 +6182,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6142,7 +6244,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -6228,7 +6330,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6300,7 +6402,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -6387,7 +6489,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -6455,7 +6557,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -6523,7 +6625,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -6607,7 +6709,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -6695,7 +6797,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -6766,7 +6868,7 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6848,7 +6950,7 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -6916,7 +7018,7 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -6981,7 +7083,7 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7046,7 +7148,7 @@ Microsoft Defender SmartScreen 下載保護服務不會檢查在這些網域上�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -7117,7 +7219,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7181,7 +7283,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7240,7 +7342,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7310,7 +7412,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7378,7 +7480,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -7448,7 +7550,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -7520,7 +7622,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -7614,7 +7716,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7686,7 +7788,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -7754,7 +7856,7 @@ Microsoft Edge 會以所列的順序呈現這些項目 (由左至右)，且所�
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -7845,7 +7947,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -7927,7 +8029,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -8005,7 +8107,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -8067,7 +8169,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -8134,7 +8236,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8198,7 +8300,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8264,7 +8366,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -8330,7 +8432,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8392,7 +8494,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8456,7 +8558,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8516,7 +8618,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8580,7 +8682,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8646,7 +8748,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -8704,7 +8806,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = "[*.].mydomain2.co
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -8774,7 +8876,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8836,7 +8938,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -8920,7 +9022,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -8980,7 +9082,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9042,7 +9144,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -9099,7 +9201,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9157,7 +9259,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -9229,7 +9331,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9342,7 +9444,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -9414,7 +9516,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -9534,7 +9636,7 @@ URL 模式的格式必須依照 [https://go.microsoft.com/fwlink/?linkid=2095322
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -9613,7 +9715,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -9682,7 +9784,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9744,7 +9846,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9811,7 +9913,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9875,7 +9977,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -9930,7 +10032,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10002,7 +10104,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10066,7 +10168,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10127,7 +10229,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10189,7 +10291,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10251,7 +10353,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10327,7 +10429,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -10393,7 +10495,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10454,7 +10556,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10502,7 +10604,7 @@ subjectPublicKeyInfo 雜湊的指定方式是將雜湊演算法名稱、"/" 字�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -10573,7 +10675,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -10642,7 +10744,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -10713,7 +10815,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10779,7 +10881,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10847,7 +10949,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -10910,7 +11012,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -10979,7 +11081,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11041,7 +11143,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11105,7 +11207,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11188,7 +11290,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11260,7 +11362,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11317,7 +11419,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11385,7 +11487,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11442,7 +11544,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -11506,7 +11608,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11570,7 +11672,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11634,7 +11736,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11706,7 +11808,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11778,7 +11880,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11852,7 +11954,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -11907,7 +12009,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -11974,7 +12076,7 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -12060,7 +12162,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -12126,7 +12228,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12181,7 +12283,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12245,7 +12347,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12309,7 +12411,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -12373,7 +12475,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -12449,7 +12551,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -12515,7 +12617,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -12581,7 +12683,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -12665,7 +12767,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -12727,7 +12829,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12773,7 +12875,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   
   #### 支援的版本：
 
-  - On Windows and macOS since 87 or later
+  - Windows 和 macOS 上，版本 87 或更新版本
 
   #### 描述
 
@@ -12789,7 +12891,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12849,7 +12951,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -12889,17 +12991,17 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 
   ### EnableDeprecatedWebPlatformFeatures
 
-  #### Re-enable deprecated web platform features for a limited time (obsolete)
+  #### 在限定時間內重新啟用已過時的網頁平台功能 (過時)
 
   
-  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 86 及之後的版本中運作。
   #### 支援的版本：
 
-  - On Windows and macOS since 77, until 86
+  - Windows 和 macOS 上，版本 77 至 86
 
   #### 描述
 
-  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+  這項原則已過時，因為現在使用私人網路頁平臺原則來管理個別網頁平臺功能 deprecations。
 
 指定要暫時重新啟用的已過時網頁平台功能清單。
 
@@ -12923,7 +13025,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -12932,7 +13034,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：EnableDeprecatedWebPlatformFeatures
-  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
+  - GP 名稱：在限定時間內重新啟用已過時的網頁平台功能 (過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -12996,7 +13098,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13058,7 +13160,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13122,7 +13224,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13182,7 +13284,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13244,7 +13346,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13312,7 +13414,7 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -13401,7 +13503,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -13469,7 +13571,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13531,7 +13633,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13595,7 +13697,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13671,7 +13773,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -13733,7 +13835,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13797,7 +13899,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13859,7 +13961,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13923,7 +14025,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -13985,7 +14087,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14044,7 +14146,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14118,7 +14220,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -14182,7 +14284,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14241,7 +14343,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14309,7 +14411,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14367,7 +14469,7 @@ Microsoft Edge 的預設查閱者原則正在強化，透過逐步推出，從�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -14430,7 +14532,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14514,7 +14616,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14578,7 +14680,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14639,7 +14741,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14707,7 +14809,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14773,7 +14875,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14841,7 +14943,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14909,7 +15011,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -14977,7 +15079,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15045,7 +15147,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15113,7 +15215,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15181,7 +15283,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15249,7 +15351,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15317,7 +15419,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15383,7 +15485,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15457,7 +15559,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -15517,7 +15619,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15584,7 +15686,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15660,7 +15762,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -15721,7 +15823,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -15740,6 +15842,186 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationLevel
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileAllowed
+
+  #### 允許在 Internet Explorer 模式中啟動本機檔案
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  此原則可控制 --ie-mode-file-url 命令列引數的可用性，其用來在命令列上使用指定的本機檔案啟動 Microsoft Edge 並進入 Internet Explorer 模式。
+
+此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
+
+如果您將此原則設定為 true，或未設定此原則，則會允許使用者將 --ie-mode-file-url 命令列引數用於在 Internet Explorer 模式中啟動本機檔案。
+
+如果您將此原則設定為 false，則不允許使用者將 --ie-mode-file-url 命令列引數用於在 Internet Explorer 模式中啟動本機檔案。
+
+若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationLocalFileAllowed
+  - GP 名稱：允許在 Internet Explorer 模式中啟動本機檔案
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：InternetExplorerIntegrationLocalFileAllowed
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileExtensionAllowList
+
+  #### 根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  此原則會根據副檔名限制允許在 Internet Explorer 模式中啟動的 file:// URL。
+
+此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
+
+要求在 Internet Explorer 模式中啟動某個 file:// URL 時，該 URL 的副檔名必須存在於此清單中，才能允許在 Internet Explorer 模式中啟動該 URL。 遭封鎖而無法在 Internet Explorer 模式中開啟的 URL，將改為在 Edge 模式中開啟。
+
+如果將此原則設定為特殊值 "*"，或未設定它，則會允許所有副檔名。
+
+若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串清單
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationLocalFileExtensionAllowList
+  - GP 名稱：根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### 範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\1 = ".mht"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\2 = ".pdf"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\3 = ".vsdx"
+
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileShowContextMenu
+
+  #### 顯示操作功能表以在 Internet Explorer 模式中開啟連結
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 上，版本 88 或更新版本
+
+  #### 描述
+
+  此原則可控制 file:// 連結操作功能表上的 [在新的 Internet Explorer 模式索引標籤中開啟連結] 選項的可見度。
+
+此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
+
+如果將此原則設定為 true，[在新的 Internet Explorer 模式索引標籤中開啟連結] 操作功能表項目將可供 file:// 連結使用。
+
+如果將此原則設定為 false 或未設定，將不會新增該操作功能表項目。
+
+若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationLocalFileShowContextMenu
+  - GP 名稱：顯示操作功能表以在 Internet Explorer 模式中開啟連結
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：InternetExplorerIntegrationLocalFileShowContextMenu
   - 數值類型：REG_DWORD
 
   ##### 範例值：
@@ -15772,7 +16054,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -15847,7 +16129,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -15908,7 +16190,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -15935,6 +16217,82 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 0x00000000
 ```
 
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### IntranetRedirectBehavior
+
+  #### 內部網路重新導向行為
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  此原則會設定透過 DNS 攔截檢查的內部網路重新導向行為。 檢查會嘗試探索瀏覽器是否位於會將未知主機名稱重新導向的 Proxy 後面。
+
+如果未設定此原則，瀏覽器將使用 DNS 攔截檢查和內部網路重新導向建議的預設行為。 在 M88 中，它們預設為啟用，但在未來版本中預設為停用。
+
+[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是可能也會停用 DNS 攔截檢查的相關原則。 不過，此原則是更具彈性的版本，能夠個別控制內部網路重新導向資訊列，並可能在未來擴大。
+如果 [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 或此原則中的一個要求停用攔截檢查，則會停用檢查。
+如果 DNS 攔截檢查已由此原則停用，但 [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar) 已啟用，則單一字詞查詢仍將導致內部網路瀏覽。
+
+原則選項對應：
+
+* 預設值 (0) = 使用預設瀏覽器行為。
+
+* DisableInterceptionChecksDisableInfobar (1) = 停用 DNS 攔截檢查和 "http://intranetsite/" 資訊列。
+
+* DisableInterceptionChecksEnableInfobar (2) = 停用 DNS 攔截檢查；允許 "http://intranetsite/" 資訊列。
+
+* EnableInterceptionChecksEnableInfobar (3) = 允許 DNS 攔截檢查和 "http://intranetsite/" 資訊列。
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 整數
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：IntranetRedirectBehavior
+  - GP 名稱：內部網路重新導向行為
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：IntranetRedirectBehavior
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：IntranetRedirectBehavior
+  - 範例值：
+``` xml
+<integer>1</integer>
+```
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -15967,7 +16325,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -16035,7 +16393,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16099,7 +16457,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -16235,7 +16593,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -16394,7 +16752,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -16458,7 +16816,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16528,7 +16886,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16592,7 +16950,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16651,7 +17009,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -16716,7 +17074,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -16782,7 +17140,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16839,7 +17197,7 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -16906,7 +17264,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -16968,7 +17326,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17032,7 +17390,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17091,7 +17449,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17153,7 +17511,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17215,7 +17573,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17279,7 +17637,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17345,7 +17703,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17414,7 +17772,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -17481,7 +17839,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -17543,7 +17901,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -17603,7 +17961,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17658,7 +18016,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17718,7 +18076,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17780,7 +18138,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -17844,7 +18202,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -17901,7 +18259,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17934,17 +18292,19 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
   ### RunAllFlashInAllowMode
 
-  #### 將 Adobe Flash 內容設定延伸至所有內容
+  #### 將 Adobe Flash 內容設定延伸至所有內容 (過時)
 
   
-  
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 87 及之後的版本中運作。
   #### 支援的版本：
 
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - Windows 和 macOS 上，版本 77 至 87
 
-  #### 說明
+  #### 描述
 
-  如果啟用此原則，在內容設定中設為允許 Adobe Flash 的網站中內嵌的所有 Adobe Flash 內容 (無論是由使用者或企業原則設定) 將會執行。 這包含來自其他來源和/或小型內容的內容。
+  由於 Microsoft Edge 不再支援 Flash，因此此原則不再有作用。
+
+如果啟用此原則，在內容設定中設為允許 Adobe Flash 的網站中內嵌的所有 Adobe Flash 內容 (無論是由使用者或企業原則設定) 將會執行。 這包含來自其他來源和/或小型內容的內容。
 
 若要控制允許哪些網站執行 Adobe Flash，請參閱 [DefaultPluginsSetting](#defaultpluginssetting)、[PluginsAllowedForUrls](#pluginsallowedforurls) 和 [PluginsBlockedForUrls](#pluginsblockedforurls) 原則中的規格。
 
@@ -17956,7 +18316,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -17965,7 +18325,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   ##### 群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：RunAllFlashInAllowMode
-  - GP 名稱：將 Adobe Flash 內容設定延伸至所有內容
+  - GP 名稱：將 Adobe Flash 內容設定延伸至所有內容 (過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -18018,7 +18378,7 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18068,9 +18428,9 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
   #### 描述
 
-  Sets the minimum supported version of TLS. 如果您未設定此原則，Microsoft Edge 將顯示 TLS 1.0 和 TLS 1.1 的錯誤，但使用者將可以略過這個錯誤。
+  設定支援的最低 TLS 版本。 如果您未設定此原則，Microsoft Edge 將顯示 TLS 1.0 和 TLS 1.1 的錯誤，但使用者將可以略過這個錯誤。
 
-If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower than the specified version. 任何無法辨識的值都會被忽略。
+設定時，Microsoft Edge 不會使用低於指定版本的任何 SSL/TLS 版本。 任何無法辨識的值都會被忽略。
 
 原則選項對應：
 
@@ -18088,7 +18448,7 @@ If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -18157,7 +18517,7 @@ If you enable this policy, Microsoft Edge won't use any version of SSL/TLS lower
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18224,7 +18584,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18283,7 +18643,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18345,7 +18705,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18409,7 +18769,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18469,7 +18829,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18530,7 +18890,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18591,7 +18951,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18657,7 +19017,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18728,7 +19088,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18799,7 +19159,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18870,7 +19230,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -18946,7 +19306,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：是
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -18996,9 +19356,9 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### 說明
 
-  由於操作要求的變更，此原則無法按預期運作。 Therefore it's deprecated and should not be used.
+  由於操作要求的變更，此原則無法按預期運作。 此值已過時，而且不應該使用。
 
-指定是否要在我的最愛列中加入 Office.com 的捷徑。 For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs. If you enable or don't configure this policy, users can choose whether to see the shortcut by changing the toggle in the favorites bar context menu.
+指定是否要在我的最愛列中加入 Office.com 的捷徑。 針對登入 Microsoft Edge 的使用者，快捷方式會將使用者帶入其 Microsoft Office app 和檔中。如果您啟用或未設定此原則，則使用者可以在 [我的最愛] 工具列內容功能表中，選擇是否要看到快速鍵。
 如果您停用此原則，就不會顯示捷徑。
 
   #### 支援的功能：
@@ -19007,7 +19367,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19069,7 +19429,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19132,7 +19492,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19178,17 +19538,17 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   
   #### 支援的版本：
 
-  - On Windows and macOS since 87 or later
+  - Windows 和 macOS 上，版本 87 或更新版本
 
   #### 描述
 
-  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+  設定網站是否可以使用 W3C Web 語音 API 來辨識使用者的語音。 Microsoft Edge 的 Web 語音 API 實施使用 Azure 認知服務，因此語音資料將離開電腦。
 
-If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+如果您啟用或未設定此原則，使用 Web 語音 API 的 web 型應用程式可以使用語音辨識。
 
-If you disable this policy, Speech Recognition is not available through the Web Speech API.
+如果您停用這項原則，就無法透過網頁語音 API 使用語音辨識。
 
-Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+若要深入了解此功能，請參閱這裡：SpeechRecognition API：[https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) 認知服務：[https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
 
   #### 支援的功能：
 
@@ -19196,7 +19556,7 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19256,7 +19616,7 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19324,7 +19684,7 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -19387,7 +19747,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -19448,7 +19808,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19508,7 +19868,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19568,7 +19928,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19630,7 +19990,7 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -19699,7 +20059,7 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19767,7 +20127,7 @@ TLS 1.3 須有 TLS 1.3 加密套件 TLS_AES_128_GCM_SHA256 (0x1301) ，且不可
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -19838,7 +20198,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19896,7 +20256,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -19958,7 +20318,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -20030,7 +20390,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -20094,7 +20454,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：是
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20164,7 +20524,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -20243,7 +20603,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -20298,6 +20658,60 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### UpdatePolicyOverride
+
+  #### 指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新
+
+  
+  
+  #### 支援的版本：
+
+  - macOS 上，版本 89 或更新版本
+
+  #### 描述
+
+  如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge Update：
+
+- 僅限自動無訊息更新：僅當定期更新檢查找到更新時才套用更新。
+
+- 僅限手動更新：僅當使用者執行手動更新檢查時，才套用更新。 (並非所有應用程式都提供此選項的介面。)
+
+如果選取手動更新，請確保您使用 Microsoft AutoUpdate 定期檢查更新。
+
+如果您未啟用並設定此原則，則 Microsoft Edge Update 會自動檢查更新。
+
+
+原則選項對應：
+
+* automatic-silent-only (僅限自動無訊息) = 僅當定期更新檢查找到更新時才套用更新。
+
+* manual-only (僅限手動) = 僅當使用者執行手動更新檢查時才套用更新。 (並非所有應用程式都提供此選項的介面。)
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### 資料類型：
+
+  - 字串
+
+  
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：UpdatePolicyOverride
+  - 範例值：
+``` xml
+<string>automatic-silent-only</string>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### UserAgentClientHintsEnabled
 
   #### 啟用使用者代理程式用戶端提示功能 (已過時)
@@ -20324,7 +20738,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20390,7 +20804,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -20452,7 +20866,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 整數
 
@@ -20507,7 +20921,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20545,6 +20959,70 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### VerticalTabsAllowed
+
+  #### 設定瀏覽器側邊上索引標籤垂直版面配置的可用性
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  設定使用者是否可以存取在替代的版面配置，在其中，索引標籤會在瀏覽器側邊 (而非上方) 垂直對齊。
+有數個索引標籤開啟時，此版面配置可提供更好的索引標籤檢視和管理。 網站標題有更好的可見度，要一眼看到對齊的圖示更容易，並且有更多空間可用來管理及關閉索引標籤。
+
+如果您停用此原則，則垂直索引標籤版面配置將不會以選項形式提供使用者使用。
+
+如果您啟用或未設定此原則，索引標籤版面配置將仍位於上方，但使用者會有選項，可在側邊開啟垂直索引標籤。
+
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：VerticalTabsAllowed
+  - GP 名稱：設定瀏覽器側邊上索引標籤垂直版面配置的可用性
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：VerticalTabsAllowed
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：VerticalTabsAllowed
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### VideoCaptureAllowed
 
   #### 允許或封鎖視訊擷取
@@ -20571,7 +21049,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20629,7 +21107,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -20698,7 +21176,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20758,7 +21236,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - Dictionary
 
@@ -20837,7 +21315,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   
   #### 支援的版本：
 
-  - On Windows and macOS since 87 or later
+  - Windows 和 macOS 上，版本 87 或更新版本
 
   #### 描述
 
@@ -20851,7 +21329,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20913,7 +21391,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -20978,7 +21456,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -21016,6 +21494,67 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### WebRtcAllowLegacyTLSProtocols
+
+  #### 在 WebRTC 中允許舊版 TLS/DTLS 降級 (已取代)
+
+  >已取代：此原則已被取代。 目前支援，但將在未來版本中過時。
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 88 或更新版本
+
+  #### 描述
+
+  如果您啟用此原則，則 WebRTC 對等連線可以降級至版本過時的 TLS/DTLS (DTLS 1.0、TLS 1.0 及 TLS 1.1) 通訊協定。
+如果停用或不設定此原則，這些 TLS/DTLS 版本會遭停用。
+
+此原則是暫時的，將在未來版本的 Microsoft Edge 中移除。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：WebRtcAllowLegacyTLSProtocols
+  - GP 名稱：在 WebRTC 中允許舊版 TLS/DTLS 降級 (已取代)
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：WebRtcAllowLegacyTLSProtocols
+  - 數值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000000
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：WebRtcAllowLegacyTLSProtocols
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### WebRtcLocalIpsAllowedUrls
 
   #### 管理由 WebRTC 暴露的本機 IP 位址
@@ -21044,7 +21583,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -21125,7 +21664,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -21187,7 +21726,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串
 
@@ -21258,7 +21797,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -21318,7 +21857,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
@@ -21377,7 +21916,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   - 可以建議：否
   - 動態原則重新整理：否 - 需要重新啟動瀏覽器
 
-  #### Data Type:
+  #### 資料類型：
 
   - 布林值
 
