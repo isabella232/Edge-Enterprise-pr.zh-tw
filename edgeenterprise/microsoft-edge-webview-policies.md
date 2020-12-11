@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/02/2020
+ms.date: 12/10/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: b924e40e34c86c3636c18394b561f4b0c35c0437
-ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
+ms.openlocfilehash: 698b291d8831efe1efd7fcbb436fe3921e09f255
+ms.sourcegitcommit: 2887b30d46a9fe59d2ab9f95e638197ae058eaf7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "11195114"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "11205722"
 ---
 # Microsoft Edge WebView2 - 原則
 
@@ -72,7 +72,7 @@ ms.locfileid: "11195114"
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
@@ -128,7 +128,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder = "Name: *, Va
   - 可以建議：否
   - 動態原則重新整理：是
 
-  #### Data Type:
+  #### 資料類型：
 
   - 字串清單
 
