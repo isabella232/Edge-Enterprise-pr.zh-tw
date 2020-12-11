@@ -3,19 +3,19 @@ title: Microsoft Edge 身分識別支援和設定
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 07/15/2020
+ms.date: 12/08/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 身分識別支援和設定
-ms.openlocfilehash: 357f3928d870f83aa087f86cbe30db3ec4f360a2
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: e553174fa40cb60046e5a46af4d81a0787957a93
+ms.sourcegitcommit: b3f8ef9e4944efa3be15c7bfc0cd13360a350c1c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979622"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "11201290"
 ---
 # Microsoft Edge 身分識別支援和設定
 
@@ -79,13 +79,13 @@ Microsoft Edge 具有 PRT 式 SSO 原生支援，且不需要擴充。 在 Windo
 
 ### Windows 整合式驗證 (WIA)
 
-Microsoft Edge 也支援 Windows 整合式驗證，用於為組織內部網路內使用瀏覽器進行驗證的任何應用程式進行驗證請求。 所有版本的 Windows 10 和舊版 Windows 都支援這項功能。 根據預設，Microsoft Edge 會使用內部網路區域做為 WIA 的允許清單。 若要設定已啟用何款整合式驗證的伺服器，請參閱 [AuthServerAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist) 原則 (部分機器翻譯)。
+Microsoft Edge 也支援在組織內部網路中針對使用瀏覽器進行其驗證的任何應用程式，進行驗證要求的 Windows 整合驗證。 所有版本的 Windows 10 和舊版 Windows 都支援這項功能。 根據預設，Microsoft Edge 會使用內部網路區域做為 WIA 的允許清單。 或者，您也可以使用 [AuthServerAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist) 原則來自訂已啟用整合式驗證的伺服器清單。 若使用 macOS，則需要此原則才能啟用整合式驗證。
 
 若要支援 Microsoft Edge (版本 77 及更新版本) 上的 WIA 式 SSO，您可能也需要執行某些伺服器端設定。 您可能必須設定 Active Directory 同盟服務 (AD FS) 的屬性 **WiaSupportedUserAgents** 以新增適用於新版 Microsoft Edge 使用者代理程式字串的支援。 如需如何執行此動作的指示，請參閱[檢視 WIASupportedUserAgent](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#view-wiasupporteduseragent-settings) 設定以及[變更 WIASupportedUserAgent](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-browser-wia#change-wiasupporteduseragent-settings) 設定 (英文)。 下列顯示的是 Windows 10 上 Microsoft Edge 使用者代理程式字串的範例，而您可以在這裡深入了解 [Microsoft Edge UA 字串](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string) (英文)。 
 
 UA 字串的以下範例適用於本文發佈時的最新 Dev 通道組建：<br> `"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3951.0 Safari/537.36 Edg/80.0.334.2"`
 
-在 MacOS 中，您也可以使用 [AuthServerAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist) 與 [AuthNegotiateDelegateAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist) 原則以啟用搭配 Microsoft Edge 的 Kerberos SSO。
+針對需要委派協商認證的服務，Microsoft Edge 使用 [AuthNegotiateDelegateAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist) 原則支援 [限制委派]。
 
 ## 其他驗證概念
 
