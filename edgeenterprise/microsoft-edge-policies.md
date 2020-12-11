@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/02/2020
+ms.date: 12/10/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
-ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
+ms.openlocfilehash: b6d3ca2b485f6ce508f1a280fef48c4ed392d5fc
+ms.sourcegitcommit: 2887b30d46a9fe59d2ab9f95e638197ae058eaf7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "11195134"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "11205730"
 ---
 # Microsoft Edge - 原則
 
@@ -29,22 +29,14 @@ ms.locfileid: "11195134"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## 新的和已取代的原則
+## 新原則
 
-下表針對此更新列出新的和已被取代的功能。
+下表列出此更新的新原則。
 
 | 名稱 | 標題 |
-|-|-|
-|[PrinterTypeDenyList](#printertypedenylist)|停用拒絕清單上的印表機類型|
-|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允許在 Internet Explorer 模式中啟動本機檔案|
-|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案|
-|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|顯示操作功能表以在 Internet Explorer 模式中開啟連結|
-|[IntranetRedirectBehavior](#intranetredirectbehavior)|內部網路重新導向行為|
-|[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新|
-|[VerticalTabsAllowed](#verticaltabsallowed)|設定瀏覽器側邊上索引標籤垂直版面配置的可用性|
-| 已取代 [WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允許舊版 TLS/DTLS 降級|
-
-
+|--|--|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)| 限制背景圖形列印模式|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)| 預設背景圖形列印模式|
 
 ## 可用原則
 
@@ -188,6 +180,8 @@ ms.locfileid: "11195134"
 |[PrintHeaderFooter](#printheaderfooter)|列印頁首與頁尾|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|將系統預設的印表機設定為預設印表機|
 |[PrinterTypeDenyList](#printertypedenylist)|停用拒絕清單上的印表機類型|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|限制背景圖形列印模式|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|預設背景圖形列印模式|
 |[PrintingEnabled](#printingenabled)|啟用列印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|預設列印頁面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系統列印對話方塊列印|
@@ -2756,7 +2750,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPluginsSetting](#defaultpluginssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
-如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 '\*' 和 '[\*.]' 等的萬用字元。
+如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 ‘*' 和 '[*.]’ 等的萬用字元。
 
   #### 支援的功能：
 
@@ -2825,7 +2819,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPluginsSetting](#defaultpluginssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
-如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 '\*' 和 '[\*.]' 等的萬用字元。
+如需有效 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 不過，從 M85 開始，此原則已不再支援主機使用帶有 ‘*' 和 '[*.]’ 等的萬用字元。
 
   #### 支援的功能：
 
@@ -4174,7 +4168,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
   #### 說明
 
-  預設會允許所有擴充功能。 不過，如果您將 'ExtensionInstallBlockList' 原則設定為 "*" 以封鎖所有擴充功能，則使用者只能安裝此原則中定義的擴充功能。
+  設定此原則會指定不受此封鎖清單所規範的擴充功能。
+
+* 的封鎖清單值表示所有的擴充功能都遭到封鎖，而使用者只能安裝允許清單中所列的擴充功能。
+
+根據預設，會允許所有擴充功能。 不過，如果您以原則來禁止擴充功能，您可以使用此允許的擴充功能清單來變更該原則。
 
   #### 支援的功能：
 
@@ -4237,11 +4235,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
   #### 說明
 
-  列出使用者「無法」在 Microsoft Edge 中安裝的特定擴充功能。 部署此原則時，此清單上先前安裝的任何擴充功能都將停用，而且使用者將無法啟用它們。 如果您從封鎖的擴充功能清單中移除某個項目，則會在先前安裝該擴充功能的任何位置自動重新啟用它。
+  讓您指定使用者無法安裝的擴充功能。 已安裝的擴充功能若遭封鎖則會停用，使用者無法啟用它們。 停用的擴充功能從封鎖清單移除中移除後，系統會自動重新啟用該功能。
 
-使用 "*" 可封鎖未在允許清單中明確列出的所有擴充功能。
+'*' 的封鎖清單值表示會封鎖所有擴充功能，除非它們明確地列在允許清單中。
 
-如果未設定此原則，則使用者可以在 Microsoft Edge 中安裝任何擴充功能。
+如果未設定此原則，使用者可以在 Microsoft Edge 中安裝任何擴充功能。
 
   #### 支援的功能：
 
@@ -4448,11 +4446,12 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   #### 說明
 
-  設定 Microsoft Edge 的擴充功能管理設定。
+  設定此原則會控制 Microsoft Edge 的擴充功能管理設定，包括任何由現有的擴充功能相關原則所控制的功能。 這個原則取代任何可能設定的舊版原則。
 
-此原則可控制多個設定，包括由任何現有擴充功能相關原則所控制的設定。 此原則會覆寫任何舊版原則 (如果同時設定)。
+此原則只會將擴充功能 ID 或更新 URL 對應至其特定設定。 您可以針對特殊 ID "*" 設定預設組態，這將適用於此原則中不含自訂設定的所有擴充功能。 有了更新 URL，設定就會套用到擴充功能資訊清單 ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ) 中具有所述之精準更新 URL 的擴充功能。
 
-此原則會將擴充功能識別碼或更新 URL 與其設定對應。 利用擴充功能識別碼，設定只會套用至指定的擴充功能。 設定特殊識別碼 "*" 的預設設定，以將它套用至此原則中未特別列出的所有擴充功能。 利用更新 URL，設定會套用至具有此擴充功能的資訊清單中陳述的確切更新 URL 的所有擴充功能，如 [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) 中所述。
+注意：對於未加入 Microsoft Active Directory 網域的 Windows 執行個體，強制安裝僅限於 Microsoft Edge 附加元件網站中所列的應用程式和擴充功能。
+
 
   #### 支援的功能：
 
@@ -5217,9 +5216,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   #### 說明
 
-  列出使用者可在 Microsoft Edge 中使用的特定原生訊息主機。
+  設定原則會指定不受此拒絕清單所規範的原生訊息主機。 * 的拒絕清單值表示除非明確允許，否則所有原生訊息郵件主機都會遭到拒絕。
 
-預設會允許所有原生訊息主機。 如果將 [NativeMessagingBlocklist](#nativemessagingblocklist) 原則設定為 *，則會封鎖所有原生訊息主機，且只會載入此處所列的原生訊息主機。
+根據預設，允許所有原生訊息主機。 不過，如果原生訊息主機遭到原則拒絕，系統管理員可以使用允許清單來變更該原則。
 
   #### 支援的功能：
 
@@ -5282,11 +5281,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
 
   #### 說明
 
-  指定不應使用的原生訊息主機。
+  設定此原則會指定不應載入的原生訊息主機。 * 的拒絕清單值表示除非明確允許，否則所有原生訊息郵件主機都會遭到拒絕。
 
-使用 "*" 以封鎖所有原生訊息主機，除非它們明確列在允許清單中。
-
-如果未設定此原則，則 Microsoft Edge 會載入所有安裝的原生訊息主機。
+如果您將此原則保留為未設定，Microsoft Edge 會載入所有已安裝的原生訊息主機。
 
   #### 支援的功能：
 
@@ -5349,11 +5346,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   #### 說明
 
-  啟用原生訊息主機的使用者層級安裝。
+  如果您將此原則設為 [啟用] 或保留為未設定，Microsoft Edge 可以使用在使用者層級安裝的原生訊息主機。
 
-如果停用此原則，則 Microsoft Edge 只會使用在系統層級上安裝的原生訊息主機。
-
-如果未設定此原則，依預設，Microsoft Edge 將允許使用使用者層級的原生訊息主機。
+如果您將此原則設為 [停用]，Microsoft Edge 只能使用在系統層級安裝的這些主機。
 
   #### 支援的功能：
 
@@ -6153,6 +6148,140 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
   <string>local</string>
   <string>privet</string>
 </array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### PrintingAllowedBackgroundGraphicsModes
+
+  #### 限制背景圖形列印模式
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  限制背景圖形列印模式。 如果未設定此原則，則列印背景圖形沒有限制。
+
+原則選項對應：
+
+* any (任何) = 允許具有與不具有背景圖形的列印
+
+* enabled (啟用) = 只允許具有背景圖形的列印
+
+* disabled (停用) = 只允許不含背景圖形的列印
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：PrintingAllowedBackgroundGraphicsModes
+  - GP 名稱：限制背景圖形列印模式
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：PrintingAllowedBackgroundGraphicsModes
+  - 值類型：REG_SZ
+
+  ##### 範例值：
+
+```
+"enabled"
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：PrintingAllowedBackgroundGraphicsModes
+  - 範例值：
+``` xml
+<string>enabled</string>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### PrintingBackgroundGraphicsDefault
+
+  #### 預設背景圖形列印模式
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  覆寫預設的背景圖形列印模式。
+
+原則選項對應：
+
+* enabled (啟用) = 預設啟用背景圖形列印模式
+
+* disabled (停用) = 預設停用背景圖形列印模式
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：PrintingBackgroundGraphicsDefault
+  - GP 名稱：預設背景圖形列印模式
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：PrintingBackgroundGraphicsDefault
+  - 值類型：REG_SZ
+
+  ##### 範例值：
+
+```
+"enabled"
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：PrintingBackgroundGraphicsDefault
+  - 範例值：
+``` xml
+<string>enabled</string>
 ```
   
 
@@ -8292,7 +8421,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   讓您在使用者在網址列中輸入搜尋字串時，於網址列的建議清單中顯示相關的 Bing 專用 Microsoft Search 建議。 如果啟用或未設定此原則，則使用者可以在 Microsoft Edge 網址列建議清單中看到 Bing 專用 Microsoft Search 提供的內部結果。 若要查看 Bing 專用 Microsoft Search 結果，使用者必須使用其用於該組織的 Azure AD 帳戶登入 Microsoft Edge。
 如果停用此原則，則使用者無法在 Microsoft Edge 網址列建議清單中查看內部結果。
-如果已啟用會強制使用預設搜尋提供者 ([DefaultSearchProviderEnabled](#defaultsearchproviderenabled)、[DefaultSearchProviderName](#defaultsearchprovidername) 和 [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)) 的原則，且所指定的搜尋提供者不是 Bing，則不適用此原則，在網址列的建議清單中也不會有 Bing 專用 Microsoft Search 建議。
+從 Microsoft Edge 版本 89 開始，即使 Bing 不是使用者的預設搜尋提供者，仍可使用 Bing 中的 [Microsoft 搜尋] 建議。
 
   #### 支援的功能：
 
@@ -15803,7 +15932,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
   如需有關設定 Internet Explorer 模式的最佳體驗的指導方針，請參閱[https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -15923,7 +16052,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 88 或更新版本
 
-  #### 描述
+  #### 說明
 
   此原則會根據副檔名限制允許在 Internet Explorer 模式中啟動的 file:// URL。
 
@@ -17951,9 +18080,8 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   #### 說明
 
-  如果啟用或未設定此原則，則會啟用轉譯器程式碼完整性。 只有當必須在 Microsoft Edge 的轉譯器處理程序內執行的協力廠商軟體發生的相容性問題時，才應該停用此原則。
-
-停用此原則會對 Microsoft Edge 的安全性和穩定性造成不利影響，因為會允許未知且可能有害的程式碼在 Microsoft Edge 的轉譯器處理程序內載入。
+  將原則設定為 [啟用] 或未設定，就會開啟 [轉譯器程式碼完整性]。
+將原則設定為 [停用] 會對 Microsoft Edge 的安全性和穩定性造成不良的影響，因為可能會在 Microsoft Edge 轉譯器程序中載入未知和可能有害的程式碼。 只有在必須在 Microsoft Edge 轉譯器程序內執行的協力廠商軟體發生相容性問題時，才關閉原則。
 
   #### 支援的功能：
 
@@ -18186,7 +18314,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   - Windows 上，版本 85 或更新版本
 
-  #### 說明
+  #### 描述
 
   設定用來儲存設定檔快取複本的目錄。
 
