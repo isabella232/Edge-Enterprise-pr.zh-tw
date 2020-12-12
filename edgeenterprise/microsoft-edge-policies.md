@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: b6d3ca2b485f6ce508f1a280fef48c4ed392d5fc
-ms.sourcegitcommit: 2887b30d46a9fe59d2ab9f95e638197ae058eaf7
+ms.openlocfilehash: d2261f327022ea2d4d57e91748de46173d72dfa4
+ms.sourcegitcommit: 12c803b07a1dbced5f2360f5745186e33adcc41a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "11205730"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "11218732"
 ---
 # Microsoft Edge - 原則
 
@@ -433,8 +433,6 @@ ms.locfileid: "11205730"
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 所使用的本機 UDP 連接埠範圍|
-|[WebWidgetAllowed](#webwidgetallowed)|啟用Web 小工具|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 啟動時允許Web小工具|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows proxy 解析程式 (已過時) |
 
 
@@ -15932,7 +15930,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 77 或更新版本
 
-  #### 描述
+  #### 說明
 
   如需有關設定 Internet Explorer 模式的最佳體驗的指導方針，請參閱[https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -18314,7 +18312,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   - Windows 上，版本 85 或更新版本
 
-  #### 描述
+  #### 說明
 
   設定用來儲存設定檔快取複本的目錄。
 
@@ -21888,131 +21886,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 ``` xml
 <string>10000-11999</string>
 ```
-  
-
-  [回到頁首](#microsoft-edge---policies)
-
-  ### WebWidgetAllowed
-
-  #### 啟用Web 小工具
-
-  
-  
-  #### 支援的版本：
-
-  - Windows 上，版本 88 或更新版本
-
-  #### 描述
-
-  啟用Web 小工具. 啟用後，使用者可以使用該小工具從桌面或從應用程式來搜尋網頁。 該小工具會提供搜尋方塊以顯示網頁建議，並開啟 Microsoft Edge 中的所有網頁搜尋。 搜尋方塊提供搜尋（依照 Bing 提供的支援）和 URL 建議。 該小工具也包含資訊摘要方塊，使用者可以在msn.com新的 Microsoft Edge 瀏覽器或視窗中點擊以看到更多資訊. 資訊摘要方塊可能包含廣告。 您可以從 Microsoft Edge 設定或 Microsoft Edge 中的＂其他工具＂功能表啟動小工具。
-
-如果您啟用或未設定此原則：系統會自動為所有設定檔啟用Web小工具。
-在 Microsoft Edge 設定中，使用者會看到啟用小工具的選項。
-在 Microsoft Edge 設定中，使用者會看到功能表選項，以在 Windows 啟動時執行小工具（自動啟動）。
-如果已啟用 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 原則，則在開機時啟用小工具的選項將被打開。
-如果 [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) 已停用或未設定，則在開機時啟用小工具的選項將被關閉。
-使用者將從 Microsoft Edge 的＂更多工具＂功能表中看到功能選項以啟動小工具。 使用者可以從＂更多工具＂啟動小工具。
-您可以從系統工作列的＂離開＂選項，或從工作列關閉小工具來關閉該小工具。 如果啟用自動啟動，小工具會在系統重新開機時重新啟用。
-
-如果您停用這個原則：所有設定檔都將停用Web小工具。
-啟動 Microsoft Edge 設定小工具的選項將會停用。
-在 Windows 啟動（自動啟動）時啟動小工具的啟用選項將會停用。
-從Microsoft Edge “更多工具”的功能選單啟動 Microsoft Edge 小工具的選項將會停用。
-
-  #### 支援的功能：
-
-  - 可強制執行：是
-  - 可以建議：否
-  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
-
-  #### 資料類型：
-
-  - 布林值
-
-  #### Windows 資訊和設定
-
-  ##### 群組原則 (ADMX) 資訊
-
-  - GP 唯一名稱： WebWidgetAllowed
-  - GP 名稱：啟用Web小工具
-  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
-  - GP 路徑 (建議)：不適用
-  - GP ADMX 檔案名稱：MSEdge.admx
-
-  ##### Windows 登錄設定
-
-  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
-  - 路徑 (建議)：不適用
-  - 數值名稱： WebWidgetAllowed
-  - 數值類型：REG_DWORD
-
-  ##### 範例值：
-
-```
-0x00000001
-```
-
-  
-
-  [回到頁首](#microsoft-edge---policies)
-
-  ### WebWidgetIsEnabledOnStartup
-
-  #### 在 Windows 啟動時允許Web小工具
-
-  
-  
-  #### 支援的版本：
-
-  - Windows 上，版本 88 或更新版本
-
-  #### 描述
-
-  允許網頁小工具在 Windows 啟動時開始執行。
-
-如果您啟用：Web小工具預設會在 Windows 啟動時開始執行。
-如果透過 [WebWidgetAllowed](#webwidgetallowed) 原則停用小工具，此原則就不會在 Windows 啟動時啟動小工具。
-
-如果您停用這個原則： Web網頁小工具將不會在Windows 啟動時啟動所有配置文件。
-在 Windows 啟動時啟動小工具的選項將會停用，並會在 Microsoft Edge 設定中關閉。
-
-如果您未設定這個原則： Web網頁小工具將不會在Windows 啟動時啟動所有配置文件。
-在 Windows 啟動時啟動小工具的選項將會在 Microsoft Edge 的設定中關閉。
-
-  #### 支援的功能：
-
-  - 可強制執行：是
-  - 可以建議：否
-  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
-
-  #### 資料類型：
-
-  - 布林值
-
-  #### Windows 資訊和設定
-
-  ##### 群組原則 (ADMX) 資訊
-
-  - GP 唯一名稱： WebWidgetIsEnabledOnStartup
-  - GP 名稱：在 Windows 啟動時允許Web小工具
-  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
-  - GP 路徑 (建議)：不適用
-  - GP ADMX 檔案名稱：MSEdge.admx
-
-  ##### Windows 登錄設定
-
-  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
-  - 路徑 (建議)：不適用
-  - 數值名稱： WebWidgetIsEnabledOnStartup
-  - 數值類型：REG_DWORD
-
-  ##### 範例值：
-
-```
-0x00000001
-```
-
-  
+ 
 
   [回到頁首](#microsoft-edge---policies)
 
