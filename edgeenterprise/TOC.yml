@@ -1,4 +1,4 @@
-# last revised 11/16/2020
+# last revised 12/14/2020
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -74,7 +74,7 @@
     - name: 進行 Windows 的設定
       href: configure-microsoft-edge.md
     - name: 使用 Intune 進行 Windows 的設定
-      href: configure-edge-with-intune.md
+      href: 'https://docs.microsoft.com/mem/intune/configuration/administrative-templates-configure-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
     - name: 使用行動裝置管理，進行 Windows 的設定
       href: configure-edge-with-mdm.md
     - name: 使用 .plist 設定 macOS
@@ -113,7 +113,7 @@
           href: edge-ie-mode-faq.md
         - name: 其他指導方針
           items:
-            - name: 將副檔名與 Internet Explorer 模式關聯
+            - name: 將副檔名與 Internet Explorer 模式建立關聯
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 從 Microsoft Edge 到 Internet Explorer 共用 Cookie
               href: edge-ie-mode-add-guidance-cookieshare.md
