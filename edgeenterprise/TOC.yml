@@ -192,4 +192,4 @@
     - name: 影片 - 安全性、相容性及管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
 - name: 常見問題集
-  href: faqs-edge-in-the-enterprise.md
+  href: faqs-edge-in-the-enterprise.yml
