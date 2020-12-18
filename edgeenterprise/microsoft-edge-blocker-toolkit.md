@@ -3,23 +3,30 @@ title: 封鎖程式工具組用來停用自動傳遞 Microsoft Edge
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 06/30/2020
+ms.date: 12/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 封鎖程式工具組用來停用自動傳遞 Microsoft Edge
-ms.openlocfilehash: 7563d2c94cf91a8434328699e46c75dbcfb77561
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9fb97d2dfec4822f8ce76dc3e37b85118c6572ad
+ms.sourcegitcommit: 606282995b466a968bab40c16005a6653323c763
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979595"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "11229614"
 ---
 # 封鎖程式工具組用來停用自動傳遞 Microsoft Edge (以 Chromium 為基礎)
 
-本文介紹了用於停用自動傳遞和安裝 Microsoft Edge 的封鎖程式工具組。 此篇文章已於 **2020/01/09 進行更新**，並加入更多可能要求您使用封鎖程式工具組的其他資訊：於**2020/2/28** 更新內容中，將裝置準則中的 "MDM managed" 移除以便將此裝置排除在自動更新的範圍中，以及在 **2020/6/30** 更新內容中，反映出與 Windows Update 連結的所有裝置都含括在此更新內容的接收範疇之中（最快可以可於 2020/7/30 生效）。
+本文介紹了用於停用自動傳遞和安裝 Microsoft Edge 的封鎖程式工具組。
+
+我們已在本文中進行下列更新：
+
+- **2020 年 01 月 09 日**，包含可能會要求您使用封鎖程式工具組的裝置相關資訊。
+- **2020 年 2 月 28 日**，將「MDM 管理」從裝置準則中移除，以便從此自動更新中排除
+- **2020 年 6 月 30 日** ，反映出與 Windows Update 連結的所有裝置都含括在此更新內容的接收範疇之中 (最快可以可於 2020 年 7 月 30 日生效)
+- **2020 年 10 月 12 日** 說明在版本 20H2 之前的情況，通常會忽略封鎖程式工具組的設定
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 穩定通道。
@@ -28,16 +35,15 @@ ms.locfileid: "10979595"
 
 為了協助我們的客戶成為更安全且更時時維持著最新狀態，Microsoft 將會發佈 Microsoft Edge （以 Chromium 為基礎）到執行 Windows 10 版本1803 及更新版本的所有 Windows Update 連接裝置。 此過程將在 2020 年 1 月 15 日之後開始，到那時將會有更多資訊提供參考。
 
-封鎖程式工具組適用於想要封鎖自動傳遞 Microsoft Edge 到執行 Windows 10 版本 1803 和更新版本的 Windows 更新連接裝置的組織。
-透過 Windows Server Update Services (WSUS) 或 [商務用 Windows Update (WUfB)] 管理的裝置將不會含括在此自動更新的範圍清單。
+封鎖程式工具組適用於想要封鎖自動傳遞 Microsoft Edge 到執行 Windows 10 版本 1803 和更新版本的 Windows 更新連接裝置的組織。 Windows Server Update Services (WSUS) 或商務用 Windows Update (WUfB) 管理的裝置將會從此自動 Windows 更新中排除，但可能會透過其組織收到新的 Microsoft Edge (以 Chromium 為基礎)。
 
 **請務必注意：**
 
 - 封鎖程式工具組不會阻止使用者從網際網路下載或外部媒體手動安裝 Microsoft Edge (以 Chromium 為基礎)。
 - 透過商務用 Windows Update (WUfB) 管理更新的組織不會自動收到此更新，也不需要部署封鎖程式工具組。
-- 組織在使用更新管理解決方案 (如 Windows Server Update Services (WSUS) 或 System Center Configuration Manager (SCCM)) 管理的環境中，不需要部署封鎖程式工具組。 這些組織可以使用這些產品在其環境中全面管理透過 Windows Update 和 Microsoft Update 發佈的更新的部署，包括 Microsoft Edge (以 Chromium 為基礎)。
+- 組織在使用更新管理解決方案 (如 Windows Server Update Services (WSUS) 或 System Center Configuration Manager (SCCM)) 管理的環境中，不需要部署封鎖程式工具組。 他們可以使用這些產品，透過 Windows Update 和 Microsoft Update 來全面管理已發佈的更新，包括在 [全新 Microsoft Edge 中的 WSUS 更新](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge)(在其環境內)。
 - 此更新是獨立更新 (不是每月累積更新的一部分)，可為企業客戶提供靈活性和對部署此更新的最大控制。
-- 新版 Microsoft Edge（以 Chromium 為基礎）將含括在 Windows 10 在 2020 年第二季功能更新的版本 20H2 之中。 封鎖程式工具組不會對 20H2 版本的行為或佈署造成影響。 如需有關 Windows 10 版本 20H2 的詳細資訊，請參閱[此處](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/)。
+- 新版 Microsoft Edge (以 Chromium 為基礎) 是包含在 2020 下半年的 Windows 10 版本 20H2 功能更新中。 封鎖程式工具組不會對 20H2 版本的行為或佈署造成影響。 如需有關 Windows 10 版本 20H2 的詳細資訊，請參閱[此處](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/)。
 
 可以從 [https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe](https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe) 下載封鎖程式工具組可執行檔。
 
