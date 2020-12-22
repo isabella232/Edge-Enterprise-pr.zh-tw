@@ -1,21 +1,21 @@
 ---
 title: IE 模式常見問題集
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 05/27/2020
+ms.author: shisub
+author: dan-wesley
+manager: srugh
+ms.date: 12/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 適用於 IE 模式 Microsoft Edge 的常見問題集和疑難排解
-ms.openlocfilehash: fcceb9eab19d667f772c593fe4f362606c1623ff
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
+ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979487"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "11238170"
 ---
 # IE 模式常見問題集
 
@@ -81,6 +81,20 @@ Microsoft Edge 中沒有任何明確的命令列來鏡像 *nomerge* 選項，但
 2. 使用 `--user-data-dir=<path>` 命令列，但每個工作模式的路徑不同。 如有需要，您可以建立一個公用程式供使用者運行，該公用程式可以啟動 Microsoft Edge 並變更工作模式路徑。
 
 如果上述選項都不適用於您的案例，請透過其中一個意見反應通道聯絡我們： Microsoft 支援服務、 [TechCommunity 論壇](https://techcommunity.microsoft.com/t5/enterprise/bd-p/EdgeInsiderEnterprise)，或 [Microsoft Edge UserVoice](https://microsoftedge.uservoice.com/forums/928825-enterprise)。
+
+### 我是否可以在 Internet Explorer 模式中將連結儲存為網頁？
+ 
+是的，您可以在 Microsoft Edge 的 Internet Explorer 模式的操作功能表中啟用 [另存目標] 選項。 若要這麼做，請設定位於 [電腦設定] > [系統管理範本] > [Windows 元件] > [Internet Explorer]** 下的群組原則 *「允許在 Internet Explorer 模式中另存目標」*。
+儲存機制的運作方式與在 Internet Explorer 中相同，而如果將目標儲存為 HTML 檔案，重新開啟該檔案就會在 Microsoft Edge 中呈現該頁面。
+ 
+請注意，此功能需要下列最低版本的作業系統更新：
+- Windows 10 版本 2004、Windows Server 版本 2004、Windows 10 版本 20H2：[KB4580364](https://support.microsoft.com/help/4580364/windows-10-update-kb4580364)
+- Windows 10 版本 1903、Windows 10 版本 1909、Windows Server 版本 1903：[KB4580386](https://support.microsoft.com/help/4580386/windows-10-update-kb4580386)
+- Windows 10 版本 1809、Windows Server 版本 1809、Windows Server 2019：[KB4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)
+- Windows 10 版本 1803：[KB4586785](https://support.microsoft.com/help/4586785/windows-10-update-kb4586785)
+- Windows 10 版本 1607：[KB4586830](https://support.microsoft.com/help/4586830/windows-10-update-kb4586830)
+- Windows 10 版本 1507：[KB4586787](https://support.microsoft.com/help/4586787/windows-10-update-kb4586787)
+
 
 ## 請參閱
 
