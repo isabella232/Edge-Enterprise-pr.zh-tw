@@ -1,4 +1,4 @@
-# last revised 12/14/2020
+# last revised 12/21/2020
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -173,6 +173,8 @@
           href: edge-learnmore-neededge.md
         - name: 規則運算式 2 (re2.h) 語法
           href: edge-learnmore-regex.md
+        - name: 重設 Microsoft Edge 資料
+          href: edge-learnmore-reset-data-in-cloud.md
         - name: 使用者資料目錄變數
           href: edge-learnmore-create-user-directory-vars.md
         - name: 使用 Microsoft Edge 的企業版回滾
