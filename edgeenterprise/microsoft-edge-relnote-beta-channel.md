@@ -3,23 +3,27 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 12/16/2020
+ms.date: 12/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: ee992fad6effe1f10b72c34f3073915a22e13ccd
-ms.sourcegitcommit: 124e8bc890c80ffd68e25b4acc3815ef2dda699e
+ms.openlocfilehash: 02be654a3a3cd4dd4a4e47f4708e782c768ba693
+ms.sourcegitcommit: 28cdf201b1bd143337950ed8065c86c4005ae33b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "11229687"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "11247175"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
 這些版本資訊提供 Microsoft Edge Beta 通道中包含的新功能和非安全性更新的相關資訊。
+
+## 版本 88.0.705.29：12 月 21 日
+
+已修正各種錯誤和效能問題。
 
 <!-- begin major 88 -->
 ## 版本 88.0.705.18：12 月 9 日
