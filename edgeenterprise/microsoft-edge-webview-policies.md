@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/10/2020
+ms.date: 01/07/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,19 +11,18 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 698b291d8831efe1efd7fcbb436fe3921e09f255
-ms.sourcegitcommit: 2887b30d46a9fe59d2ab9f95e638197ae058eaf7
+ms.openlocfilehash: 0be51f193d12c14d1bb40439d7ec6ca9e59effae
+ms.sourcegitcommit: 4dc45cde7cfd29cd24a03f6e830502e95c43d82e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "11205722"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "11254951"
 ---
 # Microsoft Edge WebView2 - 原則
 
 最新版本的 Microsoft Edge WebView2 包含下列原則。 您可以使用這些原則來設定 Microsoft Edge WebView2 在組織中的執行方式。
 
 如需用於控制 Microsoft Edge WebView2 更新方式和更新時機的一組額外原則之詳細資訊，請參閱 [Microsoft Edge 更新原則參考](microsoft-edge-update-policies.md)。
-
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
@@ -161,7 +160,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, V
   [回到頁首](#microsoft-edge-webview2---policies)
 
 
-## 請參閱
+## 也請參閱
 
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
