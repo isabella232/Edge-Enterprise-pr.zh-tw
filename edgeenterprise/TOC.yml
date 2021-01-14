@@ -1,4 +1,4 @@
-# last revised 12/21/2020
+# last revised 01/13/2021
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -27,16 +27,18 @@
       href: deploy-edge-plan-deployment.md
     - name: 準備好使用 Microsoft Edge
       href: deploy-edge-ready-for-edge.md
-    - name: 版本資訊
-      items:
-        - name: 發行排程
-          href: microsoft-edge-release-schedule.md
-        - name: Beta 通道版本資訊
-          href: microsoft-edge-relnote-beta-channel.md
-        - name: 穩定通道版本資訊
-          href: microsoft-edge-relnote-stable-channel.md
-        - name: 安全性更新
-          href: microsoft-edge-relnotes-security.md
+    - name: 穩定通道版本資訊
+      href: microsoft-edge-relnote-stable-channel.md
+    - name: 穩定頻道已封存的版本資訊
+      href: microsoft-edge-relnote-archive-stable-channel.md
+    - name: Beta 通道版本資訊
+      href: microsoft-edge-relnote-beta-channel.md
+    - name: Beta 版頻道已封存的版本資訊
+      href: microsoft-edge-relnote-archive-beta-channel.md
+    - name: 發行排程
+      href: microsoft-edge-release-schedule.md
+    - name: 安全性更新
+      href: microsoft-edge-relnotes-security.md
     - name: Microsoft Edge 原則對應
       items:
         - name: 原則對應概觀
