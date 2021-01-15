@@ -3,23 +3,25 @@ title: Microsoft Edge 安全性、相容性及管理性
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 07/28/2020
+ms.date: 01/13/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性、相容性及管理性
-ms.openlocfilehash: a2da462b587ddaa7919331b835760108f533b5a1
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 759f28a10fc342ebc1f3eac7933b46c6ace169b4
+ms.sourcegitcommit: 42af8123dc86c2a1d07de0080a6c878c151f354f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979546"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "11269306"
 ---
 # 影片：Microsoft Edge 安全性、相容性及管理性
 
-這段影片顯示 Microsoft Edge 如何讓安全性、相容性和管理性提升到新的水準。
+這段影片顯示 Microsoft Edge 如何讓安全性、相容性和管理性提升到新的水準。 請按一下以下的螢幕擷取畫面，觀看 Microsoft 365 總監 Jeremy Chapman 的影片。
+
+[![Microsoft Edge 安全性、相容性及管理性](media/microsoft-edge-video-security-compatibility-manageability/0.png)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Microsoft Edge security, compatibility, and manageability")
 
 ## 關於此影片
 
@@ -27,13 +29,7 @@ ms.locfileid: "10979546"
 
 - 安全。 Microsoft Edge 可協助防止您的網路和裝置遭受惡意攻擊，並防止未經授權的存取和公司資料洩漏。
 - 相容性。 Microsoft Edge 與新式和舊版網頁相容。
-- 管理性。 請考慮您的 Microsoft Edge 更新管理或服務選項。
-
-按一下下一個螢幕擷取畫面，觀看 Microsoft 365 總監 Jeremy Chapman 的影片。
-<!--
-[![Video: Security, compatibility, and manageability](http://img.youtube.com/vi/uMmh_gNaM4I/0.jpg)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Microsoft Edge security, compatibility, and update management deep dive (Chromium | 2020)")-->
-
-[![Microsoft Edge 安全性、相容性及更新管理深度剖析 (Chromium | 2020)](https://res.cloudinary.com/marcomontalbano/image/upload/v1595890410/video_to_markdown/images/youtube--uMmh_gNaM4I-c05b58ac6eb4c4700831b2b3070cd403.jpg)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Video: Security, compatibility, and manageability")
+- 管理性。 考慮您用於 Microsoft Edge 的更新管理或服務選項。
 
 ## 請參閱
 
