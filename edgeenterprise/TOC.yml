@@ -1,4 +1,4 @@
-# last revised 01/13/2021
+# last revised 01/14/2021
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -185,14 +185,22 @@
   items:
     - name: Microsoft Edge 影片集合
       href: microsoft-edge-videos.md
+    - name: 影片-Microsoft Edge-瀏覽器2020的狀態
+      href: microsoft-edge-video-state-of-browser.md
     - name: 使用應用程式防護的影片瀏覽器隔離
       href: microsoft-edge-video-security-application-guard.md
     - name: 影片 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
     - name: '影片-資料遺失防護 (DLP) '
       href: microsoft-edge-video-security-dlp.md
-    - name: 影片 - Microsoft Edge 和 Microsoft 搜尋
-      href: microsoft-edge-video-search.md
+    - name: Microsoft Edge 中的影片身分識別
+      href: microsoft-edge-video-identity.md
+    - name: 影片-Microsoft Edge 版本回滾
+      href: microsoft-edge-video-version-rollback.md
+    - name: 影片-PDF 閱讀程式在 Microsoft Edge 中
+      href: microsoft-edge-video-pdf-reader.md
+    - name: 影片-在 Microsoft Edge 中進行安全流覽
+      href: microsoft-edge-video-security-smartscreen.md
     - name: 影片 - 安全性、相容性及管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
 - name: 常見問題集
