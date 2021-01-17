@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/07/2021
+ms.date: 01/15/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: b422361809b0a2acaa392729025a95aef7ac8f83
-ms.sourcegitcommit: 4dc45cde7cfd29cd24a03f6e830502e95c43d82e
+ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
+ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "11254971"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "11270839"
 ---
 # Microsoft Edge - 原則
 
@@ -29,17 +29,14 @@ ms.locfileid: "11254971"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-
 ## 新原則
 
 下表列出此更新的新原則。
 
 | 名稱 | 標題 |
-|-|-|
-|[BasicAuthOverHttpEnabled](#basicauthoverhttpenabled)|允許 HTTP 的基本驗證|
-|[TargetBlankImpliesNoOpener](#targetblankimpliesnoopener)|不对指向 \_blank 的链接設定 window.opener|
-|[WebWidgetAllowed](#webwidgetallowed)|允許 Web 小工具.|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 啟動時啟用 Web 小工具|
+|--|--|
+|[BrowsingDataLifetime](#browsingdatalifetime)|流覽資料存留期設定|
+|[DefinePreferredLanguages](#definepreferredlanguages)|定義網站支援語言時，網站應該顯示的慣用語言的排序清單|
 
 
 ## 可用原則
@@ -268,6 +265,7 @@ ms.locfileid: "11254971"
 |[BrowserGuestModeEnabled](#browserguestmodeenabled)|啟用來賓模式|
 |[BrowserNetworkTimeQueriesEnabled](#browsernetworktimequeriesenabled)|允許查詢瀏覽器網路時間服務|
 |[BrowserSignin](#browsersignin)|瀏覽器登入設定|
+|[BrowsingDataLifetime](#browsingdatalifetime)|流覽資料存留期設定|
 |[BuiltInDnsClientEnabled](#builtindnsclientenabled)|使用內建的 DNS 用戶端|
 |[BuiltinCertificateVerifierEnabled](#builtincertificateverifierenabled)|決定是否使用內建的憑證驗證程式來驗證伺服器憑證 (已淘汰)|
 |[CertificateTransparencyEnforcementDisabledForCas](#certificatetransparencyenforcementdisabledforcas)|針對 subjectPublicKeyInfo 雜湊的清單，停用憑證透明度強化|
@@ -290,6 +288,7 @@ ms.locfileid: "11254971"
 |[DefaultSearchProviderContextMenuAccessAllowed](#defaultsearchprovidercontextmenuaccessallowed)|允許預設搜尋提供者操作功能表搜尋存取權|
 |[DefaultSensorsSetting](#defaultsensorssetting)|預設的感應器設定|
 |[DefaultSerialGuardSetting](#defaultserialguardsetting)|控制 Serial API 的使用|
+|[DefinePreferredLanguages](#definepreferredlanguages)|定義網站支援語言時，網站應該顯示的慣用語言的排序清單|
 |[DelayNavigationsForInitialSiteListDownload](#delaynavigationsforinitialsitelistdownload)|要求在索引標籤導覽前， [企業模式網站清單] 即已可使用|
 |[DeleteDataOnMigration](#deletedataonmigration)|移轉時刪除舊版瀏覽器資料|
 |[DeveloperToolsAvailability](#developertoolsavailability)|控制可使用開發人員工具的位置|
@@ -439,8 +438,8 @@ ms.locfileid: "11254971"
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|限制 WebRTC 所使用的本機 UDP 連接埠範圍|
-|[WebWidgetAllowed](#webwidgetallowed)|允許 Web 小工具.|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 啟動時啟用 Web 小工具|
+|[WebWidgetAllowed](#webwidgetallowed)|啟用Web 小工具|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|在 Windows 啟動時允許Web小工具|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|使用 Windows proxy 解析程式 (已過時) |
 
 
@@ -6311,7 +6310,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
 
   #### 說明
 
-  覆寫預設的背景圖形列印模式。
+  覆寫 [列印背景圖形] 的 [上次使用] 設定。
+如果您啟用此設定，就會啟用背景圖形列印。
+如果您停用此設定，就會停用背景圖形列印。
 
 原則選項對應：
 
@@ -10672,6 +10673,108 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 ```
   
 
+  [返回頂端](#microsoft-edge---policies)
+
+  ### BrowsingDataLifetime
+
+  #### 流覽資料存留期設定
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  設定 Microsoft Edge 的流覽資料存留期設定。
+此原則控制所選流覽資料的存留期。 如果啟用同步處理，此原則就不會有任何作用。
+可用的資料類型有 'browsing_history'、'download_history'、 'cookies_and_other_site_data'、 'cached_images_and_files'、 'password_signin'、 'autofill'、'site_settings' 和 'hosted_app_data'.
+Microsoft Edge 會定期移除超過「time_to_live_in_hours」的所選類型的資料。 因為資料刪除只會在特定的時間間隔進行，所以某些資料的保留時間可能稍長，但不會超過預期「time_to_live_in_hours」的兩倍。
+
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - Dictionary
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： BrowsingDataLifetime
+  - GP 名稱：流覽資料存留期設定
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱： BrowsingDataLifetime
+  - 值類型：REG_SZ
+
+  ##### 範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
+  {
+    "data_types": [
+      "browsing_history"
+    ], 
+    "time_to_live_in_hours": 24
+  }, 
+  {
+    "data_types": [
+      "password_signin", 
+      "autofill"
+    ], 
+    "time_to_live_in_hours": 12
+  }
+]
+```
+
+  ##### 精簡範例值：
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [{"data_types": ["browsing_history"], "time_to_live_in_hours": 24}, {"data_types": ["password_signin", "autofill"], "time_to_live_in_hours": 12}]
+  ```
+  
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱： BrowsingDataLifetime
+  - 範例值：
+``` xml
+<key>BrowsingDataLifetime</key>
+<array>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>browsing_history</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>24</integer>
+  </dict>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>password_signin</string>
+      <string>autofill</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>12</integer>
+  </dict>
+</array>
+```
+  
+
   [回到頁首](#microsoft-edge---policies)
 
   ### BuiltInDnsClientEnabled
@@ -10688,13 +10791,13 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   控制是否使用內建的 DNS 用戶端。
 
-這不會影響所使用的 DNS 伺服器；只有用來與它們通訊的軟體堆疊。 例如，如果作業系統設定為使用企業 DNS 伺服器，則內建 DNS 用戶端將會使用相同的伺服器。 不過，內建的 DNS 用戶端可能會使用更現代的 DNS 相關通訊協定 (例如 DNS-over-TLS)，以不同的方式來為伺服器定址。
+此原則會控制用來與 DNS 伺服器通訊的軟體堆疊：作業系統 DNS 用戶端或 Microsoft Edge 的內建 DNS 用戶端。 此原則不會影響使用的 DNS 伺服器：例如，如果作業系統已設定為使用企業 DNS 伺服器，則內建的 DNS 用戶端就會使用相同的伺服器。 它也不控制是否使用 DNS-over-HTTPS；Microsoft Edge 始終使用內建的解析程式來處理 DNS-over-HTTPS 要求。 請參閱 [DnsOverHttpsMode](#dnsoverhttpsmode) 原則，以取得控制 DNS-over-HTTPS 的相關資訊。
 
 如果啟用此原則，則會使用內建的 DNS 用戶端 (如果可用)。
 
-如果停用此原則，則永遠不會使用用戶端。
+如果您停用此原則，則只有在使用 IDNS-over-HTTPS 的情況下，才會使用內建的 DNS 用戶端。
 
-如果未設定此原則，則內建的 DNS 用戶端預設會在 MacOS 上啟用，且使用者可以透過編輯 edge://flags 或指定命令列旗標來變更是否使用內建的 DNS 用戶端。
+如果您未設定此原則，系統會預設啟用內建的 DNS 用戶端。
 
   #### 支援的功能：
 
@@ -12127,6 +12230,70 @@ Windows 系統管理員的注意事項：此原則只適用執行 Windows 7 的�
 ```
   
 
+  [返回頂端](#microsoft-edge---policies)
+
+  ### DefinePreferredLanguages
+
+  #### 定義網站支援語言時，網站應該顯示的慣用語言的排序清單
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  設定 Microsoft Edge 作為 Accept-Language 要求 HTTP 標頭的一部分傳送至網站的語言變體，並防止使用者在 Microsoft Edge 設定中新增、移除或更改慣用語言的順序。 如果使用者想要變更 Microsoft Edge 所顯示的語言，或提供翻譯頁面，將受限於此原則中設定的語言。
+
+如果啟用此原則，網站將以其支援的清單中的第一種語言顯示，除非使用其他網站特定的邏輯來確定顯示語言。 此原則中定義的語言變體將覆寫作為 [SpellcheckLanguage](#spellchecklanguage) 原則一部分設定的語言。
+
+如果您沒有設定或停用此原則，Microsoft Edge 會將使用者指定的慣用語言作為 Accept-Language 要求 HTTP 標頭的一部分傳送至網站。
+
+如需有效其他語言的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2148854](https://go.microsoft.com/fwlink/?linkid=2148854)。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： DefinePreferredLanguages
+  - GP 名稱：定義網站支援語言時，網站應該顯示的慣用語言的排序清單
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱： DefinePreferredLanguages
+  - 值類型：REG_SZ
+
+  ##### 範例值：
+
+```
+"en-US,fr,es"
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱： DefinePreferredLanguages
+  - 範例值：
+``` xml
+<string>en-US,fr,es</string>
+```
+  
+
   [回到頁首](#microsoft-edge---policies)
 
   ### DelayNavigationsForInitialSiteListDownload
@@ -13088,13 +13255,13 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 
   - Windows 和 macOS 上，版本 87 或更新版本
 
-  #### 描述
+  #### 說明
 
-  此原則可讓使用者比較他們正在尋找的產品價格、從其所在網站取得優待券，或在結帳時自動套用優待券。
+  此原則允許使用者比較他們正在尋找的產品價格，從其所在網站上取得優待券或回贈，或者在結帳時自動套用優待券。
 
-如果您啟用或未設定此原則，將針對零售網域自動套用價格比較和優待券之類購物功能。 將從伺服器擷取目前零售商的優待券和其他零售商的價格。
+如果您啟用或未設定此原則，將針對零售網域自動套用價格比較、優待券和回贈之類購物功能。 將從伺服器擷取目前零售商的優待券和其他零售商的價格。
 
-如果您停用此原則，將不會針對零售網域自動發現價格比較和優待券之類購物功能。
+如果您停用此原則，將不會針對零售網域自動發現價格比較、優待券和回贈之類購物功能。
 
   #### 支援的功能：
 
@@ -18461,9 +18628,9 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
 如果您停用或未設定此原則，系統只會使用標準本機設定檔。
 
-[SyncDisabled](#syncdisabled) 原則會停用所有資料同步處理、覆寫原則。
+[SyncDisabled](#syncdisabled)只會停用雲端同步處理，而不會影響此原則。
 
-如需使用漫遊使用者設定檔的詳細資訊，請參閱 https://docs.microsoft.com/windows-server/storage/folder-redirection/deploy-roaming-user-profiles。
+如需使用漫遊使用者設定檔的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 
   #### 支援的功能：
 
@@ -20129,6 +20296,8 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
   #### 說明
 
   停用 Microsoft Edge 中的資料同步。 此原則也會防止顯示同步同意提示。
+
+這個原則只會停用雲端同步處理，不會影響 [RoamingProfileSupportEnabled](#roamingprofilesupportenabled) 原則。
 
 如果未設定此原則或將它套用為建議，則使用者將可以開啟或關閉同步。 如果將此原則套用為強制，則使用者將無法開啟同步。
 
@@ -21928,7 +22097,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 說明
+  #### 描述
 
   允許您設定 WebRTC 是否公開使用者的本機 IP 位址。
 
@@ -22058,7 +22227,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### WebWidgetAllowed
 
-  #### 允許 Web 小工具.
+  #### 啟用Web 小工具
 
   
   
@@ -22122,7 +22291,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   ### WebWidgetIsEnabledOnStartup
 
-  #### 在 Windows 啟動時啟用 Web 小工具
+  #### 在 Windows 啟動時允許Web小工具
 
   
   
@@ -22240,7 +22409,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   [回到頁首](#microsoft-edge---policies)
 
 
-## 也請參閱
+## 請參閱
 
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
