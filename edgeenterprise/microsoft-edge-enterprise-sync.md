@@ -3,19 +3,19 @@ title: 設定和疑難排解 Microsoft Edge 同步處理
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 01/14/2021
+ms.date: 01/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 設定和疑難排解 Microsoft Edge 同步處理
-ms.openlocfilehash: fa9b9ead6319bceeb95066003a77be7ecf84db46
-ms.sourcegitcommit: 68b50c45b2b78acec5a0776ce4ddd11410a4e382
+ms.openlocfilehash: 36912d2fd1c33a227ce1d4b7c912f6ef1dfdcc00
+ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270755"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "11297451"
 ---
 # 設定和疑難排解 Microsoft Edge 同步處理
 
@@ -86,11 +86,11 @@ Microsoft Edge 是一個跨平台應用程式，提供跨其所有裝置同步�
 
 在您將問題視為同步處理問題之前，請先檢查使用者是否已使用有效的帳戶登入瀏覽器。
 
-下一個螢幕擷取畫面顯示在**認證**下的 *edge://sync-internals* 中發現之 身分識別錯誤範例：
+下一個螢幕擷取畫面顯示身分識別錯誤的範例。 錯誤為「**Last Token Error, EDGE_AUTH_ERROR: 3, 54, 3ea**」，這可在 *edge://sync-internals* 的 **Credentials** 下找到：
 
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="身分識別錯誤":::
+:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="Last Token Error EDGE_AUTH_ERROR: 3,54, 3ea":::
 
-### 常見的同步處理問題
+### 常見的同步問題
 
 #### 問題：無法存取 M365 或 Azure 資訊保護訂閱
 
@@ -160,11 +160,10 @@ Microsoft Edge 是一個跨平台應用程式，提供跨其所有裝置同步�
 
 ### 問題：發生密碼錯誤
 
-此錯誤在*edge://sync-internals*中的 [**輸入資訊**] 下可見，可能意味著需要重設使用者的服務端資料。 下一個螢幕擷取畫面顯示密碼錯誤的詳細資料範例。
+此錯誤可在 *edge://sync-internals* 中的 **Type info** 下看到，並且可能表示需要重設使用者的服務端資料。 下列範例顯示密碼編譯錯誤訊息：
+<br>"Error:GenerateCryptoErrorsForTypes@../../components/sync/driver/data_type_manager_impl.cc:42, cryptographer error was encountered".
 
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-crypto-error-new.png" alt-text="密碼錯誤。":::
-
-1. 重新啟動 Microsoft Edge 並流覽至 *edge://sync-internals* ，然後查看 [**AAD 帳戶金鑰狀態**] 區段。
+1. 重新啟動 Microsoft Edge 並瀏覽至 *edge://sync-internals*，然後查看 "**AAD Account Key Status**" 區段
    - "Success" in "Last MIP Result"：密碼錯誤意味著伺服器資料可能被遺失的金鑰加密。 需要重設資料才能繼續同步處理。
    - "No permissions" in "Last MIP Result"：這可能是由 Azure AD 變更或租用戶訂閱變更引起的。 需要重設資料才能繼續同步處理。
    - 其他錯誤可能意味著伺服器設定問題。
@@ -208,9 +207,9 @@ Microsoft Edge 同步處理的服務條款需遵守 Microsoft Edge 中的 Micros
 
 ### 套用同步處理
 
-#### 為什麼並非所有 M365 訂閱都支援 Microsoft Edge 同步處理？
+#### 為什麼並非所有 M365 訂閱都支援 Microsoft Edge 同步？
 
-企業同步處理的方式取決於[Azure 資訊保護](https://azure.microsoft.com/services/information-protection/) (並非所有 M365 訂閱都提供)。
+企業同步的方式取決於 [Azure 資訊保護](https://azure.microsoft.com/services/information-protection/)，其並非可在所有 M365 訂閱中取得。
 
 #### Microsoft Edge 同步是否基於企業狀態漫遊？
 
