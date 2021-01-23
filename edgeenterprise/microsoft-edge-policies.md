@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/15/2021
+ms.date: 01/20/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
-ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
+ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
+ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270839"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "11281022"
 ---
 # Microsoft Edge - 原則
 
@@ -35,8 +35,10 @@ ms.locfileid: "11270839"
 
 | 名稱 | 標題 |
 |--|--|
-|[BrowsingDataLifetime](#browsingdatalifetime)|流覽資料存留期設定|
-|[DefinePreferredLanguages](#definepreferredlanguages)|定義網站支援語言時，網站應該顯示的慣用語言的排序清單|
+|[MAMEnabled](#mamenabled)|已啟用行動裝置應用程式管理|
+|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允許來自 Microsoft Edge 的建議和促銷通知|
+
+
 
 
 ## 可用原則
@@ -48,12 +50,12 @@ ms.locfileid: "11270839"
 |[應用程式防護設定](#application-guard-settings)|[投射](#cast)|
 |[內容設定](#content-settings)|[預設搜尋提供者](#default-search-provider)|
 |[Extensions](#extensions)|[HTTP 驗證](#http-authentication)|
-|[kiosk 模式設定](#kiosk-mode-settings)|[原生訊息](#native-messaging)|
-|[密碼管理員和防護](#password-manager-and-protection)|[效能](#performance)|
-|[列印](#printing)|[Proxy 伺服器](#proxy-server)|
-|[睡眠索引標籤設定](#sleeping-tabs-settings)|[SmartScreen 設定](#smartscreen-settings)|
-|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|[其他](#additional)|
-
+|[kiosk 模式設定](#kiosk-mode-settings)|[管理性](#manageability)|
+|[原生訊息](#native-messaging)|[密碼管理員和防護](#password-manager-and-protection)|
+|[效能](#performance)|[列印](#printing)|
+|[Proxy 伺服器](#proxy-server)|[睡眠索引標籤設定](#sleeping-tabs-settings)|
+|[SmartScreen 設定](#smartscreen-settings)|[啟動、首頁和新的索引標籤頁面](#startup-home-page-and-new-tab-page)|
+|[其他](#additional)|
 
 ### [*應用程式防護設定*](#application-guard-settings-policies)
 
@@ -152,6 +154,11 @@ ms.locfileid: "11270839"
 |-|-|
 |[KioskAddressBarEditingEnabled](#kioskaddressbareditingenabled)|針對 kiosk 模式公開瀏覽體驗設定網址列編輯|
 |[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|當 Microsoft Edge 關閉時，刪除隨著 Kiosk 工作階段下載的檔案|
+### [*管理性*](#manageability-policies)
+
+|原則名稱|標題|
+|-|-|
+|[MAMEnabled](#mamenabled)|已啟用行動裝置應用程式管理|
 ### [*原生訊息*](#native-messaging-policies)
 
 |原則名稱|標題|
@@ -400,7 +407,8 @@ ms.locfileid: "11270839"
 |[SerialAskForUrls](#serialaskforurls)|允許特定網站的 Serial API|
 |[SerialBlockedForUrls](#serialblockedforurls)|封鎖特定網站的 Serial API|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|顯示 Microsoft Rewards 體驗|
-|[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)|
+|[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已過時)|
+|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允許來自 Microsoft Edge 的建議和促銷通知|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|啟用 Signed HTTP Exchange (SXG) 支援|
 |[SitePerProcess](#siteperprocess)|為每個網站啟用網站隔離|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
@@ -5275,6 +5283,72 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   
 
+  [返回頂端](#microsoft-edge---policies)
+
+  ## 管理性原則
+
+  [返回頂端](#microsoft-edge---policies)
+
+  ### MAMEnabled
+
+  #### 已啟用行動裝置應用程式管理
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  允許 Microsoft Edge 瀏覽器從 Intune 應用程式管理服務中擷取原則，然後將它們套用至使用者的設定檔。
+
+如果您啟用或不設定此原則，則可以套用行動裝置應用程式管理 (MAM) 原則。
+
+如果您停用此原則，Microsoft Edge 將不會與 Intune 通訊以要求 MAM 原則。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：MAMEnabled
+  - GP 名稱：已啟用行動裝置應用程式管理
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/管理性
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：MAMEnabled
+  - 值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000000
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：MAMEnabled
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
   [回到頁首](#microsoft-edge---policies)
 
   ## 原生訊息原則
@@ -6881,7 +6955,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 描述
+  #### 說明
 
   設定 Microsoft Edge 的 Proxy 設定。
 
@@ -9137,6 +9211,8 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
   停用 Microsoft Edge 中的內部 PDF 檢視器。
 
 如果啟用此原則，則 Microsoft Edge 會將 PDF 檔案視為下載項目，並讓使用者使用預設應用程式開啟。
+
+如果 Microsoft Edge 是預設的 PDF 閱讀程式，系統不會下載 PDF 檔案，而會繼續在 Microsoft Edge 中開啟。
 
 如果未設定或停用此原則，則 Microsoft Edge 會開啟 PDF 檔案 (除非使用者停用)。
 
@@ -13377,7 +13453,7 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 
   - Windows 和 macOS 上，版本 77 至 86
 
-  #### 描述
+  #### 說明
 
   這項原則已過時，因為現在使用私人網路頁平臺原則來管理個別網頁平臺功能 deprecations。
 
@@ -16181,7 +16257,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 77 或更新版本
 
-  #### 描述
+  #### 說明
 
   如需有關設定 Internet Explorer 模式的最佳體驗的指導方針，請參閱[https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -16301,7 +16377,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   - Windows 上，版本 88 或更新版本
 
-  #### 描述
+  #### 說明
 
   此原則會根據副檔名限制允許在 Internet Explorer 模式中啟動的 file:// URL。
 
@@ -16609,7 +16685,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   - Windows 和 macOS 上，版本 88 或更新版本
 
-  #### 描述
+  #### 說明
 
   此原則會設定透過 DNS 攔截檢查的內部網路重新導向行為。 檢查會嘗試探索瀏覽器是否位於會將未知主機名稱重新導向的 Proxy 後面。
 
@@ -18565,7 +18641,7 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   - Windows 上，版本 85 或更新版本
 
-  #### 描述
+  #### 說明
 
   設定用來儲存設定檔快取複本的目錄。
 
@@ -19259,7 +19335,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   - Windows 上，版本 77 或更新版本
 
-  #### 描述
+  #### 說明
 
   如需有關設定 Internet Explorer 模式的最佳體驗的指導方針，請參閱[https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -19780,6 +19856,68 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 ```
   
 
+  [返回頂端](#microsoft-edge---policies)
+
+  ### ShowRecommendationsEnabled
+
+  #### 允許來自 Microsoft Edge 的建議和促銷通知
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  此政策設定可讓您決定是否讓員工收到來自 Microsoft Edge 的建議和產品內協助通知。
+
+如果您啟用或不設定此設定，員工會收到來自 Microsoft Edge 的建議/通知。
+
+如果您停用這項設定，員工將不會收到來自 Microsoft Edge 的任何建議/通知。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 布林值
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：ShowRecommendationsEnabled
+  - GP 名稱：允許來自 Microsoft Edge 的建議和促銷通知
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：ShowRecommendationsEnabled
+  - 值類型：REG_DWORD
+
+  ##### 範例值：
+
+```
+0x00000001
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：ShowRecommendationsEnabled
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
   [回到頁首](#microsoft-edge---policies)
 
   ### SignedHTTPExchangeEnabled
@@ -19917,7 +20055,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   - Windows 和 macOS 上，版本 87 或更新版本
 
-  #### 描述
+  #### 說明
 
   設定網站是否可以使用 W3C Web 語音 API 來辨識使用者的語音。 Microsoft Edge 的 Web 語音 API 實施使用 Azure 認知服務，因此語音資料將離開電腦。
 
