@@ -15,16 +15,16 @@ ms.locfileid: "11297848"
 |------|------------|--------|
 | 2021/1/22 | [Microsoft Edge 的 PDF 閱讀程式](/DeployEdge/microsoft-edge-pdf)<br>利用支援功能的新增項目進行更新。 | 已修改 |
 | 2021/1/22 | [適用於穩定通道的 Microsoft Edge 版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 的已更新功能清單。 | 已修改 |
-| 2021/1/21 | [適用於 Beta 通道的 Microsoft Edge 版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel)，<br>次要版本 88.0.705.49 的修正。| 修改日期 |
-| 2021/1/21 | [適用於穩定通道的 Microsoft Edge 版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 的更新，叫出新功能和新的或過時的群組原則。| 修改日期 |
+| 2021/1/21 | [適用於 Beta 通道的 Microsoft Edge 版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel)，<br>次要版本 88.0.705.49 的修正。| 已修改 |
+| 2021/1/21 | [適用於穩定通道的 Microsoft Edge 版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>主要版本 88.0.705.50 的更新，叫出新功能和新的或過時的群組原則。| 已修改 |
 | 2021/1/21 | [Microsoft Edge 安全性更新的版本資訊](/DeployEdge/microsoft-edge-relnotes-security)<br>穩定版本 88.0.705.50 的安全性更新。  | 修改日期 |
 | 2021/1/21 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies)<br>更新並叫出新原則。| 修改日期 |
-| 2021/1/21 | [Microsoft Edge WebView2 原則文件](/DeployEdge/microsoft-edge-webview-policies)<br>自動重新整理，不做任何變更。 | 修改日期 |
-| 2021/1/22 | [為使用者自動啟用密碼監視器](/DeployEdge/microsoft-edge-security-password-monitor)<br>新文章說明密碼監視器以及如何為使用者自動啟用。 | 新增時間 |
-| 2021/1/21 | [Microsoft Edge 中的 Enterprise Site List Manager  ](/DeployEdge/edge-ie-mode-site-list-manager)<br>新文章描述 Microsoft Edge 內建的 Site List Manager。 | 新增時間 |
+| 2021/1/21 | [Microsoft Edge WebView2 原則文件](/DeployEdge/microsoft-edge-webview-policies)<br>自動重新整理，不做任何變更。 | 已修改 |
+| 2021/1/22 | [為使用者自動啟用密碼監視器](/DeployEdge/microsoft-edge-security-password-monitor)<br>新文章說明密碼監視器以及如何為使用者自動啟用。 | 已新增 |
+| 2021/1/21 | [Microsoft Edge 中的 Enterprise Site List Manager  ](/DeployEdge/edge-ie-mode-site-list-manager)<br>新文章描述 Microsoft Edge 內建的 Site List Manager。 | 已新增 |
 | 2021/1/19 | [Microsoft Edge 內容更新](/DeployEdge/microsoft-edge-content-updates)<br>為上週發佈的內容加上註解。 | 修改日期 |
 | 2021/1/22 | [設定 Microsoft Edge kiosk 模式](/DeployEdge/microsoft-edge-configure-kiosk-mode)<br>更新功能地支援和藍圖。 | 修改日期 |
-| 2021/1/22 | [設定和疑難排解 Microsoft Edge 同步處理](/DeployEdge/microsoft-edge-enterprise-sync)<br>釐清疑難排解的更新文章。 | 修改日期 |
+| 2021/1/22 | [設定和疑難排解 Microsoft Edge 同步處理](/DeployEdge/microsoft-edge-enterprise-sync)<br>更新文章以釐清疑難排解。 | 修改日期 |
 
 
 ## 2020 年 12 月 21 日當週
@@ -54,18 +54,18 @@ ms.locfileid: "11297848"
 
 | 發行日 |主題標題 | 變更 |
 |------|------------|--------|
-| 2021/1/11 | [Microsoft Edge 內容更新](/DeployEdge/microsoft-edge-content-updates) | 修改日期 |
+| 2021/1/11 | [Microsoft Edge 內容更新](/DeployEdge/microsoft-edge-content-updates) | 已修改 |
 | 2021/1/11 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 已修改 |
 | 2021/1/13 | [Microsoft Edge 發行排程](/DeployEdge/microsoft-edge-release-schedule) | 修改日期 |
 | 2021/1/13 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 已修改 |
 | 2021/1/13 | [Microsoft Edge 穩定通道的版本資訊](/DeployEdge/microsoft-edge-relnote-stable-channel) | 修改日期 |
 | 2021/1/13 | [Microsoft Edge 企業文件](/DeployEdge/index) | 修改日期 |
-| 2021/1/13 | [將 Microsoft Edge 部署到成百或上千個裝置](/DeployEdge/microsoft-edge-video-deploy) | 修改日期 |
-| 2021/1/13 | [Microsoft Edge 和 Microsoft 搜尋](/DeployEdge/microsoft-edge-video-search) | 修改日期 |
-| 2021/1/13 | [使用應用程式防護的 Microsoft Edge 瀏覽器隔離](/DeployEdge/microsoft-edge-video-security-application-guard) | 修改日期 |
-| 2021/1/13 | [Microsoft Edge 安全性、相容性及管理性](/DeployEdge/microsoft-edge-video-security-compatibility-manageability) | 修改日期 |
-| 2021/1/13 | [Microsoft Edge 和資料外洩防護](/DeployEdge/microsoft-edge-video-security-dlp) | 修改日期 |
-| 2021/1/14 | [設定和疑難排解 Microsoft Edge 同步處理](/DeployEdge/microsoft-edge-enterprise-sync) | 修改日期 |
+| 2021/1/13 | [將 Microsoft Edge 部署到成百或上千個裝置](/DeployEdge/microsoft-edge-video-deploy) | 已修改 |
+| 2021/1/13 | [Microsoft Edge 和 Microsoft 搜尋](/DeployEdge/microsoft-edge-video-search) | 已修改 |
+| 2021/1/13 | [使用應用程式防護的 Microsoft Edge 瀏覽器隔離](/DeployEdge/microsoft-edge-video-security-application-guard) | 已修改 |
+| 2021/1/13 | [Microsoft Edge 安全性、相容性及管理性](/DeployEdge/microsoft-edge-video-security-compatibility-manageability) | 已修改 |
+| 2021/1/13 | [Microsoft Edge 和資料外洩防護](/DeployEdge/microsoft-edge-video-security-dlp) | 已修改 |
+| 2021/1/14 | [設定和疑難排解 Microsoft Edge 同步處理](/DeployEdge/microsoft-edge-enterprise-sync) | 已修改 |
 | 2021/1/15 | [Microsoft Edge 瀏覽器原則文件](/DeployEdge/microsoft-edge-policies) | 修改日期 |
 | 2021/1/15 | [Microsoft Edge WebView2 原則文件](/DeployEdge/microsoft-edge-webview-policies) | 修改日期 |
 | 2021/1/15 | [Microsoft Edge Beta 通道的版本資訊](/DeployEdge/microsoft-edge-relnote-beta-channel) | 已修改 |
