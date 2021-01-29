@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/22/2021
+ms.date: 01/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: b7a875c7a3688d1839be9c3fdc835f77e14f3bae
-ms.sourcegitcommit: f0f250190fc09964175778338a177f1240946b98
+ms.openlocfilehash: fd5336a57ad3f6706a2a61a2781c772f12e8b795
+ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297187"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "11304543"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -28,6 +28,10 @@ ms.locfileid: "11297187"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 88.0.705.53：1 月 26 日
+
+已修正各種錯誤和效能問題。
 
 ## 版本 88.0.705.50：1 月 21 日
 
@@ -188,7 +192,7 @@ ms.locfileid: "11297187"
 
 #### 新原則
 
-新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
+新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列原則。
 
 - [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) - 設定從 Microsoft Edge 複製的 URL 的預設貼上格式，並決定使用者是否可以使用其他格式。
 - [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 已啟用在 Microsoft Edge 中購物。

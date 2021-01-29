@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/20/2021
+ms.date: 01/27/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 59c3c3426e3e7db2c5a115b15ae5e9b9e7628f9e
+ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281022"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "11304726"
 ---
 # Microsoft Edge - 原則
 
@@ -35,11 +35,7 @@ ms.locfileid: "11281022"
 
 | 名稱 | 標題 |
 |--|--|
-|[MAMEnabled](#mamenabled)|已啟用行動裝置應用程式管理|
-|[ShowRecommendationsEnabled](#showrecommendationsenabled)|允許來自 Microsoft Edge 的建議和促銷通知|
-
-
-
+|[SmartActionsBlockList](#smartactionsblocklist)|封鎖服務清單的智慧型動作|
 
 ## 可用原則
 
@@ -411,6 +407,7 @@ ms.locfileid: "11281022"
 |[ShowRecommendationsEnabled](#showrecommendationsenabled)|允許來自 Microsoft Edge 的建議和促銷通知|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|啟用 Signed HTTP Exchange (SXG) 支援|
 |[SitePerProcess](#siteperprocess)|為每個網站啟用網站隔離|
+|[SmartActionsBlockList](#smartactionsblocklist)|封鎖服務清單的智慧型動作|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|啟用拼字檢查|
 |[SpellcheckLanguage](#spellchecklanguage)|啟用特定拼字檢查語言|
@@ -2901,7 +2898,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
   #### 說明
 
-  根據 URL 的模式，定義可開啟快顯視窗的網站清單。
+  根據 URL 的模式，定義可開啟快顯視窗的網站清單。 * 不是此原則接受的值。
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPopupsSetting](#defaultpopupssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
@@ -2966,7 +2963,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
   #### 說明
 
-  根據 URL 的模式，定義遭封鎖而無法開啟快顯視窗的網站清單。
+  根據 URL 的模式，定義遭封鎖而無法開啟快顯視窗的網站清單。 * 不是此原則接受的值。
 
 如果未設定此原則，則會對所有網站使用來自 [DefaultPopupsSetting](#defaultpopupssetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
 
@@ -6980,7 +6977,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   * 直接使用，永遠不會使用proxy，而忽略其他所有欄位。
   * 系統, 使用的Proxy並忽略所有其他欄位。
   * auto_detect, 忽略其他所有欄位。
-  * fixed_server 中，會使用 ProxyServer 和 ProxyBypassList 欄位。
+  * fixed_servers 中，會使用 ProxyServer 和 ProxyBypassList 欄位。
   * pac_script 中，會使用 ProxyPacUrl 和 ProxyBypassList 欄位。
 
 如需更詳細的範例，請移至 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
@@ -7017,7 +7014,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", 
-  "ProxyMode": "direct", 
+  "ProxyMode": "pac_script", 
   "ProxyPacUrl": "https://internal.site/example.pac", 
   "ProxyServer": "123.123.123.123:8080"
 }
@@ -7026,7 +7023,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   ##### 精簡範例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
+  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "pac_script", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
 
@@ -7040,7 +7037,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   <key>ProxyBypassList</key>
   <string>https://www.example1.com,https://www.example2.com,https://internalsite/</string>
   <key>ProxyMode</key>
-  <string>direct</string>
+  <string>pac_script</string>
   <key>ProxyPacUrl</key>
   <string>https://internal.site/example.pac</string>
   <key>ProxyServer</key>
@@ -20043,6 +20040,83 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 ```
   
 
+  [返回頂端](#microsoft-edge---policies)
+
+  ### SmartActionsBlockList
+
+  #### 封鎖服務清單的智慧動作
+
+  
+  
+  #### 支援的版本：
+
+  - Windows 和 macOS 上，版本 89 或更新版本
+
+  #### 說明
+
+  列出不顯示智慧型動作的特定服務，如 PDF。 (智慧型動作是「定義」之類的動作，可在 Microsoft Edge 的完整和迷你操作功能表中使用。)
+
+如果您啟用原則：
+   - 對於與指定清單相符服務之所有設定檔，將停用迷你和完整操作功能表中的智慧型動作。
+   - 對於與指定清單相符的服務，使用者將不會在文字選取的迷你和完整操作功能表中看到智慧型動作。
+   - 在 Microsoft Edge 設定中，對於與指定清單相符的服務，將停用迷你和完整操作功能表中的智慧型動作。
+
+如果停用或未設定此原則：
+   - 將為所有設定檔啟用迷你和完整操作功能表中的智慧型動作。
+   - 使用者將在文字選取的迷你和完整操作功能表中看到智慧型動作。
+   - 在 Microsoft Edge 設定中，將啟用迷你和完整操作功能表中的智慧型動作。
+
+原則選項對應：
+
+* smart_actions_pdf (smart_actions_pdf) = PDF 中的智慧型動作
+
+設定此原則時，請使用上述資訊。
+
+  #### 支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### 資料類型：
+
+  - 字串清單
+
+  #### Windows 資訊和設定
+
+  ##### 群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： SmartActionsBlockList
+  - GP 名稱：封鎖服務清單的智慧型動作
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList
+  - (建議) 的路徑： SOFTWARE\Policies\Microsoft\Edge\Recommended\SmartActionsBlockList
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### 範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
+
+```
+
+  #### Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：SmartActionsBlockList
+  - 範例值：
+``` xml
+<array>
+  <string>smart_actions_pdf</string>
+</array>
+```
+  
+
   [回到頁首](#microsoft-edge---policies)
 
   ### SpeechRecognitionEnabled
@@ -21807,14 +21881,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   設定此原則以指定無需使用者互動的網頁應用程式清單，並且使用者無法卸載或關閉這些應用程式。
 
-原則的每個清單項目都是具有強制成員的物件： url (要安裝之 web 應用程式的 URL) 
-
-及 3 個選用的成員：
-- default_launch_container (指定 web 應用程式開啟時使用的視窗模式—預設為新索引標籤) 
-
-- create_desktop_shortcut (如果要建立 Linux 和 Windows 桌面捷徑，則為True。)
-
-- override_app_name (從 Microsoft Edge 89 開始，如果不是漸進式 Web 應用程式 (PWA)，則允許您覆寫應用程式名稱；如果是 PWA，則允許您覆寫臨時安裝的應用程式名稱，但在安裝完成之前需要進行驗證) 
+原則的每個清單項目都是含有强制成員的物件：URL (要安裝的網頁應用程式的 URL) 和 2 個可選成員：default_launch_container (指定網頁應用程式開啟的視窗模式 - 預設為新索引標籤) 和 create_desktop_shortcut (如果要建立 Linux 和 Windows 桌面捷徑，則為True)。
 
   #### 支援的功能：
 
@@ -21855,11 +21922,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "tab", 
     "url": "https://app.contoso.edu"
-  }, 
-  {
-    "default_launch_container": "window", 
-    "override_app_name": "Editor", 
-    "url": "https://app.contoso.com/editor"
   }
 ]
 ```
@@ -21867,7 +21929,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### 精簡範例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}]
   ```
   
 
@@ -21891,14 +21953,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <string>tab</string>
     <key>url</key>
     <string>https://app.contoso.edu</string>
-  </dict>
-  <dict>
-    <key>default_launch_container</key>
-    <string>window</string>
-    <key>override_app_name</key>
-    <string>Editor</string>
-    <key>url</key>
-    <string>https://app.contoso.com/editor</string>
   </dict>
 </array>
 ```
@@ -22235,7 +22289,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### 描述
+  #### 說明
 
   允許您設定 WebRTC 是否公開使用者的本機 IP 位址。
 

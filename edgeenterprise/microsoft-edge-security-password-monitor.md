@@ -3,19 +3,19 @@ title: 為使用者自動啟用密碼監視器
 ms.author: supalsul
 author: dan-wesley
 manager: tulasim
-ms.date: 01/21/2021
+ms.date: 01/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 為使用者自動啟用密碼監視器
-ms.openlocfilehash: 8ea96522fe99082579e88b2eab330fb265d02b12
-ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
+ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
+ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297490"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "11304533"
 ---
 # 為使用者自動啟用密碼監視器
 
@@ -26,7 +26,7 @@ ms.locfileid: "11297490"
 
 ## 簡介、優點和可用性
 
-密碼監視器可協助 Microsoft Edge 使用者保護其線上帳戶，方法是通知使用者是否在線上洩漏中發現其任何密碼。 當不良行為者竊取協力廠商應用程式或網站的資料時，即發生線上洩漏或資料違規。
+密碼監視器可協助 Microsoft Edge 使用者保護其線上帳戶，方法是通知使用者是否在線上洩漏中發現其任何密碼。 當不良行為者竊取協力廠商應用程式或網站的資料時，即發生線上洩漏或資料違規。 若要深入瞭解，請參閱 Microsoft 部落格上的[密碼監視器：在 Microsoft Edge 中保護密碼](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/)文章。
 
 ### 優點
 
@@ -34,7 +34,7 @@ ms.locfileid: "11297490"
 
 ### 可用性
 
-密碼監視器已處於早期預覽通道 (Canary/Dev)，並將從 1/21 開始推廣至穩定通道版本 88。 推出將會是漸進式，且可能需要幾週的時間，您才會在您的 [設定]****  >  [設定檔]****  >  [密碼]**** 頁面中看到下列訊息及控制項。
+密碼監視器在穩定通道版本 88 中提供，從 1/21 開始。 推出將會是漸進式，且可能需要幾週的時間，您才會在您的 [設定]****  >  [設定檔]****  >  [密碼]**** 頁面中看到下列訊息及控制項。
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="啟用密碼監視器的選項":::
 
