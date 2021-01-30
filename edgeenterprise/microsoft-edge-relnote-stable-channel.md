@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/26/2021
+ms.date: 01/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: fd5336a57ad3f6706a2a61a2781c772f12e8b795
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
+ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304543"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "11306063"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -28,6 +28,10 @@ ms.locfileid: "11304543"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 88.0.705.56：1 月 28 日
+
+修正各種錯誤和效能問題。
 
 ## 版本 88.0.705.53：1 月 26 日
 
@@ -48,6 +52,11 @@ ms.locfileid: "11304543"
 - **驗證：**
 
   - 單一登入 (SSO) 目前可供下層 Windows 上的 Azure Active Directory (Azure AD) 帳戶和 Microsoft 帳戶 (MSA) 使用。 在下層 Microsoft Windows (7、8.1) 上於 Microsoft Edge 登入的使用者，現在會自動登入已設定為允許使用公司和 Microsoft 帳戶進行單一登入的網站 (例如，bing.com、office.com、msn.com、outlook.com)。<br>注意：如果使用者在早於 Microsoft Edge 88 的版本中登入 Microsoft Edge 以使用此功能，則使用者可能需要登出，然後再重新登入。
+  
+  - 在採用非 Azure AD Microsoft Edge 設定檔的系統上，使用任何 Windows Azure Active Directory (Azure AD) 帳戶單一登入 (SSO) 至公司網站。 您可以針對未使用公司/學校帳戶登入且並非來賓或私密瀏覽的任何設定檔啟用此功能，並允許在使用該設定檔的作業系統上使用任何登入的公司/學校帳戶。 此功能可在 [設定]****  >  [設定檔]****  >  [設定檔喜好設定]****  >  [對使用此設定檔的公司或學校網站允許單一登入]**** 中設定。
+  
+    > [!NOTE]
+    > 「使用 Microsoft Edge 設定檔的所有 Windows 帳戶的單一登入 (SSO)」是 1 月 21 日版本資訊的更新。
 
 - **結束工作階段的 kiosk 模式選項**。 「結束工作階段」按鈕現在可於 kiosk 模式公開瀏覽體驗中使用。 此功能可確保在 Microsoft Edge 關閉時，瀏覽器資料和設定隨即會刪除。 深入了解 kiosk 模式功能和藍圖，[設定 Microsoft Edge kiosk 模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)。
 
@@ -173,9 +182,9 @@ ms.locfileid: "11304543"
 
 - **依預設啟用購物功能**。 從 Microsoft Edge 版本 87 開始，企業使用者也可以透過在 Edge 中購物獲益。 利用購物功能，Microsoft Edge 可在使用者於線上購物時，協助使用者找到優待券和更優惠的價格。 我們隨著此更新提供優待券體驗，而價格比較將於 Microsoft Edge 87 近期的更新中發佈。 此功能可透過 [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) 原則設定。 請參閱我們的[部落格](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/)和[深入了解](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping) Microsoft 購物的相關資訊。
 
-- **預設啟用 ClickOnce 部署**。 預設會在 Microsoft Edge 87 中啟用 ClickOnce，這樣可減少企業部署軟體的障礙，並更能與舊版Microsoft Edge Legacy 瀏覽器行為一致。 從 Microsoft Edge 87 開始，ClickOnceEnabled 原則的 “未設定”狀態將反映已啟用的新預設 ClickOnce 狀態（與之前停用的預設狀態相比）。
+- **預設啟用 ClickOnce 部署**。 預設會在 Microsoft Edge 87 中啟用 ClickOnce，這樣可減少企業部署軟體的障礙，並更能與舊版Microsoft Edge Legacy 瀏覽器行為一致。 從 Microsoft Edge 87 開始，ClickOnceEnabled 原則的 “未設定”狀態將反映已啟用的新預設 ClickOnce 狀態 (與之前停用的預設狀態相比)。
 
-- **企業版的新標籤頁（NTP）將生產力與且可自訂的工作相關的摘要內容整合在一起**。 企業版 NTP 加入Microsoft Office 365 生產力頁面, 我們提供在公司或學校帳戶登入的使用者, 有其個人化的個人化及與公司及產業相關的資料來源, 並能組織在同一個頁面中. 使用者將能夠辨識熟悉的 Office 365 內容，以及由 Bing 提供支援的商務用 Microsoft 搜尋。 此外，他們可以從組織的可用內容和模組選擇最相關的內容，以輕鬆自訂 [我的摘要]。 IT 系統管理員可以控制其組織的新聞摘要設定，包括為 Microsoft Edge 新索引標籤頁面選取的產業 (移至 Microsoft 365 系統管理中心)。 [深入了解](https://blogs.windows.com/msedgedev/2020/10/29/enterprise-new-tab-page-my-feed/)
+- **企業版的新標籤頁 (NTP) 將生產力與且可自訂的工作相關的摘要內容整合在一起**。 企業版 NTP 加入Microsoft Office 365 生產力頁面, 我們提供在公司或學校帳戶登入的使用者, 有其個人化的個人化及與公司及產業相關的資料來源, 並能組織在同一個頁面中. 使用者將能夠辨識熟悉的 Office 365 內容，以及由 Bing 提供支援的商務用 Microsoft 搜尋。 此外，他們可以從組織的可用內容和模組選擇最相關的內容，以輕鬆自訂 [我的摘要]。 IT 系統管理員可以控制其組織的新聞摘要設定，包括為 Microsoft Edge 新索引標籤頁面選取的產業 (移至 Microsoft 365 系統管理中心)。 [深入了解](https://blogs.windows.com/msedgedev/2020/10/29/enterprise-new-tab-page-my-feed/)
 
 - **隱私權與安全性：**
 
