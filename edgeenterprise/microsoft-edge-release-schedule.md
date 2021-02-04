@@ -3,19 +3,19 @@ title: Microsoft Edge 發行排程
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 發行排程
-ms.openlocfilehash: 3b9c257123f2d1eeda1484e761963b6d0106c7c0
-ms.sourcegitcommit: d8d0b0fcb787fe90fa20426ef5e6dc194e935808
+ms.openlocfilehash: ad02c2775b836fe1a829945c205f2f52208065f1
+ms.sourcegitcommit: 90f33698262b255a63d6ba6ec854a12c1091a630
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "11297698"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "11311520"
 ---
 # Microsoft Edge 發行排程
 
@@ -33,6 +33,8 @@ Microsoft 提供四個選項，稱為通道，用來管理更新 Microsoft Edge 
 > 發行日期是大約的日期，可能會因組建狀態而有所不同。
 
 ### Microsoft Edge 發行
+
+下表僅追蹤並提供兩個通道中主要版本的資訊。
 
 | 版本 | 發行狀態 | Beta 通道<br>發行週 | Stable 通道<br>發行週 |
 |---------|-----|------|--------|
