@@ -3,23 +3,23 @@ title: IE 模式常見問題集
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 適用於 IE 模式 Microsoft Edge 的常見問題集和疑難排解
-ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
-ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
+ms.openlocfilehash: aeae79dfd1745c754fb5ab690338f87fd25c080b
+ms.sourcegitcommit: ff67ccc93d07588a9128e9b1fe007d5393a9d6af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11238170"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "11312589"
 ---
 # IE 模式常見問題集
 
-本文提供 Microsoft Edge (版本 77 或更新版本) 的疑難排解秘訣和常見問題集。
+本文提供 Microsoft Edge 版本 77 或更新版本的疑難排解秘訣和常見問題集。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge **Stable**、**Beta** 和 **Dev** 通道，版本 77 或更新版本。
@@ -62,6 +62,10 @@ ms.locfileid: "11238170"
 ### 錯誤訊息：「請關閉遠端偵錯以在 IE 模式下開啟此網站，否則可能無法如預期運作。」
 
 如果您正在遠端偵錯，且瀏覽至設定為在 IE 模式中執行的網頁，您可能會看到此錯誤。 您可以繼續，但是頁面將會使用 Microsoft Edge 轉譯。
+
+### 錯誤訊息：「錯誤：無法擷取 EMIE 網站清單。」
+
+您可能會在 *edge://compat/enterprise* 網頁上看到此錯誤，表示網站清單下載失敗。 從 Microsoft Edge 版本 87 開始，當使用 [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies) 原則封鎖協力廠商要求的 Cookie 時，也不允許使用 HTTP 驗證。 可以使用 [CookiesAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls) 原則為裝載 Enterprise Mode Site List 的特定網域允許 Cookie，以確保網站清單下載成功。
 
 ## 常見問題集
 

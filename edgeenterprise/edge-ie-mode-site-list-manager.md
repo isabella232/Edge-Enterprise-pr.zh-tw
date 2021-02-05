@@ -3,26 +3,26 @@ title: 'Microsoft Edge 中的 Enterprise Site List Manager  '
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 01/20/2021
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '在 Microsoft Edge 中啟用和使用 Enterprise Site List Manager  '
-ms.openlocfilehash: 2d10886624918c97933a841c428ea66ccf5b34c9
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 9700c2b78bba514525c4d80d211ef744dd175d2f
+ms.sourcegitcommit: ff67ccc93d07588a9128e9b1fe007d5393a9d6af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281044"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "11312579"
 ---
 # Microsoft Edge 中的 Enterprise Site List Manager 
 
 本文說明如何在 Microsoft Edge 中啟用存取和使用 Enterprise Site List Manager ，以建立、編輯及匯出 Internet Explorer 模式的企業網站清單。
 
 > [!NOTE]
-> 本文適用於 Microsoft Edge 版本 89 或更新版本。
+> 本文適用於 Microsoft Edge 版本 89 或更新版本。 
 
 ## 概觀
 
@@ -38,7 +38,7 @@ Enterprise Site List Manager 是[獨立企業模式網站清單管理器工具](
 
 ## 使用 Enterprise Site List Manager
 
-Enterprise Site List Manager 工具使用 v.2 版的結構描述。 如果您將 v.1 版的結構描述匯入 Enterprise Site List Manager (結構描述 v.2)，它會將 XML 儲存為 v.2 版的結構描述。
+Enterprise Site List Manager 工具使用 v.2 版的結構描述。 如果您將 v.1 版的結構描述匯入 Enterprise Site List Manager (結構描述 v.2)，它會將 XML 儲存為 v.2 版的結構描述。 請參閲[企業模式結構描述 v.2 指導方針](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。
 
 ### 新增單一站台至您的網站清單  
 
@@ -127,5 +127,5 @@ Enterprise Site List Manager 工具使用 v.2 版的結構描述。 如果您將
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
+- [企業模式結構描述 v.2 指導方針](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)
 - [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
-- [其他 Enterprise Site Discovery 資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)
