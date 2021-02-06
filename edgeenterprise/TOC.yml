@@ -1,4 +1,4 @@
-# last revised 01/21/2021
+# last revised 02/05/2021
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -25,6 +25,8 @@
       href: microsoft-edge-roadmap.md
     - name: 規劃 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
+    - name: 您環境中的 Microsoft Edge
+      href: deploy-edge-prepare-to-deploy.md
     - name: 準備好使用 Microsoft Edge
       href: deploy-edge-ready-for-edge.md
     - name: 穩定通道版本資訊
@@ -55,14 +57,14 @@
       href: microsoft-edge-supported-languages.md
     - name: Microsoft Edge 系統更新
       items:
-        - name: 用於 Microsoft Edge Update 的封鎖程式工具組
-          href: microsoft-edge-blocker-toolkit.md
         - name: 如何存取舊版 Microsoft Edge
           href: microsoft-edge-sysupdate-access-old-edge.md
         - name: 支援 Microsoft Edge 的 Windows 更新
           href: microsoft-edge-sysupdate-windows-updates.md
 - name: 部署 Microsoft Edge
   items:
+    - name: 使用 Windows 10 更新部署 Microsoft Edge
+      href: deploy-edge-with-windows-10-updates.md
     - name: 使用 Configuration Manager 部署到 Windows
       href: 'https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json'
     - name: 使用 Intune 部署到 Windows
@@ -91,6 +93,8 @@
       href: microsoft-edge-security-identity.md
     - name: Microsoft Edge 和企業狀態漫遊
       href: microsoft-edge-enterprise-state-roaming.md
+    - name: 規劃您的 kiosk 模式轉換
+      href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 設定 Microsoft Edge kiosk 模式
       href: microsoft-edge-configure-kiosk-mode.md
     - name: Microsoft Edge 同步
@@ -119,7 +123,7 @@
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: 從 Microsoft Edge 到 Internet Explorer 共用 Cookie
               href: edge-ie-mode-add-guidance-cookieshare.md
-            - name: Microsoft Edge 中的企業網站清單管理員
+            - name: 'Microsoft Edge 中的 Enterprise Site List Manager '
               href: edge-ie-mode-site-list-manager.md
 - name: Microsoft Edge 安全性
   items:
@@ -129,7 +133,7 @@
       href: microsoft-edge-security-endpoints.md
     - name: ' (DLP) 的資料遺失防護'
       href: microsoft-edge-security-dlp.md
-    - name: 使用者的密碼監視器自動啟用
+    - name: 為使用者自動啟用密碼監視器
       href: microsoft-edge-security-password-monitor.md
     - name: 防護抵禦可能不需要的應用程式
       href: microsoft-edge-potentially-unwanted-apps.md
