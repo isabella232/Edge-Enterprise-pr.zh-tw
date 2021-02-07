@@ -3,21 +3,21 @@ title: '[Microsoft Edge] 和 [Windows Defender 應用程式防護]'
 ms.author: srugh
 author: dan-wesley
 manager: seanlyn
-ms.date: 10/12/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援。
-ms.openlocfilehash: fcf9bb6e36ddd5e014bd8176643554bfe3ff8fd4
-ms.sourcegitcommit: b813f91803b8f0f27489634f49e7e0585b746d48
+description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
+ms.openlocfilehash: 751201192c3b4e69cc866f35e51a6db23b9972f9
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "11114361"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314586"
 ---
-# Microsoft Edge 對 Microsoft Defender 應用程式防護的支援。
+# Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 
 本文說明 Microsoft Edge 如何支援 Microsoft Defender 應用程式防護 (應用程式防護)。
 
@@ -38,7 +38,10 @@ ms.locfileid: "11114361"
 
 企業系統管理員可定義受信任的網站、雲端資源和內部網路。 不在受信任的網站清單中的所有項目都會被視為不受信任。 這些網站會與使用者裝置上的公司網路和資料隔離。
 
-如需詳細資訊，請參閱[什麼是應用程式防護？如何運作？](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work)。
+如需詳細資訊：
+
+- 觀看我們的影片：[使用應用程式防護的 Microsoft Edge 瀏覽器隔離](microsoft-edge-video-security-application-guard.md)
+- 請閱讀[什麼是應用程式防護及其如何運作？](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work)
 
 下一個螢幕擷取畫面顯示應用程式防護的訊息範例，其中顯示使用者正在安全的空間中瀏覽。
 

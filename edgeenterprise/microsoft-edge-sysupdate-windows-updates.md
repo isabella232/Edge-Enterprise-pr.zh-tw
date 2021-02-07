@@ -3,30 +3,33 @@ title: Microsoft Edge 的 Windows Update
 ms.author: jtkim
 author: dan-wesley
 manager: srugh
-ms.date: 02/20/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 的 Windows Update
-ms.openlocfilehash: ab5832dc878495a0f0a0880676fb7c3e34b69d4d
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 953becc459fe729f84d54da419481b3c6e26cc47
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979560"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313903"
 ---
 # 支援下一版 Microsoft Edge 的 Windows Update
 
 本文介紹 Windows 如何更新為支援下一版 Microsoft Edge。
 
+> [!IMPORTANT]
+> 請參閱 Microsoft Edge 產品小組的[部落格文章](https://aka.ms/EdgeLegacyEOS)，以了解舊版 Microsoft Edge 終止服務的相關資訊。
+
 > [!NOTE]
-> 本文適用於 Microsoft Edge Stable 通道。
+> 本文適用於 Microsoft Edge 穩定通道。
 
 ## Microsoft Edge 和 Windows 發行週期
 
-下一版 Microsoft Edge 具有更頻繁且更靈活的更新功能。 由於瀏覽器版本未繫結到 Windows 主要版本，因此將對作業系統進行變更，以確保下一版 Microsoft Edge 可無縫地適合 Windows。 因此，功能更新將在 6 週週期 (大約) 內發佈。安全性和相容性更新將視需要提供。
+下一版 Microsoft Edge 具有更頻繁且更靈活的更新功能。 由於瀏覽器版本未繫結到 Windows 主要版本，因此將對作業系統進行變更，以確保下一版 Microsoft Edge 可無縫地適合 Windows。 如此一來，功能更新將會以約 6 週的週期釋出。 安全性與相容性更新將在必要時提供。
 
 ## 更新和使用者體驗
 

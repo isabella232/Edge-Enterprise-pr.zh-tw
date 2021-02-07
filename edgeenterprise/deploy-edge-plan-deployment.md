@@ -1,21 +1,21 @@
 ---
 title: 規劃 Microsoft Edge 部署
-ms.author: cjacks
+ms.author: collw
 author: appcompatguy
-manager: saudm
-ms.date: 11/04/2020
+manager: srugh
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 規劃 Microsoft Edge 部署
-ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: 1b56d9874550c2002cec0577a53a3bf5766e2805
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155250"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313873"
 ---
 # 規劃 Microsoft Edge 部署
 
@@ -39,7 +39,7 @@ ms.locfileid: "11155250"
 
 ## 評估您現有的瀏覽器環境和瀏覽器需求
 
-花些時間瞭解您當前的瀏覽器狀態和專案願景，以確保所有專案關係人都保持一致，並朝著相同的結果努力。
+花些時間了解您當前的瀏覽器狀態和專案願景，以確保所有專案關係人都保持一致，並朝著相同的結果努力。
 
 首先定義目前狀態：
 
@@ -55,7 +55,6 @@ ms.locfileid: "11155250"
 了解目前狀態後，可以確定瀏覽器部署的預期目標，同時考慮到以下事項：
 
 - 是否要[將 Microsoft Edge 設定為預設瀏覽器](https://docs.microsoft.com/DeployEdge/edge-default-browser)？
-- 是否要隱藏舊版 Microsoft Edge，還是希望[將其保留給使用者使用](https://docs.microsoft.com/DeployEdge/microsoft-edge-sysupdate-access-old-edge)？
 - 您將如何[設定 Microsoft Edge](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge)？
 - 在初始部署中要設定哪些重要功能？
 - 解決任何已識別的相容性或設定問題的過程是什麼？
@@ -211,4 +210,3 @@ Microsoft Edge 的應用程式相容性非常高 - 如此之高，Microsoft 提�
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [影片 - 部署 Microsoft Edge](microsoft-edge-video-deploy.md)
-

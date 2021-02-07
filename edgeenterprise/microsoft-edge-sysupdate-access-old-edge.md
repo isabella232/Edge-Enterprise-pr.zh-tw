@@ -3,26 +3,26 @@ title: 存取舊版 Microsoft Edge
 ms.author: jtkim
 author: dan-wesley
 manager: srugh
-ms.date: 08/17/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何存取舊版 Microsoft Edge。
-ms.openlocfilehash: e4733d020f3a681ded50e5a087fe086d39362201
-ms.sourcegitcommit: f7f7eb69d2298b0f9779a9fd28e3c4e297ef2e05
+ms.openlocfilehash: 00f4a29c9a2bed137b339c8b5ef43eb213d33ee4
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "11125515"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313893"
 ---
 # 安裝新版本 Microsoft Edge 後存取 Microsoft Edge 舊版
 
-了解如何在安裝新版本 Microsoft Edge 後存取 Microsoft Edge 舊版。
+舊版 Microsoft Edge 將在 2021 年 3 月 9 日停止接收安全性更新。 您可存取舊版 Microsoft Edge 的時間截至 4 月 13 日為止。 如需詳細資訊，請參閱 Microsoft Edge 產品小組的[部落格文章](https://aka.ms/EdgeLegacyEOS)。
 
 > [!NOTE]
-> 本文適用於 Microsoft Edge [Stable 通道](microsoft-edge-channels.md)。
+> 本文適用於 Microsoft Edge [穩定通道](microsoft-edge-channels.md)。
 
 雖然大多數組織會想要將舊版 Microsoft Edge 取代為新版本，但在某些情況下，使用者可能需要存取兩個版本。 例如：
 
@@ -32,7 +32,7 @@ ms.locfileid: "11125515"
 > [!IMPORTANT]
 > 不建議您在生產環境中並存執行新版 Microsoft Edge 和舊版 Microsoft Edge。 只有在需要同時測試兩個瀏覽器版本的特定情況下，才能使用這個設定。
 >
-> 舊版 Microsoft Edge 桌面應用程式將於 2021 年 3 月 9 日終止支援，將有利於新版 Microsoft Edge。 這表示舊版 Microsoft Edge 將不會在該日期之後收到安全性更新。 這項變更適用於所有在舊版 Microsoft Edge 桌面應用程式中執行的體驗。 [進一步瞭解](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666)。
+> 舊版 Microsoft Edge 桌面應用程式將於 2021 年 3 月 9 日終止支援，將有利於新版 Microsoft Edge。 這表示舊版 Microsoft Edge 將不會在該日期之後收到安全性更新。 這項變更適用於所有在舊版 Microsoft Edge 桌面應用程式中執行的體驗。 [進一步了解](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666)。
 
 ## 開始之前
 > [!NOTE]
@@ -44,12 +44,8 @@ ms.locfileid: "11125515"
 
 在使用本文中的詳細指示之前，請考慮下列兩個步驟，讓您的使用者能夠並存執行舊版 Microsoft Edge 和 Microsoft Edge [Beta 頻道](microsoft-edge-channels.md)。
 
-1. 防止 [Windows Update](https://support.microsoft.com/help/12373/windows-update-faq) 自動安裝 Microsoft Edge 的 Stable 通道。
-
-   > [!TIP]
-   > 使用[封鎖程式工具組](microsoft-edge-blocker-toolkit.md)來停用自動傳遞 Microsoft Edge。
-
-2. 安裝新版 Microsoft Edge 的[Beta 通道](https://www.microsoft.com/edge/business/download)。
+1. 防止 [Windows Update](https://support.microsoft.com/help/12373/windows-update-faq) 自動安裝 Microsoft Edge 的 穩定通道。
+2. 安裝新版 Microsoft Edge 的 [Beta 通道](https://www.microsoft.com/edge/business/download)。
 
    > [!NOTE]
    > 如需有關登錄機碼設定的詳細資訊，請參閱[其他資訊](#additional-information)。

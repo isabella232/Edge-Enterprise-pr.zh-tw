@@ -3,23 +3,23 @@ title: 適用於企業的 Microsoft Edge 復原
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 02/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何將 Microsoft Edge 復原到舊版
-ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
-ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
+ms.openlocfilehash: 2059ea04bf8ec3a03266fe95599ea3b515b78c12
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "11192423"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314566"
 ---
 # 如何將 Microsoft Edge 復原到舊版
 
-本文將說明如何使用 [復原] 功能還原為舊版 Microsoft Edge。
+本文將說明如何使用 [復原] 功能還原為舊版 Microsoft Edge。 若要深入了解此功能，請觀看[影片：Microsoft Edge 版本復原](microsoft-edge-video-version-rollback.md)。
 
 >[!NOTE]
 >本文適用於 Microsoft Edge 版本 86 或更新版本。
@@ -30,7 +30,7 @@ ms.locfileid: "11192423"
 
 ## 開始之前
 
-重要的是要瞭解如何在 Microsoft Edge 環境中安裝復原功能。 您可以使用兩種不同的方法來部署復原：手動使用 MSI，或使用 Microsoft Edge Update 和群組原則。 我們也鼓勵您使用精選的群組原則，以便更順利地部署。
+重要的是要了解如何在 Microsoft Edge 環境中安裝復原功能。 您可以使用兩種不同的方法來部署復原：手動使用 MSI，或使用 Microsoft Edge Update 和群組原則。 我們也鼓勵您使用精選的群組原則，以便更順利地部署。
 
 ### 建議
 
@@ -163,3 +163,4 @@ Microsoft Edge Update 尚未執行更新檢查。 預設情況下，自動更新
 ## 請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
+- [影片：Microsoft Edge 版本復原](microsoft-edge-video-version-rollback.md)

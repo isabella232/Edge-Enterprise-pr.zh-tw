@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/28/2021
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
-ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
+ms.openlocfilehash: 6175f1a4156af697e121ebe7230b5b86d347e825
+ms.sourcegitcommit: b1d49b229c47dc1d99e1b677d75aad38b3334ed6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "11306063"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11314223"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -28,6 +28,16 @@ ms.locfileid: "11306063"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## 版本 88.0.705.63：2 月 5 日
+
+安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)。
+
+## 版本 88.0.705.62：2 月 4 日
+
+安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021)。
+
+修正各種錯誤和效能問題。
 
 ## 版本 88.0.705.56：1 月 28 日
 
@@ -73,10 +83,7 @@ ms.locfileid: "11306063"
   - 密碼監視器。 當您儲存至瀏覽器的密碼與洩漏認證清單中顯示的密碼一樣時，Microsoft Edge 會通知您並提示您更新密碼。 密碼監視器會代表您掃描相符項目，且預設為啟用。
   - 編輯密碼。 現在，您可以直接在 Microsoft Edge 設定中編輯已儲存的密碼。 每次 Microsoft Edge 更新密碼之後，都可以透過在 [設定] 中編輯儲存的項目輕鬆地將儲存的舊密碼替換為新密碼。 
 
-- **效能：**
-
-  - 使用休眠索引標籤改善瀏覽器效能。 睡眠索引標籤會透過將非作用中索引標籤置於睡眠，以釋放系統資源 (例如記憶體和 CPU)，以供使用中索引標籤或其他應用程式使用。 使用者可以防止網站進入睡眠，並設定非作用中索引標籤進入睡眠之前的時間長度。 若要讓使用者保持在流程中，也有啟發學習法，可防止特定網站 (例如內部網路網站) 進入睡眠。 此功能僅限於已啟用實驗的隨機選取使用者群組。 我們打算在 Microsoft Edge 版本 89 中將 [睡眠] 索引標籤功能預設為啟用。 您可以使用群組原則來管理此功能。
-  - 利用啟動提升來改善 Microsoft Edge 啟動速度。 為了改善 Microsoft Edge 啟動速度，我們開發了名為啟動提升的功能。 啟動提升利用讓 Microsoft Edge 在背景中執行，讓 Microsoft Edge 更快速啟動。 注意：此功能僅限於已啟用試驗的隨機選取使用者群組。 這些使用者會向功能小組提供意見反應。
+- 利用啟動提升來改善 Microsoft Edge 啟動速度。 為了改善 Microsoft Edge 啟動速度，我們開發了名為啟動提升的功能。 啟動提升利用讓 Microsoft Edge 在背景中執行，讓 Microsoft Edge 更快速啟動。 注意：此功能僅限於已啟用試驗的隨機選取使用者群組。 這些使用者會向功能小組提供意見反應。
 
 - **生產力：**
 
@@ -201,7 +208,7 @@ ms.locfileid: "11306063"
 
 #### 新原則
 
-新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列原則。
+新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
 
 - [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) - 設定從 Microsoft Edge 複製的 URL 的預設貼上格式，並決定使用者是否可以使用其他格式。
 - [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 已啟用在 Microsoft Edge 中購物。
@@ -267,7 +274,7 @@ ms.locfileid: "11306063"
 
 ### 功能更新
 
-* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步瞭解](edge-learnmore-rollback.md)。
+* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步了解](edge-learnmore-rollback.md)。
 
 * **預設會在整個企業強制啟用同步。**  系統管理員可以使用 [ForceSync](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcesync) 原則，預設為 Azure Active Directory (Azure AD) 帳戶啟用同步。
 

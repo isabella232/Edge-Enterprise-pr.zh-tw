@@ -3,23 +3,23 @@ title: Microsoft Edge 身分識別支援和設定
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 12/08/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 身分識別支援和設定
-ms.openlocfilehash: e553174fa40cb60046e5a46af4d81a0787957a93
-ms.sourcegitcommit: b3f8ef9e4944efa3be15c7bfc0cd13360a350c1c
+ms.openlocfilehash: 05dc0fabe212f31fe9207c72d097913d5765915f
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "11201290"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314606"
 ---
 # Microsoft Edge 身分識別支援和設定
 
-本文介紹 Microsoft Edge 如何使用身分識別來支援同步和單一登入 (SSO) 等功能。 Microsoft Edge 支援使用 Active Directory (AD)、Azure Active Directory (Azure AD) 和 Microsoft 帳戶 (MSA) 登入。 目前 Microsoft Edge 只支援屬於全域雲端或 GCC 主權雲端的 Azure Active Directory（Azure AD）帳戶。 我們正在努力為其他主權雲端新增支援。 
+本文介紹 Microsoft Edge 如何使用身分識別來支援同步和單一登入 (SSO) 等功能。 Microsoft Edge 支援使用 Active Directory (AD)、Azure Active Directory (Azure AD) 和 Microsoft 帳戶 (MSA) 登入。 目前 Microsoft Edge 只支援屬於全域雲端或 GCC 主權雲端的 Azure Active Directory（Azure AD）帳戶。 我們正在努力為其他主權雲端新增支援。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
@@ -28,10 +28,10 @@ ms.locfileid: "11201290"
 
 Microsoft Edge 支援使用 Azure AD、MSA 或網域帳戶登入瀏覽器設定檔。 登入所用的帳戶類型將決定使用者在 Microsoft Edge 中可使用何種驗證功能。 下表總結了每種帳戶類型的功能支援。
 
-|    | Azure AD Premium | Azure AD Free | 內部部署 AD DS | MSA     |
+| 功能   | Azure AD Premium | Azure AD Free | 內部部署 AD DS | MSA     |
 |----|------------------|---------------|----------------|---------|
 | 同步 | 是 | 否 | 否 | 是 |
-| SSO 搭配主要重新整理權杖 | 是 | 是 | 不可以 | 是 |
+| SSO 搭配主要重新整理權杖 | 是 | 是 | 否 | 是 |
 | 無縫 SSO | 是 | 是 | 是 | 無 |
 | 整合式 Windows 驗證 | 是 | 是 | 是 | 無 |
 | 企業新索引標籤頁 | 需要 O365 |   需要 O365 | 否 | 無 |
@@ -51,7 +51,7 @@ Microsoft Edge 使用 OS 預設帳戶來自動登入瀏覽器。 依據裝置的
 
 ### 手動登入
 
-如果使用者未能自動登入 Microsoft Edge，可以在初次執行體驗、瀏覽器設定或透過開啟身分識別飛出視窗手動登入 Microsoft Edge。 
+如果使用者未能自動登入 Microsoft Edge，可以在初次執行體驗、瀏覽器設定或透過開啟身分識別飛出視窗手動登入 Microsoft Edge。
 
 ### 管理瀏覽器登入
 
@@ -104,7 +104,7 @@ UA 字串的以下範例適用於本文發佈時的最新 Dev 通道組建：<br
 ## 請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 文件登陸頁面](https://docs.microsoft.com/DeployEdge/)
+- [影片：Microsoft Edge 和身分識別](microsoft-edge-video-identity.md)
 - [身分識別與存取管理](https://www.microsoft.com/security/technology/identity-access-management)
 - [身分識別平台](https://developer.microsoft.com/identity)
 - [具有 Azure Active Directory 的強身份識別基礎的四個步驟](https://docs.microsoft.com/azure/active-directory/hybrid/four-steps)
