@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/03/2021
+ms.date: 02/09/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,19 +11,18 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 774e92c265d1a9bfca1f68b18f34a1262a418946
-ms.sourcegitcommit: 5cdcf44324e35c3ac71d7ca78e512f64d4dcbfea
+ms.openlocfilehash: 508ff905e0b14a30d14c82558b6328b2619dd8a3
+ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "11313431"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "11325903"
 ---
 # Microsoft Edge WebView2 - 原則
 
 最新版本的 Microsoft Edge WebView2 包含下列原則。 您可以使用這些原則來設定 Microsoft Edge WebView2 在組織中的執行方式。
 
 如需用於控制 Microsoft Edge WebView2 更新方式和更新時機的一組額外原則之詳細資訊，請參閱 [Microsoft Edge 更新原則參考](microsoft-edge-update-policies.md)。
-
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
