@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/08/2021
+ms.date: 02/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 1738114b34625d8c4b2e96536c6e91dccd9fafa6
-ms.sourcegitcommit: 5d9ca85738c9dd8581738674e0459a549b6381c8
+ms.openlocfilehash: 822c6cf40cc046d1fe38301fb89cf2a8fe67c04e
+ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "11319067"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "11325863"
 ---
 # Microsoft Edge Beta 通道的版本資訊
 
@@ -29,32 +29,37 @@ ms.locfileid: "11319067"
 
 ### 功能更新
 
-- kiosk 模式支援其他鎖定功能。 從 Microsoft Edge 版本 89 開始，我們在 kiosk 模式下新增了其他鎖定功能，使客戶能夠在高效和更安全的體驗中完成工作。 [深入了解](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features)。
+- **Kiosk 模式可啟用其他鎖定功能**。 從 Microsoft Edge 版本 89 開始，我們在 kiosk 模式下新增了其他鎖定功能，使客戶能夠在高效和更安全的體驗中完成工作。 [進一步了解](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features)。
 
-- Enterprise Mode Site List Manager 工具將在瀏覽器中透過 *edge://compat* 頁提供。 可以使用此工具在 Microsoft Edge 上為 Internet Explorer 模式建立、編輯和匯出網站清單 XML。 可視需要透過群組原則啟用對此工具的存取。 [深入了解](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager)。
+- **您可以透過*edge://compat*頁面在瀏覽器中使用 [企業模式] 網站清單管理員工具**。 可以使用此工具在 Microsoft Edge 上為 Internet Explorer 模式建立、編輯和匯出網站清單 XML。 可視需要透過群組原則啟用對此工具的存取。 [深入了解](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager)。
 
-- 手動重設雲端中的 Microsoft Edge 同步處理資料。 我們正在推出一種從產品內部重設 Microsoft Edge 同步處理的方法。 這確保從 Microsoft 服務中清除您的資料，同時也解決了以前需要支援票證的某些產品問題。
+- **使用休眠索引標籤改善瀏覽器效能**。 睡眠索引標籤會透過將非作用中索引標籤置於睡眠，以釋放系統資源 (例如記憶體和 CPU)，以供使用中索引標籤或其他應用程式使用。 使用者可以防止網站進入睡眠，並設定非作用中索引標籤進入睡眠之前的時間長度。 若要讓使用者保持在流程中，您也可以透過 [啟發](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) 式來防止特定網站進入睡眠狀態，例如內部網路網站。 您可以使用群組原則來管理此功能。
 
-- PDF 文件中文字選取體驗的改進。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
+  > [!NOTE]
+  > 「使用休眠索引標籤改善瀏覽器效能」是主要版本89.0.774.18 的 2 月 3 日版本更新。
 
-- 可永久關閉「停用開發人員模式延伸」警告。 從 Microsoft Edge 版本 89 開始，可以透過選取「不再顯示此訊息」選項來關閉「停用開發人員模式延伸」警告。
+- **手動重設雲端中的 Microsoft Edge 同步處理資料**。 我們正在推出一種從產品內部重設 Microsoft Edge 同步處理的方法。 這確保從 Microsoft 服務中清除您的資料，同時也解決了以前需要支援票證的某些產品問題。
 
-- 從工具列管理延伸。 工具列上的新延伸選單可讓您輕鬆隱藏/釘選延伸。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
+- **PDF 檔中的文字選取體驗的改良功能**。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
 
-- 支援在網址列、歷程記錄搜尋網頁和歷程記錄中樞上進行自然語言搜尋。 從 Microsoft Edge 版本 89 開始，使用網址列、歷程記錄頁面和歷程記錄中樞上的自然語言搜尋使尋找文章/網站更容易。 除了標題/URL 關鍵字相符項目之外，使用者還可以搜尋以前檢視過的頁面內容/描述/時間 (如「上周的蛋糕食譜」)。
+- **[停用開發人員模式擴充功能] 可能會永久關閉警告**。 從 Microsoft Edge 版本 89 開始，可以透過選取「不再顯示此訊息」選項來關閉「停用開發人員模式延伸」警告。
+
+- **從工具列管理您的延伸**。 工具列上的新延伸選單可讓您輕鬆隱藏/釘選延伸。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
+
+- **在 [位址列]、[歷程記錄] 搜尋頁面和 [歷程記錄中心] 上，都支援自然語言搜尋**。 從 Microsoft Edge 版本 89 開始，使用網址列、歷程記錄頁面和歷程記錄中樞上的自然語言搜尋使尋找文章/網站更容易。 除了標題/URL 關鍵字相符項目之外，使用者還可以搜尋以前檢視過的頁面內容/描述/時間 (如「上周的蛋糕食譜」)。
 
 - **生產力：**
 
   - 自動填寫現在支援出生日期欄位。 現在，Microsoft Edge 透過自動填寫位址、姓名、電話號碼等資料，協助您線上填寫表單和建立帳戶時節省時間和精力。從 Microsoft Edge 版本 89 開始，我們將新增對另一可儲存及自動填寫欄位的支援—出生日期。 您可以隨時在設定檔設定中檢視、編輯和刪除此資訊。
   - 延伸自動填寫建議以包含剪貼簿中的內容。 當您選取要顯示為自動填寫建議的設定檔/位址欄位 (例如，電話、電子郵件、郵遞區號、城市、州/省等) 時，剪貼簿內容將被剖析。
 
-- 支援封鎖自動播放影片。 從 Microsoft Edge 版本 89 開始，使用者可以選擇封鎖媒體自動播放。
+- **支援封鎖自動播放影片**。 從 Microsoft Edge 版本 89 開始，使用者可以選擇封鎖媒體自動播放。
 
 ### 原則更新
 
 #### 新原則
 
-- [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime) - 瀏覽資料存留期設定
+- [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime) - 流覽資料存留期設定
 - [MAMEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#mamenabled) - 已啟用行動裝置應用程式管理
 - [DefinePreferredLanguages](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#definepreferredlanguages) - 定義網站支援語言時，網站應該顯示的慣用語言的排序清單
 - [ShowRecommendationsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showrecommendationsenabled) - 允許來自 Microsoft Edge 的建議和促銷通知
@@ -104,7 +109,7 @@ ms.locfileid: "11319067"
   - 單一登入 (SSO) 目前可供 macOS 和下層 Windows 上的 Azure Active Directory (Azure AD) 帳戶和 Microsoft 帳戶 (MSA) 使用。 在 macOS 或下層 Microsoft Windows (7、8.1) 上於 Microsoft Edge 登入的使用者，現在會自動登入已設定為允許使用公司和 Microsoft 帳戶進行單一登入的網站 (例如，bing.com、office.com、msn.com、outlook.com)。<br>注意：如果使用者在早於 Microsoft Edge 88 的版本中登入 Microsoft Edge 以使用此功能，則使用者可能需要登出，然後再重新登入。
   - 在 macOS 上針對使用其公司帳戶驗證的網站，自動將使用者切換至其公司設定檔。 從 Microsoft Edge 版本 88 開始，我們提供功能，讓您在 macOS 上切換使用使用者的工作設定檔進行驗證的網站。<br>注意：如果使用者在早於 Microsoft Edge 88 的版本中登入 Microsoft Edge 以使用此功能，則使用者可能需要登出，然後再重新登入。
 
-- 結束工作階段的 kiosk 模式選項。 「結束工作階段」按鈕現在可於 kiosk 模式公開瀏覽體驗中使用。 此功能可確保在 Microsoft Edge 關閉時，瀏覽器資料和設定隨即會刪除。 深入了解 kiosk 模式功能和藍圖，[設定 Microsoft Edge kiosk 模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)。
+- **結束工作階段的 kiosk 模式選項**。 「結束工作階段」按鈕現在可於 kiosk 模式公開瀏覽體驗中使用。 此功能可確保在 Microsoft Edge 關閉時，瀏覽器資料和設定隨即會刪除。 深入了解 kiosk 模式功能和藍圖，[設定 Microsoft Edge kiosk 模式](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)。
 
 - **安全性及隱私權：**
 
@@ -237,9 +242,9 @@ ms.locfileid: "11319067"
 新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
 
 - [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) -設定從 Microsoft Edge 複製的預設貼上 Url 格式，並判斷使用者是否可以使用其他格式設定。
-- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 已啟用在 Microsoft Edge 中購物。
+- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - 啟用Microsoft Edge 中的 Shopping in Microsoft Edge Enabled 。
 - [HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#hideinternetexplorerredirectuxforincompatiblesitesenabled) -隱藏一次性重新導向對話方塊和 Microsoft Edge 標題。
-- [KioskAddressBarEditingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) -設定位址欄編輯以給 kiosk 模式有公眾瀏覽體驗。
+- [KioskAddressBarEditingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) -設定位址欄編輯以給 kiosk 模式有公眾流覽體驗。
 - [KioskDeleteDownloadsOnExit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit) - Microsoft Edge 關閉時，刪除以 kiosk 會話方式下載的檔案。
 - [PasswordRevealEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#passwordrevealenabled) -啟用密碼顯示按鈕。
 - [RedirectSitesFromInternetExplorerPreventBHOInstall](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#redirectsitesfrominternetexplorerpreventbhoinstall) -禁止安裝 BHO 以將不相容的網站從 Internet Explorer 重新導向至 Microsoft Edge。
