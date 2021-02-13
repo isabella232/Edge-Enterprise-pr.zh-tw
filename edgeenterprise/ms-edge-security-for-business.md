@@ -3,19 +3,19 @@ title: 企業的 Microsoft Edge 安全性
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 02/05/2021
+ms.date: 02/10/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 企業的 Microsoft Edge 安全性
-ms.openlocfilehash: eb981f3ed47b40219e50818531132ed5d385b642
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+ms.openlocfilehash: 497ca83c64bdc3d1f1b1be8989cf798d65a7eda3
+ms.sourcegitcommit: 543259647f221de88e67d47984617091f9c75cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314676"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "11327016"
 ---
 # 企業的 Microsoft Edge 安全性
 
@@ -29,7 +29,7 @@ Microsoft Edge 建置於 Chromium 開放原始碼專案，也就是與 Google Ch
 
 在 Microsoft Edge 內建時，SmartScreen 會根據 NSS 實驗的獨立研究來封鎖比 Google Chrome 安全流覽更多的 [網路釣魚](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf) 和 [惡意](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf) 代碼嘗試。 使用者在線上工作時，SmartScreen 提供網站和下載的信譽檢查，而且屬於 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一環，可獲得 Microsoft 龐大全球資產、研究人員和合作夥伴網路產生的跡象和深入解析。 Microsoft Edge 以危險網站與下載清單的動態雲端式清單為基準執行檢查，甚至可協助您偵測及封鎖稍縱即逝的威脅。  
 
-[在 NSS Labs 測試 中](https://www.nsslabs.com/tested-technologies/web-browser-security-wbs/)，[使用 SmartScreen 的 Microsoft Edge](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen) 封鎖了 95.5% 的網路釣魚嘗試和 98.5% 的惡意程式碼嘗試，相較之下，Chrome 安全瀏覽的比例各為 86.9% 和 86.0%。
+[使用 SmartScreen 的 Microsoft Edge](https://docs.microsoft.com//DeployEdge/microsoft-edge-security-smartscreen) 在 [NSS Labs 的網路釣魚防護](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Phishing_Report_Q2_2020.pdf)測試期間封鎖了 95.5% 的網路釣魚嘗試，以及在 [NSS Labs 的惡意軟體防護](https://edgeconsumerproduction.blob.core.windows.net/hostingdocs/NSS_Labs_Browser_Malware_Report_Q2_2020.pdf)測試期間封鎖了 98.5% 的惡意軟體嘗試，而相較於 Chrome 的安全瀏覽比率，其分別為 86.9% 和 86.0%。
 
 ### Windows 10 上唯一原生支援硬體隔離的瀏覽器
 

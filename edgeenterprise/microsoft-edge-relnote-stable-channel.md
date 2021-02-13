@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/09/2021
+ms.date: 02/11/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: eaf7c7718a5ed56644c67769bf71847fb14e8728
-ms.sourcegitcommit: f141a3b315244e93291ca30ed23741a1d84f0a73
+ms.openlocfilehash: 82c03b918f8407eaa4b7f6b91a7a6fc1d3e2dc9b
+ms.sourcegitcommit: 543259647f221de88e67d47984617091f9c75cfc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "11324855"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "11326996"
 ---
 # Microsoft Edge 穩定通道的版本資訊
 
@@ -29,6 +29,10 @@ ms.locfileid: "11324855"
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱 [Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 
+## 版本 88.0.705.68：2 月 11 日
+
+修正各種錯誤和效能問題。
+
 ## 版本 88.0.705.63：2 月 5 日
 
 安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)。 此更新包含 Chromium 小組報告的 [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148)，因為已發行的版本中有惡意探索問題。
@@ -41,7 +45,7 @@ ms.locfileid: "11324855"
 
 ## 版本 88.0.705.56：1 月 28 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## 版本 88.0.705.53：1 月 26 日
 
@@ -274,7 +278,7 @@ ms.locfileid: "11324855"
 
 ### 功能更新
 
-* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步了解](edge-learnmore-rollback.md)。
+* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步瞭解](edge-learnmore-rollback.md)。
 
 * **預設會在整個企業強制啟用同步。**  系統管理員可以使用 [ForceSync](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcesync) 原則，預設為 Azure Active Directory (Azure AD) 帳戶啟用同步。
 
