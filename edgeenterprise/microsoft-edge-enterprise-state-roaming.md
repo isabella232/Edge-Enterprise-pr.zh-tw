@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和企業狀態漫遊
-ms.openlocfilehash: a759b1d9d4be8dced7bfcc2ef8d0f23b514f4be0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 6090ecfda2f792d49e452771943bc6348066a3d8
+ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979598"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "11328055"
 ---
 # Microsoft Edge 和企業狀態漫遊
 
@@ -63,7 +63,7 @@ ESR 被界定為 Windows 產品，承諾如何處理來自 Windows 裝置的資�
 
 ### 管理
 
-管理員將能夠控制組織中哪些成員可以啟用同步。請參閱 [Microsoft Edge 同步的設定選項](microsoft-edge-enterprise-sync.md#configuration-options-for-microsoft-edge-sync)和[同步群組原則](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，使用者可以為其每個裝置開啟/關閉同步，以及單獨切換每個資料屬性以進行同步。
+管理員將能夠控制組織中哪些成員可以啟用同步。請參閱[設定 Microsoft Edge 同步](microsoft-edge-enterprise-sync.md#configure-microsoft-edge-sync)和[同步群組原則](microsoft-edge-enterprise-sync.md#sync-group-policies)。 此外，使用者可以為其每個裝置開啟/關閉同步，以及單獨切換每個資料屬性以進行同步。
 
 ### 金鑰管理
 

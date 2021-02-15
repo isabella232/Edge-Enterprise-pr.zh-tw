@@ -3,19 +3,19 @@ title: Active Directory (AD) 使用者的內部部署同步
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 10/05/2020
+ms.date: 02/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Active Directory (AD) 使用者的內部部署同步
-ms.openlocfilehash: ce7fd912bc8cbd71e12444d58073e43df6b138db
-ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
+ms.openlocfilehash: adf0adc8370aa1e18d07d0d2e91727d1ac607bf1
+ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "11099742"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "11328045"
 ---
 # Active Directory (AD) 使用者的內部部署同步
 
@@ -30,7 +30,7 @@ ms.locfileid: "11099742"
 
 ## 運作方式
 
-Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用於雲端同步) 建立關聯。啟用內部部署同步時，會將來自 AD 設定檔的資料儲存到名為 profile.pb 的檔案。 依預設，此檔案會儲存在 *%APPDATA%/Microsoft/Edge* 中。 此檔案寫入之後，可在不同的電腦之間移動該檔案，並且將在每一部電腦上讀取和寫入使用者資料。
+Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用於雲端同步) 建立關聯。啟用內部部署同步時，會將來自 AD 設定檔的資料儲存到名為 profile.pb 的檔案。 依預設，此檔案會儲存在 *%APPDATA%/Microsoft/Edge* 中。 此檔案寫入之後，可在不同的電腦之間移動該檔案，並且將在每一部電腦上讀取和寫入使用者資料。 Microsoft Edge 只會從此檔案讀取和寫入內容；系統管理員有責任確保可視需要移動檔案。
 
 ## 使用內部部署同步
 
@@ -42,7 +42,7 @@ Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用�
 
 ### 確保設定檔與 Active Directory 帳戶相關聯
 
-內部部署同步僅適用與 Active Directory (AD) 帳戶相關聯的設定檔。 如果沒有這類設定檔，內部部署同步將無法運作。 若要確保使用者使用 AD 帳戶登入，請設定 [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin) 原則。
+內部部署同步僅適用與 Active Directory (AD) 帳戶相關聯的設定檔。 如果沒有這類設定檔，內部部署同步將無法運作。 若要確保使用者使用 AD 帳戶登入，請設定 [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin) 原則。 針對內部部署的同步，Microsoft Edge 只會仰賴於 AD 來建立使用者資料的身分識別，而 Microsoft Edge 讀取和寫入內部部署資料的方式與系統管理員為 AD 使用者設定漫遊的方式之間並沒有直接的關係。
 
 ### 變更使用者資料的位置 (選用)
 
@@ -67,9 +67,9 @@ Microsoft Edge 允許將設定檔與 Active Directory (AD) 帳戶 (其無法用�
 
 ### 對內部部署同步使用其他同步原則
 
-如果需要，您可以使用 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 原則來選擇性地停用我的最愛或設定同步。 如果 [SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) 原則處於作用中，則也會停用內部部署同步。  
+如果需要，您可以使用 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 原則來選擇性地停用我的最愛或設定同步。 [SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) 原則對內部部署同步沒有影響。
 
-## 請參閱
+## 另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 和企業狀態漫遊](microsoft-edge-enterprise-state-roaming.md)
