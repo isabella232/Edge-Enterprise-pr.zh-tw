@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/09/2021
+ms.date: 02/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,18 +11,19 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 508ff905e0b14a30d14c82558b6328b2619dd8a3
-ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
+ms.openlocfilehash: 2e3258a0427a7fb280023ddc1518f12869f9c791
+ms.sourcegitcommit: b85a216c616e055448028754971cd6dc4c308e81
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "11325903"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "11340583"
 ---
 # <span data-ttu-id="e4563-103">Microsoft Edge WebView2 - 原則</span><span class="sxs-lookup"><span data-stu-id="e4563-103">Microsoft Edge WebView2 - Policies</span></span>
 
 <span data-ttu-id="e4563-104">最新版本的 Microsoft Edge WebView2 包含下列原則。</span><span class="sxs-lookup"><span data-stu-id="e4563-104">The latest version of Microsoft Edge WebView2 includes the following policies.</span></span> <span data-ttu-id="e4563-105">您可以使用這些原則來設定 Microsoft Edge WebView2 在組織中的執行方式。</span><span class="sxs-lookup"><span data-stu-id="e4563-105">You can use these policies to configure how Microsoft Edge WebView2 runs in your organization.</span></span>
 
 <span data-ttu-id="e4563-106">如需用於控制 Microsoft Edge WebView2 更新方式和更新時機的一組額外原則之詳細資訊，請參閱 [Microsoft Edge 更新原則參考](microsoft-edge-update-policies.md)。</span><span class="sxs-lookup"><span data-stu-id="e4563-106">For information about an additional set of policies used to control how and when Microsoft Edge WebView2 is updated, check out [Microsoft Edge update policy reference](microsoft-edge-update-policies.md).</span></span>
+
 
 > [!NOTE]
 > <span data-ttu-id="e4563-107">本文適用於 Microsoft Edge 版本 87 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="e4563-107">This article applies to Microsoft Edge version 87 or later.</span></span>
