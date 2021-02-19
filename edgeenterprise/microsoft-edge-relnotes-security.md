@@ -3,23 +3,27 @@ title: Microsoft Edge 安全性更新的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 02/17/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: fffcad26dba8d3a5e0899fa741648341b17411c5
-ms.sourcegitcommit: b1d49b229c47dc1d99e1b677d75aad38b3334ed6
+ms.openlocfilehash: e147211ba9ca834d4e65e253f59cf4419c566fda
+ms.sourcegitcommit: 8589a07ebd936070edb2eafa43b83cc6ef283a6e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11314173"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "11343826"
 ---
 # Microsoft Edge 安全性更新的版本資訊
 
-這些版本資訊提供有關 Microsoft Edge 穩定通道更新中所包含的安全性問題修正的資訊。
+這些版本資訊提供有關 Microsoft Edge 穩定通道更新中所包含安全性修正的資訊。
+
+## 2021 年 2 月 17 日
+
+Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 88.0.705.74)**，其中包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
 
 ## 2021 年 2 月 5 日
 
@@ -171,6 +175,6 @@ Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 80.0.361.48)*
 Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 79.0.309.68)**，其中包含 Chromium 專案的最新安全性更新。
 如需詳細資訊，請參閱[安全性更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
-## 請參閱
+## 另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
