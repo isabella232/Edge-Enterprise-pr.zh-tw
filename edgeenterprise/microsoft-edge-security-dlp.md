@@ -3,21 +3,21 @@ title: Microsoft Edge 中的資料外洩防護
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的資料外洩防護 (DLP)
-ms.openlocfilehash: 8c7906f69f8d1161b47aa381bc04bcdaa70fe6cd
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+ms.openlocfilehash: f25e1fa7a610645f6ca0ca10cbcfc69ae8689b7a
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314556"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11384981"
 ---
-# Microsoft Edge 中的資料外洩防護 (DLP)
+# <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Microsoft Edge 中的資料外洩防護 (DLP)
 
 資料外洩防護 (DLP) 是一種技術系統，可識別並保護敏感性企業資料不遭到未經授權的披露。 若要遵守商務標準和行業法規，組織必須保護敏感性資訊，並防止未經授權的披露。 敏感性資訊包括財務資料或個人身分識別資訊 (PII)，例如信用卡號碼、社會安全號碼或健康記錄等諸多其他項目。
 
@@ -27,7 +27,7 @@ ms.locfileid: "11314556"
 
 Microsoft Edge 本身支援兩種不同的 DLP 解決方案： Microsoft 端點 DLP 和 Windows 資訊保護 (WIP)。
 
-## Microsoft 端點資料遺失防護 (端點 DLP)
+## <a name="microsoft-endpoint-data-loss-prevention-endpoint-dlp"></a>Microsoft 端點資料遺失防護 (端點 DLP)
 
 Microsoft 端點 DLP 使用先進概念 (例如以資料為中心的保護) 的新一代資料外洩防護。 它內建於 Windows 10 和 Microsoft Edge，因此裝置上不需要其他的代理程式或外掛程式。
 
@@ -51,15 +51,15 @@ Microsoft Edge 強制執行系統管理員設定的敏感性檔案和記錄非�
 
 如需有關您可以稽核和管理之使用者活動的詳細資訊，請參閱 [您可以監視並採取行動的 Endpoint 活動](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true)。
 
-## Windows 資訊保護
+## <a name="windows-information-protection"></a>Windows 資訊保護
 
 請參閱 [Windows 資訊保護的 支援](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)，其中描述 Microsoft Edge 如何支援 Windows 資訊保護 (WIP)。 您可以在下列各節中深入了解系統需求、優點和支援功能：
 
-- [系統需求](https://docs.microsoft.com/deployedge/:microsoft-edge-security-windows-information-protection#system-requirements)
+- [系統需求](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#system-requirements)
 - [Windows 資訊保護的優點](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
 - [Microsoft Edge 支援的 WIP 功能](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [影片：資料外洩防護 - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
