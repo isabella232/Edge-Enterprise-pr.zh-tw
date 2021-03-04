@@ -1,4 +1,4 @@
-# last revised 02/05/2021
+# last revised 03/02/2021
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -31,11 +31,11 @@
       href: deploy-edge-ready-for-edge.md
     - name: 穩定通道版本資訊
       href: microsoft-edge-relnote-stable-channel.md
-    - name: 穩定頻道已封存的版本資訊
+    - name: 穩定的通道已存檔版本資訊
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Beta 通道版本資訊
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Beta 版頻道已封存的版本資訊
+    - name: 已存檔的 Beta 通道版本資訊
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: 發行排程
       href: microsoft-edge-release-schedule.md
@@ -93,7 +93,7 @@
       href: microsoft-edge-security-identity.md
     - name: Microsoft Edge 和企業狀態漫遊
       href: microsoft-edge-enterprise-state-roaming.md
-    - name: 規劃您的 kiosk 模式轉換
+    - name: 規劃 kiosk 模式轉換
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 設定 Microsoft Edge kiosk 模式
       href: microsoft-edge-configure-kiosk-mode.md
@@ -113,6 +113,8 @@
           href: edge-ie-mode-sitelist.md
         - name: 設定 IE 模式原則
           href: edge-ie-mode-policies.md
+        - name: 停用 Internet Explorer 11
+          href: edge-ie-disable-ie11.md
         - name: Enterprise Site Discovery 逐步指南
           href: edge-ie-mode-site-discovery.md
         - name: IE 模式常見問題集
@@ -127,17 +129,17 @@
               href: edge-ie-mode-site-list-manager.md
 - name: Microsoft Edge 安全性
   items:
-    - name: 貴企業的安全性
+    - name: 適用于您企業的安全性
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 端點的允許清單
       href: microsoft-edge-security-endpoints.md
-    - name: ' (DLP) 的資料遺失防護'
+    - name: 'DLP 資料外 (DLP) '
       href: microsoft-edge-security-dlp.md
     - name: 為使用者自動啟用密碼監視器
       href: microsoft-edge-security-password-monitor.md
     - name: 防護抵禦可能不需要的應用程式
       href: microsoft-edge-potentially-unwanted-apps.md
-    - name: Azure AD 條件式存取支援
+    - name: 支援 Azure AD 條件式存取
       href: ms-edge-security-conditional-access.md
     - name: 應用程式防護的支援
       href: microsoft-edge-security-windows-defender-application-guard.md
@@ -157,11 +159,11 @@
       href: microsoft-edge-policies.md
     - name: 更新原則參考
       href: microsoft-edge-update-policies.md
-    - name: WebView2 原則參照
+    - name: WebView2 政策參考
       href: microsoft-edge-webview-policies.md
     - name: 深入了解參考
       items:
-        - name: '企業的向後相容性 [新增] 索引標籤頁面'
+        - name: 企業新版分頁頁面的反向相容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -179,7 +181,7 @@
           href: microsoft-edge-update-progressive-rollout.md
         - name: 佈建 Microsoft Edge 我的最愛
           href: edge-learnmore-provision-favorites.md
-        - name: 從 Internet Explorer 重新導向至 Microsoft Edge
+        - name: 將 Internet Explorer 重新導向至 Microsoft Edge
           href: edge-learnmore-neededge.md
         - name: 規則運算式 2 (re2.h) 語法
           href: edge-learnmore-regex.md
@@ -187,27 +189,27 @@
           href: edge-learnmore-reset-data-in-cloud.md
         - name: 使用者資料目錄變數
           href: edge-learnmore-create-user-directory-vars.md
-        - name: 使用 Microsoft Edge 的企業版回滾
+        - name: 使用適用于企業的 Microsoft Edge 匯總
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 影片
   items:
     - name: Microsoft Edge 影片集合
       href: microsoft-edge-videos.md
-    - name: 影片-Microsoft Edge-瀏覽器2020的狀態
+    - name: 影片 - Microsoft Edge - 瀏覽器狀態 2020
       href: microsoft-edge-video-state-of-browser.md
-    - name: 使用應用程式防護的影片瀏覽器隔離
+    - name: 影片 - 使用 Application Guard 來隔離瀏覽器
       href: microsoft-edge-video-security-application-guard.md
     - name: 影片 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: '影片-資料遺失防護 (DLP) '
+    - name: '影片 - DLP (資料外) '
       href: microsoft-edge-video-security-dlp.md
-    - name: Microsoft Edge 中的影片身分識別
+    - name: 影片 - Microsoft Edge 中的身分識別
       href: microsoft-edge-video-identity.md
-    - name: 影片-Microsoft Edge 版本回滾
+    - name: 影片 - Microsoft Edge 版本回收
       href: microsoft-edge-video-version-rollback.md
-    - name: 影片-PDF 閱讀程式在 Microsoft Edge 中
+    - name: 影片 - Microsoft Edge 中的 PDF 閱讀程式
       href: microsoft-edge-video-pdf-reader.md
-    - name: 影片-在 Microsoft Edge 中進行安全流覽
+    - name: 影片 - 在 Microsoft Edge 上安全流覽
       href: microsoft-edge-video-security-smartscreen.md
     - name: 影片 - 安全性、相容性及管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
