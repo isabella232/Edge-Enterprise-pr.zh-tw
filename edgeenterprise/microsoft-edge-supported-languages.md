@@ -3,28 +3,28 @@ title: Microsoft Edge 語言支援
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 10/22/2019
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 語言支援
-ms.openlocfilehash: 60fff62335f5683f338c4a4b1b17ea54d40e19c6
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ec2c61bc5a94f47769685a2764fa9cc2e58a9898
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979566"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11384990"
 ---
-# Microsoft Edge 語言支援
+# <a name="microsoft-edge-language-support"></a>Microsoft Edge 語言支援
 
 本文顯示如何使用 Microsoft Edge 設定向瀏覽器新增受支援的語言。 Microsoft Edge 在 Windows 上支援 96 種語言，在 macOS 上支援 91 種語言。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 78 或更新版本。
 
-## 向 Microsoft Edge 新增受支援的語言
+## <a name="add-a-supported-language-to-microsoft-edge"></a>向 Microsoft Edge 新增受支援的語言
 
 使用以下步驟查看受支援的語言清單，然後將語言新增到 Microsoft Edge。
 
@@ -34,7 +34,7 @@ ms.locfileid: "10979566"
 4. 在**新增語言**清單中，您可以搜尋語言 (**搜尋語言**)，或使用捲軸尋找要新增的語言。
 5. 找到語言後，選取該語言的核取方塊，然後按一下**新增**。 您新增的語言將顯示在已為 Microsoft Edge 設定之**慣用語言**清單的底部。 您造訪的網站將以清單中支援的第一個語言顯示。
 
-### 變更慣用語言
+### <a name="change-preferred-languages"></a>變更慣用語言
 
 您可以重新排序您的語言喜好設定、讓 Microsoft Edge 提供翻譯，以及以特定語言檢視 Microsoft Edge。
 若要變更語言設定，請按一下語言旁邊的省略符號 (**...**) 開啟 [更多動作]。
@@ -51,14 +51,14 @@ ms.locfileid: "10979566"
 > [!NOTE]
 > 您還可以根據慣用語言設定，設定拼字檢查選項 (**檢查拼字**)。
 
-## 外國語言翻譯擴充功能
+## <a name="foreign-language-translator-extension"></a>外國語言翻譯擴充功能
 
 除了在瀏覽器中使用外國語言之外，您還可以使用 [Translator for Microsoft Edge](https://www.microsoft.com/p/translator-for-microsoft-edge/9nblggh4n4n3) 擴充功能翻譯 60 多種語言的外語網頁和文字選取範圍。
 
 > [!NOTE]
 > 如果翻譯擴充功能在安裝後無法運作，請重新開機 Microsoft Edge。 如果擴充功能仍然無法使用，請透過意見反應中樞提供意見反應。
 
-## 支援的語言
+## <a name="supported-languages"></a>支援的語言
 
 下表列出 Microsoft Edge 支援的語言。
 
@@ -71,23 +71,18 @@ ms.locfileid: "10979566"
 |                 阿爾巴尼亞文                           |                 阿爾巴尼亞                 |     sq         |
 |            阿姆哈拉文                                 |                衣索比亞                 |     am         |
 |               阿拉伯文                               |              沙烏地阿拉伯               |     ar         |
-|               亞美尼亞文                             |              亞美尼亞                    |      hy        |
 |               阿薩姆文                             |                  印度                  |     as         |
 |          亞塞拜然文                               |               亞塞拜然文，拉丁         |    az          |
-|                   孟加拉文                           |              孟加拉*                |     bn         |
-|                                                    |                  印度*                 |     bn-IN      |
+|                   孟加拉文                           |              印度*                     |     bn-IN      |
 |                  巴斯克文                            |                  巴斯克文                 |     eu         |
-|                   白俄羅斯文                       |                  白俄羅斯                |     be         |
 |              波士尼亞文                               |       波士尼亞赫塞哥維納，拉丁     |       bs       |
 |                保加利亞文                           |                保加利亞                 |     bg         |
 |                 卡達隆尼亞文                            |                卡達隆尼亞文                  |     ca         |
-|                卻洛奇文                            |                   卻洛奇文              |      chr       |
 |            中文                                 |              中國，簡體          |     zh-CN      |
 |                                                    |             台灣，繁體         |     zh-TW      |
 |                 克羅埃西亞文                           |                 克羅埃西亞                 |     hr         |
 |                 捷克文                              |             捷克共和國              |     cs         |
 |                  丹麥文                            |                 丹麥                 |     da         |
-|                   達利文                             |                  阿富汗*           |     prs        |
 |                荷蘭文                               |               荷蘭               |     nl         |
 |              英文                               |             英國              |     en-GB      |
 |                                                    |              美國              |     en         |
@@ -112,10 +107,8 @@ ms.locfileid: "10979566"
 |                      坎那達文                       |                  印度                  |     kn         |
 |                哈薩克文                              |               哈薩克                |     kk         |
 |                  高棉文                             |                柬埔寨                 |     km         |
-|                   史瓦希里文                        |                    肯亞                |     sw         |
 |                      貢根文                       |                  印度                  |     kok        |
 |                   韓文                           |                  韓國                  |     ko         |
-|                    吉爾吉斯文                          |              吉爾吉斯                 |     ky         |
 |                     寮文                            |               寮人民民主共和國               |     lo         |
 |                  拉脫維亞文                           |                 拉脫維亞                  |     lv         |
 |               立陶宛文                           |                立陶宛                |     lt         |
@@ -126,7 +119,6 @@ ms.locfileid: "10979566"
 |               馬爾他文                              |                  馬爾他                  |     mt         |
 |          毛利文                                     |               紐西蘭               |     mi         |
 |               馬拉提文                              |                  印度                  |     mr         |
-|                蒙古文                           |           蒙古文，斯拉夫            |     mn         |
 |                尼泊爾文                              |               尼泊爾                     |     ne         |
 |             挪威文                              |                 挪威，巴克摩          |     nb         |
 |                                                    |                 挪威，耐諾斯克         |     nn         |
@@ -143,8 +135,6 @@ ms.locfileid: "10979566"
 |            塞爾維亞文                                 |    波士尼亞赫塞哥維納，斯拉夫*    |   sr-Cyrl-BA   |
 |                                                    |                 塞爾維亞，斯拉夫        |   sr-Cyrl-RS   |
 |                                                    |                 塞爾維亞，拉丁           |   sr-Latn-RS   |
-|                   信德文                           |               巴基斯坦                  |      sd        |
-|                 僧伽羅文                            |           斯里蘭卡                     |      si        |
 |                 斯洛伐克文                             |                斯洛伐克                 |        sk      |
 |                斯洛維尼亞文                           |                斯洛維尼亞                 |        sl      |
 |              西班牙文                               |                 墨西哥                  |     es-MX      |
@@ -155,18 +145,16 @@ ms.locfileid: "10979566"
 |                特拉古文                              |                  印度                  |     te         |
 |                  泰文                              |                泰國                 |     th         |
 |                  土耳其文                           |                 土耳其                  |     tr         |
-|                  土庫曼文                           |         土庫曼                    |      tk        |
 |                烏克蘭文                           |                 烏克蘭                 |     uk         |
 |             烏都文                                   |       巴基斯坦伊斯蘭共和國      |     ur         |
 |              維吾爾文                                |                   中國                   |     ug         |
-|              烏茲別克                                 |         烏茲別克文，拉丁               |   uz-Latn      |
 |               瓦倫西亞文                            |                  西班牙*                 | ca-Es-VALENCIA |
 |            越南文                              |                 越南                 |     vi         |
 |            威爾斯文                                   |             英國              |     cy         |
 
 ---
 
-## 也請參閱
+## <a name="see-also"></a>也請參閱
 
 - [Microsoft Edge 文件](https://docs.microsoft.com/DeployEdge/)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

@@ -3,86 +3,86 @@ title: Microsoft Edge 的客戶採用資料
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 10/26/2020
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 的客戶採用資料
-ms.openlocfilehash: dd75deb8be985a421adc158069e5562f4428415b
-ms.sourcegitcommit: 76a48f5818c90f3edf5780cfcca5def5aeb863bf
+ms.openlocfilehash: 4752b0b5221d0134c68a50153679979449d893ca
+ms.sourcegitcommit: 81383d92dba379d5e6073066c4cdcc2761390f8f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "11136070"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11385372"
 ---
-# 客戶採用 Microsoft Edge 資料
+# <a name="customer-adoption-materials-for-microsoft-edge"></a>Microsoft Edge 的客戶採用資料
 
-若要支援部署並採用新版 Microsoft Edge，請參閱以下收集的資料和資源。 系統會提供已收集的壓縮檔供您下載。
+若要支援 Microsoft Edge 的部署和採用，請參閱下列收集的資料和資源。 提供這些資料與資源的 zip 檔案格式，供您下載。
 
-請日後再回來查看可取得的其他資料。
+請在有更多資料時，回來再次查看。
 
-## 客戶採用套件
+## <a name="customer-adoption-kit"></a>客戶採用套件
 
 客戶採用套件包含下列資料：
 
 - IT 部署指南
-- 如何開始使用 [使用者指南]
-- 簡介電子郵件
+- 《如何開始使用》使用者指南
+- 採用電子郵件範本
 - 橫幅
 - 數位簽章
 - 重點摘要
-- 示範和 GIF
-- Web​ ​資源連結
+- 示範影片和 GIF
+- Web 資源連結
 
-[下載客戶採用套件](https://www.microsoft.com/download/details.aspx?id=102119)
+採用套件提供英文和數種其他語言版本，包括法文、德文和日文。 在 [Microsoft Edge 客戶採用套件下載中心](https://www.microsoft.com/download/details.aspx?id=102119)選取您偏好的語言。
 
-### IT 部署指南
+### <a name="it-deployment-guide"></a>IT 部署指南
 
 使用本指南開始規劃部署，並瞭解如何在您的環境中開始部署 Microsoft Edge。
 
 :::image type="content" source="media/customer-adoption-not-md/ms-edge-deployment-guide-4.png" alt-text="Microsoft Mechanics 影片系列":::
 
-### 如何開始使用 [使用者指南]
+### <a name="how-to-get-started-user-guide"></a>《如何開始使用》使用者指南
 
-使用此份指南教導使用者瞭解新版 Microsoft Edge。 此份指南包括 UI、功能表和功能概述。 我們也提供可協助使用者入門的提示。
+使用本指南來教育使用者了解 Microsoft Edge。 此份指南包括 UI、功能表和功能概觀。 我們也提供可協助使用者入門的提示。
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-get-started-guide.png" alt-text="Microsoft Mechanics 影片系列":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-get-started-guide.png" alt-text="《開始使用指南》如何...":::
 
-### 電子郵件範本
+### <a name="adoption-email-templates"></a>採用電子郵件範本
 
-使用這些電子郵件範本以公告新版 Microsoft Edge 已可供使用者使用，並針對如何讓瀏覽器發揮最大作用提供祕訣和訣竅。
+當向使用者推出 Microsoft Edge 時，使用電子郵件確保轉換順暢。 我們集合了一組電子郵件，方便您在內部活動中使用。 它們提供秘訣，並清楚說明 Microsoft Edge 如何節省時間並簡化日常工作。 下列螢幕擷取畫面顯示這些範本的範例。
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-email-template.png" alt-text="Microsoft Mechanics 影片系列":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-3-email-template.png" alt-text="採用電子郵件範本":::
 
-### 數位簽章
+### <a name="digital-signage"></a>數位告示板
 
-使用以下的數位簽章通知使用者有關新版 Microsoft Edge 的資訊：
+使用下列數位告示板來通知使用者有關 Microsoft Edge 的消息：
 
 - 企業新索引標籤頁
 - 多重 [設定檔] 和 [跨平台]
 - Bing 中的 [Microsoft 搜尋]
 - 安全性
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="Microsoft Mechanics 影片系列":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="新索引標籤頁面":::
 
-### 橫幅
+### <a name="banners"></a>橫幅
 
-在您的內部網站上使用這些橫幅，向您的員工宣傳新的 Microsoft Edge。
+在內部網站上使用這些橫幅來向員工宣傳 Microsoft Edge。
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-banner-ads.png" alt-text="Microsoft Mechanics 影片系列":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-banner-ads.png" alt-text="橫幅廣告範例。":::
 
-### 重點摘要
+### <a name="one-pagers"></a>重點摘要
 
 傳送或張貼這些重點摘要，以協助您的員工了解 Microsoft Edge，並設定工作中使用的瀏覽器。
 
-:::image type="content" source="media/customer-adoption-not-md/ms-edge-one-pager.png" alt-text="Microsoft Mechanics 影片系列":::
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-one-pager.png" alt-text="用來了解 Microsoft Edge 的重點摘要。":::
 
-## 其他學習資源
+## <a name="other-learning-resources"></a>其他學習資源
 
 如果您有興趣學習更多有關 Microsoft Edge 的優點，[請瀏覽我們的網頁](https://www.microsoft.com/edge/business)。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
