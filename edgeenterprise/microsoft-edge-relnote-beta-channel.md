@@ -3,23 +3,26 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: e2a2933e7edf3456bcb33e70d6db7a36ab72aa07
-ms.sourcegitcommit: 6603dc23d8e7ff46df76bc6aa48b93a0b435fe7d
+ms.openlocfilehash: e5096d437f8b70ed94add8341db1cdb1d4b69b84
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11385628"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393635"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
 這些版本資訊提供 Microsoft Edge Beta 通道中包含的新功能和非安全性更新的相關資訊。 這些版本資訊的封存版本可在[此處](microsoft-edge-relnote-archive-beta-channel.md)取得。
+
+> [!NOTE]
+> 我們已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3)發行資訊，以反映已推出的功能。
 
 ## <a name="version-89077445-march-3"></a>版本 89.0.774.45：3 月 3 日
 
@@ -58,18 +61,9 @@ ms.locfileid: "11385628"
 
 - **PDF 檔中的文字選取體驗的改良功能**。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
 
-- **[停用開發人員模式擴充功能] 可能會永久關閉警告**。 從 Microsoft Edge 版本 89 開始，可以透過選取「不再顯示此訊息」選項來關閉「停用開發人員模式延伸」警告。
+- **自動填寫現在支援出生日期欄位**。 現在，Microsoft Edge 透過自動填寫位址、姓名、電話號碼等資料，協助您線上填寫表單和建立帳戶時節省時間和精力。從 Microsoft Edge 版本 89 開始，我們將新增對另一可儲存及自動填寫欄位的支援—出生日期。 您可以隨時在設定檔設定中檢視、編輯和刪除此資訊。
 
-- **從工具列管理您的延伸**。 工具列上的新延伸選單可讓您輕鬆隱藏/釘選延伸。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
-
-- **在 [位址列]、[歷程記錄] 搜尋頁面和 [歷程記錄中心] 上，都支援自然語言搜尋**。 從 Microsoft Edge 版本 89 開始，使用網址列、歷程記錄頁面和歷程記錄中樞上的自然語言搜尋使尋找文章/網站更容易。 除了標題/URL 關鍵字相符項目之外，使用者還可以搜尋以前檢視過的頁面內容/描述/時間 (如「上周的蛋糕食譜」)。
-
-- **生產力：**
-
-  - 自動填寫現在支援出生日期欄位。 現在，Microsoft Edge 透過自動填寫位址、姓名、電話號碼等資料，協助您線上填寫表單和建立帳戶時節省時間和精力。從 Microsoft Edge 版本 89 開始，我們將新增對另一可儲存及自動填寫欄位的支援—出生日期。 您可以隨時在設定檔設定中檢視、編輯和刪除此資訊。
-  - 延伸自動填寫建議以包含剪貼簿中的內容。 當您選取要顯示為自動填寫建議的設定檔/位址欄位 (例如，電話、電子郵件、郵遞區號、城市、州/省等) 時，剪貼簿內容將被剖析。
-
-- **支援封鎖自動播放影片**。 從 Microsoft Edge 版本 89 開始，使用者可以選擇封鎖媒體自動播放。
+- **在 [位址列]、[歷程記錄] 搜尋頁面和 [歷程記錄中心] 上，都支援自然語言搜尋**。 從 Microsoft Edge 版本 89 開始，使用網址列、歷程記錄頁面和歷程記錄中樞上的自然語言搜尋使尋找文章/網站更容易。 除了標題/URL 關鍵字相符項目之外，使用者還可以搜尋以前檢視過的頁面內容/描述/時間 (如「上週的蛋糕食譜」)。 此功能僅限於已啟用實驗的隨機選取使用者群組。 這些使用者會向功能小組提供意見反應。
 
 ### <a name="policy-updates"></a>原則更新
 
