@@ -3,19 +3,19 @@ title: 停用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 03/02/2021
+ms.date: 03/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge 中停用 Internet Explorer 11 和使用 Internet Explorer 模式。
-ms.openlocfilehash: 08d1fe48bfc4614710f4a341a285048194a64794
-ms.sourcegitcommit: 928714329d0b11575494f557498f69a8417a3289
+ms.openlocfilehash: be52f33b091977aff0ca29a4e10d4fc6ea4be957
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385327"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393607"
 ---
 # <a name="disable-internet-explorer-11"></a>停用 Internet Explorer 11
 
@@ -67,7 +67,7 @@ ms.locfileid: "11385327"
 
 若要使用群組原則停用 Internet Explorer 11，請遵循下列步驟：
 
-1. 下載並安裝最新的  [Microsoft Edge 原則範本](https://www.microsoft.com/en-us/business/download)。
+1. 下載並安裝最新的  [Microsoft Edge 原則範本](https://www.microsoft.com/edge/business/download)。
 2. 開啟 [群組原則編輯器]。
 3. 移至***電腦設定/系統管理範本/Windows 元件/Internet Explorer***。 
 4. 按兩下 [停用 Internet Explorer 11 作為獨立瀏覽器] ****。
