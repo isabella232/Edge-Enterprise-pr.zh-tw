@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/04/2021
+ms.date: 03/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 24fc6e567073f98cdadcfc3fa61c20c1ad5f1ab5
-ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
+ms.openlocfilehash: 96525327c75231974e2e2976c1b811dee3a6b03e
+ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "11393706"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "11400159"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -27,7 +27,11 @@ ms.locfileid: "11393706"
  若要了解 Microsoft Edge 通道，請參閱 [Microsoft Edge 通道概觀](microsoft-edge-channels.md)。
 
 > [!NOTE]
-> 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+> 針對穩定通道，更新會在一或多天內逐步推出。 如需深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077448-march-8"></a>版本 89.0.774.48：3 月 8 日
+
+修正各種錯誤和效能問題。
 
 <!-- begin major 89 -->
 ## <a name="version-89077445-march-4"></a>版本 89.0.774.45：3 月 4 日
@@ -54,7 +58,9 @@ ms.locfileid: "11393706"
 
 - **手動重設雲端中的 Microsoft Edge 同步處理資料**。 我們正在推出一種從產品內部重設 Microsoft Edge 同步處理的方法。 這確保從 Microsoft 服務中清除您的資料，同時也解決了以前需要支援票證的某些產品問題。
 
-- **PDF 檔中的文字選取體驗的改良功能**。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
+- **單一非 Azure AD Microsoft Edge 設定檔使用者的所有 Windows Azure Active Directory (Azure AD) 帳戶智慧型啟用單一登入 (SSO)**。  自動為可從此功能獲得最大益處的使用者開啟此設定。 如果使用者只有一個 Microsoft Edge 設定檔 (且不是 Azure AD 或兒童模式)，則當 Microsoft Edge 啟動時，系統會自動開啟設定。 如果使用者稍後選擇使用 Azure AD 帳戶來登入不同的 Microsoft Edge 設定檔，此自動切換也會自動關閉。 使用者可以在 **設定 > 設定檔 > 設定檔喜好設定 > 允許單一登入公司或學校網站使用此設定檔** 來手動更新此功能的喜好設定。
+
+- **PDF 檔文字選取體驗的改良功能**。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
 
 - **自動填寫現在支援出生日期欄位**。 現在，Microsoft Edge 透過自動填寫位址、姓名、電話號碼等資料，協助您線上填寫表單和建立帳戶時節省時間和精力。從 Microsoft Edge 版本 89 開始，我們將新增對另一可儲存及自動填寫欄位的支援—出生日期。 您可以隨時在設定檔設定中檢視、編輯和刪除此資訊。
 
