@@ -1,4 +1,4 @@
-# last revised 03/08/2021
+# last revised 03/11/2021
 - name: Microsoft Edge 企業文件
   href: index.yml
 - name: Microsoft Edge 文件
@@ -33,7 +33,7 @@
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Beta 通道版本資訊
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Beta 通道已存檔版本資訊
+    - name: 已存檔的 Beta 通道版本資訊
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: 發行排程
       href: microsoft-edge-release-schedule.md
@@ -99,7 +99,7 @@
       items:
         - name: 設定 Microsoft Edge 同步處理
           href: microsoft-edge-enterprise-sync.md
-        - name: 診斷及修正 Microsoft Edge 同步處理問題
+        - name: 診斷並修正 Microsoft Edge 同步處理問題
           href: microsoft-edge-troubleshoot-enterprise-sync.md
         - name: 同步常見問題
           href: microsoft-edge-enterprise-sync-faq.md
@@ -137,13 +137,13 @@
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 端點的允許清單
       href: microsoft-edge-security-endpoints.md
-    - name: 'DLP 資料外 (防護) '
+    - name: 'DLP 資料外 (DLP) '
       href: microsoft-edge-security-dlp.md
     - name: 為使用者自動啟用密碼監視器
       href: microsoft-edge-security-password-monitor.md
     - name: 防護抵禦可能不需要的應用程式
       href: microsoft-edge-potentially-unwanted-apps.md
-    - name: Azure AD 條件式存取的支援
+    - name: 支援 Azure AD 條件式存取
       href: ms-edge-security-conditional-access.md
     - name: 應用程式防護的支援
       href: microsoft-edge-security-windows-defender-application-guard.md
@@ -191,15 +191,13 @@
           href: edge-learnmore-regex.md
         - name: 重設 Microsoft Edge 資料
           href: edge-learnmore-reset-data-in-cloud.md
-        - name: 使用者資料目錄變數
-          href: edge-learnmore-create-user-directory-vars.md
         - name: 使用適用于企業的 Microsoft Edge 匯總
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 影片
   items:
     - name: Microsoft Edge 影片集合
       href: microsoft-edge-videos.md
-    - name: 影片 - Microsoft Edge - 瀏覽器 2020 的狀態
+    - name: 影片 - Microsoft Edge - 瀏覽器狀態 2020
       href: microsoft-edge-video-state-of-browser.md
     - name: 影片 - 使用 Application Guard 來隔離瀏覽器
       href: microsoft-edge-video-security-application-guard.md
