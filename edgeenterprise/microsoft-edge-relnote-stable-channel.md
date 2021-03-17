@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: bdb38513f15e0ed5d11be4e221ea9d2403d1a956
-ms.sourcegitcommit: 6d37cd6dc8618742f4729fc901fc66829dab462e
+ms.openlocfilehash: 7d08aa1d9cf1f3e04861561169d2f6a01772e5f2
+ms.sourcegitcommit: b1060a5c71174ba1d2eea91efb51232beeb97bf8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "11406234"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "11409248"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -28,6 +28,13 @@ ms.locfileid: "11406234"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 如需深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077454-march-13"></a>版本 89.0.774.54：3 月 13 日
+
+> [!IMPORTANT]
+> 此更新包含 Chromium 小組報告的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)，因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於[此處](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-13-2021)。
 
 ## <a name="version-89077450-march-10"></a>版本 89.0.774.50：3 月 10 日
 
