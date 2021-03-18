@@ -3,26 +3,70 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/15/2021
+ms.date: 03/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 6682bbc1ea92a8b78a82507424814e2f3db4fcfd
-ms.sourcegitcommit: b1060a5c71174ba1d2eea91efb51232beeb97bf8
+ms.openlocfilehash: 3c1b87b2ecaf68acf0bca447553b25d0b202e7ea
+ms.sourcegitcommit: ceecf4d9baf9dc677652ca07a6d2f2e17ef5b3b7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "11409238"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "11440304"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
 這些版本資訊提供 Microsoft Edge Beta 通道中包含的新功能和非安全性更新的相關資訊。 這些版本資訊的封存版本可在[此處](microsoft-edge-relnote-archive-beta-channel.md)取得。
 
 > [!NOTE]
-> 我們已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3)發行資訊，以反映已推出的功能。
+> 我們已更新 Microsoft Edge Beta [版本 89.0.774.18：2 月 3 日](#version-89077418-february-3)版本資訊，以反映已推出的功能。
+
+<!-- begin major 90 -->
+## <a name="version-90081808-march-16"></a>版本 90.0.818.08：3 月 16 日
+
+### <a name="feature-updates"></a>功能更新
+
+- **單一登入 (SSO) 目前可供 macOS 上的 Azure Active Directory (Azure AD) 帳戶和 Microsoft 帳戶 (MSA) 使用**。 在 macOS 上於 Microsoft Edge 登入的使用者，現在會自動登入已設定為允許使用公司和 Microsoft 帳戶進行單一登入的網站 (例如，bing.com、office.com、msn.com 和 outlook.com)。
+
+- **列印：**
+
+  - **非 PostScript 印表機的新列印點陣化模式**。 從 Microsoft Edge 版本 90 開始，系統管理員可以使用新原則來定義其使用者的列印點陣化模式。 此原則可控制 Microsoft Edge 列印至 Windows 上非 PostScript 印表機的方式。  有時需將非 PostScript 印表機上的列印工作點陣化才能正確列印。 列印選項為「完整」和「快速」。
+
+  - **用於列印的其他頁面縮放選項**。 使用者現在可以在列印網頁和 PDF 文件時，使用其他選項來自訂縮放比例。[符合頁面大小] 選項可確保網頁或文件符合所選 [紙張大小] 用於列印的可用空間。 [實際大小] 選項可確保無論選取的 [紙張大小] 為何，列印內容的大小都不會變更。
+
+- **生產力：**
+
+  - **延伸自動填寫建議，以包含來自剪貼簿的地址欄位內容**。 當您按一下設定檔/地址欄位 (例如，電話、電子郵件、郵遞區號、縣/市、省/市等) 以顯示為自動填寫建議時，系統將會剖析剪貼簿內容。
+
+  - **即使未偵測到表單或欄位，使用者也可以搜尋自動填寫建議**。 現在，如果您將您的資訊儲存在 Microsoft Edge 上，自動填寫建議將自動彈出，並幫助您在填寫表單時節省時間。 如果自動填寫遺漏表單，或您想要在通常沒有自動填寫的表單 (例如暫存表單) 中擷取資料，您可以搜尋您使用自動填寫的資訊。
+
+- **從功能表列的飛出視窗存取下載**。 下載會顯示在右上角，將所有作用中下載顯示在同一個位置。 此功能表可以很輕易關閉，因此使用者可以繼續瀏覽而不受干擾，且他們可以直接從工具列監視整體下載進度。 [進一步了解](https://techcommunity.microsoft.com/t5/articles/introducing-the-new-downloads-experience/m-p/2111551)。
+
+- **字型呈現的改善**。 從 Microsoft Edge 版本 90 開始，我們改善了文字的呈現，以改善清晰度並減少模糊度。 部分字型呈現改善將在 Beta 版本 90 中推出，但預設會停用。
+
+
+### <a name="policy-updates"></a>原則更新
+
+#### <a name="new-policies"></a>新原則
+
+新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則：
+
+- [ApplicationGuardFavoritesSyncEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardfavoritessyncenabled) - 已啟用應用程式防護我的最愛同步處理
+- [ManagedConfigurationPerOrigin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedconfigurationperorigin) - 設定網站到特定來源的受管理設定值
+- [PrintRasterizationMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printrasterizationmode) - 列印點陣化模式
+- [QuickViewOfficeFilesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#quickviewofficefilesenabled) - 管理 Microsoft Edge 中的 QuickView Office 檔案功能
+- [SSLErrorOverrideAllowedForOrigins](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslerroroverrideallowedfororigins) - 允許使用者從特定來源的 HTTPS 警告頁面繼續進行
+- [WindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowocclusionenabled) - 啟用視窗遮蔽
+- [WindowsHelloForHTTPAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowshelloforhttpauthenabled) - 已啟用適用於 HTTP 驗證的 Windows Hello
+
+#### <a name="deprecated-policies"></a>取代的原則
+
+- [NativeWindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled) - 啟用原生視窗遮蔽
+- [SSLVersionMin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslversionmin) - 已啟用最低 TLS 版本
+<!-- end major 90 -->
 
 ## <a name="version-89077454-march-13"></a>版本 89.0.774.54：3 月 13 日
 
