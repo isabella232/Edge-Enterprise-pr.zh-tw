@@ -3,7 +3,7 @@ title: Microsoft Edge WebView2 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: c6516259e2632efba9b80ecd0cb6ee51975f68db
-ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
+ms.openlocfilehash: 38aac0e4ffd932583ad48a2dd13cf8e93df79e29
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "11408625"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442373"
 ---
 # <a name="microsoft-edge-webview2---policies"></a>Microsoft Edge WebView2 - 原則
 
@@ -159,7 +159,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, V
   [回到頁首](#microsoft-edge-webview2---policies)
 
 
-## <a name="see-also"></a>也請參閱
+## <a name="see-also"></a>請參閱
 
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
