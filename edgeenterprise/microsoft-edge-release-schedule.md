@@ -3,19 +3,19 @@ title: Microsoft Edge 發行排程
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/11/2021
+ms.date: 03/18/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 發行排程
-ms.openlocfilehash: 31e8c3e884abdb12ffbd5fae940e466a2ab188d0
-ms.sourcegitcommit: e05e55b5f7808335c68dcee3acc488c53eede435
+ms.openlocfilehash: 7c679918a52a251a53ed5aa5d36df587ba1c46ab
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "11407525"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442406"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 發行排程
 
@@ -42,8 +42,8 @@ Microsoft 提供四個選項，稱為通道，用來管理更新 Microsoft Edge 
 | 版本 | 發行狀態 | Beta 通道<br>發行週 | Stable 通道<br>發行週 |
 |---------|-----|------|--------|
 | 88 | 發行日期<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-88070550-january-21)|
-| **89** | 發行日期<br>版本 | **2021 年 2 月 3 日**<br>**[89.0.774.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-89077418-february-3)** | **2021 年 3 月 4 日**<br>**[89.0.774.45](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-89077445-march-21)** |
-| 90 | 目標版本 | 2021 年 3 月 16 日當週 | 2021 年 4 月 15 日當週 |
+| **89** | 發行日期<br>版本 | 2021 年 2 月 3 日<br>[89.0.774.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-89077418-february-3) | **2021 年 3 月 4 日**<br>**[89.0.774.45](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-89077445-march-21)** |
+| **90** | 發行日期<br>版本 | **2021 年 3 月 16 日**<br>**[90.0.818.8](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-9008188-march-16)** | 2021 年 4 月 15 日當週 |
 | 91 | 目標版本 | 2021 年 4 月 27 日當週 | 2021 年 5 月 27 日當週 |
 | 92 | 目標版本 | 2021 年 6月 8 日當周 | 2021年7月22日當周 |
 | 93 | 目標版本 | 2021年8月3日當周 | 2021 年 9 月 2 日當週 |
