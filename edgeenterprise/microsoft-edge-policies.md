@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: cecadd38a07c6be0153744657c5bef037bd665c7
-ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
+ms.openlocfilehash: 4935b927081ef1823ecf36b922948992926d4005
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "11408645"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442473"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -30,7 +30,17 @@ ms.locfileid: "11408645"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## <a name="available-policies"></a>可用原則
+## <a name="new-policies"></a>新原則
+
+下表列出此更新的新原則。
+
+|名稱|標題|
+|--|--|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|允許新分頁頁面上的快速連結|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|擷取關機時的存留持續時間|
+
+
+## <a name="available-policies"></a>可用的原則
 
 下表列出此版本 Microsoft Edge 提供的所有瀏覽器相關群組原則。 使用下表中的連結，深入了解特定原則。
 
@@ -231,6 +241,7 @@ ms.locfileid: "11408645"
 |[NewTabPageLocation](#newtabpagelocation)|設定新的索引標籤頁面 URL|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|設定新的索引標籤頁面快速連結|
 |[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|啟用預先載入的新索引標籤頁面，以加快頁面呈現速度|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|允許新分頁頁面上的快速連結|
 |[NewTabPageSetFeedType](#newtabpagesetfeedtype)|設定 Microsoft Edge 新索引標籤頁面體驗 (已過時)|
 |[RestoreOnStartup](#restoreonstartup)|啟動時所採取的動作|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|瀏覽器啟動時開啟的網站|
@@ -322,6 +333,7 @@ ms.locfileid: "11408645"
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|在外部通訊協定對話方塊中顯示「一律開啟」核取方塊|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|允許使用者設定家庭安全與兒童模式|
 |[FavoritesBarEnabled](#favoritesbarenabled)|啟用我的最愛列|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|擷取關機時的存留持續時間|
 |[ForceBingSafeSearch](#forcebingsafesearch)|強制執行 Bing 安全搜尋|
 |[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|設定使用 "AutoSelectCertificateForUrls" 設定的網站有多個憑證相符時，Microsoft Edge 是否應自動選取憑證|
 |[ForceEphemeralProfiles](#forceephemeralprofiles)|啟用使用暫時設定檔|
@@ -8454,6 +8466,70 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="newtabpagequicklinksenabled"></a>NewTabPageQuickLinksEnabled
+
+  #### <a name="allow-quick-links-on-the-new-tab-page"></a>允許新分頁頁面上的快速連結
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 91 或更新版本
+
+  #### <a name="description"></a>描述
+
+  如果您啟用或沒有設定此原則，Microsoft Edge 會在新的索引標籤頁面上顯示快速連結，而且使用者可以與控制項互動，並開啟和關閉快速連結。 啟用此原則不會強制顯示快速連結 - 使用者可以繼續開啟和關閉快速連結。
+
+如果您停用此原則，Microsoft Edge 會隱藏新分頁頁面上的快速連結，並停用 NTP 設定飛出視窗的快速連結控制項。
+
+此原則僅適用於 Microsoft Edge 的本機使用者設定檔、使用 Microsoft 帳戶所簽署的設定檔，以及使用 Active Directory 簽署的設定檔。 若要為使用 Azure Active Directory 的設定檔設定企業新索引標籤頁面，請使用 M365 系統管理入口網站。
+
+相關原則：[NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：NewTabPageQuickLinksEnabled
+  - GP 名稱：允許新分頁頁面上的快速連結
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/啟動、首頁和新的索引標籤頁面
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 值名稱：NewTabPageQuickLinksEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定金鑰名稱：NewTabPageQuickLinksEnabled
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
   #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>設定 Microsoft Edge 新索引標籤頁面體驗 (已過時)
@@ -14376,6 +14452,68 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="fetchkeepalivedurationonshutdown"></a>FetchKeepaliveDurationOnShutdown
+
+  #### <a name="fetch-keepalive-duration-on-shutdown"></a>擷取關機時的存留持續時間
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 90 或更新版本
+
+  #### <a name="description"></a>描述
+
+  控制允許存留要求的持續時間 (秒)，以防止瀏覽器完成其關機。
+
+如果您設定此原則，瀏覽器將在處理任何未完成的存留要求時封鎖完成關機 (請參閱 https://fetch.spec.whatwg.org/#request-keepalive-flag) 此原則所指定的最長期間。)
+
+如果您停用或沒有設定此原則，則會使用預設值 0 秒，而在瀏覽器關閉期間，會立即取消未處理存留要求。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：FetchKeepaliveDurationOnShutdown
+  - GP 名稱：擷取關機時的存留持續時間
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：FetchKeepaliveDurationOnShutdown
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定金鑰名稱：FetchKeepaliveDurationOnShutdown
+  - 範例值：
+``` xml
+<integer>1</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="forcebingsafesearch"></a>ForceBingSafeSearch
 
   #### <a name="enforce-bing-safesearch"></a>強制執行 Bing 安全搜尋
@@ -15100,9 +15238,13 @@ Microsoft Edge 的預設查閱者原則得到強化，從其目前的 no-referre
 
   - Windows 和 macOS 上，版本 79 或更新版本
 
-  #### <a name="description"></a>說明
+  #### <a name="description"></a>描述
 
-  在此清單中指定的主機名稱將從可能會將要求從 "http://" 升級為 "https://" 的 HSTS 原則檢查中免除。 此原則中僅允許單一標籤的主機名稱。 主機名稱必須是正式的。 任何 IDN 都必須轉換成其 A 標籤格式，且所有 ASCII 字母都必須是小寫。 此原則僅適用指定的特定主機名稱；不會套用到清單中名稱的子網域。
+  設定此原則會指定主機名稱清單，這些主機名稱會忽略從 http 到 https 的預先載入 HSTS 升級。
+
+此原則只允許單一標籤主機名稱，且此原則僅適用於靜態 HSTS 預先載入項目 (例如，"app"、"new"、"search"、"play")。 此原則不會防止使用 Strict-Transport-Security 回應標頭動態要求 HSTS 升級的伺服器進行 HSTS 升級。
+
+提供的主機名稱必須經過規範：任何 IDN 都必須轉換成其 A 標籤格式，而且所有 ASCII 字母都必須是小寫。 此原則僅適用於指定的特定單一標籤主機名稱，而非這些名稱的子網域。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -16819,9 +16961,11 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 此外，使用者可以使用＂以邊緣模式開啟網站＂選項，在新式瀏覽器中測試應用程式，而不需要從網站列表中刪除應用程序 。
 
-此設定會與下列內容一併執行：[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode'，並設定 [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 原則，其中該清單至少擁有一個項目。
+此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
+   
+                                                                                                                         
 
-如果您啟用這個原則，則“更多工具”下將顯示“以Windows Internet Explorer模式打開網站”的選項。 使用者可以在這個索引標籤上，在 Internet Explorer 模式中查看他們的網站。＂其他工具＂下的＂ 以邊緣模式開啟網站＂ 以幫助在新式瀏覽器中測試網站，而不需將它們從網站清單中移除。
+如果您啟用這個原則，則 [更多工具] 下將顯示 [以 Windows Internet Explorer 模式打開網站] 的選項。 使用者可以在這個索引標籤上，在 Internet Explorer 模式中查看他們的網站。＂其他工具＂下的＂ 以邊緣模式開啟網站＂ 以幫助在新式瀏覽器中測試網站，而不需將它們從網站清單中移除。
 
 如果您停用或未設定此原則，使用者就不會看到＂更多工具＂主選單下的＂在 Internet Explorer 模式中開啟＂ 和＂以邊緣模式開啟＂選項。 不過，使用者可以用--ie-mode-test 標誌來設定這些選項。
 
@@ -23102,7 +23246,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   [回到頁首](#microsoft-edge---policies)
 
 
-## <a name="see-also"></a>也請參閱
+## <a name="see-also"></a>請參閱
 
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
