@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Windows 和 macOS 的顯示語言支援。
-ms.openlocfilehash: af8d2a57d35411600237d09ad528c7b071228d21
-ms.sourcegitcommit: 2b902ecf31430f3fc75d3731f26255aea0bb937e
+ms.openlocfilehash: 37073213fcdacac6b8182dcbef93901c82110756
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "11406158"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447097"
 ---
 # <a name="microsoft-edge-language-support"></a><span data-ttu-id="2e215-103">Microsoft Edge 語言支援</span><span class="sxs-lookup"><span data-stu-id="2e215-103">Microsoft Edge language support</span></span>
 
@@ -156,5 +156,5 @@ ms.locfileid: "11406158"
 
 ## <a name="see-also"></a><span data-ttu-id="2e215-385">也請參閱</span><span class="sxs-lookup"><span data-stu-id="2e215-385">See also</span></span>
 
-- [<span data-ttu-id="2e215-386">Microsoft Edge 文件</span><span class="sxs-lookup"><span data-stu-id="2e215-386">Microsoft Edge documentation</span></span>](https://docs.microsoft.com/DeployEdge/)
+- [<span data-ttu-id="2e215-386">Microsoft Edge 文件</span><span class="sxs-lookup"><span data-stu-id="2e215-386">Microsoft Edge documentation</span></span>](./index.yml)
 - [<span data-ttu-id="2e215-387">Microsoft Edge 企業登陸頁面</span><span class="sxs-lookup"><span data-stu-id="2e215-387">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
