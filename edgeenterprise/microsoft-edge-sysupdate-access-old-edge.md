@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何存取舊版 Microsoft Edge。
-ms.openlocfilehash: 00f4a29c9a2bed137b339c8b5ef43eb213d33ee4
-ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
+ms.openlocfilehash: b521ab9ea093b62db7268e6bf2f4d656b3dc8d4b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11313893"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447087"
 ---
-# 安裝新版本 Microsoft Edge 後存取 Microsoft Edge 舊版
+# <a name="access-microsoft-edge-legacy-after-installing-the-new-version-of-microsoft-edge"></a>安裝新版本 Microsoft Edge 後存取 Microsoft Edge 舊版
 
 舊版 Microsoft Edge 將在 2021 年 3 月 9 日停止接收安全性更新。 您可存取舊版 Microsoft Edge 的時間截至 4 月 13 日為止。 如需詳細資訊，請參閱 Microsoft Edge 產品小組的[部落格文章](https://aka.ms/EdgeLegacyEOS)。
 
@@ -34,13 +34,13 @@ ms.locfileid: "11313893"
 >
 > 舊版 Microsoft Edge 桌面應用程式將於 2021 年 3 月 9 日終止支援，將有利於新版 Microsoft Edge。 這表示舊版 Microsoft Edge 將不會在該日期之後收到安全性更新。 這項變更適用於所有在舊版 Microsoft Edge 桌面應用程式中執行的體驗。 [進一步了解](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666)。
 
-## 開始之前
+## <a name="before-you-begin"></a>開始之前
 > [!NOTE]
 > 從 Windows 10 版本 20H2 開始已不再包含舊版 Microsoft Edge。 從 Windows 10 的這個版本開始不支援並存體驗。
 
 本文的程序適用於已使用最新安全性更新來更新的系統。 安裝新版本 Microsoft Edge 後，將會隱藏舊版本 (Microsoft Edge 舊版)。 根據預設，所有對舊版本的嘗試啟動都會將使用者重新導向至新安裝的 Microsoft Edge。 本文說明如何在安裝 Microsoft Edge 後繼續使用舊版 Microsoft Edge。
 
-## 快速入門：使用 Microsoft Edge Beta 通道和舊版 Microsoft Edge 並存體驗
+## <a name="quickstart-side-by-side-experience-with-microsoft-edge-beta-channel-and-microsoft-edge-legacy"></a>快速入門：使用 Microsoft Edge Beta 通道和舊版 Microsoft Edge 並存體驗
 
 在使用本文中的詳細指示之前，請考慮下列兩個步驟，讓您的使用者能夠並存執行舊版 Microsoft Edge 和 Microsoft Edge [Beta 頻道](microsoft-edge-channels.md)。
 
@@ -52,13 +52,13 @@ ms.locfileid: "11313893"
 
 這種並存解決方案較不復雜，且需要的管理比本文所述的詳細解決方案更少。 但是，這種解決方案代表您將執行 Beta 通道，而不是 Stable 通道。
 
-## 使用 Microsoft Edge 穩定通道和舊版 Microsoft Edge 的並存體驗
+## <a name="side-by-side-experience-with-microsoft-edge-stable-channel-and-microsoft-edge-legacy"></a>使用 Microsoft Edge 穩定通道和舊版 Microsoft Edge 的並存體驗
 
 在系統層級安裝下一版 Microsoft Edge 的穩定通道，就會隱藏目前版本 (Microsoft Edge 舊版)。 如果您想要讓您的使用者在 Windows 中並存看到兩個版本的 Microsoft Edge，您可以將 **[允許 Microsoft Edge 並存瀏覽器經驗]** 群組原則設定為 **[啟用]** 來啟用此體驗。
 
-此群組原則記錄於[此處](https://docs.microsoft.com/deployedge/microsoft-edge-update-policies#allowsxs)
+此群組原則記錄於[此處](./microsoft-edge-update-policies.md#allowsxs)
 
-### 若要設定並存瀏覽器體驗原則：
+### <a name="to-set-up-the-side-by-side-browser-experience-policy"></a>若要設定並存瀏覽器體驗原則：
 
 1. 安裝 [Microsoft Edge For Business](https://www.microsoft.com/edge/business/download) 的原則定義。
 
@@ -86,7 +86,7 @@ ms.locfileid: "11313893"
 - 數值名稱： `Allowsxs`
 - 數值類型: `'REG_DWORD'`
 
-#### 最佳作法指導方針
+#### <a name="best-practice-guidance"></a>最佳作法指導方針
 
 為獲得最佳體驗，應在將新版本 Microsoft Edge 部署到使用者裝置之前，先啟用**允許 Microsoft Edge 並排瀏覽器體驗**。
 
@@ -100,7 +100,7 @@ ms.locfileid: "11313893"
 2. 需要將 Microsoft Edge 舊版重新釘選到 [開始] 或 [工作列]，因為部署新版本 Microsoft Edge 時已移轉釘選。
 3. 為 Microsoft Edge 舊版釘選到 [開始] 或 [工作列] 的網站將移轉至新版 Microsoft Edge。
 
-## 其他資訊
+## <a name="additional-information"></a>其他資訊
 
 完全更新系統並安裝下一版 Microsoft Edge 的 Stable 通道後，系統將設定以下登錄機碼和值：
 
@@ -110,7 +110,7 @@ ms.locfileid: "11313893"
   > [!IMPORTANT]
   > 每次更新 Microsoft Edge Stable 通道時，此機碼都會被覆寫。 我們建議的最佳做法是「不要」刪除此機碼，以允許使用者同時存取兩個版本的 Microsoft Edge。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [支援 Microsoft Edge 的 Windows 更新](microsoft-edge-sysupdate-windows-updates.md)

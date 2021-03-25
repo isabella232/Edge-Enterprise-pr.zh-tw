@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和條件式存取
-ms.openlocfilehash: a81d39c15f418dab6565ee7acc45de17f66e3828
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 898a86c8c268a8c46e80dbd5ef3a435c300fb04e
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094769"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447137"
 ---
-# Microsoft Edge 和條件式存取
+# <a name="microsoft-edge-and-conditional-access"></a>Microsoft Edge 和條件式存取
   
 本文將說明 Microsoft Edge 如何支援條件式存取，並說明如何存取由條件存取保護的資源。
 
@@ -26,7 +26,7 @@ ms.locfileid: "11094769"
 
 提到管理雲端資源時，雲端安全的一個關鍵面向是身分識別和存取權。 在行動優先、雲端優先的世界中，使用者可以從任何位置使用各種裝置和應用程式存取組織的資源。 因此，僅關注何人可以存取資源是不夠的。 您還需要考慮存取資源的方式。 Azure Active Directory (Azure AD) 條件式存取可協助您掌握安全性和生產力之間的平衡。
 
-## 在 Microsoft Edge 中存取受條件式存取保護的資源
+## <a name="accessing-conditional-access-protected-resources-in-microsoft-edge"></a>在 Microsoft Edge 中存取受條件式存取保護的資源
 
 Microsoft Edge 原生支援 Azure AD 條件式存取。 無需另外安裝擴充功能。 當您使用企業 Azure AD 認證登入 Microsoft Edge 設定檔時，Microsoft Edge 允許無縫存取受條件式存取保護的企業雲端資源。
 
@@ -44,11 +44,11 @@ Microsoft Edge 原生支援 Azure AD 條件式存取。 無需另外安裝擴充
 
 此支援適用於所有平台，包括所有受支援的 Windows 和 macOS 版本。
 
-### 如何在 Azure Active Directory 中部署條件式存取
+### <a name="how-to-deploy-conditional-access-in-azure-active-directory"></a>如何在 Azure Active Directory 中部署條件式存取
 
-[部署條件式存取](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access)提供可協助在 Azure Active Directory 中部署條件式存取的詳細指南。
+[部署條件式存取](/azure/active-directory/conditional-access/plan-conditional-access)提供可協助在 Azure Active Directory 中部署條件式存取的詳細指南。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [影片：安全性、相容性及管理性](/microsoft-edge-video-security-compatibility-manageability.md)

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 企業同步的常見問題集。
-ms.openlocfilehash: 51f6dfc4cd8f308815ee111c30d5501ec0e44f59
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: e25ee985f65ee61dda5cacece73d43be7f1e6d7d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400184"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447867"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Microsoft Edge 企業同步常見問題集
 
@@ -25,11 +25,11 @@ ms.locfileid: "11400184"
 
 ### <a name="is-the-synced-data-encrypted"></a>已同步的資料是否已加密？
 
-資料會在使用 TLS 1.2 或更高版本的傳輸中進行加密。 在 Microsoft 服務中，所有資料類型都使用 AES128 進行了額外的加密。 除了用於 [開啟] 索引標籤和 [歷程記錄同步處理] 外的所有資料類型，在離開使用者的裝置前都會透過 [Azure 資訊保護](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern)原則管理的金鑰，另行加密。
+資料會在使用 TLS 1.2 或更高版本的傳輸中進行加密。 在 Microsoft 服務中，所有資料類型都使用 AES128 進行了額外的加密。 除了用於 [開啟] 索引標籤和 [歷程記錄同步處理] 外的所有資料類型，在離開使用者的裝置前都會透過 [Azure 資訊保護](./microsoft-edge-policies.md#restrictsignintopattern)原則管理的金鑰，另行加密。
 
 ### <a name="why-dont-open-tab-and-history-data-have-more-client-side-encryption"></a>為什麼[ 開啟] 索引標籤和 [歷程記錄資料] 沒有更多的用戶端加密？
 
-爲了減少使用者裝置上的資源使用率，歷程記錄資料是根據 [開啟] 索引標籤漫遊資料在伺服器端產生的。 此資料的用戶端加密無法進行此處理流程。 若要停用 [開啟] 索引標籤和 [歷程記錄同步]，請套用 [SavingBrowserHistoryDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled) 或 [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) 原則。
+爲了減少使用者裝置上的資源使用率，歷程記錄資料是根據 [開啟] 索引標籤漫遊資料在伺服器端產生的。 此資料的用戶端加密無法進行此處理流程。 若要停用 [開啟] 索引標籤和 [歷程記錄同步]，請套用 [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled) 或 [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled) 原則。
 
 ### <a name="can-tenant-admins-bring-their-own-key"></a>租用戶系統管理員是否可以使用自己的金鑰？
 
@@ -63,7 +63,7 @@ Microsoft Edge 同步處理的服務條款需遵守 Microsoft Edge 中的 Micros
 
 ### <a name="will-microsoft-edge-ever-support-syncing-between-microsoft-edge-and-ie"></a>Microsoft Edge 是否會支援在 Microsoft Edge 與 IE 之間同步？
 
-目前並未計劃支援此類同步。 如果在您的環境中仍然需要 IE 來支援舊版應用程式，請考慮使用我們的[全新 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)。
+目前並未計劃支援此類同步。 如果在您的環境中仍然需要 IE 來支援舊版應用程式，請考慮使用我們的[全新 IE 模式](./edge-ie-mode.md)。
 
 ### <a name="will-microsoft-edge-sync-with-microsoft-edge-legacy"></a>Microsoft Edge 會與舊版 Microsoft Edge 進行同步處理嗎？
 
@@ -73,7 +73,7 @@ Microsoft Edge 同步處理的服務條款需遵守 Microsoft Edge 中的 Micros
 
 ### <a name="is-it-possible-to-stop-my-users-from-syncing-with-a-personal-tenant"></a>可以阻止我的使用者與個人租用戶進行同步嗎？
 
-沒有直接的做法，但您可以使用 [RestrictSigninToPattern](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern) 原則來決定可以登入 Microsoft Edge 的設定檔。
+沒有直接的做法，但您可以使用 [RestrictSigninToPattern](./microsoft-edge-policies.md#restrictsignintopattern) 原則來決定可以登入 Microsoft Edge 的設定檔。
 
 ## <a name="see-also"></a>請參閱
 

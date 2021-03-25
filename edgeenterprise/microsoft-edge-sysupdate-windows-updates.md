@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 的 Windows Update
-ms.openlocfilehash: 953becc459fe729f84d54da419481b3c6e26cc47
-ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
+ms.openlocfilehash: 880e5a591ee23ff852981e73fe4fc4cd815be9ad
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11313903"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447147"
 ---
-# 支援下一版 Microsoft Edge 的 Windows Update
+# <a name="windows-updates-to-support-the-next-version-of-microsoft-edge"></a>支援下一版 Microsoft Edge 的 Windows Update
 
 本文介紹 Windows 如何更新為支援下一版 Microsoft Edge。
 
@@ -27,11 +27,11 @@ ms.locfileid: "11313903"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 穩定通道。
 
-## Microsoft Edge 和 Windows 發行週期
+## <a name="microsoft-edge-and-the-windows-release-cycle"></a>Microsoft Edge 和 Windows 發行週期
 
 下一版 Microsoft Edge 具有更頻繁且更靈活的更新功能。 由於瀏覽器版本未繫結到 Windows 主要版本，因此將對作業系統進行變更，以確保下一版 Microsoft Edge 可無縫地適合 Windows。 如此一來，功能更新將會以約 6 週的週期釋出。 安全性與相容性更新將在必要時提供。
 
-## 更新和使用者體驗
+## <a name="updates-and-the-user-experience"></a>更新和使用者體驗
 
 在安裝下一版 Microsoft Edge 的 Stable 通道之前，更新不會變更使用者體驗。 安裝 Microsoft Edge Beta、Dev 或 Canary 不會觸發 Windows 中的任何變更。 這些瀏覽器版本將與現有瀏覽器一起安裝。
 
@@ -52,11 +52,11 @@ ms.locfileid: "11313903"
 
 - Microsoft Edge 將解除登錄下一版 Microsoft Edge 不支援的書籍和 XML 通訊協定。 嘗試開啟這些通訊協定的使用者會看到一個對話方塊，提示他們選擇預設應用程式。 請至[下載 ePub 應用程式以繼續閱讀電子書](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsupport.microsoft.com%2Fhelp%2F4517840&data=02%7C01%7Cv-danwes%40microsoft.com%7Cc9f8571b880549c30fcf08d72be5eaf9%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637026138803983526&sdata=qtb3DvVZQ6H%2FFXnBievkl%2B%2BngAQXwl340PcH8kRc3y4%3D&reserved=0)深入了解有關圖書支援變更。
 
-## 時間表
+## <a name="timeline"></a>時間表
 
 支援所述體驗所需的變更將隨不同版本 Windows 的三個更新一起提供。
 
-### Windows 版本 1903 與 1909
+### <a name="windows-versions-1903-and-1909"></a>Windows 版本 1903 與 1909
 
 - 選用 2019 年 7 月更新中的第一組變更，隨 2019 年 8 月安全性更新一起提供。
 - 選用 2019 年 8 月更新中的第二組變更，隨 2019 年 9 月安全性更新一起提供。
@@ -69,7 +69,7 @@ ms.locfileid: "11313903"
   > [!NOTE]
   > 這是 Microsoft Edge 不再支援電子書的更新。
 
-### Windows 版本 1709、1803 與 1809
+### <a name="windows-versions-1709-1803-and-1809"></a>Windows 版本 1709、1803 與 1809
 
 - 選用 2019 年 8 月更新中的第一組變更，隨 2019 年 9 月安全性更新一起提供。
 - 選用 2019 年 9 月更新中的第二組變更，隨 2019 年 10 月安全性更新一起提供。
@@ -91,7 +91,7 @@ ms.locfileid: "11313903"
 | 版本 1809  | [KB4523205](https://support.microsoft.com/help/4523205/windows-10-update-kb4523205) | [Windows 10 版本 1809 的累積更新](https://www.catalog.update.microsoft.com/Search.aspx?q=4523205) |
 | 版本 1903 及 1909 |[KB4517389](https://support.microsoft.com/help/4517389/windows-10-update-kb4517389)  | [Windows 10 版本 1903 和 1909 的累積更新](https://www.catalog.update.microsoft.com/Search.aspx?q=4517389) |
 
-## 也請參閱
+## <a name="see-also"></a>也請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 文件](https://docs.microsoft.com/DeployEdge/)
+- [Microsoft Edge 文件](./index.yml)

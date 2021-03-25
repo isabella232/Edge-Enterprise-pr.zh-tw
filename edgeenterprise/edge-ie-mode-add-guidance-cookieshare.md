@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '如何從 Microsoft Edge 到 Internet Explorer 共用 Cookie '
-ms.openlocfilehash: ddd9d34b5e2b0ee49093734da82e4a4fa7aa6a69
-ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
+ms.openlocfilehash: d94c1337b7a3dbee789efb16e9c8b0a5ebc2c23b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11238180"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447737"
 ---
-# 從 Microsoft Edge 到 Internet Explorer 共用 Cookie
+# <a name="cookie-sharing-from-microsoft-edge-to-internet-explorer"></a>從 Microsoft Edge 到 Internet Explorer 共用 Cookie
 
 本文說明如何在使用 Internet Explorer 模式的同時，將工作階段 Cookie 設置為從 Microsoft Edge 程式共用到 Internet Explorer 程式。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 - Windows 更新
 
@@ -35,9 +35,9 @@ ms.locfileid: "11238180"
   - Windows 10 版本 1803－KB4577032 或更新版本
 
 - Microsoft Edge 版本 87 或更新版本
-- 使用企業模式網站清單設定 [IE 模式](https://aka.ms/iemodeonedge) 
+- 使用企業模式網站清單設定 [IE 模式](./edge-ie-mode.md) 
 
-## 概觀
+## <a name="overview"></a>概觀
 
 大型組織中的一般設定，是讓應用程式能夠在新式瀏覽器上使用，以連結到另一個應用程式，而這個應用程式可能設定為在工作流程中啟用單一登入（SSO）的 Internet Explorer 模式中開啟。
 
@@ -46,13 +46,13 @@ ms.locfileid: "11238180"
 > [!NOTE]
 > 工作階段 cookie 只能從 Microsoft Edge 共用到 Internet Explorer。 反向式共用工作階段 cookie 是不可行的（從 Internet Explorer 到 Microsoft Edge）。
 
-## Cookies 共用的運作方式
+## <a name="how-cookie-sharing-works"></a>Cookies 共用的運作方式
 
 已將企業模式網站清單 XML 延展，以允許其他元素指定需要從 Microsoft Edge 工作模式與 Internet Explorer 共用的 cookie。  
 
 在 Microsoft Edge 工作模式中，第一次建立 Internet Explorer 模式索引標籤時，所有相符的 cookie 都會共用至 Internet Explorer 工作模式。 之後，只要新增、刪除或修改符合規則的 cookie，系統就會將其新增為 Internet Explorer 工作模式的更新。 當網站清單更新時，也會重新評估該共用 cookie 集合。
 
-### 更新的結構描述元素
+### <a name="updated-schema-elements"></a>更新的結構描述元素
 
 下表說明為了支援 cookie 共用功能而新增的 \<shared-cookie\> 元素。
 
@@ -61,7 +61,7 @@ ms.locfileid: "11238180"
 | \<shared-cookie **domain**=".contoso.com" **name**="cookie1"\>\</shared-cookie\><br><br>或<br><br>\<shared-cookie **host**="subdomain.contoso.com" **name**="cookie2"\>\</shared-cookie\>   |**（必要）** 一個 \<shared-cookie\>元素至少需要一個 *網域*（適用於網域 cookie）或一個*主機*（主機專用 cookie）屬性和一個 *名稱* 屬性。<br>這些必須與 cookie 的網域和名稱完全相符。 **注意**：子域不相符。<br><br>*網域* 屬性用於網域 cookie （但允許使用前導點，但可選用）。<br>*host* 屬性適用於主機專用的 cookie（而前導點則是錯誤）。 若將這兩個都不指定或都指定將會導致錯誤。<br>* 若在 cookie 字串中指定網域，則 cookie 即為網域 cookie（透過 HTTP Set-Cookie 回應標頭或document.cookie JS AP）。 網域 cookie 適用於指定的網域和所有子網域。 * 若未在 cookie 字串中指定網域，則 cookie 即為主機專用 cookie，且只適用於其所設定的特定主機。 需要注意的是，有些類別的 URLs 像是單一文字的主機名稱（例如 http://intranetsite) 和 IP 位址（例如 http://10.0.0.1) 只可以設定主機專用的 cookie。    |
 | \<shared-cookie **host**="subdomain.contoso.com" **name**="cookie2" **path**="/a/b/c"\>\</shared-cookie\>  | **（選用）** 可以指定 *路徑* 屬性。 如果未指定路徑屬性（或路徑屬性為空白），無論路徑為何（萬用字元規則），任何比對的網域/主機和名稱都符合該原則。<br><br>如果已指定路徑，它必須是完全相符的路徑。<br>如果 cookie 符合的規則是具有路徑，則此規則的優先順序高於不具路徑的規則。 |
 
-#### 共用範例
+#### <a name="sharing-example"></a>共用範例
 
 ```xml
 <site-list version="1">
@@ -71,9 +71,9 @@ ms.locfileid: "11238180"
 </site-list>
 ```
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
-- [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [可設定的網站資訊](https://docs.microsoft.com/deployedge/edge-learnmore-configurable-sites-ie-mode)
-- [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [關於 IE 模式](./edge-ie-mode.md)
+- [可設定的網站資訊](./edge-learnmore-configurable-sites-ie-mode.md)
+- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

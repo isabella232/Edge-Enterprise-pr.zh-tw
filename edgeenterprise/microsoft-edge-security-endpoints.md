@@ -10,46 +10,46 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 端點的允許清單
-ms.openlocfilehash: 3d46e2e8c85eadc39cf9788df44b45592ea4fb1b
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
+ms.openlocfilehash: b8f793edcc23798199fe5de1bfae912a63468464
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194685"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11448197"
 ---
-# Microsoft Edge 端點的允許清單
+# <a name="allow-list-for-microsoft-edge-endpoints"></a>Microsoft Edge 端點的允許清單
 
 Microsoft Edge 需要連線接到網際網路，以支援其功能。 本文識別需要新增到允許清單中的網域 URL，以確保透過防火牆和其他安全機制進行通訊。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## 允許的網域 URL
+## <a name="domain-urls-to-allow"></a>允許的網域 URL
 
 允許 Microsoft Edge 的以下網域 URL。
 
-### 更新服務
+### <a name="update-service"></a>更新服務
 
 Microsoft Edge 用於檢查新更新的服務。
 
 - `https://msedge.api.cdp.microsoft.com`
 
-### 實驗和設定服務
+### <a name="experimentation-and-configuration-service"></a>實驗和設定服務
 
 - `https://config.edge.skype.com`
 
-### Microsoft Edge 的下載位置
+### <a name="download-locations-for-microsoft-edge"></a>Microsoft Edge 的下載位置
 
 可從初始安裝期間或更新可用時下載 Microsoft Edge 的位置。 下載位置由更新服務確定。
 
-#### HTTP
+#### <a name="http"></a>HTTP
 
 - `http://msedge.f.tlu.dl.delivery.mp.microsoft.com`
 - `http://msedge.f.dl.delivery.mp.microsoft.com`
 - `http://msedge.b.tlu.dl.delivery.mp.microsoft.com`
 - `http://msedge.b.dl.delivery.mp.microsoft.com`
 
-#### HTTPS
+#### <a name="https"></a>HTTPS
 
 - `https://msedge.sf.tlu.dl.delivery.mp.microsoft.com`
 - `https://msedge.sf.dl.delivery.mp.microsoft.com`
@@ -59,18 +59,18 @@ Microsoft Edge 用於檢查新更新的服務。
   > [!TIP]
   > 為了簡化下載位置的允許清單，可以使用萬用字元： `*.dl.delivery.mp.microsoft.com`
 
-### Microsoft Edge 延伸模組的下載位置
+### <a name="download-locations-for-microsoft-edge-extensions"></a>Microsoft Edge 延伸模組的下載位置
 
 可從初始安裝期間或更新可用時下載 Microsoft Edge 延伸模組的位置。 下載位置由更新服務確定。
 
-#### HTTP
+#### <a name="http"></a>HTTP
 
 - `http://msedgeextensions.f.tlu.dl.delivery.mp.microsoft.com`
 - `http://msedgeextensions.f.dl.delivery.mp.microsoft.com`
 - `http://msedgeextensions.b.tlu.dl.delivery.mp.microsoft.com`
 - `http://msedgeextensions.b.dl.delivery.mp.microsoft.com`
 
-#### HTTPS
+#### <a name="https"></a>HTTPS
 
 - `https://msedgeextensions.sf.tlu.dl.delivery.mp.microsoft.com`
 - `https://msedgeextensions.sf.dl.delivery.mp.microsoft.com`
@@ -80,14 +80,14 @@ Microsoft Edge 用於檢查新更新的服務。
   > [!TIP]
   > 為了簡化下載位置的允許清單，可以使用萬用字元： `*.dl.delivery.mp.microsoft.com`
 
-### 可選擇下載傳遞最佳化
+### <a name="optionally-for-download-delivery-optimization"></a>可選擇下載傳遞最佳化
 
-如需傳遞最佳化的詳細資訊，請參閱 [Windows 10 更新的傳遞最佳化](https://aka.ms/waas-do)。
+如需傳遞最佳化的詳細資訊，請參閱 [Windows 10 更新的傳遞最佳化](/windows/deployment/update/waas-delivery-optimization)。
 
 - 用戶端至服務通訊：`*.do.dsp.mp.microsoft.com` (HTTP 連接埠 80，HTTPS 連接埠 443)
 - 用戶端至用戶端通訊：應開啟 TCP 連接埠 7680 以供流量傳入
 
-### Sync
+### <a name="sync"></a>Sync
 
 這些端點會管理所同步資料的讀取和寫入、用於護資料的版權管理，並在新的同步資料可用時通知瀏覽器。
 
@@ -102,17 +102,17 @@ Microsoft Edge 用於檢查新更新的服務。
   - `https://api.aadrm.de` (適用於德國的租用戶)
   - `https://api.aadrm.cn` (適用於中國的租用戶)
 
-- [Windows 通知服務端點](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)
+- [Windows 通知服務端點](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)
 
-## 其他瀏覽器支援服務
+## <a name="other-browser-support-services"></a>其他瀏覽器支援服務
 
 為瀏覽器功能 (如追蹤保護、憑證撤銷清單和其他瀏覽器元件更新) 提供中繼資料。 提供可下載的拼字檢查字典和廣告封鎖的封鎖清單。 提供服務以支援瀏覽器功能，如集合、自動填滿和延伸模組存放區。
 
 - `http://edge.microsoft.com/`
 - `https://edge.microsoft.com/`
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 文件登陸頁面](https://docs.microsoft.com/DeployEdge/)
-- [管理適用於 Windows 10 企業版版本 1903 的連線端點](https://docs.microsoft.com/windows/privacy/manage-windows-1903-endpoints)
+- [Microsoft Edge 文件登陸頁面](./index.yml)
+- [管理適用於 Windows 10 企業版版本 1903 的連線端點](/windows/privacy/manage-windows-1903-endpoints)

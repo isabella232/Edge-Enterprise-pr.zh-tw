@@ -10,28 +10,28 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 佈建 Microsoft Edge 我的最愛
-ms.openlocfilehash: 94bd42573bdbc0fd1b971ded1c82e5fe152acc54
-ms.sourcegitcommit: 854dd73eb168960c0eb4b483f81a8efe88806a64
+ms.openlocfilehash: 67627fa10806435d76cecae00f79867bc5af03df
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "11088689"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447597"
 ---
-# 佈建 Microsoft Edge 我的最愛
+# <a name="provision-favorites-for-microsoft-edge"></a>佈建 Microsoft Edge 我的最愛
 
 依據客戶的意見反應，我們已針對佈建我的最愛進行改進。 從 Microsoft Edge 版本 85 開始，系統管理員不再需要手動建立檔案來佈建我的最愛。 系統管理員可以使用 Microsoft Edge UI 新增我的最愛和資料夾，以產生可匯出至群組原則的檔案。
 
-本文說明如何為貴組織佈建一組我的最愛和資料夾。 您可以使用 [[設定我的最愛]](https://docs.microsoft.com//DeployEdge/microsoft-edge-policies#configure-favorites) 原則來佈建我的最愛和資料夾。
+本文說明如何為貴組織佈建一組我的最愛和資料夾。 您可以使用 [[設定我的最愛]](//DeployEdge/microsoft-edge-policies#configure-favorites) 原則來佈建我的最愛和資料夾。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 85 或更新版本。
 
-## 需求和建議
+## <a name="prerequisites-and-recommendations"></a>需求和建議
 
 - Microsoft Edge 版本 85 隨附為群組原則安裝的適當系統管理範本。
 - 我們建議您在 Microsoft Edge 中使用新的設定檔來佈建這些我的最愛。 所有與設定檔儲存的我的最愛都會包含在匯出中。  
 
-## 佈建我的最愛與資料夾
+## <a name="provision-favorites-and-folders"></a>佈建我的最愛與資料夾
 
 使用下列步驟為您的使用者佈建我的最愛和資料夾。
 
@@ -66,6 +66,6 @@ ms.locfileid: "11088689"
 
 7. 按一下 **[確定]** 或 **[套用]** 以儲存此原則設定。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 Enterprise Site Discovery 準備 IE 模式
-ms.openlocfilehash: 9ec748686b83466cd1c7d92fcc7fdc0f0d136977
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 2557544a93222b03aaa0961149aa0d3c5d7d8806
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979545"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447717"
 ---
-# Enterprise Site Discovery 逐步指南
+# <a name="enterprise-site-discovery-step-by-step-guide"></a>Enterprise Site Discovery 逐步指南
 
 本文提供將 Enterprise Site Discovery 與 Microsoft Endpoint Configuration Manager 搭配使用的逐步指南。
 
@@ -29,7 +29,7 @@ Enterprise Site Discovery 可協助您設定企業模式網站清單。 Enterpri
 > [!NOTE]
 > 本文適用於 Microsoft Edge **Stable**、**Beta** 和 **Dev** 通道，版本 77 或更新版本。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 本指南假設您已使用過 Microsoft Endpoint Configuration Manager，且已安裝下列服務和角色：
 
@@ -37,20 +37,20 @@ Enterprise Site Discovery 可協助您設定企業模式網站清單。 Enterpri
 2. Microsoft SQL Server Reporting Services
 3. (選用) 已設定 Configuration Manager Reporting Services 點角色
 
-## 下載 Enterprise Site Discovery 工具
+## <a name="download-enterprise-site-discovery-tools"></a>下載 Enterprise Site Discovery 工具
 
 下載下列工具：
 
 - [Enterprise Site Discovery 設定和組態套件](https://go.microsoft.com/fwlink/p/?LinkId=517719)
 - [Microsoft 報表產生器](https://www.microsoft.com/download/details.aspx?id=53613)
 
-## 啟用 Enterprise Site Discovery
+## <a name="enable-enterprise-site-discovery"></a>啟用 Enterprise Site Discovery
 
 您必須先將 WMI 類別提供者部署到裝置上，才能連線到 Windows Management Instrumentation (WMI) 來取得網站探索資料。
 
 從 **Enterprise Site Discovery 設定和組態套件**將內容解壓縮至可用的軟體程式庫檔案共用中的資料夾。 範例：**\\\\DSL\\EnterpriseSiteDiscovery**。
 
-接下來，在 Microsoft Endpoint Configuration Manager 中建立套件，如此[文件](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs)所述，選取下列選項：
+接下來，在 Microsoft Endpoint Configuration Manager 中建立套件，如此[文件](/configmgr/apps/deploy-use/packages-and-programs)所述，選取下列選項：
 
 - 在 **[套件]** 頁面上，選取 **[名稱]**，並指定名稱 **[啟用網站探索]**
 - 在 **[套件]** 頁面上，選取 **[此套件包含來源檔案]**
@@ -68,11 +68,11 @@ Enterprise Site Discovery 可協助您設定企業模式網站清單。 Enterpri
 建立套件後，按兩下套件名稱 **[啟用網站探索]** 以查看其內容。 在 **[執行之後]** 屬性中，選取 **[Configuration Manager 重新啟動電腦]**。 裝置重新開機後，WMI 資料收集就會開始。
 
 > [!NOTE]
-> 您可以設定使用者必須重新啟動裝置所需的時間，如[用戶端設定文件](https://docs.microsoft.com/configmgr/core/clients/deploy/about-client-settings#computer-restart)中所述。
+> 您可以設定使用者必須重新啟動裝置所需的時間，如[用戶端設定文件](/configmgr/core/clients/deploy/about-client-settings#computer-restart)中所述。
 
-## 使用群組原則設定 Enterprise Site Discovery
+## <a name="configure-enterprise-site-discovery-via-group-policy"></a>使用群組原則設定 Enterprise Site Discovery
 
-啟用 Enterprise Site Discovery 後，您就可以設定要收集的資料。 請考量[此處](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected)所述的當地法律和法規需求。
+啟用 Enterprise Site Discovery 後，您就可以設定要收集的資料。 請考量[此處](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected)所述的當地法律和法規需求。
 
 1. 開啟群組原則編輯器
 2. 按一下**電腦設定** > **系統管理範本** > **Windows 元件** > **Internet Explorer** 
@@ -103,7 +103,7 @@ Enterprise Site Discovery 可協助您設定企業模式網站清單。 Enterpri
 3. 輸入您要收集資料的網域，每行一個網域
 4. 按一下 **[確定]** 或 **[套用]** 儲存此原則設定
 
-## 使用 Configuration Manager 收集網站探索資料
+## <a name="collect-site-discovery-data-using-configuration-manager"></a>使用 Configuration Manager 收集網站探索資料
 
 現在，您的裝置正在產生資料，是時候在 Configuration Manager 中收集這些資料了。
 
@@ -121,16 +121,16 @@ Enterprise Site Discovery 可協助您設定企業模式網站清單。 Enterpri
 
 用戶端更新管理點中的設定後，系統會在下次硬體清查執行時 (預設為每七天) 報告資料。
 
-## 匯入網站探索報表
+## <a name="import-site-discovery-reports"></a>匯入網站探索報表
 
 Enterprise Site Discovery 套件包含兩個範例報表。 一個報表使用 ActiveX 控制項顯示網站，另一個報表使用舊版文件模式顯示網站。
 
-### 設定網站探索範例報表
+### <a name="configure-the-site-discovery-sample-report"></a>設定網站探索範例報表
 
 使用下列程序建立使用三個資料來源的範例報表：使用者造訪的網站、其系統相關資訊，以及網站所使用的文件模式。 此報表可協助您識別可能依靠舊版文件模式的網站。
 
 1. 將報表 **SCCM_Report-Site_Discovery.rdl** 複製到 Configuration Manager 伺服器。
-2. 安裝 [Microsoft 報表產生器](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
+2. 安裝 [Microsoft 報表產生器](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
 3. 按兩下 **SCCM_Report-Site_Discovery.rdl** 以在報表產生器中開啟報表。
 4. 第一次嘗試開啟報表時，它會嘗試與建立該報表的伺服器聯繫。 當系統提示您**連接到報表伺服器**時，請按一下 **[否]**。
 5. 報表開啟後，展開 **[資料來源]**，然後按兩下 **[DataSource1]**。
@@ -147,12 +147,12 @@ Enterprise Site Discovery 套件包含兩個範例報表。 一個報表使用 A
 16. 關閉 Microsoft 報表產生器。
 17. 將檔案重新命名為 **Site Discovery.rdl**
 
-### 設定 ActiveX 範例報告
+### <a name="configure-the-activex-sample-report"></a>設定 ActiveX 範例報告
 
 使用下列程序建立使用單一資料來源的範例報告：使用 ActiveX 控制項的網站。 由於 Internet Explorer 是唯一支援 ActiveX 控制項的瀏覽器，因此這些網站可能需要 IE 模式。
 
 1. 將報表 **SCCM Report Sample - ActiveX.rdl** 複製到 Configuration Manager 伺服器。
-2. 安裝 [Microsoft 報表產生器](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
+2. 安裝 [Microsoft 報表產生器](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15)。
 3. 按兩下 **SCCM Report Sample - ActiveX.rdl** 以在報表產生器中開啟報表。
 4. 第一次嘗試開啟報表時，它會嘗試與建立該報表的伺服器聯繫。 當系統提示您**連接到報表伺服器**時，請按一下 **[否]**。
 5. 報表開啟後，展開 **[資料來源]**，然後按兩下 **[AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_]**。
@@ -167,7 +167,7 @@ Enterprise Site Discovery 套件包含兩個範例報表。 一個報表使用 A
 14. 關閉 Microsoft 報表產生器。
 15. 將檔案重新命名為 **ActiveX**
 
-### 將已設定的報表上傳到 Microsoft SQL Server Reporting Services
+### <a name="upload-configured-reports-to-microsoft-sql-server-reporting-services"></a>將已設定的報表上傳到 Microsoft SQL Server Reporting Services
 
 設定好環境報表後，將報表上傳到報表伺服器。
 
@@ -181,16 +181,16 @@ Enterprise Site Discovery 套件包含兩個範例報表。 一個報表使用 A
 8. 選取 **[網站探索]** 報表，然後按一下 **[確定]**。
 9. 在 **ActiveX** 報表重複步驟 7 與 8。
 
-### 檢視 Configuration Manager 中的報表
+### <a name="view-reports-in-configuration-manager"></a>檢視 Configuration Manager 中的報表
 
 現在您已自訂並上傳報表，您可以在 Configuration Manager 中檢視報表。
 
 1. 在 Configuration Manager 主控台中，選擇 **[監視]** > **[報表]** > **[報表]** > **[Enterprise Site Discovery]**
 2. 按兩下報表以檢視報表。
 
-## 停用 Enterprise Site Discovery
+## <a name="disable-enterprise-site-discovery"></a>停用 Enterprise Site Discovery
 
-資料收集完畢後，您應停用 Enterprise Site Discovery。 建立第二個套件來停用 Microsoft Endpoint Configuration Manager 中的 Enterprise Site Discovery，如此[文件](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs)所述，選取下列選項：
+資料收集完畢後，您應停用 Enterprise Site Discovery。 建立第二個套件來停用 Microsoft Endpoint Configuration Manager 中的 Enterprise Site Discovery，如此[文件](/configmgr/apps/deploy-use/packages-and-programs)所述，選取下列選項：
 
 - 在 **[套件]** 頁面上，選取 **[名稱]**，並指定名稱 **[停用網站探索]**
 - 在 **[套件]** 頁面上，選取 **[此套件包含來源檔案]**
@@ -203,9 +203,9 @@ Enterprise Site Discovery 套件包含兩個範例報表。 一個報表使用 A
 - 在 **[標準程式]** 頁面中，選取選項以執行 **[隱藏]**
 - 在 **[標準程式]** 頁面的 **[程式可執行]** 中，選取選項 **[無論使用者是否登入]**
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
-- [其他 Enterprise Site Discovery 資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)
+- [關於 IE 模式](./edge-ie-mode.md)
+- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [其他 Enterprise Site Discovery 資訊](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)

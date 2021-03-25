@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Kiosk 模式功能，以及如何設定 Microsoft Edge Kiosk 模式選項。
-ms.openlocfilehash: 516bc004a516b243e52d4128ae47f3ab9d7498df
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: 9d76bfcaebeaf56e627a401cc4f0375bce9d17a3
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442483"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11448127"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>設定 Microsoft Edge kiosk 模式
 
@@ -48,17 +48,17 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 |-|-|-|-|-|
 |InPrivate 瀏覽|是|是|89|是|
 |在非使用狀態時重設|是|是|89|是|
-|[唯讀網址列](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) (原則) |否|是 |89|否|
-|[結束時刪除下載](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit) (原則)  | 是|是 |89|否|
+|[唯讀網址列](./microsoft-edge-policies.md#kioskaddressbareditingenabled) (原則) |否|是 |89|否|
+|[結束時刪除下載](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) (原則)  | 是|是 |89|否|
 |F11 已封鎖 (進入/結束全螢幕) | 是 | 是 | 89 |是|
 |F12 已封鎖 (啟動開發人員工具) | 是 | 是 | 89 |是|
 | 支援多個索引標籤 | 否| 是| 89|是|
-|[允許 URL 支援](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlallowlist) (原則)|是|是|89|否|
-|[封鎖 URL 支援](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlblocklist) (原則)|是|是|89|否|
-|[顯示首頁按鈕](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showhomebutton) (原則)|否|是|89|是|
-|[管理我的最愛](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedfavorites) (原則)|否|是|89|是|
-|[啟用印表機](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled) (原則)|是|是|89|是|
-|[設定新的索引標籤頁面 URL](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagelocation) (原則)|否|是||是|
+|[允許 URL 支援](./microsoft-edge-policies.md#urlallowlist) (原則)|是|是|89|否|
+|[封鎖 URL 支援](./microsoft-edge-policies.md#urlblocklist) (原則)|是|是|89|否|
+|[顯示首頁按鈕](./microsoft-edge-policies.md#showhomebutton) (原則)|否|是|89|是|
+|[管理我的最愛](./microsoft-edge-policies.md#managedfavorites) (原則)|否|是|89|是|
+|[啟用印表機](./microsoft-edge-policies.md#printingenabled) (原則)|是|是|89|是|
+|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是||是|
 |結束會話按鈕 * | 否| 是| 89|是|
 |所有內部 Microsoft Edge URL 都會遭到封鎖，*edge://downloads* 和 *edge://print* 除外 |否|是|89|是|
 | CTRL+N 封鎖 (開啟新的視窗 #) * | 是 | 是 | 89 |是|
@@ -66,7 +66,7 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 |設定及其他 (...) 將只顯示必要的選項  |是 |是 |89 |是|
 |限制從瀏覽器啟動其他應用程式|是|是|90/91|是|
 |UI 列印設定鎖定|是|是|90/91|是|
-|[將新的索引標籤頁面設定為首頁](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage) (原則)|-|-|待決定|是|
+|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|-|-|待決定|是|
 
 > [!NOTE]
 > 只有在指派的存取單一應用程式情況下，才能啟用後面接著 "*" 的功能。
@@ -124,25 +124,25 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 
 ## <a name="support-policies-for-kiosk-mode"></a>支援 kiosk 模式的原則
 
-使用下表中所列的任何 Microsoft Edge 原則，以針對您設定的 Microsoft Edge kiosk 模式類型來加強 kiosk 體驗。 若要深入了解這些原則，請參閱 [Microsoft Edge - 瀏覽器原則參考](https://docs.microsoft.com/deployedge/microsoft-edge-policies)。
+使用下表中所列的任何 Microsoft Edge 原則，以針對您設定的 Microsoft Edge kiosk 模式類型來加強 kiosk 體驗。 若要深入了解這些原則，請參閱 [Microsoft Edge - 瀏覽器原則參考](./microsoft-edge-policies.md)。
 
 > [!NOTE]
 > 原則設定並不限於下表所列的原則，但其他原則應經過測試，以確保 kiosk 模式功能不會受到負面影響。
 
 |群組原則|數位/互動式告示板|公用瀏覽單一應用程式|
 |--|--|--|
-|[列印](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printing-policies) | 是|是 |
-|[HomePageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepagelocation) |否 | 是|
-|[ShowHomeButton](https://docs.microsoft.com/deployedge/microsoft-edge-policies#showhomebutton) |否 | 是|
-|[NewTabPageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagelocation) |否 |是 |
-|[FavoritesBarEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#favoritesbarenabled) |否 |是 |
-|[URLAllowlist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlallowlist) |是 |是 |
-|[URLBlocklist](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlblocklist) |是 | 是|
-|[ManagedSearchEngines](https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedsearchengines) |否 | 是|
-|[UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed) |否 | 是|
-|[VerticalTabsAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#verticaltabsallowed) | 否|是 |
-|[SmartScreen 設定](https://docs.microsoft.com/deployedge/microsoft-edge-policies#smartscreen-settings-policies) |是 |是 |
-|[EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)|是|是|
+|[列印](./microsoft-edge-policies.md#printing-policies) | 是|是 |
+|[HomePageLocation](./microsoft-edge-policies.md#homepagelocation) |否 | 是|
+|[ShowHomeButton](./microsoft-edge-policies.md#showhomebutton) |否 | 是|
+|[NewTabPageLocation](./microsoft-edge-policies.md#newtabpagelocation) |否 |是 |
+|[FavoritesBarEnabled](./microsoft-edge-policies.md#favoritesbarenabled) |否 |是 |
+|[URLAllowlist](./microsoft-edge-policies.md#urlallowlist) |是 |是 |
+|[URLBlocklist](./microsoft-edge-policies.md#urlblocklist) |是 | 是|
+|[ManagedSearchEngines](./microsoft-edge-policies.md#managedsearchengines) |否 | 是|
+|[UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed) |否 | 是|
+|[VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed) | 否|是 |
+|[SmartScreen 設定](./microsoft-edge-policies.md#smartscreen-settings-policies) |是 |是 |
+|[EdgeCollectionsEnabled](./microsoft-edge-policies.md#edgecollectionsenabled)|是|是|
 
 ## <a name="microsoft-edge-with-assigned-access"></a>具有受指派存取權的 Microsoft Edge
 
@@ -154,11 +154,11 @@ Microsoft Edge 目前針對單一應用程式受指派的存取權支援一組�
 
 **如何取得 Windows 測試人員預覽？**
 
-若要在電腦上安裝 Windows 10 測試人員預覽版，請依照 [開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
+若要在電腦上安裝 Windows 10 測試人員預覽版，請依照 [開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
 
 ### <a name="multi-app-kiosk"></a>多個應用程式 Kiosk
 
-Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) 中的指示進行。 (Microsoft Edge 穩定通道的 AUMID 是 **MSEdge**)。
+Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](/windows/configuration/lock-down-windows-10-to-specific-apps) 中的指示進行。 (Microsoft Edge 穩定通道的 AUMID 是 **MSEdge**)。
 
 使用具有受指派的存取權的 Microsoft Edge 時，您可以設定 Microsoft Edge kiosk 模式，以使用 [Microsoft Edge 瀏覽器原則](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)來設定瀏覽體驗，進而滿足您的獨特需求。
 
@@ -166,7 +166,7 @@ Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權]
 
 Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的方法。 使用下列步驟設定單一應用程式 kiosk 電腦。
 
-1. 安裝最新的 Windows 10 測試人員預覽版，20215 版或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
+1. 安裝最新的 Windows 10 測試人員預覽版，20215 版或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
 2. 若要測試最新功能，您可以下載最新的 [Microsoft Edge Beta 通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本。
 3. 在 kiosk 電腦上，開啟 Windows [設定]，然後在搜尋欄位中輸入 "kiosk"。 如下一個螢幕擷取畫面所示，選取 ** **[設定 kiosk (受指派的存取權)]，開啟建立 kiosk 的對話方塊。
 
@@ -216,18 +216,18 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 
 我們目前不支援下列功能，建議您關閉：
 
-- [InPrivateModeAvailability](https://docs.microsoft.com/deployedge/microsoft-edge-policies#inprivatemodeavailability)
-- [IsolateOrigins](https://docs.microsoft.com/deployedge/microsoft-edge-policies#isolateorigins)
-- [ManagedFavorites](https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedfavorites)
-- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled)
-- [EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)
-- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
-- [DefaultPopupsSetting](https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultpopupssetting)
-- [StartupBoostEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#startupboostenabled)
-- [InternetExplorerIntegrationLevel](https://docs.microsoft.com/deployedge/microsoft-edge-policies#internetexplorerintegrationlevel)
-- [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
-- [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
-- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
+- [InPrivateModeAvailability](./microsoft-edge-policies.md#inprivatemodeavailability)
+- [IsolateOrigins](./microsoft-edge-policies.md#isolateorigins)
+- [ManagedFavorites](./microsoft-edge-policies.md#managedfavorites)
+- [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled)
+- [EdgeCollectionsEnabled](./microsoft-edge-policies.md#edgecollectionsenabled)
+- [UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed)
+- [DefaultPopupsSetting](./microsoft-edge-policies.md#defaultpopupssetting)
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled)
+- [InternetExplorerIntegrationLevel](./microsoft-edge-policies.md#internetexplorerintegrationlevel)
+- [Extensions](./microsoft-edge-policies.md#extensions-policies)
+- [BackgroundModeEnabled](./microsoft-edge-policies.md#backgroundmodeenabled)
+- [UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed)
 
 ## <a name="roadmap"></a>藍圖
 
@@ -245,5 +245,5 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)
-- [設定 Windows 桌面版的 kiosk 與數位招牌](https://docs.microsoft.com/windows/configuration/kiosk-methods)
+- [設定 Windows 桌面版的 kiosk 與數位招牌](/windows/configuration/kiosk-methods)
 - [規劃 kiosk 模式轉換](microsoft-edge-kiosk-mode-transition-plan.md)

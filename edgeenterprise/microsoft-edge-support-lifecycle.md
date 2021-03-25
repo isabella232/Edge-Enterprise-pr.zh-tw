@@ -10,36 +10,36 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 生命週期
-ms.openlocfilehash: 311041e314a5c21d1110275cafbc23aadd6b737b
-ms.sourcegitcommit: 91abbcdd4918065d4ec1151587fc1fa92486dbf3
+ms.openlocfilehash: 30c640fff76045be9df98ed66e23f55edf97f343
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "11136202"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447107"
 ---
-# Microsoft Edge 生命週期原則
+# <a name="microsoft-edge-lifecycle-policy"></a>Microsoft Edge 生命週期原則
 
 本文說明適用於 Microsoft Edge 的生命週期原則。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 和更新版本。
 
-## Microsoft Edge 生命週期原則概觀
+## <a name="overview-of-the-lifecycle-policy-for-microsoft-edge"></a>Microsoft Edge 生命週期原則概觀
 
 下一版 Microsoft Edge 具有更頻繁且更靈活的更新功能。 由於瀏覽器版本未綁定到 Windows 主要版本，因此必須更新管理生命週期原則以反映這一點。 今後 Microsoft Edge 將成為[新式生命週期原則](https://support.microsoft.com/help/30881/modern-lifecycle-policy)的一部分。
 
 作為此原則的一部分，支援的 Microsoft Edge 版本將包括來自 Beta 和 Stable 通道的最新版本。
 
-## Microsoft Edge 的協助支援可用性
+## <a name="assisted-support-availability-for-microsoft-edge"></a>Microsoft Edge 的協助支援可用性
 您僅可以在最近的穩定通道版本和最新版的 Beta 通道版本中取得安全性更新和服務更新。 使用較舊版本的 Microsoft Edge 可能表示您遺漏了最新的品質和安全性更新，我們並不建議您使用。 如果貴組織必須使用較舊版本，則您可以在最近的三個穩定通道版本和最新的 Beta 通道版本中取得協助支援。  穩定通道版本的有效協助支援期間大約為 18 週。 Beta 通道版本的有效支援期間大約為 6 週，不支援先前的 Beta 通道版本。
 
 Microsoft 強烈建議使用最新版的穩定通道或 Beta 通道版本。
 
 
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 文件](https://docs.microsoft.com/DeployEdge/)
+- [Microsoft Edge 文件](./index.yml)
 - [Microsoft 新式生命週期原則](https://support.microsoft.com/help/30881/modern-lifecycle-policy)
-- [Microsoft Edge 支援的作業系統](https://docs.microsoft.com/DeployEdge/microsoft-edge-supported-operating-systems)
+- [Microsoft Edge 支援的作業系統](./microsoft-edge-supported-operating-systems.md)

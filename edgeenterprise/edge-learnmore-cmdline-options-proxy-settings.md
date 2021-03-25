@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '使用命令列選項來設定 Proxy 設定 '
-ms.openlocfilehash: b5e2326e075ad89481560a6642944a8e88f4daa3
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: d0924f723aab6832e5b4eb70c60e1d329d3c7a9d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979580"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447637"
 ---
-# 如何使用 Microsoft Edge 命令列選項來設定 Proxy 設定
+# <a name="how-to-use-microsoft-edge-command-line-options-to-configure-proxy-settings"></a>如何使用 Microsoft Edge 命令列選項來設定 Proxy 設定
 
 本文介紹如何使用命令列選項來覆寫預設系統網路設定。
 
 >[!NOTE]
 >本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## 系統網路設定
+## <a name="system-network-settings"></a>系統網路設定
 
 預設情況下，Microsoft Edge 網路堆疊使用系統網路設定。 這些設定包括 *Proxy 設定*以及*憑證和私密金鑰存放區*。
 
@@ -32,13 +32,13 @@ ms.locfileid: "10979580"
 
 這些命令列選項對應至 **Proxy 伺服器**群組中的以下原則：
 
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist)
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode)
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl)
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver)
-- [ProxySettings](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxysettings)
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist)
+- [ProxyMode](./microsoft-edge-policies.md#proxymode)
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl)
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver)
+- [ProxySettings](./microsoft-edge-policies.md#proxysettings)
 
-## Proxy 設定的命令列選項
+## <a name="command-line-options-for-proxy-settings"></a>Proxy 設定的命令列選項
 
 Microsoft Edge 支援以下與 Proxy 相關的命令列選項。
 
@@ -72,14 +72,14 @@ Microsoft Edge 支援以下與 Proxy 相關的命令列選項。
 
 告訴 Microsoft Edge 在指定的 URL 使用 PAC 檔案。 例如，`--proxy-pac-url="https://wpad/proxy.pac"` 會告知 Microsoft Edge 使用 **proxy.pac** 檔案解析 URL 請求的 Proxy 資訊。
 
-## 內容授權
+## <a name="content-license"></a>內容授權
 
 > [!NOTE]
 > 本頁的某些部分是根據 Chromium.org 創造和分享的作品加以修改，並根據[創用 CC 姓名標示 4.0 國際版本授權條款](http://creativecommons.org/licenses/by/4.0/)中所述條款加以使用。 原始頁面可在[此處](https://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)找到。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品根據<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">創用 CC 姓名標示 4.0 國際版本授權條款</a>獲得授權。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - 若要查看進階組態設定和其他選項，請參閱 Chromium 開放原始碼專案中的 [Proxy 文件](https://chromium.googlesource.com/chromium/src/+/HEAD/net/docs/proxy.md)。
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

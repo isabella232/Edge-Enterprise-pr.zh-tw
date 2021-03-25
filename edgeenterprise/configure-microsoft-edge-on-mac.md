@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 使用 .plist 在 macOS 上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: abe110ab3589cc9276f28590273ece2d372be3b8
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
+ms.openlocfilehash: 3f297c11d8009c85a1bc5e17447681ee2b9ef1e2
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194683"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447447"
 ---
-# 使用 .plist 針對 macOS 設定 Microsoft Edge 原則設定
+# <a name="configure-microsoft-edge-policy-settings-for-macos-using-a-plist"></a>使用 .plist 針對 macOS 設定 Microsoft Edge 原則設定
 
 本文介紹如何使用屬性清單 (.plist) 檔案，在 macOS 上設定 Microsoft Edge。 您將了解如何建立此檔案，然後將它部署到 Microsoft Intune。
 
@@ -26,7 +26,7 @@ ms.locfileid: "11194683"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## 在 macOS 上設定 Microsoft Edge 原則
+## <a name="configure-microsoft-edge-policies-on-macos"></a>在 macOS 上設定 Microsoft Edge 原則
 
 第一個步驟是建立 plist。 您可以使用任何文字編輯器來建立 plist 檔，也可以使用[終端機建立組態設定檔](#create-a-configuration-profile-using-terminal)。 不過，使用可為您設定 XML 程式碼格式的工具建立和編輯 plist 檔案會更輕鬆。 *Xcode* 是一套免費的整合式開發環境，您可以從以下位置之一取得：
 
@@ -42,7 +42,7 @@ ms.locfileid: "11194683"
 
 最後一步是使用您偏好的 MDM 提供者 (如 Microsoft Intune) 將 plist 部署到使用者的 Mac 裝置。 如需相關指示，請參閱[部署 plist](#deploy-your-plist)。
 
-### 使用終端機建立組態設定檔
+### <a name="create-a-configuration-profile-using-terminal"></a>使用終端機建立組態設定檔
 
 1. 在終端機中，使用以下命令，以您的偏好設定在桌面建立一個適用於 Microsoft Edge 的 plist：
 
@@ -61,13 +61,13 @@ ms.locfileid: "11194683"
 > [!NOTE]
 > 只有鍵值對應位於 plist 或 xml 檔的內容中。 在將檔案上傳到 Intune 之前，請從檔案中移除所有 \<plist> 和 \<dict> 值以及 xml 標頭。 檔案應僅包含鍵值對。
 
-## 部署 plist
+## <a name="deploy-your-plist"></a>部署 plist
 
-對於 Microsoft Intune，建立以 macOS 平台為目標的新裝置組態設定檔，然後選取*喜好設定檔案*設定檔案類型。 將 **com.microsoft.Edge** 設為目標以做為喜好設定網域名稱，並上傳您的 plist。 如需詳細資訊，請參閱[使用 Microsoft Intune 將屬性清單檔案新增至 macOS 裝置](https://docs.microsoft.com/intune/configuration/preference-file-settings-macos)。
+對於 Microsoft Intune，建立以 macOS 平台為目標的新裝置組態設定檔，然後選取*喜好設定檔案*設定檔案類型。 將 **com.microsoft.Edge** 設為目標以做為喜好設定網域名稱，並上傳您的 plist。 如需詳細資訊，請參閱[使用 Microsoft Intune 將屬性清單檔案新增至 macOS 裝置](/intune/configuration/preference-file-settings-macos)。
 
 對於 Jamf，將 .plist 檔案上載為*自訂設定*承載。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [使用 Jamf 針對 macOS 設定](configure-microsoft-edge-on-mac-jamf.md)

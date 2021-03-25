@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 適用於 IE 模式 Microsoft Edge 的常見問題集和疑難排解
-ms.openlocfilehash: 565af265811e0e4814d82859f638ae9abcd0a014
-ms.sourcegitcommit: ef30fe37d0d115af0d4402c9005f5d0d1ba54b6c
+ms.openlocfilehash: f5279caddb5d3dfabaf04be6bd927f7095be1fc9
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "11431810"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447727"
 ---
 # <a name="ie-mode-faq"></a>IE 模式常見問題集
 
@@ -41,7 +41,7 @@ ms.locfileid: "11431810"
 
 ### <a name="error-message-to-open-this-page-in-internet-explorer-mode-reinstall-microsoft-edge-with-administrator-privileges"></a>錯誤訊息：「若要在 Internet Explorer 模式中開啟此頁面，請以系統管理員權限重新安裝 Microsoft Edge。」
 
-如果您沒有所有必要的 Windows Update，您可能會看到此錯誤。 請參閱所需 Windows 和 Microsoft Edge 版本[關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)中所列的必要條件。
+如果您沒有所有必要的 Windows Update，您可能會看到此錯誤。 請參閱所需 Windows 和 Microsoft Edge 版本[關於 IE 模式](./edge-ie-mode.md)中所列的必要條件。
 
 如果您已安裝所有必要的 Windows Update，您可能會在下列情況下看到此錯誤：
 
@@ -66,7 +66,7 @@ ms.locfileid: "11431810"
 
 ### <a name="error-message-error-could-not-retrieve-emie-site-list"></a>錯誤訊息：「錯誤：無法擷取 EMIE 網站清單。」
 
-您可能會在 *edge://compat/enterprise* 網頁上看到此錯誤，表示網站清單下載失敗。 從 Microsoft Edge 版本 87 開始，當使用 [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies) 原則封鎖協力廠商要求的 Cookie 時，也不允許使用 HTTP 驗證。 可以使用 [CookiesAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls) 原則為裝載 Enterprise Mode Site List 的特定網域允許 Cookie，以確保網站清單下載成功。
+您可能會在 *edge://compat/enterprise* 網頁上看到此錯誤，表示網站清單下載失敗。 從 Microsoft Edge 版本 87 開始，當使用 [BlockThirdPartyCookies](./microsoft-edge-policies.md#blockthirdpartycookies) 原則封鎖協力廠商要求的 Cookie 時，也不允許使用 HTTP 驗證。 可以使用 [CookiesAllowedForURLs](./microsoft-edge-policies.md#cookiesallowedforurls) 原則為裝載 Enterprise Mode Site List 的特定網域允許 Cookie，以確保網站清單下載成功。
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
@@ -104,5 +104,5 @@ Microsoft Edge 中沒有任何明確的命令列來鏡像 *nomerge* 選項，但
 ## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [關於 IE 模式](./edge-ie-mode.md)
+- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

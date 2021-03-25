@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 系統管理員可用於疑難排解及修正常見企業同步處理問題的指導方針和工具
-ms.openlocfilehash: 767b26c74e91213b407e8264a8ed185f38dfc2e9
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: 49fb0c5fc555e4f7ad4c728477387e931a5fbb5f
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400183"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447157"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>診斷並修正 Microsoft Edge 同步處理問題
 
@@ -49,10 +49,10 @@ ms.locfileid: "11400183"
 > [!NOTE]
 > 由於此錯誤的來源通常是需要在 Azure Active Directory 租用戶中變更設定，因此這些疑難排解步驟只能由租用戶系統管理員執行，而不能由使用者執行。
 
-1. 確認企業租使用者具有支援的 M365 訂閱。 目前提供的可用訂閱類型清單 [如下](https://docs.microsoft.com/azure/information-protection/activate-office365)。 如果租使用者沒有受支援的訂閱，他們可以單獨購買 Azure 資訊保護，或升級至其中一個支援的訂閱。
-2. 如果支援的訂閱可用，請驗證租用戶是否具有可用的 Azure 資訊保護 (AIP)。 有關檢查 AIP 狀態以及在必要時啟動 AIP 的說明，請參見[此處](https://docs.microsoft.com/azure/information-protection/activate-office365)。
-3. 如果步驟 2 顯示 AIP 處於使用中，但仍無法進行同步處理，請開啟企業狀態漫遊 (ESR)。 啟用 ESR 的指示在 [這裡](https://docs.microsoft.com/azure/active-directory/devices/enterprise-state-roaming-enable)。 請注意，ESR 不需要保持開啟狀態。 如果此步驟修正了問題，您可以關閉 ESR。
-4. 確認 Azure 資訊保護未透過加入原則限定範圍。 您可以使用 [AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程式來查看是否啟用了範圍。 接下來的兩個範例顯示了一個不限範圍的設定和一個範圍設定為特定安全性群組的設定。
+1. 確認企業租使用者具有支援的 M365 訂閱。 目前提供的可用訂閱類型清單 [如下](/azure/information-protection/activate-office365)。 如果租使用者沒有受支援的訂閱，他們可以單獨購買 Azure 資訊保護，或升級至其中一個支援的訂閱。
+2. 如果支援的訂閱可用，請驗證租用戶是否具有可用的 Azure 資訊保護 (AIP)。 有關檢查 AIP 狀態以及在必要時啟動 AIP 的說明，請參見[此處](/azure/information-protection/activate-office365)。
+3. 如果步驟 2 顯示 AIP 處於使用中，但仍無法進行同步處理，請開啟企業狀態漫遊 (ESR)。 啟用 ESR 的指示在 [這裡](/azure/active-directory/devices/enterprise-state-roaming-enable)。 請注意，ESR 不需要保持開啟狀態。 如果此步驟修正了問題，您可以關閉 ESR。
+4. 確認 Azure 資訊保護未透過加入原則限定範圍。 您可以使用 [AadrmOnboardingControlPolicy](/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程式來查看是否啟用了範圍。 接下來的兩個範例顯示了一個不限範圍的設定和一個範圍設定為特定安全性群組的設定。
 
    ```powershell
     PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
@@ -71,9 +71,9 @@ ms.locfileid: "11400183"
                 False f1488a05-8196-40a6-9483-524948b90282   All
    ```
 
-   如果已啟用範圍，則受影響的使用者應該新增至該範圍的安全性群組，或者應該移除該範圍。 在下方的範例中，上線已將 AIP 的範圍設定為指定的安全性群組，應使用 [Set-AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程式移除該範圍。
+   如果已啟用範圍，則受影響的使用者應該新增至該範圍的安全性群組，或者應該移除該範圍。 在下方的範例中，上線已將 AIP 的範圍設定為指定的安全性群組，應使用 [Set-AadrmOnboardingControlPolicy](/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps) PowerShell 小程式移除該範圍。
 
-5. 確認 IPCv3Service 已在租用戶中開啟。 [AadrmConfiguration](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) PowerShell 小程式顯示服務的狀態。
+5. 確認 IPCv3Service 已在租用戶中開啟。 [AadrmConfiguration](/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) PowerShell 小程式顯示服務的狀態。
 
    :::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-scoped-cfg-example.png" alt-text="查看是否已啟用 IPCv3Service。":::
 
@@ -99,7 +99,7 @@ ms.locfileid: "11400183"
       - [https://api.aadrm.com](https://api.aadrm.com) (適用於多數租用戶)
       - [https://api.aadrm.de](https://api.aadrm.de) (適用於德國的租用戶)
       - [https://api.aadrm.cn](https://api.aadrm.cn) (適用於中國的租用戶)
-   - [Windows 通知服務端點](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)。
+   - [Windows 通知服務端點](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)。
 
 5. 如果問題仍未解決，請連絡 [Microsoft Edge 支援](https://www.microsoftedgeinsider.com/support)。
 
@@ -116,7 +116,7 @@ ms.locfileid: "11400183"
 
 ### <a name="issue-sync-has-been-turned-off-by-your-administrator"></a>問題：「您的系統管理員已關閉同步處理。」
 
-請確定未設定 [SyncDisabled 原則](https://docs.microsoft.com/deployedge/microsoft-edge-policies#syncdisabled)。
+請確定未設定 [SyncDisabled 原則](./microsoft-edge-policies.md#syncdisabled)。
 
 ## <a name="see-also"></a>另請參閱
 

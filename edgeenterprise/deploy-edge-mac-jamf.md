@@ -10,28 +10,28 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何使用 Jamf 自動執行適用於 macOS 的 Microsoft Edge 部署。
-ms.openlocfilehash: 8639c0b7bf78bb8e22370dba29b592af73d8cb40
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
+ms.openlocfilehash: f02b9efde872082cf2301a4cf66b0a3f3782e39b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194721"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447487"
 ---
-# 使用 Jamf 部署到 macOS
+# <a name="deploy-to-macos-with-jamf"></a>使用 Jamf 部署到 macOS
 
 本文介紹如何使用 Jamf 部署適用於 macOS 的 Microsoft Edge。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 開始部署 Microsoft Edge 之前，請確定符合下列必要條件：
 
 - Microsoft Edge 安裝檔案 **MicrosoftEdgeDev-\<version\>.pkg** 位於網路上的可存取位置。 您可從 [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)下載 Microsoft Edge 企業安裝檔案。
 - 您有 Jamf Cloud 帳戶，該帳戶具有建立安裝檔案並將其部署到電腦所需的存取和權限等級。
 
-## 若要使用 Jamf 部署 Microsoft Edge：
+## <a name="to-deploy-microsoft-edge-using-jamf"></a>若要使用 Jamf 部署 Microsoft Edge：
 
 1. 登入到 Jamf 並移至**所有設定。**
 
@@ -93,8 +93,8 @@ ms.locfileid: "11194721"
 
 恭喜！ 您剛剛完成設定 Jamf 以部署適用於 macOS 的 Microsoft Edge。 當您定義的觸發條件為 true 時，套件將部署到指定的電腦。
 
-## 也請參閱
+## <a name="see-also"></a>也請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Jamf.com](https://www.jamf.com/)
-- [將 Jamf 與 Microsoft Intune 整合](https://docs.microsoft.com/intune/conditional-access-integrate-jamf)
+- [將 Jamf 與 Microsoft Intune 整合](/intune/conditional-access-integrate-jamf)

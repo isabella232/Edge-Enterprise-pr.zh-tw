@@ -10,18 +10,18 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: IE 模式中可設定的網站和 Microsoft Edge
-ms.openlocfilehash: a846d71d63a4f837041acc9b601f704999bb826a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1bffdef8c88b7a83d999b29763fcca258102ed51
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979578"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447327"
 ---
-# 深入了解 IE 模式中可設定的網站
+# <a name="learn-about-configurable-sites-in-ie-mode"></a>深入了解 IE 模式中可設定的網站
 
 本文說明了在 Microsoft Edge 中使用 IE 模式時，企業模式網站清單的 [可設定網站] 功能。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 - Windows 更新
 
@@ -34,17 +34,17 @@ ms.locfileid: "10979578"
   - Windows 8.1 – KB4556798 或更新版本
 
 - Microsoft Edge 版本 83 或更新版本
-- [IE 模式](https://aka.ms/iemodeonedge)使用企業模式網站清單設定
+- [IE 模式](./edge-ie-mode.md)使用企業模式網站清單設定
 
-## 概觀
+## <a name="overview"></a>概觀
 
 在企業模式網站清單中設定 IE 模式的網站，適用于大部分舊版應用程式的環境。 但在某些情况下，如果不在 IE 模式中轉譯整個網域，那麼此方法不適合在 IE 模式中設定開啟網站子集。 例如，當您的環境同時包含在單個服務器上運行的新版和舊版應用程式時，且您希望能夠靈活地在 IE 模式下僅轉譯舊版應用程式，而在 Microsoft Edge 模式下轉譯其餘應用程式。
 
 解決方法是使用企業模式網站清單的 [可設定網站] 功能。 啟用此功能後，Microsoft Edge 將會允許具有「可配置」標記的網站參與 IE 模式引擎判斷。
 
-## [可設定網站] 的運作方式
+## <a name="how-configurable-sites-works"></a>[可設定網站] 的運作方式
 
-### 從 Microsoft Edge 引擎自動切換到 IE 模式引擎
+### <a name="automatic-switching-from-the-microsoft-edge-engine-to-the-ie-mode-engine"></a>從 Microsoft Edge 引擎自動切換到 IE 模式引擎
 
 若要使用 [可設定網站] 功能，將需要企業模式網站清單中的一或多個網站，以具有`<open-in>Configurable</open-in>`選項。
 
@@ -67,7 +67,7 @@ ms.locfileid: "10979578"
    > [!NOTE]
    > 重新導向回應可根據 Microsoft Edge 重新導向的一般 HTTP 快取行為進行快取。
 
-### 從 IE 模式引擎切換回 Microsoft Edge 引擎
+### <a name="switching-back-from-ie-mode-engine-to-microsoft-edge-engine"></a>從 IE 模式引擎切換回 Microsoft Edge 引擎
 
 啟用 Microsoft Edge 中 [可設定網站] 會自動啟用 IE 模式索引標籤中的下列行為：
 
@@ -81,8 +81,8 @@ ms.locfileid: "10979578"
 > [!TIP]
 > 兩個瀏覽器引擎都將傳送相同的「`X-InternetExplorerModeConfigurable: 1`」要求標頭到可設定的網站。 您應該使用 [使用者-代理] 要求標頭來區分來自 Microsoft Edge 模式與 IE 模式的要求，以避免當網站已載入到正確的引擎中時進行重新導向。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
-- [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [關於 IE 模式](./edge-ie-mode.md)
+- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

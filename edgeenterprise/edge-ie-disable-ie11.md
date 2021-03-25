@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge 中停用 Internet Explorer 11 和使用 Internet Explorer 模式。
-ms.openlocfilehash: a0486c2965b1868db67b6de1423f279905074410
-ms.sourcegitcommit: f34ff11499a2b96941e704103bdd959d19e3d7e7
+ms.openlocfilehash: 89fa6f81879be851f0036990a41e36e1eaee7fca
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400603"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447387"
 ---
 # <a name="disable-internet-explorer-11"></a>停用 Internet Explorer 11
 
@@ -45,7 +45,7 @@ ms.locfileid: "11400603"
 設定 IE 模式之後，您可以使用群組原則來停用 IE11 作為獨立瀏覽器，**而不會影響整個組織的 IE 模式功能**。
 
 > [!NOTE]
-> 如果您需要適用於特定網站的獨立 IE11 應用程式，並想要將所有其他瀏覽器流量重新導向至 Microsoft Edge，您可以設定[將網站清單中未包含的所有網站傳送至 Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge) 原則，將網站從 IE 重新導向至 Microsoft Edge。
+> 如果您需要適用於特定網站的獨立 IE11 應用程式，並想要將所有其他瀏覽器流量重新導向至 Microsoft Edge，您可以設定[將網站清單中未包含的所有網站傳送至 Microsoft Edge](./edge-ie-mode-policies.md#redirect-sites-from-ie-to-microsoft-edge) 原則，將網站從 IE 重新導向至 Microsoft Edge。
 
 ## <a name="user-experience-after-redirecting-traffic-to-microsoft-edge"></a>將流量重新導向至 Microsoft Edge 後的使用者體驗
 
@@ -67,7 +67,7 @@ ms.locfileid: "11400603"
 
 若要使用群組原則停用 Internet Explorer 11，請遵循下列步驟：
 
-1. 請確保您擁有必要的作業系統更新。 此步驟會直接更新您電腦上的 ADMX 檔案 (具體為 inetres.adml 和 inetres.admx)。 請注意，如果您想要更新 Central Store，您必須從具備必要更新之電腦複製 .adml 和 .admx 檔案。 如需詳細資訊，請參閱 [建立及管理 Central Store](https://docs.microsoft.com/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
+1. 請確保您擁有必要的作業系統更新。 此步驟會直接更新您電腦上的 ADMX 檔案 (具體為 inetres.adml 和 inetres.admx)。 請注意，如果您想要更新 Central Store，您必須從具備必要更新之電腦複製 .adml 和 .admx 檔案。 如需詳細資訊，請參閱 [建立及管理 Central Store](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 開啟 [群組原則編輯器]。
 3. 移至***電腦設定/系統管理範本/Windows 元件/Internet Explorer***。 
 4. 按兩下 [停用 Internet Explorer 11 作為獨立瀏覽器] ****。
@@ -83,5 +83,5 @@ ms.locfileid: "11400603"
 ## <a name="see-also"></a>另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [關於 IE 模式](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [其他企業模式資訊](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [關於 IE 模式](./edge-ie-mode.md)
+- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 規劃 kiosk 模式轉換
-ms.openlocfilehash: 3a438c6dd71d9e1f0e644d24e3b1d1d60b099e8e
-ms.sourcegitcommit: b1d49b229c47dc1d99e1b677d75aad38b3334ed6
+ms.openlocfilehash: 2a82852f10f2a842f28029738e72f72de4c53c41
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11314233"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447847"
 ---
-# 規劃 kiosk 模式轉換
+# <a name="plan-your-kiosk-mode-transition"></a>規劃 kiosk 模式轉換
 
 本文提供有關如何將您的 kiosk 從舊版 Microsoft Edge 轉換至 Microsoft Edge 的指導方針。  
 
@@ -27,7 +27,7 @@ ms.locfileid: "11314233"
 > [!IMPORTANT]
 > 當舊版 Microsoft Edge 的支援服務於 2021 年 3 月 9 日終止時，將隨著 4 月的 Windows Update 將其移除並以 Microsoft Edge on Chromium 取代。 如需詳細資訊，請移至[此部落格文章](https://aka.ms/EdgeLegacyEOS)。 若要繼續使用您的瀏覽器型 kiosk 案例，您需要在 4 月的 Windows Update 向您的裝置釋出之前安裝 Microsoft Edge on Chromium，並設定 kiosk 模式。
 
-## kiosk 設定步驟
+## <a name="kiosk-setup-steps"></a>kiosk 設定步驟
 
 若要在 Microsoft Edge 中設定 kiosk，請使用下列步驟做為指南。
 
@@ -37,17 +37,17 @@ ms.locfileid: "11314233"
 |-|-|-|-|-|
 |InPrivate 瀏覽|是|是|89|是|
 |在非使用狀態時重設|是|是|89|是|
-|[唯讀網址列](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) (原則) |否|是 |89|否|
-|[結束時刪除下載](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit) (原則)  | 是|是 |89|否|
+|[唯讀網址列](./microsoft-edge-policies.md#kioskaddressbareditingenabled) (原則) |否|是 |89|否|
+|[結束時刪除下載](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) (原則)  | 是|是 |89|否|
 |F11 已封鎖 (進入/結束全螢幕) | 是 | 是 | 89 |是|
 |F12 已封鎖 (啟動開發人員工具) | 是 | 是 | 89 |是|
 | 支援多個索引標籤 | 否| 是| 89|是|
-|[允許 URL 支援](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlallowlist) (原則)|是|是|89|否|
-|[封鎖 URL 支援](https://docs.microsoft.com/deployedge/microsoft-edge-policies#urlblocklist) (原則)|是|是|89|否|
-|[顯示首頁按鈕](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showhomebutton) (原則)|否|是|89|是|
-|[管理我的最愛](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedfavorites) (原則)|否|是|89|是|
-|[啟用印表機](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled) (原則)|是|是|89|是|
-|[設定新的索引標籤頁面 URL](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagelocation) (原則)|否|是||是|
+|[允許 URL 支援](./microsoft-edge-policies.md#urlallowlist) (原則)|是|是|89|否|
+|[封鎖 URL 支援](./microsoft-edge-policies.md#urlblocklist) (原則)|是|是|89|否|
+|[顯示首頁按鈕](./microsoft-edge-policies.md#showhomebutton) (原則)|否|是|89|是|
+|[管理我的最愛](./microsoft-edge-policies.md#managedfavorites) (原則)|否|是|89|是|
+|[啟用印表機](./microsoft-edge-policies.md#printingenabled) (原則)|是|是|89|是|
+|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是||是|
 |結束工作階段按鈕 | 否| 是| 89|是|
 |所有內部 Microsoft Edge URL 都會遭到封鎖，*edge://downloads* 和 *edge://print* 除外 |否|是|89|是|
 | CTRL+N 已封鎖 (開啟新視窗) | 是 | 是 | 89 |是|
@@ -55,14 +55,14 @@ ms.locfileid: "11314233"
 |設定及其他 (...) 將只顯示必要的選項  |是 |是 |89 |是|
 |限制從瀏覽器啟動其他應用程式|是|是|90/91|是|
 |UI 列印設定鎖定|是|是|90/91|是|
-|[將新的索引標籤頁面設定為首頁](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage) (原則)|-|-|待決定|是|
+|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|-|-|待決定|是|
 
 > [!NOTE]
 > 如需 Microsoft Edge 發行排程的相關資訊，請參閱 [Microsoft Edge 發行排程](microsoft-edge-release-schedule.md)。
 
 **步驟 2：在 Microsoft Edge 中測試新 kiosk。** 建議您在 Microsoft Edge 中測試 kiosk 模式。 若要快速且輕鬆地測試 kiosk 模式，您可以使用 Windows [設定] 來設定受指派存取權的單一應用程式，如下所述。
 
-1. 安裝最新的 Windows 10 測試人員預覽版本 20215 或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](https://docs.microsoft.com/windows-insider/get-started)中的指示進行。
+1. 安裝最新的 Windows 10 測試人員預覽版本 20215 或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
 2. 安裝最新版本的 [Microsoft Edge 穩定通道](https://www.microsoft.com/edge)版本 87 或更新版本。  若要測試最新功能，您可以下載最新的 [Microsoft Edge Beta 通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本。
 
    > [!IMPORTANT]
@@ -109,11 +109,11 @@ ms.locfileid: "11314233"
 
 **步驟 3：開發轉換計畫。** 根據您的測試和組織需求，建議您開發轉換計畫，並於舊版 Microsoft Edge 的支援服務於 2021 年 3 月 9 日結束之前，移至 Microsoft Edge on Chromium。
 
-## 需要重新建立現有 kiosk 模式的其他案例
+## <a name="additional-scenarios-that-require-you-to-recreate-an-existing-kiosk-mode"></a>需要重新建立現有 kiosk 模式的其他案例
 
 如果您更新至 Windows 10 版本 20H2，則會安裝 Microsoft Edge on Chromium，並且會隱藏舊版 Microsoft Edge。 在此情況中，您必須在 Microsoft Edge on Chromium 中再次設定 kiosk 模式。
 
-## 如何取得協助
+## <a name="how-to-get-help"></a>如何取得協助
 
 kiosk 模式可能是您日常業務的重要部分，因此我們想要協助您讓此轉換盡可能順暢，並協助您避免中斷。 如果您的企業需要協助轉換到 Microsoft Edge on Chromium：
 
@@ -121,7 +121,7 @@ kiosk 模式可能是您日常業務的重要部分，因此我們想要協助�
 - 如果客戶擁有 150 個或更多個 Windows 10 企業版基座，就可以免費使用 [FastTrack 支援](https://www.microsoft.com/fasttrack/microsoft-365/microsoft-edge?rtc=1)。
 - 如果您遇到網站或應用程式相容性問題，就能使用[應用裝置保證](https://www.microsoft.com/en-us/fasttrack/microsoft-365/app-assure)。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [新的 Microsoft Edge 會隨著 4 月的 Windows 10 更新星期二發行取代舊版 Microsoft Edge](https://techcommunity.microsoft.com/t5/microsoft-365-blog/new-microsoft-edge-to-replace-microsoft-edge-legacy-with-april-s/ba-p/2114224)

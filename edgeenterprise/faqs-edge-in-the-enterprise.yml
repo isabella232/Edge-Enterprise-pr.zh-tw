@@ -10,14 +10,14 @@ metadata:
   ms.prod: microsoft-edge
   ms.localizationpriority: high
   ms.collection: M365-modern-desktop
-  description: 有關在企業中 (Microsoft Edge) 常見問題
-  ms.openlocfilehash: d7098666c67d1b88fc6f7e0910c8793315e750cc
-  ms.sourcegitcommit: 0bd67aa982613f663e6840929a769fc88d5a6b4d
+  description: 常見問題 (常見問題) 部署 Microsoft Edge 企業版
+  ms.openlocfilehash: 6a0a3c508f36318c080b6ccc62271b0d79bb9630
+  ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 03/05/2021
-  ms.locfileid: "11393776"
-title: 企業版 Microsoft Edge (常見問題) 常見問題
+  ms.lasthandoff: 03/24/2021
+  ms.locfileid: "11448147"
+title: 常見問題 (常見問題) Microsoft Edge 企業版
 summary: >
   > [!NOTE]
 
@@ -27,21 +27,21 @@ sections:
   questions:
   - question: 如何知道我的 Microsoft Edge 是什麼版本？
     answer: >
-      在 Microsoft Edge 右上角，選取 ... (**上的** 省略號) ， **然後選取設定**。 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
+      在 Microsoft Edge 右上角，選取省略號圖示 (**...) ，****然後選取設定**。 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
   - question: Internet Explorer 11 會繼續收到更新嗎？
     answer: >
-      我們致力於將 Internet Explorer 保持為受支援、可靠且安全的瀏覽器。 Internet Explorer 仍然是 Windows 的一個元件，並遵循安裝它的作業系統的支援生命週期。 如需詳細資訊，請參閱[生命週期常見問題 – Internet Explorer](https://support.microsoft.com/help/17454/)。 雖然我們會繼續支援和更新 Internet Explorer，但最新的功能和平台更新僅適用於 Microsoft Edge。
+      我們致力於將 Internet Explorer 保持為受支援、可靠且安全的瀏覽器。 Internet Explorer 仍然是 Windows 的元件，並遵循安裝它的作業系統支援週期。 如需詳細資訊，請參閱[生命週期常見問題 – Internet Explorer](https://support.microsoft.com/help/17454/)。 雖然我們會繼續支援和更新 Internet Explorer，但最新的功能和平台更新僅適用於 Microsoft Edge。
   - question: 嘗試新版本時，是否可以並排執行目前版本的 Microsoft Edge (Microsoft Edge 舊版)？
     answer: >
-      可以。 2020 年 1 月 15 日之後，新版本 Microsoft Edge (以 Chromium 為基礎) 將散發到執行 Windows 10 版本 1803 或更新版本的家用版和專業版裝置。 加入網域的裝置將從此自動更新中排除。 如需詳細資訊，請參閱 [Microsoft Edge Update 概觀](https://docs.microsoft.com/deployedge/microsoft-edge-blocker-toolkit#overview)。 您可以在評估下一版的 Microsoft Edge 時，同時安裝舊版 Microsoft Edge。 如需詳細資訊，請參閱[如何存取舊版 Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-sysupdate-access-old-edge)。 此外，每個新的 Microsoft Edge 通道也支援並排安裝。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](https://docs.microsoft.com/deployedge/microsoft-edge-channels)。
+      可以。 2020 年 1 月 15 日之後，新版本 Microsoft Edge (以 Chromium 為基礎) 將散發到執行 Windows 10 版本 1803 或更新版本的家用版和專業版裝置。 加入網域的裝置將從此自動更新中排除。 如需詳細資訊，請參閱 [Microsoft Edge Update 概觀](https://docs.microsoft.com/deployedge/microsoft-edge-blocker-toolkit#overview)。 評估下一版 Microsoft Edge 時，您可以同時安裝 Microsoft Edge Legacy。 如需詳細資訊，請參閱[如何存取舊版 Microsoft Edge](./microsoft-edge-sysupdate-access-old-edge.md)。 此外，每個新的 Microsoft Edge 通道也支援並排安裝。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](./microsoft-edge-channels.md)。
   - question: Microsoft Edge (以 Chromium 為基礎) 是否支援 ActiveX 控制項或 BHO (例如 Silverlight 或 Java)？
     answer: >
-      不。 Microsoft Edge 不支援 ActiveX 控制項或瀏覽器說明物件 (BHos) Silverlight 或 JAVA。 不過，如果您執行使用 ActiveX 控制項的 Web 應用程式、BHO 或 Internet Explorer 11 上的傳統文件模式，可以將它們設定為在 Microsoft Edge 的 IE 模式中執行。 如需詳細資訊，請參閱[在 Microsoft Edge 上設定 IE 模式](https://docs.microsoft.com/DeployEdge/edge-ie-mode)。
-  - question: 我的最愛會從目前的 Microsoft Edge 版本進行埠，還是必須重新新增？
-    answer: "目前，Microsoft Edge 支援從現有安裝的 Microsoft Edge、Chrome、Internet Explorer 和 Firefox (在 Win10 上) 匯入。 系統支援下列設定：書簽、歷程記錄、密碼，以及自動填 (付款、位址和一般表單) 。 您可以選擇從 [初次執行體驗] 或是從瀏覽器設定匯入。  \n"
+      不。 Microsoft Edge 不支援 ActiveX 控制項或瀏覽器說明物件 (BHos) Silverlight 或 JAVA。 不過，如果您執行使用 ActiveX 控制項的 Web 應用程式、BHO 或 Internet Explorer 11 上的傳統文件模式，可以將它們設定為在 Microsoft Edge 的 IE 模式中執行。 如需詳細資訊，請參閱[在 Microsoft Edge 上設定 IE 模式](./edge-ie-mode.md)。
+  - question: 我的最愛會從目前的 Microsoft Edge 版本進行移植，還是必須重新新增？
+    answer: "目前，Microsoft Edge 支援從現有安裝的 Microsoft Edge、Chrome、Internet Explorer 和 Firefox (在 Win10 上) 匯入。 系統支援下列設定進行輸入：書簽、歷程記錄、密碼，以及自動填 (付款、位址和一般表單) 。 您可以選擇從 [初次執行體驗] 或是從瀏覽器設定匯入。  \n"
   - question: Stable、Beta、Dev 和 Canary 通道/組建之間的區別是什麼？
     answer: >
-      下一版 Microsoft Edge 的 Stable 通道是我們所提供最穩定的預覽通道，具有以企業為中心的功能，可供您在整個組織中[試用和評估](https://aka.ms/EdgeEnterprise)。 Beta 通道可讓您向一組具代表性的使用者驗證下一個穩定版本。 穩定版和 Beta 版通道大約每六周更新一次。 Dev 和 Canary 通道會分別繼續每週和每天更新。 離線安裝程式 (MSIS 和 PKG 檔案) 僅適用于穩定、Beta 和 Dev 通道。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](https://docs.microsoft.com/deployedge/microsoft-edge-channels)。
+      下一版 Microsoft Edge 的 Stable 通道是我們所提供最穩定的預覽通道，具有以企業為中心的功能，可供您在整個組織中[試用和評估](https://aka.ms/EdgeEnterprise)。 Beta 通道可讓您向一組具代表性的使用者驗證下一個穩定版本。 穩定版和 Beta 版頻道大約每六周更新一次。 Dev 和 Canary 頻道會分別每週和每天更新。 MSIS (PKG 檔案的離線安裝程式) 僅適用于穩定版、Beta 版和 Dev 通道。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](./microsoft-edge-channels.md)。
   - question: 新版本 Microsoft Edge 提供哪些擴充功能支援？
     answer: >
       Microsoft Edge 支援 [Microsoft Edge Insider Addons](https://go.microsoft.com/fwlink/?linkid=2081222) 和 [Chrome 線上應用程式商店](https://go.microsoft.com/fwlink/?linkid=2072338)的擴充功能。
@@ -53,12 +53,12 @@ sections:
       是。 [[Microsoft Update Catalog]](https://www.catalog.update.microsoft.com/Search.aspx?q=the%20new%20microsoft%20edge%20for%20windows) 中的套件可用於經 WSUS 進行的新版 Microsoft Edge 初始部署。 在初始部署之後，系統預設的設定為自動更新。 如需詳細資訊，請參閱 [WSUS 更新，適用於 Windows 10 版 (版本為 1809、1903、1909 和 2004：2020 年 10 月 29 日) 的新版 Microsoft Edge](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge)。
 
 
-      手動更新可以透過設定管理工具完成，例如 [ConfigMgr](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json)。
-  - question: 是否支援主要喜好設定？
+      手動更新可以透過設定管理工具完成，例如 [ConfigMgr](/configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)。
+  - question: 是否支援主喜好設定？
     answer: "否，不支援主喜好設定。 \n"
 additionalContent: >-
   ## <a name="see-also"></a>請參閱
 
-  - [Microsoft Edge 文件登陸頁面](https://docs.microsoft.com/DeployEdge/)
+  - [Microsoft Edge 文件登陸頁面](./index.yml)
 
   - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

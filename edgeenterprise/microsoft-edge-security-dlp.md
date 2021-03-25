@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 中的資料外洩防護 (DLP)
-ms.openlocfilehash: f25e1fa7a610645f6ca0ca10cbcfc69ae8689b7a
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+ms.openlocfilehash: ac34386ed1b691d7b45f30c2b2ec295955d11104
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11384981"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447927"
 ---
 # <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Microsoft Edge 中的資料外洩防護 (DLP)
 
@@ -37,8 +37,8 @@ Microsoft 端點 DLP 使用先進概念 (例如以資料為中心的保護) 的�
 若要深入了解端點 DLP，請使用下列資源：
 
 - [影片：Microsoft Edge 和資料外洩防護 (DLP)](microsoft-edge-video-security-dlp.md)
-- [了解 Microsoft 365 端點資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide&preserve-view=true)
-- [開始使用端點資料外洩防護](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)
+- [了解 Microsoft 365 端點資料外洩防護](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide)
+- [開始使用端點資料外洩防護](/microsoft-365/compliance/endpoint-dlp-getting-started?preserve-view=true&view=o365-worldwide)
 
 Microsoft Edge 強制執行系統管理員設定的敏感性檔案和記錄非合規活動的稽核事件之原則。
 
@@ -49,19 +49,19 @@ Microsoft Edge 強制執行系統管理員設定的敏感性檔案和記錄非�
 - 列印保護：防止敏感性檔案被列印。
 - 儲存至 USB/網路：防止將敏感性檔案儲存至可移動 USB 儲存區或未經授權的網路位置。
 
-如需有關您可以稽核和管理之使用者活動的詳細資訊，請參閱 [您可以監視並採取行動的 Endpoint 活動](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true)。
+如需有關您可以稽核和管理之使用者活動的詳細資訊，請參閱 [您可以監視並採取行動的 Endpoint 活動](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on)。
 
 ## <a name="windows-information-protection"></a>Windows 資訊保護
 
-請參閱 [Windows 資訊保護的 支援](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection)，其中描述 Microsoft Edge 如何支援 Windows 資訊保護 (WIP)。 您可以在下列各節中深入了解系統需求、優點和支援功能：
+請參閱 [Windows 資訊保護的 支援](./microsoft-edge-security-windows-information-protection.md)，其中描述 Microsoft Edge 如何支援 Windows 資訊保護 (WIP)。 您可以在下列各節中深入了解系統需求、優點和支援功能：
 
-- [系統需求](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#system-requirements)
-- [Windows 資訊保護的優點](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
-- [Microsoft Edge 支援的 WIP 功能](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
+- [系統需求](./microsoft-edge-security-windows-information-protection.md#system-requirements)
+- [Windows 資訊保護的優點](./microsoft-edge-security-windows-information-protection.md#windows-information-protection-benefits)
+- [Microsoft Edge 支援的 WIP 功能](./microsoft-edge-security-windows-information-protection.md#wip-features-supported-in-microsoft-edge)
 
 ## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [影片：資料外洩防護 - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [資料外洩防護概觀](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide&preserve-view=true)
-- [使用 Windows 資訊保護來保護您的企業資料](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [資料外洩防護概觀](/microsoft-365/compliance/data-loss-prevention-policies?preserve-view=true&view=o365-worldwide)
+- [使用 Windows 資訊保護來保護您的企業資料](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

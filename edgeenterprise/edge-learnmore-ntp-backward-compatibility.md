@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 企業新索引標籤頁的回溯相容性
-ms.openlocfilehash: c10671a6ec8e1ff4dcb0db3f3c085f82ae973122
-ms.sourcegitcommit: af6ab070d0c09bca4a9cf505b107ed7e04839763
+ms.openlocfilehash: 5721db16c634250b3a586f6bd1b6b531a07815a5
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "11144473"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447257"
 ---
-# 企業新索引標籤頁的回溯相容性
+# <a name="backwards-compatibility-for-the-enterprise-new-tab-page"></a>企業新索引標籤頁的回溯相容性
 
 本文將說明 [新索引標籤頁面] 的變更，以及使用者可以與 Microsoft Edge 版本 87 及更舊版本回溯相容的方式。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 87 或更新版本。
 
-## 來自單一端點的資訊摘要
+## <a name="information-feeds-from-single-endpoint"></a>來自單一端點的資訊摘要
 
 新版 [企業新索引標籤頁] 結合了透過 MSN.com 端點所提供之符合產業相關規範的 Microsoft 365 內容，以及相容的資訊摘要。
 
@@ -33,9 +33,9 @@ ms.locfileid: "11144473"
 
 如果貴組織限制存取 MSN.com 網域，強烈建議您給予使用者此 [URL](https://ntp.msn.com) 的存取權。
 
-如果您需要更多時間來啟用 MSN 網域的存取，我們建議您使用 [NewTabPageSetFeedType](https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagesetfeedtype)，讓您為新的索引標籤頁面選擇 Microsoft News 或 Office 365 摘要體驗。
+如果您需要更多時間來啟用 MSN 網域的存取，我們建議您使用 [NewTabPageSetFeedType](./microsoft-edge-policies.md#newtabpagesetfeedtype)，讓您為新的索引標籤頁面選擇 Microsoft News 或 Office 365 摘要體驗。
 
-### 繼續使用 Office.com
+### <a name="keep-using-officecom"></a>繼續使用 Office.com
 
  您可以設定 **NewTabPageSetFeedType** 原則，以繼續使用已取代的 Office.com 網域。
 
@@ -47,12 +47,12 @@ ms.locfileid: "11144473"
 - 將原則設定為 **[強制]**。
 - 將原則對應的值設定為 **Office (1) = Office 365 摘要體驗**。
 
-如果無法切換為 Office.com，請與我們連絡並傳送意見反應。 您也可以設定 [NewTabPageLocation](https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagelocation)，讓它指向貴組織所允許的端點 URL。
+如果無法切換為 Office.com，請與我們連絡並傳送意見反應。 您也可以設定 [NewTabPageLocation](./microsoft-edge-policies.md#newtabpagelocation)，讓它指向貴組織所允許的端點 URL。
 
 > [!NOTE]
 > 如果同時設定 **NewTabPageSetFeedType** 原則，則 **NewTabPageLocation** 有優先順序。
 
-## 企業使用者現在將可透過 [我的摘要] 取得 Microsoft 新聞內容
+## <a name="enterprise-users-will-now-get-microsoft-news-content-via-my-feed"></a>企業使用者現在將可透過 [我的摘要] 取得 Microsoft 新聞內容
 
 [企業新索引標籤頁] 將針對使用其 Azure Active Directory (Azure AD) 帳戶登入的使用者，以單一檢視的模式在 **[我的摘要]** 和 Office 365 內容中提供業界相關資訊。 針對以其 Azure Active Directory (Azure AD) 登入且在設定飛出視窗中選取 [Microsoft News] 選項的使用者，其新索引標籤頁面檢視會以 **[我的摘要]** 內容取代。 當他們在瀏覽器中開啟新索引標籤頁面時，頁面看起來就會像下一個螢幕擷取畫面中的範例。
 
@@ -61,7 +61,7 @@ ms.locfileid: "11144473"
 > [!NOTE]
 > 未使用 Azure AD 登入的使用者，會在開啟新索引標籤時繼續看到 MSN 新聞摘要。
 
-## 頁面配置
+## <a name="page-layout"></a>頁面配置
 
 當您變更了 [新索引標籤頁面]，[頁面配置] 便不需要再控制兩種特定的內容類型 (Office 365 與 Microsoft News)，因此無法使用內容切換。 下個螢幕擷取畫面顯示 [頁面配置] 的飛出視窗。
 
@@ -69,7 +69,7 @@ ms.locfileid: "11144473"
 
 如果您想繼續存取與貴組織不相關的 Microsoft News 內容，則必須使用不同的瀏覽器設定檔。 移至  *edge://settings/profiles* 並登出您的 Azure AD 設定檔。 此動作會顯示 [企業新索引標籤頁] 的標準檢視。 
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Internet Explorer 11 的企業模式](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Internet Explorer 11 的企業模式](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

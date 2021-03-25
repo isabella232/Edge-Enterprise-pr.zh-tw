@@ -10,41 +10,41 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 為使用者自動啟用密碼監視器
-ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: d1995735ac7558c1608d427aac70081d4afed3a0
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304533"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447277"
 ---
-# 為使用者自動啟用密碼監視器
+# <a name="password-monitor-auto-enabled-for-users"></a>為使用者自動啟用密碼監視器
 
 本文說明如何為選取的使用者開啟 Microsoft Edge 中的密碼監視器，並提供系統管理員用來控制監視啟用方式的步驟。
 
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 88 或更新版本。
 
-## 簡介、優點和可用性
+## <a name="introduction-benefits-and-availability"></a>簡介、優點和可用性
 
 密碼監視器可協助 Microsoft Edge 使用者保護其線上帳戶，方法是通知使用者是否在線上洩漏中發現其任何密碼。 當不良行為者竊取協力廠商應用程式或網站的資料時，即發生線上洩漏或資料違規。 若要深入瞭解，請參閱 Microsoft 部落格上的[密碼監視器：在 Microsoft Edge 中保護密碼](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/)文章。
 
-### 優點
+### <a name="benefits"></a>優點
 
 有鑑於這些線上攻擊的頻率與範圍，我們每個人都必須具備這種保護。 Microsoft Edge 具備內建功能，可安全地檢查使用者儲存的密碼對照已知受危害的密碼，並在發現相符時提醒使用者。  
 
-### 可用性
+### <a name="availability"></a>可用性
 
 密碼監視器在穩定通道版本 88 中提供，從 1/21 開始。 推出將會是漸進式，且可能需要幾週的時間，您才會在您的 [設定]****  >  [設定檔]****  >  [密碼]**** 頁面中看到下列訊息及控制項。
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="啟用密碼監視器的選項":::
 
-## 設定密碼監視器的群組原則
+## <a name="configure-group-policy-for-password-monitor"></a>設定密碼監視器的群組原則
 
-此功能是透過 [PasswordMonitorAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#passwordmonitorallowed) 群組原則控制。
+此功能是透過 [PasswordMonitorAllowed](./microsoft-edge-policies.md#passwordmonitorallowed) 群組原則控制。
 
 啟用原則之後，使用者仍然必須同意，才能開啟該功能。 由於功能包含使用者的敏感性和個人資料 (密碼)，因此需要取得同意。 如果使用群組原則停用該功能，使用者就無法覆寫此設定。  
 
-## 為使用者啟用密碼監視器
+## <a name="enabling-password-monitor-for-users"></a>為使用者啟用密碼監視器
 
 啟用密碼監視器原則之後，使用者會透過不同方式來取得此功能。
 
@@ -63,7 +63,7 @@ ms.locfileid: "11304533"
    
 - 直接啟用。 使用者可以隨時移至 [設定]****  >  [密碼]****，並開啟或關閉該功能。
 
-## 自動啟用密碼監視器的使用者案例
+## <a name="user-scenarios-with-password-monitor-auto-enabled"></a>自動啟用密碼監視器的使用者案例
 
 下表顯示自動啟用密碼監視器的案例，以及該功能如何在使用者裝置上運作。
 
@@ -80,9 +80,9 @@ ms.locfileid: "11304533"
 - 密碼同步已停用
 - 與 Microsoft 伺服器共用資料功能已停用
 
-## 常見問題集
+## <a name="frequently-asked-questions"></a>常見問題集
 
-### 如何為我的組織停用密碼監視器？
+### <a name="how-can-password-monitor-be-disabled-for-my-organization"></a>如何為我的組織停用密碼監視器？
 
 您可以透過以下方式，為您的組織停用密碼監視器：
 - 使用 PasswordMonitorAllowed 群組原則。
@@ -91,10 +91,10 @@ ms.locfileid: "11304533"
   > [!NOTE]
   > 密碼監視器甚至能在密碼同步停用時運作，只要使用者已明確同意開啟該功能，或已自行透過 [設定] 開啟該功能即可。
 
-### 如果某個使用者的該功能已自動啟用，但透過 [設定] 關閉密碼監視器，會發生什麼情況？
+### <a name="what-happens-if-a-user-for-whom-the-feature-has-been-auto-enabled-turns-password-monitor-off-via-settings"></a>如果某個使用者的該功能已自動啟用，但透過 [設定] 關閉密碼監視器，會發生什麼情況？
 
 將採用使用者設定中的資訊，因此該使用者的功能會保持停用。 不過，系統可能會向他們再次顯示同意對話方塊，以防他們先前未曾回應同意提示。
 
-## 請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

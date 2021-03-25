@@ -10,26 +10,26 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 深入了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke。
-ms.openlocfilehash: 1d4e08c0ce3ee2afec7968cd892f77ef7bdc3fff
-ms.sourcegitcommit: 4c0b84b03e686a7a2989ce2187dbadf35418104a
+ms.openlocfilehash: 1103c4f5c071b0d04c347a7c7c9fbc5556c4c0fb
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "11012793"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447667"
 ---
-# 了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
+# <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
 ClickOnce 和 DirectInvoke 是 IE 和 Microsoft Edge (版本 45 及更早版本) 中提供的功能，支援使用檔案處理常式從網站下載檔案。 雖然其具有不同的用途，但兩個功能都允許網站指定將請求下載的檔案傳遞給使用者裝置上的檔案處理常式。 ClickOnce 請求由 Windows 中的原生檔案處理常式處理。 DirectInvoke 請求由裝載該檔案之網站所指定的已註冊檔案處理常式來處理。
 
 如需這些方法的詳細資訊，請參閱下列文章：
 
-- [ClickOnce](https://docs.microsoft.com/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019)
+- [ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019)
 - [DirectInvoke]( https://technet.microsoft.com/learning/jj215788(v=vs.94).aspx)
 
 > [!NOTE]
 > 目前，Chromium 不提供 ClickOnce 或 DirectInvoke 的原生支援。
 
-## 概觀：必要條件和程序
+## <a name="overview-prerequisites-and-process"></a>概觀：必要條件和程序
 
 若要讓 ClickOnce 和 DirectInvoke 依照設計方式運作，並能成功請求檔案處理常式，檔案處理常式必須註冊到支援 ClickOnce 或 DirectInvoke 的作業系統。 此註冊通常在安裝原始作業系統或安裝的新程式請求使用 DirectInvoke 進行更新時發生。
 
@@ -43,7 +43,7 @@ ClickOnce 和 DirectInvoke 是 IE 和 Microsoft Edge (版本 45 及更早版本)
   > [!NOTE]
   > URL 用於判斷檔案的來源，以及存取檔案時使用的任何參數。  例如：端點、資訊清單或中繼資料。
 
-## 使用案例
+## <a name="use-cases"></a>使用案例
 
 以下使用案例具有代表性。
 
@@ -51,7 +51,7 @@ ClickOnce 和 DirectInvoke 是 IE 和 Microsoft Edge (版本 45 及更早版本)
 
 DirectInvoke 使用案例取決於請求 DirectInvoke 之網站的用意。 例如，Microsoft Word 的協作檔案編輯功能。 DirectInvoke 允許您下載已變更的文件部分，而不是按一下連結並下載您正在與同事和合作處理文件的整個副本。 這個策略可減少傳輸的資料量，並減少開啟文件所需的時間。  
 
-## Microsoft Edge 中對 ClickOnce 和 DirectInvoke 的目前支援
+## <a name="current-support-for-clickonce-and-directinvoke-in-microsoft-edge"></a>Microsoft Edge 中對 ClickOnce 和 DirectInvoke 的目前支援
 
 對 ClickOnce 和 DirectInvoke 的支援：
 
@@ -62,7 +62,7 @@ DirectInvoke 使用案例取決於請求 DirectInvoke 之網站的用意。 例�
 
 - ClickOnce 和 DirectInvoke 不支援 Windows 以外的任何平台。
 
-## ClickOnce 和 DirectInvoke 檔案處理安全性
+## <a name="clickonce-and-directinvoke-file-handling-security"></a>ClickOnce 和 DirectInvoke 檔案處理安全性
 
 ClickOnce 和 DirectInvoke 受到 Microsoft Defender SmartScreen 的 URL 信譽掃描服務的保護。
 
@@ -85,15 +85,15 @@ ClickOnce 和 DirectInvoke 受到 Microsoft Defender SmartScreen 的 URL 信譽�
 > [!NOTE]
 > 如果停用 ClickOnce 或 DirectInvoke，則請求的檔案將被視為一般下載，如果標幟為不安全，則將標記為不安全。 這與處理其他不安全下載的情況一致。
 
-## ClickOnce 和 DirectInvoke 原則
+## <a name="clickonce-and-directinvoke-policies"></a>ClickOnce 和 DirectInvoke 原則
 
-有 2 個群組原則可用於為企業使用者啟用或停用 ClickOnce 和 DirectInvoke。 這兩個原則是 [ClickOnceEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#clickonceenabled) 和 [DirectInvokeEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#directinvokeenabled)。 這兩個策略在群組原則編輯器中分別標記為 [允許使用者使用 ClickOnce 通訊協定開啟檔案] 和 [允許使用者使用 DirectInvoke 通訊協定開啟檔案]。
+有 2 個群組原則可用於為企業使用者啟用或停用 ClickOnce 和 DirectInvoke。 這兩個原則是 [ClickOnceEnabled](./microsoft-edge-policies.md#clickonceenabled) 和 [DirectInvokeEnabled](./microsoft-edge-policies.md#directinvokeenabled)。 這兩個策略在群組原則編輯器中分別標記為 [允許使用者使用 ClickOnce 通訊協定開啟檔案] 和 [允許使用者使用 DirectInvoke 通訊協定開啟檔案]。
 
-## ClickOnce 和 DirectInvoke 行為
+## <a name="clickonce-and-directinvoke-behavior"></a>ClickOnce 和 DirectInvoke 行為
 
 以下範例顯示啟用或停用 ClickOnce 和 DirectInvoke 時的檔案處理。
 
-### ClickOnce 已啟用
+### <a name="clickonce-enabled"></a>ClickOnce 已啟用
 
 1. 使用者開啟指向請求 ClickOnce 支援之頁面的連結，並在下一個螢幕擷取畫面中收到提示。
 
@@ -110,13 +110,13 @@ ClickOnce 和 DirectInvoke 受到 Microsoft Defender SmartScreen 的 URL 信譽�
    > [!NOTE]
    > ClickOnce 檔案處理常式顯示的介面、訊息和選項，將因所存取檔案的類型和設定而異。
 
-### ClickOnce 已停用
+### <a name="clickonce-disabled"></a>ClickOnce 已停用
 
 1. 當使用者開啟指向請求 ClickOnce 支援之頁面的連結時，會在下載匣中看到一則訊息，此訊息與下一個螢幕擷取畫面中的訊息類似。
 
    ![檔案下載提示](./media/edge-learn-more-co-di/edge-clickonce-disabled-1.png)
 
-### DirectInvoke 已啟用
+### <a name="directinvoke-enabled"></a>DirectInvoke 已啟用
 
 1. 使用者開啟指向請求 DirectInvoke 支援之頁面的連結，並在下一個螢幕擷取畫面中收到提示。
 
@@ -127,14 +127,14 @@ ClickOnce 和 DirectInvoke 受到 Microsoft Defender SmartScreen 的 URL 信譽�
    > [!NOTE]
    > DirectInvoke 檔案處理常式顯示的介面、訊息和選項，將因所存取檔案的類型和設定而異。
 
-### DirectInvoke 已停用
+### <a name="directinvoke-disabled"></a>DirectInvoke 已停用
 
 1. 當使用者開啟指向請求 DirectInvoke 支援之頁面的連結時，DirectInvoke 的行為與停用 ClickOnce 時相同。 他們將在下載匣中看到一則訊息，此訊息與下一個螢幕擷取畫面中的訊息類似。
 
    ![提示以開啟檔案](./media/edge-learn-more-co-di/edge-directinvoke-open-link-2.png)
 
-## 也請參閱
+## <a name="see-also"></a>也請參閱
 
-- [ClickOnce 安全性和部署](https://go.microsoft.com/fwlink/?linkid=2099880)
-- [Internet Explorer 中的 DirectInvoke](https://go.microsoft.com/fwlink/?linkid=2099871)
+- [ClickOnce 安全性和部署](/visualstudio/deployment/clickonce-security-and-deployment)
+- [Internet Explorer 中的 DirectInvoke](/previous-versions/windows/internet-explorer/ie-developer/dev-guides/jj215788(v=vs.85))
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
