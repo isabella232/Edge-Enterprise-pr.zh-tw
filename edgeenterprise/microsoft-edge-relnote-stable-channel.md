@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/18/2021
+ms.date: 03/25/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 94d8d621ecac3764ecf13194efb55cfbbf80b70b
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 36f6e5fe462fcb4c43862754603bef7902fcf670
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447987"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470271"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -28,6 +28,10 @@ ms.locfileid: "11447987"
 
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 如需深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077463-march-25"></a>版本 89.0.774.63：3 月 25 日
+
+修正各種錯誤和效能問題。
 
 ## <a name="version-89077457-march-18"></a>版本 89.0.774.57：3 月 18 日
 
@@ -107,7 +111,7 @@ ms.locfileid: "11447987"
 
 ## <a name="version-88070574-february-17"></a>版本 88.0.705.74：2 月 17 日
 
-穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#February-17-2021)。
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#february-17-2021)。
 
 ## <a name="version-88070568-february-11"></a>版本 88.0.705.68：2 月 11 日
 
@@ -118,11 +122,11 @@ ms.locfileid: "11447987"
 > [!IMPORTANT]
 > 此更新包含已由 Chromium 小組報告為已在市面上有惡意探索問題的 [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148)。
 
-穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#February-5-2021)。
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#february-5-2021)。
 
 ## <a name="version-88070562-february-4"></a>版本 88.0.705.62：2 月 4 日
 
-穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#February-4-2021)。
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#february-4-2021)。
 
 修正各種錯誤和效能問題。
 

@@ -1,5 +1,5 @@
 ---
-title: IE 模式常見問題集
+title: IE 模式疑難排解和常見問題
 ms.author: shisub
 author: dan-wesley
 manager: srugh
@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: 適用於 IE 模式 Microsoft Edge 的常見問題集和疑難排解
-ms.openlocfilehash: f5279caddb5d3dfabaf04be6bd927f7095be1fc9
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+description: Microsoft Edge Internet Explorer 模式的疑難排解和常見問題
+ms.openlocfilehash: 77b31362bd7d28598ead7f0a3b33a69f2f4cb264
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447727"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470201"
 ---
-# <a name="ie-mode-faq"></a>IE 模式常見問題集
+# <a name="ie-mode-troubleshooting-and-faq"></a>IE 模式疑難排解和常見問題
 
 本文提供 Microsoft Edge 版本 77 或更新版本的疑難排解秘訣和常見問題集。
 
 > [!NOTE]
-> 本文適用於 Microsoft Edge **Stable**、**Beta** 和 **Dev** 通道，版本 77 或更新版本。
+> 本文適用於 Microsoft Edge 版本 77 或更新版本。
 
 
 ## <a name="troubleshoot-ie-mode"></a>疑難排解 IE 模式
