@@ -3,23 +3,25 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/25/2021
+ms.date: 04/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 36f6e5fe462fcb4c43862754603bef7902fcf670
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: 31aaad801f4632985d7fc9d043155f2eb82ed046
+ms.sourcegitcommit: 21390f52f8605fe6cb0b73ca6dffacff562ada82
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470271"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "11470901"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
 這些版本資訊提供 Microsoft Edge 穩定通道中包含的新功能和非安全性更新的相關資訊。
+
+
 
 - 所有安全性更新列於[此處](microsoft-edge-relnotes-security.md)。
 - 封存的 Microsoft Edge 穩定通道的版本資訊在[此處](microsoft-edge-relnote-archive-stable-channel.md)。
@@ -27,7 +29,11 @@ ms.locfileid: "11470271"
  若要了解 Microsoft Edge 通道，請參閱 [Microsoft Edge 通道概觀](microsoft-edge-channels.md)。
 
 > [!NOTE]
-> 針對穩定通道，更新會在一或多天內逐步推出。 如需深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+> 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
+
+## <a name="version-89077468-april-1"></a>版本 89.0.774.68：4 月 1 日
+
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#april-1-2021)。
 
 ## <a name="version-89077463-march-25"></a>版本 89.0.774.63：3 月 25 日
 
