@@ -16828,7 +16828,7 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
 
-要求在 Internet Explorer 模式中啟動某個 file:// URL 時，該 URL 的副檔名必須存在於此清單中，才能允許在 Internet Explorer 模式中啟動該 URL。 遭封鎖而無法在 Internet Explorer 模式中開啟的 URL，將改為在 Edge 模式中開啟。
+要求在 Internet Explorer 模式中啟動某個 file:// URL 時，該 URL 的副檔名必須存在於此清單中，才能允許在 Internet Explorer 模式中啟動該 URL。 遭封鎖而無法在 Internet Explorer 模式中開啟的 URL，將改為在 Microsoft Edge 模式中開啟。
 
 如果將此原則設定為特殊值 "*"，或未設定它，則會允許所有副檔名。
 
@@ -22246,11 +22246,11 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   #### <a name="description"></a>描述
 
-  Microsoft Edge 使用 Edge 意見反應功能 (預設為啟用)，以允許使用者傳送意見反應、建議或客戶問卷調查，並報告有關瀏覽器的任何問題。 此外，使用者預設無法停用 (關閉) Edge 意見反應功能。
+  Microsoft Edge 使用 Edge 意見反應功能 (預設為啟用)，以允許使用者傳送意見反應、建議或客戶問卷調查，並報告有關瀏覽器的任何問題。 此外，使用者預設無法停用 (關閉) Microsoft Edge 意見反應功能。
 
-如果啟用此原則或未設定，則使用者可以叫用 Edge 意見反應。
+如果啟用此原則或未設定，則使用者可以叫用 Microsoft Edge 意見反應。
 
-如果停用此原則，則使用者無法叫用 Edge 意見反應。
+如果停用此原則，則使用者無法叫用 Microsoft Edge 意見反應。
 
   #### <a name="supported-features"></a>支援的功能：
 
