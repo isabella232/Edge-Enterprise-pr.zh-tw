@@ -47,7 +47,7 @@ Microsoft Edge 遵循 [新式生命週期原則]，且受下列作業系統的�
 
 - Windows Server 2008 R2 **
 - Windows Server 2012
-- WindowsServer 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2016 (LTSC)
 - Windows Server 2019 (LTSC)
 - Windows Server (SAC)
