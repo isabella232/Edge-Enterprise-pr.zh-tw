@@ -26,11 +26,11 @@ ms.locfileid: "11269294"
 > [!NOTE]
 > 錄製於 Microsoft Ignite 2019 的研討會 THR2279：「Microsoft Edge 和 Microsoft 搜尋：IT 系統管理員和使用者的完整旅程」。
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 Microsoft 搜尋為電腦、Mac 和行動裝置上的網站、人員、檔案等新增了量身打造和整合式的內部網絡搜尋結果。 最後，我們將說明如何在 Microsoft 365 中設定 Microsoft 搜尋。 以及如何從 System Center Configuration Manager 和 Microsoft Intune 跨平台部署 Microsoft Edge。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge YouTube 播放清單](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

@@ -23,7 +23,7 @@ ms.locfileid: "11314726"
 
 [![Microsoft Edge 安全性、相容性及管理性](media/microsoft-edge-video-security-compatibility-manageability/0.png)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Microsoft Edge security, compatibility, and manageability")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 親身體驗全新 Microsoft Edge 的安全性、相容性和管理性。 Microsoft Edge 是基於 Chromium 開發，設計為最適合企業使用的瀏覽器。 我們的演說者 Jeremy Chapman 會向您說明它與其他瀏覽器的不同之處。 此深度剖析包括：
 
@@ -31,7 +31,7 @@ ms.locfileid: "11314726"
 - 相容性。 Microsoft Edge 與新式和舊版網頁相容。
 - 管理性。 考慮您用於 Microsoft Edge 的更新管理或服務選項。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [企業的 Microsoft Edge 安全性](ms-edge-security-for-business.md)

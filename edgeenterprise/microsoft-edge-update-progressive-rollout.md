@@ -24,15 +24,15 @@ ms.locfileid: "10979550"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 穩定通道 83 或更新版本。
 
-## 為什麼我們需要漸進式推出？
+##  <a name="why-do-we-need-progressive-rollout"></a>為什麼我們需要漸進式推出？
 
 透過密切監視更新的運行狀況並在幾天內發行更新，我們可以限制新更新可能造成的問題的影響。 在 Microsoft Edge 版本 83 中，系統會為所有 Windows 7、Windows 8 & 8.1 和 Windows 10 版 Microsoft Edge 啟用漸進式部署。 我們將儘快支援 Mac 上的 Microsoft Edge。
 
-## 更新將如何運作？
+##  <a name="how-will-the-updates-work"></a>更新將如何運作？
 
 每次安裝 Microsoft Edge 時都會指派一個升級值。 當我們開始漸進推出時，當裝置上的值在升級值範圍內時，您將看到更新。 隨著推出的進行 (幾天內)，所有使用者最終都會獲得更新。 與沒有重大安全性修正的更新相比，具有重大安全性修復的瀏覽器更新的推出節奏更快。 這么做是為了確保對漏洞的及時提示。
 
-## 這對企業有何影響？
+##  <a name="how-does-this-affect-enterprises"></a>這對企業有何影響？
 
 Microsoft Edge 構建使用多種機制，如 Microsoft Intune、Windows Server Update Service (WSUS) 和設定管理員來散發到企業。 這些部署工具與漸進式推出的運作不同：
 
@@ -41,6 +41,6 @@ Microsoft Edge 構建使用多種機制，如 Microsoft Intune、Windows Server 
 
 如有任何顧慮或問題，請透過使用者意見、應用程序內的意見反應按鈕或下方的註解來分享您的寶貴意見。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

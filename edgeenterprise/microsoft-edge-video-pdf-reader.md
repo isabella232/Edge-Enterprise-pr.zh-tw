@@ -23,11 +23,11 @@ ms.locfileid: "11314736"
 
 [![企業級 PDF 閱讀程式](media/microsoft-edge-video-pdf-reader/0.png)](http://www.youtube.com/watch?v=XWAqNQ0xAcE "Enterprise grade PDF reader")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 此影片重點介紹 Microsoft Edge 內建 PDF 閲讀程式的功能。 了解使用者如何在 PDF 中使用筆跡和醒目顯示、開啟受保護的檔案以及檢視和驗證基於憑證的數位簽章。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 中的 PDF 閱讀程式](microsoft-edge-pdf.md)

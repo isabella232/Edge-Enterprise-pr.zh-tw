@@ -21,11 +21,11 @@ ms.locfileid: "11157686"
 
 本文為正在計劃 Microsoft Edge 部署的 IT 系統管理員提供相關資訊，並需要有關應用程式相容性與支援的資訊。
 
-## Web 應用程式相容性與支援
+##  <a name="web-application-compatibility-and-support"></a>Web 應用程式相容性與支援
 
 為了協助您規劃 Microsoft Edge 的部署，我們編譯了您組織中可能正在使用的 web 應用程式清單。 此清單可讓您判斷此web 應用程式是否已準備好可供 Microsoft Edge 使用，如由 web 應用程式供應商公開支持聲明的記錄。。
 
-### 新增至應用程式清單
+###  <a name="add-to-the-application-list"></a>新增至應用程式清單
 
 隨著從客戶參與意見反應中確認的支持聲明，此清單會定期進行更新。
 
@@ -36,7 +36,7 @@ ms.locfileid: "11157686"
 - 提供者名稱
 - 公開支持聲明 URL
 
-### 應用程式清單
+###  <a name="application-list"></a>應用程式清單
 
 Microsoft 不會在 Microsoft Edge 中測試或驗證這些應用程式。 該清單是根據公開取得的資源所編譯。 請務必參考提供商當前的支持聲明。 如支援聲明所示，某些應用程式可能需要使用 IE 模式，。
 
@@ -143,7 +143,7 @@ Microsoft 不會在 Microsoft Edge 中測試或驗證這些應用程式。 該�
 | Zoom  | Zoom  | https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux#h_92957a85-2506-43a2-bd4a-5bb274778518  |
 | Zscaler  | Zscaler   | https://help.zscaler.com/zia/supported-browsers |
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)

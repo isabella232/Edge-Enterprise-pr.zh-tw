@@ -23,11 +23,11 @@ ms.locfileid: "11314716"
 
 [![ Microsoft Edge 和資料外洩防護](media/microsoft-edge-security-dlp/0.png)](http://www.youtube.com/watch?v=dLD04U9eTqg " Microsoft Edge and data loss prevention")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 由於遠端作業的關係，資料外洩防護 (DLP) 如今是前所未有地重要。 了解 Microsoft Edge 中的原生 DLP 功能，以及 DLP 如何協助您讓資料保持在公司控制之下，並保持合規。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 中的資料外洩防護 (DLP)](microsoft-edge-security-dlp.md)

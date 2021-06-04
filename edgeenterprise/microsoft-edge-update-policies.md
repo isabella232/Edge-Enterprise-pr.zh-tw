@@ -25,7 +25,7 @@ ms.locfileid: "11167305"
 如需 Microsoft Edge 中提供的其他原則的相關資訊，請參閱 [Microsoft Edge 瀏覽器原則參考](microsoft-edge-policies.md)
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 或更新版本。
-## 可用原則
+##  <a name="available-policies"></a>可用原則
 下表列出此版本 Microsoft Edge 提供的所有更新相關群組原則。 使用下表中的連結，深入了解特定原則。
 
 |||
@@ -65,10 +65,10 @@ ms.locfileid: "11167305"
 |[安裝](#install-webview)|允許安裝|
 |[更新](#update-webview)|更新原則覆寫|
 
-## 應用程式原則
+##  <a name="applications-policies"></a>應用程式原則
 
 [回到頁首](#microsoft-edge---update-policies)
-### InstallDefault
+###  <a name="installdefault"></a>InstallDefault
 #### 允許安裝預設值
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
@@ -99,8 +99,8 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### UpdateDefault
-#### 更新原則覆寫預設值
+###  <a name="updatedefault"></a>UpdateDefault
+####  <a name="update"></a>更新原則覆寫預設值
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
 #### 說明
@@ -134,7 +134,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### Install
+###  <a name="install"></a>Install
 #### 允許安裝
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
@@ -173,8 +173,8 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### Update
-#### 更新原則覆寫
+###  <a name="update"></a>Update
+####  <a name="update"></a>更新原則覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
 #### 說明
@@ -218,7 +218,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### Allowsxs
+###  <a name="allowsxs"></a>Allowsxs
 #### 允許 Microsoft Edge 並排瀏覽器體驗
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
@@ -249,7 +249,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcutDefault
+###  <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### 防止在預設安裝時建立桌面捷徑
 >Microsoft Edge Update 1.3.128.0 和更新版本
 
@@ -277,7 +277,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcut
+###  <a name="createdesktopshortcut"></a>CreateDesktopShortcut
 #### 防止在安裝時建立桌面捷徑
 >Microsoft Edge Update 1.3.128.0 和更新版本
 
@@ -313,7 +313,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### RollbackToTargetVersion
+###  <a name="rollbacktotargetversion"></a>RollbackToTargetVersion
 #### 復原至目標版本
 >Microsoft Edge Update 1.3.133.3 和更新版本
 
@@ -362,7 +362,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### TargetVersionPrefix
+###  <a name="targetversionprefix"></a>TargetVersionPrefix
 #### 目標版本覆寫
 >Microsoft Edge Update 1.3.119.43 和更新版本
 
@@ -403,10 +403,10 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-## 喜好設定原則
+##  <a name="preferences-policies"></a>喜好設定原則
 
 [回到頁首](#microsoft-edge---update-policies)
-### AutoUpdateCheckPeriodMinutes
+###  <a name="autoupdatecheckperiodminutes"></a>AutoUpdateCheckPeriodMinutes
 #### 自動更新檢查期間覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
@@ -431,7 +431,7 @@ ms.locfileid: "11167305"
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### UpdatesSuppressed
+###  <a name="updatessuppressed"></a>UpdatesSuppressed
 #### 每天抑制自動更新檢查的期間
 >Microsoft Edge Update 1.3.33.5 和更新版本
 
@@ -462,10 +462,10 @@ start min  : 0x00000002
 [回到頁首](#microsoft-edge---update-policies)
 
 
-## Proxy 伺服器原則
+##  <a name="proxy-server-policies"></a>Proxy 伺服器原則
 
 [回到頁首](#microsoft-edge---update-policies)
-### ProxyMode
+###  <a name="proxymode"></a>ProxyMode
 #### 選擇如何指定 Proxy 伺服器設定
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
@@ -498,7 +498,7 @@ fixed_servers
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### ProxyPacUrl
+###  <a name="proxypacurl"></a>ProxyPacUrl
 #### Proxy .pac 檔案的 URL
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
@@ -527,7 +527,7 @@ https://www.microsoft.com
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### ProxyServer
+###  <a name="proxyserver"></a>ProxyServer
 #### Proxy 伺服器的位址或 URL
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
@@ -556,10 +556,10 @@ https://www.microsoft.com
 [回到頁首](#microsoft-edge---update-policies)
 
 
-## Microsoft Edge WebView 原則
+##  <a name="microsoft-edge-webview-policies"></a>Microsoft Edge WebView 原則
 
 [回到頁首](#microsoft-edge---update-policies)
-### 安裝 (WebView)
+###  <a name="install-(webview)"></a>安裝 (WebView)
 #### 允許安裝
 >Microsoft Edge Update 1.3.127.1 和更新版本
 
@@ -587,8 +587,8 @@ https://www.microsoft.com
 [回到頁首](#microsoft-edge---update-policies)
 
 
-### 更新 (WebView)
-#### 更新原則覆寫
+###  <a name="update-(webview)"></a>更新 (WebView)
+####  <a name="update"></a>更新原則覆寫
 >Microsoft Edge Update 1.3.127.1 和更新版本
 
 #### 說明
@@ -618,6 +618,6 @@ https://www.microsoft.com
 [回到頁首](#microsoft-edge---update-policies)
 
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
   - [設定 Microsoft Edge](configure-microsoft-edge.md)
   - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

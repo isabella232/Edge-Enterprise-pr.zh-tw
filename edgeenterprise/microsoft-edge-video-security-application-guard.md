@@ -23,11 +23,11 @@ ms.locfileid: "11314746"
 
 [![使用應用程式防護的瀏覽器隔離]( media/microsoft-edge-video-security-application-guard/0.png)](http://www.youtube.com/watch?v=zQjaRqNXMqw "Browser isolation using Application Guard")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 使用 Microsoft Edge，可協助減少企業遭受網路攻擊的風險。 了解 Microsoft Edge 如何支援 Microsoft Defender 應用程式防護，以使用瀏覽器隔離來對抗外部威脅。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 對 Microsoft Defender 應用程式防護的支援](microsoft-edge-security-windows-defender-application-guard.md)

@@ -29,7 +29,7 @@ ms.locfileid: "10979568"
 > - [瀏覽器原則參考](microsoft-edge-policies.md)
 > - [更新原則參考](microsoft-edge-update-policies.md)
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 - [在 Windows 上設定 Microsoft Edge](configure-microsoft-edge.md)
 - [在 macOS 上設定 Microsoft Edge](configure-microsoft-edge-on-mac.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

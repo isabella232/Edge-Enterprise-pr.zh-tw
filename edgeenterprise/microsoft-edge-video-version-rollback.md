@@ -23,11 +23,11 @@ ms.locfileid: "11314706"
 
 [![Microsoft Edge 版本復原](media/microsoft-edge-video-version-rollback/0.png)](http://www.youtube.com/watch?v=pXhXHvKUa_c "Microsoft Edge version rollback")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 版本復原可讓您以較舊的版本取代您的 Microsoft Edge 瀏覽器版本。 了解 Microsoft Edge 中的復原如何為您的企業提供網路安全性，以協助您在解决 Microsoft Edge 中的任何問題時减少潜在影響。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [如何將 Microsoft Edge 復原為舊版](edge-learnmore-rollback.md)

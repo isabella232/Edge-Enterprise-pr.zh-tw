@@ -23,11 +23,11 @@ ms.locfileid: "11314576"
 
 [![Microsoft Edge 中的身分識別](media/microsoft-edge-video-identity/0.png)](http://www.youtube.com/watch?v=8lRUKhR7ipA "Identity in Microsoft Edge")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 這段影片說明如何為使用者設定已驗證且個人化的體驗。 主題包括設定登入、單一登入及多個設定檔。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 身分識別支援和設定](microsoft-edge-security-identity.md)

@@ -23,7 +23,7 @@ ms.locfileid: "11313924"
 
 根據 Microsoft Edge 產品小組的[部落格文章](https://aka.ms/EdgeLegacyEOS)，對舊版 Microsoft Edge 桌面應用程式的支援服務將於 2021 年 3 月 9 日結束。 當您套用 4 月的更新星期二 (或 "B") 發行時，它會從執行 Windows 10 RS4 至 20H1 的裝置移除舊版 Microsoft Edge，並以 Microsoft Edge 取代。
 
-## 如何準備
+##  <a name="how-to-prepare"></a>如何準備
 
 若要對透過 4 月的更新星期二發行在 Windows 10 RS4 到 20H1 裝置上安裝 Microsoft Edge 進行準備，建議您閱讀[規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "11313924"
 
 - **在舊版 Microsoft Edge 桌面應用程式終止服務日期 2021 年 3 月 9日之前將其移除，並部署 Microsoft Edge**。 若為 Windows 10 RS4 到 20H1，您可以使用 Windows Update 來執行此動作。 如需詳細資訊，請參閱[使用 Windows 10 更新部署 Microsoft Edge](deploy-edge-with-windows-10-updates.md)。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)

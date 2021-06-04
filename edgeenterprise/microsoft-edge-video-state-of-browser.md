@@ -25,11 +25,11 @@ ms.locfileid: "11269428"
 
 [![Microsoft Edge：瀏覽器的狀態](media/microsoft-edge-video-state-of-browser/0.png)](http://www.youtube.com/watch?v=ajdoE4wmzV0 "Microsoft Edge - State of the browser 2020")
 
-## 關於此影片
+##  <a name="about-the-video"></a>關於此影片
 
 對於 Microsoft Edge 來說，這是激動人心的一年！ 我們一直致力於讓 Microsoft Edge 成為最好的商務瀏覽器。 深入瞭解新的安全性與生產力功能，以及我們與 M365 的持續整合。 我們一直在聽取您的意見並從中學習，我們將分享如何將所有這些意見反應融入 Microsoft Edge。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge YouTube 播放清單](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

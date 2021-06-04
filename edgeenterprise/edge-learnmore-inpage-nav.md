@@ -26,7 +26,7 @@ ms.locfileid: "10979532"
 >[!NOTE]
 >本文適用於 Microsoft Edge 版本 81 或更新版本。
 
-## 必要條件
+##  <a name="prerequisites"></a>必要條件
 
 此原則需要下列 Windows 更新：
 
@@ -36,13 +36,13 @@ ms.locfileid: "10979532"
 - Windows 10 版本 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
 
 
-## 關於此原則
+##  <a name="about-this-policy"></a>關於此原則
 
 此原則能讓您有時間識別和設定 IE 模式網站使用的所有驗證伺服器。 不過，此原則可能會造成不一致的瀏覽體驗，而有些網站會在 IE 模式中轉譯，而有時候則以 Microsoft Edge 模式轉譯。 這取決於網站是否從 IE 模式頁面開始瀏覽。 任何未明確設定為在特定轉譯引擎開啟的網站都會受到此不一致的限制。
 
 如果您啟用這個原則，我們建議您在識別所有驗證伺服器後將它停用，並將它們新增到網站清單以設為中性。 此動作可確保您的新式網站永遠不會在 IE 模式中意外轉譯。
 
-## 在 IE 模式中保持頁面內瀏覽
+##  <a name="keep-in-page-navigation-in-ie-mode"></a>在 IE 模式中保持頁面內瀏覽
 
 若要在 Internet Explorer 模式中保持自動或所有頁面內瀏覽，請按照下列步驟進行：
 
@@ -64,6 +64,6 @@ ms.locfileid: "10979532"
 
 6. 按一下 [確定]**** 或 [套用]**** 儲存此原則設定。
 
-## 請參閱
+##  <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
