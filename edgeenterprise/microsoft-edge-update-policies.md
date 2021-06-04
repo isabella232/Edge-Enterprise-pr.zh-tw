@@ -33,7 +33,7 @@ ms.locfileid: "11167305"
 |[應用程式](#applications)|[喜好設定](#preferences)|
 |[Proxy 伺服器](#proxy-server)|[Microsoft Edge WebView](#microsoft-edge-webview)|
 
-### [應用程式](#applications-policies)
+### <a name="applications"></a>[應用程式](#applications-policies)
 |原則名稱|標題|
 |-|-|
 |[InstallDefault](#installdefault)|允許安裝預設值|
@@ -46,20 +46,20 @@ ms.locfileid: "11167305"
 |[RollbackToTargetVersion](#rollbacktotargetversion)|復原至目標版本 (每個通道)|
 |[TargetVersionPrefix](#targetversionprefix)|目標版本覆寫 (經由通道)|
 
-### [喜好設定](#preferences-policies)
+### <a name="preferences"></a>[喜好設定](#preferences-policies)
 |原則名稱|標題|
 |-|-|
 |[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|自動更新檢查期間覆寫|
 |[UpdatesSuppressed](#updatessuppressed)|每天抑制自動更新檢查的期間|
 
-### [Proxy 伺服器](#proxy-server-policies)
+### <a name="proxy-server"></a>[Proxy 伺服器](#proxy-server-policies)
 |原則名稱|說明文字|
 |-|-|
 |[ProxyMode](#proxymode)|選擇如何指定 Proxy 伺服器設定|
 |[ProxyPacUrl](#proxypacurl)|Proxy .pac 檔案的 URL|
 |[ProxyServer](#proxyserver)|Proxy 伺服器的位址或 URL|
 
-### [Microsoft Edge WebView](#microsoft-edge-webview-policies)
+### <a name="install-webview"></a>[Microsoft Edge WebView](#microsoft-edge-webview-policies)
 |原則名稱|標題|
 |-|-|
 |[安裝](#install-webview)|允許安裝|
