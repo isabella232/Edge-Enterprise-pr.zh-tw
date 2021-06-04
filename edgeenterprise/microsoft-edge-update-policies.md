@@ -18,7 +18,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/12/2020
 ms.locfileid: "11167305"
 ---
-# Microsoft Edge - 更新原則
+# <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新原則
 
 最新版本的 Microsoft Edge 包括以下原則，可用於控制更新 Microsoft Edge 的方式和時間。
 
