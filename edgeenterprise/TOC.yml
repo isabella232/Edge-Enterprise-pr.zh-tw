@@ -21,9 +21,9 @@
       href: 'https://blogs.windows.com/msedgedev/'
 - name: 規劃 Microsoft Edge
   items:
-    - name: Microsoft Edge 企業藍圖
+    - name: Microsoft Edge 企業版藍圖
       href: microsoft-edge-roadmap.md
-    - name: Microsoft Edge 功能的平臺支援
+    - name: Microsoft Edge 功能的平台支援
       href: microsoft-edge-platform-feature-matrix.md
     - name: 規劃 Microsoft Edge 部署
       href: deploy-edge-plan-deployment.md
@@ -37,9 +37,9 @@
       href: microsoft-edge-relnote-stable-channel.md
     - name: 穩定通道已存檔版本資訊
       href: microsoft-edge-relnote-archive-stable-channel.md
-    - name: Beta 通道版本資訊
+    - name: Beta 版通道版本資訊
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Beta 通道已存檔版本資訊
+    - name: Beta 版通道已存檔版本資訊
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: 發行排程
       href: microsoft-edge-release-schedule.md
@@ -89,7 +89,7 @@
       href: configure-microsoft-edge-on-mac.md
     - name: 使用 Jamf 設定 macOS
       href: configure-microsoft-edge-on-mac-jamf.md
-- name: 使用 Microsoft Edge 企業功能
+- name: 使用 Microsoft Edge 企業版功能
   items:
     - name: 設定和實驗
       href: edge-configuration-and-experiments.md
@@ -101,13 +101,13 @@
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: 設定 Microsoft Edge kiosk 模式
       href: microsoft-edge-configure-kiosk-mode.md
-    - name: Microsoft Edge 企業同步
+    - name: Microsoft Edge 企業版同步
       items:
-        - name: 設定 Microsoft Edge 同步處理
+        - name: 設定 Microsoft Edge 同步
           href: microsoft-edge-enterprise-sync.md
-        - name: 診斷並修正 Microsoft Edge 同步處理問題
+        - name: 診斷並修正 Microsoft Edge 同步問題
           href: microsoft-edge-troubleshoot-enterprise-sync.md
-        - name: 同步常見問題
+        - name: 同步常見問題集
           href: microsoft-edge-enterprise-sync-faq.md
     - name: Active Directory 使用者的內部部署同步
       href: microsoft-edge-on-premises-sync.md
@@ -115,11 +115,11 @@
       href: microsoft-edge-pdf.md
     - name: 將 Microsoft Edge 設定為預設瀏覽器
       href: edge-default-browser.md
-    - name: 在 Internet Explorer 模式中使用 Microsoft Edge
+    - name: 以 Internet Explorer 模式使用 Microsoft Edge
       items:
         - name: 什麼是 Internet Explorer (IE) 模式？
           href: edge-ie-mode.md
-        - name: 企業網站組群組原則
+        - name: 企業網站設定策略
           href: edge-ie-mode-sitelist.md
         - name: 設定 IE 模式原則
           href: edge-ie-mode-policies.md
@@ -127,9 +127,9 @@
           href: edge-ie-disable-ie11.md
         - name: 網站探索與清單管理
           items:
-            - name: Enterprise Site Discovery 逐步指南
+            - name: 企業網站探索逐步指南
               href: edge-ie-mode-site-discovery.md
-            - name: 'Microsoft Edge 中的 Enterprise Site List Manager '
+            - name: Microsoft Edge 中的企業網站清單管理員
               href: edge-ie-mode-site-list-manager.md
         - name: 在 IE 模式中保持頁面內瀏覽
           href: edge-learnmore-inpage-nav.md
@@ -139,7 +139,7 @@
           href: edge-learnmore-configurable-sites-ie-mode.md
         - name: 將副檔名與 Internet Explorer 模式建立關聯
           href: edge-ie-mode-add-guidance-filetype-associations.md
-        - name: IE 模式疑難排解和常見問題
+        - name: IE 模式疑難排解和常見問題集
           href: edge-ie-mode-faq.md
 - name: Microsoft Edge 安全性
   items:
@@ -147,11 +147,11 @@
       href: ms-edge-security-for-business.md
     - name: Microsoft Edge 端點的允許清單
       href: microsoft-edge-security-endpoints.md
-    - name: 'DLP (資料外) '
+    - name: 資料外洩防護 (DLP)
       href: microsoft-edge-security-dlp.md
     - name: 為使用者自動啟用密碼監視器
       href: microsoft-edge-security-password-monitor.md
-    - name: 防護抵禦可能不需要的應用程式
+    - name: 抵禦可能不需要的應用程式
       href: microsoft-edge-potentially-unwanted-apps.md
     - name: Azure AD 條件式存取的支援
       href: ms-edge-security-conditional-access.md
@@ -173,11 +173,11 @@
       href: microsoft-edge-policies.md
     - name: 更新原則參考
       href: microsoft-edge-update-policies.md
-    - name: WebView2 策略參照
+    - name: WebView2 原則參考
       href: microsoft-edge-webview-policies.md
     - name: 深入了解參考
       items:
-        - name: 企業新版 Tab 頁面的向後相容性
+        - name: 企業版新索引標籤頁面的向後相容性
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce 和 DirectInvoke
           href: edge-learn-more-co-di.md
@@ -189,7 +189,7 @@
           href: edge-learnmore-mixed-content-downloads.md
         - name: 適用於穩定通道更新的漸進式套件推出
           href: microsoft-edge-update-progressive-rollout.md
-        - name: 佈建 Microsoft Edge 我的最愛
+        - name: 為 Microsoft Edge 佈建我的最愛
           href: edge-learnmore-provision-favorites.md
         - name: 從 Internet Explorer 重新導向至 Microsoft Edge
           href: edge-learnmore-neededge.md
@@ -197,27 +197,27 @@
           href: edge-learnmore-regex.md
         - name: 重設 Microsoft Edge 資料
           href: edge-learnmore-reset-data-in-cloud.md
-        - name: 針對企業使用 Microsoft Edge 卷起
+        - name: 使用適用於企業的 Microsoft Edge 復原
           href: edge-learnmore-rollback.md
 - name: Microsoft Edge 影片
   items:
-    - name: Microsoft Edge 影片集合
+    - name: Microsoft Edge 影片集錦
       href: microsoft-edge-videos.md
     - name: 影片 - Microsoft Edge - 瀏覽器 2020 的狀態
       href: microsoft-edge-video-state-of-browser.md
-    - name: 影片 - 使用 Application Guard 進行瀏覽器隔離
+    - name: 影片 - 使用應用程式防護的瀏覽器隔離
       href: microsoft-edge-video-security-application-guard.md
     - name: 影片 - 部署 Microsoft Edge
       href: microsoft-edge-video-deploy.md
-    - name: '影片 - DLP (資料) '
+    - name: 影片 - 資料外洩防護 (DLP)
       href: microsoft-edge-video-security-dlp.md
     - name: 影片 - Microsoft Edge 中的身分識別
       href: microsoft-edge-video-identity.md
-    - name: 影片 - Microsoft Edge 版本卷起
+    - name: 影片 - Microsoft Edge 版本復原
       href: microsoft-edge-video-version-rollback.md
     - name: 影片 - Microsoft Edge 中的 PDF 閱讀程式
       href: microsoft-edge-video-pdf-reader.md
-    - name: 影片 - 在 Microsoft Edge 上安全地流覽
+    - name: 影片 - 在 Microsoft Edge 上安全地瀏覽
       href: microsoft-edge-video-security-smartscreen.md
     - name: 影片 - 安全性、相容性及管理性
       href: microsoft-edge-video-security-compatibility-manageability.md
