@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 規則運算式 2 語法
-ms.openlocfilehash: 9654a25d2c0474601fb719b145ebb1f59241a6d9
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 5d7026a034300e098497c63911f7516f72877c5d
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979518"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617313"
 ---
-# 規則運算式 2 (re2.h) 語法
+# <a name="regular-expression-2-re2h-syntax"></a>規則運算式 2 (re2.h) 語法
 
 規則運算式是描述字元字串集的標記法。 如果字串位於規則運算式所描述的集中，我們通常表示規則運算式與字串相符。
 
@@ -35,7 +35,7 @@ ms.locfileid: "10979518"
 
 它也列出了一些 PCRE、PERL 和 VIM 接受的語法。
 
-##  <a name="syntax-tables"></a>語法資料表
+## <a name="syntax-tables"></a>語法資料表
 
 | 各種單字元運算式 | 範例 |
 | --- | --- |
@@ -51,12 +51,12 @@ ms.locfileid: "10979518"
 | 反 Unicode 字元類 (單字母名稱) | \PN |
 | 反 Unicode 字元類別 | \P{Greek} |
 
-| | 複合 |
+|&nbsp;| 複合 |
 | --- | --- |
 | xy | x 後接 y |
 | x\|y | x 或 y (偏好 x) |
 
-| | 重複 |
+|&nbsp;| 重複 |
 | --- | --- |
 | x\* | 零或多個 x，偏好更多 |
 | x+ | 一個或多個 x，偏好更多 |
@@ -77,7 +77,7 @@ ms.locfileid: "10979518"
 
 實作限制：計算表單 x {n,m}，x {n,} 和 x {n} 拒絕創建最小或最大重複計數超過 1000 的表單。 無限重複不受此限制。
 
-| | 所有格重複 |
+|&nbsp;| 所有格重複 |
 | --- | --- |
 | x\*+ | 零個或多個 x、所有格 (不支援) |
 | x++ | 一或多個 x、所有格 (不支援) |
@@ -86,7 +86,7 @@ ms.locfileid: "10979518"
 | x{n,}+ | n 或多個 x，所有格 (不支援) |
 | x{n}+ | 完全符合 n x，所有格 (不支持) |
 
-| | 分組 |
+|&nbsp;| 分組 |
 | --- | --- |
 | (re) | 編號擷取群組 (子符合) |
 | (?P&lt;名稱&gt;re) | 具名&amp;編號擷取群組 (子符合) |
@@ -101,7 +101,7 @@ ms.locfileid: "10979518"
 | re@&gt; | re 的所有格匹配 (不支援) VIM |
 | %(re) | 非擷取群組 (不支援) VIM |
 
-| | Flags |
+|&nbsp;| Flags |
 | --- | --- |
 | i | 不區分大小寫 (預設為 false) |
 | m | 多行模式：除了開始/結束文字 (預設為 false) 以外，還能有 ^ 和 $ 符合開始/結束行。 |
@@ -110,7 +110,7 @@ ms.locfileid: "10979518"
 
 旗標語法為 xyz (set) 或 -xyz (clear) 或 xy-z (設定為 xy、clear z)。
 
-|  | 空字串 |
+|&nbsp;| 空字串 |
 | --- | --- |
 | ^ | 文字或行的開頭 (m=true) |
 | $ | 文字 (例如 \z 非 \Z) 或行的結尾 (m=true) |
@@ -141,7 +141,7 @@ ms.locfileid: "10979518"
 | \%23c | 在欄 23 中 (不支援) VIM  |
 | \%23v | 在虛擬欄 23 中 (不支援) VIM |
 
-|  | 逸出序列 |
+|&nbsp;| 逸出序列 |
 | --- | --- |
 | \a | bell (≡ \007) |
 | \f | 表單摘要 (≡ \014) |
@@ -182,7 +182,7 @@ ms.locfileid: "10979518"
 | \%u1234 | Unicode 字元 0x1234 (不支援) VIM |
 | \%U12345678 | Unicode 字元 0x12345678 (不支援) VIM |
 
-|  | 字元類別元素 |
+|&nbsp;| 字元類別元素 |
 | --- | --- |
 | x | 單一字元 |
 | A-Z | 字元範圍 (全人) |
@@ -191,7 +191,7 @@ ms.locfileid: "10979518"
 | \p{Foo} | Unicode 字元類別 Foo |
 | \pF | Unicode 字元類別 F (單字母名稱) |
 
-|  | 具名字元類作為字元類元素 |
+|&nbsp;| 具名字元類作為字元類元素 |
 | --- | --- |
 | [\d] | 數位 (≡ \d) |
 | [^\d] | 非數位 (≡ \D) |
@@ -232,7 +232,7 @@ ms.locfileid: "10979518"
 | [[:word:]] | 文字字元 (≡ [0-9A-Za-z\_]) |
 | [[:xdigit:]] | 十六進位數位 (≡ [0-9A-Fa-f]) |
 
-| | Unicode 字元類名 --一般類別 |
+|&nbsp;| Unicode 字元類名 --一般類別 |
 | --- | --- |
 | C | 其他 |
 | 副本 | control |
@@ -433,7 +433,7 @@ ms.locfileid: "10979518"
 | 彝文 |
 | Zanabazar\_Square |
 
-|  | Vim 字元類別 |
+|&nbsp;| Vim 字元類別 |
 | --- | --- |
 | \i | 識別碼字元 FF (不支援) VIM |
 | \I | \i 排除數字 (不支援) VIM |
@@ -470,7 +470,7 @@ ms.locfileid: "10979518"
 | \V | 超非魔術 (不支援) VIM |
 | \Z | 忽略 Unicode 結合字元中的差異 (不支援) VIM |
 
-|  | 魔術 |
+| &nbsp; | 魔術 |
 | --- | --- |
 | (?{code}) | 任意 Perl 代碼 (不支援) PERL |
 | (??{code}) | 已延遲任意 Perl 代碼 (不支援) PERL |
@@ -500,13 +500,13 @@ ms.locfileid: "10979518"
 | (\*BSR\_ANYCRLF) | 設定 \R 慣例 (不支援) PCRE |
 | (\*BSR\_UNICODE) | (不支援) PCRE |
 
-##  <a name="content-license"></a>內容授權
+## <a name="content-license"></a>內容授權
 
 > [!NOTE]
 > 本頁的某些部分是根據 Chromium.org 創造和分享的作品加以修改，並根據[創用 CC 姓名標示 4.0 國際版本授權條款](http://creativecommons.org/licenses/by/4.0/)中所述條款加以使用。 原始頁面可在[此處](https://github.com/google/re2/wiki/Syntax)找到。
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品根據<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">創用 CC 姓名標示 4.0 國際版本授權條款</a>獲得授權。
 
-##  <a name="see-also"></a>請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

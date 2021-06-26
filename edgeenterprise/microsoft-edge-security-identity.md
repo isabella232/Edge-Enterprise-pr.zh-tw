@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 身分識別支援和設定
-ms.openlocfilehash: 8b4fe3c46e0c8dd76d0e22051fb63465e34202f2
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 34a5a4aa958873a012d0a2da4184cb508af27a8a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447537"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617913"
 ---
 # <a name="microsoft-edge-identity-support-and-configuration"></a>Microsoft Edge 身分識別支援和設定
 
@@ -91,7 +91,7 @@ UA 字串的以下範例適用於本文發佈時的最新 Dev 通道組建：<br
 
 ### <a name="proactive-authentication"></a>主動式驗證
 
-主動式驗證是對瀏覽器到網站 SSO 的最佳化，可將驗證事先載入到某些第一方網站。 如果使用者使用 Bing 做為搜尋引擎，這會改善網址列的效能。 還會提供使用者個人化和商務用 Microsoft 搜尋 (MSB) 的搜尋結果。 它可讓您允許關鍵服務的驗證，例如 Office 新索引標籤頁面。 您可以使用 [ProactiveAuthEnabled]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#proactiveauthenabled) 原則對其進行控制。
+主動式驗證是對瀏覽器到網站 SSO 的最佳化，可將驗證事先載入到某些第一方網站。 如果使用者使用 Bing 做為搜尋引擎，這會改善網址列的效能。 還會提供使用者個人化和商務用 Microsoft 搜尋 (MSB) 的搜尋結果。 它可讓您允許關鍵服務的驗證，例如 Office 新索引標籤頁面。 您可以使用 [ProactiveAuthEnabled]( /deployedge/microsoft-edge-policies#proactiveauthenabled) 原則對其進行控制。
 
 ### <a name="windows-hello-credui-for-ntlm-authentication"></a>NTLM 驗證的 Windows Hello CredUI
 

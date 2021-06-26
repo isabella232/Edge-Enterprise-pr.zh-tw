@@ -3,28 +3,28 @@ title: Google Chrome 與 Microsoft Edge 的原則對應
 ms.author: brianalt
 author: brianalt
 manager: srugh
-ms.date: 02/10/2020
+ms.date: 06/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Google Chrome 與 Microsoft Edge 的原則對應
-ms.openlocfilehash: 10253d8d18864fedf5cfaf7d064766ad641675d4
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: e6a85549ee260dbebdafd900dc4ca634dc7dbd12
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448037"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617863"
 ---
 # <a name="google-chrome-to-microsoft-edge-policy-mapping"></a>Google Chrome 與 Microsoft Edge 的原則對應
 
-本文介紹 Google Chrome 原則與版本 80 中支援的相關 Microsoft Edge 原則對應。 如需 Microsoft Edge 舊版原則的資訊，請參閱 [Microsoft Edge 舊版與 Microsoft Edge 的原則對應](microsoft-edge-policy-map-legacy-to-newedge.md)文章。
+本文介紹 Google Chrome 原則與版本 80 中支援的相關 Microsoft Edge 原則對應。 如需 Microsoft Edge 舊版原則的資訊，請參閱 [Microsoft Edge 舊版與 Microsoft Edge 的原則對應](/deployedge/microsoft-edge-policy-map-chrome-to-newedge?branch=master)文章。
 
 > [!NOTE]
 > 以下提供的對應旨在協助您進行 Microsoft Edge 版本 80 的初始部署。 如需最新原則的最終清單，請參閱：
-> - [瀏覽器原則參考](microsoft-edge-policies.md)
-> - [更新原則參考](microsoft-edge-update-policies.md)
+> - [瀏覽器原則參考](/deployedge/microsoft-edge-policies)
+> - [更新原則參考](/deployedge/microsoft-edge-update-policies)
 
 ## <a name="google-chrome-to-microsoft-edge-policy-map"></a>Google Chrome 與 Microsoft Edge 的原則對應
 
@@ -94,8 +94,8 @@ ms.locfileid: "11448037"
 |[CloudPrintProxyEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPrintProxyEnabled)|不適用|
 |[CloudPrintSubmitEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPrintSubmitEnabled)|不適用|
 |[CloudReportingEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudReportingEnabled)|不適用|
-|[CoalesceH2ConnectionsWithClientCertificatesForHosts](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CoalesceH2ConnectionsWithClientCertificatesForHosts)|[CoalesceH2ConnectionsWithClientCertificatesForHosts](./microsoft-edge-policies.md#coalesceh2connectionswithclientcertificatesforhosts)|
-|[CommandLineFlagSecurityWarningsEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CommandLineFlagSecurityWarningsEnabled)|[CommandLineFlagSecurityWarningsEnabled](./microsoft-edge-policies.md#commandlineflagsecuritywarningsenabled)|
+|[CoalesceH2ConnectionsWithClientCertificatesForHosts](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CoalesceH2ConnectionsWithClientCertificatesForHosts)
+|[CommandLineFlagSecurityWarningsEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CommandLineFlagSecurityWarningsEnabled)
 |[ComponentUpdatesEnabled](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ComponentUpdatesEnabled)|[ComponentUpdatesEnabled](./microsoft-edge-policies.md#componentupdatesenabled)|
 |[CookiesAllowedForUrls](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesAllowedForUrls)|[CookiesAllowedForUrls](./microsoft-edge-policies.md#cookiesallowedforurls)|
 |[CookiesBlockedForUrls](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesBlockedForUrls)|[CookiesBlockedForUrls](./microsoft-edge-policies.md#cookiesblockedforurls)|
