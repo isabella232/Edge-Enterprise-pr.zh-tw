@@ -3,19 +3,19 @@ title: 規劃 kiosk 模式轉換
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 02/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 規劃 kiosk 模式轉換
-ms.openlocfilehash: 2a82852f10f2a842f28029738e72f72de4c53c41
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: b563f7ac773fb295d42e2b27b1259af321ce5f70
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447847"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617735"
 ---
 # <a name="plan-your-kiosk-mode-transition"></a>規劃 kiosk 模式轉換
 
@@ -47,23 +47,29 @@ ms.locfileid: "11447847"
 |[顯示首頁按鈕](./microsoft-edge-policies.md#showhomebutton) (原則)|否|是|89|是|
 |[管理我的最愛](./microsoft-edge-policies.md#managedfavorites) (原則)|否|是|89|是|
 |[啟用印表機](./microsoft-edge-policies.md#printingenabled) (原則)|是|是|89|是|
-|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是||是|
+|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是|89|是|
 |結束工作階段按鈕 | 否| 是| 89|是|
 |所有內部 Microsoft Edge URL 都會遭到封鎖，*edge://downloads* 和 *edge://print* 除外 |否|是|89|是|
 | CTRL+N 已封鎖 (開啟新視窗) | 是 | 是 | 89 |是|
 | CTRL+T 已封鎖 (開啟新索引標籤) |是 | 是 | 89 |是|
 |設定及其他 (...) 將只顯示必要的選項  |是 |是 |89 |是|
-|限制從瀏覽器啟動其他應用程式|是|是|90/91|是|
-|UI 列印設定鎖定|是|是|90/91|是|
-|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|-|-|待決定|是|
+|限制從瀏覽器啟動其他應用程式|是|是|90|是|
+|UI 列印設定鎖定|是|是|90|是|
+|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|否|是|90|是|
 
 > [!NOTE]
 > 如需 Microsoft Edge 發行排程的相關資訊，請參閱 [Microsoft Edge 發行排程](microsoft-edge-release-schedule.md)。
 
 **步驟 2：在 Microsoft Edge 中測試新 kiosk。** 建議您在 Microsoft Edge 中測試 kiosk 模式。 若要快速且輕鬆地測試 kiosk 模式，您可以使用 Windows [設定] 來設定受指派存取權的單一應用程式，如下所述。
 
-1. 安裝最新的 Windows 10 測試人員預覽版本 20215 或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
-2. 安裝最新版本的 [Microsoft Edge 穩定通道](https://www.microsoft.com/edge)版本 87 或更新版本。  若要測試最新功能，您可以下載最新的 [Microsoft Edge Beta 通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本。
+1. 下表列出作業系統的最小系統更新。
+
+|作業系統|版本|更新|
+|--|--|--|
+|Windows 10 | 2004 或更新版本|[KB4601382 或更新](https://support.microsoft.com/topic/february-24-2021-kb4601382-os-builds-19041-844-and-19042-844-preview-1a7ed2b4-017d-2644-a1e8-dd6bf14cba76) |
+|Windows 10| 1909| [KB4601380 或更新](https://support.microsoft.com/topic/february-16-2021-kb4601380-os-build-18363-1411-preview-2e3c38e1-a947-1033-8006-a30f3806da18)|
+
+2. 若要測試最新功能，您可以下載最新的 [Microsoft Edge 穩定通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本。
 
    > [!IMPORTANT]
    > 由於需要裝置層級安裝，因此不支援 Canary 通道。
@@ -80,15 +86,15 @@ ms.locfileid: "11447847"
 
    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="Kiosk 模式 - 建立帳戶":::
 
-6. 在 [選擇 kiosk 應用程式]****  頁面上，選取 [Microsoft Edge]****，然後按 [下一步] ****。
+6. 在** ** [選擇 kiosk 應用程式] 頁面上，選取** **[Microsoft Edge]，然後按 ** **[下一步]。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="kiosk 模式 - 選擇應用程式":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5c-choose-a-kiosk-app.png" alt-text="選擇 Kiosk - 全螢幕數位標誌":::
 
 7. 針對以 kiosk 模式執行時 Microsoft Edge 的顯示方式，選取下列其中一個選項：
 
    - 數位/互動式告示板 - 執行 Microsoft Edge，以全螢幕模式顯示特定網站。
    - 公用瀏覽器 - 執行受限制的 Microsoft Edge 多索引版本。
-
+ 
     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Kiosk 模式顯示 - 全螢幕數位告示板":::
 
 8. 選取 ** **[下一步]。

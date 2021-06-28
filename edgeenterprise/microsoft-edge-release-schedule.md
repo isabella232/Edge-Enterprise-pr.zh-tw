@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 發行排程
 ms.author: aguta
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/18/2021
+ms.date: 06/18/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 發行排程
-ms.openlocfilehash: a78c56d4c20da711eb73679dbe1c974bfac3c869
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 578a7a3c1a87aee1acc01715c735d5eea9ab67c0
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448177"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617967"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Microsoft Edge 發行排程
 
@@ -41,10 +41,10 @@ Microsoft 提供四個選項，稱為通道，用來管理更新 Microsoft Edge 
 
 | 版本 | 發行狀態 | Beta 通道<br>發行週 | Stable 通道<br>發行週 |
 |---------|-----|------|--------|
-| 88 | 發行日期<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](./microsoft-edge-relnote-beta-channel.md#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](./microsoft-edge-relnote-stable-channel.md#version-88070550-january-21)|
-| **89** | 發行日期<br>版本 | 2021 年 2 月 3 日<br>[89.0.774.18](./microsoft-edge-relnote-beta-channel.md#version-89077418-february-3) | **2021 年 3 月 4 日**<br>**[89.0.774.45](./microsoft-edge-relnote-stable-channel.md#version-89077445-march-21)** |
-| **90** | 發行日期<br>版本 | **2021 年 3 月 16 日**<br>**[90.0.818.8](./microsoft-edge-relnote-beta-channel.md#version-9008188-march-16)** | 2021 年 4 月 15 日當週 |
-| 91 | 目標版本 | 2021 年 4 月 27 日當週 | 2021 年 5 月 27 日當週 |
+| 88 | 發行日期<br>版本 | 2020 年 12 月 9 日<br>[88.0.705.18](/microsoft-edge-relnote-archive-beta-channel.md#version-88070518-december-9) | 2021 年 1 月 21 日<br>[88.0.705.50](/microsoft-edge-relnote-archive-stable-channel.md#version-88070550-january-21)|
+| 89 | 發行日期<br>版本 | 2021 年 2 月 3 日<br>[89.0.774.18](/microsoft-edge-relnote-beta-channel.md#version-89077423-february-8) | 2021 年 3 月 4 日<br>[89.0.774.45](/microsoft-edge-relnote-stable-channel.md#version-89077445-march-4) |
+| **90** | 發行日期<br>版本 | 2021 年 3 月 16 日<br>[90.0.818.8](/microsoft-edge-relnote-beta-channel.md#version-9008188-march-16) | **2021 年 4 月 15 日**<BR>**[90.0.818.39](/microsoft-edge-relnote-stable-channel#version-90081839-april-15)** |
+| **91** | 發行日期<br>版本 | **2021 年 4 月 30 日**<br>[91.0.864.11](/microsoft-edge-relnote-beta-channel.md#version-91086411-april-30) | **2021 年 5 月 27 日**<BR>**[91.0.864.37](/microsoft-edge-relnote-stable-channel#version-91086437-may-27)** |
 | 92 | 目標版本 | 2021 年 6月 8 日當周 | 2021年7月22日當周 |
 | 93 | 目標版本 | 2021年8月3日當周 | 2021 年 9 月 2 日當週 |
 | 94 | 目標版本 | 2021 年 9 月 1 日當週 | 2021 年 9 月 23 日當週 |
@@ -60,10 +60,10 @@ Beta 和穩定主要發行的觸發為同等的 Chromium 發行。
 
 穩定通道的日期參考 (已發行/發行週) 會參考漸進式推出的開始。
 
-我們使用漸進式推出模型，這表示任何指定裝置的新發行可用性會在即將到來的幾天中分階段進行。 如需詳細資訊，請參閱 [Microsoft Edge 穩定通道的漸進式部署](microsoft-edge-update-progressive-rollout.md)。
+我們使用漸進式推出模型，這表示任何指定裝置的新發行可用性會在即將到來的幾天中分階段進行。 如需詳細資訊，請參閱 [Microsoft Edge 穩定通道的漸進式部署](/deployedge/microsoft-edge-update-progressive-rollout)。
 
 ## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
-- [Microsoft Edge 通道](microsoft-edge-channels.md)
+- [Microsoft Edge 通道](/deployedge/microsoft-edge-channels)
 - [通道下載](https://www.microsoft.com/edge/business/download)

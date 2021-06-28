@@ -3,21 +3,24 @@ title: 停用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 03/09/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge 中停用 Internet Explorer 11 和使用 Internet Explorer 模式。
-ms.openlocfilehash: 89fa6f81879be851f0036990a41e36e1eaee7fca
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: ae4d936df7e432eee250e1c7327acfd206d86410
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447387"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617483"
 ---
 # <a name="disable-internet-explorer-11"></a>停用 Internet Explorer 11
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文說明如何在您的環境中停用 Internet Explorer 11 做為獨立瀏覽器。
 
@@ -61,7 +64,7 @@ ms.locfileid: "11447387"
 
 如果您的 [企業模式網站清單] 包含設定為在IE11 應用程式中開啟的應用程式，並且您使用此原則停用了 IE11，則它們將在 Microsoft Edge 上以 IE 模式開啟。
 > [!NOTE]
-> 當網站設定為在 IE11 中開啟，且已設定停用 IE11 原則時，使用者流程會發生已知問題。 我們正在積極調查此問題。
+> 當網站設定為在 IE11 應用程式中開啟，且已設定停用 IE11 原則時，使用者流程會發生已知問題。 此問題已在 Microsoft Edge 版本 91.0.840.0 或更新版本中修正。
 
 ## <a name="disable-internet-explorer-11-as-a-standalone-browser"></a>停用 Internet Explorer 11 作為獨立瀏覽器
 

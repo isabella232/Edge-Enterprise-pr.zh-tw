@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 的客戶採用資料
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlynd
-ms.date: 03/01/2021
+ms.date: 06/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 的客戶採用資料
-ms.openlocfilehash: 4752b0b5221d0134c68a50153679979449d893ca
-ms.sourcegitcommit: 81383d92dba379d5e6073066c4cdcc2761390f8f
+ms.openlocfilehash: f8a37bceeee9b55587a14a97a5b64b73ec27d23f
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385372"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617835"
 ---
 # <a name="customer-adoption-materials-for-microsoft-edge"></a>Microsoft Edge 的客戶採用資料
 
@@ -26,17 +26,28 @@ ms.locfileid: "11385372"
 ## <a name="customer-adoption-kit"></a>客戶採用套件
 
 客戶採用套件包含下列資料：
-
-- IT 部署指南
-- 《如何開始使用》使用者指南
-- 採用電子郵件範本
-- 橫幅
-- 數位簽章
-- 重點摘要
-- 示範影片和 GIF
-- Web 資源連結
+- Internet Explorer 停用套件 **(提供英文、德文、西班牙文、法文、日文、韓文、中文 (簡體))**
+    - 採用電子郵件
+    - 傳單
+    - 資訊圖表
+    - 網站集合來自
+- 一般採用套件
+    - IT 部署指南
+    - 《如何開始使用》使用者指南
+    - 採用電子郵件範本
+    - 橫幅
+    - 數位簽章
+    - 重點摘要
+    - 示範影片和 GIF
+    - Web 資源連結
 
 採用套件提供英文和數種其他語言版本，包括法文、德文和日文。 在 [Microsoft Edge 客戶採用套件下載中心](https://www.microsoft.com/download/details.aspx?id=102119)選取您偏好的語言。
+
+### <a name="internet-explorer-ie-retirement-resources"></a>Internet Explorer (IE) 停用資源
+
+尋找寶貴的資源和專家指引，協助貴組織安全地快速地從 IE 移至 Microsoft Edge。
+
+:::image type="content" source="media/customer-adoption-not-md/Internet Explorer Retirement Screenshot.png" alt-text="Internet Explorer 停用":::
 
 ### <a name="it-deployment-guide"></a>IT 部署指南
 

@@ -10,22 +10,22 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 準備好用於 Microsoft Edge
-ms.openlocfilehash: eb4f03fd831eda4b4773b87469ceeb896e3fe08a
-ms.sourcegitcommit: 2e8906d1090263efe83d628be06dbe910cb82bf7
+ms.openlocfilehash: d41408c443c9976c8cb4b3b0f537143a5f185e3c
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "11157686"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617503"
 ---
-# 準備好用於 Microsoft Edge
+# <a name="ready-for-microsoft-edge"></a>準備好用於 Microsoft Edge
 
 本文為正在計劃 Microsoft Edge 部署的 IT 系統管理員提供相關資訊，並需要有關應用程式相容性與支援的資訊。
 
-##  <a name="web-application-compatibility-and-support"></a>Web 應用程式相容性與支援
+## <a name="web-application-compatibility-and-support"></a>Web 應用程式相容性與支援
 
 為了協助您規劃 Microsoft Edge 的部署，我們編譯了您組織中可能正在使用的 web 應用程式清單。 此清單可讓您判斷此web 應用程式是否已準備好可供 Microsoft Edge 使用，如由 web 應用程式供應商公開支持聲明的記錄。。
 
-###  <a name="add-to-the-application-list"></a>新增至應用程式清單
+### <a name="add-to-the-application-list"></a>新增至應用程式清單
 
 隨著從客戶參與意見反應中確認的支持聲明，此清單會定期進行更新。
 
@@ -36,7 +36,7 @@ ms.locfileid: "11157686"
 - 提供者名稱
 - 公開支持聲明 URL
 
-###  <a name="application-list"></a>應用程式清單
+### <a name="application-list"></a>應用程式清單
 
 Microsoft 不會在 Microsoft Edge 中測試或驗證這些應用程式。 該清單是根據公開取得的資源所編譯。 請務必參考提供商當前的支持聲明。 如支援聲明所示，某些應用程式可能需要使用 IE 模式，。
 
@@ -44,6 +44,7 @@ Microsoft 不會在 Microsoft Edge 中測試或驗證這些應用程式。 該�
 
 | 提供者 |  產品 | 支援聲明 |
 |-|-|-|
+| Accurent  | TMS 5.23  | https://www.accruent.com/resources/blog-posts/accruent-enhances-tms-microsoft-edge-compatibility-new-automations?utm_source=linkedin&utm_medium=organic-social&utm_campaign=healthcare-general  |
 | Acumatica  | Acumatica ERP  | https://help-2020r1.acumatica.com/Wiki/(W(1))/ShowWiki.aspx?pageid=a8d5d39d-513a-4f93-b484-a95eb33103a1  |
 | Adaptive (Workday)    | Workday Adaptive規劃   | https://www.adaptiveplanning.com/uk/products/adaptive-technology-foundation  |
 | Adobe  | 創造性的雲端產品（Acrobat、Photoshop、Illustrator）  | https://helpx.adobe.com/creative-cloud/system-requirements.html?promoid=P79NQR4R&mv=other  |
@@ -143,7 +144,7 @@ Microsoft 不會在 Microsoft Edge 中測試或驗證這些應用程式。 該�
 | Zoom  | Zoom  | https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux#h_92957a85-2506-43a2-bd4a-5bb274778518  |
 | Zscaler  | Zscaler   | https://help.zscaler.com/zia/supported-browsers |
 
-##  <a name="see-also"></a>請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)

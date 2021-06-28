@@ -3,21 +3,24 @@ title: 從 Microsoft Edge 到 Internet Explorer 共用 Cookie
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 05/19/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: '如何從 Microsoft Edge 到 Internet Explorer 共用 Cookie '
-ms.openlocfilehash: d94c1337b7a3dbee789efb16e9c8b0a5ebc2c23b
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 563179852ff23142b540345222ba7e943547535d
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447737"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617463"
 ---
 # <a name="cookie-sharing-from-microsoft-edge-to-internet-explorer"></a>從 Microsoft Edge 到 Internet Explorer 共用 Cookie
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文說明如何在使用 Internet Explorer 模式的同時，將工作階段 Cookie 設置為從 Microsoft Edge 程式共用到 Internet Explorer 程式。
 

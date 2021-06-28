@@ -3,21 +3,24 @@ title: 企業網站設定策略
 ms.author: shisub
 author: shisub
 manager: srugh
-ms.date: 03/29/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 為 Internet Explorer 模式設定企業模式網站清單的逐步指南。
-ms.openlocfilehash: 1d0b80950439fce77513413c3f5d1143538487d1
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: 7369e4e14f33fc37c6ded0ebc7df57d64a34df50
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470151"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617393"
 ---
 # <a name="enterprise-site-configuration-strategy"></a>企業網站設定策略
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文將說明企業模式網站清單的變更，以支援 Microsoft Edge 版本 77 及更新版本的 Internet Explorer 模式。
 
@@ -74,7 +77,7 @@ Step 3 – If that doesn’t cover your needs, then use Cookie sharing -->
 
 如果您已經有適用於 IE11 或舊版 Microsoft Edge 的企業模式網站清單，您可以重複使用該清單來設定 IE 模式。
 
-不過，如果您沒有網站清單，您可以使用[企業網站探索工具](https://docs.microsoft.com/deployedge/edge-ie-mode-site-discovery)來填入網站清單。
+不過，如果您沒有網站清單，您可以使用[企業網站探索工具](/deployedge/edge-ie-mode-site-discovery)來填入網站清單。
 
 ## <a name="configure-neutral-sites"></a>設定中性網站
 
@@ -92,14 +95,14 @@ Step 3 – If that doesn’t cover your needs, then use Cookie sharing -->
 </site>
 ```
 
-若要識別驗證伺服器，請使用 IE11 開發人員工具檢查來自應用程式的網路流量。 如果您需要更多時間來識別您的驗證伺服器，您可以設定原則，將所有頁面內導覽保持在 IE 模式，讓您的使用者可不間斷地繼續其工作流程。 若要將 IE 模式的使用在不必要時最小化，請在識別和新增驗證伺服器至網站清單後停用此設定。 如需詳細資訊，請參閱[在 IE 模式中保持頁面內導覽](https://docs.microsoft.com/deployedge/edge-learnmore-inpage-nav)。
+若要識別驗證伺服器，請使用 IE11 開發人員工具檢查來自應用程式的網路流量。 如果您需要更多時間來識別您的驗證伺服器，您可以設定原則，將所有頁面內導覽保持在 IE 模式，讓您的使用者可不間斷地繼續其工作流程。 若要將 IE 模式的使用在不必要時最小化，請在識別和新增驗證伺服器至網站清單後停用此設定。 如需詳細資訊，請參閱[在 IE 模式中保持頁面內導覽](/deployedge/edge-learnmore-inpage-nav)。
 
 >[!NOTE]
    >IE 模式整合不支援企業模式結構描述 v.1。 如果目前使用結構描述 v.1 搭配 Internet Explorer 11，則必須升級到結構描述 v.2。 如需詳細資訊，請參閱[企業模式結構描述 v.2 指引](/internet-explorer/ie11-deploy-guide/enterprise-mode-schema-version-2-guidance)。
 
 ## <a name="optional-use-cookie-sharing-if-necessary"></a>(選擇性) 必要時使用 Cookie 共用
 
-根據預設，Microsoft Edge 和 Internet Explorer 處理程序不會共用工作階段 Cookie，在某些情況下，使用 IE 模式時，這種缺少共用的情況可能不太方便。 例如，當使用者之前習慣在 IE 模式中重新驗證時，或登出 Microsoft Edge 工作階段卻不會針對重要交易登出 Internet Explorer 模式工作階段時。 在這些情況下，您可以設定 SSO 所設定的特定 Cookie，以從 Microsoft Edge 傳送至 Internet Explorer，如此一來，由於無需重新驗證，驗證體驗就會更順暢。 若需詳細資訊，請參閱[從 Microsoft Edge 共用 Cookie 到 Internet Explorer](https://docs.microsoft.com/deployedge/edge-ie-mode-add-guidance-cookieshare)。
+根據預設，Microsoft Edge 和 Internet Explorer 處理程序不會共用工作階段 Cookie，在某些情況下，使用 IE 模式時，這種缺少共用的情況可能不太方便。 例如，當使用者之前習慣在 IE 模式中重新驗證時，或登出 Microsoft Edge 工作階段卻不會針對重要交易登出 Internet Explorer 模式工作階段時。 在這些情況下，您可以設定 SSO 所設定的特定 Cookie，以從 Microsoft Edge 傳送至 Internet Explorer，如此一來，由於無需重新驗證，驗證體驗就會更順暢。 若需詳細資訊，請參閱[從 Microsoft Edge 共用 Cookie 到 Internet Explorer](/deployedge/edge-ie-mode-add-guidance-cookieshare)。
 
 ## <a name="see-also"></a>另請參閱
 

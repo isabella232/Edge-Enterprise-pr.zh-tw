@@ -1,23 +1,26 @@
 ---
 title: 設定 IE 模式原則
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/29/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 設定 IE 模式原則
-ms.openlocfilehash: a2abf6f6ef71c1f30786031ef19b9633bfafc43f
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: d73a9649619a746fd1ef382f0911ad7e45255f06
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470161"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617433"
 ---
 # <a name="configure-ie-mode-policies"></a>設定 IE 模式原則
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文說明如何設定 IE 模式原則。
 
@@ -30,8 +33,8 @@ ms.locfileid: "11470161"
 2. [將網站從 Microsoft Edge 重新導向至 IE 模式](#redirect-sites-from-microsoft-edge-to-ie-mode)
 3. (選用) [將網站從 IE 重新導向至 Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge)
 
-    1. 如果您準備好停用 IE11 應用程式，請按照[停用 Internet Explorer 11](https://docs.microsoft.com/deployedge/edge-ie-disable-ie11) 中的步驟進行
-    2. 否則，請遵循[將網站從 IE 重新導向至 Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge) 中的其餘步驟
+    1. 如果您準備好停用 IE11 應用程式，請按照[停用 Internet Explorer 11](/deployedge/edge-ie-disable-ie11) 中的步驟進行
+    2. 否則，請遵循[將網站從 IE 重新導向至 Microsoft Edge](/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge) 中的其餘步驟
 
 > [!NOTE]
 > 可透過 Intune 設定啟用 IE 模式的原則。 如需詳細資訊，請參閱[新增 Microsoft Edge 至 Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json) 和[使用 Microsoft Intune 設定 Microsoft Edge 原則](./configure-edge-with-intune.md)。
@@ -44,7 +47,7 @@ ms.locfileid: "11470161"
 
 1. 下載並使用最新的 [Microsoft Edge 原則範本](https://www.microsoft.com/en-us/edge/business/download)。
 2. 開啟群組原則編輯器。
-3. 按一下**電腦組態** > **系統管理範本** > **Microsoft Edge**。
+3. 按一下**使用者設定/電腦設定** > **系統管理範本** > **Microsoft Edge**。
 4. 按兩下**設定 Internet Explorer 整合。**
 5. 選取 **\[已啟用\]**。
 6. 在 [選項]**** 下，將下拉式清單值設定為 
@@ -84,7 +87,7 @@ IE 模式可以使用現有原則來設定 Internet Explorer 的企業網站清�
 1. 建立或重複使用網站清單 XML
     1. 具有元素 _\<open-in\>IE11\</open-in\>_ 的所有網站現在都將在 IE 模式中開啟。
 2. 開啟群組原則編輯器。
-3. 按一下**電腦設定** > **系統管理範本** > **Windows 元件** > **Internet Explorer**。
+3. 按一下**使用者設定/電腦設定** > **系統管理範本** > **Windows 元件** > **Internet Explorer**。
 4. 按兩下**使用企業模式 IE 網站清單**。
 5. 選取 **\[已啟用\]**。
 6. 在**選項**下，鍵入網站清單的位置。 您可以使用下列其中一個位置：
@@ -100,7 +103,7 @@ IE 模式可以使用現有原則來設定 Internet Explorer 的企業網站清�
 1. 建立或重複使用網站清單 XML
     1. 具有元素 _\<open-in\>IE11\</open-in\>_ 的所有網站現在都將在 IE 模式中開啟。
 2. 開啟群組原則編輯器。
-3. 按一下**電腦組態** > **系統管理範本** > **Microsoft Edge**。
+3. 按一下**使用者設定/電腦設定** > **系統管理範本** > **Microsoft Edge**。
 4. 按兩下**設定企業模式網站清單**。
 5. 選取 **\[已啟用\]**。
 6. 在**選項**下，鍵入網站清單的位置。 您可以使用下列其中一個位置：
@@ -118,7 +121,7 @@ IE 模式可以設定為針對 [本機內部網路] 區域中的所有網站。 
 > [本地內部網路] 區域包含明確新增的網站，但是也會使用啟發式學習法將網站指派給這個區域。 這可以包括無點主機名稱 (例如，**https**:**//payroll**)以及 Proxy 設定指令碼設定為略過 Proxy 的網站。 如果外部合作對象控制 DNS 或 Proxy，他們可能可以強制網站進入 IE 模式。
 
 1. 開啟 [本機群組原則編輯器]。
-2. 按一下**電腦組態** > **系統管理範本** > **Microsoft Edge**。
+2. 按一下**使用者設定/電腦設定** > **系統管理範本** > **Microsoft Edge**。
 3. 按兩下**將所有內部網路網站傳送到 Internet Explorer**。
 4. 選取**已啟用**，然後按一下**確定**或**套用**以儲存原則設定。
 
@@ -127,7 +130,7 @@ IE 模式可以設定為針對 [本機內部網路] 區域中的所有網站。 
 您可以防止使用者針對不需要的網站使用 Internet Explorer。 如果網站不在您的網站清單上，Internet Explorer 可以自動將網站重新導向至 Microsoft Edge。
 
 1. 開啟群組原則編輯器。
-2. 按一下 [電腦設定]**** >  [系統管理工具]**** >  [Windows 元件]**** >  [Internet Explorer]****。
+2. 按一下**使用者設定/電腦設定** > **系統管理工具** > **Windows 元件** > **Internet Explorer**。
 3. 按兩下 [將未包含在企業模式網站清單中的所有網站傳送到 Microsoft Edge]****。
 4. 選取 [已啟用]****
 5. 按一下**確定**或**套用**儲存這些設定。

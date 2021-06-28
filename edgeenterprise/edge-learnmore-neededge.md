@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
-ms.openlocfilehash: ffb295b5c844d15fee2b0fa23e78be9cd34ef03f
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7cd74eda6d8ada7647862ea69f77a982713f0c14
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447587"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617293"
 ---
 # <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>針對與新式網站的相容性，從 Internet Explorer 重新導向至 Microsoft Edge
 
@@ -23,6 +23,9 @@ ms.locfileid: "11447587"
 > 本文適用於 Microsoft Edge Stable 版本 87 或更新版本。
 
 ## <a name="overview"></a>概觀
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 許多新式網站的設計與 Internet Explorer 不相容。 每當 Internet Explorer 使用者造訪不相容的公用網站時，系統會顯示訊息，告訴他們該網站與其瀏覽器不相容，他們需要手動切換到不同的瀏覽器。
 
@@ -32,6 +35,15 @@ ms.locfileid: "11447587"
 
 > [!NOTE]
 > Microsoft 會維護已知與 Internet Explorer 不相容的所有網站清單。 如需詳細資訊，請參閱[要求更新不相容的網站清單](/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+
+## <a name="prerequisites"></a>必要條件
+- Microsoft Edge 穩定版本 87 或更新版本
+- Windows 版本
+    - Windows 10 (版本 1709) 或更新版本
+    - Windows 8.1
+    - Windows 7
+
+
 
 ## <a name="redirection-experience"></a>重新導向體驗
 
@@ -88,7 +100,7 @@ ms.locfileid: "11447587"
 >
 >如果您所使用的是加入網域或註冊行動裝置管理 (MDM) 的裝置，就不會看到此選項。
 >
-> 相反地，如果您想要讓使用者在 Internet Explorer 模式中載入網站，您可以透過設定原則 [允許在 Internet Explorer 模式中重新載入網站][](./microsoft-edge-policies.md#allow-internet-explorer-mode-testing) 來完成。
+> 相反地，如果您想要讓使用者在 Internet Explorer 模式中載入網站，您可以透過設定原則 [允許在 Internet Explorer 模式中重新載入網站][](./microsoft-edge-policies.md#intranetredirectbehavior) 來完成。
 
 ### <a name="policy-hideinternetexplorerredirectuxforincompatiblesitesenabled"></a>原則：HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 

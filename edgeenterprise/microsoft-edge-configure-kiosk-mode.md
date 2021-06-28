@@ -3,19 +3,19 @@ title: 設定 Microsoft Edge kiosk 模式
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 03/16/2021
+ms.date: 04/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Kiosk 模式功能，以及如何設定 Microsoft Edge Kiosk 模式選項。
-ms.openlocfilehash: 9d76bfcaebeaf56e627a401cc4f0375bce9d17a3
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 20cb32c0cd27ad6d7437ed8ae0440560f3ed71b2
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448127"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617853"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>設定 Microsoft Edge kiosk 模式
 
@@ -50,23 +50,23 @@ Microsoft Edge kiosk 模式提供兩種瀏覽器鎖定體驗，組織可建立�
 |在非使用狀態時重設|是|是|89|是|
 |[唯讀網址列](./microsoft-edge-policies.md#kioskaddressbareditingenabled) (原則) |否|是 |89|否|
 |[結束時刪除下載](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) (原則)  | 是|是 |89|否|
-|F11 已封鎖 (進入/結束全螢幕) | 是 | 是 | 89 |是|
-|F12 已封鎖 (啟動開發人員工具) | 是 | 是 | 89 |是|
-| 支援多個索引標籤 | 否| 是| 89|是|
+|F11 已封鎖 (進入/結束全螢幕) | 是 | 是 |89|是|
+|F12 已封鎖 (啟動開發人員工具) | 是 | 是 |89|是|
+| 支援多個索引標籤 | 否| 是|89|是|
 |[允許 URL 支援](./microsoft-edge-policies.md#urlallowlist) (原則)|是|是|89|否|
 |[封鎖 URL 支援](./microsoft-edge-policies.md#urlblocklist) (原則)|是|是|89|否|
 |[顯示首頁按鈕](./microsoft-edge-policies.md#showhomebutton) (原則)|否|是|89|是|
 |[管理我的最愛](./microsoft-edge-policies.md#managedfavorites) (原則)|否|是|89|是|
 |[啟用印表機](./microsoft-edge-policies.md#printingenabled) (原則)|是|是|89|是|
-|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是||是|
-|結束會話按鈕 * | 否| 是| 89|是|
+|[設定新的索引標籤頁面 URL](./microsoft-edge-policies.md#newtabpagelocation) (原則)|否|是|89|是|
+|結束會話按鈕 * | 否| 是|89|是|
 |所有內部 Microsoft Edge URL 都會遭到封鎖，*edge://downloads* 和 *edge://print* 除外 |否|是|89|是|
-| CTRL+N 封鎖 (開啟新的視窗 #) * | 是 | 是 | 89 |是|
-| CTRL+T 已封鎖 (開啟新索引標籤) |是 | 否 | 89 |是|
-|設定及其他 (...) 將只顯示必要的選項  |是 |是 |89 |是|
-|限制從瀏覽器啟動其他應用程式|是|是|90/91|是|
-|UI 列印設定鎖定|是|是|90/91|是|
-|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|-|-|待決定|是|
+| CTRL+N 封鎖 (開啟新的視窗 #) * | 是 | 是 |89|是|
+| CTRL+T 已封鎖 (開啟新索引標籤) |是 | 否 |89|是|
+|設定及其他 (...) 將只顯示必要的選項  |是 |是 |89|是|
+|限制從瀏覽器啟動其他應用程式|是|是|90|是|
+|UI 列印設定鎖定|是|是|90|是|
+|[將新的索引標籤頁面設定為首頁](./microsoft-edge-policies.md#homepageisnewtabpage) (原則)|否|是|90|是|
 
 > [!NOTE]
 > 只有在指派的存取單一應用程式情況下，才能啟用後面接著 "*" 的功能。
@@ -148,26 +148,33 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 
 ### <a name="single-app-kiosk"></a>單一應用程式 kiosk
 
-Microsoft Edge 目前針對單一應用程式受指派的存取權支援一組相同的舊版 Microsoft Edge kiosk 模式類型，包含下列鎖定體驗：數位/互動式告示板和公用瀏覽。  
+Microsoft Edge 版本 90 kiosk 模式提供廣泛的功能清單。 請參閱 Kiosk 模式支援功能一節。
+透過下列 Windows 更新，您可以透過受指派的存取權單一應用程式來設定 Microsoft Edge。
 
-您目前可使用最新的  [Windows 10 測試人員預覽版](https://insider.windows.com/)版本 20215 或更新版本，以及  [Microsoft Edge Beta 通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本，測試具有受指派存取權單一應用程式的 Microsoft Edge kiosk 模式。
+|作業系統|版本|更新|
+|--|--|--|
+|Windows 10 | 2004 或更新版本|[KB4601382 或更新](https://support.microsoft.com/topic/february-24-2021-kb4601382-os-builds-19041-844-and-19042-844-preview-1a7ed2b4-017d-2644-a1e8-dd6bf14cba76) |
+|Windows 10| 1909| [KB4601380 或更新](https://support.microsoft.com/topic/february-16-2021-kb4601380-os-build-18363-1411-preview-2e3c38e1-a947-1033-8006-a30f3806da18)|
 
-**如何取得 Windows 測試人員預覽？**
-
-若要在電腦上安裝 Windows 10 測試人員預覽版，請依照 [開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
+您可以透過 [Windows 設定](/deployedge/microsoft-edge-configure-kiosk-mode#configure-using-windows-settings)和 Intune 管理 Microsoft Edge kiosk 模式受指派的存取權單一應用程式。
 
 ### <a name="multi-app-kiosk"></a>多個應用程式 Kiosk
 
 Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](/windows/configuration/lock-down-windows-10-to-specific-apps) 中的指示進行。 (Microsoft Edge 穩定通道的 AUMID 是 **MSEdge**)。
 
-使用具有受指派的存取權的 Microsoft Edge 時，您可以設定 Microsoft Edge kiosk 模式，以使用 [Microsoft Edge 瀏覽器原則](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)來設定瀏覽體驗，進而滿足您的獨特需求。
-
 ### <a name="configure-using-windows-settings"></a>使用 Windows 設定進行設定
 
 Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的方法。 使用下列步驟設定單一應用程式 kiosk 電腦。
 
-1. 安裝最新的 Windows 10 測試人員預覽版，20215 版或更新版本。 依照[開始使用 Windows 10 測試人員預覽版](/windows-insider/get-started)中的指示進行。
-2. 若要測試最新功能，您可以下載最新的 [Microsoft Edge Beta 通道](https://www.microsoftedgeinsider.com/download)版本 89 或更新版本。
+1. 下表列出作業系統的最小系統更新。
+
+|作業系統|版本|更新|
+|--|--|--|
+|Windows 10 | 2004 或更新版本|[KB4601382 或更新](https://support.microsoft.com/topic/february-24-2021-kb4601382-os-builds-19041-844-and-19042-844-preview-1a7ed2b4-017d-2644-a1e8-dd6bf14cba76) |
+|Windows 10| 1909| [KB4601380 或更新](https://support.microsoft.com/topic/february-16-2021-kb4601380-os-build-18363-1411-preview-2e3c38e1-a947-1033-8006-a30f3806da18)|
+
+2. 若要測試最新功能，您可以下載最新的 [Microsoft Edge 穩定通道](https://www.microsoft.com/edge/business/download)版本 89 或更新版本。
+
 3. 在 kiosk 電腦上，開啟 Windows [設定]，然後在搜尋欄位中輸入 "kiosk"。 如下一個螢幕擷取畫面所示，選取 ** **[設定 kiosk (受指派的存取權)]，開啟建立 kiosk 的對話方塊。
 
    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-1-assigned-access.png" alt-text="設定有受指派存取權的 kiosk":::
@@ -185,14 +192,14 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
    > [!NOTE]
    > 這僅適用於 Microsoft Edge Dev、Beta 和 Stable 通道。
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="Kiosk 模式 - 選擇應用程式":::
+     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5c-choose-a-kiosk-app.png" alt-text="Kiosk 模式顯示 - 全螢幕數位告示板":::
 
 7. 針對以 kiosk 模式執行時 Microsoft Edge 的顯示方式，選取下列其中一個選項：
 
    - 數位/互動式告示板 - 執行 Microsoft Edge，以全螢幕模式顯示特定網站。
    - 公用瀏覽器 - 執行受限制的 Microsoft Edge 多索引版本。
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Kiosk 模式顯示 - 全螢幕數位告示板":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="如何使用 kiosk - 全螢幕數位標誌":::
 
 8. 選取 ** **[下一步]。
 9. 輸入 kiosk 啟動時要載入的 URL。
@@ -229,19 +236,7 @@ Windows 設定是設定一或兩部單一應用程式 kiosk 裝置最簡單的�
 - [BackgroundModeEnabled](./microsoft-edge-policies.md#backgroundmodeenabled)
 - [UserFeedbackAllowed](./microsoft-edge-policies.md#userfeedbackallowed)
 
-## <a name="roadmap"></a>藍圖
-
-### <a name="in-early-2021"></a>2021 年年初
-
-我們將增加下列支援和功能：
-
-- 在 Windows 10 1909 和更新版本上，具有獲指派存取權單一應用程式之 Microsoft Edge kiosk 模式的正式發行。
-- 與舊版 Microsoft Edge 同等的其他功能。
-- 與 Intune 整合，以使用 kiosk 模式設定檔 UX 來設定裝置。
-- 限制從瀏覽器啟動其他應用程式。
-- UI 列印設定鎖定。
-
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [規劃 Microsoft Edge 部署](deploy-edge-plan-deployment.md)

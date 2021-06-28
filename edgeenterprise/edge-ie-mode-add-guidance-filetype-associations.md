@@ -3,21 +3,24 @@ title: 將副檔名與 Internet Explorer 模式建立關聯
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 將副檔名與 Internet Explorer 模式建立關聯
-ms.openlocfilehash: 6c651499401757d9a58e697d1d019a7294bb5fa7
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: c027b11e426cd665cb9e6cc25b4c9f66a0c6762a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447367"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617453"
 ---
 # <a name="associate-file-extensions-with-internet-explorer-mode"></a>將副檔名與 Internet Explorer 模式建立關聯
+
+>[!Note]
+> Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 本文說明如何將 Microsoft Edge 與含桌面應用程式副檔名的 Internet Explorer 模式建立關聯。
 
@@ -91,9 +94,10 @@ Windows Registry Editor Version 5.00
 @="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
 
 ```
+
 ## <a name="configuring-file-types-to-open-in-internet-explorer-mode"></a>設定檔類型以在 Internet Explorer 模式下開啟
 
-從 Microsoft Edge 88 開始，您可以使用原則[[顯示操作功能表將指定檔案類型連結設定為在 Internet Explorer 模式下開啟]](./microsoft-edge-policies.md#show-context-menu-to-open-a-link-in-internet-explorer-mode)，以在 Internet Explorer 模式下開啟連結。 
+從 Microsoft Edge 88 開始，您可以使用原則[[顯示操作功能表將指定檔案類型連結設定為在 Internet Explorer 模式下開啟]](./microsoft-edge-policies.md#internetexplorerintegrationreloadiniemodeallowed)，以在 Internet Explorer 模式下開啟連結。
 
 透過在此原則[[在 Internet Explorer 模式下開啟本機檔案文件副檔名允許清單]](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist) 中指定文件副檔名，可以定義此選項應套用的檔案類型。 
 
