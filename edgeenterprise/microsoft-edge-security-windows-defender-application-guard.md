@@ -1,21 +1,21 @@
 ---
 title: '[Microsoft Edge] 和 [Windows Defender 應用程式防護]'
 ms.author: srugh
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 02/05/2021
+ms.date: 05/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
-ms.openlocfilehash: 2dc1c5b35003c7de4fa474764c46a792bf1e3439
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7374810eb19ada298963817844e52184c0271a8c
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447167"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617993"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 
@@ -50,6 +50,24 @@ ms.locfileid: "11447167"
 ## <a name="whats-new"></a>新功能
 
 新的 Microsoft Edge 瀏覽器中的應用程式防護支援具備與舊版 Microsoft Edge 同等的功能，且包含多項改善。
+
+### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>將 [我的最愛] 從主機同步處理至容器
+
+我們的部分客戶一直要求在應用程式防護中的主機瀏覽器和容器之間同步 [我的最愛]。 從 Microsoft Edge 91 開始，使用者現在可以選擇設定應用程式防護，以將 [我的最愛] 從主機同步處理至容器。 這可確保容器上也會出現新的 [我的最愛]。
+
+可透過原則控制這項支援。 您可以更新 Edge 原則 [ApplicationGuardFavoritesSyncEnabled](/deployedge/microsoft-edge-policies#applicationguardfavoritessyncenabled) 以啟用或停用 [我的最愛] 同步處理。
+
+> [!Note]
+> 基於安全性考量，[我的最愛] 同步處理僅能從主機同步處理到容器，且不能為相反的方式。 若要確保跨主機和容器的 [我的最愛] 整合清單，我們已停用容器內的 [我的最愛] 管理。
+
+### <a name="identify-network-traffic-originating-from-the-container"></a>識別源自容器的流量
+
+數個客戶正在特定組態中使用 WDAG，以便識別來自容器的流量。 此情況的其中一些案例為：
+
+- 若要限制僅存取少數的未受信任網站
+- 若允許僅從容器存取網際網路
+
+從 Microsoft Edge 版本 91 開始，內建支援以標記來自應用程式防護容器的流量，讓企業能夠使用 proxy 以篩選出流量及套用特定原則。 您可以使用標頭以識別哪些流量是透過容器或主機使用 [ApplicationGuardTrafficIdentificationEnabled](/deployedge/microsoft-edge-policies#applicationguardtrafficidentificationenabled)。
 
 ### <a name="extension-support-inside-the-container"></a>容器內的延伸支援
 
