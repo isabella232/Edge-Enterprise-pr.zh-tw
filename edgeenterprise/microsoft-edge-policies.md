@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 04/01/2021
+ms.date: 06/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 79996cdbee3099fbb3a3d17b982b84a05f5a5066
-ms.sourcegitcommit: 21390f52f8605fe6cb0b73ca6dffacff562ada82
+ms.openlocfilehash: 21933e81427b84d69f6d3ead4dfc911519e65bb3
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "11470891"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617873"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -35,7 +35,34 @@ ms.locfileid: "11470891"
 
 |名稱|標題|
 |--|--|
-|[ApplicationGuardTrafficIdentificationEnabled](#applicationguardtrafficidentificationenabled)|應用程式防護流量識別|
+|[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|已啟用使用此設定檔的工作或學校網站單一登入|
+|[AutomaticHttpsDefault](#automatichttpsdefault)|設定自動 HTTPS|
+|[CECPQ2Enabled](#cecpq2enabled)|已啟用 TLS 的 CECPQ2 後量子金鑰協定|
+|[InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed)|指定是否允許不安全的網站對較私人的網路端點提出要求|
+|[InsecurePrivateNetworkRequestsAllowedForUrls](#insecureprivatenetworkrequestsallowedforurls)|允許列出的網站從不安全的內容對較私人的網路端點提出要求|
+|[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|指定網站保留在區域 IE 模式網站清單上的天數|
+|[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|允許在 Internet Explorer 模式中重新載入未設置的網站|
+|[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|啟用 Windows 以搜尋當地 Microsoft Edge 瀏覽資料|
+|[TripleDESEnabled](#tripledesenabled)|在 TLS 中啟用 3DES 加密套件|
+
+## <a name="deprecated-policies"></a>取代的原則
+
+下表列出此更新的已取代原則。
+
+|名稱|標題|
+|--|--|
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試 (已取代) |
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|啟用預設舊版 SameSite Cookie 行為設定 (已取代)|
+
+## <a name="obsolete-policies"></a>過時的原則
+
+下表列出此更新的過時原則。
+
+|名稱|標題|
+|--|--|
+|[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|允許由本機信賴起點頒發的 SHA-1 簽章憑證 (已過時)|
+|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|設定 Microsoft Edge 新的索引標籤頁面體驗 (已過時)|
+|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允許 WebDriver 覆寫不相容原則 (已過時) |
 
 ## <a name="available-policies"></a>可用的原則
 
@@ -53,6 +80,7 @@ ms.locfileid: "11470891"
 - [密碼管理員和防護](#password-manager-and-protection)
 - [效能](#performance)
 - [列印](#printing)
+- [私人網路要求設定](#private-network-request-settings)
 - [Proxy 伺服器](#proxy-server)
 - [睡眠索引標籤設定](#sleeping-tabs-settings)
 - [SmartScreen 設定](#smartscreen-settings)
@@ -103,7 +131,7 @@ ms.locfileid: "11470891"
 |[InsecureContentBlockedForUrls](#insecurecontentblockedforurls)|封鎖指定網站上的不安全內容|
 |[JavaScriptAllowedForUrls](#javascriptallowedforurls)|允許特定網站上的 JavaScript|
 |[JavaScriptBlockedForUrls](#javascriptblockedforurls)|封鎖特定網站上的 JavaScript|
-|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|啟用預設舊版 SameSite Cookie 行為設定|
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|啟用預設舊版 SameSite Cookie 行為設定 (已取代)|
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|將指定網站上的 Cookie 還原至舊版 SameSite 行為|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|允許特定網站上的通知|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|封鎖特定網站上的通知|
@@ -112,8 +140,7 @@ ms.locfileid: "11470891"
 |[PopupsAllowedForUrls](#popupsallowedforurls)|允許特定網站上的快顯視窗|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|封鎖特定網站上的快顯視窗|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|登錄通訊協定處理常式|
-|[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|選擇使用者是否能夠收到自訂的桌面背景影像和文字、建議、通知，
-和 [Microsoft 服務] 的提示|
+|[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|選擇使用者是否能夠收到自訂的桌面背景影像和文字、建議、通知，及 [Microsoft 服務] 的提示|
 |[WebUsbAllowDevicesForUrls](#webusballowdevicesforurls)|授與特定網站連線到特定 USB 裝置的存取權|
 |[WebUsbAskForUrls](#webusbaskforurls)|允許特定網站上的 WebUSB|
 |[WebUsbBlockedForUrls](#webusbblockedforurls)|封鎖特定網站上的 WebUSB|
@@ -201,6 +228,12 @@ ms.locfileid: "11470891"
 |[PrintingEnabled](#printingenabled)|啟用列印|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|預設列印頁面大小|
 |[UseSystemPrintDialog](#usesystemprintdialog)|使用系統列印對話方塊列印|
+### [*<a name="private-network-request-settings"></a>私人網路要求設定*](#private-network-request-settings-policies)
+
+|原則名稱|標題|
+|-|-|
+|[InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed)|指定是否允許不安全的網站對較私人的網路端點提出要求|
+|[InsecurePrivateNetworkRequestsAllowedForUrls](#insecureprivatenetworkrequestsallowedforurls)|允許列出的網站從不安全的內容對較私人的網路端點提出要求|
 ### [*<a name="proxy-server"></a>Proxy 伺服器*](#proxy-server-policies)
 
 |原則名稱|標題|
@@ -227,7 +260,7 @@ ms.locfileid: "11470891"
 |[SmartScreenEnabled](#smartscreenenabled)|設定 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|強制 Microsoft Defender SmartScreen 檢查來自信任來源的下載項目|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|設定 Microsoft Defender SmartScreen 以封鎖潛在的垃圾應用程式|
-### [*<a name="startup-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
 
 |原則名稱|標題|
 |-|-|
@@ -241,7 +274,7 @@ ms.locfileid: "11470891"
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|設定新的索引標籤頁面快速連結|
 |[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|啟用預先載入的新索引標籤頁面，以加快頁面呈現速度|
 |[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|允許新分頁頁面上的快速連結|
-|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|設定 Microsoft Edge 新索引標籤頁面體驗 (已過時)|
+|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|設定 Microsoft Edge 新的索引標籤頁面體驗 (已過時)|
 |[RestoreOnStartup](#restoreonstartup)|啟動時所採取的動作|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|瀏覽器啟動時開啟的網站|
 |[ShowHomeButton](#showhomebutton)|在工具列上顯示 [首頁] 按鈕|
@@ -249,6 +282,7 @@ ms.locfileid: "11470891"
 
 |原則名稱|標題|
 |-|-|
+|[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|已啟用使用此設定檔的工作或學校網站單一登入|
 |[AddressBarMicrosoftSearchInBingProviderEnabled](#addressbarmicrosoftsearchinbingproviderenabled)|在網址列中啟用 Bing 專用 Microsoft Search 建議|
 |[AdsSettingForIntrusiveAdsSites](#adssettingforintrusiveadssites)|含有干擾廣告網站的廣告設定|
 |[AllowDeletingBrowserHistory](#allowdeletingbrowserhistory)|啟用刪除瀏覽器和下載歷程記錄|
@@ -272,6 +306,7 @@ ms.locfileid: "11470891"
 |[AutoOpenFileTypes](#autoopenfiletypes)|檔案類型清單應在下載時自動開啟|
 |[AutofillAddressEnabled](#autofilladdressenabled)|啟用地址自動填寫|
 |[AutofillCreditCardEnabled](#autofillcreditcardenabled)|啟用信用卡自動填寫|
+|[AutomaticHttpsDefault](#automatichttpsdefault)|設定自動 HTTPS|
 |[AutoplayAllowed](#autoplayallowed)|允許網站自動播放媒體|
 |[BackgroundModeEnabled](#backgroundmodeenabled)|在 Microsoft Edge 關閉後繼續執行背景應用程式|
 |[BackgroundTemplateListUpdatesEnabled](#backgroundtemplatelistupdatesenabled)|啟用對集錦的可用範本和使用範本的其他功能的清單進行背景更新|
@@ -284,6 +319,7 @@ ms.locfileid: "11470891"
 |[BrowsingDataLifetime](#browsingdatalifetime)|流覽資料存留期設定|
 |[BuiltInDnsClientEnabled](#builtindnsclientenabled)|使用內建的 DNS 用戶端|
 |[BuiltinCertificateVerifierEnabled](#builtincertificateverifierenabled)|決定是否使用內建的憑證驗證程式來驗證伺服器憑證 (已取代)|
+|[CECPQ2Enabled](#cecpq2enabled)|已啟用 TLS 的 CECPQ2 後量子金鑰協定|
 |[CertificateTransparencyEnforcementDisabledForCas](#certificatetransparencyenforcementdisabledforcas)|針對 subjectPublicKeyInfo 雜湊的清單，停用憑證透明度強化|
 |[CertificateTransparencyEnforcementDisabledForLegacyCas](#certificatetransparencyenforcementdisabledforlegacycas)|停用舊版憑證授權單位清單的憑證透明度強化|
 |[CertificateTransparencyEnforcementDisabledForUrls](#certificatetransparencyenforcementdisabledforurls)|停用針對特定 URL 的憑證透明度強化|
@@ -329,6 +365,7 @@ ms.locfileid: "11470891"
 |[EnterpriseModeSiteListManagerAllowed](#enterprisemodesitelistmanagerallowed)|允許存取 Enterprise Mode Site List Manager 工具|
 |[ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](#exemptdomainfiletypepairsfromfiletypedownloadwarnings)|針對網域中的指定檔案類型，停用下載檔案類型副檔名-警告|
 |[ExperimentationAndConfigurationServiceControl](#experimentationandconfigurationservicecontrol)|控制與實驗和設定服務的通訊|
+|[ExplicitlyAllowedNetworkPorts](#explicitlyallowednetworkports)|明確允許的網路連接埠|
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|在外部通訊協定對話方塊中顯示「一律開啟」核取方塊|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|允許使用者設定家庭安全與兒童模式|
 |[FavoritesBarEnabled](#favoritesbarenabled)|啟用我的最愛列|
@@ -346,6 +383,7 @@ ms.locfileid: "11470891"
 |[GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar)|強制直接進行內部網路網站導覽，而非在網址列中搜尋單字項目|
 |[HSTSPolicyBypassList](#hstspolicybypasslist)|設定會略過 HSTS 原則檢查的名稱清單|
 |[HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenabled)|可用時便使用硬體加速|
+|[HeadlessModeEnabled](#headlessmodeenabled)|控制無周邊模式的使用|
 |[HideFirstRunExperience](#hidefirstrunexperience)|隱藏初次執行體驗與啟動顯示畫面|
 |[HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](#hideinternetexplorerredirectuxforincompatiblesitesenabled)|隱藏一次性的重新導向對話方塊和 Microsoft Edge 上的橫幅|
 |[ImportAutofillFormData](#importautofillformdata)|允許匯入自動填寫表單資料|
@@ -360,6 +398,7 @@ ms.locfileid: "11470891"
 |[ImportSavedPasswords](#importsavedpasswords)|允許匯入儲存的密碼|
 |[ImportSearchEngine](#importsearchengine)|允許匯入搜尋引擎設定|
 |[ImportShortcuts](#importshortcuts)|允許匯入捷徑|
+|[ImportStartupPageSettings](#importstartuppagesettings)|允許匯入啟動程序設定|
 |[InPrivateModeAvailability](#inprivatemodeavailability)|設定 InPrivate 模式可用性|
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|啟用不安全表單的警告|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|管理 IntensiveWakeUpThrottling 功能|
@@ -367,16 +406,20 @@ ms.locfileid: "11470891"
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|設定 Internet Explorer 整合|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|允許在 Internet Explorer 模式中啟動本機檔案|
 |[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|根據副檔名允許清單在 Internet Explorer 模式中開啟本機檔案|
-|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|顯示操作功能表以在 Internet Explorer 模式中開啟連結|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|顯示操作功能表以在 Internet Explorer 模式中開啟 file:// 連結|
+|[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|指定網站保留在區域 IE 模式網站清單上的天數|
+|[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|允許在 Internet Explorer 模式中重新載入未設置的網站|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|設定 Enterprise Mode Site List|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定從 Internet Explorer 模式頁面啟動時，「頁面內」導覽至未設定網站的方式|
-|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試|
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試 (已取代) |
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|內部網路重新導向行為|
 |[IsolateOrigins](#isolateorigins)|為特定來源啟用網站隔離|
+|[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|啟用 Windows 以搜尋當地 Microsoft Edge 瀏覽資料|
 |[LocalProvidersEnabled](#localprovidersenabled)|允許來自本機提供者的建議|
 |[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|設定網站到特定來源的受管理設定值|
 |[ManagedFavorites](#managedfavorites)|設定我的最愛|
 |[ManagedSearchEngines](#managedsearchengines)|管理搜尋引擎|
+|[MathSolverEnabled](#mathsolverenabled)|讓使用者在 Microsoft Edge 中以逐步解說來刪除數學問題並取得解決方案|
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|同時連線到 Proxy 伺服器的最大數目|
 |[MediaRouterCastAllowAllIPs](#mediaroutercastallowallips)|允許 Google Cast 連線至所有 IP 位址上的投射裝置|
 |[MetricsReportingEnabled](#metricsreportingenabled)|啟用使用方式和當機相關的資料報告 (已淘汰)|
@@ -386,9 +429,9 @@ ms.locfileid: "11470891"
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|設定使用者是否一律擁有其公司或學校帳戶自動登入的預設設定檔|
 |[OverrideSecurityRestrictionsOnInsecureOrigin](#overridesecurityrestrictionsoninsecureorigin)|控制不安全來源中安全性限制套用的地方|
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|允許網站查詢可用的付款方式|
-|[PersonalizationReportingEnabled](#personalizationreportingenabled)|將瀏覽和瀏覽器相關的資料傳送給 Microsoft，以允許個人化 Microsoft 服務|
+|[PersonalizationReportingEnabled](#personalizationreportingenabled)|將瀏覽歷程記錄、我的最愛和收藏、使用狀況及其他瀏覽資料傳送給 Microsoft，以允許個人化廣告、Microsoft Edge、搜尋、新聞和其他 Microsoft 服務|
 |[PinningWizardAllowed](#pinningwizardallowed)|允許 [釘選到工作列精靈]|
-|[ProactiveAuthEnabled](#proactiveauthenabled)|啟用主動式驗證 (已取代)|
+|[ProactiveAuthEnabled](#proactiveauthenabled)|啟用主動式驗證 (已過時)|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|啟用全分頁促銷內容|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|詢問下載檔案的儲存位置|
 |[QuicAllowed](#quicallowed)|允許 QUIC 通訊協定|
@@ -419,6 +462,7 @@ ms.locfileid: "11470891"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|封鎖存取特定網站上的感應器|
 |[SerialAskForUrls](#serialaskforurls)|允許特定網站的 Serial API|
 |[SerialBlockedForUrls](#serialblockedforurls)|封鎖特定網站的 Serial API|
+|[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|顯示 Microsoft Rewards 體驗|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)|
 |[ShowRecommendationsEnabled](#showrecommendationsenabled)|允許來自 Microsoft Edge 的建議和促銷通知|
@@ -441,6 +485,7 @@ ms.locfileid: "11470891"
 |[TotalMemoryLimitMb](#totalmemorylimitmb)|設定單一 Microsoft Edge 執行個體可以使用的記憶體容量限制 (MB)|
 |[TrackingPrevention](#trackingprevention)|封鎖使用者的網頁瀏覽活動追蹤|
 |[TranslateEnabled](#translateenabled)|啟用翻譯|
+|[TripleDESEnabled](#tripledesenabled)|在 TLS 中啟用 3DES 加密套件|
 |[URLAllowlist](#urlallowlist)|定義受允許的 URL 清單|
 |[URLBlocklist](#urlblocklist)|封鎖存取 URL 清單|
 |[UpdatePolicyOverride](#updatepolicyoverride)|指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新|
@@ -455,7 +500,7 @@ ms.locfileid: "11470891"
 |[WebAppInstallForceList](#webappinstallforcelist)|設定強制安裝 Web 應用程式的清單|
 |[WebCaptureEnabled](#webcaptureenabled)|啟用 Microsoft Edge 中的 Web 擷取功能|
 |[WebComponentsV0Enabled](#webcomponentsv0enabled)|在 M84 前，重新啟用 Web 元件 v0 API。|
-|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允許 WebDriver 覆寫不相容原則 (已取代)|
+|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|允許 WebDriver 覆寫不相容原則 (已過時) |
 |[WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|在 WebRTC 中允許舊版 TLS/DTLS 降級 (已取代)|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|管理由 WebRTC 暴露的本機 IP 位址|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|限制由 WebRTC 暴露的本機 IP 位址|
@@ -538,8 +583,8 @@ ProxyServer 欄位是 Proxy 伺服器的 URL。
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
-  "ProxyMode": "direct", 
-  "ProxyPacUrl": "https://internal.site/example.pac", 
+  "ProxyMode": "direct",
+  "ProxyPacUrl": "https://internal.site/example.pac",
   "ProxyServer": "123.123.123.123:8080"
 }
 ```
@@ -1044,8 +1089,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 由不符合模式的網站建立的 Cookie 會由 [DefaultCookiesSetting](#defaultcookiessetting) 原則 (如有設定) 或由使用者個人設定控制。 如果未設定此原則，則這也是預設行為。
 
-如果 Microsoft Edge 正以背景模式執行，當最後一個視窗關閉時，則工作階段可能會停止執行，這表示視窗關閉時將不會清除 Cookie。 如需將 Microsoft Edge 設定在背景模式中執行時會發生之情況的詳細資訊，請參閱 [BackgroundModeEnabled](#backgroundmodeenabled) 原則。
-
 您也可以使用 [CookiesAllowedForUrls](#cookiesallowedforurls) 和 [CookiesBlockedForUrls](#cookiesblockedforurls) 原則，以控制哪些網站可以建立 Cookie。
 
 請注意，這三個原則之間不可有衝突的 URL 模式設定：
@@ -1123,7 +1166,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   控制網站是否可在使用者的裝置上建立 Cookie。 此原則為全部或皆不 - 您可以讓所有網站建立 Cookie，或不讓任何網站建立 Cookie。 您無法使用此原則來啟用來自特定網站的 Cookie。
 
-將原則設定為 'SessionOnly'，以在工作階段關閉時清除 Cookie。 如果 Microsoft Edge 正以背景模式執行，當最後一個視窗關閉時，則工作階段可能會停止執行，這表示視窗關閉時將不會清除 Cookie。 如需將 Microsoft Edge 設定在背景模式中執行時會發生之情況的詳細資訊，請參閱 [BackgroundModeEnabled](#backgroundmodeenabled) 原則。
+將原則設定為 'SessionOnly'，以在工作階段關閉時清除 Cookie。
 
 如果未設定此原則，則會使用預設值 'AllowCookies'，且使用者可以在 Microsoft Edge 設定中變更此設定。 (如果您不希望使用者能夠變更此設定，請設定原則。)
 
@@ -2499,7 +2542,9 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
   根據 URL 的模式，定義允許執行 JavaScript 的網站清單。
 
-如果未設定此原則，則會對所有網站使用來自 [DefaultJavaScriptSetting](#defaultjavascriptsetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
+如果您未設定此原則 [，DefaultJavaScriptSetting](#defaultjavascriptsetting) 會套用於所有網站 (如果已設定)。 如果沒有，則會套用使用者的個人設定。
+
+如需有效 URL 模式的詳細資訊，請參照 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此原則可接受的值。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -2564,7 +2609,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
   根據 URL 的模式，定義不允許執行 JavaScript 的網站清單。
 
-如果未設定此原則，則會對所有網站使用來自 [DefaultJavaScriptSetting](#defaultjavascriptsetting) 原則 (如有設定) 或使用者個人設定的全域預設值。
+如果您未設定此原則 [，DefaultJavaScriptSetting](#defaultjavascriptsetting) 會套用於所有網站 (如果已設定)。 如果沒有，則會套用使用者的個人設定。
+
+如需有效 URL 模式的詳細資訊，請參照 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此原則可接受的值。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -2617,17 +2664,21 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
-  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting"></a>啟用預設舊版 SameSite Cookie 行為設定
+  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-deprecated"></a>啟用預設舊版 SameSite Cookie 行為設定 (已取代)
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### <a name="supported-versions"></a>支援的版本：
 
   - Windows 和 macOS 上，版本 80 或更新版本
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  讓您將所有 Cookie 還原為舊版 SameSite 行為。 若要還原為舊版行為，會導致沒有指定 SameSite 屬性的 cookie 視為 "SameSite = 無"，並移除「SameSite = None」 cookie 的需求，以傳送 "Secure" 屬性，並在評估兩個網站是否相同的網站時跳過方案比較。
+  此原則已過時，因為其目的只是為了提供做為短期的機制，並在發現企業與 SameSite 行為變更不相容時，給予它們更多的時間來更新其環境。
+
+無法在 Microsoft Edge 版本 95 中使用。 如果您仍然需要舊版 Cookie 行為，請使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) 來設定每個網域的行為。
+
+讓您將所有 Cookie 還原為舊版 SameSite 行為。 若要還原為舊版行為，會導致沒有指定 SameSite 屬性的 cookie 視為 "SameSite = 無"，並移除「SameSite = None」 cookie 的需求，以傳送 "Secure" 屬性，並在評估兩個網站是否相同的網站時跳過方案比較。
 
 如果您未設定此原則，cookie 的預設 SameSite 行為將視預設功能 (不含-SameSite-必須是-安全) 功能的 [Cookie]、[Schemeful 相同的網站] 功能而定。 這些功能也可由欄位試驗或相同-預設的網站-cookie 標誌 (不含相同網站的不相同的資料標記) 設定，或 edge://flags 中的 [schemeful] 網站標誌。
 
@@ -2654,7 +2705,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：LegacySameSiteCookieBehaviorEnabled
-  - GP 名稱：啟用預設舊版 SameSite Cookie 行為設定
+  - GP 名稱：啟用預設舊版 SameSite Cookie 行為設定 (已取代)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -2701,7 +2752,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 如果未設定此原則，則會使用全域預設值。 全域預設值也將用於您指定的模式未涵蓋的網域上的 Cookie。
 
-全域預設值可以使用 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 原則進行設定。 如果未設定 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，則全域預設值會後援到其他設定來源。
+在 Microsoft Edge 版本 95 推出前，全域預設值可以使用已取代的 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 原則進行設定。 如果未設定 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，則全域預設值會後援到其他設定來源。
 
 請注意，您在此原則中列出的模式會被視為網域，而非 URL，因此不應指定配置或連接埠。
 
@@ -3205,8 +3256,8 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 ```
 SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
   {
-    "default": true, 
-    "protocol": "mailto", 
+    "default": true,
+    "protocol": "mailto",
     "url": "https://mail.contoso.com/mail/?extsrc=mailto&url=%s"
   }
 ]
@@ -3242,8 +3293,7 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 
   ### <a name="spotlightexperiencesandrecommendationsenabled"></a>SpotlightExperiencesAndRecommendationsEnabled
 
-  #### <a name="choose-whether-users-can-receive-customized-background-images-and-text-suggestions-notifications"></a>選擇使用者是否能夠收到自訂的桌面背景影像和文字、建議、通知，
-和 [Microsoft 服務] 的提示
+  #### <a name="choose-whether-users-can-receive-customized-background-images-and-text-suggestions-notifications-and-tips-for-microsoft-services"></a>選擇使用者是否能夠收到自訂的桌面背景影像和文字、建議、通知，及 [Microsoft 服務] 的提示
 
   
   
@@ -3350,12 +3400,12 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
   {
     "devices": [
       {
-        "product_id": 5678, 
+        "product_id": 5678,
         "vendor_id": 1234
       }
-    ], 
+    ],
     "urls": [
-      "https://contoso.com", 
+      "https://contoso.com",
       "https://fabrikam.com"
     ]
   }
@@ -4184,7 +4234,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 
 如果停用此原則或保留未設定，則會允許安裝外部擴充功能。
 
-外部擴充功能和其安裝會記錄在 https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options。
+外部擴充功能及其安裝會記錄在 ./microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options。
 
 
   #### <a name="supported-features"></a>支援的功能：
@@ -4468,7 +4518,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 原則的每個清單項目都是包含擴充功能 ID 的字串，也可以選擇使用分號 (; ) 分隔的「更新」URL。 擴充功能 ID 是在開發人員模式 (例如，在 edge://extensions 上) 中找到的 32 個字母字串。 如果已指定，則「更新」URL 應該指向更新資訊清單 XML 文件 ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) )。 根據預設，會使用 Microsoft Edge 附加元件網站的更新 URL。 此原則中設定的「更新」URL 只會用於初始安裝；此擴充功能的後續更新會在擴充功能的資訊清單中使用更新 URL。
 
-注意：此原則不適用於 InPrivate 模式。 閱讀關於擴充功能 (https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) 的資訊。
+注意：此原則不適用於 InPrivate 模式。 閱讀主應用程式擴充功能 (./microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -4600,7 +4650,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   設定此原則會控制 Microsoft Edge 的擴充功能管理設定，包括任何由現有的擴充功能相關原則所控制的功能。 這個原則取代任何可能設定的舊版原則。
 
-此原則只會將擴充功能 ID 或更新 URL 對應至其特定設定。 您可以針對特殊 ID "*" 設定預設組態，這將適用於此原則中不含自訂設定的所有擴充功能。 有了更新 URL，設定就會套用到擴充功能資訊清單 ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ) 中具有所述之精準更新 URL 的擴充功能。
+此原則只會將擴充功能 ID 或更新 URL 對應至其特定設定。 您可以針對特殊 ID "*" 設定預設組態，這將適用於此原則中不含自訂設定的所有擴充功能。 有了更新 URL，設定就會套用到擴充功能資訊清單中具有所述之精準更新 URL 的擴充功能。 若要瞭解詳細資訊，請於線上 [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555) 參閱 ExtensionSettings 原則的詳細指南。
 
 若要封鎖來自特定協力廠商商店的延伸，您只需要封鎖該商店的 update_url。 例如，如果您想要封鎖 Chrome 線上應用程式商店的延伸，您可以使用下列 JSON。
 
@@ -4645,62 +4695,62 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   "*": {
     "allowed_types": [
       "hosted_app"
-    ], 
-    "blocked_install_message": "Custom error message.", 
+    ],
+    "blocked_install_message": "Custom error message.",
     "blocked_permissions": [
-      "downloads", 
+      "downloads",
       "bookmarks"
-    ], 
+    ],
     "install_sources": [
       "https://company-intranet/apps"
-    ], 
-    "installation_mode": "blocked", 
+    ],
+    "installation_mode": "blocked",
     "runtime_allowed_hosts": [
       "*://good.contoso.com"
-    ], 
+    ],
     "runtime_blocked_hosts": [
       "*://*.contoso.com"
     ]
-  }, 
+  },
   "abcdefghijklmnopabcdefghijklmnop": {
     "blocked_permissions": [
       "history"
-    ], 
-    "installation_mode": "allowed", 
+    ],
+    "installation_mode": "allowed",
     "minimum_version_required": "1.0.1"
-  }, 
+  },
   "bcdefghijklmnopabcdefghijklmnopa": {
     "allowed_permissions": [
       "downloads"
-    ], 
-    "installation_mode": "force_installed", 
+    ],
+    "installation_mode": "force_installed",
     "runtime_allowed_hosts": [
       "*://good.contoso.com"
-    ], 
+    ],
     "runtime_blocked_hosts": [
       "*://*.contoso.com"
-    ], 
+    ],
     "update_url": "https://contoso.com/update_url"
-  }, 
+  },
   "cdefghijklmnopabcdefghijklmnopab": {
-    "blocked_install_message": "Custom error message.", 
+    "blocked_install_message": "Custom error message.",
     "installation_mode": "blocked"
-  }, 
+  },
   "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {
-    "blocked_install_message": "Custom error message.", 
+    "blocked_install_message": "Custom error message.",
     "installation_mode": "blocked"
-  }, 
+  },
   "fghijklmnopabcdefghijklmnopabcde": {
-    "blocked_install_message": "Custom removal message.", 
+    "blocked_install_message": "Custom removal message.",
     "installation_mode": "removed"
-  }, 
+  },
   "update_url:https://www.contoso.com/update.xml": {
     "allowed_permissions": [
       "downloads"
-    ], 
+    ],
     "blocked_permissions": [
       "wallpaper"
-    ], 
+    ],
     "installation_mode": "allowed"
   }
 }
@@ -5083,6 +5133,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   如果您啟用此原則或將它保留為未設，將允許透過非安全 HTTP 接收基本驗證挑戰。
 
 如果您停用這個原則，來自基本驗證架構的非安全 HTTP 要求會遭到封鎖，且只允許安全的 HTTPS。
+
+如果已設定 [AuthSchemes](#authschemes) 原則，且不包含基本原則 ，則請忽略此原則設定 (且禁止使用基本原則)。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -6803,9 +6855,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
 ```
 SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   "custom_size": {
-    "height": 297000, 
+    "height": 297000,
     "width": 210000
-  }, 
+  },
   "name": "custom"
 }
 ```
@@ -6901,6 +6953,152 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   [回到頁首](#microsoft-edge---policies)
 
+  ## <a name="private-network-request-settings-policies"></a>私人網路要求設定原則
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="insecureprivatenetworkrequestsallowed"></a>InsecurePrivateNetworkRequestsAllowed
+
+  #### <a name="specifies-whether-to-allow-insecure-websites-to-make-requests-to-more-private-network-endpoints"></a>指定是否允許不安全的網站對較私人的網路端點提出要求
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  控制是否允許不安全的網站對較私人的網路端點提出要求。
+
+此原則與 CORS-RFC1918 規格相關。 如需詳細資訊，請參閱https://wicg.github.io/cors-rfc1918。
+
+網路端點比另一個端點更加私人，如果：
+1) 其 IP 位址為 localhost，而另一個不是。
+2) 其 IP 位址為私人，而另一個為公用。
+未來，根據規格演進，此原則可能會適用于所有以私人 IP 或 localhost 導向的跨來源要求。
+
+如果網站符合 https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts 中安全內容的定義，即視為安全。 否則，它將被視為不安全的內容。
+
+當此原則未設定或設定為 false 時，從不安全內容到更私人網路端點的要求預設行為將視使用者對 BlockInsecurePrivateNetworkRequests 功能的個人設定 (可能由現場試用或命令列設定) 所決定。
+
+當此原則設定為 true 時，允許不安全的網站對任何網路端點提出要求，但須受其他跨來源檢查。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： InsecurePrivateNetworkRequestsAllowed
+  - GP 名稱：指定是否允許不安全的網站對較私人的網路端點提出要求
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/私人網路要求設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱： InsecurePrivateNetworkRequestsAllowed
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱： InsecurePrivateNetworkRequestsAllowed
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="insecureprivatenetworkrequestsallowedforurls"></a>InsecurePrivateNetworkRequestsAllowedForUrls
+
+  #### <a name="allow-the-listed-sites-to-make-requests-to-more-private-network-endpoints-from-insecure-contexts"></a>允許列出的網站從不安全的內容對較私人的網路端點提出要求
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  URL 模式清單。 允許從比對來源服務之不安全網站起始的私人網路要求。
+
+如果未設定此原則，此原則的行為會像設定為空白清單一樣。
+
+對於此處指定的模式未涵蓋的來源，全域預設值會使用 [InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed) 原則 (如果已設定)，否則則會使用使用者的個人設定。
+
+請注意，此原則只會影響不安全的來源，因此將忽略安全來源 (例如，https://example.com) 清單中包含的不安全來源)。
+
+如需有效 URL 模式的詳細資訊，請造訪 [此處](/DeployEdge/edge-learnmmore-url-list-filter%20format)。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 字串清單
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱： InsecurePrivateNetworkRequestsAllowedForUrls
+  - GP 名稱：允許列出的網站從不安全的內容對較私人的網路端點提出要求
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/私人網路要求設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - Path (Mandatory): SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\1 = "http://www.example.com:8080"
+SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 = "[*.]example.edu"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱： InsecurePrivateNetworkRequestsAllowedForUrls
+  - 範例值：
+``` xml
+<array>
+  <string>http://www.example.com:8080</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ## <a name="proxy-server-policies"></a>Proxy 伺服器原則
 
   [回到頁首](#microsoft-edge---policies)
@@ -6921,7 +7119,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 定義 Microsoft Edge 略過任何 Proxy 的主機清單。
 
-只有在未指定 [ProxySettings](#proxysettings) 原則，且您已選取 [ProxyMode](#proxymode) 原則中的 fixed_servers，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
+只有在未指定 [ProxySettings](#proxysettings) 原則，且您已選取 [ProxyMode](#proxymode) 原則中的 fixed_servers 或 pac_script，才會套用此原則。 如果已選取用於設定 Proxy 原則的任何其他模式，請勿啟用或設定此原則。
 
 如果啟用此原則，則可以建立 Microsoft Edge 不使用 Proxy 的主機清單。
 
@@ -7267,9 +7465,9 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
-  "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", 
-  "ProxyMode": "pac_script", 
-  "ProxyPacUrl": "https://internal.site/example.pac", 
+  "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/",
+  "ProxyMode": "pac_script",
+  "ProxyPacUrl": "https://internal.site/example.pac",
   "ProxyServer": "123.123.123.123:8080"
 }
 ```
@@ -7913,7 +8111,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [回到頁首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -8147,7 +8345,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果停用或未設定此原則，則 Microsoft Edge 不會在新的索引標籤頁面上顯示公司標誌或 Microsoft 標誌。
 
-如需有關判定 SHA-256 雜湊的說明，請參閱 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash。
+如需判斷 SHA-256 雜湊的協助，請參閱 ./powershell/module/microsoft.powershell.utility/get-filehash。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -8181,11 +8379,11 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   "default_logo": {
-    "hash": "cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29", 
+    "hash": "cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29",
     "url": "https://www.contoso.com/logo.png"
-  }, 
+  },
   "light_logo": {
-    "hash": "517d286edb416bb2625ccfcba9de78296e90da8e32330d4c9c8275c4c1c33737", 
+    "hash": "517d286edb416bb2625ccfcba9de78296e90da8e32330d4c9c8275c4c1c33737",
     "url": "https://www.contoso.com/light_logo.png"
   }
 }
@@ -8479,12 +8677,12 @@ Microsoft Edge 會以所列的順序呈現這些項目 (由左至右)，且所�
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   {
-    "pinned": true, 
-    "title": "Contoso Portal", 
+    "pinned": true,
+    "title": "Contoso Portal",
     "url": "https://contoso.com"
-  }, 
+  },
   {
-    "title": "Fabrikam", 
+    "title": "Fabrikam",
     "url": "https://fabrikam.com"
   }
 ]
@@ -8648,17 +8846,17 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
-  #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>設定 Microsoft Edge 新索引標籤頁面體驗 (已過時)
+  #### <a name="configure-the-microsoft-edge-new-tab-page-experience-obsolete"></a>設定 Microsoft Edge 新的索引標籤頁面體驗 (已過時)
 
-  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 92 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 79 或更新版本
+  - Windows 和 macOS 上，版本 79 至 92
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  我們即將淘汰此原則，因為新版的企業新索引標籤頁面不再需要選擇不同的內容類型。 而是可透過 Microsoft 365 系統管理中心控制向使用者顯示的內容。 若要前往 Microsoft 365 系統管理中心，請使用您的系統管理員帳戶登入 https://admin.microsoft.com。 該原則將在 Microsoft Edge 版本 90 後過時。
+  此原則已過時，因為新版的企業新索引標籤頁面不再需要選擇不同的內容類型。 而是可透過 Microsoft 365 系統管理中心控制向使用者顯示的內容。 若要前往 Microsoft 365 系統管理中心，請使用您的系統管理員帳戶登入 https://admin.microsoft.com。
 
 讓您為新的索引標籤頁面選擇 Microsoft News 或 Office 365 摘要體驗。
 
@@ -8699,7 +8897,7 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：NewTabPageSetFeedType
-  - GP 名稱：設定 Microsoft Edge 新索引標籤頁面體驗 (已過時)
+  - GP 名稱：設定 Microsoft Edge 新的索引標籤頁面體驗 (已過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/啟動、首頁和新的索引標籤頁面
   - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/啟動、首頁和新的索引標籤頁面
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -8939,6 +9137,68 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="aadwebsitessousingthisprofileenabled"></a>AADWebSiteSSOUsingThisProfileEnabled
+
+  #### <a name="single-sign-on-for-work-or-school-sites-using-this-profile-enabled"></a>已啟用使用此設定檔的工作或學校網站單一登入
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  '允許在工作或學校網站使用此設定檔的單一登入' 選項可讓非 AAD 設定檔使用電腦上存在的工作或學校認證，對工作或學校網站使用單一登入。 此選項在設定 -> 設定檔 ->非 AAD 設定檔的設定檔喜好設定中會顯示為切換開關。
+
+如果停用此原則，非 AAD 設定檔將無法使用電腦上存在的其他認證來使用 SSO。 這也將確保已關閉單一非 Azure AD Microsoft Edge 設定檔使用者的所有 Windows Azure Active Directory (Azure AD) 帳戶智慧型啟用單一登入 (SSO)。
+
+如果您啟用或不設定原則，非 AAD 設定檔將可以使用電腦上存在的其他認證來使用 SSO，而具有單一非 Azure AD Microsoft Edge 設定檔之使用者的所有 Windows Azure Active Directory (Azure AD) 帳戶的智慧型啟用單一登入 (SSO) 將繼續運作。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：AADWebSiteSSOUsingThisProfileEnabled
+  - GP 名稱：已啟用使用此設定檔的工作或學校網站單一登入
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：AADWebSiteSSOUsingThisProfileEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：AADWebSiteSSOUsingThisProfileEnabled
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="addressbarmicrosoftsearchinbingproviderenabled"></a>AddressBarMicrosoftSearchInBingProviderEnabled
 
   #### <a name="enable-microsoft-search-in-bing-suggestions-in-the-address-bar"></a>在網址列中啟用 Bing 專用 Microsoft Search 建議
@@ -9083,7 +9343,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
 如果啟用此原則或未設定，則使用者可以刪除瀏覽和下載歷程記錄。
 
-如果您停用這個原則，使用者將無法刪除流覽和下載歷史記錄，且歷史記錄同步處理將會停用。
+如果停用此原則，則使用者無法刪除瀏覽和下載歷程記錄。 停用此原則會停用歷程記錄同步，並開啟索引標籤同步。
 
 如果啟用此原則，則請勿啟用 [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) 原則，因為它們全都涉及刪除資料。 如果您同時啟用這兩項，則 [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) 原則優先，並且會在 Microsoft Edge 關閉時刪除所有資料，無論此原則的設定方式如何。
 
@@ -10206,23 +10466,23 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
   {
     "allowed_origins": [
-      "example.com", 
+      "example.com",
       "http://www.example.com:8080"
-    ], 
+    ],
     "protocol": "spotify"
-  }, 
+  },
   {
     "allowed_origins": [
-      "https://example.com", 
+      "https://example.com",
       "https://.mail.example.com"
     ], 
-    "protocol": "teams"
+    "protocol": "msteams"
   }, 
   {
     "allowed_origins": [
       "*"
     ], 
-    "protocol": "outlook"
+    "protocol": "msoutlook"
   }
 ]
 ```
@@ -10230,7 +10490,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
   ##### <a name="compact-example-value"></a>精簡範例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [{"allowed_origins": ["example.com", "http://www.example.com:8080"], "protocol": "spotify"}, {"allowed_origins": ["https://example.com", "https://.mail.example.com"], "protocol": "teams"}, {"allowed_origins": ["*"], "protocol": "outlook"}]
+  SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [{"allowed_origins": ["example.com", "http://www.example.com:8080"], "protocol": "spotify"}, {"allowed_origins": ["https://example.com", "https://.mail.example.com"], "protocol": "msteams"}, {"allowed_origins": ["*"], "protocol": "msoutlook"}]
   ```
   
 
@@ -10542,6 +10802,80 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   - 範例值：
 ``` xml
 <false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="automatichttpsdefault"></a>AutomaticHttpsDefault
+
+  #### <a name="configure-automatic-https"></a>設定自動 HTTPS
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則可讓您管理 [AutomaticHttpsDefault](#automatichttpsdefault) 設定，此設定會從 HTTP 切換至 HTTPS。
+
+此功能可強制執行更安全的連線，協助抵禦中間人攻擊，但使用者可能會遇到更多連接錯誤。
+
+注意： 'UpgradeCapableDomains' 設定需要元件清單，如果 [ComponentUpdatesEnabled](#componentupdatesenabled) 設定為 '停用'，則將不會升級這些連接。
+
+如果未設定此原則， 將會啟用 [AutomaticHttpsDefault](#automatichttpsdefault) ，且只會升級為可能支援 HTTPS 網域的連線。
+
+原則選項對應：
+
+* DisableAutomaticHttps (0) = 已停用自動 HTTPS 功能。
+
+* UpgradeCapableDomains (1) = 在可能支援 HTTPS 的網域上，以 HTTP 傳遞的瀏覽會切換至 HTTPS。
+
+* AlwaysUpgrade (2) = 所有透過 HTTP 傳遞的瀏覽都會切換至 HTTPS。 連線錯誤可能會更常發生。
+
+設定此原則時，請使用上述資訊。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：AutomaticHttpsDefault
+  - GP 名稱：設定自動 HTTPS
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：AutomaticHttpsDefault
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000002
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：AutomaticHttpsDefault
+  - 範例值：
+``` xml
+<integer>2</integer>
 ```
   
 
@@ -11145,7 +11479,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   設定 Microsoft Edge 的流覽資料存留期設定。
 此原則控制所選流覽資料的存留期。 如果啟用同步處理，此原則就不會有任何作用。
 可用的資料類型有 'browsing_history'、'download_history'、 'cookies_and_other_site_data'、 'cached_images_and_files'、 'password_signin'、 'autofill'、'site_settings' 和 'hosted_app_data'.
-Microsoft Edge 會定期移除超過「time_to_live_in_hours」的所選類型的資料。 因為資料刪除只會在特定的時間間隔進行，所以某些資料的保留時間可能稍長，但不會超過預期「time_to_live_in_hours」的兩倍。
+Microsoft Edge 會定期移除超過「time_to_live_in_hours」的所選類型的資料。 刪除過期的資料將在瀏覽器啟動 15 秒後進行，然後在瀏覽器執行時，會每小時刪除一次。
 
 
   #### <a name="supported-features"></a>支援的功能：
@@ -11182,14 +11516,14 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
   {
     "data_types": [
       "browsing_history"
-    ], 
+    ],
     "time_to_live_in_hours": 24
-  }, 
+  },
   {
     "data_types": [
-      "password_signin", 
+      "password_signin",
       "autofill"
-    ], 
+    ],
     "time_to_live_in_hours": 12
   }
 ]
@@ -11333,6 +11667,68 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
   - 範例值：
 ``` xml
 <false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="cecpq2enabled"></a>CECPQ2Enabled
+
+  #### <a name="cecpq2-post-quantum-key-agreement-enabled-for-tls"></a>已啟用 TLS 的 CECPQ2 後量子金鑰協定
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 93 或更新版本
+
+  #### <a name="description"></a>說明
+
+  如果未設定此原則，或設定為啟用，則 Microsoft Edge 會遵循 CECPQ2 (TLS 中的後量子金鑰協定演算法) 的預設推出程式。
+
+CECPQ2 會導致較大的 TLS 訊息，在極罕見的情況下，會觸發某些網路硬體中的錯誤。 可將此原則設定為 False，以在網路問題解決時停用 CECPQ2。
+
+此原則是暫時方法，將在未來版本的 Microsoft Edge 中移除。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：CECPQ2Enabled
+  - GP 名稱：已啟用 TLS 的 CECPQ2 後量子金鑰協定
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：CECPQ2Enabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：CECPQ2Enabled
+  - 範例值：
+``` xml
+<true/>
 ```
   
 
@@ -11769,6 +12165,16 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 * collections_share (collections_share) = 共享集合
 
+* local_pdf (local_pdf) = 將本地 PDF 以 集錦儲存到 OneDrive 
+
+* send_word (send_word) = 將集錦傳送至 Microsoft Word
+
+* send_excel (send_excel) = 將集錦傳送至Microsoft Excel
+
+* send_onenote (send_onenote) = 將集錦傳送至 Microsoft OneNote
+
+* send_pinterest (send_pinterest) = 將集錦傳送至 Pinterest
+
 設定此原則時，請使用上述資訊。
 
   #### <a name="supported-features"></a>支援的功能：
@@ -11803,6 +12209,11 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 ```
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "collections_share"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\3 = "local_pdf"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\4 = "send_word"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\5 = "send_excel"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\6 = "send_onenote"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "send_pinterest"
 
 ```
 
@@ -11814,6 +12225,11 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 <array>
   <string>pinterest_suggestions</string>
   <string>collections_share</string>
+  <string>local_pdf</string>
+  <string>send_word</string>
+  <string>send_excel</string>
+  <string>send_onenote</string>
+  <string>send_pinterest</string>
 </array>
 ```
   
@@ -12115,7 +12531,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 
 如果將此原則設定為 ‘已停用’ 或未設定，則 Microsoft Edge 不會自動將已加入網域電腦的使用者以 Active Directory 帳戶登入。
 
-從 Microsoft Edge 89 開始，如果存在已停用同步處理的現有內部部署設定檔，且電腦現在已混合加入，亦即 它有 Azure AD 帳戶，它會自動將內部部署設定檔升級至 Azure AD 設定檔，以取得完整的 Azure AD 同步處理功能。
+從 Microsoft Edge 89 開始，如果有現有的內部部署設定檔已停用 [RoamingProfileSupportEnabled](#roamingprofilesupportenabled) 原則，且電腦現在已混合加入，即 它有 Azure AD 帳戶，它會自動將內部部署設定檔升級至 Azure AD 設定檔，以取得完整的 Azure AD 同步處理功能。
 
 原則選項對應：
 
@@ -13710,13 +14126,15 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
 
   - Windows 和 macOS 上，版本 87 或更新版本
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  此原則允許使用者比較他們正在尋找的產品價格，從其所在網站上取得優待券或回贈，或者在結帳時自動套用優待券。
+  此原則允許使用者比較他們正在尋找的產品價格，從其所在網站上取得優待券或回贈、自動申請優惠券，以及使用自動填寫資料協助，以更快速地結帳。
 
-如果您啟用或未設定此原則，將針對零售網域自動套用價格比較、優待券和回贈之類購物功能。 將從伺服器擷取目前零售商的優待券和其他零售商的價格。
+如果您啟用或未設定此原則，將針對零售網域自動套用價格比較、優待券、回贈和快速結帳等等購物功能。 將從伺服器擷取目前零售商的優待券和其他零售商的價格。
 
-如果您停用此原則，將不會針對零售網域自動發現價格比較、優待券和回贈之類購物功能。
+如果您停用此原則，將不會針對零售網域自動發現價格比較、優待券、回贈和快速結帳等等購物功能。
+
+從版本 90.0.818.56 開始，傳訊行為會讓使用者知道購物網域有可用的優待券、回饋、價格比較或價格記錄，也會透過網址列下方的水平橫幅廣告完成。 此訊息先前是在網址列上完成。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -14033,15 +14451,15 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
 
   ### <a name="enablesha1forlocalanchors"></a>EnableSha1ForLocalAnchors
 
-  #### <a name="allow-certificates-signed-using-sha-1-when-issued-by-local-trust-anchors-deprecated"></a>允許由本機信賴起點頒發的 SHA-1 簽章憑證 (已過時)
+  #### <a name="allow-certificates-signed-using-sha-1-when-issued-by-local-trust-anchors-obsolete"></a>允許由本機信賴起點頒發的 SHA-1 簽章憑證 (已過時)
 
-  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 91 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 85 或更新版本
+  - Windows 和 macOS 上，版本 85 至 91
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
   啟用此設定時，只要憑證連結接到本機安裝的根憑證，Microsoft Edge 就能以 SHA-1 簽署的憑證來保護您的連線，而這是有效的。
 
@@ -14271,8 +14689,8 @@ Microsoft 會基於相容性原因，保留對特定網域採取的動作清單�
   ##### <a name="example-value"></a>範例值：
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"domains": ["https://contoso.com", "contoso2.com"], "file_extension": "jnlp"}
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"domains": ["*"], "file_extension": "swf"}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"file_extension": "jnlp", "domains": ["https://contoso.com", "contoso2.com"]}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"file_extension": "swf", "domains": ["*"]}
 
 ```
 
@@ -14282,8 +14700,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 範例值：
 ``` xml
 <array>
-  <string>{'domains': ['https://contoso.com', 'contoso2.com'], 'file_extension': 'jnlp'}</string>
-  <string>{'domains': ['*'], 'file_extension': 'swf'}</string>
+  <string>{'file_extension': 'jnlp', 'domains': ['https://contoso.com', 'contoso2.com']}</string>
+  <string>{'file_extension': 'swf', 'domains': ['*']}</string>
 </array>
 ```
   
@@ -14369,6 +14787,85 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - 範例值：
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="explicitlyallowednetworkports"></a>ExplicitlyAllowedNetworkPorts
+
+  #### <a name="explicitly-allowed-network-ports"></a>明確允許的網路連接埠
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 91 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則允許繞過 Microsoft Edge 內建的受限制連接埠清單。 埠組定義為逗號分隔清單，允許其進行連出連接。
+
+連接埠受到限制，以防止使用 Microsoft Edge 做為利用各種網路弱點的媒介。 設定此原則可能會讓您的網路遭到攻擊。 此原則是當將封鎖連接埠上執行的服務移至標準連接埠 (例如連接埠 80 或 443) 時，錯誤碼 "ERR_UNSAFE_PORT" 的暫時解決方法。
+
+惡意網站可以輕鬆地偵測到已設定此原則，以及哪些連接埠設定該原則，然後使用該資訊來鎖定攻擊。
+
+將數值留白或取消設定，表示所有受限制的連接埠都會被封鎖。 透過此原則所設定的不正確埠值會被忽略，而有效的埠值仍然會繼續套用。
+
+此原則會覆寫 "--explicitly-allowed-ports" 命令列選項。
+
+原則選項對應：
+
+* 554 (554) = 連接埠 554 (2021/10/15 到期)
+
+* 10080 (10080) = 連接埠 10080 (2022/04/01 到期)
+
+* 6566 (6566) = 連接埠 6566 (2021/10/15 到期)
+
+設定此原則時，請使用上述資訊。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 字串清單
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：ExplicitlyAllowedNetworkPorts
+  - GP 名稱：明確允許的網路連接埠
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)： SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts
+  - 路徑 (建議)：不適用
+  - 數值名稱：1、2、3、...
+  - 數值類型：REG_SZ 的清單
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts\1 = "10080"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：ExplicitlyAllowedNetworkPorts
+  - 範例值：
+``` xml
+<array>
+  <string>10080</string>
+</array>
 ```
   
 
@@ -15469,6 +15966,68 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="headlessmodeenabled"></a>HeadlessModeEnabled
+
+  #### <a name="control-use-of-the-headless-mode"></a>控制無周邊模式的使用
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則設定可讓您決定使用者是否可以在無周邊模式下啟動 Microsoft Edge。
+
+如果您啟用或沒有設定此原則，Microsoft Edge 會允許使用無周邊模式。
+
+如果您停用此原則，Microsoft Edge 會拒絕使用無周邊模式。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：HeadlessModeEnabled
+  - GP 名稱：控制無周邊模式的使用
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：HeadlessModeEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：HeadlessModeEnabled
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="hidefirstrunexperience"></a>HideFirstRunExperience
 
   #### <a name="hide-the-first-run-experience-and-splash-screen"></a>隱藏初次執行體驗與啟動顯示畫面
@@ -16422,6 +16981,67 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="importstartuppagesettings"></a>ImportStartupPageSettings
+
+  #### <a name="allow-importing-of-startup-page-settings"></a>允許匯入啟動程序設定
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 91 或更新版本
+
+  #### <a name="description"></a>說明
+
+  允許使用者從其他瀏覽器將啟動程序設定匯入到 Microsoft Edge。
+
+如果啟用此原則，則會一直匯入啟動程序設定。
+
+如果停用此原則，則啟動程序設定就不會在首次執行或手動匯入時進行。
+
+如果未設定此原則，則啟動程序設定會于第一次執行時進行，且使用者可以選擇是否要在稍後瀏覽工作階段期間選取瀏覽器設定選項，以手動方式匯入此資料。
+
+您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入啟動程序設定，但使用者可以在手動匯入期間選取或清除 **[瀏覽器設定]** 選項。
+
+**注意**：此原則目前會管理來自舊版 Microsoft Edge 和 Google Chrome (在 Windows 7、8 和 10) 瀏覽器中的匯入。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：ImportStartupPageSettings
+  - GP 名稱：允許匯入啟動程序頁面設定
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：ImportStartupPageSettings
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="inprivatemodeavailability"></a>InPrivateModeAvailability
 
   #### <a name="configure-inprivate-mode-availability"></a>設定 InPrivate 模式可用性
@@ -16876,7 +17496,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="internetexplorerintegrationlocalfileshowcontextmenu"></a>InternetExplorerIntegrationLocalFileShowContextMenu
 
-  #### <a name="show-context-menu-to-open-a-link-in-internet-explorer-mode"></a>顯示操作功能表以在 Internet Explorer 模式中開啟連結
+  #### <a name="show-context-menu-to-open-a-file-link-in-internet-explorer-mode"></a>顯示操作功能表以在 Internet Explorer 模式中開啟 file:// 連結
 
   
   
@@ -16893,6 +17513,8 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 如果將此原則設定為 true，[在新的 Internet Explorer 模式索引標籤中開啟連結] 操作功能表項目將可供 file:// 連結使用。
 
 如果將此原則設定為 false 或未設定，將不會新增該操作功能表項目。
+
+如果 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則允許使用者在 Internet Explorer 模式中重新載入網站，則除了網站清單明確為使用 Microsoft Edge 模式的網站連結之外，所有連結都可使用'以新 Internet Explorer 模式開啟連結' 操作功能表項目。 在這種情況下，如果您將這個原則設定為 true，操作功能表項目將可供 file:// 連結使用，即使是設定為使用 Microsoft Edge 模式的網站也一樣。 如果您將這個原則設定為 False 或未設定，則此原則便不會作用。
 
 若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -16911,7 +17533,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：InternetExplorerIntegrationLocalFileShowContextMenu
-  - GP 名稱：顯示操作功能表以在 Internet Explorer 模式中開啟連結
+  - GP 名稱：顯示操作功能表以在 Internet Explorer 模式中開啟 file:// 連結
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -16921,6 +17543,132 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
   - 路徑 (建議)：不適用
   - 數值名稱：InternetExplorerIntegrationLocalFileShowContextMenu
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationlocalsitelistexpirationdays"></a>InternetExplorerIntegrationLocalSiteListExpirationDays
+
+  #### <a name="specify-the-number-of-days-that-a-site-remains-on-the-local-ie-mode-site-list"></a>指定網站保留在區域 IE 模式網站清單上的天數
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  如果 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則已啟用或尚未進行，使用者將能夠告知 Microsoft Edge 在 Internet Explorer 模式中載入特定頁面的天數。
+
+您可以使用此設定來決定在瀏覽器中記住該設定多少天。 經過此期間之後，個別頁面將不再以 IE 模式自動載入。
+
+如果您停用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) ，則此原則不會有作用。
+
+如果您停用或沒有設定此原則，則使用預設值 30 天。
+
+如果啟用此原則，您必須在 Microsoft Edge 的使用者本地網站清單上輸入網站保留的天數。 該值可以是 0 到 90 天。
+
+若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationLocalSiteListExpirationDays
+  - GP 名稱：指定網站保留在區域 IE 模式網站清單上的天數
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱： InternetExplorerIntegrationLocalSiteListExpirationDays
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x0000001e
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationreloadiniemodeallowed"></a>InternetExplorerIntegrationReloadInIEModeAllowed
+
+  #### <a name="allow-unconfigured-sites-to-be-reloaded-in-internet-explorer-mode"></a>允許在 Internet Explorer 模式中重新載入未設置的網站
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 92 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則允許使用者在 Microsoft Edge 中瀏覽時，在 Internet Explorer 模式中重新載入未設定的網站 (未在企業模式網站清單中進行設定)，而網站需要 Internet Explorer 的相容性。
+
+在 Internet Explorer 模式中重新載入網站之後，「頁面內」瀏覽會保持 Internet Explorer 模式 (例如頁面上的連結、指令碼或表單，或另一個「頁面內」瀏覽的伺服器端重新導向)。 使用者可以選擇離開 Internet Explorer 模式，或者當非「頁面內」的瀏覽 (例如，使用網址列、返回按鈕或我的最愛連結) 時，Microsoft Edge 會自動離開 Internet Explorer 模式。
+
+使用者也可以選擇性地告知 Microsoft Edge 未來使用網站的 Internet Explorer 模式。 這個選項會記住一段由 [InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays) 原則管理的時間長度。
+
+如果 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 原則設定為 'IEMode'， 然後， [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) 原則的網站清單以使用 Microsoft Edge 的網站清單無法以 Internet Explorer 模式重新載入，且網站清單或 [SendIntranetToInternetExplorer](#sendintranettointernetexplorer) 原則所設定的網站無法從 Internet Explorer 模式退出。
+
+如果您啟用此原則，則允許使用者在 Internet Explorer 模式中重新載入未設定的網站。
+
+如果您停用此原則，則不允許使用者在 Internet Explorer 模式中重新載入未設定的網站。
+
+請注意，如果您啟用此原則，它會優先于您對[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed) 原則的設定，且該原則將會被停用。
+
+若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationReloadInIEModeAllowed
+  - GP 名稱：允許在 Internet Explorer 模式中重新載入未設置的網站
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱： InternetExplorerIntegrationReloadInIEModeAllowed
   - 數值類型：REG_DWORD
 
   ##### <a name="example-value"></a>範例值：
@@ -17010,6 +17758,8 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果將此原則設定為 'AllInPageNavigations'，則於 IE 模式載入到未設定網站之頁面的所有導覽，都會保留在 Internet Explorer 模式 (最不建議)。
 
+如果 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則允許使用者在 Internet Explorer 模式中重新載入網站，則使用者選擇在 Internet Explorer 模式中重新載入之未設定的網站的所有頁面內瀏覽都會保留在 Internet Explorer 模式中，無論此原則的群組原則如何進行。
+
 若要深入了解 Internet Explorer 模式，請參閱 [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 原則選項對應：
@@ -17061,17 +17811,19 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="internetexplorerintegrationtestingallowed"></a>InternetExplorerIntegrationTestingAllowed
 
-  #### <a name="allow-internet-explorer-mode-testing"></a>允許 Internet Explorer 模式測試
+  #### <a name="allow-internet-explorer-mode-testing-deprecated"></a>允許 Internet Explorer 模式測試 (已取代) 
 
-  
+  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
   #### <a name="supported-versions"></a>支援的版本：
 
   - Windows 上，版本 86 或更新版本
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  這項原則可讓使用者透過在 Microsoft Edge 開啟 Internet Explorer 模式選項, 以 Internet Explorer 模式測試應用程式。
+  此原則已遭取代，請改為使用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則。 無法在 Microsoft Edge 版本 95 中使用。
+
+這項原則可讓使用者透過在 Microsoft Edge 開啟 Internet Explorer 模式選項, 以 Internet Explorer 模式測試應用程式。
 
 使用者可在＂更多工具＂功能表中，選取＂在 Internet Explorer 模式中開啟網站＂來執行此動作。
 
@@ -17079,7 +17831,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 此設定可結合將 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定為 'IEMode' 運作。
 
-如果您啟用這個原則，則 [更多工具] 下將顯示 [以 Windows Internet Explorer 模式打開網站] 的選項。 使用者可以在這個索引標籤上，在 Internet Explorer 模式中查看他們的網站。＂其他工具＂下的＂ 以邊緣模式開啟網站＂ 以幫助在新式瀏覽器中測試網站，而不需將它們從網站清單中移除。
+如果您啟用這個原則，則 [更多工具] 下將顯示 [以 Windows Internet Explorer 模式打開網站] 的選項。 使用者可以在這個索引標籤上，在 Internet Explorer 模式中查看他們的網站。＂其他工具＂下的＂ 以邊緣模式開啟網站＂ 以幫助在新式瀏覽器中測試網站，而不需將它們從網站清單中移除。 請注意，如果啟用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則，它會優先使用，且這些選項不會顯示在 「其他工具」下。
 
 如果您停用或未設定此原則，使用者就不會看到＂更多工具＂主選單下的＂在 Internet Explorer 模式中開啟＂ 和＂以邊緣模式開啟＂選項。 不過，使用者可以用--ie-mode-test 標誌來設定這些選項。
 
@@ -17098,7 +17850,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：InternetExplorerIntegrationTestingAllowed
-  - GP 名稱：允許 Internet Explorer 模式測試
+  - GP 名稱：允許 Internet Explorer 模式測試 (已取代)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -17206,17 +17958,15 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   - Windows 和 macOS 上，版本 77 或更新版本
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  指定要在隔離中於其自己的處理程序中執行的來源。
+  指定在隔離的進程中執行的來源。
 
-此原則也會隔離由子網域所指定的來源，例如，指定 https://contoso.com/ 會導致 https://foo.contoso.com/ 隨著 https://contoso.com/ 網站中的一部分隔離。
+根據預設，Microsoft Edge 會從每個網站將頁面隔離到自己的程式。 此原則會根據 Origin 而非網站，啟用更細微的隔離。 例如，指定 https://subdomain.contoso.com/ 會導致來自 https://subdomain.contoso.com/ 的頁面與來自 https://contoso.com/ 網站內其他原始來源的頁面在不同的進程中隔離。
 
-如果已啟用原則，以逗號分隔清單中的每個指定來源，將會在自己的處理程序中執行。
+如果您啟用此原則，以逗號分隔清單中的每個指定來源，將會在自己的處理程序中執行。
 
-如果停用此原則，則會同時停用 'IsolateOrigins' 和 'SitePerProcess' 功能。 使用者仍然可以透過命令列旗標手動啟用 'IsolateOrigins' 原則。
-
-如果未設定此原則，則使用者可以變更此設定。
+如果您停用或未設定此原則，將會以每個網站為基礎隔離頁面。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17258,6 +18008,63 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 ``` xml
 <string>https://contoso.com/,https://fabrikam.com/</string>
 ```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="localbrowserdatashareenabled"></a>LocalBrowserDataShareEnabled
+
+  #### <a name="enable-windows-to-search-local-microsoft-edge-browsing-data"></a>啟用 Windows 以搜尋當地 Microsoft Edge 瀏覽資料
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 93 或更新版本
+
+  #### <a name="description"></a>說明
+
+  可讓 Windows 為儲存在使用者裝置上的 Microsoft Edge 瀏覽資料編制索引，並讓使用者直接從 Windows 功能 (例如 Windows 工作列上的搜尋方塊) 尋找並啟動先前儲存的瀏覽資料。
+
+如果您啟用此原則或未設定，Microsoft Edge 會發佈本地瀏覽資料至 Windows 索引器。
+
+如果您停用此原則，Microsoft Edge 將不會將資料分享給 Windows 索引器。
+
+請注意，如果您停用此原則，Microsoft Edge 將會移除裝置上與 Windows 共用的資料，並停止共用任何新的瀏覽資料。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：LocalBrowserDataShareEnabled
+  - GP 名稱：啟用 Windows 以搜尋當地 Microsoft Edge 瀏覽資料
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：LocalBrowserDataShareEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -17379,13 +18186,13 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 ```
 SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
   {
-    "managed_configuration_hash": "asd891jedasd12ue9h", 
-    "managed_configuration_url": "https://static.contoso.com/configuration.json", 
+    "managed_configuration_hash": "asd891jedasd12ue9h",
+    "managed_configuration_url": "https://static.contoso.com/configuration.json",
     "origin": "https://www.contoso.com"
-  }, 
+  },
   {
-    "managed_configuration_hash": "djio12easd89u12aws", 
-    "managed_configuration_url": "https://static.contoso.com/configuration2.json", 
+    "managed_configuration_hash": "djio12easd89u12aws",
+    "managed_configuration_url": "https://static.contoso.com/configuration2.json",
     "origin": "https://www.example.com"
   }
 ]
@@ -17480,26 +18287,26 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
 SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
   {
     "toplevel_name": "My managed favorites folder"
-  }, 
+  },
   {
-    "name": "Microsoft", 
+    "name": "Microsoft",
     "url": "microsoft.com"
-  }, 
+  },
   {
-    "name": "Bing", 
+    "name": "Bing",
     "url": "bing.com"
-  }, 
+  },
   {
     "children": [
       {
-        "name": "Microsoft Edge Insiders", 
+        "name": "Microsoft Edge Insiders",
         "url": "www.microsoftedgeinsider.com"
-      }, 
+      },
       {
-        "name": "Microsoft Edge", 
+        "name": "Microsoft Edge",
         "url": "www.microsoft.com/windows/microsoft-edge"
       }
-    ], 
+    ],
     "name": "Microsoft Edge links"
   }
 ]
@@ -17616,33 +18423,33 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
 SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   {
     "allow_search_engine_discovery": true
-  }, 
+  },
   {
-    "is_default": true, 
-    "keyword": "example1.com", 
-    "name": "Example1", 
-    "search_url": "https://www.example1.com/search?q={searchTerms}", 
+    "is_default": true,
+    "keyword": "example1.com",
+    "name": "Example1",
+    "search_url": "https://www.example1.com/search?q={searchTerms}",
     "suggest_url": "https://www.example1.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "image_search_post_params": "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}", 
-    "image_search_url": "https://www.example2.com/images/detail/search?iss=sbiupload", 
-    "keyword": "example2.com", 
-    "name": "Example2", 
-    "search_url": "https://www.example2.com/search?q={searchTerms}", 
+    "image_search_post_params": "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}",
+    "image_search_url": "https://www.example2.com/images/detail/search?iss=sbiupload",
+    "keyword": "example2.com",
+    "name": "Example2",
+    "search_url": "https://www.example2.com/search?q={searchTerms}",
     "suggest_url": "https://www.example2.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "encoding": "UTF-8", 
-    "image_search_url": "https://www.example3.com/images/detail/search?iss=sbiupload", 
-    "keyword": "example3.com", 
-    "name": "Example3", 
-    "search_url": "https://www.example3.com/search?q={searchTerms}", 
+    "encoding": "UTF-8",
+    "image_search_url": "https://www.example3.com/images/detail/search?iss=sbiupload",
+    "keyword": "example3.com",
+    "name": "Example3",
+    "search_url": "https://www.example3.com/search?q={searchTerms}",
     "suggest_url": "https://www.example3.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "keyword": "example4.com", 
-    "name": "Example4", 
+    "keyword": "example4.com",
+    "name": "Example4",
     "search_url": "https://www.example4.com/search?q={searchTerms}"
   }
 ]
@@ -17715,6 +18522,70 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
     <string>https://www.example4.com/search?q={searchTerms}</string>
   </dict>
 </array>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="mathsolverenabled"></a>MathSolverEnabled
+
+  #### <a name="let-users-snip-a-math-problem-and-get-the-solution-with-a-step-by-step-explanation-in-microsoft-edge"></a>讓使用者在 Microsoft Edge 中以逐步解說來刪除數學問題並取得解決方案
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 91 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則可讓您管理使用者是否可以使用 Microsoft Edge 中的數學規劃求解工具。
+
+如果您啟用或未設定此原則，則使用者可以對數學問題進行一些剪取，並取得解決方案，包括 Microsoft Edge 側邊窗格中的解決方案逐步解說。
+
+如果您停用此原則，則數學規劃求解工具將會停用，且使用者將無法使用它。
+
+注意： 將 [ComponentUpdatesEnabled](#componentupdatesenabled) 原則設定為停用也會停用數學規劃求解元件。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：MathSolverEnabled
+  - GP 名稱：讓使用者在 Microsoft Edge 中以逐步解說來刪除數學問題並取得解決方案
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：MathSolverEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：MathSolverEnabled
+  - 範例值：
+``` xml
+<true/>
 ```
   
 
@@ -18304,7 +19175,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   ### <a name="personalizationreportingenabled"></a>PersonalizationReportingEnabled
 
-  #### <a name="allow-personalization-of-microsoft-services-by-sending-browsing-and-browser-related-data-to-microsoft"></a>將瀏覽和瀏覽器相關的資料傳送給 Microsoft，以允許個人化 Microsoft 服務
+  #### <a name="allow-personalization-of-ads-microsoft-edge-search-news-and-other-microsoft-services-by-sending-browsing-history-favorites-and-collections-usage-and-other-browsing-data-to-microsoft"></a>將瀏覽歷程記錄、我的最愛和收藏、使用狀況及其他瀏覽資料傳送給 Microsoft，以允許個人化廣告、Microsoft Edge、搜尋、新聞和其他 Microsoft 服務
 
   
   
@@ -18312,9 +19183,9 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   - Windows 和 macOS 上，版本 80 或更新版本
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  此原則可防止 Microsoft 收集使用者的 Microsoft Edge 瀏覽歷程記錄、我的最愛與收藏、瀏覽器使用狀況資料，以及像是在網址欄中輸入，以用於個人化廣告、搜尋、新聞、Microsoft Edge 和其他 Microsoft 服務。
+  此原則可防止 Microsoft 收集使用者的 Microsoft Edge 瀏覽歷程記錄、我的最愛和收藏、使用狀況，以及其他用於個人化廣告、搜尋、新聞、Microsoft Edge 和其他 Microsoft 服務的瀏覽資料。
 
 子帳戶或企業帳戶無法使用此設定。
 
@@ -18335,7 +19206,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：PersonalizationReportingEnabled
-  - GP 名稱：將瀏覽和瀏覽器相關的資料傳送給 Microsoft，以允許個人化 Microsoft 服務
+  - GP 名稱：將瀏覽歷程記錄、我的最愛和收藏、使用狀況及其他瀏覽資料傳送給 Microsoft，以允許個人化廣告、Microsoft Edge、搜尋、新聞和其他 Microsoft 服務
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -18423,17 +19294,17 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   ### <a name="proactiveauthenabled"></a>ProactiveAuthEnabled
 
-  #### <a name="enable-proactive-authentication-deprecated"></a>啟用主動式驗證 (已取代)
+  #### <a name="enable-proactive-authentication-obsolete"></a>啟用主動式驗證 (已過時)
 
-  >已取代：此原則已被取代。 目前支援，但將在未來版本中過時。
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 90 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 77 或更新版本
+  - Windows 和 macOS 上，版本 77 至 90
 
-  #### <a name="description"></a>描述
+  #### <a name="description"></a>說明
 
-  此原則已取代，因為它無法獨立於瀏覽器登入而運作。 無法在 Microsoft Edge 版本91中使用。 如果想要設定瀏覽器登入，請使用 [BrowserSignin](#browsersignin) 原則。
+  此原則已過時，因為它無法獨立於瀏覽器登入而運作。 版本 90 之後，它無法于 Microsoft Edge 中使用。 如果想要設定瀏覽器登入，請使用 [BrowserSignin](#browsersignin) 原則。
 
 讓您設定是否要在 Microsoft Edge 中開啟主動式驗證。
 
@@ -18458,7 +19329,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ProactiveAuthEnabled
-  - GP 名稱：啟用主動式驗證 (已取代)
+  - GP 名稱：啟用主動式驗證 (已過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -19353,13 +20224,13 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
   ### <a name="runallflashinallowmode"></a>RunAllFlashInAllowMode
 
-  #### <a name="extend-adobe-flash-content-setting-to-all-content-obsolete"></a>將 Adobe Flash 內容設定延伸至所有內容 (過時)
+  #### <a name="extend-adobe-flash-content-setting-to-all-content-obsolete"></a>將 Adobe Flash 內容設定延伸至所有內容 (已過時)
 
   
-  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 87 及之後的版本中運作。
+  >已過時：此原則已過時且無法在 Microsoft Edge 88 之後運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 77 至 87
+  - Windows 和 macOS 上，版本 77 至 88
 
   #### <a name="description"></a>描述
 
@@ -20407,6 +21278,70 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="sharedarraybufferunrestrictedaccessallowed"></a>SharedArrayBufferUnrestrictedAccessAllowed
+
+  #### <a name="specifies-whether-sharedarraybuffers-can-be-used-in-a-non-cross-origin-isolated-context"></a>指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 91 或更新版本
+
+  #### <a name="description"></a>說明
+
+  指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用。  SharedArrayBuffer 是二進位資料緩衝區，可用來在共用記憶體上建立視圖。  SharedArrayBuffers 在數個熱門 CPU 中具有記憶體存取弱點。
+
+如果啟用此原則，則允許網站使用 SharedArrayBuffers。
+
+如果您停用或未設定此原則，則網站會防止 SharedArrayBuffers 的使用。
+
+基於 Web 相容性考慮，使用來自 Microsoft Edge 91 以上版本的 SharedArrayBuffers 時，Microsoft Edge 將需要跨來源隔離。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：SharedArrayBufferUnrestrictedAccessAllowed
+  - GP 名稱：指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用。
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：SharedArrayBufferUnrestrictedAccessAllowed
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：SharedArrayBufferUnrestrictedAccessAllowed
+  - 範例值：
+``` xml
+<true/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="showmicrosoftrewards"></a>ShowMicrosoftRewards
 
   #### <a name="show-microsoft-rewards-experiences"></a>顯示 Microsoft Rewards 體驗
@@ -20947,8 +21882,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
 
 如果在 'SpellcheckLanguage' 和 [SpellcheckLanguageBlocklist](#spellchecklanguageblocklist) 原則中同時包含某個語言，則會啟用該拼字檢查語言。
 
-支援的語言為：af、bg、ca、cs、cy、da、de、el、en-AU、en-CA、en-GB、en-US、es、es-419、es-AR、es-ES、es-MX、es-US、et、fa、fo、fr、he、hi、hr、hu、id、it、ko、lt、lv、nb、nl、pl、pt-BR、pt-PT、ro、ru、sh、sk、sl、sq、sr、sv、ta、tg、tr、uk、vi。
-
   #### <a name="supported-features"></a>支援的功能：
 
   - 可強制執行：是
@@ -21009,8 +21942,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
 如果 [SpellcheckEnabled](#spellcheckenabled) 原則設為已停用，則此原則沒有作用。
 
 如果在 [SpellcheckLanguage](#spellchecklanguage) 和 'SpellcheckLanguageBlocklist' 原則中同時包含某個語言，則會啟用該拼字檢查語言。
-
-目前支援的語言為：af、bg、ca、cs、da、de、el、en-AU、en-CA、en-GB、en-US、es、es-419、es-AR、es-ES、es-MX、es-US、et、fa、fo、fr、he、hi、hr、hu、id、it、ko、lt、lv、nb、nl、pl、pt-BR、pt-PT、ro、ru、sh、sk、sl、sq、sr、sv、ta、tg、tr、uk、vi。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -21829,6 +22760,66 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="tripledesenabled"></a>TripleDESEnabled
+
+  #### <a name="enable-3des-cipher-suites-in-tls"></a>在 TLS 中啟用 3DES 加密套件
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 93 或更新版本
+
+  #### <a name="description"></a>說明
+
+  '警告： 3DES 將 (於約 2021 年 10 月時) 從版本 95 Microsoft Edge 完全移除，屆時此原則將停止作用。
+
+如果原則設定為 True，則會套用 TLS 中的 3DES 加密套件。 如果設定為 False，將會停用。 如果未設置原則，預設會停用 3DES 加密套件。 此原則可用來暫時保留與過期伺服器的相容性。 這是一種權宜之計，應該重新佈建服務器。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：TripleDESEnabled
+  - GP 名稱：在 TLS 中啟用 3DES 加密套件
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：TripleDESEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：TripleDESEnabled
+  - 範例值：
+``` xml
+<false/>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="urlallowlist"></a>URLAllowlist
 
   #### <a name="define-a-list-of-allowed-urls"></a>定義受允許的 URL 清單
@@ -22061,7 +23052,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   #### <a name="description"></a>描述
 
-  此原則已遭取代，因為此原則只是一個短期機制，用於讓企業在發現其 Web 內容與使用者代理程式用戶端提示功能不一致時，可以有更多時間來更新其 Web 內容。 無法在 Microsoft Edge 版本93中使用。
+  此原則已遭取代，因為此原則只是一個短期機制，用於讓企業在發現其 Web 內容與使用者代理程式用戶端提示功能不一致時，可以有更多時間來更新其 Web 內容。 無法在 Microsoft Edge 版本 94 中使用。
 
 啟用 [使用者代理程式用戶端提示] 功能時，會傳送提供使用者瀏覽器相關資訊 (例如瀏覽器版本) 和環境 (例如系統架構) 的細微要求標頭。
 
@@ -22606,17 +23597,17 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
-    "create_desktop_shortcut": true, 
-    "default_launch_container": "window", 
+    "create_desktop_shortcut": true,
+    "default_launch_container": "window",
     "url": "https://www.contoso.com/maps"
-  }, 
+  },
   {
-    "default_launch_container": "tab", 
+    "default_launch_container": "tab",
     "url": "https://app.contoso.edu"
-  }, 
+  },
   {
-    "default_launch_container": "window", 
-    "fallback_app_name": "Editor", 
+    "default_launch_container": "window",
+    "fallback_app_name": "Editor",
     "url": "https://app.contoso.com/editor"
   }
 ]
@@ -22788,10 +23779,10 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### <a name="webdriveroverridesincompatiblepolicies"></a>WebDriverOverridesIncompatiblePolicies
 
-  #### <a name="allow-webdriver-to-override-incompatible-policies-deprecated"></a>允許 WebDriver 覆寫不相容原則 (已取代)
+  #### <a name="allow-webdriver-to-override-incompatible-policies-obsolete"></a>允許 WebDriver 覆寫不相容原則 (已過時) 
 
   >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
-  
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 84 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
   - 在 Windows 和 macOS 上，版本 77 到 84
@@ -22822,7 +23813,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：WebDriverOverridesIncompatiblePolicies
-  - GP 名稱：允許 WebDriver 覆寫不相容原則 (已取代)
+  - GP 名稱：允許 WebDriver 覆寫不相容原則 (已過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
