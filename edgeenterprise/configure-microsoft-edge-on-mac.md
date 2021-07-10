@@ -3,19 +3,19 @@ title: 使用 .plist 設定適用於 macOS 的 Microsoft Edge
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 11/30/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 .plist 在 macOS 上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: 3f297c11d8009c85a1bc5e17447681ee2b9ef1e2
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
-ms.translationtype: HT
+ms.openlocfilehash: d2e604e13f0fb7f81b2fb492073eba0751407771
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447447"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641619"
 ---
 # <a name="configure-microsoft-edge-policy-settings-for-macos-using-a-plist"></a><span data-ttu-id="94028-103">使用 .plist 針對 macOS 設定 Microsoft Edge 原則設定</span><span class="sxs-lookup"><span data-stu-id="94028-103">Configure Microsoft Edge policy settings for macOS using a .plist</span></span>
 

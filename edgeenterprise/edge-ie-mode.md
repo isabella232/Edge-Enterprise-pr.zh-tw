@@ -3,19 +3,19 @@ title: 什麼是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 05/19/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Microsoft Edge 中的 Internet Explorer 模式如何提供需要 Internet Explorer 11 的網站存取權，以及存取新式網站的方式。
-ms.openlocfilehash: 39f8797049ac1051d49c63c880b8436dd611d9c2
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+ms.openlocfilehash: 5903e8a50f0afa50daa5921f3c97f3dbcbf0c3c5
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617413"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641389"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a><span data-ttu-id="57e1d-103">什麼是 Internet Explorer (IE) 模式？</span><span class="sxs-lookup"><span data-stu-id="57e1d-103">What is Internet Explorer (IE) mode?</span></span>
 

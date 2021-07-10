@@ -3,19 +3,19 @@ title: Microsoft Edge URL 原則的篩選格式
 ms.author: brianalt
 author: dan-wesley
 manager: srugh
-ms.date: 05/01/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 深入了解用於 Microsoft Edge URLBlocklist 和 URLAllowlist 原則的篩選格式。
-ms.openlocfilehash: 94378a9193269c73a7439dd019d6cb2d6ac547df
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: e178dad518ff4bee07bf89d9faca3231ee6cf246
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617263"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642019"
 ---
 # <a name="filter-format-for-url-list-based-policies"></a><span data-ttu-id="a6b61-103">URL 清單型原則的篩選格式</span><span class="sxs-lookup"><span data-stu-id="a6b61-103">Filter format for URL list-based policies</span></span>
 

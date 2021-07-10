@@ -3,19 +3,19 @@ title: ExtensionSettings 原則的詳細指南
 ms.author: aspoddar
 author: dan-wesley
 manager: balajek
-ms.date: 03/31/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 ExtensionSettings 原則設定 Microsoft Edge 擴充功能的詳細參考指南。
-ms.openlocfilehash: 89ff329d6e209a4e658907385ec24fd0d2f1d1c2
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 3acd798be6b2b56761991d8adaf014ae614a3fd4
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618072"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641319"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a><span data-ttu-id="38e36-103">ExtensionSettings 原則的詳細指南</span><span class="sxs-lookup"><span data-stu-id="38e36-103">Detailed guide to the ExtensionSettings policy</span></span>
 

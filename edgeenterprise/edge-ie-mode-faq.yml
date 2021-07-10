@@ -4,24 +4,24 @@ metadata:
   ms.author: shisub
   author: dan-wesley
   manager: srugh
-  ms.date: 05/19/2021
+  ms.date: 06/29/2021
   audience: ITPro
   ms.topic: conceptual
   ms.prod: microsoft-edge
-  ms.localizationpriority: high
+  ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: Microsoft Edge Internet Explorer 模式的疑難排解和常見問題
-  ms.openlocfilehash: d21fdf47fb1774bc69ae3b2478ff3397c3106f04
-  ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+  ms.openlocfilehash: 6248632a430f9c342624794b595f1cccc3d7d6a8
+  ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/25/2021
-  ms.locfileid: "11618061"
+  ms.lasthandoff: 07/09/2021
+  ms.locfileid: "11641859"
 title: IE 模式疑難排解和常見問題
 summary: >
   >[!Note]
 
-  > Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日停用並結束支援 (以查看範圍清單，請參閱常見問題) 。 [](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549) 您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge中開啟。 [請在這裡深入瞭解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+  > Internet Explorer 11 桌面應用程式將於 2022 年 6 月 15 日淘汰並退出支援 (如需範圍內項目的清單，[請參閱常見問題](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549))。 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
 
 
   本文提供 Microsoft Edge 版本 77 或更新版本的疑難排解秘訣和常見問題集。
@@ -96,7 +96,7 @@ sections:
   - question: >
       IE 模式是否會取代 Internet Explorer 11？
     answer: >
-      是，Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日終止支援 (以尋找範圍為生命週期[常見問題 - Internet Explorer](https://support.microsoft.com/help/17454/)的清單。您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge中開啟。 [請在這裡深入瞭解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+      是，Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日終止支援 (以尋找範圍為生命週期[常見問題 - Internet Explorer](https://support.microsoft.com/help/17454/)的清單。您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge中開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
   - question: >
       我可以在 SharePoint 中搭配 IE 模式使用 [在檔案總管中開啟] 或 [在檔案總管中檢視] 嗎？
     answer: >
@@ -123,4 +123,4 @@ sections:
 
 
       使用Microsoft Edge標 `--ie-mode-test` 等執行命令。 `msedge.exe --ie-mode-test`，然後選取 ...->其他工具 ->「在 Internet Explorer 模式中開啟網站」。
-additionalContent: "\n## <a name=\"see-also\"></a>請參閱\n\n- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)\n- [關於 IE 模式](./edge-ie-mode.md)\n- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)"
+additionalContent: "\n## <a name=\"see-also\"></a>另請參閱\n\n- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)\n- [關於 IE 模式](./edge-ie-mode.md)\n- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)"
