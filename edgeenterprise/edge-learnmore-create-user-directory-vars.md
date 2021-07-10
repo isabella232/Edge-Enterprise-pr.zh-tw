@@ -3,19 +3,19 @@ title: 建立 Microsoft Edge 使用者資料目錄變數
 ms.author: brianalt
 author: AndreaLBarr
 manager: srugh
-ms.date: 04/21/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何建立 Microsoft Edge 使用者資料目錄變數
-ms.openlocfilehash: 5ec78f16c7e5cd43f01845f35b8473494cd0c4bf
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 2e85e8eebac4a636d90fd0b5da7520c9a86a2de0
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618059"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641449"
 ---
 # <a name="create-microsoft-edge-user-data-directory-variables"></a>建立 Microsoft Edge 使用者資料目錄變數
 
@@ -62,7 +62,7 @@ Microsoft Edge 支援以下路徑變數。
 | **${global_app_data}** | 系統範圍的應用程式資料資料夾。 範例：*C:\AppData* |
 | **${program_files}** | 目前處理序的程式檔案資料夾。 此資料夾取決於它是 32 位元還是 64 位元處理序。 範例解析：*C:\Program Files (x86)* |
 | **${windows}** | Windows 資料夾。 範例：*C:\Windows* |
-| **${client_name)** | 連接到 RDP 或 Citrix 工作階段的用戶端電腦的名稱。 如果從本機工作階段使用，則此變數為空。 如果用於路徑中，請用保證不為空的項目來做為它的首碼。 範例：*C:\edge_profiles\session_${client_name}* 解析為 *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* 且 *C:\edge_profiles\session_&lt;SomePCname&gt;* 用於遠端工作階段。 |
+| **${client_name}** | 連接到 RDP 或 Citrix 工作階段的用戶端電腦的名稱。 如果從本機工作階段使用，則此變數為空。 如果用於路徑中，請用保證不為空的項目來做為它的首碼。 範例：*C:\edge_profiles\session_${client_name}* 解析為 *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* 且 *C:\edge_profiles\session_&lt;SomePCname&gt;* 用於遠端工作階段。 |
 | **${session_name}** | 使用中工作階段的名稱。 使用此名稱可區分使用單一使用者設定檔的多個同時連接的遠端工作階段。 範例：*WinSta0 for local desktop sessions* |
 
 #### <a name="macos-only"></a>僅限 macOS

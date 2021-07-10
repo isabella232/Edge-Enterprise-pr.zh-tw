@@ -3,19 +3,19 @@ title: 自我裝載 Microsoft Edge 擴充功能
 ms.author: aspoddar
 author: AndreaLBarr
 manager: balajek
-ms.date: 04/08/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 瞭解如何在企業中封裝和自我裝載 Microsoft Edge 擴充功能。
-ms.openlocfilehash: 403b6879b15c146f40fa2564da76eae59b2abe88
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: aef4438212829006e39572fa938462f13721c580
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618071"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642869"
 ---
 # <a name="self-host-microsoft-edge-extensions"></a>自我裝載 Microsoft Edge 擴充功能
 
@@ -102,4 +102,4 @@ ms.locfileid: "11618071"
 - [使用群組原則以管理 Microsoft Edge 擴充功能](microsoft-edge-manage-extensions-policies.md)
 - [ExtensionSettings 原則的詳細指南](microsoft-edge-manage-extensions-ref-guide.md)
 - [Microsoft Edge 擴充功能常見問題集](microsoft-edge-manage-extensions-faq.md)
-- [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

@@ -3,28 +3,28 @@ title: 使用 Jamf 在 macOS 上設定 Microsoft Edge
 ms.author: brianalt
 author: dan-wesley
 manager: laurawi
-ms.date: 11/30/2020
+ms.date: 6/29/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Jamf 在 Mac 裝置上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: 1859d9fb1fd3ea8ff6908c41f75df21a8b338769
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
-ms.translationtype: HT
+ms.openlocfilehash: 8556a5b1d0fc01feb67fc86cb016a9ed47061b55
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194711"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641629"
 ---
-# 使用 Jamf 在 macOS 上設定 Microsoft Edge 原則設定
+# <a name="configure-microsoft-edge-policy-settings-on-macos-with-jamf"></a>使用 Jamf 在 macOS 上設定 Microsoft Edge 原則設定
 
 本文說明如何在 Jamf Pro 10.19 上使用 Microsoft Edge 原則清單檔案來設定 macOS 上的原則設定。
 
 您也可以使用屬性清單 (plist) 檔案，在 macOS 上設定 Microsoft Edge 原則設定。 如需詳細資訊，請參閱[使用 .plist 為 macOS 設定](configure-microsoft-edge-on-mac.md)。
 
 
-##  <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>必要條件
 
 需要下列軟體：
 
@@ -32,7 +32,7 @@ ms.locfileid: "11194711"
 - 原則範本檔案，版本 81.0.416.3
 - Jamf Pro，版本 10.19
 
-##  <a name="about-the-jamf-pro-application-&-custom-settings-menu"></a>關於 Jamf Pro 應用程式與自訂設定功能表
+## <a name="about-the-jamf-pro-application--custom-settings-menu"></a>關於 Jamf Pro 應用程式與自訂設定功能表
 
 Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。 這是耗時的工作流程，需要強大的技術背景。 Jamf Pro 10.18 將組態流程簡化，以消除這些障礙。 不過，IT 系統管理員只能針對 Jamf 所指定的特定應用程式和喜好設定網域使用這個新的使用者介面。
 
@@ -40,7 +40,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 
 如需詳細資訊，請參閱 Jamf Pro 系統管理員指南中的[電腦組態設定檔](https://jamf.it/computer-configuration-profiles)。
 
-##  <a name="get-the-policy-manifest-for-a-specific-version-of-microsoft-edge"></a>取得特定版本 Microsoft Edge 的原則資訊清單
+## <a name="get-the-policy-manifest-for-a-specific-version-of-microsoft-edge"></a>取得特定版本 Microsoft Edge 的原則資訊清單
 
 若要取得原則資訊清單：
 
@@ -56,7 +56,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 
 此資訊清單將會在從組建 81.0.416.3 開始的每個原則組合中發佈。 如果您想要在開發人員通道中測試原則，您可以使用與每個開發發行相關的資訊清單，並在 Jamf Pro 中進行測試。  
 
-##  <a name="use-the-policy-manifest-in-jamf-pro"></a>在 Jamf Pro 中使用原則資訊清單
+## <a name="use-the-policy-manifest-in-jamf-pro"></a>在 Jamf Pro 中使用原則資訊清單
 
 使用下列步驟將原則資訊清單上傳到 Jamf Pro，然後針對 macOS 建立原則設定檔。
 
@@ -105,7 +105,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 
 建立新的組態設定檔之後，您仍需為設定檔設定**範圍**。
 
-###  <a name="to-configure-the-scope"></a>設定範圍
+### <a name="to-configure-the-scope"></a>設定範圍
 
 1. 針對 [目標]****，提供下列最小設定：
 
@@ -115,7 +115,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 2. 針對 [限制]****，請保留預設設定：[無]。 按一下 [取消]****。
 3. 針對 [排除]****，請保留預設設定：[無]。 按一下 [取消]****。
 
-##  <a name="see-also"></a>請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [使用 Intune 針對 macOS 設定](configure-microsoft-edge-on-mac.md)

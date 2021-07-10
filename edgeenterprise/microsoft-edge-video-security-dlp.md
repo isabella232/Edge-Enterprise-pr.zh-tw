@@ -3,31 +3,31 @@ title: Microsoft Edge 和資料外洩防護
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和資料外洩防護 (DLP)
-ms.openlocfilehash: c054c911774acb027b83779588d197766c716a33
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
-ms.translationtype: HT
+ms.openlocfilehash: 53804ac83d3ce9d26eb9410fd0ba06f3c620871f
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314716"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642719"
 ---
-# 影片：Microsoft Edge 和資料外洩防護 (DLP)
+# <a name="video-microsoft-edge-and-data-loss-prevention-dlp"></a>影片：Microsoft Edge 和資料外洩防護 (DLP)
 
 此影片說明 Microsoft Edge 如何支援資料外洩防護。 請按一下以下的螢幕擷取畫面，觀看 Microsoft Edge 安全性小組資深專案經理 Arunesh Chandra 的影片。
 
 [![ Microsoft Edge 和資料外洩防護](media/microsoft-edge-security-dlp/0.png)](http://www.youtube.com/watch?v=dLD04U9eTqg " Microsoft Edge and data loss prevention")
 
-##  <a name="about-the-video"></a>關於此影片
+## <a name="about-the-video"></a>關於此影片
 
 由於遠端作業的關係，資料外洩防護 (DLP) 如今是前所未有地重要。 了解 Microsoft Edge 中的原生 DLP 功能，以及 DLP 如何協助您讓資料保持在公司控制之下，並保持合規。
 
-##  <a name="see-also"></a>請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [Microsoft Edge 中的資料外洩防護 (DLP)](microsoft-edge-security-dlp.md)

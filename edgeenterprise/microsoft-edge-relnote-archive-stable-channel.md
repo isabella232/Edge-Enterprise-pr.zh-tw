@@ -3,19 +3,19 @@ title: 封存的 Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 封存的 Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: d8574e7b77babbf45a062ed9cadd4b60b616d972
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617953"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642389"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>封存的 Microsoft Edge 穩定通道的版本資訊
 
@@ -48,7 +48,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-88070556-january-28"></a>版本 88.0.705.56：1 月 28 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-88070553-january-26"></a>版本 88.0.705.53：1 月 26 日
 
@@ -159,11 +159,11 @@ ms.locfileid: "11617953"
 
 ## <a name="version-87066466-december-17"></a>版本 87.0.664.66：12 月 17 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-87066460-december-10"></a>版本 87.0.664.60：12 月 10 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-87066457-december-7"></a>版本 87.0.664.57：12 月 7 日
 
@@ -171,7 +171,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12 月 3 日
 
-已修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
+修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
 
 - **預設會啟用 [購物] 功能**。 從 Microsoft Edge 版本 87 開始，企業使用者可以利用 Microsoft Edge 中的購物功能。 有了購物功能，Microsoft Edge 可協助使用者在線上購物時找到優待卷及更好的價格。 (優待券體驗已隨著穩定版本 87.0.664.41 推出。) 價格比較體驗現在隨著此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) 原則設定。 請參閱我們的[部落格](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/)和[深入了解](/microsoft-edge/privacy-whitepaper#shopping) Microsoft 購物的相關資訊。
 
@@ -215,7 +215,7 @@ ms.locfileid: "11617953"
 
 #### <a name="new-policies"></a>新原則
 
-新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列原則。
+新增了 10 個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
 
 - [ConfigureFriendlyURLFormat](./microsoft-edge-policies.md#configurefriendlyurlformat) - 設定從 Microsoft Edge 複製的 URL 的預設貼上格式，並決定使用者是否可以使用其他格式。
 - [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) - 已啟用在 Microsoft Edge 中購物。
@@ -258,15 +258,15 @@ ms.locfileid: "11617953"
 
 ## <a name="version-86062261-november-2"></a>版本 86.0.622.61：11 月 2 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-86062258-october-29"></a>版本 86.0.622.58：10 月 29 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-86062256-october-27"></a>版本 86.0.622.56：10 月 27 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-86062251-october-22"></a>版本 86.0.622.51：10 月 22 日
 
@@ -274,11 +274,11 @@ ms.locfileid: "11617953"
 
 ## <a name="version-86062248-october-20"></a>版本 86.0.622.48：10 月 20 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-86062243-october-15"></a>版本 86.0.622.43：10 月 15 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-86062238-october-9"></a>版本 86.0.622.38：10 月 9 日
 
@@ -286,7 +286,7 @@ ms.locfileid: "11617953"
 
 ### <a name="feature-updates"></a>功能更新
 
-* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步瞭解](edge-learnmore-rollback.md)。
+* **復原為上一個 Microsoft Edge 版本。** 如果最新版本的 Microsoft Edge 有問題，復原功能可讓系統管理員還原為已知良好的 Microsoft Edge 版本。 **注意：** 穩定版本 86.0.622.38 是您可以復原的第一個版本，這表示穩定版本 87 是準備好要回復的第一個版本。 [進一步了解](edge-learnmore-rollback.md)。
 
 * **預設會在整個企業強制啟用同步。**  系統管理員可以使用 [ForceSync](./microsoft-edge-policies.md#forcesync) 原則，預設為 Azure Active Directory (Azure AD) 帳戶啟用同步。
 
@@ -360,11 +360,11 @@ ms.locfileid: "11617953"
 
 ## <a name="version-85056470-october-6"></a>版本 85.0.564.70：10 月 6 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-85056468-october-1"></a>版本 85.0.564.68：10 月 1 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-85056463-september-23"></a>版本 85.0.564.63：9 月 23 日
 
@@ -376,7 +376,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-85056444-august-31"></a>版本 85.0.564.44：8 月 31 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 <!-- 85.0.564.41: August 27 -->
 
@@ -421,7 +421,7 @@ ms.locfileid: "11617953"
 - [RoamingProfileLocation](./microsoft-edge-policies.md#roamingprofilelocation) - 設定快取設定檔目錄。
 - [TLSCipherSuiteDenyList](./microsoft-edge-policies.md#tlsciphersuitedenylist) - 指定停用的 TLS 加密套件。
 
-#### <a name="obsoleted-policies"></a>已淘汰的原則
+#### <a name="obsoleted-policies"></a>淘汰的原則
 
 - [EnableDomainActionsDownload](./microsoft-edge-policies.md#enabledomainactionsdownload) - 啟用來自 Microsoft 的網域動作下載。
 - [WebComponentsV0Enabled](./microsoft-edge-policies.md#webcomponentsv0enabled) - 重新啟用網頁元件 v0 API 至 M84。
@@ -433,7 +433,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-84052261-august-17"></a>版本 84.0.522.61：8 月 17 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052259-august-11"></a>版本 84.0.522.59：8 月 11 日
 
@@ -441,15 +441,15 @@ ms.locfileid: "11617953"
 
 ## <a name="version-84052258-august-10"></a>版本 84.0.522.58：8 月 10 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052252-august-1"></a>版本 84.0.522.52：8 月 1 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052250-july-31"></a>版本84.0.522.50：7月31日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052249-july-29"></a>版本 84.0.522.49：7 月 29 日
 
@@ -457,7 +457,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-84052248-july-28"></a>版本 84.0.522.48：7 月 28 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052244-july-23"></a>版本 84.0.522.44：7 月 23 日
 
@@ -508,7 +508,7 @@ ms.locfileid: "11617953"
 
 #### <a name="new-policies"></a>新原則
 
-新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AppCacheForceEnabled](./microsoft-edge-policies.md#appcacheforceenabled) - 允許重新啟用 AppCache 功能 (即使此功能預設為關閉的狀態)。
 - [ApplicationGuardContainerProxy](./microsoft-edge-policies.md#applicationguardcontainerproxy) - 設定應用程式防護容器 Proxy 的設定。
@@ -531,19 +531,19 @@ ms.locfileid: "11617953"
 <!-- End 84 -->
 ## <a name="version-83047864-july-13"></a>版本 83.0.478.64：7 月 13 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-83047861-july-7"></a>版本 83.0.478.61：7 月 7 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-83047858-june-30"></a>版本 83.0.478.58：6 月 30 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-83047856-june-24"></a>版本 83.0.478.56：6 月 24 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 安全性更新列於[此處](./microsoft-edge-relnotes-security.md#june-24-2020)
 
@@ -553,7 +553,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-83047850-june-15"></a>版本 83.0.478.50：6 月 15 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-83047845-june-4"></a>版本 83.0.478.45：6 月 4 日
 
@@ -561,7 +561,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-83047844-june-1"></a>版本 83.0.478.44：6 月 1 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-83047837-may-21"></a>版本 83.0.478.37：5 月 21 日
 
@@ -607,7 +607,7 @@ ms.locfileid: "11617953"
 
 #### <a name="new-policies"></a>新原則
 
-新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列原則。
+新增了 15 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)下載更新的系統管理範本。 已新增下列新原則。
 
 - [AllowSurfGame](./microsoft-edge-policies.md#allowsurfgame) - 允許衝浪遊戲。
 - [AllowTokenBindingForUrls](./microsoft-edge-policies.md#allowtokenbindingforurls) - 設定 Microsoft Edge 將嘗試建立權杖繫結的網站清單。
@@ -635,7 +635,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-81041677-may-18"></a>版本 81.0.416.77：5 月 18 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-81041672-may-7"></a>版本 81.0.416.72：5 月 7 日
 
@@ -739,7 +739,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-800361111-april-7"></a>版本 80.0.361.111：4 月 7 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-800361109-april-1"></a>版本 80.0.361.109：4 月 1 日
 
@@ -763,7 +763,7 @@ ms.locfileid: "11617953"
 
 ## <a name="version-80036156-february-19"></a>版本 80.0.361.56：2 月 19 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-80036154-february-14"></a>版本 80.0.361.54：2 月 14 日
 

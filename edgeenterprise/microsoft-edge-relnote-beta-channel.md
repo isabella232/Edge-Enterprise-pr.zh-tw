@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/25/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: a4ef80420bfa87bf5fcfa154937ebe52b7cb375f
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 1115c8d7822fef7e3784a465d5d4ddfd7b6bd6b1
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617933"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643159"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -66,18 +66,7 @@ ms.locfileid: "11617933"
 #### <a name="obsoleted-policy"></a>淘汰的原則
 
 - [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允許本機信賴起點核發時使用 SHA-1 簽署憑證。
-- [AADWebSiteSSOUsingThisProfileEnabled](/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 已啟用使用此設定檔單一登入公司或學校網站。
-- [AutomaticHttpsDefault](/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 設定自動 HTTPS。
-- [HeadlessModeEnabled](/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制無周邊模式的使用。
-- [InsecurePrivateNetworkRequestsAllowed](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 指定是否要允許不安全的網站向較私人的網路端點提出要求。
-- [InsecurePrivateNetworkRequestsAllowedForUrls](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允許列出的網站從不安全的內容對較私人的網路端點提出要求。
-- [InternetExplorerIntegrationLocalSiteListExpirationDays](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定網站保留在本機 IE 模式網站清單上的天數。
-- [InternetExplorerIntegrationReloadInIEModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允許未設定的網站在 Internet Explorer 模式下重新載入。
-- [SharedArrayBufferUnrestrictedAccessAllowed](/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用。
 
-#### <a name="obsoleted-policy"></a>淘汰的原則
-
-- [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允許本機信賴起點核發時使用 SHA-1 簽署憑證。
 
 ## <a name="version-9209029-june-8"></a>版本 92.0.902.9：6 月 8 日
 
@@ -115,15 +104,15 @@ ms.locfileid: "11617933"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **在 Proxy 層級識別來自 Microsoft Defender 應用程式防護容器的網路流量**。 從 Microsoft Edge 版本 91 開始，有內建支援可標記來自應用程式防護容器的網路流量，讓企業能夠識別它們並套用特定原則。
+- **在 Proxy 層級識別來自 Microsoft Defender 應用程式防護容器的流量**。 從 Microsoft Edge 版本 91 開始，內建支援以標記來自應用程式防護容器的流量，讓企業能夠識別它們並套用特定原則。
 
-- **支援允許 [我的最愛] 從主機同步處理至 Edge 應用程式防護容器的選項**。 從 Microsoft Edge 版本 91 開始，使用者可以選擇設定應用程式防護，以便將其 [我的最愛] 從主機同步處理至容器。 這可確保容器上也會出現新的 [我的最愛]。
+- **支援選項，讓 [我的最愛] 從主機同步處理至 Edge 應用程式防護容器**。 從 Microsoft Edge 版本 91 開始，使用者可以選擇設定應用程式防護，將其 [我的最愛] 從主機同步處理至容器。 這可確保容器上也會出現新的 [我的最愛]。
 
 - **支援語音辨識 API**。 從 Microsoft Edge 版本 91 開始，將會新增對 Google.com 和類似網站的語音辨識命令 API 支援。 此功能僅限於已啟用試驗的隨機選取使用者群組。 這些使用者會向功能小組提供意見反應。
 
-- **使用新的佈景主題色彩以個人化您的瀏覽器**。 使用 [設定] -> [外觀] 頁面上 14 種新佈景主題色彩的其中一種，將 Microsoft Edge 個人化。 您也可以從 Microsoft Edge 附加元件網站安裝自訂佈景主題。 [深入了解](https://techcommunity.microsoft.com/t5/articles/make-microsoft-edge-your-own-with-themes/m-p/2083165)
+- **使用新的佈景主題色彩以個人化您的瀏覽器**。 使用設定 -> 外觀頁面上的十四種新佈景主題色彩的其中一種，將 Microsoft Edge 個人化。 您也可以從 Microsoft Edge 附加元件網站安裝自訂佈景主題。 [深入了解](https://techcommunity.microsoft.com/t5/articles/make-microsoft-edge-your-own-with-themes/m-p/2083165)
 
-- **中斷下載** 從 Microsoft Edge 版本 91 開始，瀏覽器會自動中斷類型下載，這些下載若在未經使用者互動的情況下啟動，且不受 SmartScreen 應用程式信譽檢查支援，這些下載可能會危害您的電腦。 使用者可以在下載項目上按一下滑鼠右鍵並選擇 [保留]，以覆寫並繼續下載。
+- **中斷下載** 從 Microsoft Edge 版本 91 開始，瀏覽器會自動中斷類型下載，這些下載若在未經使用者互動的情況下啟動，且不受 SmartScreen 應用程式信譽檢查支援，這些下載可能會危害您的電腦。 使用者可以在下載項目上按一下滑鼠右鍵並選擇「保留」，以覆寫並繼續下載。
 企業系統管理員可以退出宣告此行為的這兩個原則之一：
     - [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](/deployedge/microsoft-edge-policies#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - 針對網域中的指定檔案類型，停用下載檔案類型副檔名警告。如需詳細資訊，請參閱 [Microsoft Edge 安全性下載中斷](/deployedge/microsoft-edge-security-downloads-interruptions)
 
@@ -137,8 +126,8 @@ ms.locfileid: "11617933"
 - [ExplicitlyAllowedNetworkPorts](/DeployEdge/microsoft-edge-policies#explicitlyallowednetworkports) - 明確允許的網路連接埠
 - [ImportStartupPageSettings](/DeployEdge/microsoft-edge-policies#importstartuppagesettings) - 允許匯出啟動頁面設定
 - [MathSolverEnabled](/DeployEdge/microsoft-edge-policies#mathsolverenabled) - 讓使用者在 Microsoft Edge 中以逐步解說來刪除數學問題並取得解決方案
-- [NewTabPageContentEnabled](/DeployEdge/microsoft-edge-policies#newtabpagecontentenabled) - 允許新索引標籤頁面上的 Microsoft 新聞內容
-- [NewTabPageQuickLinksEnabled](/DeployEdge/microsoft-edge-policies#newtabpagequicklinksenabled) - 允許新索引標籤頁面上的快速連結
+- [NewTabPageContentEnabled](/DeployEdge/microsoft-edge-policies#newtabpagecontentenabled) - 允許新分頁頁面上的 Microsoft 新聞內容
+- [NewTabPageQuickLinksEnabled](/DeployEdge/microsoft-edge-policies#newtabpagequicklinksenabled) - 允許新分頁頁面上的快速連結
 
 #### <a name="obsoleted-policy"></a>淘汰的原則
 
@@ -183,7 +172,7 @@ ms.locfileid: "11617933"
 
 - **單一登入 (SSO) 目前可供 macOS 上的 Azure Active Directory (Azure AD) 帳戶和 Microsoft 帳戶 (MSA) 使用**。 在 macOS 上，在 Microsoft Edge 上登入的使用者現在會自動進入網站，這些網站已設定為允許使用 Work 和 Microsoft 帳戶 (例如 bing.com、office.com、msn.com 和 outlook.com) 進行單一登入。
 
-- **Kiosk 模式。** 從 Microsoft Edge 版本 90 開始，我們已鎖定 UI 列印設定，只允許已設定的印表機和 [列印至 PDF] 選項。 我們也在受指派的存取權單一應用程式 Kiosk 模式中進行了改善，以限制從瀏覽器啟動其他應用程式。 如需有關 Kiosk 模式功能的詳細資訊，請移至[這裡](/deployedge/microsoft-edge-configure-kiosk-mode#kiosk-mode-supported-features)。
+- **Kiosk 模式。** 從 Microsoft Edge 版本 90 開始，我們已鎖定 UI 列印設定，只允許已設定印表機和「列印至 PDF」選項。 我們也在受指派的存取權單一應用程式 kiosk 模式中進行了改善，以限制從瀏覽器啟動其他應用程式。 如需有關 Kiosk 模式功能的詳細資訊，請移至[這裡](/deployedge/microsoft-edge-configure-kiosk-mode#kiosk-mode-supported-features)。
 
 - **列印：**
 

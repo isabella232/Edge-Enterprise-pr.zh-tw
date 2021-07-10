@@ -3,19 +3,19 @@ title: 設定 Microsoft Edge 企業同步
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 03/08/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 管理員和使用者選項，用於使 Microsoft Edge 同步處理我的最愛、密碼和其他瀏覽器資料。
-ms.openlocfilehash: 99edc97bd5f4bab7bf421e0d15e512c5f6f76cc0
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+ms.openlocfilehash: 5e3813664d3942e84d38e4ae1b4fd17e41049cda
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617753"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642819"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>設定 Microsoft Edge 企業同步
 

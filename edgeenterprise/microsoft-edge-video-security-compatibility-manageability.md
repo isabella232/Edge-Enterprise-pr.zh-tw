@@ -3,27 +3,27 @@ title: Microsoft Edge 安全性、相容性及管理性
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性、相容性及管理性
-ms.openlocfilehash: 6d0787deac408e243697872b2393112d0d946dbb
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
-ms.translationtype: HT
+ms.openlocfilehash: 480efbef308a68849ec3ea99d8a097a1a01a18c6
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314726"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643169"
 ---
-# 影片：Microsoft Edge 安全性、相容性及管理性
+# <a name="video-microsoft-edge-security-compatibility-and-manageability"></a>影片：Microsoft Edge 安全性、相容性及管理性
 
 這段影片顯示 Microsoft Edge 如何讓安全性、相容性和管理性提升到新的水準。 請按一下以下的螢幕擷取畫面，觀看 Microsoft 365 總監 Jeremy Chapman 的影片。
 
 [![Microsoft Edge 安全性、相容性及管理性](media/microsoft-edge-video-security-compatibility-manageability/0.png)](http://www.youtube.com/watch?v=uMmh_gNaM4I "Microsoft Edge security, compatibility, and manageability")
 
-##  <a name="about-the-video"></a>關於此影片
+## <a name="about-the-video"></a>關於此影片
 
 親身體驗全新 Microsoft Edge 的安全性、相容性和管理性。 Microsoft Edge 是基於 Chromium 開發，設計為最適合企業使用的瀏覽器。 我們的演說者 Jeremy Chapman 會向您說明它與其他瀏覽器的不同之處。 此深度剖析包括：
 
@@ -31,7 +31,7 @@ ms.locfileid: "11314726"
 - 相容性。 Microsoft Edge 與新式和舊版網頁相容。
 - 管理性。 考慮您用於 Microsoft Edge 的更新管理或服務選項。
 
-##  <a name="see-also"></a>請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
 - [企業的 Microsoft Edge 安全性](ms-edge-security-for-business.md)

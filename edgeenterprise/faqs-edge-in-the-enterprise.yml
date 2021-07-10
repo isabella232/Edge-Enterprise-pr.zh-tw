@@ -4,19 +4,19 @@ metadata:
   ms.author: jwhit
   author: jwhit-MSFT
   manager: laurawi
-  ms.date: 05/19/2021
+  ms.date: 06/29/2021
   audience: ITPro
   ms.topic: conceptual
   ms.prod: microsoft-edge
-  ms.localizationpriority: high
+  ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: 常見問題 (常見問題) 企業Microsoft Edge部署
-  ms.openlocfilehash: b9c1af51c8eb1898369bc4e3c52734736db5ebe3
-  ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
+  ms.openlocfilehash: a592a831f78c5d5e92c919112319120e0f0b3faf
+  ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/25/2021
-  ms.locfileid: "11617253"
+  ms.lasthandoff: 07/09/2021
+  ms.locfileid: "11641789"
 title: 常見問題 (常見問題) 企業Microsoft Edge常見問題
 summary: >
   > [!NOTE]
@@ -27,10 +27,10 @@ sections:
   questions:
   - question: 如何知道我的 Microsoft Edge 是什麼版本？
     answer: >
-      在圖示的右上角Microsoft Edge選取省略號圖示** (...) ，****然後選取**設定。 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
+      在圖示的右上角Microsoft Edge選取省略號圖示** (...**) ，**然後選取**設定。 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
   - question: 網際網路探索 11 呢？
     answer: >
-      Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日停用並 (範圍清單，請參閱常見問題) 。 [](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/) 您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge中開啟。 按一下[這裡](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)深入了解。
+      Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日停用並 (範圍清單，請參閱常見問題) 。 [](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/) 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 按一下[這裡](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)深入了解。
   - question: Microsoft Edge (以 Chromium 為基礎) 是否支援 ActiveX 控制項或 BHO (例如 Silverlight 或 Java)？
     answer: >
       不。 Microsoft Edge不支援 ActiveX控制項或瀏覽器說明物件 (BH) Silverlight 或 JAVA。 不過，如果您執行使用 ActiveX 控制項的 Web 應用程式、BHO 或 Internet Explorer 11 上的傳統文件模式，可以將它們設定為在 Microsoft Edge 的 IE 模式中執行。 如需詳細資訊，請參閱[在 Microsoft Edge 上設定 IE 模式](./edge-ie-mode.md)。

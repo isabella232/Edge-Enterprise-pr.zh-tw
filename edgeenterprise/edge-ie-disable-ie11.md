@@ -3,19 +3,19 @@ title: 停用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 05/19/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge 中停用 Internet Explorer 11 和使用 Internet Explorer 模式。
-ms.openlocfilehash: ae4d936df7e432eee250e1c7327acfd206d86410
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 9ea99c794dc06a0eb5167e56e72b6e7b6ee70212
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617483"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641509"
 ---
 # <a name="disable-internet-explorer-11"></a>停用 Internet Explorer 11
 
@@ -72,8 +72,8 @@ ms.locfileid: "11617483"
 
 1. 請確保您擁有必要的作業系統更新。 此步驟會直接更新您電腦上的 ADMX 檔案 (具體為 inetres.adml 和 inetres.admx)。 請注意，如果您想要更新 Central Store，您必須從具備必要更新之電腦複製 .adml 和 .admx 檔案。 如需詳細資訊，請參閱 [建立及管理 Central Store](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 開啟 [群組原則編輯器]。
-3. 移至***電腦設定/系統管理範本/Windows 元件/Internet Explorer***。 
-4. 按兩下 [停用 Internet Explorer 11 作為獨立瀏覽器] ****。
+3. 前往 **_電腦群組組/系統管理範本/Windows元件/Internet Explorer_*_。 
+4. 按兩下 _*停用 Internet Explorer 11 做為獨立瀏覽器**。
 5. 選取 [啟用] ****。
 6. 在 [選項] **** 下，挑選下列其中一個值：
 

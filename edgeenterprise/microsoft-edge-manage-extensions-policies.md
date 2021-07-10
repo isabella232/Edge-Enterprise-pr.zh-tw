@@ -3,19 +3,19 @@ title: 使用群組原則管理 Microsoft Edge 擴充功能
 ms.author: aspoddar
 author: AndreaLBarr
 manager: balajek
-ms.date: 06/09/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 在企業中使用群組原則管理 Microsoft Edge 擴充功能
-ms.openlocfilehash: a633b036c1733716dfb257b4711bca57bd6721f0
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: dad239a448ec1f0ebef60c7072bfaad5c3baed57
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618073"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641369"
 ---
 # <a name="use-group-policies-to-manage-microsoft-edge-extensions"></a>使用群組原則管理 Microsoft Edge 擴充功能
 
@@ -140,7 +140,7 @@ ms.locfileid: "11618073"
 2. 選取 [啟用]****。
 3. 按一下 [顯示]****。
 4. 輸入要封鎖之擴充功能的應用程式識別碼。 新增多個應用程式識別碼時，請針對每個識別碼使用個別列。
-5. 若要封鎖所有擴充功能，請將 **\*** 輸入該原則，以防止安裝任何擴充功能。 您可以結合 [允許特定安裝擴充功能] 原則來使用這項功能，以只允許安裝特定擴充功能。 下一個螢幕擷取畫面顯示將根據提供的應用程式識別碼封鎖的擴充功能。
+5. 若要封鎖所有擴充功能，在策略中輸入 * _ 以防止 *\** 安裝任何擴充功能。 您可以結合 [允許特定安裝擴充功能] 原則來使用這項功能，以只允許安裝特定擴充功能。 下一個螢幕擷取畫面顯示將根據提供的應用程式識別碼封鎖的擴充功能。
 
    :::image type="content" source="media/microsoft-edge-manage-extensions-policies/manage-extensions-gp-block-2.png" alt-text="使用應用程式識別碼封鎖擴充功能。":::
 
@@ -154,7 +154,7 @@ ms.locfileid: "11618073"
 
 使用 [ExtensionInstallForcelist](/DeployEdge/microsoft-edge-policies#extensioninstallforcelist) 原則來控制要封鎖或允許的擴充功能。 使用下列步驟做為強制安裝擴充功能的指南。
 
-1. 在 [群組原則編輯器] 中，移至 [系統管理範本 > Microsoft Edge > 擴充功能]****，然後選取 [控制哪些擴充功能會默默地安裝]****。
+1. 在群組原則編輯器中，前往 _*系統*管理範本> Microsoft Edge >擴展>*，然後選取控制以無提示方式安裝哪些**擴充模組**。
 2. 選取 [啟用]****。  
 3. 按一下 [顯示]****。
 4. 輸入要強制安裝的擴充功能的應用程式識別碼。  
@@ -198,4 +198,4 @@ ms.locfileid: "11618073"
 - [建立線上應用程式商店以託管 Microsoft Edge 擴充功能](microsoft-edge-manage-extensions-webstore.md)
 - [ExtensionSettings 原則的參考指南](microsoft-edge-manage-extensions-ref-guide.md)
 - [Microsoft Edge 擴充功能常見問題集](microsoft-edge-manage-extensions-faq.md)
-- [Microsoft Edge 企業版登陸頁面](https://aka.ms/EdgeEnterprise)
+- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

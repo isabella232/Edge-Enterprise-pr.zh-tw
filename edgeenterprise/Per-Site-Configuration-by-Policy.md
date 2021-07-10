@@ -3,19 +3,19 @@ title: '依原則的每一網站設定 '
 ms.author: collw
 author: AndreaLBarr
 manager: laurawi
-ms.date: 05/03/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: '依原則的每一網站設定 '
-ms.openlocfilehash: 6bba2c9b1d691c338a3146ef246de9f94e262a03
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 4f1bf9a421f0098ba8105e78f77ac4af62530239
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618064"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641689"
 ---
 # <a name="persite-configuration-by-policy"></a>依原則的每一網站設定
 
@@ -73,7 +73,7 @@ ms.locfileid: "11618064"
 
 - <div style="display: inline">`https://sharepoint.contoso-intranet.com`</div>
 
-恭喜！您已實作最佳作法。 您可以使用 ***.contoso-intranet.com** 項目來設定每個想要的原則，而您的整個內部網路將會加入。
+恭喜！您已實作最佳作法。 您可以使用 **_.contoso-intranet.com_* 專案來設定每個想要的政策，整個   內部網路都會加入。
 
 ## <a name="use-of-security-zones-inthe-microsoft-edge"></a>使用 Microsoft Edge 中的安全性區域
 

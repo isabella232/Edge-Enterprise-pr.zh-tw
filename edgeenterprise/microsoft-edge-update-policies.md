@@ -3,20 +3,20 @@ title: Microsoft Edge Update 原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/12/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge Updater 支援的所有原則的文件
-ms.openlocfilehash: 921a95c0a5e80ba08fa745748ffa8b0da714ea7d
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: a9808981acad544042c6e0ccb59ff755a670c848
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617883"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642319"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新原則
 
@@ -35,7 +35,7 @@ ms.locfileid: "11617883"
 |[InstallDefault](#installdefault)|允許安裝預設值|
 |[UpdateDefault](#updatedefault)|更新原則覆寫預設值|
 |[Install](#install)|允許安裝 (經由通道)|
-|[更新](#update)|更新原則覆寫 (經由通道)|
+|[Update](#update)|更新原則覆寫 (經由通道)|
 |[Allowsxs](#allowsxs)|允許 Microsoft Edge 並排瀏覽器體驗|
 |[CreateDesktopShortcutDefault](#createdesktopshortcutdefault)|防止在預設安裝時建立桌面捷徑|
 |[CreateDesktopShortcut](#createdesktopshortcut)|防止在安裝時建立桌面捷徑 (每個通道)|

@@ -3,20 +3,20 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 06/17/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 21933e81427b84d69f6d3ead4dfc911519e65bb3
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: eba448024e86cd0c0ceb733b6363317d7c6ca5fb
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617873"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642829"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -260,7 +260,7 @@ ms.locfileid: "11617873"
 |[SmartScreenEnabled](#smartscreenenabled)|設定 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|強制 Microsoft Defender SmartScreen 檢查來自信任來源的下載項目|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|設定 Microsoft Defender SmartScreen 以封鎖潛在的垃圾應用程式|
-### [*<a name="startup-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
 
 |原則名稱|標題|
 |-|-|
@@ -4234,7 +4234,7 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
 
 如果停用此原則或保留未設定，則會允許安裝外部擴充功能。
 
-外部擴充功能及其安裝會記錄在 ./microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options。
+外部擴充模組及其安裝會在這裡 [記錄](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)。
 
 
   #### <a name="supported-features"></a>支援的功能：
@@ -4518,7 +4518,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 原則的每個清單項目都是包含擴充功能 ID 的字串，也可以選擇使用分號 (; ) 分隔的「更新」URL。 擴充功能 ID 是在開發人員模式 (例如，在 edge://extensions 上) 中找到的 32 個字母字串。 如果已指定，則「更新」URL 應該指向更新資訊清單 XML 文件 ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) )。 根據預設，會使用 Microsoft Edge 附加元件網站的更新 URL。 此原則中設定的「更新」URL 只會用於初始安裝；此擴充功能的後續更新會在擴充功能的資訊清單中使用更新 URL。
 
-注意：此原則不適用於 InPrivate 模式。 閱讀主應用程式擴充功能 (./microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)。
+注意：此原則不適用於 InPrivate 模式。 請在這裡閱讀有關主機擴充[功能。](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating)
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -8111,7 +8111,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [回到頁首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -8345,7 +8345,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 如果停用或未設定此原則，則 Microsoft Edge 不會在新的索引標籤頁面上顯示公司標誌或 Microsoft 標誌。
 
-如需判斷 SHA-256 雜湊的協助，請參閱 ./powershell/module/microsoft.powershell.utility/get-filehash。
+有關判斷 SHA-256 雜湊的協助，請前往 [這裡](/powershell/module/microsoft.powershell.utility/get-filehash)。
 
   #### <a name="supported-features"></a>支援的功能：
 
