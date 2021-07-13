@@ -3,19 +3,19 @@ title: 停用 Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 了解如何在 Microsoft Edge 中停用 Internet Explorer 11 和使用 Internet Explorer 模式。
-ms.openlocfilehash: 9ea99c794dc06a0eb5167e56e72b6e7b6ee70212
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: b70da0ff7437d1f5e70cec40e31211046a66205a
+ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641509"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643748"
 ---
 # <a name="disable-internet-explorer-11"></a>停用 Internet Explorer 11
 
@@ -30,12 +30,13 @@ ms.locfileid: "11641509"
 
 - Windows 更新
 
-  - Windows 10 版本 2004、Windows Server 版本 2004、Windows 10、版本 20H2：[KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b) 或更新版本
-  - Windows 10 版本 1909、Windows Server 版本 1909：[KB4598298](https://support.microsoft.com/topic/january-21-2021-kb4598298-os-build-18363-1350-preview-02dfd9ba-91a2-1b82-dede-42f288c02511) 或更新版本
-  - Windows 10 版本 1809、Windows Server 版本 1809 和 Windows Server 2019：[KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d) 或更新版本
-  - Windows 10 版本 1607、Windows Server 2016：[KB4601318](https://support.microsoft.com/topic/february-9-2021-kb4601318-os-build-14393-4225-c5e3de6c-e3e6-ffb5-6197-48b9ce16446e) 或更新版本
-   - Windows 10 初始版本 (2015 年 7 月)：[KB4601331](https://support.microsoft.com/office/february-9-2021%e2%80%94kb4601331-os-build-10240-18842-6227d078-fef3-8d67-27e0-1882e6cb79ff?ui=en-US&rs=en-US&ad=US) 或更新版本
-  - Windows 8.1：[KB4601384](https://support.microsoft.com/topic/february-9-2021-kb4601384-monthly-rollup-16bdbb75-dd4b-2910-abc5-7891c9756b96) 或更新版本
+  - Windows 10版本 21H1 或更新版本
+  - Windows 10版本 2004;Windows伺服器版本 2004;Windows 10版本 20H2;Windows伺服器版本[20H2：KB4598291](https://support.microsoft.com/topic/february-2-2021-kb4598291-os-builds-19041-789-and-19042-789-preview-6a766199-a4f1-616e-1f5c-58bdc3ca5e3b)或更新版本
+  - Windows 10版本[1909：KB4598298](https://support.microsoft.com/topic/january-21-2021-kb4598298-os-build-18363-1350-preview-02dfd9ba-91a2-1b82-dede-42f288c02511)或更新版本
+  - WindowsServer 2019;Windows 10 企業版 2019 [LTSC：KB4598296](https://support.microsoft.com/topic/january-21-2021-kb4598296-os-build-17763-1728-preview-4c0931ff-45b7-ff59-5e00-c03b5afb363d)或更新版
+  - Windows Server 2016;[Windows 10 企業版 2016 長期維護：KB4601318](https://support.microsoft.com/topic/february-9-2021-kb4601318-os-build-14393-4225-c5e3de6c-e3e6-ffb5-6197-48b9ce16446e)或更新專案
+  - [Windows 10 企業版 2015 長期維護：KB4601331](https://support.microsoft.com/office/february-9-2021%e2%80%94kb4601331-os-build-10240-18842-6227d078-fef3-8d67-27e0-1882e6cb79ff?ui=en-US&rs=en-US&ad=US)或更新專案
+  - Windows 8.1;Windows Server 2012[R2：KB4601384](https://support.microsoft.com/topic/february-9-2021-kb4601384-monthly-rollup-16bdbb75-dd4b-2910-abc5-7891c9756b96)或更新專案
   - Windows Server 2012：[KB4601348](https://support.microsoft.com/topic/february-9-2021-kb4601348-monthly-rollup-2c338c0c-73d6-fb80-cc91-f1a86e80db0c) 或更新版本
   
 - Microsoft Edge 穩定通道
@@ -72,8 +73,8 @@ ms.locfileid: "11641509"
 
 1. 請確保您擁有必要的作業系統更新。 此步驟會直接更新您電腦上的 ADMX 檔案 (具體為 inetres.adml 和 inetres.admx)。 請注意，如果您想要更新 Central Store，您必須從具備必要更新之電腦複製 .adml 和 .admx 檔案。 如需詳細資訊，請參閱 [建立及管理 Central Store](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. 開啟 [群組原則編輯器]。
-3. 前往 **_電腦群組組/系統管理範本/Windows元件/Internet Explorer_*_。 
-4. 按兩下 _*停用 Internet Explorer 11 做為獨立瀏覽器**。
+3. 移至***電腦設定/系統管理範本/Windows 元件/Internet Explorer***。 
+4. 按兩下 [停用 Internet Explorer 11 作為獨立瀏覽器] ****。
 5. 選取 [啟用] ****。
 6. 在 [選項] **** 下，挑選下列其中一個值：
 
