@@ -213,7 +213,7 @@ ms.locfileid: "11642829"
 
 |原則名稱|標題|
 |-|-|
-|[StartupBoostEnabled](#startupboostenabled)|啟用啟動提升|
+|[StartupBoostEnabled](#startupboostenabled)|啟用啟動加速|
 ### [*<a name="printing"></a>列印*](#printing-policies)
 
 |原則名稱|標題|
@@ -260,7 +260,7 @@ ms.locfileid: "11642829"
 |[SmartScreenEnabled](#smartscreenenabled)|設定 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|強制 Microsoft Defender SmartScreen 檢查來自信任來源的下載項目|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|設定 Microsoft Defender SmartScreen 以封鎖潛在的垃圾應用程式|
-### [*<a name="startup-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
 
 |原則名稱|標題|
 |-|-|
@@ -6205,7 +6205,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   ### <a name="startupboostenabled"></a>StartupBoostEnabled
 
-  #### <a name="enable-startup-boost"></a>啟用啟動提升
+  #### <a name="enable-startup-boost"></a>啟用啟動加速
 
   
   
@@ -6219,13 +6219,13 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
 如果 Microsoft Edge 以背景模式執行，瀏覽器可能不會在最後一個視窗關閉時關閉，且在視窗關閉時，瀏覽器將無法在背景模式重新啟動。 如需設定 Microsoft Edge 背景模式行為之後所發生狀況的相關資訊，請參閱 [BackgroundModeEnabled](#backgroundmodeenabled) 原則。
 
-如果您啟用這項原則，啟動提升功能就會開啟。
+如果您啟用這項原則，啟動加速就會開啟。
 
-如果您啟用這項原則，啟動增強功能就會關閉。
+如果您啟用這項原則，啟動加速就會關閉。
 
-如果您未設定此原則，啟動提升功能可能會先關閉或開啟。 使用者可以在 edge://settings/system 中設定其行為。
+如果您未設定此原則，啟動加速可能會先關閉或開啟。 使用者可以在 edge://settings/system 中設定其行為。
 
-深入瞭解啟動提升功能： [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
+深入瞭解啟動加速： [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -6242,7 +6242,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱： StartupBoostEnabled
-  - GP 名稱：啟用啟動提升功能
+  - GP 名稱：啟用啟動加速
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/效能
   - GP 路徑 (建議使用)：系統管理範本/Microsoft Edge-預設設定 (使用者可以覆寫)/Performance
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -8111,7 +8111,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [回到頁首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
 
   [回到頁首](#microsoft-edge---policies)
 

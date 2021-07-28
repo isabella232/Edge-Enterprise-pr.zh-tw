@@ -3,19 +3,19 @@ title: 設定 IE 模式原則
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 設定 IE 模式原則
-ms.openlocfilehash: 57d0db97a96baf361f88ca8ec90812373440c3d8
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 98d05af8769e25cfe2782a1e273f3b487afcead0
+ms.sourcegitcommit: c6452a458f825dab5638db9ff31268c2dc27f8db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641469"
+ms.lasthandoff: 07/24/2021
+ms.locfileid: "11677120"
 ---
 # <a name="configure-ie-mode-policies"></a>設定 IE 模式原則
 
@@ -50,9 +50,9 @@ ms.locfileid: "11641469"
 3. 按一下**使用者設定/電腦設定** > **系統管理範本** > **Microsoft Edge**。
 4. 按兩下**設定 Internet Explorer 整合。**
 5. 選取 **\[已啟用\]**。
-6. 在 [選項]**** 下，將下拉式清單值設定為 
+6. 在 [選項]**** 下，將下拉式清單值設定為
    -  如果您想要在 Microsoft Edge 中以 IE 模式開啟網站，請選取 [Internet Explorer 模式]****
-   -  如果您想要在獨立式 Internet Explorer 11 視窗中開啟網站，請選取 [Internet Explorer 11]****
+   -  如果您希望在獨立 Internet Explorer **11**視窗中開啟網站 (Internet Explorer 11 在 2022 年 6 月 15 日 Internet Explorer 11 桌面應用程式即將停用並結束支援之後，將不支援此選項。  在 2022 年 6 月 15 日之後，IE11 將無法再使用，此選項的行為會與 **Internet Explorer** 模式選項相同。)   
    -  如果您想要停止使用者透過 edge://flags 或透過命令列設定 Internet Explorer 模式，請選取 [無]****
 
    > [!NOTE]

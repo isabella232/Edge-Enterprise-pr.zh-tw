@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 生命週期
 ms.author: srugh
-author: srugh
+author: AndreaLBarr
 manager: seanlynd
-ms.date: 06/29/2021
+ms.date: 07/15/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 生命週期
-ms.openlocfilehash: 7305ed148859dc458bcc94b199edfa01db4fc613
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 941b77920978bba82dd5edcb192ddfab898f4053
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642509"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676085"
 ---
 # <a name="microsoft-edge-lifecycle-policy"></a>Microsoft Edge 生命週期原則
 
@@ -24,18 +24,38 @@ ms.locfileid: "11642509"
 > [!NOTE]
 > 本文適用於 Microsoft Edge 版本 77 和更新版本。
 
+> [!NOTE]
+> 從穩定通道版本 94 開始，Microsoft Edge 會移至 4 週的主要發行週期頻率。 不過，我們發現管理複雜環境的企業客戶需要更多的時間來規劃及測試 Microsoft Edge 更新。 為了協助需要延長時程表來管理更新的企業客戶，Microsoft Edge 會提供與較長的**8**周主要發行週期對齊的擴充穩定選項;此選項僅適用于受管理環境的客戶。 [請參閱我們的公告部落格文章](https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/)
+
 ## <a name="overview-of-the-lifecycle-policy-for-microsoft-edge"></a>Microsoft Edge 生命週期原則概觀
 
-下一版 Microsoft Edge 具有更頻繁且更靈活的更新功能。 由於瀏覽器版本未綁定到 Windows 主要版本，因此必須更新管理生命週期原則以反映這一點。 今後 Microsoft Edge 將成為[新式生命週期原則](https://support.microsoft.com/help/30881/modern-lifecycle-policy)的一部分。
+Microsoft Edge更頻繁且更靈活的更新功能。 由於瀏覽器版本未綁定到 Windows 主要版本，因此必須更新管理生命週期原則以反映這一點。 未來Microsoft Edge遵循新式[生命週期政策](https://support.microsoft.com/help/30881/modern-lifecycle-policy)。 安全性更新和服務更新僅適用于最新穩定通道版本和最新 Beta 通道版本。 使用較舊版本的 Microsoft Edge 可能表示您遺漏了最新的品質和安全性更新，我們並不建議您使用。  協助支援如下所述。
 
-作為此原則的一部分，支援的 Microsoft Edge 版本將包括來自 Beta 和 Stable 通道的最新版本。
+## <a name="servicing-and-assisted-support-timeline-for-microsoft-edge-77-93"></a>維護及協助 77-93 Microsoft Edge支援時程表
 
-## <a name="assisted-support-availability-for-microsoft-edge"></a>Microsoft Edge 的協助支援可用性
-您僅可以在最近的穩定通道版本和最新版的 Beta 通道版本中取得安全性更新和服務更新。 使用較舊版本的 Microsoft Edge 可能表示您遺漏了最新的品質和安全性更新，我們並不建議您使用。 如果貴組織必須使用較舊版本，則您可以在最近的三個穩定通道版本和最新的 Beta 通道版本中取得協助支援。  穩定通道版本的有效協助支援期間大約為 18 週。 Beta 通道版本的有效支援期間大約為 6 週，不支援先前的 Beta 通道版本。
+Microsoft Edge穩定通道版本 77 的主要發行週期為 6 周，並持續到版本 93。  我們針對最近三個穩定通道版本和最新 Beta 通道版本提供輔助支援。 穩定通道版本的有效協助支援期間大約為 18 週。 Beta 通道發行的有效支援持續時間為 ~6 周;之前 Beta 通道版本不受支援。  請參閱下表。
 
-Microsoft 強烈建議使用最新版的穩定通道或 Beta 通道版本。
+|     發行選項              |     支援主要版本版本    |     已服務的主要版本版本    |     支援整個發行範圍    |     維護涵蓋範圍    |
+|---------------------------------|----------------------------------------|---------------------------------------|-----------------------------------------|---------------------------|
+|     每日 "Canary"              |     無                               |     無                              |     無                                |     無                  |
+|     每週 "Dev"                |     無                               |     無                              |     無                                |     無                  |
+|     6 周 "Beta"               |     目前                            |     目前                           |     6 周                             |     6 周               |
+|     6 周"穩定」             |     目前和前 2 個             |     目前                           |     18 周                            |     6 周               |
 
 
+## <a name="servicing-and-assisted-support-timeline-changes-in-microsoft-edge-94"></a>94 中的維護及Microsoft Edge時程表變更
+
+從穩定通道版本 94 開始，Microsoft Edge 會移至 4 週的主要發行週期頻率。 我們會繼續針對最近三個穩定通道版本和最新 Beta 通道版本提供輔助支援。 穩定通道發行的有效輔助支援持續時間約為 12 周。
+
+我們瞭解管理複雜環境的企業客戶需要更多時間來規劃及測試Microsoft Edge更新。 為了協助需要延長時程表來管理更新的企業客戶，Microsoft Edge會提供與較長的 8 周主要發行週期對齊的擴充穩定**版選項**。 協助支援適用于最近兩個擴充穩定通道版本。 延長穩定通道發行的有效輔助支援持續時間約為 16 周。 請參閱下表。
+
+|     發行選項              |     支援主要版本版本    |     已服務的主要版本版本    |     支援整個發行範圍    |     維護涵蓋範圍    |
+|---------------------------------|----------------------------------------|---------------------------------------|-----------------------------------------|---------------------------|
+|     每日 "Canary"              |     無                               |     無                              |     無                                |     無                  |
+|     每週 "Dev"                |     無                               |     無                              |     無                                |     無                  |
+|     4 周 "Beta"               |     目前                            |     目前                           |     4 週                             |     4 週               |
+|     4 周"穩定」             |     目前和前 2 個             |     目前                           |     12 周                            |     4 週               |
+|     8 周「擴充穩定」    |     目前和前 1 個             |     目前                           |     16 周                            |     8 周               |
 
 ## <a name="see-also"></a>請參閱
 

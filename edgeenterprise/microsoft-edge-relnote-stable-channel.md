@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/09/2021
+ms.date: 07/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: f82fdbdddb45951fd9e1eca44f90270bc06c32d1
-ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
+ms.openlocfilehash: 02d4f2fc96215902000d30f37b589ea126496e47
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "11643768"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676060"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -30,6 +30,65 @@ ms.locfileid: "11643768"
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090255-july-22"></a>版本 92.0.902.55: 7 月 22 日
+
+穩定通道安全性更新列於 [此處](/deployedge/microsoft-edge-relnotes-security#july-22-2021)。
+
+### <a name="feature-updates"></a>功能更新
+
+**使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationday) 原則以調整將網站保留在本機網站清單中的天數。 請注意，Windows 10 版本 1909 需要 KB5003698 或更新版本；Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更新版本，才能提供端對端體驗。
+
+**MHTML 檔案將預設為在 Internet Explorer 模式下開啟**。 從 Microsoft Edge 版本 92 Stable 開始，MHTML 檔案類型將會在 Microsoft Edge (而非 Internet Explorer (IE11) 應用程式) 上自動以 Internet Explorer 模式開啟。 這是在瀏覽器中嘗試檢視 Outlook 電子郵件時最常觀察到的情況。 只有在 IE11 是此檔案類型的預設處理常式時，才能進行此變更。 如果您想要變更這項設定，可以在使用 [本指南](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration) 安裝 Stable 92 版更新之前執行此操作。
+
+**「停用開發人員模式擴充功能」警告可能會永久關閉**。 從 Microsoft Edge 版本 92 開始，您可以按一下 [不再顯示此訊息] 選項，以關閉警告 [停用開發人員模式擴充功能]。
+
+**從工具列管理擴充功能**。 工具列上全新的擴充功能功能表將讓您輕鬆地隱藏/釘選擴充功能。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
+
+**自動播放的預設值會設為 [有限的]**。  為協助您將焦點維持在線上，我們已將自動播放媒體的預設值從 [允許] 變更為 [有限的]，從 Microsoft Edge 版本 92 開始。
+
+**付款方式現在會跨裝置同步處理**。 從 Microsoft Edge 版本 92 開始，您可以選擇在所有已登入的裝置上同步處理您的付款資訊。 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+目前此功能僅適用於美國，且僅適用於 MSA 使用者 (AAD) 
+
+**字型呈現的改善**。 已改善文字的呈現，以提高清晰度並減少模糊度。 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+
+**工具列按鈕功能，例如 [我的最愛] 和 [收藏]，會記住使用者將其釘選到視窗側邊的選擇**。 現在預設為啟用，如果使用者選擇釘選工具列按鈕，它一律會以釘選狀態開啟，直到他們決定取消釘選。
+
+**使用者現在可以透過群組原則，'允許使用此設定檔選項單一登入公司或學校網站'**。  '允許使用此設定檔，單一登入工作或學校網站' 可讓非 AAD 設定檔得以使用電腦上存在的工作或學校認證，單一登入工作或學校網站。 對使用者來說，此選項在 [設定] -> [設定檔] -> [僅限非 AAD 設定檔的設定檔喜好設定] 中會顯示為切換開關。  您可以使用 [AADWebSiteSSOUsingThisProfileEnabled](/deployedge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 原則以設定行為。  
+
+**密碼健康情況** 在各帳戶間使用強大且唯一的密碼，以保持線上安全是非常重要的。 不過，這說起來容易做起來難，而且大多數使用者都有不良的密碼習慣，像是使用容易猜測的弱密碼，或重複使用跨帳戶上的相同強式密碼。
+
+有了這個最新版本的 Microsoft Edge，使用強大且唯一密碼的工作會變得更輕鬆一些！ Microsoft Edge 現在會告訴您儲存的密碼是否夠強，並且也會指出這些密碼是否已在多個網站上使用，可協助您保持更安全的線上狀態。 您可以在 edge://settings/passwords 頁面之已儲存密碼清單中找到密碼健康情況資訊。
+  
+**為您已儲存的密碼新增隱私權** 如果您使用的是與他人共用、或因為任何原因讓電腦解除鎖定的裝置，您現在可以選擇使用裝置密碼進行第二次驗證，以避免其他人存取您的網站密碼。 簡單！
+
+**Outlook 副檔名**。  隨時掌握您的 Microsoft Outlook 收件匣、行事曆、工作等其他功能，無需開啟新的瀏覽器視窗。  您可以在這裡取得新的 Microsoft Outlook 擴充功能：[Microsoft Outlook - Microsoft Edge 附加元件](https://microsoftedge.microsoft.com/addons/detail/microsoft-outlook/kkpalkknhlklpbflpcpkepmmbnmfailf?hl=en-US)
+
+### <a name="new-policies"></a>新原則
+
+- [AADWebSiteSSOUsingThisProfileEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 已啟用使用此設定檔單一登入公司或學校網站。
+- [AutomaticHttpsDefault](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 設定自動 HTTPS
+- [HeadlessModeEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制無周邊模式的使用
+- [InsecurePrivateNetworkRequestsAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 指定是否要允許不安全的網站向較私人的網路端點提出要求
+- [InsecurePrivateNetworkRequestsAllowedForUrls](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允許列出的網站從不安全的內容對較私人的網路端點提出要求
+- [InternetExplorerIntegrationLocalSiteListExpirationDays](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定網站保留在本機 IE 模式網站清單上的天數
+- [InternetExplorerIntegrationReloadInIEModeAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允許未設定的網站在 Internet Explorer 模式下重新載入
+- [SharedArrayBufferUnrestrictedAccessAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用
+
+### <a name="deprecated-policy"></a>取代的原則
+
+- [InternetExplorerIntegrationTestingAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允許 Internet Explorer 模式測試
+
+### <a name="obsoleted-policy"></a>淘汰的原則
+
+- [EnableSha1ForLocalAnchors](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允許由本機信賴起點頒發的 SHA-1 簽章憑證
+
+## <a name="version-91086471-july-19"></a>版本 91.0.864.71: 7 月 19 日
+
+> [!Important]
+>此更新包含 Chromium 小組報告的 [CVE-2021-30563](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30563)，因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱 [安全性更新指南](https://msrc.microsoft.com/update-guide/vulnerability/ADV200002)。
+
+穩定通道安全性更新列於 [此處](/deployedge/microsoft-edge-relnotes-security#july-19-2021)。
 
 ## <a name="version-91086467-july-8"></a>版本 91.0.864.67: 7 月 8 日
 

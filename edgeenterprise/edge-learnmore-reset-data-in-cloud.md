@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 如何重設雲端中的 Microsoft Edge 資料
-ms.openlocfilehash: dc6c0ae1b1bc31228e9b9b1de315a19e99149134
-ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
+ms.openlocfilehash: 65984daea523a7749a28d8ab6a4dd990c5fea849
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "11643738"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675923"
 ---
 # <a name="reset-microsoft-edge-data-in-the-cloud"></a>重設雲端中的 Microsoft Edge 資料
 
@@ -35,8 +35,8 @@ ms.locfileid: "11643738"
 
 執行重設之前，建議您備份我的最愛。 使用下列步驟以備份我的最愛。
 
-1. 在 Microsoft Edge 右上角，選取 **設定和其他 > 我的最愛 > 其他選項 > 匯出我的最愛**。
-2. 選擇您要儲存我的最愛的檔案。 您可以輸入自己的檔案名稱，或使用 Microsoft Edge 預設提供的名稱 "favorites_month_day_year.html" 做為檔案名稱。 例如，"favorites_12_17_20.html"。 如果您之後需要還原我的最愛，可以透過該檔案完成。
+1. 在 Microsoft Edge 中，選取 [按 Ctrl+Shift+O] > [選擇三個點] > [按匯出我的最愛 **]**。
+2. 選擇您要儲存我的最愛的檔案。 您可以輸入自己的檔案名稱，或使用 Microsoft Edge 預設提供的名稱「favorites_month_day_year.html」做為檔案名稱。 例如，「favorites_07_05_21.htm」。 如果您之後需要還原我的最愛，可以透過該檔案完成。
 3. 按一下 [儲存]****。
 
 ## <a name="perform-a-reset-to-fix-a-synchronization-problem"></a>執行重設以修正同步問題
@@ -45,15 +45,15 @@ ms.locfileid: "11643738"
 
 使用下列步驟來執行重設。
 
-1. 首先，確認您已在您所有裝置上登出 Microsoft Edge，包括您的行動裝置，但執行重設所在裝置除外。 若要登出 Microsoft Edge，請在 Microsoft Edge 的右下角，選取 **[設定及其他] > [設定] > [登出]**。登出時，請勿選取從本機裝置清除我的最愛、設定等選項。
-2. 登出所有其他裝置之後，請開啟桌面上的 Microsoft Edge。在 Microsoft Edge 的右上角設定 **其他 > 重設同步處理**。在產生的對話方塊中，選擇以重設資料後繼續同步處理，然後選取 **重設**。
+1. 首先，確認您已在您所有裝置上登出 Microsoft Edge，包括您的行動裝置，但執行重設所在裝置除外。 若要登出 Microsoft Edge，請選取 [設定] > [個人檔案] > [登出]****。登出時，請勿選取從本機裝置清除我的最愛、設定等選項。
+2. 登出其他所有裝置之後，在桌面上開啟 Microsoft Edge。 選取 [設定] > [個人檔案] > [重設同步處理]****。在產生的對話方塊中，選擇在重設資料之後繼續同步，然後選取 [立即重設]****。
 
 ## <a name="perform-a-reset-to-remove-your-data-from-microsofts-cloud"></a>執行重設以將您的資料從 Microsoft 雲端中移除
 
 如果您想要從 Microsoft 雲端移除您的資料，請使用下列步驟來執行重設。
 
-1. 在裝置上停止同步，您執行重設所在的裝置除外。  在 Microsof Edge 的右上角，選取 **設定和其他 > 設定 > 同步> 關閉同步**。  
-2. 停止同步之後，在 Microsof Edge 的右上角，請選取 [設定及其他]**** > [同步] > [重設同步]****。在產生的對話方塊中，不要選擇在重設資料之後繼續同步。 選取 [重設]****。
+1. 在裝置上停止同步處理，您執行重設所在的裝置除外。  在 Microsoft Edge中，選取 [設定] > [個人檔案] > [關閉同步]****。  
+2. 停止同步處理後，選取 [設定] > [個人檔案] > [重設同步處理]****。在產生的對話方塊中，在重設同步處理之後，**不要**選擇在此裝置上繼續同步。選取 [重設]****。
 
 ## <a name="what-to-expect-during-and-after-a-data-reset"></a>資料重設期間及之後的預期
 

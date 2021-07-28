@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 瞭解 Kiosk 模式功能，以及如何設定 Microsoft Edge Kiosk 模式選項。
-ms.openlocfilehash: 38d94a5dfac15f810a463e43ad2fe44d51ee66c7
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642189"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676120"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>設定 Microsoft Edge kiosk 模式
 
@@ -99,7 +99,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--kiosk-idle-timeout-minutes=**：變更從上次使用者活動經過的時間 (以分鐘為單位)，在此時間後，Microsoft Edge kiosk 模式便重設使用者的工作階段。 將以下範例中的「值」以分鐘數取代。
+- **--kiosk-idle-timeout-minutes=**：在 Microsoft Edge 資訊站模式關閉瀏覽器之前，將使用者會話重設的時間 (分鐘) 從上一個使用者活動變更為分鐘。 注意：此標號在關閉Microsoft Edge不會重新開機。 在閒置的超時之後，需要個別技術 ，例如指派 Access 或 Shell 啟動，才能自動重新開機 Edge。 將以下範例中的「值」以分鐘數取代。
 
    ```
    --kiosk-idle-timeout-minutes=value
@@ -160,7 +160,9 @@ Microsoft Edge 版本 90 kiosk 模式提供廣泛的功能清單。 請參閱 Ki
 
 ### <a name="multi-app-kiosk"></a>多個應用程式 Kiosk
 
-Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](/windows/configuration/lock-down-windows-10-to-specific-apps) 中的指示進行。 (Microsoft Edge 穩定通道的 AUMID 是 **MSEdge**)。
+Microsoft Edge 可以在 Windows 10 上以[多應用程式受指派的存取權](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)執行，這相當於舊版 Microsoft Edge「一般瀏覽」kiosk 模式類型。 若要設定具有多應用程式受指派存取權的 Microsoft Edge，請按照如何[設定多個應用程式 kiosk](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) 中的指示進行。  (穩定通道的 AUMID Microsoft Edge已**Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe！MSEDGE**) 。
+
+使用具有受指派的存取權的 Microsoft Edge 時，您可以設定 Microsoft Edge kiosk 模式，以使用 [Microsoft Edge 瀏覽器原則](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies)來設定瀏覽體驗，進而滿足您的獨特需求。
 
 ### <a name="configure-using-windows-settings"></a>使用 Windows 設定進行設定
 

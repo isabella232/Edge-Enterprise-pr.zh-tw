@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge 的 PDF 閱讀程式
 ms.author: adigan
-author: dan-wesley
+author: AndreaLBarr
 manager: balajek
-ms.date: 06/28/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Microsoft Edge 的 PDF 閱讀程式。
-ms.openlocfilehash: 0b1cffceb63c1829c39bdd3fa658df2e5f776584
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: e8cf690f818e0fa103aa4f17154d9f95431287b5
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643179"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675980"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a>Microsoft Edge 的 PDF 閱讀程式
 
@@ -35,16 +35,17 @@ Microsoft Edge 隨附內建的 PDF 閱讀程式，可讓您開啟本機 pdf 檔�
 | 檢視及列印本機、線上及內嵌的 PDF 檔案 | 79.0.309.71                |
 | 基本表單填寫<br>(不支援 JavaScript 表單) | 79.0.309.71           |
 |目錄| 86.0.622.38 |
-| 頁面檢視 |目前正在 [Microsoft Edge 測試人員](https://www.microsoftedgeinsider.com/)通道中推廣 |
-| 鍵盤模式瀏覽 |87.0.664.41 |
+| 頁面檢視 | 88.0.705.50 |
+| 光標瀏覽模式 |87.0.664.41 |
 | 筆跡  | 80.0.361.48            |
 | 筆跡自訂 | 83.0.478.54  |
 | 醒目顯示  | 81.0.416.53         |
-| 文字筆記 | 目前正在 [Microsoft Edge 測試人員](https://www.microsoftedgeinsider.com/)通道中推廣 |
+| 文字筆記 | 88.0.705.50 |
 | 大聲朗讀 | 84.0.522.63  |
-| 檢視受 Microsoft 資訊保護 (MIP) 保護的檔案 | Windows 支援使用 80.0.361.48<br>Mac 支援使用 81.0.416.53 |
+| 在相同的商務組用戶中查看受 Microsoft 資訊保護 (MIP) 保護的檔案 | 80.0.361.48 中的 Windows 支援<br>81.0.416.53 中的 Mac 支援 |
+| 在所有商務組用戶中查看受 Microsoft 資訊保護 (MIP) 保護的檔案 | 91.0.864.37  |
 |  檢視受資訊版權管理 (IRM) 保護的檔案  | 83.0.478.37            |
-| 檢視和驗證數位簽章 | 在 Canary 和 Dev 通道中提供。 正在積極處理。 |
+
 
 ### <a name="constraints"></a>限制式
 
@@ -115,6 +116,7 @@ PDF 的「大聲朗讀」功能為聆聽 PDF 內容增加了便利性，同時�
 > MIP 需要授權。 如需詳細資訊，請參閱此 [Microsoft 365 授權指引](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection)。
 
 您可以直接在瀏覽器中開啟這些檔案，而不需要下載任何其他軟體，或安裝任何增益集。 此功能會將 MIP 所提供的安全性直接整合至瀏覽器，以提供流暢的工作流程。
+您可以在所有企業租用戶中查看受 MIP 保護的檔案。 目前不支援使用家庭用戶身分檢視檔案。
 
 ![受保護的 PDF 文件。](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 

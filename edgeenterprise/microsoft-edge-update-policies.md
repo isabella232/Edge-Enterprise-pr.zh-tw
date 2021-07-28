@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge Update 原則文件
 ms.author: stmoody
-author: dan-wesley
+author: AndreaLBarr
 manager: tahills
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge Updater 支援的所有原則的文件
-ms.openlocfilehash: a9808981acad544042c6e0ccb59ff755a670c848
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642319"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675940"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新原則
 
@@ -35,13 +35,13 @@ ms.locfileid: "11642319"
 |[InstallDefault](#installdefault)|允許安裝預設值|
 |[UpdateDefault](#updatedefault)|更新原則覆寫預設值|
 |[Install](#install)|允許安裝 (經由通道)|
-|[Update](#update)|更新原則覆寫 (經由通道)|
+|[更新](#update)|更新原則覆寫 (經由通道)|
 |[Allowsxs](#allowsxs)|允許 Microsoft Edge 並排瀏覽器體驗|
 |[CreateDesktopShortcutDefault](#createdesktopshortcutdefault)|防止在預設安裝時建立桌面捷徑|
 |[CreateDesktopShortcut](#createdesktopshortcut)|防止在安裝時建立桌面捷徑 (每個通道)|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|復原至目標版本 (每個通道)|
 |[TargetVersionPrefix](#targetversionprefix)|目標版本覆寫 (經由通道)|
-
+|[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| 取回組組和實驗|
 ### [<a name="preferences"></a>喜好設定](#preferences-policies)
 |原則名稱|標題|
 |-|-|
@@ -201,7 +201,7 @@ ms.locfileid: "11642319"
 - GP ADMX 檔案名稱：msedgeupdate.admx
 ##### <a name="windows-registry-settings"></a>Windows 登錄設定
 - 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- 值名稱： 
+- 值名稱：
   - (Stable): Update{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
   - (Beta): Update{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary): Update{65C35B14-6C1D-4122-AC46-7148CC9D6497}
@@ -246,7 +246,6 @@ updates disabled 0x00000000
 0x00000001
 ```
 [回到頁首](#microsoft-edge---update-policies)
-
 
 ### <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### <a name="prevent-desktop-shortcut-creation-upon-install-default"></a>防止在預設安裝時建立桌面捷徑
@@ -401,6 +400,38 @@ updates disabled 0x00000000
 ```
 [回到頁首](#microsoft-edge---update-policies)
 
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+#### <a name="retrieve-configurations-and-experiments"></a>取回組組和實驗
+>Microsoft Edge Update 1.3.145.1 及更高版本
+
+#### <a name="description"></a>描述
+在 Microsoft Edge Update，實驗與組組服務是用來部署實驗負載。
+
+實驗有效負載包含 Microsoft 啟用測試意見回應的初期開發功能清單。
+
+如果您啟用此策略，實驗負載會從實驗與組組服務下載。
+
+如果您停用此策略，與實驗與組組服務的通訊會完全停止。
+
+如果您沒有設定此策略，在受管理的裝置上，行為會與策略 '停用'相同。
+
+如果您沒有設定此策略，在未管理裝置上的行為會與策略 '啟用'相同。
+
+#### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+- GP 唯一名稱：UpdateExperimentationAndConfigureationServiceControl
+- GP 名稱：Controle updater 與實驗與組組服務的通訊
+- GP 路徑：系統管理範本/Microsoftt Edge Update/Microsoft Edge Update
+- GP ADMX 檔案名稱：msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Windows 登錄設定
+- 路徑：HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- 值名稱：UpdaterExperimentationAndConfigurationServiceControl
+- 數值類型：REG_DWORD
+##### <a name="example-value"></a>範例值：
+```
+0x00000001
+```
+[回到頁首](#microsoft-edge---update-policies)
 
 ## <a name="preferences-policies"></a>喜好設定原則
 
@@ -459,7 +490,6 @@ start hour : 0x00000001
 start min  : 0x00000002
 ```
 [回到頁首](#microsoft-edge---update-policies)
-
 
 ## <a name="proxy-server-policies"></a>Proxy 伺服器原則
 

@@ -1,25 +1,25 @@
 ---
 title: Microsoft Edge 中的 ClickOnce 和 DirectInvoke
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 深入了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke。
-ms.openlocfilehash: 3d124f141e9212ba5ab25d4b725d32add62077a3
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642049"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675970"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
-ClickOnce 和 DirectInvoke 是 IE 和 Microsoft Edge (版本 45 及更早版本) 中提供的功能，支援使用檔案處理常式從網站下載檔案。 雖然其具有不同的用途，但兩個功能都允許網站指定將請求下載的檔案傳遞給使用者裝置上的檔案處理常式。 ClickOnce 請求由 Windows 中的原生檔案處理常式處理。 DirectInvoke 請求由裝載該檔案之網站所指定的已註冊檔案處理常式來處理。
+ClickOnce DirectInvoke 是 IE 和 Microsoft Edge提供的功能，可支援使用檔案處理常式從網站下載檔案。 雖然其具有不同的用途，但兩個功能都允許網站指定將請求下載的檔案傳遞給使用者裝置上的檔案處理常式。 ClickOnce 請求由 Windows 中的原生檔案處理常式處理。 DirectInvoke 請求由裝載該檔案之網站所指定的已註冊檔案處理常式來處理。
 
 如需這些方法的詳細資訊，請參閱下列文章：
 
