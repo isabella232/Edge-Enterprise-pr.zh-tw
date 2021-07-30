@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/21/2021
+ms.date: 07/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 4bedc609fd150b77b72590f0e16c97f6fb74ed7e
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 6816d420668673cdfefb303cc6765f9a22afce0f
+ms.sourcegitcommit: c74caed21e18d5d211a7fa6cb4f0cb3a14446f42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11675950"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "11710361"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -24,44 +24,48 @@ ms.locfileid: "11675950"
 > [!NOTE]
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
 
+## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
+
+已修正各種錯誤和效能問題。
+
 ## <a name="version-92090255-july-21"></a>版本 92.0.902.55：7 月 21 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090245-july-12"></a>版本 92.0.902.45：7 月 12 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090240-july-6"></a>版本 92.0.902.40：7 月 6 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，由於從網址欄搜尋自然語言，尋找您正在尋找的文章/網站變得更容易。 您可以根據頁面內容/描述/時間 (尋找搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字本身符合之外。
-請注意：這是控管功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，您可以從網址欄搜尋自然語言，輕鬆找到您正在尋找的文章/網站。 您可以根據頁面內容/描述/時間 (尋找搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字本身符合之外。
+請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 原則調整將網站保留在本機網站清單中的天數。
 請注意，Windows 10 版本 1909 需要 KB5003698 或更新版本；Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更新版本，才能提供端對端體驗。
 
 - **MHTML 檔案將預設為在 Internet Explorer 模式下開啟**。 從 Microsoft Edge 版本 92 Stable 開始，MHTML 檔案類型將會在 Microsoft Edge (而非 Internet Explorer (IE11) 應用程式) 上自動以 Internet Explorer 模式開啟。 這是在瀏覽器中嘗試檢視 Outlook 電子郵件時最常觀察到的情況。 只有在 IE11 是此檔案類型的預設處理常式時，才能進行此變更。 如果您想要變更這項設定，可以在使用[本指南](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)安裝 Stable 92 版更新之前執行此操作。
 
-- **付款方式現在會跨裝置同步處理**。 從 Microsoft Edge 版本 92 開始，您可以選擇在已登入的裝置上同步處理您的付款資訊。
-請注意：這是控管功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+- **付款方式現在會跨裝置同步處理**。 從 Microsoft Edge 版本 92 開始，您可以選擇在所有已登入的裝置上同步處理您的付款資訊。
+請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **「停用開發人員模式擴充功能」警告可能會永久關閉**。 從 Microsoft Edge 版本 92 開始，您可以按一下 [不再顯示此訊息] 選項，以關閉警告 [停用開發人員模式擴充功能]。
-請注意：這是控管功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **從工具列管理擴充功能**。 工具列上全新的擴充功能功能表將讓您輕鬆地隱藏/釘選擴充功能。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
-請注意：這是控管功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **自動 HTTPS**。 使用者可以選擇在可能支援這個更安全的通訊協定的網域上，將瀏覽從 HTTP 升級至 HTTPS。 此支援也可以設定為嘗試針對所有網域，透過 HTTPS 傳遞。
 請注意：我們正在實驗這項功能，如果您退出宣告實驗，將不會看到此行為。
 
 - **字型呈現的改善**。 已改善文字的呈現，以提高清晰度並減少模糊度。
-請注意：這是控管功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
+請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 ### <a name="policy-updates"></a>原則更新
 

@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/22/2021
+ms.date: 07/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 02d4f2fc96215902000d30f37b589ea126496e47
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: c1556f18520c4b7101ea7296a2a1be67ad6ae0d2
+ms.sourcegitcommit: cb264068ccad14eb8ca8393ea04dd3dc8682527a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676060"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "11708662"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -41,7 +41,7 @@ ms.locfileid: "11676060"
 
 **MHTML 檔案將預設為在 Internet Explorer 模式下開啟**。 從 Microsoft Edge 版本 92 Stable 開始，MHTML 檔案類型將會在 Microsoft Edge (而非 Internet Explorer (IE11) 應用程式) 上自動以 Internet Explorer 模式開啟。 這是在瀏覽器中嘗試檢視 Outlook 電子郵件時最常觀察到的情況。 只有在 IE11 是此檔案類型的預設處理常式時，才能進行此變更。 如果您想要變更這項設定，可以在使用 [本指南](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration) 安裝 Stable 92 版更新之前執行此操作。
 
-**「停用開發人員模式擴充功能」警告可能會永久關閉**。 從 Microsoft Edge 版本 92 開始，您可以按一下 [不再顯示此訊息] 選項，以關閉警告 [停用開發人員模式擴充功能]。
+**「停用開發人員模式擴充功能」警告可能會關閉 2 周的時間**。 從 Microsoft Edge 版本 92 開始，您可以選取警告對話方塊下拉式清單中的選項，將警告「停用開發人員模式延伸」延遲 2 周。
 
 **從工具列管理擴充功能**。 工具列上全新的擴充功能功能表將讓您輕鬆地隱藏/釘選擴充功能。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
 
