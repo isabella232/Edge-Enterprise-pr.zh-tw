@@ -400,7 +400,7 @@ updates disabled 0x00000000
 ```
 [回到頁首](#microsoft-edge---update-policies)
 
-### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+### <a name="UpdaterExperimentationAndConfigurationServiceControl"></a>UpdaterExperimentationAndConfigurationServiceControl
 #### <a name="retrieve-configurations-and-experiments"></a>取回組組和實驗
 >Microsoft Edge Update 1.3.145.1 及更高版本
 
