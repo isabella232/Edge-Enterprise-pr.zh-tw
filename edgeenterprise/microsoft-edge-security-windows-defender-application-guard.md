@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
-ms.openlocfilehash: 6273204cc66fa90b1840f279106b3a26d895ca96
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 4bb8f48bd5ccdfd555d44cecc8cfe9253a6ba17e42f60e2b8a0086411c10e9fb
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11675960"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11727012"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 
@@ -143,7 +143,7 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>員工可以在主機裝置和應用程式防護 Edge 工作階段之間複製與貼上嗎？
 
-根據貴組織的設定，員工可以複製並貼上影像 (.bmp) 與文字，以及從隔離容器複製及貼上文字。
+根據貴組織的設定，員工可以複製並貼上影像 (.bmp) 及文字，從隔離容器複製及貼上。
 
 ### <a name="why-dont-employees-see-their-favorites-in-the-application-guard-edge-session"></a>為什麼員工在 Application Guard Edge 會話中看不到他們的最愛？
 
@@ -155,7 +155,7 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 ### <a name="my-extension-doesnt-seem-to-work-in-edge-application-guard"></a>我的擴充功能在 Edge Application Guard 中似乎無法使用？
 
-如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，這些擴充功能在 Application Guard 容器中不受支援。
+如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，則應用程式防護容器不支援這些擴充功能。
 
 ### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>我嘗試使用 HDR 觀看播放影片，為什麼 HDR 選項遺失？
 

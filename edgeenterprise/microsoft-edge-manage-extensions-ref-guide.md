@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 ExtensionSettings 原則設定 Microsoft Edge 擴充功能的詳細參考指南。
-ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 8634d16c9519ccc5fbdb61baf7f3c4282ff44d995311c6eab2931683bca58309
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676100"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11726726"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 原則的詳細指南
 
@@ -51,7 +51,7 @@ ExtensionSettings 原則可以覆寫您設定在群組原則中其他位置的�
 | **update_url** | 僅適用於  force_installed and normal_installed。 指定 Microsoft Edge 擴充功能的下載位置。 如果擴充功能是託管在 Microsoft Edge 外掛程式網站中，請使用此位置：`https://edge.microsoft.com/extensionwebstorebase/v1/crx`。<br>Microsoft Edge 會使用您為初始擴充安裝指定的 URL。 對於後續的擴充功能更新，Microsoft Edge 的擴充功能資訊清單中使用該 URL。   |
 | **runtime_allowed_hosts**| 允許擴充功能與指定的網站互動，即使它們也是在 runtime_blocked_hosts 中定義。 您可以指定最多 100 個項目。 系統會捨棄額外的項目。<br>主機模式格式與 [符合模式](/microsoft-edge/extensions-chromium/enterprise/match-patterns)類似， 但無法定義路徑。 例如：<br>- *://*.example.com<br>- *://example。*—支援 eTLD 萬用字元     |
 | **runtime_blocked_hosts**| 防止擴充功能與您指定的網站互動或修改。 修改包括封鎖 JavaScript 注入、Cookie 存取，以及 Web 要求修改。<br>您可以指定最多 100 個項目。 系統會捨棄額外的項目。<br>主機模式格式與符合模式類似，但無法定義路徑。 例如：<br>- *://*.example.com<br>- *://example。*—支援 eTLD 萬用字元   |
-| **override_update_url**| 可從 Edge 93 使用<br>如果設定為 `true` ，Edge 會使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL，以用於後續的擴充更新。<br>如果未設定或設定為 ，Edge 會使用擴充模組清單中指定的 URL `false` 進行更新。|
+| **override_update_url**| 可從 Edge 93 使用<br>如果設定為 `true` ，Edge 會使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL，以用於後續的擴充更新。<br>如果未設定或設定為 ，Edge 會使用副檔名清單中指定的 URL `false` 進行更新。|
 
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 群組原則編輯器中使用 JSON 字串進行設定

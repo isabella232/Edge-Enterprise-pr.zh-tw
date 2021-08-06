@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 瞭解如何在企業中封裝和自我裝載 Microsoft Edge 擴充功能。
-ms.openlocfilehash: 8b0e9ed346848f7ee9330c51f6a1c9274df89371
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: c258a2aafca83ed19ffea9160efe09b4a73c920da07b5aac7a0d5ef546db4822
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676110"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11726810"
 ---
 # <a name="self-host-microsoft-edge-extensions"></a>自我裝載 Microsoft Edge 擴充功能
 

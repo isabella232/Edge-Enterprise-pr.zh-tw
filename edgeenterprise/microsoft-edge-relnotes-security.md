@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: e88d0a3726eca4acca519e51ff2d552240ee7ef8
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 45dbc31321a148418e0db65be9b1a817ecaa5d534d5578ee77d98867eadda1eb
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676070"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11727306"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全性更新的版本資訊
 
@@ -259,6 +259,6 @@ Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 80.0.361.48)*
 Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 79.0.309.68)**，其中包含 Chromium 專案的最新安全性更新。
 如需詳細資訊，請參閱[安全性更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

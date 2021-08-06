@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 在 Internet Explorer 模式中保留頁面內瀏覽
-ms.openlocfilehash: 20b18d121c3babfaacffd4a08316b25be714d95e
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: f1c40977ba07f0a85bc64aab8e609163f9a68dd2eb7487adff6b6a1fcbd110f2
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641359"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724280"
 ---
 # <a name="keep-in-page-navigation-in-internet-explorer-mode"></a>在 Internet Explorer 模式中保留頁面內瀏覽
 
@@ -60,10 +60,10 @@ ms.locfileid: "11641359"
 
    - **預設** - 只有設定以 Internet Explorer 模式開啟的網站才會以該模式開啟。 任何未設定以 Internet Explorer 模式開啟的網站都將被重新導向回 Microsoft Edge。
    - **僅保持 Internet Explorer 模式中的自動瀏覽功能** - 如果您想要預設體驗，請使用此選項，除了所有自動瀏覽 (例如 302 重新導向) 到未設定的網站以外，都會保持 Internet Explorer 模式。
-   - **在 Internet Explorer 模式中保留所有頁面流覽**  **_ (建議_*) _ - 從以 IE 模式載入的頁面到未配置的網站的流覽，所有流覽都保持為 Internet Explorer 模式。
+   - **在 Internet Explorer**模式中保留所有頁面流覽 **_ (_** 建議) - 從以 IE 模式載入的頁面到未配置的網站，所有流覽都保持為 Internet Explorer 模式。
 
-6. 按一下 *_OK** 或 **[申請** 以儲存原則設定。
+6. 按一下 [確定]**** 或 [套用]**** 儲存此原則設定。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

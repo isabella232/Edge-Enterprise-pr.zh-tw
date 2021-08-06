@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 瞭解 Kiosk 模式功能，以及如何設定 Microsoft Edge Kiosk 模式選項。
-ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 6b08453c04250a3c8373f68bae85a76e8d3c437c555429df2f74dd3719a3dad5
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676120"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725062"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>設定 Microsoft Edge kiosk 模式
 
@@ -99,7 +99,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--kiosk-idle-timeout-minutes=**：在 Microsoft Edge 資訊站模式關閉瀏覽器之前，將使用者會話重設的時間 (分鐘) 從上一個使用者活動變更為分鐘。 注意：此標號在關閉Microsoft Edge不會重新開機。 在閒置的超時之後，需要個別技術 ，例如指派 Access 或 Shell 啟動，才能自動重新開機 Edge。 將以下範例中的「值」以分鐘數取代。
+- **--kiosk-idle-timeout-minutes=**：在 Microsoft Edge 資訊站模式之前，將使用者會話重設為關閉瀏覽器的時間 (分鐘) 分鐘。 注意：此標號在關閉Microsoft Edge不會重新開機。 在閒置的超時之後，需要另外一種技術 ，例如指派 Access 或 Shell 啟動，才能自動重新開機 Edge。 將以下範例中的「值」以分鐘數取代。
 
    ```
    --kiosk-idle-timeout-minutes=value

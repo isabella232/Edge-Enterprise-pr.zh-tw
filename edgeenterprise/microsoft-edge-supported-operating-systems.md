@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 支援的作業系統
-ms.openlocfilehash: 3c5af933e6a9e6bf66f0f486f77c8ddd9364a53e
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 37942c12de7570774072f6ae963b3681be636378c8e5c97a6acb11d570127a8d
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642619"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11727536"
 ---
 # <a name="microsoft-edge-supported-operating-systems"></a>Microsoft Edge 支援的作業系統
 
@@ -36,12 +36,12 @@ Microsoft Edge 遵循 [新式生命週期原則]，且受下列作業系統的�
 
 - Windows 7 **
 - Windows 8.1
-- Windows 10 SAC 1709 及更新版本 * * _
+- Windows 10 SAC 1709 及更新版本 ***
 - Windows 10 企業版 2015 LTSC
 - Windows 10 企業版 2016 LTSC
 - Windows 10 企業版 2019 LTSC
 - Windows 10 企業版多工作
-- Windows 10 IoT 企業版 SAC _ ***
+- Windows 10 IoT 企業版 SAC ****
 - Windows 10 IoT 企業版 2019 LTSC ****
 
 ### <a name="windows-server"></a>Windows Server
@@ -56,9 +56,9 @@ Microsoft Edge 遵循 [新式生命週期原則]，且受下列作業系統的�
 > [!IMPORTANT]
 > ** 我們會繼續支援 Windows 7 和 Windows Server 2008 R2 上的 Microsoft Edge，直到 2022 年 1 月 15 日。 這些作業系統都不受支援，Microsoft 建議您移至支援的作業系統 (例如 Windows 10)。 雖然 Microsoft Edge 能協助您在網路上更安全，但您的電腦仍然容易受到安全性風險的影響。 為了使 IE 模式在這些作業系統上得到支援，裝置將需要 [Windows 7 的延長安全性更新](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7)。 如果沒有 Windows 7 延伸式安全性更新，Internet Explorer 功能將容易受到安全性風險的影響。 此外，如果沒有透過延伸式安全性更新持續提供服務，IE 模式功能可能會停止運作。  
 >
-> **_ 以與上述相同的方式，針對不支援但支援 Microsoft Edge 的 Windows 10 SAC 版本，建議您儘快升級到支援的 Win10 SAC 發行。 在此狀態下受支援的 Microsoft Edge 應視為到達受支援作業系統狀態的臨時橋樑。
+> *** 與上述方法相同，對於支援 Microsoft Edge 的不受支援 Windows 10 SAC 版本，建議盡快升級到受支援的 Win10 SAC 版本，以保持安全。 在此狀態下受支援的 Microsoft Edge 應視為到達受支援作業系統狀態的臨時橋樑。
 >
-> _ ***您可以在 MOO 上使用 Microsoft Edge OPK，供 loT OEM 在 Windows 10 IoT 企業版解決方案中進行預先安裝和發佈。
+> **** 您可以在 MOO 上使用 Microsoft Edge OPK，供 loT OEM 在 Windows 10 IoT 企業版解決方案中進行預先安裝和發佈。
 
 ### <a name="macos"></a>macOS
 

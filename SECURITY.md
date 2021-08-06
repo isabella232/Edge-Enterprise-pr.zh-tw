@@ -1,49 +1,49 @@
 ---
-ms.openlocfilehash: bc66462291f4b1959fe1080ab33849c935218ebd
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: e9faa9064a6be1582ac63de2869d0df12d111f4e40486fdd2ede1d76edbd81dc
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10979475"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725636"
 ---
 <!-- BEGIN MICROSOFT SECURITY.MD V0.0.5 BLOCK -->
 
-##  <a name="security"></a>安全性
+## <a name="security"></a>安全性
 
-Microsoft 會嚴肅地採取軟體產品與服務的安全性，包括透過我們的 GitHub 組織（包括 [Microsoft](https://github.com/Microsoft)、 [Azure](https://github.com/Azure)、 [DotNet](https://github.com/dotnet)、 [AspNet](https://github.com/aspnet)、 [Xamarin](https://github.com/xamarin)和 [我們的 github 組織](https://opensource.microsoft.com/)）管理的所有來來源程式代碼儲存庫。
+Microsoft 非常重視我們的軟體產品與服務的安全性，其中包括透過我們的 GitHub 組織管理的所有原始程式碼存放庫，包括[](https://github.com/Microsoft)Microsoft、Azure、DotNet、AspNet、Xa GitHub[](https://github.com/xamarin)[組織](https://opensource.microsoft.com/)。 [](https://github.com/Azure) [](https://github.com/dotnet) [](https://github.com/aspnet)
 
-如果您認為您在任何 Microsoft 擁有的儲存庫中發現一個符合 [microsoft 對安全性漏洞定義](https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc751383(v=technet.10))的安全性漏洞，請按照下文所述向我們報告。
+如果您認為在任何符合 Microsoft 安全性弱點定義的 [Microsoft](https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc751383(v=technet.10))擁有存放庫中發現安全性漏洞，請如下列所述向我們報告。
 
-##  <a name="reporting-security-issues"></a>報告安全性問題
+## <a name="reporting-security-issues"></a>報告安全性問題
 
-**請不要透過公用 GitHub 問題來報告安全性漏洞。**
+**請勿透過公開或公開GitHub安全性漏洞。**
 
-請改為將其報告給 Microsoft 安全回應中心 (MSRC) [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report) 。
+請改為向 Microsoft 安全性回應中心報告， (MSRC) [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report) 。
 
-如果您想要在不登入的情況下進行提交，請傳送電子郵件至 [secure@microsoft.com](mailto:secure@microsoft.com)。  如果可能的話，請使用 [PGP] 金鑰加密您的郵件;請從 [Microsoft 安全回應中心的 [PGP 金鑰] 頁面](https://www.microsoft.com/en-us/msrc/pgp-key-msrc)下載。
+如果您想要提交而不登陸，請將電子郵件傳送至[secure@microsoft.com。](mailto:secure@microsoft.com)  如果可能的話，使用 PGP 金鑰加密您的郵件;請從 Microsoft [資訊安全回應中心 PGP Key 頁面下載](https://www.microsoft.com/en-us/msrc/pgp-key-msrc)。
 
-您應該會在24小時內收到回復。 如果您不一定要這樣做，請透過電子郵件追蹤，以確保我們收到原始郵件。 您可以在 [microsoft.com/msrc](https://www.microsoft.com/msrc)中找到其他資訊。 
+您應該在 24 小時內收到回復。 如果您因為某些原因沒有，請透過電子郵件進行追蹤，以確保我們收到您的原始郵件。 您可以在 microsoft.com/msrc 找到[microsoft.com/msrc。](https://www.microsoft.com/msrc) 
 
-請在下方列出所需的資訊， (您可以提供) ，協助我們更清楚地瞭解可能問題的性質與範圍：
+請盡可能提供下列 (資訊，) 協助我們進一步瞭解可能問題的性質與範圍：
 
-  * 問題類型 (例如緩衝區溢位、SQL 注入、跨網站腳本等。 ) 
-  * 來源檔案 (s 的完整路徑，) 與問題的表現相關
-  * 受影響的來原始程式碼 (標記/分支/認可或直接 URL) 的位置
-  * 再現問題所需的任何特殊設定
-  * 再現問題的逐步指示
-  * 如果可能的話，請 (概念驗證或攻擊程式碼) 
-  * 問題的影響，包括攻擊者可能利用該問題的方式
+  * 問題類型 (例如緩衝溢出、SQL注入、跨網站腳本等) 
+  * 來源檔案的完整 () 與問題顯示相關的資料
+  * 受影響原始程式碼的位置 (/分支/提交或直接 URL) 
+  * 重現問題所需的任何特殊組組
+  * 重現問題的逐步指示
+  * 盡可能使用概念證明或 (代碼) 
+  * 問題的影響，包括攻擊者如何利用問題
 
-此資訊可協助我們更快速地會審您的報表。
+這項資訊可協助我們更快速地分類您的報告。
 
-如果您要報告錯誤 bounty，則更完整的報表可能會提供較高的 bounty 獎。 請流覽我們的 [Microsoft 錯誤 Bounty 程式](https://microsoft.com/msrc/bounty) 頁面，以取得更多關於使用中程式的詳細資料。
+如果您報告的錯誤賞金，更完整的報告可以有助於獲得較高的賞金獎勵。 請流覽 [我們的 Microsoft 錯誤賞金計畫](https://microsoft.com/msrc/bounty) 頁面，以進一步瞭解我們目前使用中的計畫。
 
-##  <a name="preferred-languages"></a>喜好語言
+## <a name="preferred-languages"></a>慣用語言
 
-我們想要將所有通訊設為英文。
+我們偏好使用英文進行所有通訊。
 
-##  <a name="policy"></a>原則
+## <a name="policy"></a>原則
 
-Microsoft 遵循 [協同漏洞披露](https://www.microsoft.com/en-us/msrc/cvd)的原則。
+Microsoft 遵循協調 [弱點公開的原則](https://www.microsoft.com/en-us/msrc/cvd)。
 
 <!-- END MICROSOFT SECURITY.MD BLOCK -->

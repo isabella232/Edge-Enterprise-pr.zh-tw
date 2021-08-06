@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Jamf 在 Mac 裝置上設定 Microsoft Edge 原則設定
-ms.openlocfilehash: 8556a5b1d0fc01feb67fc86cb016a9ed47061b55
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: be706795d093b9dcecf33ee1bf7071286082fad1fea98a98b34145e87a9b7393
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641629"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725298"
 ---
 # <a name="configure-microsoft-edge-policy-settings-on-macos-with-jamf"></a>使用 Jamf 在 macOS 上設定 Microsoft Edge 原則設定
 
@@ -45,8 +45,8 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 若要取得原則資訊清單：
 
 - 移至 [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)。
-- 在 [通道/版本] 下拉式清單中，選取版本 81 或更新版本的任何通道****_。
-- 在 [建立] 下拉式清單中，選取任何 81 組建或更新版本_***_。
+- 在 [通道/版本] 下拉式清單中，選取 [**版本為 81 或更新版本的任何通道。***]。
+- 在 [建立] 下拉式清單中，選取任何 [**組建 81 或更新版本。***]。
 - 按一下 [取得原則檔案] 來下載我們的原則範本組合。
 
   > [!NOTE]
@@ -61,7 +61,7 @@ Jamf Pro 10.18 之前，管理 Office 365 牽涉到手動建立 .plist 檔案。
 使用下列步驟將原則資訊清單上傳到 Jamf Pro，然後針對 macOS 建立原則設定檔。
 
 1. 登入 Jamf。
-2. 選取 [電腦]_*** 索引標籤。
+2. 選取 [電腦]**** 索引標籤。
 3. 在 [內容管理]**** 底下，選取 [組態設定檔]****。
 4. 在 [組態設定檔]**** 頁面上，按一下 [+ 新增]****。
 
