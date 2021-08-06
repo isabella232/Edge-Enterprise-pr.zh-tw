@@ -1,7 +1,7 @@
 ---
 title: 為使用者自動啟用密碼監視器
 ms.author: supalsul
-author: AndreLBarr
+author:
 manager: tulasim
 ms.date: 07/12/2021
 audience: ITPro
