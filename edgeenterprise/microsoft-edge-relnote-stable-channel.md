@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: c1556f18520c4b7101ea7296a2a1be67ad6ae0d2
-ms.sourcegitcommit: cb264068ccad14eb8ca8393ea04dd3dc8682527a
+ms.openlocfilehash: 95fc6b86846b2ee8b0e528b88aed107e1431502d1060d0dd45b22aa5304a72e7
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "11708662"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725746"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -30,6 +30,14 @@ ms.locfileid: "11708662"
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
+
+已修正各種錯誤和效能問題。
+
+### <a name="modified-policy"></a>已修改的原則
+
+- AutoplayAllowed – 目前的「已停用」設定會將媒體自動播放設為「有限的」
 
 ## <a name="version-92090255-july-22"></a>版本 92.0.902.55: 7 月 22 日
 

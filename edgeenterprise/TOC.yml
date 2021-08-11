@@ -79,6 +79,8 @@
       href: configure-microsoft-edge.md
     - name: 使用 Intune 進行 Windows 的設定
       href: /mem/intune/configuration/administrative-templates-configure-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
+    - name: '使用初次執行的 [初始喜好設定]，設定 Microsoft Edge'
+      href: Initial-preferences-support-on-Microsoft-Edge-browser.md
     - name: 各個網站設定 (依原則)
       href: Per-Site-Configuration-by-Policy.md
     - name: 使用行動裝置管理，進行 Windows 的設定

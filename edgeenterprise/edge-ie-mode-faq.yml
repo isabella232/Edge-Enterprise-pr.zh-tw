@@ -4,19 +4,19 @@ metadata:
   ms.author: shisub
   author: dan-wesley
   manager: srugh
-  ms.date: 06/29/2021
+  ms.date: 08/05/2021
   audience: ITPro
   ms.topic: conceptual
   ms.prod: microsoft-edge
   ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: Microsoft Edge Internet Explorer 模式的疑難排解和常見問題
-  ms.openlocfilehash: b5fa1666a83b4e687faf1075ea57a9f65dbbeffb3242eb2bce5ea13dd42c422f
-  ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+  ms.openlocfilehash: 7facf29ed4abab85ef0abadc1bc85778c4bdac07b2e30493e588b62394fd861a
+  ms.sourcegitcommit: 1d5a9ed583c91939dc9443594e1d5cffda5d3fbe
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 08/05/2021
-  ms.locfileid: "11724586"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "11810491"
 title: IE 模式疑難排解和常見問題
 summary: >
   >[!Note]
@@ -96,31 +96,18 @@ sections:
   - question: >
       IE 模式是否會取代 Internet Explorer 11？
     answer: >
-      是，Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日終止支援 (以尋找範圍為生命週期[常見問題 - Internet Explorer](https://support.microsoft.com/help/17454/)的清單。您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge中開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+      是，Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日終止支援 (以尋找範圍為生命週期[常見問題 - Internet Explorer](https://support.microsoft.com/help/17454/)的清單。您目前使用的 IE11 App 和網站可以在 Internet Explorer Microsoft Edge開啟。 [從這裡深入了解](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/)。
+  - question: >
+      如何在應用程式上使用 IE 模式時，Microsoft Edge？
+    answer: "您可以使用 IEChooser 啟動 Internet Explorer DevTools 來調試 IE 模式選項卡的內容。 若要使用 IEChooser，請執行下列步驟。\n1. 開啟 IEChooser。\n    - 開啟 [執行] 對話方塊。 例如，按 `Windows logo key`  +  `R` 。\n    - 輸入 `%systemroot%\\system32\\f12\\IEChooser.exe` ，然後選取**** 確定 。\n2. 在 IEChooser 中，選取 IE 模式選項卡中的專案。\n  \n"
   - question: >
       我可以在 SharePoint 中搭配 IE 模式使用 [在檔案總管中開啟] 或 [在檔案總管中檢視] 嗎？
     answer: >
       是的，如果這在獨立式 Internet Explorer 11 中能正常運作，在 IE 模式中即能正常運作。 不過，不要使用 [在檔案總管中開啟] 選項，建議用來在 SharePoint 外部管理檔案和資料夾的方法，就是[同步處理您的 SharePoint 檔案](https://support.office.com/en-us/article/sync-sharepoint-files-with-the-onedrive-sync-app-6de9ede8-5b6e-4503-80b2-6190f3354a88)或[在 SharePoint 中移動或複製檔案](https://support.office.com/en-us/article/move-or-copy-files-in-sharepoint-00e2f483-4df3-46be-a861-1f5f0c1a87bc)。
   - question: >
       Internet Explorer 11 Microsoft Edge的 IE 模式是否支援 'nomerge' 選項？
-    answer: >
-      Microsoft Edge 中沒有任何明確的命令列來鏡像 *nomerge* 選項，但我們建議您使用兩種替代方法來提供此功能。
-
-
-      1. 在 Microsoft Edge 中使用設定檔：每個設定檔對應 IE 模式頁面的不同 IE 工作模式，因此其運作方式與 *nomerge* 選項相同。
-
-      2. 使用 `--user-data-dir=<path>` 命令列，但每個工作模式的路徑不同。 如有需要，您可以建立一個公用程式供使用者運行，該公用程式可以啟動 Microsoft Edge 並變更工作模式路徑。
-
-
-      如果上述選項都不適用於您的案例，請透過其中一個意見反應通道連絡我們：Microsoft 支援服務或 [TechCommunity 論壇](https://techcommunity.microsoft.com/t5/enterprise/bd-p/EdgeInsiderEnterprise)。
+    answer: "建議在 Microsoft Edge 功能的替代選項為 ：\n1. 在 Microsoft Edge 中使用設定檔：每個設定檔對應 IE 模式頁面的不同 IE 工作模式，因此其運作方式與 *nomerge* 選項相同。\n2. 使用 `--user-data-dir=<path>` 命令列，但每個工作模式的路徑不同。 如有需要，您可以建立一個公用程式供使用者運行，該公用程式可以啟動 Microsoft Edge 並變更工作模式路徑。\n\n如果這些選項都不適用於您的案例，從 Microsoft Edge版本**93**開始，Microsoft Edge的 IE 模式會支援 nomerge。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，例如 IE11 中的 nomerge 行為。 \n\n在幕後，針對 Microsoft Edge 的每個視窗，第一次在視窗內流覽 IE 模式選項卡時，如果它是指定的 *「nomerge」* 網站之一，該視窗會鎖定至所有其他 Microsoft Edge 視窗的不同「nomerge」IE 會話，直到該視窗中的最後一個 IE 模式定位停駐點關閉。 這之前的行為是使用者可以使用 nomerge 啟動 IE，也可以透過其他機制Microsoft Edge啟動 IE。 新視窗中開啟的所有網站 (視窗開啟。開啟) 會尊重父程式合併的性質。 請注意，不支援會話切換; 同一個 IE 模式定位點內的流覽會使用相同的會話。\n\n您可以遵循下列步驟，Microsoft Edge**版本**93 (版本或更新版本中) 行為：\n1. 在版本 93 或更新版本Microsoft Edge啟用 IE 模式。 \n2. 您可以將 merge-type 屬性的值設定為\"nomerge\"，以設定需要防止在 Enterprise 模式網站清單中共用會話的網站。 只有在 open-in 元素設為 Microsoft Edge。 根據預設，所有網站都有合併類型的合併值。 \n   ** (：edge://compat/sitelistmanager**提供整合的網站清單管理員工具，將在 Microsoft Edge 93 ** 穩定版中) \n\n   ```\n   <site url=\"contoso.com\">\n   <open-in merge-type=\"no-merge\">IE11</open-in>\n   </site>\n   ```\n    \n3. 使用命令列 `--enable-features=msAllowNoMergeIEMode` 。  (：此命令列**** 目前存在，僅供驗證之用，在 Microsoft Edge 93*穩定*發行之後) \n4. 流覽至任何已配置為 nomerge 的網站。 網站應該會在其未合併的 IE 會話中。 當您開啟另一Microsoft Edge或視窗並流覽至同一個網站時，該網站應該會在其 IE 會話中 (在 Task Manager iexplore.exe中) 。\n\n如果您有任何意見，請透過我們的其中一個意見回饋通道：Microsoft 支援或 [TechCommunity 論壇來聯繫](https://techcommunity.microsoft.com/t5/enterprise/bd-p/EdgeInsiderEnterprise)。\n"
   - question: >
       我是否可以在 Internet Explorer 模式中將連結儲存為網頁？
-    answer: "是的，您可以在 Microsoft Edge 的 Internet Explorer 模式的操作功能表中啟用 [另存目標] 選項。 若要這麼做，請設定位於 [電腦設定] > [系統管理範本] > [Windows 元件] > [Internet Explorer]** 下的群組原則 *「允許在 Internet Explorer 模式中另存目標」*。\n儲存機制的運作方式與在 Internet Explorer 中相同，而如果將目標儲存為 HTML 檔案，重新開啟該檔案就會在 Microsoft Edge 中呈現該頁面。\n \n請注意，此功能需要下列最低版本的作業系統更新：\n- Windows 10 版本 2004、Windows Server 版本 2004、Windows 10 版本 20H2：[KB4580364](https://support.microsoft.com/help/4580364/windows-10-update-kb4580364)\n- Windows 10 版本 1903、Windows 10 版本 1909、Windows Server 版本 1903：[KB4580386](https://support.microsoft.com/help/4580386/windows-10-update-kb4580386)\n- Windows 10 版本 1809、Windows Server 版本 1809、Windows Server 2019：[KB4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)\n- Windows 10 版本 1803：[KB4586785](https://support.microsoft.com/help/4586785/windows-10-update-kb4586785)\n- Windows 10 版本 1607：[KB4586830](https://support.microsoft.com/help/4586830/windows-10-update-kb4586830)\n- Windows 10 版本 1507：[KB4586787](https://support.microsoft.com/help/4586787/windows-10-update-kb4586787)\n"
-  - question: >
-      我可以在 IE 模式中開啟網站，但Enterprise模式網站清單嗎？
-    answer: >
-      是，為了進行測試，IE 模式可以切換特定瀏覽器實例。
-
-
-      使用Microsoft Edge標 `--ie-mode-test` 等執行命令。 `msedge.exe --ie-mode-test`，然後選取 ...->其他工具 ->「在 Internet Explorer 模式中開啟網站」。
-additionalContent: "\n## <a name=\"see-also\"></a>另請參閱\n\n- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)\n- [關於 IE 模式](./edge-ie-mode.md)\n- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)"
+    answer: "是的，您可以在 Microsoft Edge 的 Internet Explorer 模式的操作功能表中啟用 [另存目標] 選項。 若要這麼做，請設定位於 [電腦設定] > [系統管理範本] > [Windows 元件] > [Internet Explorer]** 下的群組原則 *「允許在 Internet Explorer 模式中另存目標」*。\n儲存機制的運作方式與在 Internet Explorer 中相同，而如果將目標儲存為 HTML 檔案，重新開啟該檔案就會在 Microsoft Edge 中呈現該頁面。\n \n請注意，此功能需要下列最低版本的作業系統更新：\n- Windows 10 版本 2004、Windows Server 版本 2004、Windows 10 版本 20H2：[KB4580364](https://support.microsoft.com/help/4580364/windows-10-update-kb4580364)\n- Windows 10 版本 1903、Windows 10 版本 1909、Windows Server 版本 1903：[KB4580386](https://support.microsoft.com/help/4580386/windows-10-update-kb4580386)\n- Windows 10 版本 1809、Windows Server 版本 1809、Windows Server 2019：[KB4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)\n- Windows 10 版本 1803：[KB4586785](https://support.microsoft.com/help/4586785/windows-10-update-kb4586785)\n- Windows 10 版本 1607：[KB4586830](https://support.microsoft.com/help/4586830/windows-10-update-kb4586830)\n- Windows 10 版本 1507：[KB4586787](https://support.microsoft.com/help/4586787/windows-10-update-kb4586787)\n\n\n          \n"
+additionalContent: "\n## <a name=\"see-also\"></a>請參閱\n\n- [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)\n- [關於 IE 模式](./edge-ie-mode.md)\n- [其他企業模式資訊](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)"
