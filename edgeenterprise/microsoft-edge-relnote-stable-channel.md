@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/26/2021
+ms.date: 08/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 95fc6b86846b2ee8b0e528b88aed107e1431502d1060d0dd45b22aa5304a72e7
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 02841bd8574a71be63181d474d076dab9c48642e208e7a9c016f330bb1d68e08
+ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725746"
+ms.lasthandoff: 08/06/2021
+ms.locfileid: "11810213"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -31,6 +31,10 @@ ms.locfileid: "11725746"
 >
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
 
+## <a name="version-92090267-august-5"></a>版本 92.0.902.67：8 月 5 日
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#august-05-2021)。
+
 ## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
 
 已修正各種錯誤和效能問題。
@@ -45,7 +49,7 @@ ms.locfileid: "11725746"
 
 ### <a name="feature-updates"></a>功能更新
 
-**使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationday) 原則以調整將網站保留在本機網站清單中的天數。 請注意，Windows 10 版本 1909 需要 KB5003698 或更新版本；Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更新版本，才能提供端對端體驗。
+**使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 [InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 [InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 原則以調整將網站保留在本機網站清單中的天數。 請注意，Windows 10 版本 1909 需要 KB5003698 或更新版本；Windows 10 版本 2004、Windows 10 版本 20H2 或 Windows 10 版本 21H1 需要 KB5003690 或更新版本，才能提供端對端體驗。 如需詳細資訊，請參閱 [IE 模式中的本機網站清單](/deployedge/edge-ie-mode-local-site-list)。
 
 **MHTML 檔案將預設為在 Internet Explorer 模式下開啟**。 從 Microsoft Edge 版本 92 Stable 開始，MHTML 檔案類型將會在 Microsoft Edge (而非 Internet Explorer (IE11) 應用程式) 上自動以 Internet Explorer 模式開啟。 這是在瀏覽器中嘗試檢視 Outlook 電子郵件時最常觀察到的情況。 只有在 IE11 是此檔案類型的預設處理常式時，才能進行此變更。 如果您想要變更這項設定，可以在使用 [本指南](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration) 安裝 Stable 92 版更新之前執行此操作。
 
@@ -72,24 +76,26 @@ ms.locfileid: "11725746"
 
 **Outlook 副檔名**。  隨時掌握您的 Microsoft Outlook 收件匣、行事曆、工作等其他功能，無需開啟新的瀏覽器視窗。  您可以在這裡取得新的 Microsoft Outlook 擴充功能：[Microsoft Outlook - Microsoft Edge 附加元件](https://microsoftedge.microsoft.com/addons/detail/microsoft-outlook/kkpalkknhlklpbflpcpkepmmbnmfailf?hl=en-US)
 
+**為了與 Chromium 開放原始碼專案保持一致，Microsoft Edge 將更新其在網頁上呈現表格的方式**。 此變更可修正已知問題，並讓 Microsoft Edge 更接近表格在網頁/其他瀏覽器中呈現的指定方式。 建議您測試環境中的重要工作流程，以檢查非預期的問題。 完整的解說程式可以在[這裡](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/edit)取得。
+
 ### <a name="new-policies"></a>新原則
 
-- [AADWebSiteSSOUsingThisProfileEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 已啟用使用此設定檔單一登入公司或學校網站。
-- [AutomaticHttpsDefault](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 設定自動 HTTPS
-- [HeadlessModeEnabled](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制無周邊模式的使用
-- [InsecurePrivateNetworkRequestsAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 指定是否要允許不安全的網站向較私人的網路端點提出要求
-- [InsecurePrivateNetworkRequestsAllowedForUrls](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允許列出的網站從不安全的內容對較私人的網路端點提出要求
-- [InternetExplorerIntegrationLocalSiteListExpirationDays](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定網站保留在本機 IE 模式網站清單上的天數
-- [InternetExplorerIntegrationReloadInIEModeAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允許未設定的網站在 Internet Explorer 模式下重新載入
-- [SharedArrayBufferUnrestrictedAccessAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用
+- [AADWebSiteSSOUsingThisProfileEnabled](/DeployEdge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled) 已啟用使用此設定檔單一登入公司或學校網站。
+- [AutomaticHttpsDefault](/DeployEdge/microsoft-edge-policies#automatichttpsdefault) 設定自動 HTTPS
+- [HeadlessModeEnabled](/DeployEdge/microsoft-edge-policies#headlessmodeenabled) 控制無周邊模式的使用
+- [InsecurePrivateNetworkRequestsAllowed](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 指定是否要允許不安全的網站向較私人的網路端點提出要求
+- [InsecurePrivateNetworkRequestsAllowedForUrls](/DeployEdge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls) 允許列出的網站從不安全的內容對較私人的網路端點提出要求
+- [InternetExplorerIntegrationLocalSiteListExpirationDays](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays) 指定網站保留在本機 IE 模式網站清單上的天數
+- [InternetExplorerIntegrationReloadInIEModeAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed) 允許未設定的網站在 Internet Explorer 模式下重新載入
+- [SharedArrayBufferUnrestrictedAccessAllowed](/DeployEdge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed) 指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用
 
 ### <a name="deprecated-policy"></a>取代的原則
 
-- [InternetExplorerIntegrationTestingAllowed](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允許 Internet Explorer 模式測試
+- [InternetExplorerIntegrationTestingAllowed](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationtestingallowed) - 允許 Internet Explorer 模式測試
 
 ### <a name="obsoleted-policy"></a>淘汰的原則
 
-- [EnableSha1ForLocalAnchors](https://docs.microsoft.com/en-US/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允許由本機信賴起點頒發的 SHA-1 簽章憑證
+- [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) 允許由本機信賴起點頒發的 SHA-1 簽章憑證
 
 ## <a name="version-91086471-july-19"></a>版本 91.0.864.71: 7 月 19 日
 

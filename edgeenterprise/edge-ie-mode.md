@@ -3,19 +3,19 @@ title: 什麼是 Internet Explorer 模式？
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 06/28/2021
+ms.date: 08/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Microsoft Edge 中的 Internet Explorer 模式如何提供需要 Internet Explorer 11 的網站存取權，以及存取新式網站的方式。
-ms.openlocfilehash: 7d1d9d201abee9cd9f0d648f2757e3276945d2f4dcf635ea0cd17a64e684aec4
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: cc88c6745d40bfd33a345d76e2b2090f0f33243271350e4449d698d4a0fab71e
+ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726058"
+ms.lasthandoff: 08/06/2021
+ms.locfileid: "11810193"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什麼是 Internet Explorer (IE) 模式？
 
@@ -47,16 +47,16 @@ Microsoft Edge 的 IE 模式可讓您輕鬆地在單一瀏覽器中使用貴組�
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支援以下 Internet Explorer 功能
 
 - 所有文件模式和企業模式
-- ActiveX 控制項 (例如 Java 或 Silverlight)
+- ActiveX 控制項 (例如 JAVA 或 Silverlight)。 **注意**：Silverlight 於 2021 年 10 月 12 日[終止支援](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788)。 
 - 瀏覽器協助程式物件 
 - 影響安全性區域設定和受保護模式的 Internet Explorer 設定和群組原則
-- 當使用 [IEChooser](/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10) 啟動時，適用於 IE 的 F12 開發人員工具
-- Microsoft Edge 延伸模組 (不支援直接與 IE 頁面內容互動的延伸模組。)
+- 使用 [IEChooser](/deployedge/edge-ie-mode-faq#how-can-i-debug-my-legacy-application-while-using-ie-mode-on-microsoft-edge-) 啟動時，適用於 IE 的 F12 開發人員工具
+- Microsoft Edge 延伸模組 (不支援直接與 IE 頁面內容互動的延伸模組)。
 
 ### <a name="ie-mode-doesnt-support-the-following-internet-explorer-functionality"></a>IE 模式不支援以下 Internet Explorer 功能
 
 - Internet Explorer 工具列
-- 影響瀏覽功能表的 Internet Explorer 設定和群組原則 (例如 - 搜尋引擎和首頁)。
+- 控制導覽功能表的 Internet Explorer 設定和群組原則。
 - IE11 或 Microsoft Edge F12 開發人員工具
 
 ## <a name="prerequisites"></a>必要條件
