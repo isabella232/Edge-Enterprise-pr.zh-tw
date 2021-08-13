@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/05/2021
+ms.date: 08/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 02841bd8574a71be63181d474d076dab9c48642e208e7a9c016f330bb1d68e08
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: ab373397b49405ec608e27e8f51309489715d940
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810213"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882119"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -57,7 +57,7 @@ ms.locfileid: "11810213"
 
 **從工具列管理擴充功能**。 工具列上全新的擴充功能功能表將讓您輕鬆地隱藏/釘選擴充功能。 管理延伸和尋找新延伸的快速連結將使您輕鬆找到新延伸和管理現有延伸。
 
-**自動播放的預設值會設為 [有限的]**。  為協助您將焦點維持在線上，我們已將自動播放媒體的預設值從 [允許] 變更為 [有限的]，從 Microsoft Edge 版本 92 開始。
+**自動播放的預設值會設定為限制**。  為協助您將焦點維持在線上，我們已將自動播放媒體的預設值從 [允許] 變更為 [有限的]，從 Microsoft Edge 版本 92 開始。
 
 **付款方式現在會跨裝置同步處理**。 從 Microsoft Edge 版本 92 開始，您可以選擇在所有已登入的裝置上同步處理您的付款資訊。 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 目前此功能僅適用於美國，且僅適用於 MSA 使用者 (AAD) 
