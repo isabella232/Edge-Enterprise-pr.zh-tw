@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 61ea386b4a0762f6b95a0f2c1944ca35d0749ea9d75f85330f85472414988200
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 9693195b466da999c7ada8f6a4453401e684326f
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724166"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882249"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -245,7 +245,7 @@ ms.locfileid: "11724166"
 |[SmartScreenEnabled](#smartscreenenabled)|設定 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|強制 Microsoft Defender SmartScreen 檢查來自信任來源的下載項目|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|設定 Microsoft Defender SmartScreen 以封鎖潛在的垃圾應用程式|
-### [*<a name="startup-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
 
 |原則名稱|標題|
 |-|-|
@@ -1574,7 +1574,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   #### <a name="description"></a>說明
 
-  可讓您設定是否要使用 JIT Microsoft Edge執行 v8 JavaScript 引擎， (即時) 或未啟用編譯器。
+  可讓您設定是否要使用 JIT Microsoft Edge執行 v8 JavaScript 引擎， (即時) 或未啟用。
 
 停用 JavaScript JIT 將Microsoft Edge網頁內容呈現速度變慢，也可能停用包括 WebAssembly 在內的 JavaScript 部分。 停用 JavaScript JIT 可能會允許Microsoft Edge以更安全的組態呈現網頁內容。
 
@@ -2744,9 +2744,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 如需有效網站 URL 模式的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 。 * 不是此原則可接受的值。
 
-JavaScript JIT 原則例外只會在 eTLD+1 (以網站細微性強制執行) 。 僅針對 subdomain.contoso.com 設定原則無法正確套用至 contoso.com 或 subdomain.contoso.com，因為它們都會解析至沒有原則的相同 eTLD+1 (contoso.com) 。 在這種情況下，原則必須設定在 contoso.com，以正確套用至 contoso.com subdomain.contoso.com。
+JavaScript JIT 原則例外只會在 eTLD+1 (以網站細微性強制執行) 。 僅針對 subdomain.contoso.com 設定原則無法正確套用至 contoso.com 或 subdomain.contoso.com 因為它們都會解析至沒有原則的相同 eTLD+1 (contoso.com) eTLD+1。 在這種情況下，原則必須設定在 contoso.com，以正確套用至 contoso.com subdomain.contoso.com。
 
-此原則會以框架為基礎套用，而非僅以頂層原始 URL 為基礎，例如，如果 contoso.com 列在 JavaScriptJitAllowedForSites 原則中，但 contoso.com 會載入包含 fabrikam.com 的圖文框，contoso.com 會啟用 JavaScript JIT，但 fabrikam.com 會使用 [Default JavaScriptJitSetting](#defaultjavascriptjitsetting)中的原則 ，如果已設定，或預設為啟用 JavaScript JIT。
+此原則會以框架為基礎套用，而不是僅以頂層原始 URL 為基礎，例如，如果 contoso.com 列在 JavaScriptJitAllowedForSites 原則中，但 contoso.com 載入包含 fabrikam.com 的框架，contoso.com 會啟用 JavaScript JIT，但 fabrikam.com 會使用 [Default JavaScriptJitSetting](#defaultjavascriptjitsetting)中的原則 ，如果已設定，或預設為已啟用 JavaScript JIT。
 
 如果您沒有為網站設定此原則，則 [Default JavaScriptJitSetting](#defaultjavascriptjitsetting) 中的原則會套用至網站 ，如果已設定，否則網站會啟用 JAVAscript JIT。
 
@@ -2809,13 +2809,13 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitAllowedForSites\1 = "[*.]example.e
 
   #### <a name="description"></a>說明
 
-  可讓您設定網站 URL 模式清單，指定不允許執行 JavaScript JIT 的網站， (即時) 程式。
+  可讓您設定網站 URL 模式清單，指定不允許執行 JavaScript JIT 的網站， (即時) 啟用。
 
-停用 JavaScript JIT 將Microsoft Edge網頁內容呈現速度變慢，也可能停用包括 WebAssembly 在內的 JavaScript 部分。 停用 JavaScript JIT 可能會允許Microsoft Edge以更安全的組態呈現網頁內容。
+停用 JavaScript JIT 將Microsoft Edge網頁內容呈現速度變慢，也可能停用包括 WebAssembly 在內的 JavaScript 部分。 停用 JavaScript JIT 可能會Microsoft Edge以更安全的組態呈現網頁內容。
 
 如需有效 URL 模式的詳細資訊，請參照 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)。 * 不是此原則可接受的值。
 
-JavaScript JIT 原則例外只會在 eTLD+1 (以網站細微性強制執行) 。 僅針對 subdomain.contoso.com 設定原則無法正確套用至 contoso.com 或 subdomain.contoso.com，因為它們都會解析至沒有原則的相同 eTLD+1 (contoso.com) 。 在這種情況下，原則必須設定在 contoso.com，以正確套用至 contoso.com subdomain.contoso.com。
+JavaScript JIT 原則例外只會在 eTLD+1 (以網站細微性強制執行) 。 僅針對 subdomain.contoso.com 設定原則無法正確套用至 contoso.com 或 subdomain.contoso.com 因為它們都會解析至沒有原則的相同 eTLD+1 (contoso.com) eTLD+1。 在這種情況下，原則必須設定在 contoso.com，以正確套用至 contoso.com subdomain.contoso.com。
 
 此原則會以框架為基礎套用，而非僅以頂層原始 URL 為基礎，例如，如果 contoso.com 列在 JavaScriptJitBlockedForSites 原則中，但 contoso.com 載入包含 fabrikam.com 的框架，則 contoso.com 會停用 JavaScript JIT，但 fabrikam.com 會使用 [Default JavaScriptJitSetting](#defaultjavascriptjitsetting)中的原則 ，如果已設定，或預設為已啟用 JavaScript JIT。
 
@@ -3513,7 +3513,7 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 
 如果您啟用或不設定此設定，員工會收到來自 Microsoft Edge 的建議，以將自己設為預設的 PDF 處理常式。
 
-如果您停用此設定，員工將不會收到任何Microsoft Edge將其設為預設的 PDF 處理常式。
+如果您停用此設定，員工將不會收到任何Microsoft Edge將其設定為預設的 PDF 處理常式。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -4497,9 +4497,9 @@ Google 的建議 URL 可指定為：'{google:baseURL}complete/search?output=chro
   #### <a name="description"></a>說明
 
   設定使用者重寫功能標標狀態的能力。
-如果您將這個策略設定為'CommandLineOverridesEnabled'，使用者可以使用命令列引數來重寫功能標 edge://flags 狀態。
+如果您將這個策略設定為'CommandLineOverridesEnabled'，使用者可以使用命令列引數來取代功能標 edge://flags 狀態。
 
-如果您將這個策略設定為'OverridesEnabled'，使用者可以使用命令列引數或頁面 edge://flags 狀態。
+如果您將此策略設定為'OverridesEnabled'，使用者可以使用命令列引數或頁面 edge://flags 狀態。
 
 如果您將這個策略設定為'OverridesDisabled'，使用者無法使用命令列引數或頁面取代功能標 edge://flags 狀態。
 
@@ -4857,7 +4857,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 這個原則取代 [ExtensionInstallBlocklist](#extensioninstallblocklist) 原則。 如果先前的應用程式或擴充功能已從這個清單中移除，Microsoft Edge 會自動將其解除安裝。
 
-針對Windows加入 Microsoft Active Directory 網域的實例，強制安裝僅限於附加元件網站中列出的應用程式和Microsoft Edge副檔名。
+如果Windows未加入 Microsoft Active Directory 網域的實例，強制安裝僅限於 Microsoft Edge 附加元件網站中列出的應用程式和擴充功能。
 
 在 macOS 實例上，如果實例是透過 MDM 管理，或透過 MCX 加入至網域，才能強制安裝 Microsoft Edge 附加元件網站外部的應用程式和擴充功能。
 
@@ -4997,7 +4997,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   設定此原則會控制 Microsoft Edge 的擴充功能管理設定，包括任何由現有的擴充功能相關原則所控制的功能。 這個原則取代任何可能設定的舊版原則。
 
-此原則只會將擴充功能 ID 或更新 URL 對應至其特定設定。 您可以針對特殊 ID "*" 設定預設組態，這將適用於此原則中不含自訂設定的所有擴充功能。 有了更新 URL，設定就會套用到擴充功能資訊清單中具有所述之精準更新 URL 的擴充功能。 如果 'override_update_url' 標號設定為 true，副檔名會使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 政策或此政策中的 update_url 欄位中指定的更新 URL 來安裝和更新。 如果 'update_url ' 是 Edge 附加元件網站更新 URL，則會忽略標號 "override_update_url」。 若要瞭解詳細資訊，請於線上 [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555) 參閱 ExtensionSettings 原則的詳細指南。
+此原則只會將擴充功能 ID 或更新 URL 對應至其特定設定。 您可以針對特殊 ID "*" 設定預設組態，這將適用於此原則中不含自訂設定的所有擴充功能。 有了更新 URL，設定就會套用到擴充功能資訊清單中具有所述之精準更新 URL 的擴充功能。 如果 'override_update_url' 標號設定為 true，副檔名會使用 [ExtensionInstallForcelist](#extensioninstallforcelist) 政策或此政策中的 update_url 欄位中指定的更新 URL 來安裝和更新。 如果 'override_update_url' 是 Edge 附加元件網站更新 URL，則會忽略標號 'update_url' 。 若要瞭解詳細資訊，請於線上 [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555) 參閱 ExtensionSettings 原則的詳細指南。
 
 若要封鎖來自特定協力廠商商店的延伸，您只需要封鎖該商店的 update_url。 例如，如果您想要封鎖 Chrome 線上應用程式商店的延伸，您可以使用下列 JSON。
 
@@ -5823,7 +5823,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   此政策允許使用者決定是否使用 OneAuth 文件庫在 RS3 Microsoft Edge或Windows 10中進行登錄和權杖提取。
 
-如果您停用或不設定此策略，登錄程式會使用帳戶管理員Windows程式。 Microsoft Edge登入的帳戶，Windows、Microsoft Office或其他 Microsoft 應用程式登入，而不需要密碼。 或者，您可以提供有效的帳戶和密碼來登錄，這些帳戶和密碼會儲存在 Windows Manager 中，以便日後使用。 您可以透過帳戶 -Windows 帳戶 -Windows 設定 帳戶 ->帳戶頁面>儲存在帳戶管理員中的所有帳戶。
+如果您停用或不設定此策略，登錄程式會使用帳戶管理員Windows程式。 Microsoft Edge登入的帳戶，Windows、Microsoft Office或其他 Microsoft 應用程式登入，而不需要密碼。 或者，您可以提供有效的帳戶和密碼來登錄，這些帳戶和密碼會儲存在 Windows Manager 中，以便日後使用。 您可以透過帳戶 -Windows Windows 設定 -> 帳戶 ->帳戶頁面調查儲存在帳戶管理員的所有帳戶。
 
 如果您啟用此策略，OneAuth 驗證流程會用於帳戶登錄。 OneAuth 驗證流程的相依性較少，而且無需使用Windows程式。 您使用的帳戶不會儲存在電子郵件與帳戶頁面中。
 
@@ -6266,9 +6266,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   #### <a name="description"></a>說明
 
-  設定密碼產生設定切換開關，以啟用/停用使用者的功能。
+  設定密碼產生器設定切換，以啟用/停用使用者的功能。
 
-如果您啟用或不設定此策略，則密碼產生程式會透過在註冊和變更密碼頁面上 (下拉式) 提供使用者強大且唯一的密碼建議。
+如果您啟用或不設定此政策，則密碼產生器會透過在註冊和變更密碼頁面上 (下拉式) 提供使用者強大且唯一的密碼建議。
 
 如果您停用此政策，使用者將不再在註冊或變更密碼頁面上看到強式密碼建議。
 
@@ -6733,7 +6733,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   #### <a name="description"></a>說明
 
-  這項功能可要求裝置驗證 (，以在儲存的密碼自動填入網頁表單之前) 確認使用者的身分識別) ，協助使用者為他們的線上帳戶新增額外的隱私權。 這可確保非授權人員無法將儲存的密碼用於自動填填。
+  此功能可要求裝置驗證 (，以在儲存的密碼自動填入網頁表單之前) 確認使用者的身分識別) ，協助使用者為他們的線上帳戶新增額外的隱私權。 這可確保非授權人員無法將儲存的密碼用於自動填填。
 
 此群組原則會設定選項按鈕選取器，讓使用者能夠使用這項功能。 它也有頻率控制項，使用者可以指定要求驗證的提示頻率。
 
@@ -8090,7 +8090,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
   * 系統, 使用的Proxy並忽略所有其他欄位。
   * auto_detect, 忽略其他所有欄位。
   * fixed_servers 中，會使用 ProxyServer 和 ProxyBypassList 欄位。
-  * pac_script ProxyPacUrl、ProxyPacMandatory 和 ProxyBypassList 欄位。
+  * pac_script，則使用 ProxyPacUrl、ProxyPacMandatory 和 ProxyBypassList 欄位。
 
 如需更詳細的範例，請移至 [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936)。
 
@@ -8771,7 +8771,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [回到頁首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -11643,7 +11643,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：自動播放Allowlist
-  - GP 名稱：允許特定網站上媒體自動播放
+  - GP 名稱：允許媒體在特定的網站上自動播放
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -13262,7 +13262,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
 從 Microsoft Edge 89 開始，如果有現有的內部部署設定檔已停用 [RoamingProfileSupportEnabled](#roamingprofilesupportenabled) 原則，且電腦現在已混合加入，即 它有 Azure AD 帳戶，它會自動將內部部署設定檔升級至 Azure AD 設定檔，以取得完整的 Azure AD 同步處理功能。
 
-自 Microsoft Edge 93 日起，如果停用[Policy ImplicitSignInEnabled，](#implicitsigninenabled)此政策將不會生效。
+自 Microsoft Edge 93 日起，如果[停用 Policy ImplicitSignInEnabled，](#implicitsigninenabled)此政策將不會生效。
 
 原則選項對應：
 
@@ -13386,7 +13386,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   #### <a name="description"></a>描述
 
-  如果您將這個策略設為預設 (ShareAllowed") ，使用者就能從 Microsoft Edge 中的 設定 和更多功能表存取共用體驗，以與系統上的其他應用程式共用。
+  如果您將這個策略設為預設 (ShareAllowed') ，使用者將能夠從 Microsoft Edge 中的 設定 和更多功能表存取共用體驗，以與系統上的其他應用程式共用。
 
 如果您將這個策略設定為'ShareDisallowed'，使用者將無法存取共用體驗。 如果 [共用] 按鈕在工具列上，則也會隱藏。
 
@@ -13454,17 +13454,17 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
 
   #### <a name="description"></a>說明
 
-  此設定可讓您在使用檔案檔案時，在 SharePoint Online 中設定檔案Microsoft Edge。
+  這項設定可讓您在使用檔案檔案時，在 SharePoint Online 中設定檔案檔案Microsoft Edge。
 
-您必須列出允許使用此功能的特定網域，並列出 rtFa 和 FedAuth SharePoint驗證 (cookie) 。
+您必須列出允許使用此功能的特定網域，並列出在 rtFa 和 FedAuth SharePoint驗證 (所需的) 。
 
-在幕後，此策略允許具有 viewinfileexplorer 的 URL：在符合網域清單的頁面上開啟 Windows 檔案管理器中的 WebDAV URL，並使用您為 WebDAV 驗證指定的 Cookie。
+在幕後，此策略允許具有 viewinfileexplorer 的 URL：在符合網域清單的頁面上開啟 Windows 檔案檔案管理器中的 WebDAV URL，並使用您為 WebDAV 驗證指定的 Cookie。
 
-如果您啟用此策略，您可以使用您清單之文件庫上的 「在檔案SharePoint中查看」功能。 您必須指定網域SharePoint驗證 Cookie。 請參閱下方的範例值。
+如果您啟用此政策，您可以使用您清單之文件庫的SharePoint檔案中查看」功能。 您必須指定網域SharePoint驗證 Cookie。 請參閱下方的範例值。
 
-如果您停用或不設定此策略，您無法在文件庫中使用「在檔案SharePoint中查看」功能。
+如果您停用或不設定此政策，您無法在文件庫中使用「在檔案SharePoint中查看」功能。
 
-請注意，雖然此選項是透過 Microsoft Edge 提供的可用選項，而不是使用檔案檔案管理器中的 View 選項，但管理 SharePoint 以外的檔案和資料夾的建議方法是同步處理 SharePoint 檔案，或在 SharePoint 中移動或複製檔案。
+請注意，雖然這是透過 Microsoft Edge 提供的選項，而不是使用檔案檔案管理器中的 View 選項，但管理 SharePoint 以外的檔案和資料夾的建議方法是同步處理 SharePoint 檔案，或在 SharePoint 中移動或複製檔案。
 同步處理 https://go.microsoft.com/fwlink/p/?linkid=2166983 SharePoint：在檔案中移動或複製SharePoint：https://go.microsoft.com/fwlink/p/?linkid=2167123
 
   #### <a name="supported-features"></a>支援的功能：
@@ -13482,7 +13482,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "sen
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：ConfigureViewInFileExplorer
-  - GP 名稱：設定檔案檔案管理器中的查看功能，SharePoint頁面Microsoft Edge
+  - GP 名稱：設定檔案檔案管理器中的 View 功能，SharePoint頁面Microsoft Edge
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -15640,9 +15640,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 * 6566 (6566) = 埠 6566 (可以取消封鎖，直到 2021/10/15) 
 
-* 989 (989) = 埠 989 (直到 2022/02/01) 
+* 989 (989) = 埠 989 (可以取消封鎖，直到 2022/02/01) 
 
-* 990 (990) = 埠 990 (直到 2022/02/01) 
+* 990 (990) = 埠 990 (可以取消封鎖，直到 2022/02/01) 
 
 設定此原則時，請使用上述資訊。
 
@@ -18077,9 +18077,9 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   #### <a name="description"></a>說明
 
-  M365 系統管理中心中的 Microsoft Edge 網站清單設定可讓您在相容的雲端位置託管您的網站清單 () ，並透過內建體驗管理網站清單 () 的內容。 此設定可讓您指定 M365 系統管理中心內要部署給使用者的網站清單。 使用者必須使用有效的公司或學校Microsoft Edge帳戶進行登錄。 否則，Microsoft Edge不會從雲端位置下載網站清單。
+  M365 系統管理中心中的 Microsoft Edge 網站清單設定可讓您在相容的雲端位置託管您的網站清單 () ，並透過內建體驗管理網站清單 () 的內容。 此設定可讓您指定 M365 系統管理中心內要部署給使用者的網站清單。 使用者必須使用有效的公司Microsoft Edge學校帳戶來登錄。 否則，Microsoft Edge不會從雲端位置下載網站清單。
 
-只有在設定 [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定時，才能適用此設定。
+這項設定僅適用于 [設定 InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) 設定時。
 
 如果您設定此政策，Microsoft Edge會使用指定的網站清單。 啟用時，您可以在 M365 系統管理中心輸入您建立併發布到雲端的網站清單識別碼。
 
@@ -19091,7 +19091,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果您啟用此政策，Microsoft Edge Microsoft AutoUpdate 才能更新。
 
-如果您停用或未設定此政策，Microsoft Edge將會更新Microsoft Edge Update。
+如果您停用或未設定此Microsoft Edge，系統將會Microsoft Edge Update。
 
 
   #### <a name="supported-features"></a>支援的功能：
@@ -19131,9 +19131,9 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   '允許使用此設定檔單一登入 Microsoft 網站'選項可讓非 MSA 設定檔使用電腦上顯示 MSA 認證對 Microsoft 網站使用單一登入。 此選項只會在非 MSA 設定檔的 設定 -> 設定檔 ->設定檔喜好設定中，以切換方式顯示給使用者。
 
-如果您停用此政策，非 MSA 設定檔將無法使用電腦上目前使用的 MSA 認證對 Microsoft 網站使用單一登入。
+如果您停用此政策，非 MSA 設定檔將無法使用電腦上目前使用的 MSA 認證，對 Microsoft 網站使用單一登入。
 
-如果您啟用或未設定此策略，使用者將能夠使用 設定 選項，確保非 MSA 設定檔能夠使用電腦上提供的 MSA 認證，針對 Microsoft 網站使用單一登入，只要電腦上只有一個 MSA 帳戶存在。
+如果您啟用或未設定此政策，只要電腦上只有一個 MSA 帳戶存在，使用者就能使用 設定 選項，確保非 MSA 設定檔能夠使用電腦上提供的 MSA 認證，為 Microsoft 網站使用單一登入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -20930,9 +20930,9 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   指定重新開機通知期間結束時的目標時段。
 
-系統根據重新開機的 [Notification](#relaunchnotification) 和重新開機 [NotificationPeriod](#relaunchnotificationperiod) 策略設定，通知使用者需要重新開機瀏覽器或重新開機裝置。 當重新開機通知通知政策設定為 'Required'時，瀏覽器和裝置會強制[](#relaunchnotification)重新開機。 此重新開機視窗政策可用來延後通知期限的結束，好讓通知期限落在特定的時段內。
+系統根據重新開機的 [Notification](#relaunchnotification) 和重新開機 [NotificationPeriod](#relaunchnotificationperiod) 策略設定，通知使用者需要重新開機瀏覽器或重新開機裝置。 當重新開機通知通知政策設定為 'Required'時，瀏覽器和裝置會強制[](#relaunchnotification)重新開機。 此重新開機視窗政策可用來延後通知期間結束，好讓通知期限落在特定的時段內。
 
-如果您沒有設定此策略，則預設目標Microsoft Edge介於上午 2 點到上午 4 點之間。 系統的預設目標Microsoft Edge為整日 (，即通知期間永遠不會延後) 。
+如果您沒有設定此策略，則系統的預設目標Microsoft Edge介於上午 2 點到上午 4 點之間。 系統的預設目標Microsoft Edge為全天 (，即永不延遲通知) 。
 
 注意：雖然該策略可以接受專案中的多個專案，但除了第一個專案外，所有專案都被忽略。
 警告：設定此策略可能會延遲軟體更新的適用。
@@ -21028,7 +21028,7 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
   控制使用者是否可以使用遠端偵錯。
 
-如果您啟用或不設定此策略，使用者可能會指定 --remote-debug-port 和 --remote-debuging-pipe 命令列參數，以使用遠端偵錯。
+如果您啟用或不設定此策略，使用者可能會指定 -remote-debug-port 和 --remote-debuging-pipe 命令列參數來使用遠端偵錯。
 
 如果您停用此策略，使用者就不允許使用遠端偵錯。
 
@@ -21635,7 +21635,7 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   #### <a name="description"></a>描述
 
-  從版本 91 開始，從 Microsoft Edge 移除隱藏 TLS 1.0/1.1 警告的支援，而此策略隨即停止作用。
+  從版本 91 開始，已移除隱藏 TLS 1.0/1.1 警告的支援Microsoft Edge版本 91 開始，且此策略已停止使用。
 
 設定支援的最小 TLS 版本。 如果您未設定此原則，Microsoft Edge 將顯示 TLS 1.0 和 TLS 1.1 的錯誤，但使用者將可以略過這個錯誤。
 
@@ -22498,7 +22498,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 如果您啟用此政策，網站可以無限制地使用 SharedArrayBuffers。
 
-如果您停用或未設定此策略，則網站只有在跨來源隔離時，才能使用 SharedArrayBuffers。
+如果您停用或未設定此策略，則網站只能在跨來源隔離時，才能使用 SharedArrayBuffers。
 
 基於 Web 相容性考慮，使用來自 Microsoft Edge 91 以上版本的 SharedArrayBuffers 時，Microsoft Edge 將需要跨來源隔離。
 

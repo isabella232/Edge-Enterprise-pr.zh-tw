@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: bea9c325471617c0ad680b0dabe8cd0d847d5ac0d95941f773471f74ffd0f771
-ms.sourcegitcommit: b5093c47bd5e927cde1d486eb71e0ee2483a8bd8
+ms.openlocfilehash: 8d76d11f40f179534120429d3494a50cc19f4a32
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "11810467"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882229"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -30,15 +30,15 @@ ms.locfileid: "11810467"
 
 - **在 Microsoft Edge 中的初始Microsoft Edge。**  從 Microsoft Edge版本 93 開始，Microsoft Edge初始喜好設定，將新版部署至企業將變得更加容易。
 
-- **IE 模式Microsoft Edge支援「nomerge」行為。**  從版本 93 Microsoft Edge開始，iE 模式Microsoft Edge支援_nomerge_。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，第一次在視窗內流覽 IE 模式選項卡時，如果它是指定的 「nomerge」 網站之一，該視窗會鎖定至所有其他 Microsoft Edge 視窗的不同「nomerge」IE 會話，直到該視窗中的最後一個 IE 模式定位停駐點關閉。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)深入了解。
+- **IE 模式Microsoft Edge支援「nomerge」行為。**  從版本 93 Microsoft Edge開始，iE 模式Microsoft Edge支援_nomerge_。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，第一次在視窗內流覽 IE 模式選項卡時 ，如果它是指定的 「nomerge」 網站之一，該視窗會鎖定至所有其他 Microsoft Edge 視窗的不同「nomerge」IE 會話，直到該視窗中的最後一個 IE 模式定位停駐點關閉。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)深入了解。
 
 - **Tab Groups。**  將定位停駐點分類為使用者定義群組的功能，可協助您更有效地尋找、切換及管理多個工作流程的定位字元。 若要啟用此功能，我們會從版本 93 開始開啟製表Microsoft Edge群組。
 
 - **使用垂直定位停駐點時隱藏標題列。**  在垂直定位停駐點中隱藏瀏覽器的標題列，以取得額外的圖元。 從 Microsoft Edge版本 93 開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
 
-- **從游標工具列 (PiP) 影片圖片。**  從版本 93 Microsoft Edge開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標停留在支援的影片上時，會出現一個工具列，可讓您在 PiP 視窗中查看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
+- **從游標工具列 (PiP) 影片圖片。**  從 Microsoft Edge版本 93 開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標停留在支援的影片上時，會出現一個工具列，可讓您在 PiP 視窗中查看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
 
-- **移除 TLS 中的 3DES。**  從版本 Microsoft Edge 93 開始，系統將會移除TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 此變更正在Chromium專案中進行，Microsoft Edge專案。 若要詳細資訊，請流覽至 [Chrome 平臺狀態專案](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge版本 93 中，會提供[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)政策，以支援需要保留與過期伺服器相容性的情況。 此相容性政策將會過時，並停止Microsoft Edge版本 95 中。 請確保您之前更新受影響的伺服器。
+- **移除 TLS 中的 3DES。**  從版本 Microsoft Edge 93 開始，系統將會移除TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 此變更正在Chromium專案中進行，Microsoft Edge專案。 若要詳細資訊，請流覽至 [Chrome 平臺狀態專案](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge版本 93 中，會提供[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)政策，以支援需要保留與過期伺服器相容性的情況。 此相容性政策將會過時，並停止在版本 95 Microsoft Edge使用。 請確保您之前更新受影響的伺服器。
 
 ### <a name="new-policies"></a>新原則
 
@@ -46,7 +46,7 @@ ms.locfileid: "11810467"
 - [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) 啟用 TLS 的 CECPQ2 後量鍵協定
 - [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)設定檔案檔案管理器中的查看功能，SharePoint頁面Microsoft Edge
 - [DefaultJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) 控制 JavaScript JIT 的使用
-- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允許通知將 Microsoft Edge設為預設的 PDF 閱讀程式
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允許通知將Microsoft Edge設為預設的 PDF 閱讀程式
 - [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) 設定使用者重寫功能標標的能力
 - [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) 啟用隱含的登錄
 - [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist)設定 Enterprise模式雲端網站清單
@@ -55,7 +55,7 @@ ms.locfileid: "11810467"
 - [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) 封鎖 JavaScript 在這些網站上使用 JIT
 - [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled)啟用Windows搜尋本地Microsoft Edge流覽資料
 - [MAUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled)永遠使用 Microsoft AutoUpdate 做為Microsoft Edge
-- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) 允許使用此設定檔單一登入 Microsoft 網站
+- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) 允許使用此設定檔的單一登入 Microsoft 網站
 - [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced)已針對Flow強制執行 OneAuth 驗證
 - [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) 允許使用者在線上建立帳戶時，取得強式密碼建議
 - [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) 設定要求使用者在使用密碼自動填入時輸入其裝置密碼的設定
@@ -71,11 +71,15 @@ ms.locfileid: "11810467"
 
 #### <a name="obsoleted-policy"></a>淘汰的原則
 
-- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype)設定新的Microsoft Edge頁體驗
+- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype)設定新的Microsoft Edge頁面體驗
 
 #### <a name="additional-change"></a>其他變更
 
 - [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) 新增 mac 平臺支援
+
+## <a name="version-93096118-august-10"></a>版本 93.0.961.18：8 月 10 日
+
+修正各種錯誤和效能問題。
 
 ## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
 
@@ -97,7 +101,7 @@ ms.locfileid: "11810467"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，您可以從網址欄搜尋自然語言，輕鬆找到您正在尋找的文章/網站。 您可以根據頁面內容/描述/時間 (搜尋結果，例如「上周的蛋糕食譜」) 標題/URL 關鍵字單一比對。
+- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，由於從網址欄搜尋自然語言，尋找您正在尋找的文章/網站變得更容易。 您可以根據頁面內容/描述/時間 (搜尋結果，例如「上周的蛋糕食譜」) 標題/URL 關鍵字單一比對。
 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 原則調整將網站保留在本機網站清單中的天數。

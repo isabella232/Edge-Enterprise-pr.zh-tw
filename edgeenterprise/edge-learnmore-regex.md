@@ -1,33 +1,33 @@
 ---
 title: 規則運算式 2 語法
 ms.author: comanea
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 06/29/2021
+ms.date: 08/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 規則運算式 2 語法
-ms.openlocfilehash: 48c19aaf039d239c05ef1b7e35faa8cfd6cb37349e53066b45d8183f6c64638d
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 78f21846c142d67470cd421a34baafa9d0021bd0
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725996"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882139"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>規則運算式 2 (re2.h) 語法
 
 規則運算式是描述字元字串集的標記法。 如果字串位於規則運算式所描述的集中，我們通常表示規則運算式與字串相符。
 
-最簡單的規則運算式是單一常值字元。 除*\*+?()|* 以外的元字元，字元與其本身相符。 若要與元字元相符，請以反斜線將它轉義：\+ 符合常值加字元。
+最簡單的規則運算式是單一常值字元。 除`\*+?()|`以外的元字元，字元與其本身相符。 若要比對元字元，請用反杠來逸出它： `\+` 比對文字加號字元。
 
 可以變更或串連兩個規則運算式，以形成新規則運算式：如果 *e<sub>1</sub>* 符合 _s_ 和*e<sub>2</sub>* 符合 _t_，則*<sub>1</sub>*  | *e<sub>2</sub> *符合 _s_ 或 _t_，以及*e<sub>1</sub>* *e<sub>2</sub>* 符合__ st。
 
-元字元_\*_、_+_，以及 _？_ 是重複運算子：*e<sub>1</sub>* _\*_ 與零個或多個 (可能不同的) 字串順序相符，其中每個字串都符合 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 符合一或多個；*e<sub>1</sub>* _？_ 符合零或一。
+元字元_`\`_、_+_，以及 _？_ 是重複運算子：*e<sub>1</sub>* _`\`_ 與零個或多個 (可能不同的) 字串順序相符，其中每個字串都符合 *e<sub>1</sub>*；*e<sub>1</sub>* _+_ 符合一或多個；*e<sub>1</sub>* _？_ 符合零或一。
 
-運算子的優先順序 (從最弱到最强的繫結)，首先是替代，然後是串連，最後是重複運算子。 顯式括弧可以用於強制不同的意義，就像在算術運算式中一樣。 一些範例：_ab|cd_ 等同于_ (ab)|(cd)_ ； _ab\*_ 等同于 _a(b\*)_ 。
+運算子的優先順序 (從最弱到最强的繫結)，首先是替代，然後是串連，最後是重複運算子。 顯式括弧可以用於強制不同的意義，就像在算術運算式中一樣。 一些範例 _：ab|cd_相當於 (_ab) | (cd) ;__`ab\`_ 等於 _`a(b\)`_ 。
 
 到目前為止描述的語法是大多數傳統的 Unix _egrep_ 規則運算式語法。 這個子集足以描述所有的常規語言：不嚴格地說，規則語言是一組字串，這些字串只需使用固定的記憶體量就可以在一次通過文字時進行匹配。 較新的規則運算式設備 (特別是 Perl 和那些複製它的設備) 新增了許多新的運算子和逸出序列，這使得規則運算式更簡潔，有時更神秘，但通常不是更强大。
 
