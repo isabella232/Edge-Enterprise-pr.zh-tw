@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/06/2021
+ms.date: 08/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: ab373397b49405ec608e27e8f51309489715d940
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.openlocfilehash: 66d70216da337b5052a7e5b86446db50c30a6f66
+ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882119"
+ms.lasthandoff: 08/20/2021
+ms.locfileid: "11909898"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -30,6 +30,10 @@ ms.locfileid: "11882119"
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-92090278-august-19"></a>版本 92.0.902.78：8 月 19 日
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#august-19-2021)。
 
 ## <a name="version-92090267-august-5"></a>版本 92.0.902.67：8 月 5 日
 

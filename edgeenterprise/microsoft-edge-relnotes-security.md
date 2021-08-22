@@ -3,23 +3,27 @@ title: Microsoft Edge 安全性更新的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/05/2021
+ms.date: 08/15/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: efe0bbb1b8b771e92e439f9452696f6d424e4465
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.openlocfilehash: b4f4a217a56bfb37a7f623e5040876ac268ff561
+ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882159"
+ms.lasthandoff: 08/20/2021
+ms.locfileid: "11909918"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全性更新的版本資訊
 
 這些版本資訊提供有關 Microsoft Edge 穩定通道更新中所包含安全性修正的資訊。
+
+## <a name="august-19-2021"></a>2021 年 8 月 19 日
+
+Microsoft 已發佈最新的**Microsoft Edge 穩定通道 (版本 92.0.902.78)**，包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱 [安全性更新指南](https://msrc.microsoft.com/update-guide)
 
 ## <a name="august-5-2021"></a>2021 年 8 月 5 日
 
