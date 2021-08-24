@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 66d70216da337b5052a7e5b86446db50c30a6f66
-ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
+ms.openlocfilehash: 6a4c65d253a88384da7393ab846777093dc86e86
+ms.sourcegitcommit: 584a6a9877ae0c3fcb9acc0b8c158e280b0360ff
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2021
-ms.locfileid: "11909898"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "11912058"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -34,6 +34,10 @@ ms.locfileid: "11909898"
 ## <a name="version-92090278-august-19"></a>版本 92.0.902.78：8 月 19 日
 
 穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#august-19-2021)。
+
+## <a name="version-92090273-august-12"></a>版本 92.0.902.73：8 月 12 日
+
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090267-august-5"></a>版本 92.0.902.67：8 月 5 日
 
