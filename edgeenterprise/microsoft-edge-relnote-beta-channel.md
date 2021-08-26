@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/20/2021
+ms.date: 08/25/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 5bf7a834343c4a5531f1c73cc77996e6e016eb2e
-ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
+ms.openlocfilehash: d6912d275ca74bdd46b4d5997e34d62502562986
+ms.sourcegitcommit: 43e123dcb1a871e3fb9e0fdab096b8ea3d372bc7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2021
-ms.locfileid: "11909908"
+ms.lasthandoff: 08/25/2021
+ms.locfileid: "11925320"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -26,27 +26,35 @@ ms.locfileid: "11909908"
 
 ## <a name="version-93096127-august-20"></a>版本 93.0.961.27：8 月 20 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-93096124-august-18"></a>版本 93.0.961.24：8 月 18 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-93096111-august-3"></a>版本 93.0.961.11：8 月 3 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **在 Microsoft Edge 中的初始Microsoft Edge。**  從 Microsoft Edge版本 93 開始，Microsoft Edge新增初始喜好設定，將新版部署至企業變得更加容易。
+- **在 Microsoft Edge 中的初始Microsoft Edge。**  從 Microsoft Edge版本 93 開始，Microsoft Edge初始喜好設定，將新版部署至企業將變得更加容易。
 
-- **IE 模式Microsoft Edge支援「nomerge」行為。**  從版本 93 Microsoft Edge開始，iE 模式Microsoft Edge支援_nomerge_。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，第一次在視窗內流覽 IE 模式選項卡時，如果它是指定的 「nomerge」 網站之一，該視窗會鎖定至所有其他 Microsoft Edge 視窗的不同「nomerge」IE 會話，直到該視窗中最後一個 IE 模式定位停駐點關閉。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)深入了解。
+- **IE 模式Microsoft Edge支援「nomerge」行為。**  從版本 93 Microsoft Edge開始，Microsoft Edge IE 模式會支援_nomerge_。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，第一次在視窗內流覽 IE 模式選項卡時，如果它是指定的 「nomerge」 網站之一，該視窗會鎖定至所有其他 Microsoft Edge 視窗的不同「nomerge」IE 會話，至少直到該視窗中的最後一個 IE 模式定位停駐點關閉。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)深入了解。
 
 - **Tab Groups。**  將定位停駐點分類為使用者定義群組的功能，可協助您更有效地尋找、切換及管理多個工作流程的定位字元。 若要啟用此功能，我們會從版本 93 開始開啟製表Microsoft Edge群組。
 
-- **使用垂直定位停駐點時隱藏標題列。**  在垂直定位停駐點中隱藏瀏覽器的標題列，以取得額外的圖元。 從 Microsoft Edge版本 93 開始，您可以前往 edge://settings/appearance 在自訂工具列區段下選取選項，以在垂直製表模式中隱藏標題列。
+- **使用垂直定位停駐點時隱藏標題列。**  在垂直定位停駐點中隱藏瀏覽器的標題列，以取得額外的圖元。 從版本 93 Microsoft Edge開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
 
 - **從游標工具列 (PiP) 圖片。**  從版本 93 Microsoft Edge開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標停留在支援的影片上時，會出現一個工具列，可讓您在 PiP 視窗中查看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
 
-- **移除 TLS 中的 3DES。**  從版本 Microsoft Edge 93 開始，系統將會TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 這項變更正在Chromium專案中進行，Microsoft Edge專案。 若要詳細資訊，請流覽至 [Chrome 平臺狀態專案](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge版本 93 中，會提供[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)政策，以支援需要保留與過期伺服器相容性的情況。 此相容性政策將會過時，並停止Microsoft Edge版本 95。 請確保您之前更新受影響的伺服器。
+- **移除 TLS 中的 3DES。**  從版本 Microsoft Edge 93 開始，系統將會移除TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 此變更正在 Chromium專案中進行，Microsoft Edge專案為基礎。 若要詳細資訊，請流覽至 [Chrome 平臺狀態專案](https://chromestatus.com/feature/6678134168485888)。 此外，Microsoft Edge版本 93 中，會提供[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled)政策，以支援需要保留與過期伺服器相容性的情況。 此相容性政策將會過時，並停止Microsoft Edge版本 95。 請確保您之前更新受影響的伺服器。
+
+- **可忽略ClickOnce和 DirectInvoke 提示。**  我們已更新我們的政策，以針對指定的網域ClickOnce的提示和 DirectInvoke 應用程式啟用旁路。 若要這麼做，您必須：
+
+  - 啟用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
+  - 啟用[AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes)策略，並設定應停用 ClickOnce DirectInvoke 的特定檔案類型清單
+  - 啟用[AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls)政策，並設定將停用 ClickOnce DirectInvoke 的特定網域清單。
+
+  注意：AutoOpenAllowedForURLs 是 AutoOpenFileTypes 的支援者政策。 如果未設定 AutoOpenAllowedForURLs 且已設定 AutoOpenFileTypes，則列出的檔案類型會自動從所有 URL 開啟。
 
 ### <a name="new-policies"></a>新原則
 
@@ -87,29 +95,29 @@ ms.locfileid: "11909908"
 
 ## <a name="version-93096118-august-10"></a>版本 93.0.961.18：8 月 10 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090255-july-21"></a>版本 92.0.902.55：7 月 21 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090245-july-12"></a>版本 92.0.902.45：7 月 12 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090240-july-6"></a>版本 92.0.902.40：7 月 6 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，您可以從網址欄搜尋自然語言，輕鬆找到您正在尋找的文章/網站。 您可以根據頁面內容/描述/時間 (尋找搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字本身符合之外。
+- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，由於從網址欄搜尋自然語言，尋找您正在尋找的文章/網站變得更容易。 您可以根據頁面內容/描述/時間 (搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字比對之外。
 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 原則調整將網站保留在本機網站清單中的天數。
