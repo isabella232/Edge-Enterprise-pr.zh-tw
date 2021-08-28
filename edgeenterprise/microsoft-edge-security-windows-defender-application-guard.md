@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
-ms.openlocfilehash: 4bb8f48bd5ccdfd555d44cecc8cfe9253a6ba17e42f60e2b8a0086411c10e9fb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727012"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11925989"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 
@@ -50,6 +50,13 @@ ms.locfileid: "11727012"
 ## <a name="whats-new"></a>新功能
 
 新的 Microsoft Edge 瀏覽器中的應用程式防護支援具備與舊版 Microsoft Edge 同等的功能，且包含多項改善。
+
+### <a name="enable-application-guard-in-passive-mode-and-browse-edge-normally"></a>在被動模式中啟用應用程式防護，並正常流覽 Edge
+
+從 94 Microsoft Edge開始，使用者現在可以選擇設定被動模式，這表示 Application Guard 會忽略網站清單設定，而且使用者可以正常流覽 Edge。 可透過原則控制這項支援。 您可以更新 Edge 策略 [ApplicationGuardPassiveModeEnabled 以](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) 啟用或停用被動模式。
+
+> [!Note]
+> 此策略只會影響 Edge，因此如果您已啟用對應的擴充功能，其他瀏覽器的流覽可能會重新導向至 Application Guard 容器。
 
 ### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>將 [我的最愛] 從主機同步處理至容器
 
@@ -143,9 +150,9 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>員工可以在主機裝置和應用程式防護 Edge 工作階段之間複製與貼上嗎？
 
-根據貴組織的設定，員工可以複製並貼上影像 (.bmp) 及文字，從隔離容器複製及貼上。
+根據貴組織的設定，員工可以複製並貼上影像 (.bmp) 或從隔離容器複製及貼上文字。
 
-### <a name="why-dont-employees-see-their-favorites-in-the-application-guard-edge-session"></a>為什麼員工在 Application Guard Edge 會話中看不到他們的最愛？
+### <a name="why-dont-employees-see-their-favorites-in-the-application-guard-edge-session"></a>為什麼員工在應用程式防護 Edge 會話中看不到他們的最愛？
 
 根據貴組織的設定，我的最愛同步功能可能已關閉。 若要管理該政策，請參閱：Microsoft Edge Microsoft Defender 應用程式防護 |Microsoft Docs。
 
@@ -155,11 +162,11 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 ### <a name="my-extension-doesnt-seem-to-work-in-edge-application-guard"></a>我的擴充功能在 Edge Application Guard 中似乎無法使用？
 
-如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，則應用程式防護容器不支援這些擴充功能。
+如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，這些擴充功能在 Application Guard 容器中不受支援。
 
 ### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>我嘗試使用 HDR 觀看播放影片，為什麼 HDR 選項遺失？
 
-為了讓 HDR 視像播放在容器內能夠使用，vGPU 硬體加速功能必須啟用應用程式防護。
+若要讓 HDR 視像播放在容器內執行，需要在 Application Guard 中啟用 vGPU 硬體加速。
 
 ### <a name="are-there-any-other-platform-related-faqs"></a>是否有任何其他平台相關的常見問題集？
 
