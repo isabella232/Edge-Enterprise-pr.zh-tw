@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: b4f4a217a56bfb37a7f623e5040876ac268ff561
-ms.sourcegitcommit: 81ecf79c5fd604cae91aaec3786859172c83ec79
+ms.openlocfilehash: 28069b5693e0314ec5c99ea41f3ddedef9fe5ff2
+ms.sourcegitcommit: af1b1bad562dfd71c20bfab4fe00512cf956beb7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2021
-ms.locfileid: "11909918"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11926029"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全性更新的版本資訊
 
@@ -104,7 +104,6 @@ Microsoft 已發佈最新的**Microsoft Edge 穩定通道 (版本 89.0.774.77)**
 
 Microsoft 已發佈最新的**Microsoft Edge 穩定通道 (版本 89.0.774.68)**，包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
 
-
 ## <a name="march-13-2021"></a>2021 年 3 月 13 日
 
 Microsoft 已發行最新的 **Microsoft Edge 穩定通道 (版本 89.0.774.54)**，包含 Chromium 專案的最新安全性更新。 此更新包含 Chromium 小組報告的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)，因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
@@ -123,7 +122,11 @@ Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 88.0.705.63)*
 
 ## <a name="february-4-2021"></a>2021 年 2 月 4 日
 
-Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 88.0.705.62)**，其中包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+Microsoft 已發行最新的  **Microsoft Edge 穩定通道 (版本 88.0.705.62)**，其中包含 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱 [安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+此更新包含下列 Microsoft Edge 特定更新：
+
+- [CVE-2021-24113](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-24113)
 
 ## <a name="january-21-2021"></a>2021 年 1 月 21 日
 
@@ -267,6 +270,6 @@ Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 80.0.361.48)*
 Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 79.0.309.68)**，其中包含 Chromium 專案的最新安全性更新。
 如需詳細資訊，請參閱[安全性更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
