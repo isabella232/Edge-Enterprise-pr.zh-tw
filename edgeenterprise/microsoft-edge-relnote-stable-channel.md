@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/19/2021
+ms.date: 09/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 3c21b06358d4aa563b67027d65a1aa5fec5f5dfc
-ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
+ms.openlocfilehash: e759a78587c594460b49d6858f127bcac90ff8d3
+ms.sourcegitcommit: a74b88408fcf820706c1ca2fd19d7ef83a1ddd76
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2021
-ms.locfileid: "11926009"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "11938205"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -30,6 +30,34 @@ ms.locfileid: "11926009"
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-93096138-september-02"></a>版本 93.0.961.38：9 月 2 日
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#september-02-2021)。
+
+### <a name="feature-updates"></a>功能更新
+
+- **Microsoft Edge 中的初始喜好設定。**  Microsoft Edge 現在支援數量有限的初始喜好設定 (之前稱為主要喜好設定)。 IT 系統管理員可以在其使用者第一次執行瀏覽器之前，預設部署這些設定。 這裡提供其他資訊：[使用首次執行的初始喜好設定設定來設定 Microsoft Edge](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
+
+- **Microsoft Edge 上的 IE 模式將支援「不合併」行為。**  針對使用者，從 IE 模式應用程式啟動新瀏覽器視窗時，視窗會處於於不同的工作階段中，類似於 IE11 中的不合併行為。 您必須調整網站清單，以設定由於「不合併」，需要防止工作階段共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，在該視窗內第一次瀏覽 IE 模式索引標籤時 (如果它是指定的其中一個「不合併」網站)，該視窗會遭鎖定到與所有其他 Microsoft Edge 視窗不同的「不合併」IE 工作階段，至少直到該視窗中的最後一個 IE 模式索引標籤關閉為止。 此行為會遵循先前的行為，其中使用者可以在不合併的情況下啟動 IE，也可以透過其他機制在不合併的情況下啟動 Microsoft Edge。  這裡提供其他資訊：[IE 模式疑難排解和常見問題集 | Microsoft Docs](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)
+
+- **停止隱含登入的新原則。**  [ImplicitSignInEnabled](/deployedge/microsoft-edge-policies#implicitsigninenabled) 原則會允許系統管理員停用 Microsoft Edge 瀏覽器上的隱含登入。
+
+- **可略過 ClickOnce 和 DirectInvoke 提示的原則。** 我們已更新我們的原則，以針對來自指定網域的指定檔案類型，啟用略過 ClickOnce 的提示和 DirectInvoke 的應用程式。 若要這樣做，您必須：
+
+  - 啟用 [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) 或 [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
+  - 啟用 [AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) 原則，並設定應停用 ClickOnce 和 DirectInvoke 的特定檔案類型清單。
+  - 啟用 [AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) 原則，並設定將停用 ClickOnce 和 DirectInvoke 的特定網域清單。
+
+  注意：AutoOpenAllowedForURLs 是 AutoOpenFileTypes 的支援原則。 如果未設定 AutoOpenAllowedForURLs 且已設定 AutoOpenFileTypes，則列出的檔案類型將自動從所有 URL 開啟。
+
+- **索引標籤群組。**  我們正在開啟索引標籤群組，其提供將索引標籤分類為使用者定義群組的功能，並幫助您更有效地尋找、切換及管理多個工作流程的索引標籤。  
+
+- **使用垂直索引標籤時隱藏標題列。**  在垂直索引標籤中時隱藏瀏覽器的標題列，以獲得額外的一些像素。 現在，您可以前往 edge://settings/appearance，並在 [自訂工具列] 區段下選取在垂直索引標籤模式中隱藏標題列的選項。
+
+- **透過暫留工具列的影片子母畫面 (PiP)。**  當您將游標暫留在支援的影片上時，會出現一個工具列，允許您在 PiP 視窗中觀看該影片。  請注意：這目前適用 macOS 上的 Microsoft Edge 使用者。  
+
+- **移除 TLS 中的 3DES。 將移除對 TLS_RSA_WITH_3DES_EDE_CBC_SHA加密套件的支援。** 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 如需詳細資訊，請瀏覽至 [Chrome 平台狀態項目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 原則將可用來支援需要保留與過時伺服器相容性的情況。 此相容性原則將在 Microsoft Edge 版本 95 中過時並停止運作。 請在此之前更新受影響的伺服器。
 
 ## <a name="version-92090284-august-26"></a>版本 92.0.902.84：8 月 26 日
 

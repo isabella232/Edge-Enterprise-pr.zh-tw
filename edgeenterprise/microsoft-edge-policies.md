@@ -1,9 +1,9 @@
 ---
 title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
-author: AndreaLBarr
+author: dan-wesley
 manager: tahills
-ms.date: 08/31/2021
+ms.date: 08/30/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 9b71e641af62b0ad56e4f2e9bf52a061dafa52a3
-ms.sourcegitcommit: 5aeaeb85eba7572d1871ad55568a8bea4d4a4e5f
+ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
+ms.sourcegitcommit: e83b355a9d95f2c8ec858b05e5b7cf8837f8a82b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "11934572"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "11936561"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -254,7 +254,7 @@ ms.locfileid: "11934572"
 |[SmartScreenEnabled](#smartscreenenabled)|設定 Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|強制 Microsoft Defender SmartScreen 檢查來自信任來源的下載項目|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|設定 Microsoft Defender SmartScreen 以封鎖潛在的垃圾應用程式|
-### [*<a name="startup-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>啟動、首頁和新的索引標籤頁面*](#startup-home-page-and-new-tab-page-policies)
 
 |原則名稱|標題|
 |-|-|
@@ -9041,7 +9041,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [回到頁首](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>啟動、首頁和新的索引標籤頁面原則
 
   [回到頁首](#microsoft-edge---policies)
 
@@ -21242,9 +21242,9 @@ QUIC 是傳輸層網路通訊協定，可改善目前使用 TCP 的 Web 應用�
 
   指定重新啟動通知期間結束的目標時間間隔。
 
-根據 [RelaunchNotification](#relaunchnotification) 和 [RelaunchNotificationPeriod](#relaunchnotificationperiod) 原則設定，使用者會收到通知表示需要重新啟動瀏覽器或重新開機裝置。 當 [RelaunchNotification](#relaunchnotification) 原則設定為‘必要項目’時，系統會強制將瀏覽器和裝置在通知期間結束時重新開機。 此 RelaunchWindow 原則可用於延遲通知期間結束，以便落在特定時段內。
+根據 [RelaunchNotification](#relaunchnotification) 和 [RelaunchNotificationPeriod](#relaunchnotificationperiod) 原則設定，使用者會收到通知表示需要重新啟動瀏覽器或重新開機裝置。 當 [RelaunchNotification](#relaunchnotification) 原則設定為‘必要項目’時，系統會強制將瀏覽器和裝置在通知期間結束時重新開機。 此 RelaunchWindow 原則可用於延遲通知期間的結束，以便落在特定時段內。
 
-如果您未設定此原則，則 Microsoft Edge 的預設目標時間間隔介於上午 2 點到上午 4 點之間。 Microsoft Edge 的預設目標時間間隔是全天 (即永不延遲通知期間結束)。
+如果不設定此原則，則預設的目標時段是全天 (即永不延遲通知期間結束)。
 
 注意：雖然此原則可接受多個輸入項目，但會忽略除了第一個項目以外的所有其他項目。
 警告：設定此原則可能會延遲軟體更新的套用。
