@@ -3,35 +3,47 @@ title: Microsoft Edge 安全性更新的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/02/2021
+ms.date: 09/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 安全性更新的版本資訊
-ms.openlocfilehash: e44339eed45620fa6fe4b76e5b201e2308baa69f
-ms.sourcegitcommit: 9f7324ff156de0a0c75e2217104e543f182649f2
+ms.openlocfilehash: 16d5bde6800bae3bb48b8698c332fdc4201c223a
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "11938299"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016542"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Microsoft Edge 安全性更新的版本資訊
 
 這些版本資訊提供有關 Microsoft Edge 穩定通道更新中所包含安全性修正的資訊。
 
+## <a name="september-11-2021"></a>2021 年 9 月 11 日
+
+Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 93.0.961.47)**，其中納入 Chromium 專案的最新安全性更新。此更新包含 Chromium 小組報告的 [CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632)，因為已發行的版本中有惡意探索問題。  如需詳細資訊，請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)
+
+## <a name="september-9-2021"></a>2021 年 9 月 9 日
+
+Microsoft 已發佈最新的  **Microsoft Edge 穩定通道 (版本 93.0.961.44)**，其中納入 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)
+
+此更新包含下列 Microsoft Edge 特定更新:
+
+- [CVE-2021-38669](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38669)
+
 ## <a name="september-2-2021"></a>2021 年 9 月 2 日
 
 Microsoft 已發行最新的  **Microsoft Edge 穩定通道 (版本 93.0.961.38)**，其中納入 Chromium 專案的最新安全性更新。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)
 
-此更新包含下列 Microsoft Edge 特定更新：
+此更新包含下列 Microsoft Edge 特定更新:
 
-- [CVE-2021-26436](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26436)
 - [CVE-2021-36930](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36930)
+- [CVE-2021-26436](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26436)
+- [CVE-2021-26439](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26439)
 - [CVE-2021-38641](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38641)
 - [CVE-2021-38642](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38642)
-- [CVE-2021-38670](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-38670)
 
 ## <a name="august-19-2021"></a>2021 年 8 月 19 日
 
@@ -282,6 +294,6 @@ Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 80.0.361.48)*
 Microsoft 已發佈最新的 **Microsoft Edge 穩定通道 (版本 79.0.309.68)**，其中包含 Chromium 專案的最新安全性更新。
 如需詳細資訊，請參閱[安全性更新指南](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)

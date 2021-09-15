@@ -1,25 +1,26 @@
 ---
 title: 設定 Microsoft Edge 企業同步
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: silvanam
-ms.date: 06/28/2021
+ms.date: 09/07/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 管理員和使用者選項，用於使 Microsoft Edge 同步處理我的最愛、密碼和其他瀏覽器資料。
-ms.openlocfilehash: ea5a9c3b4433aef1c87e2416da90774f7efce85582334c30cd5174b62b1cd0eb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 5caec237eebcd18a83b8f32d638ace2fa2914e38
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727346"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979412"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>設定 Microsoft Edge 企業同步
 
-本文說明系統管理員如何設定 Microsoft Edge，在所有已登入的裝置上同步處理使用者的我的最愛、密碼和其他瀏覽器資料。如果您不是系統管理員，請瀏覽本文，了解如何跨裝置登入和同步 Microsoft Edge。 [登入以跨裝置同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
+本文說明系統管理員如何設定 Microsoft Edge，在所有已登入的裝置上同步處理使用者的我的最愛、密碼和其他瀏覽器資料。如果您不是系統管理員，請瀏覽本文，了解如何跨裝置登入和同步 Microsoft Edge。 
+            [登入以跨裝置同步 Microsoft Edge](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674)。
 
 > [!NOTE]
 > 除非另有說明，否則適用於 Microsoft Edge 版本 77 或更新版本。
@@ -47,7 +48,7 @@ Microsoft Edge 同步可讓使用者跨所有登入裝置存取其瀏覽資料�
 Azure Active Directory (Azure AD) 帳戶的 Microsoft Edge 同步適用於以下任何訂閱：
 
 - Azure AD 進階版 (P1 或 P2) 
-- M365 商務進階版
+- M365 商務進階版、商務標準版或商務基本版
 - Office 365 E1 及以上版本
 - Azure 資訊保護 (AIP)(P1 或 P2)
 - 所有 EDU 訂閱 (適用於學生或教職員的 Microsoft Apps、適用於學生或教職員的 Exchange Online、O365 A1 或以上、M365 A1 或以上或適用於學生或教職員的 Azure 資訊保護 P1 或 P2)
@@ -56,12 +57,18 @@ Azure Active Directory (Azure AD) 帳戶的 Microsoft Edge 同步適用於以下
 
 系統管理員可以使用以下群組原則來設定和管理 Microsoft Edge 同步處理：
 
-- [SyncDisabled](./microsoft-edge-policies.md#syncdisabled)：完全停用同步。
-- [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled)：停用儲存瀏覽 [歷程記錄和同步處理]。此原則還會停用 [開啟] 索引標籤同步。
-- [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory)：當此原則設定為 [停用] 時，也會停用 [歷程記錄同步處理]。
-- [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled)：設定要從同步中排除的類型清單。
-- [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled)：允許 Active Directory (AD) 設定檔使用內部部署儲存體。 如需詳細資訊，請參閱[ 適用於 Active Directory (AD) 使用者的內部部署同步](./microsoft-edge-on-premises-sync.md)。
-- [ForceSync](/deployedge/microsoft-edge-policies#forcesync)：依預設開啟同步處理，且不需要使用者同意同步處理。  
+- 
+            [SyncDisabled](./microsoft-edge-policies.md#syncdisabled)：完全停用同步。
+- 
+            [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled)：停用儲存瀏覽 [歷程記錄和同步處理]。此原則還會停用 [開啟] 索引標籤同步。
+- 
+            [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory)：當此原則設定為 [停用] 時，也會停用 [歷程記錄同步處理]。
+- 
+            [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled)：設定要從同步中排除的類型清單。
+- 
+            [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled)：允許 Active Directory (AD) 設定檔使用內部部署儲存體。 如需詳細資訊，請參閱[ 適用於 Active Directory (AD) 使用者的內部部署同步](./microsoft-edge-on-premises-sync.md)。
+- 
+            [ForceSync](/deployedge/microsoft-edge-policies#forcesync)：依預設開啟同步處理，且不需要使用者同意同步處理。  
 
 ## <a name="configure-microsoft-edge-sync"></a>設定 Microsoft Edge 同步處理
 

@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/09/2021
+ms.date: 09/13/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: d455b2ccab734ba8792754b81994ac381b974f73
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 93fbb135befd1691220a1d9b4499d0713b1740f3
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979387"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016462"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -23,6 +23,10 @@ ms.locfileid: "11979387"
 
 > [!NOTE]
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-94099219-september-13"></a>版本 94.0.992.19：9 月 13 日
+
+已修正各種錯誤和效能問題。
 
 ## <a name="version-94099214-september-7"></a>版本 94.0.992.14：9 月 7 日
 
@@ -36,11 +40,11 @@ ms.locfileid: "11979387"
 
 - **提供新的擴充穩定選項。**  我們向受管理的客戶提供新的擴充穩定Enterprise選項。 延伸穩定版選項會維持為均勻編號修訂，並每隔 8 周更新一次。 將會有每兩週一次的安全性更新。  此處提供其他資訊： https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
 
-- **改良開啟 MHTML 檔案的預設行為。**  如果啟用 IE 模式，MHTML 檔案會繼續在 IE 模式中開啟，除非 MHTML 檔案是使用 Microsoft Edge (中的另存新版或另存新頁碼選項從 Microsoft Edge (儲存Microsoft Edge) 。 如果檔案是從 Microsoft Edge儲存，現在就會在 Microsoft Edge 中開啟。  這項變更會修正從 IE 模式開啟 MHTML 檔案時，從 IE 模式儲存至 IE 時所Microsoft Edge。
+- **改良開啟 MHTML 檔案的預設行為。**  如果啟用 IE 模式，MHTML 檔案會繼續在 IE 模式中開啟，除非 MHTML 檔案是使用 Microsoft Edge (中的另存新版或另存新頁為Microsoft Edge) 。 如果檔案是從 Microsoft Edge儲存，現在就會在 Microsoft Edge 中開啟。  這項變更會修正從 IE 模式開啟 MHTML 檔案時，從 IE 模式儲存至 IE 時所Microsoft Edge。
 
 - **限制私人網路要求以保護上下文。** 從網際網路頁面上 (內部) 內部網路存取資源，這些頁面必須經過 HTTPS 傳遞。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 如需詳細資訊，請瀏覽至 [Chrome 平台狀態項目](https://chromestatus.com/feature/5436853517811712)。 有兩種相容性策略可支援需要保留與非安全頁面相容性的情境[：SecurePrivateNetworkRequestAllowed 和](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed)S/4000044444999999999991933333333333333333334444444444444444449911931113311333333133333334444444444433313333 [](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls)
 
-- **封鎖混合內容下載。** 安全頁面只會下載其他安全頁面上的檔案，如果從安全頁面啟動 (非 HTTPS) 頁面上的下載將會封鎖。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 若要詳細資訊，請流覽至 [Google 安全性部落格專案](https://security.googleblog.com/2020/02/protecting-users-from-insecure_6.html)。
+- **封鎖混合內容下載。** 安全頁面只會下載其他安全頁面上的檔案，如果從安全頁面啟動，則以非安全 (非 HTTPS) 頁面託管的下載會封鎖。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 若要詳細資訊，請流覽至 [Google 安全性部落格專案](https://security.googleblog.com/2020/02/protecting-users-from-insecure_6.html)。
 
 - **啟用內部部署帳戶的隱含登錄。**   啟用 OnlyOnPremises1icitSigninEnabled 策略後，只有內部部署帳戶才能啟用隱含登出。  Microsoft Edge 不會嘗試隱含登入至 MSA 或 AAD 帳戶。 也會停止從內部部署帳戶升級至 AAD 帳戶。
 
@@ -62,11 +66,11 @@ ms.locfileid: "11979387"
 
 ## <a name="version-93096133-august-27"></a>版本 93.0.961.33：8 月 27 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-93096127-august-20"></a>版本 93.0.961.27：8 月 20 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-93096124-august-18"></a>版本 93.0.961.24：8 月 18 日
 
@@ -82,7 +86,7 @@ ms.locfileid: "11979387"
 
 - **索引標籤群組。**  將定位停駐點分類為使用者定義群組的功能，可協助您更有效地尋找、切換及管理多個工作流程的定位字元。 若要啟用此功能，我們會從版本 93 開始開啟製表Microsoft Edge群組。
 
-- **使用垂直索引標籤時隱藏標題列。**  在垂直索引標籤中時隱藏瀏覽器的標題列，以獲得額外的一些像素。 從版本 93 Microsoft Edge開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
+- **使用垂直索引標籤時隱藏標題列。**  在垂直索引標籤中時隱藏瀏覽器的標題列，以獲得額外的一些像素。 從 Microsoft Edge版本 93 開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
 
 - **透過暫留工具列的影片子母畫面 (PiP)。**  從版本 93 Microsoft Edge開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標暫留在支援的影片上時，會出現一個工具列，允許您在 PiP 視窗中觀看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
 
@@ -102,7 +106,7 @@ ms.locfileid: "11979387"
 - [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) 啟用 TLS 的 CECPQ2 後量鍵協定
 - [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer)設定檔案檔案管理器中的查看功能，SharePoint頁面Microsoft Edge
 - [DefaultJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) 控制 JavaScript JIT 的使用
-- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允許通知將 Microsoft Edge設為預設的 PDF 閱讀程式
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled)允許通知將Microsoft Edge設為預設的 PDF 閱讀程式
 - [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) 設定使用者重寫功能標標的能力
 - [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) 啟用隱含的登錄
 - [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist)設定 Enterprise模式雲端網站清單
@@ -112,7 +116,7 @@ ms.locfileid: "11979387"
 - [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled)啟用Windows搜尋本地Microsoft Edge流覽資料
 - [MAUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled)永遠使用 Microsoft AutoUpdate 做為Microsoft Edge
 - [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) 允許使用此設定檔的單一登入 Microsoft 網站
-- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced)已針對Flow強制執行的 OneAuth 驗證
+- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced)已針對Flow強制執行 OneAuth 驗證
 - [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) 允許使用者在線上建立帳戶時，取得強式密碼建議
 - [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) 設定要求使用者在使用密碼自動填入時輸入其裝置密碼的設定
 - [PrintingWebpageLayout](/DeployEdge/microsoft-edge-policies#printingwebpagelayout) 設定列印版面配置
@@ -135,7 +139,7 @@ ms.locfileid: "11979387"
 
 ## <a name="version-93096118-august-10"></a>版本 93.0.961.18：8 月 10 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-92090262-july-29"></a>版本 92.0.902.62：7 月 29 日
 
@@ -143,15 +147,15 @@ ms.locfileid: "11979387"
 
 ## <a name="version-92090255-july-21"></a>版本 92.0.902.55：7 月 21 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-92090245-july-12"></a>版本 92.0.902.45：7 月 12 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-92090240-july-6"></a>版本 92.0.902.40：7 月 6 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-92090222-june-21"></a>版本 92.0.902.22：6 月 21 日
 
