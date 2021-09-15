@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 和條件式存取
 ms.openlocfilehash: 56d593809d9c14a6ecfe58ef67745de78eeba452
-ms.sourcegitcommit: a1d30ff66c448db4fd9fdb59ea439c0b0908b1c2
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2021
-ms.locfileid: "11894126"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979514"
 ---
 # <a name="microsoft-edge-and-conditional-access"></a>Microsoft Edge 和條件式存取
   

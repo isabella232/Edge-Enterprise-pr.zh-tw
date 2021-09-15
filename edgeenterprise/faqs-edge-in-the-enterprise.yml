@@ -10,13 +10,13 @@ metadata:
   ms.prod: microsoft-edge
   ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
-  description: 常見問題 (常見問題) 企業Microsoft Edge部署
+  description: 常見問題 (常見問題) 部署企業Microsoft Edge常見問題
   ms.openlocfilehash: d4d707533c8733059e8fadc8fe8de9a85b8dc64d
-  ms.sourcegitcommit: 0b23434b719dbeb302edf200a47550ee7b62a86a
+  ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 09/03/2021
-  ms.locfileid: "11938830"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "11978813"
 title: 常見問題 (常見問題) 企業Microsoft Edge常見問題
 summary: >
   > [!NOTE]
@@ -27,18 +27,18 @@ sections:
   questions:
   - question: 如何知道我的 Microsoft Edge 是什麼版本？
     answer: >
-      在圖示的右上角Microsoft Edge選取省略號圖示 (**...) ，****然後選取**設定。 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
+      在圖示的右上角Microsoft Edge選取省略號圖示** (...) ，** 然後選取**設定。** 選取**關於 Microsoft Edge** 以查看 Microsoft Edge 版本。
   - question: Internet Explorer 11 呢？
     answer: >
-      Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日停用並結束支援 (以查看範圍清單，請參閱常見問題) 。 [](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/) 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 按一下[這裡](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)深入了解。
+      Internet Explorer 11 桌面應用程式將于 2022 年 6 月 15 日停用，並 (範圍清單，請參閱常見問題) 。 [](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/) 您目前使用的相同 IE11 應用程式和網站，可以在 Microsoft Edge 中以 Internet Explorer 模式開啟。 按一下[這裡](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)深入了解。
   - question: Microsoft Edge (以 Chromium 為基礎) 是否支援 ActiveX 控制項或 BHO (例如 Silverlight 或 Java)？
     answer: >
-      不。 Microsoft Edge不支援 ActiveX控制項或瀏覽器說明物件 (BH 或 JAVA) BH。 不過，如果您執行使用 ActiveX 控制項的 Web 應用程式、BHO 或 Internet Explorer 11 上的傳統文件模式，可以將它們設定為在 Microsoft Edge 的 IE 模式中執行。 如需詳細資訊，請參閱[在 Microsoft Edge 上設定 IE 模式](./edge-ie-mode.md)。
+      不。 Microsoft Edge不支援 ActiveX控制項或瀏覽器說明物件 (例如 Silverlight 或 JAVA) BH。 不過，如果您執行使用 ActiveX 控制項的 Web 應用程式、BHO 或 Internet Explorer 11 上的傳統文件模式，可以將它們設定為在 Microsoft Edge 的 IE 模式中執行。 如需詳細資訊，請參閱[在 Microsoft Edge 上設定 IE 模式](./edge-ie-mode.md)。
   - question: 我的最愛會從目前的版本Microsoft Edge，還是我必須重新新增？
     answer: "目前，Microsoft Edge 支援從現有安裝的 Microsoft Edge、Chrome、Internet Explorer 和 Firefox (在 Win10 上) 匯入。 系統支援下列設定進行輸入：書簽、歷程記錄、密碼，以及自動填 (付款、位址和一般表單) 。 您可以選擇從 [初次執行體驗] 或是從瀏覽器設定匯入。  \n"
   - question: Stable、Beta、Dev 和 Canary 通道/組建之間的區別是什麼？
     answer: >
-      下一版 Microsoft Edge 的 Stable 通道是我們所提供最穩定的預覽通道，具有以企業為中心的功能，可供您在整個組織中[試用和評估](https://aka.ms/EdgeEnterprise)。 Beta 通道可讓您向一組具代表性的使用者驗證下一個穩定版本。 穩定版和 Beta 版頻道大約每六周更新一次。 Dev 和 Canary 頻道會分別每週和每天更新。 MSIS (PKG 檔案的離線安裝程式) 僅適用于穩定版、Beta 版和 Dev 通道。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](./microsoft-edge-channels.md)。
+      下一版 Microsoft Edge 的 Stable 通道是我們所提供最穩定的預覽通道，具有以企業為中心的功能，可供您在整個組織中[試用和評估](https://aka.ms/EdgeEnterprise)。 Beta 通道可讓您向一組具代表性的使用者驗證下一個穩定版本。 穩定版和 Beta 版頻道大約每六周更新一次。 Dev 和 Canary 頻道會分別每週和每天更新。 MSIS (PKG 檔案的離線安裝程式) 僅適用于穩定版、Beta 版和開發人員通道。 如需詳細資訊，請參閱 [Microsoft Edge 通道的概觀](./microsoft-edge-channels.md)。
   - question: 新版本 Microsoft Edge 提供哪些擴充功能支援？
     answer: >
       Microsoft Edge 支援 [Microsoft Edge Insider Addons](https://go.microsoft.com/fwlink/?linkid=2081222) 和 [Chrome 線上應用程式商店](https://go.microsoft.com/fwlink/?linkid=2072338)的擴充功能。

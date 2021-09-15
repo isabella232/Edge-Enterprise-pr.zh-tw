@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 設定 Microsoft Edge 企業隱私權設定
-ms.openlocfilehash: fe2a6e57d70a6a37297e28854291b913af1fd08e826df845fc3572fecb09f07a
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: b5b07353af558e3832cb7a08c647fa111a14a404
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726186"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978914"
 ---
 # <a name="configure-microsoft-edge-policies-to-support-enterprise-privacy"></a>設定 Microsoft Edge 原則以支援企業隱私權
 
