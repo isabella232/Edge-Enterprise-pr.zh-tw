@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 設定 IE 模式原則
 ms.openlocfilehash: 7ca8dffb0bc20acf954cf0f272f3894b39355846
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882129"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979322"
 ---
 # <a name="configure-ie-mode-policies"></a>設定 IE 模式原則
 
@@ -52,7 +52,7 @@ ms.locfileid: "11882129"
 5. 選取 **\[已啟用\]**。
 6. 在 [選項]**** 下，將下拉式清單值設定為
    -  如果您想要在 Microsoft Edge 中以 IE 模式開啟網站，請選取 [Internet Explorer 模式]****
-   -  如果您想要在獨立 Internet Explorer **11**視窗中開啟網站 (Internet Explorer 11 在 2022 年 6 月 15 日 Internet Explorer 11 桌面應用程式將停用並結束支援之後，將不支援此選項。  在 2022 年 6 月 15 日之後，IE11 將無法再使用，此選項的行為會與 **Internet Explorer** 模式選項相同。)   
+   -  如果您希望在獨立 Internet Explorer **11**視窗中開啟網站 (Internet Explorer 11 在 2022 年 6 月 15 日 Internet Explorer 11 桌面應用程式即將停用並結束支援後，將不支援此選項。  在 2022 年 6 月 15 日之後，IE11 將無法再使用，此選項的行為會與 **Internet Explorer** 模式選項相同。)   
    -  如果您想要停止使用者透過 edge://flags 或透過命令列設定 Internet Explorer 模式，請選取 [無]****
 
    > [!NOTE]
@@ -75,7 +75,7 @@ ms.locfileid: "11882129"
     > [!NOTE]
     > 不強制設定 Microsoft Edge 原則。 許多組織會使用這項作為覆寫，讓他們以 IE 原則將目前網站清單的目標設定為所有使用者，並更輕鬆地將已更新版本的目標設定為具有 Microsoft Edge 原則的試驗使用者。
 
-有關模式網站清單Enterprise，請參閱[使用網站Enterprise管理員](/deployedge/edge-ie-mode-site-list-manager)。
+有關模式網站清單Enterprise，請參閱使用網站Enterprise[管理員](/deployedge/edge-ie-mode-site-list-manager)。
 
 
 ### <a name="configure-using-the-use-the-enterprise-mode-ie-website-list-policy"></a>使用 [使用企業模式 IE 網站清單] 原則進行設定：

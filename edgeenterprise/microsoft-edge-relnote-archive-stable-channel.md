@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 封存的 Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 662ebb40ce14714365b257a1a6127960df6baf90ecc8106cec5e49f35b9c51ea
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727436"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979346"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>封存的 Microsoft Edge 穩定通道的版本資訊
 
@@ -48,7 +48,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-88070556-january-28"></a>版本 88.0.705.56：1 月 28 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-88070553-january-26"></a>版本 88.0.705.53：1 月 26 日
 
@@ -163,7 +163,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-87066460-december-10"></a>版本 87.0.664.60：12 月 10 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-87066457-december-7"></a>版本 87.0.664.57：12 月 7 日
 
@@ -171,7 +171,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12 月 3 日
 
-修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
+已修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
 
 - **預設會啟用 [購物] 功能**。 從 Microsoft Edge 版本 87 開始，企業使用者可以利用 Microsoft Edge 中的購物功能。 有了購物功能，Microsoft Edge 可協助使用者在線上購物時找到優待卷及更好的價格。 (優待券體驗已隨著穩定版本 87.0.664.41 推出。) 價格比較體驗現在隨著此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) 原則設定。 請參閱我們的[部落格](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/)和[深入了解](/microsoft-edge/privacy-whitepaper#shopping) Microsoft 購物的相關資訊。
 
@@ -266,7 +266,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-86062256-october-27"></a>版本 86.0.622.56：10 月 27 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062251-october-22"></a>版本 86.0.622.51：10 月 22 日
 
@@ -278,7 +278,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-86062243-october-15"></a>版本 86.0.622.43：10 月 15 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062238-october-9"></a>版本 86.0.622.38：10 月 9 日
 
@@ -360,11 +360,11 @@ ms.locfileid: "11727436"
 
 ## <a name="version-85056470-october-6"></a>版本 85.0.564.70：10 月 6 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-85056468-october-1"></a>版本 85.0.564.68：10 月 1 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-85056463-september-23"></a>版本 85.0.564.63：9 月 23 日
 
@@ -457,7 +457,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-84052248-july-28"></a>版本 84.0.522.48：7 月 28 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052244-july-23"></a>版本 84.0.522.44：7 月 23 日
 
@@ -531,7 +531,7 @@ ms.locfileid: "11727436"
 <!-- End 84 -->
 ## <a name="version-83047864-july-13"></a>版本 83.0.478.64：7 月 13 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047861-july-7"></a>版本 83.0.478.61：7 月 7 日
 
@@ -561,7 +561,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-83047844-june-1"></a>版本 83.0.478.44：6 月 1 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047837-may-21"></a>版本 83.0.478.37：5 月 21 日
 
@@ -763,7 +763,7 @@ ms.locfileid: "11727436"
 
 ## <a name="version-80036156-february-19"></a>版本 80.0.361.56：2 月 19 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-80036154-february-14"></a>版本 80.0.361.54：2 月 14 日
 

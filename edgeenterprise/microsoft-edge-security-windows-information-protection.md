@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Windows 資訊保護的支援
-ms.openlocfilehash: 0ccb75384a1bf38aaaf2216813bff336e59e278b33da7d8267183442f9a31a16
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 53564d6089e84969501ac4802cf96dbdb1b24361
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726972"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979334"
 ---
 # <a name="microsoft-edge-support-for-windows-information-protection-wip"></a>Microsoft Edge 對 Windows 資訊保護 (WIP) 的支援
 
@@ -52,7 +52,7 @@ WIP 有下列優點：
 
 使用原則，您可以設定下表所述的四種保護模式。 如需詳細資訊，請參閱 [WIP 保護模式](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip#wip-protection-modes)。
 
-| 模式 | 描述 |
+| 模式 | 說明 |
 |------|-------------|
 | 封鎖 | WIP 會尋找不適當的資料共用做法，並阻止員工完成該動作。 此搜尋可包含將企業資訊共用至非企業保護的應用程式，以及在應用程式之間共用企業資料，或嘗試在組織網路以外的地方進行共用。 |
 | 允許覆寫 | WIP 會尋找不適當的資料共用，並在員工做出可能不安全的事情時，對該員工發出警告。 不過，此管理模式允許員工覆寫原則並共用資料，同時將該動作記錄到您的稽核記錄中。 |

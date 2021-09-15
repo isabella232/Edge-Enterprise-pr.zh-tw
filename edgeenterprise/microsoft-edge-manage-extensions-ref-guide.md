@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 ExtensionSettings 原則設定 Microsoft Edge 擴充功能的詳細參考指南。
-ms.openlocfilehash: 8634d16c9519ccc5fbdb61baf7f3c4282ff44d995311c6eab2931683bca58309
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726726"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978910"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 原則的詳細指南
 

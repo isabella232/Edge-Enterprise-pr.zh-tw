@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 深入了解用於 Microsoft Edge URLBlocklist 和 URLAllowlist 原則的篩選格式。
-ms.openlocfilehash: 76ecd6919085b33d6c5c19e2ff9d0d82984357725b6495ec8dedf19a00489eab
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: e178dad518ff4bee07bf89d9faca3231ee6cf246
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726046"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978798"
 ---
 # <a name="filter-format-for-url-list-based-policies"></a>URL 清單型原則的篩選格式
 

@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
-ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2021
-ms.locfileid: "11925989"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979339"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Microsoft Edge 對 Microsoft Defender 應用程式防護的支援
 
@@ -146,7 +146,7 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 在 Windows 10 企業版版本 1803 中，使用者可以將檔從隔離的 Application Guard 容器下載至主機電腦。 此功能是由策略管理。
 
-在 Windows 10 企業版 版本、版本 1709 或 Windows 10 Professional 版本 1803 中，無法將檔案從隔離的 Application Guard 容器下載至主機。 不過，員工可以使用以 PDF 列印或以 XPS 列印選項，並將這些檔案儲存至主機裝置。
+在 Windows 10 企業版 版本、版本 1709 或 Windows 10 Professional 版本 1803 中，無法將檔案從隔離的 Application Guard 容器下載到主機。 不過，員工可以使用以 PDF 列印或以 XPS 列印選項，並將這些檔案儲存至主機裝置。
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>員工可以在主機裝置和應用程式防護 Edge 工作階段之間複製與貼上嗎？
 
@@ -162,11 +162,11 @@ IE 模式支援應用程式防護功能，但我們不期望在 IE 模式中經�
 
 ### <a name="my-extension-doesnt-seem-to-work-in-edge-application-guard"></a>我的擴充功能在 Edge Application Guard 中似乎無法使用？
 
-如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，這些擴充功能在 Application Guard 容器中不受支援。
+如果已針對組組中的 MDAG 啟用擴充策略，請檢查您的擴充功能是否需要原生郵件處理元件，則應用程式防護容器不支援這些擴充功能。
 
 ### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>我嘗試使用 HDR 觀看播放影片，為什麼 HDR 選項遺失？
 
-若要讓 HDR 視像播放在容器內執行，需要在 Application Guard 中啟用 vGPU 硬體加速。
+為了讓 HDR 視像播放在容器內執行，vGPU 硬體加速功能必須啟用應用程式防護。
 
 ### <a name="are-there-any-other-platform-related-faqs"></a>是否有任何其他平台相關的常見問題集？
 

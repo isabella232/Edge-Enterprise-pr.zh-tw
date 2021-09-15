@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge Updater 支援的所有原則的文件
-ms.openlocfilehash: 7b6043ecb96cb30ee9b51fc9966f925b223e72f29ac325ad06208d743f60e18f
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724866"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978955"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - 更新原則
 
@@ -99,7 +99,7 @@ ms.locfileid: "11724866"
 #### <a name="update-policy-override-default"></a>更新原則覆寫預設值
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 允許您指定所有通道的預設行為，這些通道涉及 Microsoft Edge Update 處理 Microsoft Edge 可用更新的方式。 可以透過為這些特定通道指定「[更新原則覆寫](#update)」原則來覆寫各個通道的設定。
 
   如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge 更新：
@@ -173,7 +173,7 @@ ms.locfileid: "11724866"
 #### <a name="update-policy-override"></a>更新原則覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 指定 Microsoft Edge Update 如何處理來自 Microsoft Edge 的可用更新。
 
 如果啟用此原則，Microsoft Edge Update 會根據您設定以下選項的方式處理 Microsoft Edge 更新：
@@ -400,12 +400,12 @@ updates disabled 0x00000000
 ```
 [回到頁首](#microsoft-edge---update-policies)
 
-### <a name="UpdaterExperimentationAndConfigurationServiceControl"></a>UpdaterExperimentationAndConfigurationServiceControl
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
 #### <a name="retrieve-configurations-and-experiments"></a>取回組組和實驗
 >Microsoft Edge Update 1.3.145.1 及更高版本
 
-#### <a name="description"></a>描述
-在 Microsoft Edge Update，實驗與組組服務是用來部署實驗負載。
+#### <a name="description"></a>說明
+在 Microsoft Edge Update，實驗和組組服務是用來部署實驗負載。
 
 實驗有效負載包含 Microsoft 啟用測試意見回應的初期開發功能清單。
 
@@ -440,7 +440,7 @@ updates disabled 0x00000000
 #### <a name="auto-update-check-period-override"></a>自動更新檢查期間覆寫
 >Microsoft Edge Update 1.2.145.5 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 如果啟用，此原則允許您設定自動更新檢查之間的最小分鐘數值。 否則，預設情況下，每 10 小時會自動檢查一次是否有更新。
 
   如果要停用所有自動更新檢查，請將值設定為 0 (不建議)。
@@ -465,7 +465,7 @@ updates disabled 0x00000000
 #### <a name="time-period-in-each-day-to-suppress-auto-update-check"></a>每天抑制自動更新檢查的期間
 >Microsoft Edge Update 1.3.33.5 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 如果啟用此原則，則每天從 Hour:Minute 開始，持續 Duration (分鐘) 抑制檢查更新。 Duration 不受日光節約時間影響。 例如，如果開始時間為 22:00，Duration 為 480 分鐘，則無論日光節約時間在該期間是開始還是結束，都會抑制更新整整 8 小時。
 
   如果停用或不設定此原則，則在任何特定期間都不會抑制更新檢查。
@@ -498,7 +498,7 @@ start min  : 0x00000002
 #### <a name="choose-how-to-specify-proxy-server-settings"></a>選擇如何指定 Proxy 伺服器設定
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 允許您指定 Microsoft Edge Update 使用的 Proxy 伺服器設定。
 
   如果啟用此原則，則可以在以下 Proxy 伺服器選項之間進行選擇：
@@ -531,7 +531,7 @@ fixed_servers
 #### <a name="url-to-a-proxy-pac-file"></a>Proxy .pac 檔案的 URL
 >Microsoft Edge Update 1.3.21.81 和更新版本
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>說明
 允許您為 Proxy 自動設定 (PAC) 檔案指定 URL。
 
   如果啟用此原則，則可以為 PAC 檔案指定 URL，以自動化 Microsoft Edge Update 選取適當 Proxy 伺服器以擷取特定網站的方式。

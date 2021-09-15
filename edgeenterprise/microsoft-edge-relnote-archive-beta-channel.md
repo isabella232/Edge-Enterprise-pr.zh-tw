@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 封存的 Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: 60ef45f2b0db38233e06faa6aa3104ac1f9930c66b342cf9eb8d53f936c52256
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 065c665892edc264e2ab94375bedf3af9dbc936c
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727616"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978799"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-beta-channel"></a>封存的 Microsoft Edge Beta 通道的版本資訊
 
@@ -78,7 +78,7 @@ ms.locfileid: "11727616"
 
 ## <a name="version-88070529-december-21"></a>版本 88.0.705.29：12 月 21 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 <!-- begin major 88 -->
 ## <a name="version-88070518-december-9"></a>版本 88.0.705.18：12 月 9 日
@@ -179,7 +179,7 @@ ms.locfileid: "11727616"
 
 ## <a name="version-87066452-november-30"></a>版本 87.0.664.52：11 月 30 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-87066440-november-18"></a>版本 87.0.664.40：11 月 18 日
 
@@ -250,15 +250,15 @@ ms.locfileid: "11727616"
 
 ## <a name="version-86062243-october-16"></a>版本 86.0.622.43：10 月 16 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062236-october-7"></a>版本 86.0.622.36：10 月 7 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062231-october-1"></a>版本 86.0.622.31：10 月 1 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062228-september-28"></a>版本 86.0.622.28：9 月 28 日
 
@@ -266,7 +266,7 @@ ms.locfileid: "11727616"
 
 ## <a name="version-86062215-september-14"></a>版本 86.0.622.15：9 月 14 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 <!-- major 86 -->
 ## <a name="version-86062211-september-9"></a>版本 86.0.622.11：9 月 9 日
 
@@ -427,7 +427,7 @@ ms.locfileid: "11727616"
 
 ## <a name="version-85056441-august-25"></a>版本 85.0.564.41：8 月 25 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-85056440-august-21"></a>版本 85.0.564.40：8 月 21 日
 
@@ -494,23 +494,23 @@ ms.locfileid: "11727616"
 
 ## <a name="version-84052235-july-9"></a>版本 84.0.522.35：7 月 9 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052228-june-26"></a>版本 84.0.522.28：6 月 26 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052226-june-24"></a>版本 84.0.522.26：6 月 24 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052220-june-15"></a>版本 84.0.522.20：6 月 15 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052215-june-8"></a>版本 84.0.522.15：6 月 8 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052211-june-2"></a>版本 84.0.522.11：6 月 2 日
 
@@ -595,7 +595,7 @@ ms.locfileid: "11727616"
 
 ## <a name="version-83047818-april-27"></a>版本 83.0.478.18：4 月 27 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047813-april-22"></a>版本 83.0.478.13：4 月 22 日
 
@@ -670,31 +670,31 @@ ms.locfileid: "11727616"
 
 ## <a name="version-81041650-april-10"></a>版本 81.0.416.50：4 月 10 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041645-april-3"></a>版本 81.0.416.45：4 月 3 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041641-march-30"></a>版本 81.0.416.41：3 月 30 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041634-march-17"></a>版本 81.0.416.34：3 月 17 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041631-march-12"></a>版本 81.0.416.31：3 月 12 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041628-march-9"></a>版本 81.0.416.28：3 月 9 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041620-february-28"></a>版本 81.0.416.20：2 月 28 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-81041612-february-20"></a>版本 81.0.416.12：2 月 20 日
 

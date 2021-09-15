@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 Microsoft Intune 設定適用於 Windows 的 Microsoft Edge 原則設定。
 ms.openlocfilehash: 63eb29018bf4ec9c5a32d11b215f422e150383c9
-ms.sourcegitcommit: e811be46e3236534c5fa17c728ffc1005c5cc295
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "11907257"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978858"
 ---
 # <a name="configure-microsoft-edge-policy-settings-with-microsoft-intune"></a>使用 Microsoft Intune 設定 Microsoft Edge 原則設定
 
@@ -54,7 +54,7 @@ ms.locfileid: "11907257"
 4. 在頂端命令列上，選取**建立設定檔**。
 5. 在 **[平台]** 下方的下拉式清單中，選取 **[Windows 10 及更新版本]**。
 6. 在配置檔案類型下方的下拉式 **清單中，** 選取 **範本**。
-7. 在 [ **範本名稱下**， **選取 [系統管理範本** >，然後按一下 [ **建立>** 按鈕。 下個螢幕擷取畫面顯示可選取 [平台] 和 [設定檔] 類型的下拉式清單。
+7. 在 [ **範本名稱下**， **選取系統管理範本** ，然後按一下建立 **按鈕** 。 下個螢幕擷取畫面顯示可選取 [平台] 和 [設定檔] 類型的下拉式清單。
 
     ![選取 [平台] 和 [設定檔] 類型](./media/configure-edge-with-intune/create-profile-platform.png)
 

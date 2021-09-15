@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 瞭解如何在企業中封裝和自我裝載 Microsoft Edge 擴充功能。
-ms.openlocfilehash: c258a2aafca83ed19ffea9160efe09b4a73c920da07b5aac7a0d5ef546db4822
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 8b0e9ed346848f7ee9330c51f6a1c9274df89371
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726810"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978907"
 ---
 # <a name="self-host-microsoft-edge-extensions"></a>自我裝載 Microsoft Edge 擴充功能
 
@@ -90,7 +90,7 @@ ms.locfileid: "11726810"
 
 ## <a name="distribute-a-privately-hosted-extension"></a>發佈私人託管的擴充功能。
 
-您可以共用 CRX 檔案託管位置的連結，而且一旦使用者在瀏覽器中輸入 URL，就會下載並安裝此擴充功能。 使用者可以從 edge://extensions 網頁啟用此擴充功能。 若要允許使用者安裝自我託管副檔名，您必須將擴充 CRX ID 新加到 [ExtensionInstallAllowList](/deployedge/microsoft-edge-policies#extensioninstallallowlist) 策略，並新增 CRX 檔案託管位置的 URL 到 [ExtensionInstallSources](/deployedge/microsoft-edge-policies#extensioninstallsources) 策略。
+您可以共用 CRX 檔案託管位置的連結，而且一旦使用者在瀏覽器中輸入 URL，就會下載並安裝此擴充功能。 使用者可以從 edge://extensions 網頁啟用此擴充功能。 若要允許使用者安裝自我託管的擴充功能，您必須將擴充 CRX ID 新增到 [ExtensionInstallAllowList](/deployedge/microsoft-edge-policies#extensioninstallallowlist) 政策，並新增 CRX 檔案託管位置的 URL 到 [ExtensionInstallSources](/deployedge/microsoft-edge-policies#extensioninstallsources) 策略。
 
 或者，您可以使用群組原則 [ExtensionInstallForceList](/deployedge/microsoft-edge-manage-extensions-policies#force-install-an-extension) 以強制安裝擴充功能至使用者的裝置上。
 

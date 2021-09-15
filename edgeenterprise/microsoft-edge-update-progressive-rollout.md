@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 適用於 Microsoft Edge 穩定通道更新的漸進式套件推出
-ms.openlocfilehash: d11fd825c7f4de37fe0b6555f503d9a496fb2b427a9645489a165c91490ff5d7
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: bdcefdc118125d67057fa77513bd732cff6882e3
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724856"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979399"
 ---
 # <a name="progressive-rollouts-for-microsoft-edge-stable-channel-updates"></a>適用於 Microsoft Edge 穩定通道更新的漸進式套件推出
 
