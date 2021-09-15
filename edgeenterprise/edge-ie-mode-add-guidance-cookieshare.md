@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: '如何從 Microsoft Edge 到 Internet Explorer 共用 Cookie '
-ms.openlocfilehash: 3fdfdfec441e40d9b60665d7c64ccddc26e4f8ba8b35dbabef826d1536f49a9c
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 8f1a38106e49f71aa9d27f32cfecbd0df44eaf9f
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724596"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11978938"
 ---
 # <a name="cookie-sharing-from-microsoft-edge-to-internet-explorer"></a>從 Microsoft Edge 到 Internet Explorer 共用 Cookie
 
