@@ -5062,7 +5062,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 此清單中的每個項目都是擴充功能式比對模式 (請參閱 [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039))。 使用者可以從符合此清單中項目的任何 URL 輕鬆安裝項目。 這些模式必須同時允許 *.crx 檔案的位置，以及開始下載網頁的位置 (也就是查閱者)。 請勿將檔案存放在需要驗證的位置。
 
-[ExtensionInstallBlocklist](#extensioninstallblocklist) 原則優先於此原則。 不會安裝封鎖清單上的任何擴充功能，即使它來自此清單上的網站。
+
+            [ExtensionInstallBlocklist](#extensioninstallblocklist) 原則優先於此原則。 不會安裝封鎖清單上的任何擴充功能，即使它來自此清單上的網站。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -8343,10 +8344,18 @@ SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 
 
 此原則會覆寫下列個別原則：
 
-[ProxyMode](#proxymode)
-[ProxyPacUrl](#proxypacurl)
-[ProxyServer](#proxyserver)
-[ProxyBypassList](#proxybypasslist)
+
+            [ProxyMode](#proxymode)
+            
+
+            [ProxyPacUrl](#proxypacurl)
+            
+
+            [ProxyServer](#proxyserver)
+            
+
+            [ProxyBypassList](#proxybypasslist)
+          
 
 設定 [ProxySettings](#proxysettings) 原則接受下欄位:
   * ProxyMode，可讓您指定 Microsoft Edge 所使用的 proxy 伺服器，並防止使用者變更 Proxy 設定
@@ -12405,7 +12414,8 @@ SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
 
 如果將此原則設定為 ‘啟用’，則使用者可以登入瀏覽器。 登入瀏覽器並不代表同步會預設開啟；而使用者必須另行選擇加入，才能使用此功能。
 
-如果將此原則設定為 ‘強制’，則使用者必須登入設定檔才能使用瀏覽器。 依預設，這會允許使用者選擇是否要同步到自己的帳戶，除非由網域系統管理員或使用 [SyncDisabled](#syncdisabled) 原則停用同步。 [BrowserGuestModeEnabled](#browserguestmodeenabled) 原則的預設值設定為 false。
+如果將此原則設定為 ‘強制’，則使用者必須登入設定檔才能使用瀏覽器。 依預設，這會允許使用者選擇是否要同步到自己的帳戶，除非由網域系統管理員或使用 [SyncDisabled](#syncdisabled) 原則停用同步。 
+            [BrowserGuestModeEnabled](#browserguestmodeenabled) 原則的預設值設定為 false。
 
 如果未設定此原則，則使用者可以決定是否要啟用瀏覽器登入選項，並在適合時使用該選項。
 
@@ -17188,19 +17198,40 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 注意：在初次執行體驗中向使用者顯示的特定設定選項，也可以使用其他特定原則來管理。 您可以使用 HideFirstRunExperience 原則結合這些原則，以在受管理的裝置上設定特定的瀏覽器體驗。 其他原則中的一部分為：
 
--[AutoImportAtFirstRun](#autoimportatfirstrun)
 
--[NewTabPageLocation](#newtabpagelocation)
+            -
+            [AutoImportAtFirstRun](#autoimportatfirstrun)
+          
 
--[NewTabPageSetFeedType](#newtabpagesetfeedtype)
 
--[ForceSync](#forcesync)
+            -
+            [NewTabPageLocation](#newtabpagelocation)
+          
 
--[SyncDisabled](#syncdisabled)
 
--[BrowserSignin](#browsersignin)
+            -
+            [NewTabPageSetFeedType](#newtabpagesetfeedtype)
+          
 
--[NonRemovableProfileEnabled](#nonremovableprofileenabled)
+
+            -
+            [ForceSync](#forcesync)
+          
+
+
+            -
+            [SyncDisabled](#syncdisabled)
+          
+
+
+            -
+            [BrowserSignin](#browsersignin)
+          
+
+
+            -
+            [NonRemovableProfileEnabled](#nonremovableprofileenabled)
+          
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17325,7 +17356,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入自動填寫資料，但是使用者可以在手動匯入期間選取或清除 [自動填寫資料]**** 選項。
 
-**注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 和 Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 瀏覽器的匯入。
+
+            **注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 和 Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 瀏覽器的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17393,7 +17425,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入設定，但使用者可以在手動匯入期間選取或清除 [瀏覽器設定]**** 選項。
 
-**注意**：此原則目前會管理來自 Google Chrome (Windows 7、8 和 10 上，以及 macOS 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Google Chrome (Windows 7、8 和 10 上，以及 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17459,7 +17492,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入 Cookie。
 
-**注意**：此原則目前會管理來自 Google Chrome (Windows 7、8 和 10 上，以及 macOS 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Google Chrome (Windows 7、8 和 10 上，以及 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17527,7 +17561,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入擴充功能，但使用者可以在手動匯入期間選取或清除 [我的最愛]**** 選項。
 
-**注意**：此原則目前只支援來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
+
+            **注意**：此原則目前只支援來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17595,7 +17630,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入我的最愛，但使用者可以在手動匯入期間選取或清除 [我的最愛]**** 選項。
 
-**注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上)、Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上)，以及 Apple Safari (在 macOS 上) 瀏覽器的匯入。
+
+            **注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上)、Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上)，以及 Apple Safari (在 macOS 上) 瀏覽器的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17663,7 +17699,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入瀏覽歷程記錄，但使用者可以在手動匯入期間選取或清除 [歷程記錄]**** 選項。
 
-**注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及 macOS 上)、Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 以及 Apple Safari (macOS) 瀏覽器的匯入。
+
+            **注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及 macOS 上)、Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 以及 Apple Safari (macOS) 瀏覽器的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17731,7 +17768,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入首頁設定，但使用者可以在手動匯入期間選取或清除 [首頁]**** 選項。
 
-**注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17799,7 +17837,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入開啟的索引標籤，但使用者可以在手動匯入期間選取或清除 [開啟的索引標籤]**** 選項。
 
-**注意**：此原則目前只支援來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
+
+            **注意**：此原則目前只支援來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17867,7 +17906,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入付款資訊，但使用者可以在手動匯入期間選取或清除 [付款資訊]**** 選項。
 
-**注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -17935,7 +17975,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入密碼，但使用者可以在手動匯入期間選取或清除 [密碼]**** 選項。
 
-**注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及 macOS 上) 以及 Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 瀏覽器的匯入。
+
+            **注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上)、Google Chrome (在 Windows 7、8 和 10 上，以及 macOS 上) 以及 Mozilla Firefox (在 Windows 7、8 和 10 上，以及在 macOS 上) 瀏覽器的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -18003,7 +18044,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入搜尋引擎設定，但使用者可以在手動匯入期間選取或清除 [搜尋引擎]**** 選項。
 
-**注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Internet Explorer (在 Windows 7、8 和 10 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -18069,7 +18111,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您也可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入捷徑。
 
-**注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
+
+            **注意**：此原則目前會管理來自 Google Chrome (在 Windows 7、8 和 10 上，以及在 macOS 上) 的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -18137,7 +18180,8 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 您可以將此原則設定為建議。 這表示 Microsoft Edge 會在初次執行時匯入啟動程序設定，但使用者可以在手動匯入期間選取或清除 **[瀏覽器設定]** 選項。
 
-**注意**：此原則目前會管理來自舊版 Microsoft Edge 和 Google Chrome (在 Windows 7、8 和 10) 瀏覽器中的匯入。
+
+            **注意**：此原則目前會管理來自舊版 Microsoft Edge 和 Google Chrome (在 Windows 7、8 和 10) 瀏覽器中的匯入。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -19138,7 +19182,8 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 如果未設定此原則，瀏覽器將使用 DNS 攔截檢查和內部網路重新導向建議的預設行為。 在 M88 中，它們預設為啟用，但在未來版本中預設為停用。
 
-[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是可能也會停用 DNS 攔截檢查的相關原則。 不過，此原則是更具彈性的版本，能夠個別控制內部網路重新導向資訊列，並可能在未來擴大。
+
+            [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 是可能也會停用 DNS 攔截檢查的相關原則。 不過，此原則是更具彈性的版本，能夠個別控制內部網路重新導向資訊列，並可能在未來擴大。
 如果 [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) 或此原則中的一個要求停用攔截檢查，則會停用檢查。
 如果 DNS 攔截檢查已由此原則停用，但 [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar) 已啟用，則單一字詞查詢仍將導致內部網路瀏覽。
 
@@ -21513,7 +21558,8 @@ SOFTWARE\Policies\Microsoft\Edge\RelaunchWindow = {
 
 如果停用此原則，則 Microsoft Edge 會使用原生 API 來嘗試解決網路連線和瀏覽問題。
 
-**注意**：除了在 Windows 8 和更新版本的 Windows 上，Microsoft Edge *一律*會使用本機 API 來解決連線問題。
+
+            **注意**：除了在 Windows 8 和更新版本的 Windows 上，Microsoft Edge *一律*會使用本機 API 來解決連線問題。
 
 如果未設定此原則，則 Microsoft Edge 會遵守 edge://settings/privacy 的 [服務] 底下所設定的使用者喜好設定。
 具體來說，有一個使用者可以開啟或關閉的 [使用網頁服務協助您解決瀏覽錯誤]**** 切換。 請注意，如果已啟用此原則 (ResolveNavigationErrorsUseWebService)，[使用網頁服務協助您解決瀏覽錯誤]**** 設定會開啟，但使用者無法使用切換來變更設定。 如果已停用此原則，則 [使用網頁服務協助您解決瀏覽錯誤]**** 設定會關閉，且使用者無法使用切換來變更設定。
@@ -21697,7 +21743,8 @@ Microsoft Edge 會使用已提供的目錄，儲存設定檔的快取複本，�
 
 如果您停用或未設定此原則，系統只會使用標準本機設定檔。
 
-[SyncDisabled](#syncdisabled)只會停用雲端同步處理，而不會影響此原則。
+
+            [SyncDisabled](#syncdisabled)只會停用雲端同步處理，而不會影響此原則。
 
 如需使用漫遊使用者設定檔的詳細資訊，請參閱 [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058)。
 
