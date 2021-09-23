@@ -3,23 +3,25 @@ title: Microsoft Edge 中的 ClickOnce 和 DirectInvoke
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/16/2021
+ms.date: 09/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 深入了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke。
-ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 48702082dc3c352519c8003e226bf99c63765150
+ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978797"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12034432"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>了解 Microsoft Edge 中的 ClickOnce 和 DirectInvoke 功能
 
 ClickOnce DirectInvoke 是 IE 和 Microsoft Edge提供的功能，可支援使用檔案處理常式從網站下載檔案。 雖然其具有不同的用途，但兩個功能都允許網站指定將請求下載的檔案傳遞給使用者裝置上的檔案處理常式。 ClickOnce 請求由 Windows 中的原生檔案處理常式處理。 DirectInvoke 請求由裝載該檔案之網站所指定的已註冊檔案處理常式來處理。
+
+在設定 ClickOnce DirectInvoke 之後，ClickOnce設定其他企業策略，就可以忽略此或 DirectInvoke 提示。 這些策略可支援忽略所有網域ClickOnce或 DirectInvoke 提示，以針對所有網域指定檔案類型，或針對指定網域的指定檔案類型。
 
 如需這些方法的詳細資訊，請參閱下列文章：
 
@@ -88,6 +90,10 @@ ClickOnce 和 DirectInvoke 受到 Microsoft Defender SmartScreen 的 URL 信譽�
 ## <a name="clickonce-and-directinvoke-policies"></a>ClickOnce 和 DirectInvoke 原則
 
 有 2 個群組原則可用於為企業使用者啟用或停用 ClickOnce 和 DirectInvoke。 這兩個原則是 [ClickOnceEnabled](./microsoft-edge-policies.md#clickonceenabled) 和 [DirectInvokeEnabled](./microsoft-edge-policies.md#directinvokeenabled)。 這兩個策略在群組原則編輯器中分別標記為 [允許使用者使用 ClickOnce 通訊協定開啟檔案] 和 [允許使用者使用 DirectInvoke 通訊協定開啟檔案]。
+
+若要指定應 () ClickOnce或 DirectInvoke 提示的檔案類型，請使用群組原則編輯器中標示為「下載時自動開啟的檔案類型清單」。 這樣一來，所有網域的下載之後，就會自動開啟指定的檔案類型。  
+
+若要跳過 ClickOnce 或 DirectInvoke 提示特定網域的特定檔案類型，請設定兩個額外的原則，在群組原則編輯器中標示為「下載時自動開啟的檔案類型清單」和「可AutoOpen-FileTypes 的 URL」。 請注意，「自動開啟- FileTypes 可以申請的 URL」原則是支援原則，適用于「下載時自動開啟的檔案類型清單」，而且不會自行執行任何操作。  
 
 ## <a name="clickonce-and-directinvoke-behavior"></a>ClickOnce 和 DirectInvoke 行為
 

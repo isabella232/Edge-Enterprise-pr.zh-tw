@@ -10,16 +10,208 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 封存的 Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 53fe8fa4eae90f6d101cbf1394a276bc37f82b5a
+ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979346"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12034452"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>封存的 Microsoft Edge 穩定通道的版本資訊
 
 這些版本資訊提供 Microsoft Edge 穩定通道中包含的新功能和非安全性更新的相關資訊。 所有安全性更新列於[此處](microsoft-edge-relnotes-security.md)。
+
+
+## <a name="version-90081866-may-20"></a>版本 90.0.818.66：5 月 20 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-90081862-may-13"></a>版本 90.0.818.62：5 月 13 日
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#may-13-2021)。
+
+## <a name="version-90081856-may-6"></a>版本 90.0.818.56：5 月 6 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-90081851-april-29"></a>版本 90.0.818.51：4 月 29 日
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#april-29-2021)。
+
+## <a name="version-90081849-april-26"></a>版本 90.0.818.49：4 月 26 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-90081846-april-22"></a>版本 90.0.818.46：4 月 22 日 ##
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#april-22-2021)。
+
+## <a name="version-90081842-april-19"></a>版本 90.0.818.42：4 月 19 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-90081841-april-16"></a>版本 90.0.818.41：4 月 16 日 ##
+
+> [!Important]
+>此更新包含[CVE-2021-21224](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21224)的修正程式，Chromium小組已報告此為在荒野中進行攻擊。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#april-16-2021)。
+
+## <a name="version-90081839-april-15"></a>版本 90.0.818.39：4 月 15 日 ##
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#april-15-2021)。
+
+## <a name="feature-updates"></a>功能更新 ##
+
+-    **單一登入 (SSO) 目前可供 macOS 上的 Azure Active Directory (Azure AD) 帳戶和 Microsoft 帳戶 (MSA) 使用。** 在 macOS 上，在 Microsoft Edge 上登入的使用者現在會自動進入網站，這些網站已設定為允許使用 Work 和 Microsoft 帳戶 (例如 bing.com、office.com、msn.com 和 outlook.com) 進行單一登入。
+
+- **Kiosk 模式。** 從 Microsoft Edge 版本 90 開始，我們已鎖定 UI 列印設定，只允許已設定印表機和「列印至 PDF」選項。 我們也在受指派的存取權單一應用程式 kiosk 模式中進行了改善，以限制從瀏覽器啟動其他應用程式。 如需 kiosk 模式功能詳細資訊，請移至 [這裡](/deployedge/microsoft-edge-configure-kiosk-mode#kiosk-mode-supported-features)。
+
+- **中斷下載** 從 Microsoft Edge 版本 91 開始，瀏覽器會自動中斷類型下載，這些下載若在未經使用者互動的情況下啟動，且不受 SmartScreen 應用程式信譽檢查支援，這些下載可能會危害您的電腦。 使用者可以在下載項目上按一下滑鼠右鍵並選擇「保留」，以覆寫並繼續下載。
+企業系統管理員可以退出宣告此行為的這兩個原則之一：
+- [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](/deployedge/microsoft-edge-policies#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - 針對網域中的指定檔案類型，停用下載檔案類型副檔名-警告。如需詳細資訊，請參閱 [Microsoft Edge 安全性下載中斷](/deployedge/microsoft-edge-security-downloads-interruptions)
+
+- **列印**：
+
+    - **非 PostScript 印表機的新列印點陣化模式。** 從 Microsoft Edge 版本 90 開始，系統管理員可以使用新原則以定義其使用者的列印點陣化模式。 此原則可控制 Microsoft Edge 列印至 Windows 上非 PostScript 印表機的方式。 有時需將非 PostScript 印表機上的列印工作點陣化才能正確列印。 列印選項為「完整」和「快速」。
+    
+  - **列印的其他頁面縮放選項。** 使用者現在能夠自訂縮放比例，同時使用其他選項列印網頁和 PDF 文件。 「符合頁面大小」選項可確保網頁或文件符合所選「紙張大小」可供列印的空間。 [實際大小] 選項可確保無論選取的 [紙張大小] 為何，列印內容的大小都不會變更。
+
+-   **生產力：**
+
+    -   **延伸自動填寫建議，以包含剪貼簿中的地址欄位內容。** 當您按一下設定檔/地址欄位 (例如，電話、電子郵件、郵遞區號、縣/市、省/市等) 以顯示為自動填寫建議時，系統將會剖析剪貼簿內容。
+
+    -   **即使未偵測到表單或欄位，使用者也可以搜尋自動填寫建議。** 現在，如果您將您的資訊儲存在 Microsoft Edge 上，自動填寫建議將自動彈出，並幫助您在填寫表單時節省時間。 如果自動填寫遺漏表單，或您想要在通常沒有自動填寫的表單 (例如暫存表單) 中擷取資料，您可以搜尋您使用自動填寫的資訊。
+
+-   **從功能表列的飛出視窗存取下載。** 下載會顯示在右上角，將所有作用中下載顯示在同一個位置。 此功能表可以很輕易關閉，因此使用者可以繼續瀏覽而不受干擾，且他們可以直接從工具列監視整體下載進度。 [進一步了解](https://techcommunity.microsoft.com/t5/articles/introducing-the-new-downloads-experience/m-p/2111551)。
+
+-   **字型呈現的改善。** 從 Microsoft Edge 版本 90 開始，我們改善了文字的呈現，以改善清晰度並減少模糊度。 部分字型呈現改善將在 Beta 版本 90 中推出，但預設為停用。
+
+- **兒童模式。** 我們已更新此政策，因此當啟用該原則時，除了家長監護服務之外，兒童模式功能會遭到停用。 有關兒童模式 [這裡](https://go.microsoft.com/fwlink/?linkid=2146910)
+
+## <a name="policy-updates"></a>原則更新
+
+## <a name="new-policies"></a>新原則
+
+已新增八個新原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則：
+-   [ApplicationGuardFavoritesSyncEnabled](/DeployEdge/microsoft-edge-policies#applicationguardfavoritessyncenabled) - 已啟用應用程式防護我的最愛同步處理
+- [ApplicationGuardTrafficIdentificationEnabled](/DeployEdge/microsoft-edge-policies#applicationguardtrafficidentificationenabled) 應用程式防護流量識別
+- [ExplicitlyAllowedNetworkPorts](/DeployEdge/microsoft-edge-policies#explicitlyallowednetworkports) 明確允許的網路連接埠
+- [ImportStartupPageSettings](/DeployEdge/microsoft-edge-policies#importstartuppagesettings) 允許匯出啟動頁面設定
+- [MathSolverEnabled](/DeployEdge/microsoft-edge-policies#mathsolverenabled) 讓使用者在 Microsoft Edge 中以逐步解說來刪除數學問題並取得解決方案
+- [NewTabPageContentEnabled](/DeployEdge/microsoft-edge-policies#newtabpagecontentenabled) 允許新分頁頁面上的 Microsoft 新聞內容
+- [NewTabPageQuickLinksEnabled](/DeployEdge/microsoft-edge-policies#newtabpagequicklinksenabled) 允許新分頁頁面上的快速連結
+-   [FetchKeepaliveDurationSOnShutdown](/DeployEdge/microsoft-edge-policies#fetchkeepalivedurationsecondsonshutdown) 擷取關機時的存留持續時間
+-   [ManagedConfigurationPerOrigin](/DeployEdge/microsoft-edge-policies#managedconfigurationperorigin) 設定網站到特定來源的受管理設定值
+-   [PrintRasterizationMode](/DeployEdge/microsoft-edge-policies#printrasterizationmode) - 列印點陣化模式
+-   [QuickViewOfficeFilesEnabled](/DeployEdge/microsoft-edge-policies#quickviewofficefilesenabled) - 管理 Microsoft Edge 中的 QuickView Office 檔案功能
+-   [SSLErrorOverrideAllowedForOrigins](/DeployEdge/microsoft-edge-policies#sslerroroverrideallowedfororigins) - 允許使用者從特定來源的 HTTPS 警告頁面繼續進行
+-   [WindowOcclusionEnabled](/DeployEdge/microsoft-edge-policies#windowocclusionenabled) - 啟用視窗遮蔽
+-   [WindowsHelloForHTTPAuthEnabled](/DeployEdge/microsoft-edge-policies#windowshelloforhttpauthenabled) - 已啟用適用於 HTTP 驗證的 Windows Hello
+
+## <a name="deprecated-policies"></a>過時的原則
+
+- [ProactiveAuthEnabled](/DeployEdge/microsoft-edge-policies#proactiveauthenabled) 啟用主動式驗證
+-   [NativeWindowOcclusionEnabled](/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled) - 啟用原生視窗遮蔽
+-   [SSLVersionMin](/DeployEdge/microsoft-edge-policies#sslversionmin) - 已啟用最低 TLS 版本
+
+## <a name="version-89077477-april-14"></a>版本 89.0.774.77：4 月 14 日
+
+> [!Important]
+>此更新包含[CVE-2021-21206](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21206)和[CVE-2021-21220](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21220)的修正程式，Chromium 小組已報告此為在荒野中進行攻擊。  如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#april-14-2021)。
+
+## <a name="version-89077476-april-12"></a>版本 89.0.774.76：4 月 12 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-89077475-april-8"></a>版本 89.0.774.75：4 月 8 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-89077468-april-1"></a>版本 89.0.774.68：4 月 1 日
+
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#april-1-2021)。
+
+## <a name="version-89077463-march-25"></a>版本 89.0.774.63：3 月 25 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-89077457-march-18"></a>版本 89.0.774.57：3 月 18 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-89077454-march-13"></a>版本 89.0.774.54：3 月 13 日
+
+> [!IMPORTANT]
+> 此更新包含 Chromium 小組報告的 [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193)，因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#march-13-2021)。
+
+## <a name="version-89077450-march-10"></a>版本 89.0.774.50：3 月 10 日
+
+修正各種錯誤和效能問題。
+
+## <a name="version-89077448-march-8"></a>版本 89.0.774.48：3 月 8 日
+
+修正各種錯誤和效能問題。
+
+<!-- begin major 89 -->
+
+## <a name="version"></a>版本
+
+> [!IMPORTANT]
+> 此更新包含 Chromium 小組報告的 [CVE-2021-21166](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21166)，因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱[安全性更新指南](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於[此處](./microsoft-edge-relnotes-security.md#march-4-2021)。
+
+### <a name="resolved-issues"></a>解決的問題
+
+- **工作列和開始功能表捷徑的更新和修正：**
+  - 現在以滑鼠右鍵按一下開始功能表中的 Microsoft Edge 捷徑，會正確顯示當釘選 Microsoft Edge 時，可從工作列將它加以取消釘選的選項。
+  - 包含將 Microsoft Edge 釘選至工作列之 [工作列設定][ ](/windows/configuration/configure-windows-10-taskbar) 的開始版面配置並不再會導致將第二個 Microsoft Edge 捷徑釘選至工作列的結果。
+  - 使用 Windows 漫遊設定檔的組織在其使用者登入 Windows 時，不會再於工作列上 Microsoft Edge 圖示的地點僅看到看到空白圖示。
+
+### <a name="feature-updates"></a>功能更新
+
+- **Kiosk 模式可啟用其他鎖定功能**。 從 Microsoft Edge 版本 89 開始，我們在 kiosk 模式下新增了其他鎖定功能，使客戶能夠在高效和更安全的體驗中完成工作。 [進一步了解](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features)。
+
+- **您可以透過*edge://compat*頁面在瀏覽器中使用 [企業模式] 網站清單管理員工具**。 可以使用此工具在 Microsoft Edge 上為 Internet Explorer 模式建立、編輯和匯出網站清單 XML。 可視需要透過群組原則啟用對此工具的存取。 [深入了解](./edge-ie-mode-site-list-manager.md)。
+
+- **使用休眠索引標籤改善瀏覽器效能**。 睡眠索引標籤會透過將非作用中索引標籤置於睡眠，以釋放系統資源 (例如記憶體和 CPU)，以供使用中索引標籤或其他應用程式使用。 使用者可以防止網站進入睡眠，並設定非作用中索引標籤進入睡眠之前的時間長度。 若要讓使用者保持在流程中，您也可以透過 [啟發](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) 式來防止特定網站進入睡眠狀態，例如內部網路網站。 您可以使用群組原則來管理此功能。
+
+- **手動重設雲端中的 Microsoft Edge 同步處理資料**。 我們正在推出一種從產品內部重設 Microsoft Edge 同步處理的方法。 這確保從 Microsoft 服務中清除您的資料，同時也解決了以前需要支援票證的某些產品問題。
+
+- **單一非 Azure AD Microsoft Edge 設定檔使用者的所有 Windows Azure Active Directory (Azure AD) 帳戶智慧型啟用單一登入 (SSO)**。  自動為可從此功能獲得最大益處的使用者開啟此設定。 如果使用者只有一個 Microsoft Edge 設定檔 (且不是 Azure AD 或兒童模式)，則當 Microsoft Edge 啟動時，系統會自動開啟設定。 如果使用者稍後選擇使用 Azure AD 帳戶來登入不同的 Microsoft Edge 設定檔，此自動切換也會自動關閉。 使用者可以在 **設定 > 設定檔 > 設定檔喜好設定 > 允許單一登入公司或學校網站使用此設定檔** 來手動更新此功能的喜好設定。
+
+- **PDF 檔文字選取體驗的改良功能**。 從版本 89 開始，使用者將開始在 Microsoft Edge 中開啟的 PDF 文件中取得更順暢、一致的文字選取體驗。
+
+- **自動填寫現在支援出生日期欄位**。 現在，Microsoft Edge 透過自動填寫位址、姓名、電話號碼等資料，協助您線上填寫表單和建立帳戶時節省時間和精力。從 Microsoft Edge 版本 89 開始，我們將新增對另一可儲存及自動填寫欄位的支援—出生日期。 您可以隨時在設定檔設定中檢視、編輯和刪除此資訊。
+
+### <a name="policy-updates"></a>原則更新
+
+#### <a name="new-policies"></a>新原則
+
+新增了 7 個原則。 從 [Microsoft Edge 企業版登陸頁面](https://www.microsoft.com/edge/business/download)下載更新的系統管理範本。 已新增下列新原則。
+
+- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime) - 瀏覽資料存留期設定
+- [MAMEnabled](./microsoft-edge-policies.md#mamenabled) - 已啟用行動裝置應用程式管理
+- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages) - 定義網站支援語言時，網站應該顯示的慣用語言排序清單
+- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled) - 允許來自 Microsoft Edge 的建議和促銷通知
+- [PrintingAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes) - 限制背景圖形列印模式
+- [PrintingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault) - 預設背景圖形列印模式
+- [SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist) - 封鎖服務清單的智慧動作
+
+#### <a name="obsoleted-policies"></a>淘汰的原則
+
+下列原則已過時。
+
+- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy) - 使用預設的查閱者原則 no-referrer-when-downgrade
+- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled) - 啟用使用方式和當機相關的資料報告
+- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices) - 傳送網站資訊以改善 Microsoft 服務
+
+<!-- end major 89 -->
 
 ## <a name="version-88070581-february-25"></a>版本 88.0.705.81：2 月 25 日
 
@@ -48,7 +240,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-88070556-january-28"></a>版本 88.0.705.56：1 月 28 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-88070553-january-26"></a>版本 88.0.705.53：1 月 26 日
 
@@ -163,7 +355,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-87066460-december-10"></a>版本 87.0.664.60：12 月 10 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-87066457-december-7"></a>版本 87.0.664.57：12 月 7 日
 
@@ -171,7 +363,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-87066455-december-3"></a>版本 87.0.664.55：12 月 3 日
 
-已修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
+修正各種錯誤和效能問題。 下列功能已針對此版本進行更新。
 
 - **預設會啟用 [購物] 功能**。 從 Microsoft Edge 版本 87 開始，企業使用者可以利用 Microsoft Edge 中的購物功能。 有了購物功能，Microsoft Edge 可協助使用者在線上購物時找到優待卷及更好的價格。 (優待券體驗已隨著穩定版本 87.0.664.41 推出。) 價格比較體驗現在隨著此更新提供。 此功能可使用 [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) 原則設定。 請參閱我們的[部落格](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/)和[深入了解](/microsoft-edge/privacy-whitepaper#shopping) Microsoft 購物的相關資訊。
 
@@ -262,7 +454,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-86062258-october-29"></a>版本 86.0.622.58：10 月 29 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062256-october-27"></a>版本 86.0.622.56：10 月 27 日
 
@@ -274,7 +466,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-86062248-october-20"></a>版本 86.0.622.48：10 月 20 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-86062243-october-15"></a>版本 86.0.622.43：10 月 15 日
 
@@ -360,11 +552,11 @@ ms.locfileid: "11979346"
 
 ## <a name="version-85056470-october-6"></a>版本 85.0.564.70：10 月 6 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-85056468-october-1"></a>版本 85.0.564.68：10 月 1 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-85056463-september-23"></a>版本 85.0.564.63：9 月 23 日
 
@@ -376,7 +568,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-85056444-august-31"></a>版本 85.0.564.44：8 月 31 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 <!-- 85.0.564.41: August 27 -->
 
@@ -445,7 +637,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-84052252-august-1"></a>版本 84.0.522.52：8 月 1 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-84052250-july-31"></a>版本84.0.522.50：7月31日
 
@@ -457,7 +649,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-84052248-july-28"></a>版本 84.0.522.48：7 月 28 日
 
-已修正各種錯誤和效能問題。
+修正各種錯誤和效能問題。
 
 ## <a name="version-84052244-july-23"></a>版本 84.0.522.44：7 月 23 日
 
@@ -535,15 +727,15 @@ ms.locfileid: "11979346"
 
 ## <a name="version-83047861-july-7"></a>版本 83.0.478.61：7 月 7 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047858-june-30"></a>版本 83.0.478.58：6 月 30 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047856-june-24"></a>版本 83.0.478.56：6 月 24 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 安全性更新列於[此處](./microsoft-edge-relnotes-security.md#june-24-2020)
 
@@ -553,7 +745,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-83047850-june-15"></a>版本 83.0.478.50：6 月 15 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-83047845-june-4"></a>版本 83.0.478.45：6 月 4 日
 
@@ -739,7 +931,7 @@ ms.locfileid: "11979346"
 
 ## <a name="version-800361111-april-7"></a>版本 80.0.361.111：4 月 7 日
 
-修正各種錯誤和效能問題。
+已修正各種錯誤和效能問題。
 
 ## <a name="version-800361109-april-1"></a>版本 80.0.361.109：4 月 1 日
 
