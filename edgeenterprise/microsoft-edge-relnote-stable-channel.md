@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/22/2021
+ms.date: 09/24/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: ffd0beb7533edf88fdab9402cb2486e71b1773e6
-ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
+ms.openlocfilehash: 491debce74949c9e146acdcf825c99edf2f7f81e
+ms.sourcegitcommit: 6ef4b2e1dee45f33edb7fa8f83c93b4d169adca9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2021
-ms.locfileid: "12034442"
+ms.lasthandoff: 09/25/2021
+ms.locfileid: "12044835"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -29,9 +29,46 @@ ms.locfileid: "12034442"
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
-> Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 即將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes)。
+> Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 即將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes) (英文)。
 
-## <a name="version-93096152-september-16"></a>版本 93.0.961.52: 9 月 16 日
+## <a name="version-94099231-september-24"></a>版本 94.0.992.31：9 月 24 日
+
+> [!Important]
+> 此更新包含 [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) 的修正程式，Chromium 小組已回報該修正程式存在漏洞。 如需詳細資訊, 請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)。
+
+穩定通道安全性更新列於 [此處](/deployedge/microsoft-edge-relnotes-security#september-24-2021)。
+
+### <a name="feature-updates"></a>功能更新
+
+- **Microsoft Edge 已完成改為 4 週更新頻率。**  我們已針對主要版本採用新的 4 週發行週期。 請從這裡閱讀其他資訊：https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
+
+- **提供新「擴充穩定」選項。**  我們向受管理的企業客戶提供新「擴充穩定」選項。 「擴充穩定」選項將保留偶數修訂編號並每 8 週更新一次。 將會有每兩週一次的安全性更新。  此處提供其他資訊：https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
+
+- **改良開啟 MHTML 檔案的預設行為。**  如果啟用 IE 模式，MHTML 檔案會繼續在 IE 模式中開啟，除非 MHTML 檔案是使用 Microsoft Edge 儲存 (使用 Microsoft Edge 中的 [另存新檔] 或 [另存新頁面] 選項)。 如果檔案是從 Microsoft Edge 儲存，現在就會在 Microsoft Edge 中開啟。  此變更將修正從 Microsoft Edge 儲存時，在 IE 模式下開啟 MHTML 檔案時觀察到的呈現問題。
+
+- **限制私人網路要求以保護內容。** 從網際網路上的頁面存取本機 (內部網路) 網路的資源需要透過 HTTPS 傳遞這些頁面。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 如需詳細資訊，請瀏覽至 [Chrome 平台狀態項目](https://chromestatus.com/feature/5436853517811712)。 有兩種相容性原則可支援需要保留與非安全頁面相容性的案例：[InsecurePrivateNetworkRequestAllowed](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) 和 [InsecurePrivateNetworkRequestAllowedForUrls](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls)。
+
+- **封鎖混合內容下載。** 安全頁面只會下載託管在其他安全頁面上的檔案，如果從安全頁面啟動，則會封鎖託管在非安全 (非 HTTPS) 頁面的下載。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 若要詳細資訊，請瀏覽至 [Google 安全性部落格項目](https://security.googleblog.com/2020/02/protecting-users-from-insecure_6.html)。
+
+- **啟用內部部署帳戶的隱含登入。** 啟用 [OnlyOnPremises1icitSigninEnabled](/deployedge/microsoft-edge-policies#onlyonpremisesimplicitsigninenabled) 原則後，只會針對內部部署帳戶啟用隱含登入。  Microsoft Edge 不會嘗試隱含登入至 MSA 或 AAD 帳戶。 也會停止從內部部署帳戶升級至 AAD 帳戶。
+
+- **新的協助工具設定頁面。**  我們已將協助工具相關設定整合在單一頁面上。 您可以在主要設定清單下找到新 edge://settings/accessibility 頁面。 您可以在這裡找到可放大網頁的設定、在焦點區域周圍顯示高可見度大綱，以及其他可協助改善網頁瀏覽體驗的設定。 我們會在未來的 Microsoft Edge 版本中繼續在此處新增設定。
+
+***新原則***
+
+- 
+            [ApplicationGuardPassiveModeEnabled](/DeployEdge/microsoft-edge-policies#applicationguardpassivemodeenabled) 忽略應用程式防護網站清單設定，並正常瀏覽 Edge
+- 
+            [OnlyOnPremisesImplicitSigninEnabled](/DeployEdge/microsoft-edge-policies#onlyonpremisesimplicitsigninenabled) 只針對內部部署帳戶啟用隱含登入
+- 
+            [WebRtcRespectOsRoutingTableEnabled](/DeployEdge/microsoft-edge-policies#webrtcrespectosroutingtableenabled) 透過 WebRTC 建立對等連線時，啟用對 Windows 作業系統路由表規則的支援
+
+***淘汰的原則***
+
+- 
+            [UserAgentClientHintsEnabled](/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) 啟用 User-Agent 用戶端提示功能
+
+## <a name="version-93096152-september-16"></a>版本 93.0.961.52：9 月 16 日
 
 >[!Important]
 >此更新包括 Chromium 小組報告的 [CVE-2021-30633](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632) 的修正, 因為已發行的版本中有惡意探索問題。 如需詳細資訊, 請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)。
