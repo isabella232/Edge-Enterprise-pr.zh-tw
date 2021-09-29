@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 瞭解 Microsoft Edge 中的 Internet Explorer 模式如何提供需要 Internet Explorer 11 的網站存取權，以及存取新式網站的方式。
-ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: a426d9bd9d2ac3d81682e9fc2304e9e90d3461f8
+ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978855"
+ms.lasthandoff: 09/28/2021
+ms.locfileid: "12053322"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>什麼是 Internet Explorer (IE) 模式？
 
@@ -36,14 +36,14 @@ Microsoft Edge 的 IE 模式可讓您輕鬆地在單一瀏覽器中使用貴組�
 
   ![IE 標誌指示器](./media/ie-mode/ie-logo-indicator1.png)
 
-只有您專門設定 (透過原則) 的那些網站會使用 IE 模式，其他所有網站都會轉譯為新式網站。 若要讓網站使用 IE 模式，您必須：
+只有您專門設定 (透過原則) 的那些網站會使用 IE 模式，其他所有網站都會轉譯為新式網站。 若要讓網站使用 IE 模式，您必須執行其中一項操作：
 
 - 使用下列其中一個原則定義的企業模式網站清單 XML，列出網站：
   - Microsoft Edge 78 或更新版本，「設定企業模式網站清單」
   - Internet Explorer，「使用企業模式 IE 網站清單」
   > [!NOTE]
   > 我們只會處理一個企業模式網站清單。 Microsoft Edge 網站清單原則優先於 Internet Explorer 網站清單原則。
-- 啟用**將所有內部網路網站傳送到 Internet Explorer** 群組原則的所有內部網路網站 (Microsoft Edge 77 或更新版本)。
+- 設定 **[將所有內部網路網站傳送至 Internet Explorer]** 群組原則，並將其設定為 **[已啟用]** (Microsoft Edge 77 或更新)。
 
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>IE 模式支援以下 Internet Explorer 功能
 
