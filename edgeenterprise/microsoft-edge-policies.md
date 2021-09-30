@@ -3,7 +3,7 @@ title: Microsoft Edge 瀏覽器原則文件
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 08/30/2021
+ms.date: 09/26/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Microsoft Edge 瀏覽器支援的所有原則的 Windows 和 Mac 文件
-ms.openlocfilehash: 44dac3dd6bb489ac43e50433319b0a7908495df5
-ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
+ms.openlocfilehash: 5e4deb6e75ab44c1706e17fe57232c703f2374dc
+ms.sourcegitcommit: 884bdb6ef9484ed3b080b4c5ab091f5f29ba2928
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2021
-ms.locfileid: "12017987"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "12056729"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - 原則
 
@@ -104,11 +104,12 @@ ms.locfileid: "12017987"
 |[ImagesBlockedForUrls](#imagesblockedforurls)|封鎖特定網站上的影像|
 |[InsecureContentAllowedForUrls](#insecurecontentallowedforurls)|允許指定網站上的不安全內容|
 |[InsecureContentBlockedForUrls](#insecurecontentblockedforurls)|封鎖指定網站上的不安全內容|
+|[IntranetFileLinksEnabled](#intranetfilelinksenabled)|允許從 Microsoft Edge 的內部網路區域檔案 URL 連結在 Windows 中開啟檔案總管|
 |[JavaScriptAllowedForUrls](#javascriptallowedforurls)|允許特定網站上的 JavaScript|
 |[JavaScriptBlockedForUrls](#javascriptblockedforurls)|封鎖特定網站上的 JavaScript|
 |[JavaScriptJitAllowedForSites](#javascriptjitallowedforsites)|允許 JavaScript 以在這些網站上使用 JIT|
 |[JavaScriptJitBlockedForSites](#javascriptjitblockedforsites)|封鎖 JavaScript 以防止在這些網站上使用 JIT|
-|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|啟用預設舊版 SameSite Cookie 行為設定 (已取代)|
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|啟用預設舊版 SameSite Cookie 行為設定 (已過時)|
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|將指定網站上的 Cookie 還原至舊版 SameSite 行為|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|允許特定網站上的通知|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|封鎖特定網站上的通知|
@@ -213,8 +214,10 @@ ms.locfileid: "12017987"
 |-|-|
 |[DefaultPrinterSelection](#defaultprinterselection)|預設印表機選擇規則|
 |[PrintHeaderFooter](#printheaderfooter)|列印頁首與頁尾|
+|[PrintPostScriptMode](#printpostscriptmode)|列印 PostScript 模式|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|將系統預設的印表機設定為預設印表機|
 |[PrintRasterizationMode](#printrasterizationmode)|列印點陣化模式|
+|[PrintRasterizePdfDpi](#printrasterizepdfdpi)|列印點陣化 PDF DPI|
 |[PrinterTypeDenyList](#printertypedenylist)|停用拒絕清單上的印表機類型|
 |[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|限制背景圖形列印模式|
 |[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|預設背景圖形列印模式|
@@ -293,6 +296,7 @@ ms.locfileid: "12017987"
 |[ApplicationLocaleValue](#applicationlocalevalue)|設定應用程式地區設定|
 |[AudioCaptureAllowed](#audiocaptureallowed)|允許或封鎖音訊擷取|
 |[AudioCaptureAllowedUrls](#audiocaptureallowedurls)|無需要求權限即可存取音訊擷取裝置的網站|
+|[AudioProcessHighPriorityEnabled](#audioprocesshighpriorityenabled)|允許音訊處理程序在 Windows 上以高於正常優先順序執行|
 |[AudioSandboxEnabled](#audiosandboxenabled)|允許音訊沙盒執行|
 |[AutoImportAtFirstRun](#autoimportatfirstrun)|在首次執行時，自動匯入其他瀏覽器的資料和設定|
 |[AutoLaunchProtocolsFromOrigins](#autolaunchprotocolsfromorigins)|定義一份協定清單，可在不須提示使用者的情下，從列出的來源啟動外部應用程式|
@@ -309,6 +313,7 @@ ms.locfileid: "12017987"
 |[BlockThirdPartyCookies](#blockthirdpartycookies)|封鎖第三方 Cookie|
 |[BrowserAddProfileEnabled](#browseraddprofileenabled)|啟用從 [身分識別] 飛出視窗功能表或 [設定] 頁面建立設定檔|
 |[BrowserGuestModeEnabled](#browserguestmodeenabled)|啟用來賓模式|
+|[BrowserLegacyExtensionPointsBlockingEnabled](#browserlegacyextensionpointsblockingenabled)|啟用瀏覽器舊版擴充點封鎖|
 |[BrowserNetworkTimeQueriesEnabled](#browsernetworktimequeriesenabled)|允許查詢瀏覽器網路時間服務|
 |[BrowserSignin](#browsersignin)|瀏覽器登入設定|
 |[BrowsingDataLifetime](#browsingdatalifetime)|流覽資料存留期設定|
@@ -330,6 +335,7 @@ ms.locfileid: "12017987"
 |[ConfigureOnlineTextToSpeech](#configureonlinetexttospeech)|設定線上文字轉語音|
 |[ConfigureShare](#configureshare)|設定共用體驗|
 |[ConfigureViewInFileExplorer](#configureviewinfileexplorer)|在 Microsoft Edge 中設定適用於 SharePoint 頁面的 [在檔案總管中檢視] 功能|
+|[CrossOriginWebAssemblyModuleSharingEnabled](#crossoriginwebassemblymodulesharingenabled)|指定 WebAssembly 模組是否可以跨原始來源傳送|
 |[CustomHelpLink](#customhelplink)|指定自訂說明連結|
 |[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled)|DNS 攔截檢查已啟用|
 |[DefaultBrowserSettingEnabled](#defaultbrowsersettingenabled)|將 Microsoft Edge 設定為預設瀏覽器|
@@ -346,6 +352,7 @@ ms.locfileid: "12017987"
 |[DisableScreenshots](#disablescreenshots)|停用取得螢幕擷取畫面功能|
 |[DiskCacheDir](#diskcachedir)|設定磁碟快取目錄|
 |[DiskCacheSize](#diskcachesize)|設定磁碟快取大小，以位元組為單位|
+|[DisplayCapturePermissionsPolicyEnabled](#displaycapturepermissionspolicyenabled)|指定顯示擷取權限原則是否已核取或已略過|
 |[DnsOverHttpsMode](#dnsoverhttpsmode)|控制 DNS-over-HTTPS 模式|
 |[DnsOverHttpsTemplates](#dnsoverhttpstemplates)|指定所需的 DNS-over-HTTPS 解析程式的 URI 範本|
 |[DownloadDirectory](#downloaddirectory)|設定下載目錄|
@@ -409,7 +416,9 @@ ms.locfileid: "12017987"
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|設定 [企業模式網站清單]|
 |[InternetExplorerIntegrationSiteListRefreshInterval](#internetexplorerintegrationsitelistrefreshinterval)|設定 [企業模式網站清單] 重新整理的頻率|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|指定從 Internet Explorer 模式頁面啟動時，「頁面內」導覽至未設定網站的方式|
-|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試 (已取代) |
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|允許 Internet Explorer 模式測試 (已過時)|
+|[InternetExplorerIntegrationWindowOpenHeightAdjustment](#internetexplorerintegrationwindowopenheightadjustment)|設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 高度之間的像素調整|
+|[InternetExplorerIntegrationWindowOpenWidthAdjustment](#internetexplorerintegrationwindowopenwidthadjustment)|設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 寬度之間的像素調整|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|內部網路重新導向行為|
 |[IsolateOrigins](#isolateorigins)|為特定來源啟用網站隔離|
 |[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|啟用 Windows 以搜尋當地 Microsoft Edge 瀏覽資料|
@@ -463,6 +472,7 @@ ms.locfileid: "12017987"
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|封鎖存取特定網站上的感應器|
 |[SerialAskForUrls](#serialaskforurls)|允許特定網站的 Serial API|
 |[SerialBlockedForUrls](#serialblockedforurls)|封鎖特定網站的 Serial API|
+|[ShadowStackCrashRollbackBehavior](#shadowstackcrashrollbackbehavior)|設定 ShadowStack 當機復原行為|
 |[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|顯示 Microsoft Rewards 體驗|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|在 [我的最愛] 列中顯示 Microsoft Office 捷徑 (已取代)|
@@ -498,6 +508,7 @@ ms.locfileid: "12017987"
 |[VerticalTabsAllowed](#verticaltabsallowed)|設定瀏覽器側邊上索引標籤垂直版面配置的可用性|
 |[VideoCaptureAllowed](#videocaptureallowed)|允許或封鎖視訊擷取|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|無需要求權限即可存取視訊擷取裝置的網站|
+|[VisualSearchEnabled](#visualsearchenabled)|已啟用圖像式搜尋|
 |[WPADQuickCheckEnabled](#wpadquickcheckenabled)|設定 WPAD 最佳化|
 |[WebAppInstallForceList](#webappinstallforcelist)|設定強制安裝 Web 應用程式的清單|
 |[WebCaptureEnabled](#webcaptureenabled)|啟用 Microsoft Edge 中的 Web 擷取功能|
@@ -2722,6 +2733,65 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="intranetfilelinksenabled"></a>IntranetFileLinksEnabled
+
+  #### <a name="allow-intranet-zone-file-url-links-from-microsoft-edge-to-open-in-windows-file-explorer"></a>允許從 Microsoft Edge 的內部網路區域檔案 URL 連結在 Windows 中開啟檔案總管
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此設定允許從內部網路區域 HTTPS 網站開啟內部網路區域檔案的檔案 URL 連結，在 Windows 檔案總管開啟該檔案或目錄。
+
+如果您啟用此原則，來自內部網路區域 HTTPS 頁面的內部網路區域檔案 URL 連結，將使用 Windows 檔案總管開啟該檔案或目錄。
+
+如果您停用或未設定此原則，檔案 URL 連結將不會開啟。
+
+Microsoft Edge 使用 Internet Explorer 所設定的內部網路區域定義。 請注意，https://localhost/ 已特別封鎖為允許內部網路區域主機的例外狀況，而迴路位址 (127.0.0.*, [::1]) 則預設會視為網際網路區域。
+
+使用者可以在每個協定/每個網站上退出提示，除非 [ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox) 原則已停用。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：IntranetFileLinksEnabled
+  - GP 名稱：允許從 Microsoft Edge 的內部網路區域檔案 URL 連結在 Windows 中開啟檔案總管
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：IntranetFileLinksEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="javascriptallowedforurls"></a>JavaScriptAllowedForUrls
 
   #### <a name="allow-javascript-on-specific-sites"></a>允許特定網站上的 JavaScript
@@ -2998,19 +3068,19 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
 
   ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
-  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-deprecated"></a>啟用預設舊版 SameSite Cookie 行為設定 (已取代)
+  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-obsolete"></a>啟用預設舊版 SameSite Cookie 行為設定 (已過時)
 
-  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 94 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 80 或更新版本
+  - 在 Windows 和 macOS 上，版本 80 至 94
 
   #### <a name="description"></a>說明
 
-  此原則已過時，因為其目的只是為了提供做為短期的機制，並在發現企業與 SameSite 行為變更不相容時，給予它們更多的時間來更新其環境。
+  此原則無法運作，因為此原則只是為了提供做為短期的機制，並在發現企業與 SameSite 行為變更不相容時，給予它們更多的時間來更新其環境。
 
-無法在 Microsoft Edge 版本 95 中使用。 如果您仍然需要舊版 Cookie 行為，請使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) 來設定每個網域的行為。
+如果您仍然需要舊版 Cookie 行為，請使用 [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) 來設定每個網域的行為。
 
 讓您將所有 Cookie 還原為舊版 SameSite 行為。 若要還原為舊版行為，會導致沒有指定 SameSite 屬性的 cookie 視為 "SameSite = 無"，並移除「SameSite = None」 cookie 的需求，以傳送 "Secure" 屬性，並在評估兩個網站是否相同的網站時跳過方案比較。
 
@@ -3039,7 +3109,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：LegacySameSiteCookieBehaviorEnabled
-  - GP 名稱：啟用預設舊版 SameSite Cookie 行為設定 (已取代)
+  - GP 名稱：啟用預設舊版 SameSite Cookie 行為設定 (已過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/內容設定
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -3086,7 +3156,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptJitBlockedForSites\1 = "[*.]example.e
 
 如果未設定此原則，則會使用全域預設值。 全域預設值也將用於您指定的模式未涵蓋的網域上的 Cookie。
 
-在 Microsoft Edge 版本 95 推出前，全域預設值可以使用已取代的 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 原則進行設定。 如果未設定 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，則全域預設值會後援到其他設定來源。
+全域預設值可以使用 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) 原則進行設定。 如果未設定 [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)，則全域預設值會後援到其他設定來源。
 
 請注意，您在此原則中列出的模式會被視為網域，而非 URL，因此不應指定配置或連接埠。
 
@@ -6126,7 +6196,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 和 macOS 上，版本 87 或更新版本
+  - Windows 上，版本 87 或更新版本
 
   #### <a name="description"></a>描述
 
@@ -6171,13 +6241,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 0x00000001
 ```
 
-  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
-  
-  - 喜好設定機碼名稱：KioskAddressBarEditingEnabled
-  - 範例值：
-``` xml
-<true/>
-```
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -7256,6 +7319,73 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="printpostscriptmode"></a>PrintPostScriptMode
+
+  #### <a name="print-postscript-mode"></a>列印 PostScript 模式
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  控制 Microsoft Edge 在 Microsoft Windows 上的列印方式。
+
+在 Microsoft Windows 上列印至 PostScript 印表機，不同的 PostScript 產生方法會影響列印效果。
+
+如果您將此原則設為預設，產生 PostScript 時，Microsoft Edge 會使用一組預設選項。 尤其是文字，文字一定會使用 Type 3 字型呈現。
+
+如果您將此策略設為 Type42，Microsoft Edge 會盡可能使用 Type 42 字型來呈現文字。 這應該會增加部分 PostScript 印表機的列印速度。
+
+如果您沒有設定此原則，Microsoft Edge 會使用預設模式。
+
+原則選項對應：
+
+* Default (0) = Default
+
+* Type42 (1) = Type42
+
+設定此原則時，請使用上述資訊。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：PrintPostScriptMode
+  - GP 名稱：列印 PostScript 模式
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：PrintPostScriptMode
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="printpreviewusesystemdefaultprinter"></a>PrintPreviewUseSystemDefaultPrinter
 
   #### <a name="set-the-system-default-printer-as-the-default-printer"></a>將系統預設的印表機設定為預設印表機
@@ -7379,6 +7509,70 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 0x00000001
 ```
 
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="printrasterizepdfdpi"></a>PrintRasterizePdfDpi
+
+  #### <a name="print-rasterize-pdf-dpi"></a>列印點陣化 PDF DPI
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  Microsoft Edge 使用點陣化列印 PDF 時，控制列印影像解析度。
+
+使用列印成影像選項列印 PDF 時，指定裝置印表機設定或 PDF 預設值外的其他列印解析度會非常有利。  高解析度會大幅增加處理和列印時間，而低解析度可能會導致影像品質不佳。
+
+如果您設定此原則，則允許指定特定解析度，以用於將 PDF 進行點陣化列印。
+
+如果您將此原則設為零或沒有設定，系統預設解析度將在頁面影像的點陣化期間使用。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：PrintRasterizePdfDpi
+  - GP 名稱：列印點陣化 PDF DPI
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/列印
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：PrintRasterizePdfDpi
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x0000012c
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：PrintRasterizePdfDpi
+  - 範例值：
+``` xml
+<integer>300</integer>
+```
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -11164,6 +11358,62 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="audioprocesshighpriorityenabled"></a>AudioProcessHighPriorityEnabled
+
+  #### <a name="allow-the-audio-process-to-run-with-priority-above-normal-on-windows"></a>允許音訊處理程序在 Windows 上以高於正常優先順序執行
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 96 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此原則會控制 Windows 上的音訊處理程序優先順序。
+如果啟用此原則，音訊處理程序會以高於一般優先順序執行。
+如果此原則已停用，音訊處理程序會以一般優先順序執行。
+如果未設定此原則，將會使用音訊處理程序的預設設定。
+此原則旨在做為一項暫時性措施，讓企業能夠以較高優先順序執行音訊，以解決音訊擷取的某些效能問題。
+此原則未來會移除。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：AudioProcessHighPriorityEnabled
+  - 允許音訊處理程序在 Windows 上以高於正常優先順序執行
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：AudioProcessHighPriorityEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="audiosandboxenabled"></a>AudioSandboxEnabled
 
   #### <a name="allow-the-audio-sandbox-to-run"></a>允許音訊沙盒執行
@@ -11372,6 +11622,8 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 然而，此原則的「來源比對」模式不能包含 "/path" 或 "@query" 元素。 任何含有 "/path" 或 "@query" 元素的模式都會被忽略。
 
+此原則無法如預期地與 file://* 萬用字元一起執行。
+
   #### <a name="supported-features"></a>支援的功能：
 
   - 可強制執行：是
@@ -11490,7 +11742,9 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
 若您未設定此原則，所有文件類型在 [AutoOpenFileTypes](#autoopenfiletypes) 的下載皆可自動打開。
 
-URL 模式的格式必須依照 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)設定。
+URL 模式的格式必須依照 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 設定。
+
+此原則無法如預期地與 file://* 萬用字元一起執行。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -12334,6 +12588,61 @@ SOFTWARE\Policies\Microsoft\Edge\AutoplayAllowlist\2 = "[*.]contoso.edu"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="browserlegacyextensionpointsblockingenabled"></a>BrowserLegacyExtensionPointsBlockingEnabled
+
+  #### <a name="enable-browser-legacy-extension-point-blocking"></a>啟用瀏覽器舊版擴充點封鎖
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  在 Microsoft Edge 瀏覽器處理序上設定 ProcessExtensionPointDisablePolicy，封鎖來自舊版協力廠商應用程式的程式碼導入。
+
+如果您啟用或未設定此原則，則 ProcessExtensionPointDisablePolicy 會套用至封鎖瀏覽器處理序中的舊版擴充點。
+
+如果您停用此原則，則 ProcessExtensionPointDisablePolicy 不會套用至封鎖瀏覽器處理序中的舊版擴充點。 這會對 Microsoft Edge 的安全性和穩定性造成不良的影響，因為可能會在 Microsoft Edge 瀏覽器處理序中載入未知和可能有害的程式碼。 只有在必須在 Microsoft Edge 瀏覽器處理序內執行的協力廠商軟體發生相容性問題時，才關閉原則。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：BrowserLegacyExtensionPointsBlockingEnabled
+  - GP 名稱：啟用瀏覽器舊版擴充點封鎖
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：BrowserLegacyExtensionPointsBlockingEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="browsernetworktimequeriesenabled"></a>BrowserNetworkTimeQueriesEnabled
 
   #### <a name="allow-queries-to-a-browser-network-time-service"></a>允許查詢瀏覽器網路時間服務
@@ -12907,6 +13216,8 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 根據 [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) 來設定 URL 模式的格式。 因為憑證僅對指定的主機名稱有效，與配置、連接埠或路徑無關，因此只會考慮 URL 的主機名稱部分。 不支援萬用字元主機。
 
 如果未設定此原則，則應該透過憑證透明度揭露的任何憑證都將被視為不受信任 (如果未揭露的話)。
+
+此原則無法如預期地與 file://* 萬用字元一起執行。
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -13804,6 +14115,68 @@ SOFTWARE\Policies\Microsoft\Edge\ConfigureViewInFileExplorer = [
   ```
   
 
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="crossoriginwebassemblymodulesharingenabled"></a>CrossOriginWebAssemblyModuleSharingEnabled
+
+  #### <a name="specifies-whether-webassembly-modules-can-be-sent-cross-origin"></a>指定 WebAssembly 模組是否可以跨原始來源傳送
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  指定 WebAssembly 模組是否可以傳送到另一個視窗或背景工作跨原始來源。 跨原始來源 WebAssembly 模組共用將會被作為 document.domain 的一部分而被棄用，請參閱 https://github.com/mikewest/deprecating-document-domain。 此原則允許重新啟用跨原始來源 WebAssembly 模組共用。 這會在棄用處理程序中提供較長的轉場期間。
+
+如果您啟用此原則，網站可以無限制地跨原始來源傳送 WebAssembly 模組。
+
+如果您停用或不設定此原則，網站只能將 WebAssembly 模組傳送給相同來源的 Windows 和背景工作。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：CrossOriginWebAssemblyModuleSharingEnabled
+  - GP 名稱：指定 WebAssembly 模組是否可以跨原始來源傳送
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：CrossOriginWebAssemblyModuleSharingEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：CrossOriginWebAssemblyModuleSharingEnabled
+  - 範例值：
+``` xml
+<true/>
+```
   
 
   [回到頁首](#microsoft-edge---policies)
@@ -14862,6 +15235,70 @@ Windows 10 裝置不支援此原則。 若要在 Windows 10 上控制這個資�
   - 範例值：
 ``` xml
 <integer>104857600</integer>
+```
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="displaycapturepermissionspolicyenabled"></a>DisplayCapturePermissionsPolicyEnabled
+
+  #### <a name="specifies-whether-the-display-capture-permissions-policy-is-checked-or-skipped"></a>指定顯示擷取權限原則是否已核取或已略過
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 和 macOS 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  根據此規格，顯示-擷取權限-原則閘道存取 getDisplayMedia()：https://www.w3.org/TR/screen-capture/#feature-policy-integration不過，如果此原則已停用，則不會強制執行此要求，而且允許從原本禁止的上下文取得 getDisplayMedia()。 此企業原則為暫時性; 預計在 Microsoft Edge 版本 100 之後移除。
+它旨在解除封鎖應用程式不符合規範，但需要時間修正的企業使用者。
+
+如果您啟用或不設定此原則，網站只能從顯示-擷取權限-原則所允許的上下文呼叫 getDisplayMedia()。
+
+如果您停用此原則，網站可以呼叫 getDisplayMedia() ，即使上下文未由顯示-擷取權限原則所允許。
+請注意，其他限制可能仍然適用。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：DisplayCapturePermissionsPolicyEnabled
+  - GP 名稱：指定顯示擷取權限原則是否已核取或已略過
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：DisplayCapturePermissionsPolicyEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Mac 資訊和設定
+  
+  - 喜好設定機碼名稱：DisplayCapturePermissionsPolicyEnabled
+  - 範例值：
+``` xml
+<true/>
 ```
   
 
@@ -19107,17 +19544,17 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="internetexplorerintegrationtestingallowed"></a>InternetExplorerIntegrationTestingAllowed
 
-  #### <a name="allow-internet-explorer-mode-testing-deprecated"></a>允許 Internet Explorer 模式測試 (已取代) 
+  #### <a name="allow-internet-explorer-mode-testing-obsolete"></a>允許 Internet Explorer 模式測試 (已過時)
 
-  >已過時：此原則已過時。 目前支援，但將在未來版本中過時。
   
+  >已過時：此原則已過時，且無法在 Microsoft Edge 版本 94 及之後的版本中運作。
   #### <a name="supported-versions"></a>支援的版本：
 
-  - Windows 上，版本 86 或更新版本
+  - Windows 上，版本 86 至 94
 
   #### <a name="description"></a>說明
 
-  此原則已遭取代，請改為使用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則。 無法在 Microsoft Edge 版本 95 中使用。
+  此原則已過時，因為已由改良功能取代。 版本 94 之後，它無法在 Microsoft Edge 中使用。 若要允許使用者在 Internet Explorer 模式中開啟應用程式，請改為使用 [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) 原則。 或者，使用者仍可使用 --ie-mode-test 旗標。
 
 這項原則可讓使用者透過在 Microsoft Edge 開啟 Internet Explorer 模式選項, 以 Internet Explorer 模式測試應用程式。
 
@@ -19146,7 +19583,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
   ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
 
   - GP 唯一名稱：InternetExplorerIntegrationTestingAllowed
-  - GP 名稱：允許 Internet Explorer 模式測試 (已取代)
+  - GP 名稱：允許 Internet Explorer 模式測試 (已過時)
   - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
   - GP 路徑 (建議)：不適用
   - GP ADMX 檔案名稱：MSEdge.admx
@@ -19162,6 +19599,116 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
 ```
 0x00000000
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationwindowopenheightadjustment"></a>InternetExplorerIntegrationWindowOpenHeightAdjustment
+
+  #### <a name="configure-the-pixel-adjustment-between-windowopen-heights-sourced-from-ie-mode-pages-vs-edge-mode-pages"></a>設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 高度之間的像素調整
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此設定可讓您指定自訂調整從 Internet Explorer 模式網站透過 window.open 產生的快顯視窗高度。
+
+如果您設定此原則，Microsoft Edge 將新增調整值至高度 (以像素為單位)。 確切的差異取決於 IE 和 Edge 的 UI 配置，但一般差異為 5。
+
+如果您停用或未設定此原則，Microsoft Edge 會將 IE 模式 window.open 處理為與 Edge 模式 window.open 相同的視窗高度計算。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationWindowOpenHeightAdjustment
+  - GP 名稱：設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 高度之間的像素調整
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：InternetExplorerIntegrationWindowOpenHeightAdjustment
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000005
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationwindowopenwidthadjustment"></a>InternetExplorerIntegrationWindowOpenWidthAdjustment
+
+  #### <a name="configure-the-pixel-adjustment-between-windowopen-widths-sourced-from-ie-mode-pages-vs-edge-mode-pages"></a>設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 寬度之間的像素調整
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  此設定可讓您指定自訂調整從 Internet Explorer 模式網站透過 window.open 產生的快顯視窗寬度。
+
+如果您設定此原則，Microsoft Edge 將新增調整值至寬度 (以像素為單位)。 確切的差異取決於 IE 和 Edge 的 UI 配置，但一般差異為 4。
+
+如果您停用或未設定此原則，Microsoft Edge 會將 IE 模式 window.open 處理為與 Edge 模式 window.open 相同的視窗寬度計算。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：否 - 需要重新啟動瀏覽器
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：InternetExplorerIntegrationWindowOpenWidthAdjustment
+  - GP 名稱：設定源自 IE 模式頁面與 Edge 模式頁面的 window.open 寬度之間的像素調整
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：InternetExplorerIntegrationWindowOpenWidthAdjustment
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000004
 ```
 
   
@@ -22784,6 +23331,75 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="shadowstackcrashrollbackbehavior"></a>ShadowStackCrashRollbackBehavior
+
+  #### <a name="configure-shadowstack-crash-rollback-behavior"></a>設定 ShadowStack 當機復原行為
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  指定此功能觸發當機後，Microsoft Edge 是否應該啟用硬體強制堆疊保護安全性功能。
+
+如果您沒有設定此原則，Microsoft Edge 將管理設定以安全地推出硬體強制堆疊保護，最終強制為所有使用者啟用此功能。
+
+將此原則設定為 'Disable'，以在此功能觸發當機後始終停用硬體強制堆疊保護。
+
+將此原則設定為 'DisableUntilUpdate'，以在此功能觸發當機後停用硬體強制堆疊保護，但在 Microsoft Edge 可能解決此問題之後啟用它。
+
+將此設定設定為 'Enable'，以在此功能觸發當機後，始終啟用硬體強制堆疊保護。
+
+原則選項對應：
+
+* Disable (0) = 停用 [硬體強制堆疊保護]
+
+* DisableUntilUpdate (1) = 停用 [硬體強制堆疊保護]，直到下一次 Microsoft Edge 更新
+
+* Enable (2) = 啟用 [硬體強制堆疊保護]
+
+設定此原則時，請使用上述資訊。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：否
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 整數
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：ShadowStackCrashRollbackBehavior
+  - GP 名稱：設定 ShadowStack 當機復原行為
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：不適用
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：不適用
+  - 數值名稱：ShadowStackCrashRollbackBehavior
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="sharedarraybufferunrestrictedaccessallowed"></a>SharedArrayBufferUnrestrictedAccessAllowed
 
   #### <a name="specifies-whether-sharedarraybuffers-can-be-used-in-a-non-cross-origin-isolated-context"></a>指定 SharedArrayBuffers 是否可以在非跨來源隔離內容中使用
@@ -24416,6 +25032,8 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 如果未設定此原則，則 [URLBlocklist](#urlblocklist) 原則的封鎖清單中沒有例外。
 
+此原則無法如預期地與 file://* 萬用字元一起執行。
+
   #### <a name="supported-features"></a>支援的功能：
 
   - 可強制執行：是
@@ -24495,6 +25113,8 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 如果未設定此原則，則不會封鎖任何 URL。
 
+此原則無法如預期地與 file://* 萬用字元一起執行。
+
   #### <a name="supported-features"></a>支援的功能：
 
   - 可強制執行：是
@@ -24530,9 +25150,8 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\2 = "https://ssl.server.com"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\3 = "hosting.com/bad_path"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\4 = "https://server:8080/path"
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\5 = ".exact.hostname.com"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = "file://*"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = "custom_scheme:*"
-SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\6 = "custom_scheme:*"
+SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\7 = "*"
 
 ```
 
@@ -24547,7 +25166,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
   <string>hosting.com/bad_path</string>
   <string>https://server:8080/path</string>
   <string>.exact.hostname.com</string>
-  <string>file://*</string>
   <string>custom_scheme:*</string>
   <string>*</string>
 </array>
@@ -25048,6 +25666,61 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   [回到頁首](#microsoft-edge---policies)
 
+  ### <a name="visualsearchenabled"></a>VisualSearchEnabled
+
+  #### <a name="visual-search-enabled"></a>已啟用圖像式搜尋
+
+  
+  
+  #### <a name="supported-versions"></a>支援的版本：
+
+  - Windows 上，版本 95 或更新版本
+
+  #### <a name="description"></a>說明
+
+  圖像式搜尋可讓您快速探索影像中有關實體的更多相關內容。
+
+如果您啟用或未設定此原則，圖像式搜尋會透過影像暫留、操作功能表，以及側邊欄中的搜尋啟用。
+
+如果您停用此原則，圖像式搜尋將會停用，而且無法透過暫留、操作功能表和在側邊欄中搜尋，取得影像的更多相關資訊。
+
+  #### <a name="supported-features"></a>支援的功能：
+
+  - 可強制執行：是
+  - 可以建議：是
+  - 動態原則重新整理：是
+
+  #### <a name="data-type"></a>資料類型：
+
+  - 布林值
+
+  #### <a name="windows-information-and-settings"></a>Windows 資訊和設定
+
+  ##### <a name="group-policy-admx-info"></a>群組原則 (ADMX) 資訊
+
+  - GP 唯一名稱：VisualSearchEnabled
+  - GP 名稱：已啟用圖像式搜尋
+  - GP 路徑 (強制)：系統管理範本/Microsoft Edge/
+  - GP 路徑 (建議)：系統管理範本/Microsoft Edge - 預設設定 (使用者可以覆寫)/
+  - GP ADMX 檔案名稱：MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Windows 登錄設定
+
+  - 路徑 (強制)：SOFTWARE\Policies\Microsoft\Edge
+  - 路徑 (建議)：SOFTWARE\Policies\Microsoft\Edge\Recommended
+  - 數值名稱：VisualSearchEnabled
+  - 數值類型：REG_DWORD
+
+  ##### <a name="example-value"></a>範例值：
+
+```
+0x00000000
+```
+
+  
+
+  [回到頁首](#microsoft-edge---policies)
+
   ### <a name="wpadquickcheckenabled"></a>WPADQuickCheckEnabled
 
   #### <a name="set-wpad-optimization"></a>設定 WPAD 最佳化
@@ -25126,14 +25799,18 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   設定此原則以指定無需使用者互動的網頁應用程式清單，並且使用者無法卸載或關閉這些應用程式。
 
-原則的每個清單項目都是具有強制成員的物件： url (要安裝之 web 應用程式的 URL) 
+原則的每個清單項目都是具有強制成員的物件：url (要安裝之 Web 應用程式的 URL) 
 
-及 3 個選用的成員：
+及 5 個選用的成員：
 - default_launch_container (指定 Web 應用程式開啟時要使用的視窗模式，預設值為新索引標籤。)
 
 - create_desktop_shortcut (如果要建立 Linux 和 Microsoft Windows 桌面捷徑，則為 True。)
 
-- fallback_app_name (從 Microsoft Edge 90 開始，如果不是漸進式 Web 應用程式 (PWA)，則允許您覆寫應用程式名稱；如果是 PWA，則為暫時安裝的應用程式名稱，但需要進行驗證，安裝才能完成)
+- fallback_app_name (從 Microsoft Edge 版本 90 開始，如果不是漸進式 Web 應用程式 (PWA)，則允許您覆寫應用程式名稱；如果是 PWA，則為暫時安裝的應用程式名稱，但需要進行驗證，安裝才能完成。 如果同時提供 custom_name 和 fallback_app_name，則後者會被忽略。)
+
+- custom_name (從 Microsoft Edge 版本 96 開始，可讓您永久覆寫所有 Web 應用程式和 PWA 的應用程式名稱。)
+
+- custom_icon (從 Microsoft Edge 版本 96 開始，可讓您覆寫已安裝應用程式的應用程式圖示。 圖示必須正方形、最大 1 MB，且格式如下：jpeg、png、gif、webp、ico。 雜湊值必須為圖示檔案的 SHA256 雜湊。)
 
   #### <a name="supported-features"></a>支援的功能：
 
@@ -25178,7 +25855,19 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "window",
     "fallback_app_name": "Editor",
-    "url": "https://app.contoso.com/editor"
+    "url": "https://app.contoso.edu/editor"
+  },
+  {
+    "custom_name": "Spreadsheets",
+    "default_launch_container": "window",
+    "url": "https://app.contoso.edu/sheets"
+  },
+  {
+    "custom_icon": {
+      "hash": "c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38",
+      "url": "https://mydomain.example.com/sunny_icon.png"
+    },
+    "url": "https://weather.example.com"
   }
 ]
 ```
@@ -25186,7 +25875,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### <a name="compact-example-value"></a>精簡範例值：
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.edu/editor"}, {"custom_name": "Spreadsheets", "default_launch_container": "window", "url": "https://app.contoso.edu/sheets"}, {"custom_icon": {"hash": "c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38", "url": "https://mydomain.example.com/sunny_icon.png"}, "url": "https://weather.example.com"}]
   ```
   
 
@@ -25217,7 +25906,26 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <key>fallback_app_name</key>
     <string>Editor</string>
     <key>url</key>
-    <string>https://app.contoso.com/editor</string>
+    <string>https://app.contoso.edu/editor</string>
+  </dict>
+  <dict>
+    <key>custom_name</key>
+    <string>Spreadsheets</string>
+    <key>default_launch_container</key>
+    <string>window</string>
+    <key>url</key>
+    <string>https://app.contoso.edu/sheets</string>
+  </dict>
+  <dict>
+    <key>custom_icon</key>
+    <dict>
+      <key>hash</key>
+      <string>c28f469c450e9ab2b86ea47038d2b324c6ad3b1e9a4bd8960da13214afd0ca38</string>
+      <key>url</key>
+      <string>https://mydomain.example.com/sunny_icon.png</string>
+    </dict>
+    <key>url</key>
+    <string>https://weather.example.com</string>
   </dict>
 </array>
 ```
@@ -25981,7 +26689,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
   [回到頁首](#microsoft-edge---policies)
 
 
-## <a name="see-also"></a>也請參閱
+## <a name="see-also"></a>請參閱
 
 - [設定 Microsoft Edge](configure-microsoft-edge.md)
 - [Microsoft Edge 企業登陸頁面](https://aka.ms/EdgeEnterprise)
