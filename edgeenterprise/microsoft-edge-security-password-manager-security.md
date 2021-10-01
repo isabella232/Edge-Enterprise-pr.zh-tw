@@ -3,19 +3,19 @@ title: 'Microsoft Edge 密碼管理員安全性 '
 ms.author: v-andreabarr
 author: AndreaLBarr
 manager: collw
-ms.date: 06/29/2021
+ms.date: 09/30/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 密碼管理員安全性
-ms.openlocfilehash: 816bbd2c18fcae0a20a19fb0feab199454aa67b6
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 6f9dadab36c755113ad647e7e78a0bbbb2f8c965
+ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979520"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "12057333"
 ---
 # <a name="microsoft-edge-password-manager-security"></a>Microsoft Edge 密碼管理員安全性 
 
@@ -141,7 +141,7 @@ Microsoft 安全性小組目前已將入侵企業電腦網路 (導致所有裝�
 主密碼功能 (自動填入使用者資料之前先驗證使用者) 為更廣泛的威脅降低提供了便利性的取捨。 具體來說，它有助於減少針對潛在惡意程式碼或實體本機攻擊者的資料公開時間。 不過，主密碼並非靈丹妙藥，而本機攻擊者和專用惡意程式碼有各種規避主密碼保護的策略。
 
 > [!Note]
-> Microsoft 在自動填入之前，會先確認使用者驗證值，這項功能將在未來版本中新增到 Microsoft Edge。
+> Microsoft Edge現在提供在自動填上功能之前啟用驗證的功能;這為使用者提供額外的隱私權，並防止他們儲存的密碼被除了他們外的其他任何人使用。 有關詳細資料，請參閱 [儲存密碼的其他隱私權](https://support.microsoft.com/topic/additional-privacy-for-your-saved-passwords-31dbd670-e314-4901-a546-6f302548502e)。  
 
 ## <a name="can-using-a-password-manager-impact-my-privacy"></a>使用密碼管理員會影響我的隱私權嗎？
 
