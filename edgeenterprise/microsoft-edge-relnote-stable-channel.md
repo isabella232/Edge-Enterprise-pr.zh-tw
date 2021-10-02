@@ -3,19 +3,19 @@ title: Microsoft Edge 穩定通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/24/2021
+ms.date: 10/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge 穩定通道的版本資訊
-ms.openlocfilehash: 491debce74949c9e146acdcf825c99edf2f7f81e
-ms.sourcegitcommit: 6ef4b2e1dee45f33edb7fa8f83c93b4d169adca9
+ms.openlocfilehash: f15c8e1d4dcd037b0948e7309387ba3baa5d1ffa
+ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2021
-ms.locfileid: "12044835"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "12057334"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Microsoft Edge 穩定通道的版本資訊
 
@@ -29,14 +29,25 @@ ms.locfileid: "12044835"
 > [!NOTE]
 > 針對穩定通道，更新會在一或多天內逐步推出。 若要深入了解，請參閱[適用於 Microsoft Edge 更新的漸進式推出](microsoft-edge-update-progressive-rollout.md)。
 >
-> Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 即將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes) (英文)。
+> Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 即將進行的網站相容性影響變更] (英文)(/ microsoft-edge/web-platform/site-impacting-changes)。
+
+## <a name="version-94099238-october-1"></a>版本 94.0.992.38: 10 月 1 日
+
+> [!Important]
+> 此更新包括 Chromium 小組報告 [CVE-2021-37975](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37975) 和 [CVE-2021-37976](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37976) 的修正, 因為已發行的版本中有惡意探索問題。 如需詳細資訊，請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)
+
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#october-01-2021)。
+
+## <a name="version-94099237-september-30"></a>版本 94.0.992.37：9 月 30 日
+
+已修正各種錯誤和效能問題。
 
 ## <a name="version-94099231-september-24"></a>版本 94.0.992.31：9 月 24 日
 
 > [!Important]
 > 此更新包含 [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) 的修正程式，Chromium 小組已回報該修正程式存在漏洞。 如需詳細資訊, 請參閱[安全性更新導覽](https://msrc.microsoft.com/update-guide)。
 
-穩定通道安全性更新列於 [此處](/deployedge/microsoft-edge-relnotes-security#september-24-2021)。
+穩定通道安全性更新列於[此處](/deployedge/microsoft-edge-relnotes-security#september-24-2021)。
 
 ### <a name="feature-updates"></a>功能更新
 
