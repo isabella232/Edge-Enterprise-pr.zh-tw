@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 ExtensionSettings 原則設定 Microsoft Edge 擴充功能的詳細參考指南。
-ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
+ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11978910"
+ms.lasthandoff: 10/04/2021
+ms.locfileid: "12061102"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 原則的詳細指南
 
@@ -52,7 +52,35 @@ ExtensionSettings 原則可以覆寫您設定在群組原則中其他位置的�
 | **runtime_allowed_hosts**| 允許擴充功能與指定的網站互動，即使它們也是在 runtime_blocked_hosts 中定義。 您可以指定最多 100 個項目。 系統會捨棄額外的項目。<br>主機模式格式與 [符合模式](/microsoft-edge/extensions-chromium/enterprise/match-patterns)類似， 但無法定義路徑。 例如：<br>- *://*.example.com<br>- *://example。*—支援 eTLD 萬用字元     |
 | **runtime_blocked_hosts**| 防止擴充功能與您指定的網站互動或修改。 修改包括封鎖 JavaScript 注入、Cookie 存取，以及 Web 要求修改。<br>您可以指定最多 100 個項目。 系統會捨棄額外的項目。<br>主機模式格式與符合模式類似，但無法定義路徑。 例如：<br>- *://*.example.com<br>- *://example。*—支援 eTLD 萬用字元   |
 | **override_update_url**| 可從 Edge 93 使用<br>如果設定為 `true` ，Edge 會使用 ExtensionSettings 策略或 ExtensionInstallForcelist 策略中指定的更新 URL，以用於後續的擴充更新。<br>如果未設定或設定為 ，Edge 會使用副檔名清單中指定的 URL `false` 進行更新。|
+| **toolbar_state**| 可從 Edge 94 使用<br>此策略設定可讓您強制顯示工具列已安裝的擴充功能。 預設狀態適用于 `default_shown` 所有擴充功能。 此設定可能遵循下列狀態<br>-`force_shown`：您可以選擇強制在工具列上顯示已安裝的擴充功能。 使用者將無法從工具列中隱藏特定的擴充圖示。<br>-`default_hidden`：在此狀態中，副檔名會從安裝時工具列中隱藏。 如有必要，使用者可以在工具列上顯示它們。<br>-`default_shown`：這是瀏覽器上所有已安裝的擴充模組的聽障設定。
 
+以下為全域範圍 * (允許) ： 
+
+- blocked_permissions
+- installation_mode - 只有'封鎖'、'允許'或'已移除'在此範圍內是有效的值。
+- runtime_blocked_hosts
+- blocked_install_message
+- allowed_types
+- runtime_allowed_hosts
+- install_sources
+
+這些是個別擴充範圍中允許的按鍵： 
+
+- blocked_permissions
+- minimum_version_required
+- blocked_install_message
+- toolbar_state (Edge 94) 
+- installation_mode `"blocked"` - `"allowed"` `"removed"` 、、、及 `"force_installed"` `"normal_installed"` 為可能的值。
+- runtime_allowed_hosts
+- update_url
+- override_update_url
+- runtime_blocked_hosts
+- toolbar_state
+
+這些是更新 URL 範圍中允許的按鍵： 
+
+- blocked_permissions
+- installation_mode - 僅 `"blocked"` ， `"allowed"` `"removed"` 或在此範圍中是有效的值。
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>在 Windows 群組原則編輯器中使用 JSON 字串進行設定
 
