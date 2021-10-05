@@ -3,19 +3,19 @@ title: Microsoft Edge Beta 通道的版本資訊
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/28/2021
+ms.date: 10/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge Beta 通道的版本資訊
-ms.openlocfilehash: c62d540b014a47f1240d542c68ee52822719239f
-ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
+ms.openlocfilehash: a2957d3c52d18fe75cb52719896438e6becf6dbd
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2021
-ms.locfileid: "12053312"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12068999"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Microsoft Edge Beta 通道的版本資訊
 
@@ -24,11 +24,15 @@ ms.locfileid: "12053312"
 > [!NOTE]
 > Microsoft Edge Web 平台不斷演進，以改善使用者體驗、安全性和隱私權。 若要深入了解，請參閱 [Microsoft Edge 即將進行的網站相容性影響變更](/microsoft-edge/web-platform/site-impacting-changes) (英文)。
 
+## <a name="version-950102014-october-5"></a>版本 95.0.1020.14：10 月 5 日
+
+已修正各種錯誤和效能問題。
+
 ## <a name="version-95010209-september-28"></a>版本 95.0.1020.9：9 月 28 日
 
 ### <a name="feature-updates"></a>功能更新
 
-- **在檔案檔案管理器支援中SharePoint線上文件庫Microsoft Edge。**  現在，您可以在線上新式文件庫上SharePoint檔案管理器中的 View 功能。 若要顯示此體驗並適用于您的使用者，您必須啟用 Microsoft Edge 政策「在 Microsoft Edge 中設定[SharePoint](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)頁面的檔案功能」，並更新您的 SharePoint Online 租使用者設定。 深入瞭解：使用檔案SharePoint檔案管理器在 Microsoft Edge[中SharePoint檔案Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
+- **在檔案檔案管理器支援中SharePoint線上文件庫Microsoft Edge。**  現在，您可以在線上新式文件庫上SharePoint檔案管理器中查看功能。 若要顯示此體驗並適用于您的使用者，您必須啟用 Microsoft Edge 政策「在 Microsoft Edge 中設定[SharePoint](/deployedge/microsoft-edge-policies#configureviewinfileexplorer)頁面的檔案功能」，並更新您的 SharePoint Online 租使用者設定。 深入瞭解：使用 SharePoint 檔案檔案管理器在 Microsoft Edge[中SharePoint檔案Microsoft 365 |Microsoft Docs](/SharePoint/sharepoint-view-in-edge)。
 
 - **內部網路區域檔案 URL 連結將在檔案Windows中開啟。**  您可以允許來自內部網路區域 HTTPS 網站的內部網路區域檔案的檔案 URL 連結，Windows檔案或目錄的檔案總管。 您可以使用 [IntranetFileLinksEnabled 策略啟用此](/deployedge/microsoft-edge-policies#intranetfilelinksenabled) 體驗。
 
@@ -45,7 +49,7 @@ ms.locfileid: "12053312"
 - [DisplayCapturePermissionsPolicyEnabled](/DeployEdge/microsoft-edge-policies#displaycapturepermissionspolicyenabled) 指定是否已檢查或略過顯示-捕獲許可權-策略
 - [InternetExplorerIntegrationWindowOpenHeightAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenheightadjustment) 設定來自 IE 模式頁面與 Edge 模式頁面之視窗與開啟高度之間的圖元調整
 - [InternetExplorerIntegrationWindowOpenWidthAdjustment](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationwindowopenwidthadjustment) 設定視窗之間的圖元調整。從 IE 模式頁面與 Edge 模式頁面來源的開啟寬度
-- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled)允許內部網路區域檔案 URL 連結Microsoft Edge檔案檔案Windows開啟
+- [IntranetFileLinksEnabled](/DeployEdge/microsoft-edge-policies#intranetfilelinksenabled)允許內部網路區域檔案 URL 連結Microsoft Edge檔案檔案Windows中開啟
 - [ShadowStackCrashRollbackBehavior](/DeployEdge/microsoft-edge-policies#shadowstackcrashrollbackbehavior) 設定 ShadowStack 當機回收行為
 - [VisualSearchEnabled](/DeployEdge/microsoft-edge-policies#visualsearchenabled) 已啟用視覺搜尋
 
@@ -70,7 +74,7 @@ ms.locfileid: "12053312"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **Microsoft Edge Beta 和穩定通道中的更新，以進入 4 周更新的步頻。**  我們會針對主要版本採用新的 4 周發行週期。 您可以在這裡閱讀有關決策的更多資訊： https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
+- **Microsoft Edge在 Beta 和穩定通道中，將更新時間移至 4 周。**  我們會針對主要版本採用新的 4 周發行週期。 您可以在這裡閱讀有關決策的更多資訊： https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
 
 - **提供新「擴充穩定」選項。**  我們向受管理的企業客戶提供新「擴充穩定」選項。 「擴充穩定」選項將保留偶數修訂編號並每 8 週更新一次。 將會有每兩週一次的安全性更新。  此處提供其他資訊：https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
 
@@ -84,7 +88,7 @@ ms.locfileid: "12053312"
 
 - **新增到 PDF 檔的免費表單文字方塊。**  我們現在支援在 PDF 檔中新增免費的表單文字方塊，您可以使用這些文字方塊來填寫表單並新增可見的筆記。
 
-- **輕鬆更新您的密碼。**  瀏覽器現在會直接將您帶至某個網站的變更密碼頁面，以避免手動流覽至頁面，以節省時間和按一下。 當您進入此頁面時，瀏覽器也會自動填上您現有的密碼，並建議使用強大且唯一的新密碼。  請注意：此功能目前可在數量有限的網站使用。  
+- **輕鬆更新密碼。**  瀏覽器現在會直接將您帶至某個網站的變更密碼頁面，以避免手動流覽至頁面，以節省時間和按一下。 當您進入此頁面時，瀏覽器也會自動填上您現有的密碼，並建議使用強大且唯一的新密碼。  請注意：此功能目前可在數量有限的網站使用。  
 
 - **新的協助工具設定頁面。** 我們已將協助工具相關設定整合在單一頁面上。 您可以在主要設定清單下找到新 edge://settings/accessibility 頁面。 您可以在這裡找到可放大網頁的設定、在焦點區域周圍顯示高可見度大綱，以及其他可協助改善網頁瀏覽體驗的設定。 我們會在未來的 Microsoft Edge 版本中繼續在此處新增設定。
 
@@ -116,15 +120,15 @@ ms.locfileid: "12053312"
 
 - **Microsoft Edge 中的初始喜好設定。**  從 Microsoft Edge版本 93 開始，Microsoft Edge初始喜好設定，將新版部署至企業[將變得更加容易](/deployedge/initial-preferences-support-on-microsoft-edge-browser)。
 
-- **Microsoft Edge 上的 IE 模式將支援「不合併」行為。**  從版本 93 Microsoft Edge開始，Microsoft Edge的 IE 模式會支援「無合併」。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，在該視窗內第一次瀏覽 IE 模式索引標籤時 (如果它是指定的其中一個「不合併」網站)，該視窗會遭鎖定到與所有其他 Microsoft Edge 視窗不同的「不合併」IE 工作階段，至少直到該視窗中的最後一個 IE 模式索引標籤關閉為止。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)深入了解。
+- **Microsoft Edge 上的 IE 模式將支援「不合併」行為。**  從 93 Microsoft Edge開始，Microsoft Edge的 IE 模式會支援「無合併」。 對於使用者來說，從 IE 模式應用程式啟動新的瀏覽器視窗時，視窗會位於另一個會話中，類似 IE11 中的行為。 您必須調整網站清單，以設定需要防止會話共用的網站。 在幕後，針對 Microsoft Edge 的每個視窗，在該視窗內第一次瀏覽 IE 模式索引標籤時 (如果它是指定的其中一個「不合併」網站)，該視窗會遭鎖定到與所有其他 Microsoft Edge 視窗不同的「不合併」IE 工作階段，至少直到該視窗中的最後一個 IE 模式索引標籤關閉為止。 按一下[這裡](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-)深入了解。
 
 - **索引標籤群組。**  將定位停駐點分類為使用者定義群組的功能，可協助您更有效地尋找、切換及管理多個工作流程的定位字元。 若要啟用此功能，我們會從版本 93 開始開啟製表Microsoft Edge群組。
 
-- **使用垂直索引標籤時隱藏標題列。**  在垂直索引標籤中時隱藏瀏覽器的標題列，以獲得額外的一些像素。 從 Microsoft Edge 93 開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
+- **使用垂直索引標籤時隱藏標題列。**  在垂直索引標籤中時隱藏瀏覽器的標題列，以獲得額外的一些像素。 從 Microsoft Edge版本 93 開始，您可以前往 edge://settings/appearance，然後選取在垂直製表模式中隱藏標題列的選項。
 
-- **透過暫留工具列的影片子母畫面 (PiP)。**  從 Microsoft Edge版本 93 開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標暫留在支援的影片上時，會出現一個工具列，允許您在 PiP 視窗中觀看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
+- **透過暫留工具列的影片子母畫面 (PiP)。**  從版本 93 Microsoft Edge開始，在 PiP 模式或 PiP 模式中 (圖片) 更容易。 當您將游標暫留在支援的影片上時，會出現一個工具列，允許您在 PiP 視窗中觀看該影片。  注意：這項功能目前適用于 macOS Microsoft Edge使用者。  在我們繼續向使用者推出時，請Windows回來。
 
-- **移除 TLS 中的 3DES。**  從版本 Microsoft Edge 93 開始，系統將會移除TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 如需詳細資訊，請瀏覽至 [Chrome 平台狀態項目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 原則將可用來支援需要保留與過時伺服器相容性的情況。 此相容性原則將在 Microsoft Edge 版本 95 中過時並停止運作。 請確定在此之前更新受影響的伺服器。
+- **移除 TLS 中的 3DES。**  從版本 93 Microsoft Edge開始，系統將會移除TLS_RSA_WITH_3DES_EDE_CBC_SHA密碼套件的支援。 此變更會在 Microsoft Edge 所根據的 Chromium 專案中發生。 如需詳細資訊，請瀏覽至 [Chrome 平台狀態項目](https://chromestatus.com/feature/6678134168485888)。 此外，在 Microsoft Edge 版本 93 中，[TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) 原則將可用來支援需要保留與過時伺服器相容性的情況。 此相容性原則將在 Microsoft Edge 版本 95 中過時並停止運作。 請確定在此之前更新受影響的伺服器。
 
 - **可略過 ClickOnce 和 DirectInvoke 提示的原則。**  我們已更新我們的原則，以針對來自指定網域的指定檔案類型，啟用略過 ClickOnce 的提示和 DirectInvoke 的應用程式。 若要這樣做，您必須：
 
@@ -195,7 +199,7 @@ ms.locfileid: "12053312"
 
 ### <a name="feature-updates"></a>功能更新
 
-- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，由於從網址欄搜尋自然語言，尋找您正在尋找的文章/網站變得更容易。 您可以根據頁面內容/描述/時間 (搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字本身符合之外。
+- **自然語言搜尋網址欄上的瀏覽器歷程記錄**。 現在，由於從網址欄搜尋自然語言，尋找您正在尋找的文章/網站變得更容易。 您可以根據頁面內容/描述/時間 (尋找搜尋結果，例如「上周的蛋糕食譜」) 除了標題/URL 關鍵字本身符合之外。
 請注意：此為受控功能推出。 如果您看不到此功能，請在我們繼續推出時儘快回來查看。
 
 - **使用者可以在 Microsoft Edge 上輕鬆進入 Internet Explorer 模式**。 從 Microsoft Edge 版本 92 開始，使用者可以在 Microsoft Edge 上重新載入 Internet Explorer 模式的網站，而不需要依賴獨立的 IE 11 應用程式，同時等待在企業模式網站清單中設定網站。 系統會提示使用者將網站新增到其本機網站清單，以便在接下來的 30 天內，瀏覽至 Microsoft Edge 中的相同頁面將會在 IE 模式下自動轉譯。 您可以使用 *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* 原則設定此體驗，並允許存取 IE 模式進入點，而且能夠將網站新增到本機網站清單。 您可以使用 *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* 原則調整將網站保留在本機網站清單中的天數。

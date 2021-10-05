@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 使用 ExtensionSettings 原則設定 Microsoft Edge 擴充功能的詳細參考指南。
-ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
-ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
+ms.openlocfilehash: 7dceff78172626d70863883e0762be2f4cb7e51c
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2021
-ms.locfileid: "12061102"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12069009"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>ExtensionSettings 原則的詳細指南
 
@@ -57,7 +57,7 @@ ExtensionSettings 原則可以覆寫您設定在群組原則中其他位置的�
 以下為全域範圍 * (允許) ： 
 
 - blocked_permissions
-- installation_mode - 只有'封鎖'、'允許'或'已移除'在此範圍內是有效的值。
+- installation_mode - 僅 `"blocked"` ， `"allowed"` `"removed"` 或在此範圍中是有效的值。
 - runtime_blocked_hosts
 - blocked_install_message
 - allowed_types
@@ -69,7 +69,6 @@ ExtensionSettings 原則可以覆寫您設定在群組原則中其他位置的�
 - blocked_permissions
 - minimum_version_required
 - blocked_install_message
-- toolbar_state (Edge 94) 
 - installation_mode `"blocked"` - `"allowed"` `"removed"` 、、、及 `"force_installed"` `"normal_installed"` 為可能的值。
 - runtime_allowed_hosts
 - update_url
