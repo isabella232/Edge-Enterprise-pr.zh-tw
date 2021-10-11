@@ -3,19 +3,19 @@ title: 企業的 Microsoft Edge 安全性
 ms.author: collw
 author: seanongit
 manager: chuckf
-ms.date: 06/29/2021
+ms.date: 10/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 企業的 Microsoft Edge 安全性
-ms.openlocfilehash: d16b22b63212e3f5319b0bb7df1e457e45cd6208
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 1480edb80698a20f27c4b0f365da9f18ee5fb46e
+ms.sourcegitcommit: 1c664ec030947d89cb5d7c4b834c9292cc1c87b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979448"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "12087699"
 ---
 # <a name="microsoft-edge-security-for-your-business"></a>企業的 Microsoft Edge 安全性
 
@@ -27,9 +27,9 @@ Microsoft Edge 建置於 Chromium 開放原始碼專案，也就是與 Google Ch
 
 ### <a name="highest-rated-protection-against-phishing-and-malware"></a>針對網路釣魚和惡意程式碼的最高等級防護
 
-在 Microsoft Edge 內建時，SmartScreen 會根據 NSS 實驗的獨立研究來封鎖比 Google Chrome 安全流覽更多的 [網路釣魚](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1) 和 [惡意](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW) 代碼嘗試。 使用者在線上工作時，SmartScreen 提供網站和下載的信譽檢查，而且屬於 [Microsoft Intelligent Security Graph](https://www.microsoft.com/microsoft-365/windows/intelligent-security) 的一環，可獲得 Microsoft 龐大全球資產、研究人員和合作夥伴網路產生的跡象和深入解析。 Microsoft Edge 以危險網站與下載清單的動態雲端式清單為基準執行檢查，甚至可協助您偵測及封鎖稍縱即逝的威脅。  
+根據 Google Chrome Microsoft Edge的獨立Microsoft Defender SmartScreen，與 Google [](https://aka.ms/EdgePhishingReport) Chrome[](https://aka.ms/EdgeMalwareReport)的流覽功能保管庫內建的詐騙和惡意程式碼攻擊 CyberRatings.org。Microsoft Defender SmartScreen在使用者線上工作時，提供網站和下載即時信譽檢查，是 Microsoft 智慧型安全性[Graph 的](https://www.microsoft.com/microsoft-365/windows/intelligent-security)一部分，其會從 Microsoft 全球資產、研究人員和合作夥伴的大型網路中產生訊號和深入見解。 Microsoft Edge 以危險網站與下載清單的動態雲端式清單為基準執行檢查，甚至可協助您偵測及封鎖稍縱即逝的威脅。  
 
-[使用 SmartScreen 的 Microsoft Edge](//DeployEdge/microsoft-edge-security-smartscreen) 在 [NSS Labs 的網路釣魚防護](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWASN1)測試期間封鎖了 95.5% 的網路釣魚嘗試，以及在 [NSS Labs 的惡意軟體防護](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWANMW)測試期間封鎖了 98.5% 的惡意軟體嘗試，而相較於 Chrome 的安全瀏覽比率，其分別為 86.9% 和 86.0%。
+[Microsoft Edge SmartScreen](//DeployEdge/microsoft-edge-security-smartscreen)在 CyberRatings.org 網頁瀏覽器與網路釣魚測試期間封鎖了 92.3% 的網路釣魚嘗試，以及[](https://aka.ms/EdgePhishingReport)[CyberRatings.org](https://aka.ms/EdgeMalwareReport)網頁瀏覽器與惡意程式碼測試期間 97.4% 的惡意程式碼嘗試，而 Chrome 的 保管庫 流覽率分別為 84.6% 和 86.3%。
 
 ### <a name="the-only-browser-on-windows-10-that-natively-supports-hardware-isolation"></a>Windows 10 上唯一原生支援硬體隔離的瀏覽器
 
